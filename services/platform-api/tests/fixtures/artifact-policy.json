@@ -1,0 +1,278 @@
+[
+  {
+    "name": "valid",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "import data from '../data_file/final/dashboard-data.json'; export default function Page(){return <div>真实行情</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"react\":\"19\"}}"
+    },
+    "expected": {
+      "status": "passed",
+      "summary": "生成产物满足本地化、真实数据绑定和安全策略。",
+      "metadata": {
+        "checkedFiles": 2
+      }
+    }
+  },
+  {
+    "name": "remote_script",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "import data from '../data_file/final/dashboard-data.json'; export default function Page(){return <div>真实行情</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"react\":\"19\"}}",
+      "app/remote.tsx": "export const remote=<script src=\"https://evil.example/x.js\" />"
+    },
+    "expected": {
+      "status": "failed",
+      "summary": "生成产物未满足 AlphaDeck 硬约束。",
+      "details": "app/remote.tsx 存在远程脚本：<script src=\"https://evil.example/x.js\"\napp/remote.tsx 存在外部 URL：https://evil.example/x.js",
+      "metadata": {
+        "checkedFiles": 3,
+        "violationCount": 2,
+        "warningCount": 0
+      }
+    }
+  },
+  {
+    "name": "remote_style",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "import data from '../data_file/final/dashboard-data.json'; export default function Page(){return <div>真实行情</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"react\":\"19\"}}",
+      "styles/x.css": "@import \"https://evil.example/x.css\";"
+    },
+    "expected": {
+      "status": "failed",
+      "summary": "生成产物未满足 AlphaDeck 硬约束。",
+      "details": "styles/x.css 存在CSS 远程资源：@import \"https://evil.example/x.css\nstyles/x.css 存在外部 URL：https://evil.example/x.css",
+      "metadata": {
+        "checkedFiles": 3,
+        "violationCount": 2,
+        "warningCount": 0
+      }
+    }
+  },
+  {
+    "name": "credential",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "import data from '../data_file/final/dashboard-data.json'; export default function Page(){return <div>真实行情</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"react\":\"19\"}}",
+      "lib/key.ts": "export const key=\"sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\""
+    },
+    "expected": {
+      "status": "failed",
+      "summary": "生成产物未满足 AlphaDeck 硬约束。",
+      "details": "lib/key.ts 存在明文 API key：sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "metadata": {
+        "checkedFiles": 3,
+        "violationCount": 1,
+        "warningCount": 0
+      }
+    }
+  },
+  {
+    "name": "process_escape",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "import data from '../data_file/final/dashboard-data.json'; export default function Page(){return <div>真实行情</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"react\":\"19\"}}",
+      "lib/escape.ts": "export const env=process.env"
+    },
+    "expected": {
+      "status": "failed",
+      "summary": "生成产物未满足 AlphaDeck 硬约束。",
+      "details": "lib/escape.ts 存在宿主 process 特权访问：process.env",
+      "metadata": {
+        "checkedFiles": 3,
+        "violationCount": 1,
+        "warningCount": 0
+      }
+    }
+  },
+  {
+    "name": "dynamic_load",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "import data from '../data_file/final/dashboard-data.json'; export default function Page(){return <div>真实行情</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"react\":\"19\"}}",
+      "lib/load.ts": "const loader=import(\"x\"); const other=require(\"y\");"
+    },
+    "expected": {
+      "status": "failed",
+      "summary": "生成产物未满足 AlphaDeck 硬约束。",
+      "details": "lib/load.ts 存在CommonJS 动态加载：require(\nlib/load.ts 存在动态模块加载：import(",
+      "metadata": {
+        "checkedFiles": 3,
+        "violationCount": 2,
+        "warningCount": 0
+      }
+    }
+  },
+  {
+    "name": "mock_data",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "import data from '../data_file/final/dashboard-data.json'; export default function Page(){return <div>真实行情</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"react\":\"19\"}}",
+      "app/demo.tsx": "const SAMPLE_DATA=[]; // 模拟数据"
+    },
+    "expected": {
+      "status": "failed",
+      "summary": "生成产物未满足 AlphaDeck 硬约束。",
+      "details": "app/demo.tsx 存在mock/sample 静态数据变量：SAMPLE_DATA\napp/demo.tsx 存在示例或模拟数据标记：模拟数据",
+      "metadata": {
+        "checkedFiles": 3,
+        "violationCount": 2,
+        "warningCount": 0
+      }
+    }
+  },
+  {
+    "name": "network",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "import data from '../data_file/final/dashboard-data.json'; export default function Page(){return <div>真实行情</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"react\":\"19\"}}",
+      "components/api.ts": "fetch(\"https://outside.example/api\")"
+    },
+    "expected": {
+      "status": "failed",
+      "summary": "生成产物未满足 AlphaDeck 硬约束。",
+      "details": "components/api.ts 存在浏览器直连外部接口：fetch(\"https://outside.example/api\"\ncomponents/api.ts 存在外部 URL：https://outside.example/api\ncomponents/api.ts 存在非平台 market proxy 的网络请求 API。",
+      "metadata": {
+        "checkedFiles": 3,
+        "violationCount": 3,
+        "warningCount": 0
+      }
+    }
+  },
+  {
+    "name": "allowed_proxy",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "import data from '../data_file/final/dashboard-data.json'; export default function Page(){return <div>真实行情</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"react\":\"19\"}}",
+      "app/api/market/[...path]/route.ts": "export const GET=()=>fetch(\"http://127.0.0.1:8000/api/v1/quotes/realtime/600519\");"
+    },
+    "expected": {
+      "status": "passed",
+      "summary": "生成产物满足本地化、真实数据绑定和安全策略。",
+      "metadata": {
+        "checkedFiles": 3
+      }
+    }
+  },
+  {
+    "name": "wrong_proxy",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "import data from '../data_file/final/dashboard-data.json'; export default function Page(){return <div>真实行情</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"react\":\"19\"}}",
+      "app/api/market/route.ts": "export const GET=()=>fetch(\"http://127.0.0.1:8000/api/v1/quotes/realtime/600519\");"
+    },
+    "expected": {
+      "status": "failed",
+      "summary": "生成产物未满足 AlphaDeck 硬约束。",
+      "details": "app/api/market/route.ts 存在非平台 market proxy 的网络请求 API。",
+      "metadata": {
+        "checkedFiles": 3,
+        "violationCount": 1,
+        "warningCount": 0
+      }
+    }
+  },
+  {
+    "name": "external_proxy",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "import data from '../data_file/final/dashboard-data.json'; export default function Page(){return <div>真实行情</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"react\":\"19\"}}",
+      "app/api/market/[...path]/route.ts": "export const GET=()=>fetch(\"https://evil.example/api/v1/data\");"
+    },
+    "expected": {
+      "status": "failed",
+      "summary": "生成产物未满足 AlphaDeck 硬约束。",
+      "details": "app/api/market/[...path]/route.ts 存在浏览器直连外部接口：fetch(\"https://evil.example/api/v1/data\"\napp/api/market/[...path]/route.ts 存在外部 URL：https://evil.example/api/v1/data",
+      "metadata": {
+        "checkedFiles": 3,
+        "violationCount": 2,
+        "warningCount": 0
+      }
+    }
+  },
+  {
+    "name": "missing_binding",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "export default function Page(){return <div>Dashboard</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"react\":\"19\"}}"
+    },
+    "expected": {
+      "status": "failed",
+      "summary": "生成产物未满足 AlphaDeck 硬约束。",
+      "details": "src/App.vue 没有使用标准 final 数据文件或 /api/market 同源接口。",
+      "metadata": {
+        "checkedFiles": 2,
+        "violationCount": 1,
+        "warningCount": 0
+      }
+    }
+  },
+  {
+    "name": "visualization_dependency",
+    "files": {
+      ".data-agent/finance-run-plan.json": "{}",
+      "src/App.vue": "import data from '../data_file/final/dashboard-data.json'; export default function Page(){return <div>真实行情</div>}",
+      "data_file/final/dashboard-data.json": "{}",
+      "evidence/sources.json": "{}",
+      "evidence/data_quality.json": "{}",
+      "package.json": "{\"dependencies\":{\"next\":\"16\",\"d3\":\"7\",\"recharts\":\"3\"},\"devDependencies\":{\"chart.js\":\"4\"}}"
+    },
+    "expected": {
+      "status": "warning",
+      "summary": "生成产物满足硬约束，但存在可优化依赖。",
+      "details": "package.json 引入 d3，生成看板优先使用平台内置 SVG/CSS 图表，避免额外依赖拖慢 build。\npackage.json 引入 recharts，生成看板优先使用平台内置 SVG/CSS 图表，避免额外依赖拖慢 build。\npackage.json 引入 chart.js，生成看板优先使用平台内置 SVG/CSS 图表，避免额外依赖拖慢 build。",
+      "metadata": {
+        "checkedFiles": 2,
+        "warningCount": 3
+      }
+    }
+  }
+]
