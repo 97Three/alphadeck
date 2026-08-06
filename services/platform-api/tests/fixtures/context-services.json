@@ -1,0 +1,1976 @@
+{
+  "preparations": [
+    {
+      "variant": "valid",
+      "config": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "https://knowledge.example",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": "synthetic-fixture-only",
+        "oauth": null,
+        "expectedVersion": "0.1"
+      },
+      "pack": {
+        "contextPackId": "pack",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "createdAt": "2026-11-03T00:00:00Z",
+        "exposureReceiptId": "exposure",
+        "policyEpoch": "epoch",
+        "purpose": "quant-research",
+        "passages": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "rank": 1,
+            "recordId": "record",
+            "revisionId": "revision",
+            "score": 0.9,
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "text": "Governed evidence",
+            "title": "Research"
+          }
+        ],
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "obligations": [
+          "cite",
+          "no-train"
+        ],
+        "quality": {
+          "decision": "suitable",
+          "reasons": [],
+          "citationCoverage": 1,
+          "lexicalCoverage": 0.8
+        },
+        "warnings": []
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project-a",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-a",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project-a"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-a",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ]
+        },
+        "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+      },
+      "calls": [
+        {
+          "input": {
+            "task": "Analyse 600519",
+            "purpose": "quant-research",
+            "spaces": [
+              "https://knowledge.example/projects/project-a",
+              "https://knowledge.example/spaces/shared"
+            ],
+            "maxCharacters": 8000,
+            "supportedObligations": [
+              "cite",
+              "no-train"
+            ]
+          },
+          "request": "request-1"
+        }
+      ],
+      "expected": {
+        "result": {
+          "status": "prepared",
+          "capsule": {
+            "content": "{\"schemaVersion\":1,\"provider\":\"akep-http-v0.1\",\"contextPackId\":\"pack\",\"contextDigest\":\"sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"policyEpoch\":\"epoch\",\"purpose\":\"quant-research\",\"quality\":{\"decision\":\"suitable\",\"reasons\":[],\"citationCoverage\":1,\"lexicalCoverage\":0.8},\"warnings\":[],\"passages\":[{\"citationId\":\"citation\",\"title\":\"Research\",\"text\":\"Governed evidence\",\"rank\":1,\"score\":0.9,\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"citations\":[{\"citationId\":\"citation\",\"chunkId\":\"chunk\",\"payloadDigest\":\"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"locator\":{\"page\":1},\"quote\":\"evidence\",\"recordId\":\"record\",\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"obligations\":[\"cite\",\"no-train\"]}",
+            "contextPackId": "pack",
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "exposureReceiptId": "exposure",
+            "policyEpoch": "epoch",
+            "purpose": "quant-research",
+            "citations": [
+              {
+                "citationId": "citation",
+                "chunkId": "chunk",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "quote": "evidence",
+                "recordId": "record",
+                "revisionId": "revision",
+                "spaceId": "https://knowledge.example/spaces/shared"
+              }
+            ],
+            "obligations": [
+              "cite",
+              "no-train"
+            ],
+            "qualityDecision": "suitable",
+            "warningCodes": [],
+            "integrationScopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+            "consumerId": "alphadeck",
+            "requestedSpaceIds": [
+              "https://knowledge.example/projects/project-a",
+              "https://knowledge.example/spaces/shared"
+            ],
+            "projectSpaceId": "https://knowledge.example/projects/project-a"
+          },
+          "passageCount": 1,
+          "citationCount": 1
+        }
+      }
+    },
+    {
+      "variant": "disabled",
+      "config": {
+        "enabled": false,
+        "required": false,
+        "apiUrl": "https://knowledge.example",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": "synthetic-fixture-only",
+        "oauth": null,
+        "expectedVersion": "0.1"
+      },
+      "pack": {
+        "contextPackId": "pack",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "createdAt": "2026-11-03T00:00:00Z",
+        "exposureReceiptId": "exposure",
+        "policyEpoch": "epoch",
+        "purpose": "quant-research",
+        "passages": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "rank": 1,
+            "recordId": "record",
+            "revisionId": "revision",
+            "score": 0.9,
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "text": "Governed evidence",
+            "title": "Research"
+          }
+        ],
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "obligations": [
+          "cite",
+          "no-train"
+        ],
+        "quality": {
+          "decision": "suitable",
+          "reasons": [],
+          "citationCoverage": 1,
+          "lexicalCoverage": 0.8
+        },
+        "warnings": []
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project-a",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-a",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project-a"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-a",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ]
+        },
+        "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+      },
+      "calls": [],
+      "expected": {
+        "result": {
+          "status": "disabled",
+          "capsule": null,
+          "passageCount": 0,
+          "citationCount": 0
+        }
+      }
+    },
+    {
+      "variant": "empty",
+      "config": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "https://knowledge.example",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": "synthetic-fixture-only",
+        "oauth": null,
+        "expectedVersion": "0.1"
+      },
+      "pack": {
+        "contextPackId": "pack",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "createdAt": "2026-11-03T00:00:00Z",
+        "exposureReceiptId": "exposure",
+        "policyEpoch": "epoch",
+        "purpose": "quant-research",
+        "passages": [],
+        "citations": [],
+        "obligations": [
+          "cite",
+          "no-train"
+        ],
+        "quality": {
+          "decision": "suitable",
+          "reasons": [],
+          "citationCoverage": 1,
+          "lexicalCoverage": 0.8
+        },
+        "warnings": []
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project-a",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-a",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project-a"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-a",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ]
+        },
+        "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+      },
+      "calls": [
+        {
+          "input": {
+            "task": "Analyse 600519",
+            "purpose": "quant-research",
+            "spaces": [
+              "https://knowledge.example/projects/project-a",
+              "https://knowledge.example/spaces/shared"
+            ],
+            "maxCharacters": 8000,
+            "supportedObligations": [
+              "cite",
+              "no-train"
+            ]
+          },
+          "request": "request-1"
+        }
+      ],
+      "expected": {
+        "result": {
+          "status": "empty",
+          "capsule": null,
+          "passageCount": 0,
+          "citationCount": 0
+        }
+      }
+    },
+    {
+      "variant": "wrong-purpose",
+      "config": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "https://knowledge.example",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": "synthetic-fixture-only",
+        "oauth": null,
+        "expectedVersion": "0.1"
+      },
+      "pack": {
+        "contextPackId": "pack",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "createdAt": "2026-11-03T00:00:00Z",
+        "exposureReceiptId": "exposure",
+        "policyEpoch": "epoch",
+        "purpose": "other",
+        "passages": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "rank": 1,
+            "recordId": "record",
+            "revisionId": "revision",
+            "score": 0.9,
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "text": "Governed evidence",
+            "title": "Research"
+          }
+        ],
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "obligations": [
+          "cite",
+          "no-train"
+        ],
+        "quality": {
+          "decision": "suitable",
+          "reasons": [],
+          "citationCoverage": 1,
+          "lexicalCoverage": 0.8
+        },
+        "warnings": []
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project-a",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-a",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project-a"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-a",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ]
+        },
+        "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+      },
+      "calls": [
+        {
+          "input": {
+            "task": "Analyse 600519",
+            "purpose": "quant-research",
+            "spaces": [
+              "https://knowledge.example/projects/project-a",
+              "https://knowledge.example/spaces/shared"
+            ],
+            "maxCharacters": 8000,
+            "supportedObligations": [
+              "cite",
+              "no-train"
+            ]
+          },
+          "request": "request-1"
+        }
+      ],
+      "expected": {
+        "result": {
+          "status": "unavailable",
+          "capsule": null,
+          "passageCount": 0,
+          "citationCount": 0,
+          "failureCode": "KNOWLEDGE_PURPOSE_MISMATCH"
+        }
+      }
+    },
+    {
+      "variant": "wrong-space",
+      "config": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "https://knowledge.example",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": "synthetic-fixture-only",
+        "oauth": null,
+        "expectedVersion": "0.1"
+      },
+      "pack": {
+        "contextPackId": "pack",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "createdAt": "2026-11-03T00:00:00Z",
+        "exposureReceiptId": "exposure",
+        "policyEpoch": "epoch",
+        "purpose": "quant-research",
+        "passages": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "rank": 1,
+            "recordId": "record",
+            "revisionId": "revision",
+            "score": 0.9,
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "text": "Governed evidence",
+            "title": "Research"
+          }
+        ],
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://other.example/space"
+          }
+        ],
+        "obligations": [
+          "cite",
+          "no-train"
+        ],
+        "quality": {
+          "decision": "suitable",
+          "reasons": [],
+          "citationCoverage": 1,
+          "lexicalCoverage": 0.8
+        },
+        "warnings": []
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project-a",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-a",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project-a"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-a",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ]
+        },
+        "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+      },
+      "calls": [
+        {
+          "input": {
+            "task": "Analyse 600519",
+            "purpose": "quant-research",
+            "spaces": [
+              "https://knowledge.example/projects/project-a",
+              "https://knowledge.example/spaces/shared"
+            ],
+            "maxCharacters": 8000,
+            "supportedObligations": [
+              "cite",
+              "no-train"
+            ]
+          },
+          "request": "request-1"
+        }
+      ],
+      "expected": {
+        "result": {
+          "status": "unavailable",
+          "capsule": null,
+          "passageCount": 0,
+          "citationCount": 0,
+          "failureCode": "KNOWLEDGE_SCOPE_MISMATCH"
+        }
+      }
+    },
+    {
+      "variant": "incompatible",
+      "config": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "https://knowledge.example",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": "synthetic-fixture-only",
+        "oauth": null,
+        "expectedVersion": "0.1"
+      },
+      "pack": {
+        "contextPackId": "pack",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "createdAt": "2026-11-03T00:00:00Z",
+        "exposureReceiptId": "exposure",
+        "policyEpoch": "epoch",
+        "purpose": "quant-research",
+        "passages": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "rank": 1,
+            "recordId": "record",
+            "revisionId": "revision",
+            "score": 0.9,
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "text": "Governed evidence",
+            "title": "Research"
+          }
+        ],
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "obligations": [
+          "cite",
+          "no-train"
+        ],
+        "quality": {
+          "decision": "suitable",
+          "reasons": [],
+          "citationCoverage": 1,
+          "lexicalCoverage": 0.8
+        },
+        "warnings": []
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project-a",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-a",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project-a"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-a",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ]
+        },
+        "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+      },
+      "calls": [],
+      "expected": {
+        "result": {
+          "status": "unavailable",
+          "capsule": null,
+          "passageCount": 0,
+          "citationCount": 0,
+          "failureCode": "KNOWLEDGE_INCOMPATIBLE"
+        }
+      }
+    },
+    {
+      "variant": "required-failure",
+      "config": {
+        "enabled": true,
+        "required": true,
+        "apiUrl": "https://knowledge.example",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": "synthetic-fixture-only",
+        "oauth": null,
+        "expectedVersion": "0.1"
+      },
+      "pack": {
+        "contextPackId": "pack",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "createdAt": "2026-11-03T00:00:00Z",
+        "exposureReceiptId": "exposure",
+        "policyEpoch": "epoch",
+        "purpose": "quant-research",
+        "passages": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "rank": 1,
+            "recordId": "record",
+            "revisionId": "revision",
+            "score": 0.9,
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "text": "Governed evidence",
+            "title": "Research"
+          }
+        ],
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "obligations": [
+          "cite",
+          "no-train"
+        ],
+        "quality": {
+          "decision": "suitable",
+          "reasons": [],
+          "citationCoverage": 1,
+          "lexicalCoverage": 0.8
+        },
+        "warnings": []
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project-a",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-a",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project-a"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-a",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ]
+        },
+        "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+      },
+      "calls": [],
+      "expected": {
+        "error": {
+          "code": "KNOWLEDGE_REQUIRED_UNAVAILABLE",
+          "status": 503,
+          "message": "Required governed knowledge is unavailable."
+        }
+      }
+    }
+  ],
+  "usages": [
+    {
+      "variant": "valid",
+      "config": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "https://knowledge.example",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": "synthetic-fixture-only",
+        "oauth": null,
+        "expectedVersion": "0.1"
+      },
+      "capsule": {
+        "content": "{\"schemaVersion\":1,\"provider\":\"akep-http-v0.1\",\"contextPackId\":\"pack\",\"contextDigest\":\"sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"policyEpoch\":\"epoch\",\"purpose\":\"quant-research\",\"quality\":{\"decision\":\"suitable\",\"reasons\":[],\"citationCoverage\":1,\"lexicalCoverage\":0.8},\"warnings\":[],\"passages\":[{\"citationId\":\"citation\",\"title\":\"Research\",\"text\":\"Governed evidence\",\"rank\":1,\"score\":0.9,\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"citations\":[{\"citationId\":\"citation\",\"chunkId\":\"chunk\",\"payloadDigest\":\"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"locator\":{\"page\":1},\"quote\":\"evidence\",\"recordId\":\"record\",\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"obligations\":[\"cite\",\"no-train\"]}",
+        "contextPackId": "pack",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exposureReceiptId": "exposure",
+        "policyEpoch": "epoch",
+        "purpose": "quant-research",
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "obligations": [
+          "cite",
+          "no-train"
+        ],
+        "qualityDecision": "suitable",
+        "warningCodes": [],
+        "integrationScopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+        "consumerId": "alphadeck",
+        "requestedSpaceIds": [
+          "https://knowledge.example/projects/project-a",
+          "https://knowledge.example/spaces/shared"
+        ],
+        "projectSpaceId": "https://knowledge.example/projects/project-a"
+      },
+      "calls": [
+        {
+          "input": {
+            "clientUsageId": "alphadeck:request-1:b28b7e995d388423",
+            "exposureReceiptId": "exposure",
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "citations": [
+              {
+                "citationId": "citation",
+                "revisionId": "revision",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "influence": "seen"
+              }
+            ],
+            "taskCategory": "quant-research",
+            "purpose": "quant-research",
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "occurredAt": "2026-11-03T00:00:00.000Z"
+          },
+          "key": "alphadeck-knowledge-usage-request-1-b28b7e995d388423",
+          "request": "request-1"
+        }
+      ],
+      "expected": {
+        "status": "recorded",
+        "usageReceipts": [
+          {
+            "usageId": "usage",
+            "exposureReceiptId": "exposure",
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "policyEpoch": "epoch",
+            "createdAt": "2026-11-03T00:00:00Z",
+            "feedbackUntil": "2030-01-01T00:00:00Z"
+          }
+        ]
+      }
+    },
+    {
+      "variant": "disabled",
+      "config": {
+        "enabled": false,
+        "required": false,
+        "apiUrl": "https://knowledge.example",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": "synthetic-fixture-only",
+        "oauth": null,
+        "expectedVersion": "0.1"
+      },
+      "capsule": {
+        "content": "{\"schemaVersion\":1,\"provider\":\"akep-http-v0.1\",\"contextPackId\":\"pack\",\"contextDigest\":\"sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"policyEpoch\":\"epoch\",\"purpose\":\"quant-research\",\"quality\":{\"decision\":\"suitable\",\"reasons\":[],\"citationCoverage\":1,\"lexicalCoverage\":0.8},\"warnings\":[],\"passages\":[{\"citationId\":\"citation\",\"title\":\"Research\",\"text\":\"Governed evidence\",\"rank\":1,\"score\":0.9,\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"citations\":[{\"citationId\":\"citation\",\"chunkId\":\"chunk\",\"payloadDigest\":\"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"locator\":{\"page\":1},\"quote\":\"evidence\",\"recordId\":\"record\",\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"obligations\":[\"cite\",\"no-train\"]}",
+        "contextPackId": "pack",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exposureReceiptId": "exposure",
+        "policyEpoch": "epoch",
+        "purpose": "quant-research",
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "obligations": [
+          "cite",
+          "no-train"
+        ],
+        "qualityDecision": "suitable",
+        "warningCodes": [],
+        "integrationScopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+        "consumerId": "alphadeck",
+        "requestedSpaceIds": [
+          "https://knowledge.example/projects/project-a",
+          "https://knowledge.example/spaces/shared"
+        ],
+        "projectSpaceId": "https://knowledge.example/projects/project-a"
+      },
+      "calls": [],
+      "expected": {
+        "status": "disabled",
+        "usageReceipts": []
+      }
+    },
+    {
+      "variant": "missing-capsule",
+      "config": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "https://knowledge.example",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": "synthetic-fixture-only",
+        "oauth": null,
+        "expectedVersion": "0.1"
+      },
+      "capsule": null,
+      "calls": [],
+      "expected": {
+        "status": "not_applicable",
+        "usageReceipts": []
+      }
+    },
+    {
+      "variant": "mismatch",
+      "config": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "https://knowledge.example",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": "synthetic-fixture-only",
+        "oauth": null,
+        "expectedVersion": "0.1"
+      },
+      "capsule": {
+        "content": "{\"schemaVersion\":1,\"provider\":\"akep-http-v0.1\",\"contextPackId\":\"pack\",\"contextDigest\":\"sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"policyEpoch\":\"epoch\",\"purpose\":\"quant-research\",\"quality\":{\"decision\":\"suitable\",\"reasons\":[],\"citationCoverage\":1,\"lexicalCoverage\":0.8},\"warnings\":[],\"passages\":[{\"citationId\":\"citation\",\"title\":\"Research\",\"text\":\"Governed evidence\",\"rank\":1,\"score\":0.9,\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"citations\":[{\"citationId\":\"citation\",\"chunkId\":\"chunk\",\"payloadDigest\":\"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"locator\":{\"page\":1},\"quote\":\"evidence\",\"recordId\":\"record\",\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"obligations\":[\"cite\",\"no-train\"]}",
+        "contextPackId": "pack",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "exposureReceiptId": "exposure",
+        "policyEpoch": "epoch",
+        "purpose": "quant-research",
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "obligations": [
+          "cite",
+          "no-train"
+        ],
+        "qualityDecision": "suitable",
+        "warningCodes": [],
+        "integrationScopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+        "consumerId": "alphadeck",
+        "requestedSpaceIds": [
+          "https://knowledge.example/projects/project-a",
+          "https://knowledge.example/spaces/shared"
+        ],
+        "projectSpaceId": "https://knowledge.example/projects/project-a"
+      },
+      "calls": [
+        {
+          "input": {
+            "clientUsageId": "alphadeck:request-1:b28b7e995d388423",
+            "exposureReceiptId": "exposure",
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "citations": [
+              {
+                "citationId": "citation",
+                "revisionId": "revision",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "influence": "seen"
+              }
+            ],
+            "taskCategory": "quant-research",
+            "purpose": "quant-research",
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "occurredAt": "2026-11-03T00:00:00.000Z"
+          },
+          "key": "alphadeck-knowledge-usage-request-1-b28b7e995d388423",
+          "request": "request-1"
+        }
+      ],
+      "expected": {
+        "status": "unavailable",
+        "usageReceipts": [],
+        "failureCode": "KNOWLEDGE_USAGE_MISMATCH"
+      }
+    }
+  ],
+  "frames": [
+    {
+      "kind": "expose",
+      "input": {
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "schemaVersion": 1,
+          "consumerId": "alphadeck",
+          "projectId": "project-a",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "memory": {
+            "tenantId": "tenant-a",
+            "context": {
+              "product": "alphadeck",
+              "project_id": "project-a"
+            }
+          },
+          "knowledge": {
+            "sharedSpaceIds": [
+              "https://knowledge.example/spaces/shared"
+            ],
+            "projectSpaceId": "https://knowledge.example/projects/project-a",
+            "requestedSpaceIds": [
+              "https://knowledge.example/projects/project-a",
+              "https://knowledge.example/spaces/shared"
+            ]
+          },
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+        },
+        "memory": null,
+        "knowledge": null
+      },
+      "expected": {
+        "result": false
+      },
+      "document": null
+    },
+    {
+      "kind": "expose",
+      "input": {
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "schemaVersion": 1,
+          "consumerId": "alphadeck",
+          "projectId": "project-a",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "memory": {
+            "tenantId": "tenant-a",
+            "context": {
+              "product": "alphadeck",
+              "project_id": "project-a"
+            }
+          },
+          "knowledge": {
+            "sharedSpaceIds": [
+              "https://knowledge.example/spaces/shared"
+            ],
+            "projectSpaceId": "https://knowledge.example/projects/project-a",
+            "requestedSpaceIds": [
+              "https://knowledge.example/projects/project-a",
+              "https://knowledge.example/spaces/shared"
+            ]
+          },
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+        },
+        "memory": {
+          "content": "{\"memories\":[]}",
+          "usageId": "memory-usage",
+          "traceId": "trace",
+          "revisionIds": [
+            "rev-b",
+            "rev-a",
+            "rev-a"
+          ],
+          "sourceProjectionSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "contentSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "knowledge": {
+          "content": "{\"schemaVersion\":1,\"provider\":\"akep-http-v0.1\",\"contextPackId\":\"pack\",\"contextDigest\":\"sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"policyEpoch\":\"epoch\",\"purpose\":\"quant-research\",\"quality\":{\"decision\":\"suitable\",\"reasons\":[],\"citationCoverage\":1,\"lexicalCoverage\":0.8},\"warnings\":[],\"passages\":[{\"citationId\":\"citation\",\"title\":\"Research\",\"text\":\"Governed evidence\",\"rank\":1,\"score\":0.9,\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"citations\":[{\"citationId\":\"citation\",\"chunkId\":\"chunk\",\"payloadDigest\":\"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"locator\":{\"page\":1},\"quote\":\"evidence\",\"recordId\":\"record\",\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"obligations\":[\"cite\",\"no-train\"]}",
+          "contextPackId": "pack",
+          "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "exposureReceiptId": "exposure",
+          "policyEpoch": "epoch",
+          "purpose": "quant-research",
+          "citations": [
+            {
+              "citationId": "citation",
+              "chunkId": "chunk",
+              "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "locator": {
+                "page": 1
+              },
+              "quote": "evidence",
+              "recordId": "record",
+              "revisionId": "revision",
+              "spaceId": "https://knowledge.example/spaces/shared"
+            }
+          ],
+          "obligations": [
+            "cite",
+            "no-train"
+          ],
+          "qualityDecision": "suitable",
+          "warningCodes": [],
+          "integrationScopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+          "consumerId": "alphadeck",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-a"
+        }
+      },
+      "expected": {
+        "result": true
+      },
+      "document": {
+        "schemaVersion": 2,
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "consumerId": "alphadeck",
+          "memoryTenantId": "tenant-a",
+          "projectId": "project-a",
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "requestedKnowledgeSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectKnowledgeSpaceId": "https://knowledge.example/projects/project-a"
+        },
+        "memory": {
+          "provider": "evolvable-memory-http-v1",
+          "usageId": "memory-usage",
+          "traceId": "trace",
+          "revisionIds": [
+            "rev-a",
+            "rev-b"
+          ],
+          "sourceProjectionSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "deliveredContextSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "knowledge": {
+          "provider": "akep-http-v0.1",
+          "contextPackId": "pack",
+          "exposureReceiptId": "exposure",
+          "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "policyEpoch": "epoch",
+          "citationIds": [
+            "citation"
+          ],
+          "revisionIds": [
+            "revision"
+          ],
+          "spaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "usage": null
+        },
+        "acceptedMission": null,
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "updatedAt": "2026-11-03T00:00:00.000Z"
+      }
+    },
+    {
+      "kind": "expose",
+      "input": {
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "schemaVersion": 1,
+          "consumerId": "alphadeck",
+          "projectId": "project-a",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "memory": {
+            "tenantId": "tenant-a",
+            "context": {
+              "product": "alphadeck",
+              "project_id": "project-a"
+            }
+          },
+          "knowledge": {
+            "sharedSpaceIds": [
+              "https://knowledge.example/spaces/shared"
+            ],
+            "projectSpaceId": "https://knowledge.example/projects/project-a",
+            "requestedSpaceIds": [
+              "https://knowledge.example/projects/project-a",
+              "https://knowledge.example/spaces/shared"
+            ]
+          },
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+        },
+        "memory": {
+          "content": "{\"memories\":[]}",
+          "usageId": "memory-usage",
+          "traceId": "trace",
+          "revisionIds": [
+            "rev-b",
+            "rev-a",
+            "rev-a"
+          ],
+          "sourceProjectionSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "contentSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "knowledge": {
+          "content": "{\"schemaVersion\":1,\"provider\":\"akep-http-v0.1\",\"contextPackId\":\"pack\",\"contextDigest\":\"sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"policyEpoch\":\"epoch\",\"purpose\":\"quant-research\",\"quality\":{\"decision\":\"suitable\",\"reasons\":[],\"citationCoverage\":1,\"lexicalCoverage\":0.8},\"warnings\":[],\"passages\":[{\"citationId\":\"citation\",\"title\":\"Research\",\"text\":\"Governed evidence\",\"rank\":1,\"score\":0.9,\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"citations\":[{\"citationId\":\"citation\",\"chunkId\":\"chunk\",\"payloadDigest\":\"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"locator\":{\"page\":1},\"quote\":\"evidence\",\"recordId\":\"record\",\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"obligations\":[\"cite\",\"no-train\"]}",
+          "contextPackId": "pack",
+          "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "exposureReceiptId": "exposure",
+          "policyEpoch": "epoch",
+          "purpose": "quant-research",
+          "citations": [
+            {
+              "citationId": "citation",
+              "chunkId": "chunk",
+              "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "locator": {
+                "page": 1
+              },
+              "quote": "evidence",
+              "recordId": "record",
+              "revisionId": "revision",
+              "spaceId": "https://knowledge.example/spaces/shared"
+            }
+          ],
+          "obligations": [
+            "cite",
+            "no-train"
+          ],
+          "qualityDecision": "suitable",
+          "warningCodes": [],
+          "integrationScopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+          "consumerId": "alphadeck",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-a"
+        }
+      },
+      "expected": {
+        "result": true
+      },
+      "document": {
+        "schemaVersion": 2,
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "consumerId": "alphadeck",
+          "memoryTenantId": "tenant-a",
+          "projectId": "project-a",
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "requestedKnowledgeSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectKnowledgeSpaceId": "https://knowledge.example/projects/project-a"
+        },
+        "memory": {
+          "provider": "evolvable-memory-http-v1",
+          "usageId": "memory-usage",
+          "traceId": "trace",
+          "revisionIds": [
+            "rev-a",
+            "rev-b"
+          ],
+          "sourceProjectionSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "deliveredContextSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "knowledge": {
+          "provider": "akep-http-v0.1",
+          "contextPackId": "pack",
+          "exposureReceiptId": "exposure",
+          "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "policyEpoch": "epoch",
+          "citationIds": [
+            "citation"
+          ],
+          "revisionIds": [
+            "revision"
+          ],
+          "spaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "usage": null
+        },
+        "acceptedMission": null,
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "updatedAt": "2026-11-03T00:00:00.000Z"
+      }
+    },
+    {
+      "kind": "accept",
+      "input": {
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "schemaVersion": 1,
+          "consumerId": "alphadeck",
+          "projectId": "project-a",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "memory": {
+            "tenantId": "tenant-a",
+            "context": {
+              "product": "alphadeck",
+              "project_id": "project-a"
+            }
+          },
+          "knowledge": {
+            "sharedSpaceIds": [
+              "https://knowledge.example/spaces/shared"
+            ],
+            "projectSpaceId": "https://knowledge.example/projects/project-a",
+            "requestedSpaceIds": [
+              "https://knowledge.example/projects/project-a",
+              "https://knowledge.example/spaces/shared"
+            ]
+          },
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+        },
+        "knowledgeUsage": {
+          "status": "recorded",
+          "usageReceipts": [
+            {
+              "usageId": "usage",
+              "exposureReceiptId": "exposure",
+              "spaceId": "https://knowledge.example/spaces/shared",
+              "policyEpoch": "epoch",
+              "createdAt": "2026-11-03T00:00:00Z",
+              "feedbackUntil": "2030-01-01T00:00:00Z"
+            }
+          ]
+        },
+        "mission": {
+          "missionId": "mission-1",
+          "acceptedReceiptId": "receipt-1",
+          "acceptedReceiptSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      "expected": {
+        "result": true
+      },
+      "document": {
+        "schemaVersion": 2,
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "consumerId": "alphadeck",
+          "memoryTenantId": "tenant-a",
+          "projectId": "project-a",
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "requestedKnowledgeSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectKnowledgeSpaceId": "https://knowledge.example/projects/project-a"
+        },
+        "memory": {
+          "provider": "evolvable-memory-http-v1",
+          "usageId": "memory-usage",
+          "traceId": "trace",
+          "revisionIds": [
+            "rev-a",
+            "rev-b"
+          ],
+          "sourceProjectionSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "deliveredContextSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "knowledge": {
+          "provider": "akep-http-v0.1",
+          "contextPackId": "pack",
+          "exposureReceiptId": "exposure",
+          "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "policyEpoch": "epoch",
+          "citationIds": [
+            "citation"
+          ],
+          "revisionIds": [
+            "revision"
+          ],
+          "spaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "usage": {
+            "status": "recorded",
+            "usageReceipts": [
+              {
+                "usageId": "usage",
+                "exposureReceiptId": "exposure",
+                "spaceId": "https://knowledge.example/spaces/shared",
+                "policyEpoch": "epoch",
+                "createdAt": "2026-11-03T00:00:00Z",
+                "feedbackUntil": "2030-01-01T00:00:00Z"
+              }
+            ]
+          }
+        },
+        "acceptedMission": {
+          "missionId": "mission-1",
+          "acceptedReceiptId": "receipt-1",
+          "acceptedReceiptSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "updatedAt": "2026-11-03T00:00:00.000Z"
+      }
+    },
+    {
+      "kind": "expose",
+      "input": {
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "schemaVersion": 1,
+          "consumerId": "alphadeck",
+          "projectId": "project-a",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "memory": {
+            "tenantId": "tenant-a",
+            "context": {
+              "product": "alphadeck",
+              "project_id": "project-a"
+            }
+          },
+          "knowledge": {
+            "sharedSpaceIds": [
+              "https://knowledge.example/spaces/shared"
+            ],
+            "projectSpaceId": "https://knowledge.example/projects/project-a",
+            "requestedSpaceIds": [
+              "https://knowledge.example/projects/project-a",
+              "https://knowledge.example/spaces/shared"
+            ]
+          },
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+        },
+        "memory": {
+          "content": "{\"memories\":[]}",
+          "usageId": "memory-usage",
+          "traceId": "trace",
+          "revisionIds": [
+            "rev-b",
+            "rev-a",
+            "rev-a"
+          ],
+          "sourceProjectionSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "contentSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "knowledge": {
+          "content": "{\"schemaVersion\":1,\"provider\":\"akep-http-v0.1\",\"contextPackId\":\"pack\",\"contextDigest\":\"sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"policyEpoch\":\"epoch\",\"purpose\":\"quant-research\",\"quality\":{\"decision\":\"suitable\",\"reasons\":[],\"citationCoverage\":1,\"lexicalCoverage\":0.8},\"warnings\":[],\"passages\":[{\"citationId\":\"citation\",\"title\":\"Research\",\"text\":\"Governed evidence\",\"rank\":1,\"score\":0.9,\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"citations\":[{\"citationId\":\"citation\",\"chunkId\":\"chunk\",\"payloadDigest\":\"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"locator\":{\"page\":1},\"quote\":\"evidence\",\"recordId\":\"record\",\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"obligations\":[\"cite\",\"no-train\"]}",
+          "contextPackId": "pack",
+          "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "exposureReceiptId": "exposure",
+          "policyEpoch": "epoch",
+          "purpose": "quant-research",
+          "citations": [
+            {
+              "citationId": "citation",
+              "chunkId": "chunk",
+              "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "locator": {
+                "page": 1
+              },
+              "quote": "evidence",
+              "recordId": "record",
+              "revisionId": "revision",
+              "spaceId": "https://knowledge.example/spaces/shared"
+            }
+          ],
+          "obligations": [
+            "cite",
+            "no-train"
+          ],
+          "qualityDecision": "suitable",
+          "warningCodes": [],
+          "integrationScopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+          "consumerId": "alphadeck",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-a"
+        }
+      },
+      "expected": {
+        "result": true
+      },
+      "document": {
+        "schemaVersion": 2,
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "consumerId": "alphadeck",
+          "memoryTenantId": "tenant-a",
+          "projectId": "project-a",
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "requestedKnowledgeSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectKnowledgeSpaceId": "https://knowledge.example/projects/project-a"
+        },
+        "memory": {
+          "provider": "evolvable-memory-http-v1",
+          "usageId": "memory-usage",
+          "traceId": "trace",
+          "revisionIds": [
+            "rev-a",
+            "rev-b"
+          ],
+          "sourceProjectionSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "deliveredContextSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "knowledge": {
+          "provider": "akep-http-v0.1",
+          "contextPackId": "pack",
+          "exposureReceiptId": "exposure",
+          "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "policyEpoch": "epoch",
+          "citationIds": [
+            "citation"
+          ],
+          "revisionIds": [
+            "revision"
+          ],
+          "spaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "usage": {
+            "status": "recorded",
+            "usageReceipts": [
+              {
+                "usageId": "usage",
+                "exposureReceiptId": "exposure",
+                "spaceId": "https://knowledge.example/spaces/shared",
+                "policyEpoch": "epoch",
+                "createdAt": "2026-11-03T00:00:00Z",
+                "feedbackUntil": "2030-01-01T00:00:00Z"
+              }
+            ]
+          }
+        },
+        "acceptedMission": {
+          "missionId": "mission-1",
+          "acceptedReceiptId": "receipt-1",
+          "acceptedReceiptSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "updatedAt": "2026-11-03T00:00:00.000Z"
+      }
+    },
+    {
+      "kind": "accept",
+      "input": {
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "schemaVersion": 1,
+          "consumerId": "alphadeck",
+          "projectId": "project-a",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "memory": {
+            "tenantId": "tenant-a",
+            "context": {
+              "product": "alphadeck",
+              "project_id": "project-a"
+            }
+          },
+          "knowledge": {
+            "sharedSpaceIds": [
+              "https://knowledge.example/spaces/shared"
+            ],
+            "projectSpaceId": "https://knowledge.example/projects/project-a",
+            "requestedSpaceIds": [
+              "https://knowledge.example/projects/project-a",
+              "https://knowledge.example/spaces/shared"
+            ]
+          },
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+        },
+        "knowledgeUsage": {
+          "status": "recorded",
+          "usageReceipts": [
+            {
+              "usageId": "usage",
+              "exposureReceiptId": "exposure",
+              "spaceId": "https://knowledge.example/spaces/shared",
+              "policyEpoch": "epoch",
+              "createdAt": "2026-11-03T00:00:00Z",
+              "feedbackUntil": "2030-01-01T00:00:00Z"
+            }
+          ]
+        },
+        "mission": {
+          "missionId": "mission-1",
+          "acceptedReceiptId": "other",
+          "acceptedReceiptSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      },
+      "expected": {
+        "error": "Context acceptance idempotency collision."
+      },
+      "document": {
+        "schemaVersion": 2,
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "consumerId": "alphadeck",
+          "memoryTenantId": "tenant-a",
+          "projectId": "project-a",
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "requestedKnowledgeSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectKnowledgeSpaceId": "https://knowledge.example/projects/project-a"
+        },
+        "memory": {
+          "provider": "evolvable-memory-http-v1",
+          "usageId": "memory-usage",
+          "traceId": "trace",
+          "revisionIds": [
+            "rev-a",
+            "rev-b"
+          ],
+          "sourceProjectionSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "deliveredContextSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "knowledge": {
+          "provider": "akep-http-v0.1",
+          "contextPackId": "pack",
+          "exposureReceiptId": "exposure",
+          "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "policyEpoch": "epoch",
+          "citationIds": [
+            "citation"
+          ],
+          "revisionIds": [
+            "revision"
+          ],
+          "spaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "usage": {
+            "status": "recorded",
+            "usageReceipts": [
+              {
+                "usageId": "usage",
+                "exposureReceiptId": "exposure",
+                "spaceId": "https://knowledge.example/spaces/shared",
+                "policyEpoch": "epoch",
+                "createdAt": "2026-11-03T00:00:00Z",
+                "feedbackUntil": "2030-01-01T00:00:00Z"
+              }
+            ]
+          }
+        },
+        "acceptedMission": {
+          "missionId": "mission-1",
+          "acceptedReceiptId": "receipt-1",
+          "acceptedReceiptSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "updatedAt": "2026-11-03T00:00:00.000Z"
+      }
+    },
+    {
+      "kind": "expose",
+      "input": {
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "schemaVersion": 1,
+          "consumerId": "alphadeck",
+          "projectId": "project-a",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "memory": {
+            "tenantId": "tenant-a",
+            "context": {
+              "product": "alphadeck",
+              "project_id": "project-a"
+            }
+          },
+          "knowledge": {
+            "sharedSpaceIds": [
+              "https://knowledge.example/spaces/shared"
+            ],
+            "projectSpaceId": "https://knowledge.example/projects/project-a",
+            "requestedSpaceIds": [
+              "https://knowledge.example/projects/project-a",
+              "https://knowledge.example/spaces/shared"
+            ]
+          },
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8"
+        },
+        "memory": {
+          "content": "{\"memories\":[]}",
+          "usageId": "other",
+          "traceId": "trace",
+          "revisionIds": [
+            "rev-b",
+            "rev-a",
+            "rev-a"
+          ],
+          "sourceProjectionSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "contentSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "knowledge": {
+          "content": "{\"schemaVersion\":1,\"provider\":\"akep-http-v0.1\",\"contextPackId\":\"pack\",\"contextDigest\":\"sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"policyEpoch\":\"epoch\",\"purpose\":\"quant-research\",\"quality\":{\"decision\":\"suitable\",\"reasons\":[],\"citationCoverage\":1,\"lexicalCoverage\":0.8},\"warnings\":[],\"passages\":[{\"citationId\":\"citation\",\"title\":\"Research\",\"text\":\"Governed evidence\",\"rank\":1,\"score\":0.9,\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"citations\":[{\"citationId\":\"citation\",\"chunkId\":\"chunk\",\"payloadDigest\":\"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"locator\":{\"page\":1},\"quote\":\"evidence\",\"recordId\":\"record\",\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"obligations\":[\"cite\",\"no-train\"]}",
+          "contextPackId": "pack",
+          "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "exposureReceiptId": "exposure",
+          "policyEpoch": "epoch",
+          "purpose": "quant-research",
+          "citations": [
+            {
+              "citationId": "citation",
+              "chunkId": "chunk",
+              "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "locator": {
+                "page": 1
+              },
+              "quote": "evidence",
+              "recordId": "record",
+              "revisionId": "revision",
+              "spaceId": "https://knowledge.example/spaces/shared"
+            }
+          ],
+          "obligations": [
+            "cite",
+            "no-train"
+          ],
+          "qualityDecision": "suitable",
+          "warningCodes": [],
+          "integrationScopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+          "consumerId": "alphadeck",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-a"
+        }
+      },
+      "expected": {
+        "error": "Context exposure idempotency collision."
+      },
+      "document": {
+        "schemaVersion": 2,
+        "projectId": "project-a",
+        "requestId": "request-1",
+        "integrationScope": {
+          "consumerId": "alphadeck",
+          "memoryTenantId": "tenant-a",
+          "projectId": "project-a",
+          "scopeSha256": "sha256:ccaa5bb35873b5217a7f783b61604b89627b6dbadff771f8d2b3bbbd7b8e1ce8",
+          "modelPort": {
+            "organizationId": "org_local",
+            "projectId": "prj_alphadeck",
+            "environmentId": "env_development"
+          },
+          "requestedKnowledgeSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/spaces/shared"
+          ],
+          "projectKnowledgeSpaceId": "https://knowledge.example/projects/project-a"
+        },
+        "memory": {
+          "provider": "evolvable-memory-http-v1",
+          "usageId": "memory-usage",
+          "traceId": "trace",
+          "revisionIds": [
+            "rev-a",
+            "rev-b"
+          ],
+          "sourceProjectionSha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "deliveredContextSha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        "knowledge": {
+          "provider": "akep-http-v0.1",
+          "contextPackId": "pack",
+          "exposureReceiptId": "exposure",
+          "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "policyEpoch": "epoch",
+          "citationIds": [
+            "citation"
+          ],
+          "revisionIds": [
+            "revision"
+          ],
+          "spaceIds": [
+            "https://knowledge.example/spaces/shared"
+          ],
+          "usage": {
+            "status": "recorded",
+            "usageReceipts": [
+              {
+                "usageId": "usage",
+                "exposureReceiptId": "exposure",
+                "spaceId": "https://knowledge.example/spaces/shared",
+                "policyEpoch": "epoch",
+                "createdAt": "2026-11-03T00:00:00Z",
+                "feedbackUntil": "2030-01-01T00:00:00Z"
+              }
+            ]
+          }
+        },
+        "acceptedMission": {
+          "missionId": "mission-1",
+          "acceptedReceiptId": "receipt-1",
+          "acceptedReceiptSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "updatedAt": "2026-11-03T00:00:00.000Z"
+      }
+    }
+  ]
+}
