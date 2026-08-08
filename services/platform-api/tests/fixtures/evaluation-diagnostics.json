@@ -1,0 +1,1415 @@
+[
+  {
+    "kind": "trace",
+    "value": {},
+    "mode": "contract",
+    "expected": {
+      "schemaVersion": 1,
+      "primaryFailureStage": null,
+      "stages": [
+        {
+          "id": "intent",
+          "label": "意图与标的",
+          "status": "passed",
+          "signals": []
+        },
+        {
+          "id": "planning",
+          "label": "规划",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "data",
+          "label": "数据与事实",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "artifact",
+          "label": "产物与构建",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "visual",
+          "label": "视觉交付",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "runtime",
+          "label": "运行可靠性",
+          "status": "passed",
+          "signals": [
+            "eventErrors:0",
+            "eventWarnings:0",
+            "unexpectedToolFailures:0"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "label": "Mission 验收",
+          "status": "passed",
+          "signals": [
+            "contract:no-live-mission"
+          ]
+        }
+      ],
+      "observedEventStages": []
+    }
+  },
+  {
+    "kind": "trace",
+    "value": {},
+    "mode": "e2e",
+    "expected": {
+      "schemaVersion": 1,
+      "primaryFailureStage": "acceptance",
+      "stages": [
+        {
+          "id": "intent",
+          "label": "意图与标的",
+          "status": "passed",
+          "signals": []
+        },
+        {
+          "id": "planning",
+          "label": "规划",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "data",
+          "label": "数据与事实",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "artifact",
+          "label": "产物与构建",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "visual",
+          "label": "视觉交付",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "runtime",
+          "label": "运行可靠性",
+          "status": "passed",
+          "signals": [
+            "eventErrors:0",
+            "eventWarnings:0",
+            "unexpectedToolFailures:0"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "label": "Mission 验收",
+          "status": "failed",
+          "signals": [
+            "mission:missing"
+          ]
+        }
+      ],
+      "observedEventStages": []
+    }
+  },
+  {
+    "kind": "trace",
+    "value": {
+      "passed": true,
+      "prefetch": {},
+      "eventAudit": {
+        "stages": [
+          "planning",
+          "data"
+        ],
+        "errorCount": 0,
+        "warningCount": 0
+      }
+    },
+    "mode": "contract",
+    "expected": {
+      "schemaVersion": 1,
+      "primaryFailureStage": null,
+      "stages": [
+        {
+          "id": "intent",
+          "label": "意图与标的",
+          "status": "passed",
+          "signals": []
+        },
+        {
+          "id": "planning",
+          "label": "规划",
+          "status": "passed",
+          "signals": [
+            "event:planning"
+          ]
+        },
+        {
+          "id": "data",
+          "label": "数据与事实",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "artifact",
+          "label": "产物与构建",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "visual",
+          "label": "视觉交付",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "runtime",
+          "label": "运行可靠性",
+          "status": "passed",
+          "signals": [
+            "eventErrors:0",
+            "eventWarnings:0",
+            "unexpectedToolFailures:0"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "label": "Mission 验收",
+          "status": "passed",
+          "signals": [
+            "contract:no-live-mission"
+          ]
+        }
+      ],
+      "observedEventStages": [
+        "planning",
+        "data"
+      ]
+    }
+  },
+  {
+    "kind": "trace",
+    "value": {
+      "passed": true,
+      "prefetch": {},
+      "eventAudit": {
+        "stages": [
+          "planning",
+          "data"
+        ],
+        "errorCount": 0,
+        "warningCount": 0
+      }
+    },
+    "mode": "e2e",
+    "expected": {
+      "schemaVersion": 1,
+      "primaryFailureStage": "acceptance",
+      "stages": [
+        {
+          "id": "intent",
+          "label": "意图与标的",
+          "status": "passed",
+          "signals": []
+        },
+        {
+          "id": "planning",
+          "label": "规划",
+          "status": "passed",
+          "signals": [
+            "event:planning"
+          ]
+        },
+        {
+          "id": "data",
+          "label": "数据与事实",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "artifact",
+          "label": "产物与构建",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "visual",
+          "label": "视觉交付",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "runtime",
+          "label": "运行可靠性",
+          "status": "passed",
+          "signals": [
+            "eventErrors:0",
+            "eventWarnings:0",
+            "unexpectedToolFailures:0"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "label": "Mission 验收",
+          "status": "failed",
+          "signals": [
+            "mission:missing"
+          ]
+        }
+      ],
+      "observedEventStages": [
+        "planning",
+        "data"
+      ]
+    }
+  },
+  {
+    "kind": "trace",
+    "value": {
+      "failures": [
+        "symbol missing",
+        "run_plan invalid"
+      ],
+      "validation": {
+        "checks": [
+          {
+            "id": "final_data_file",
+            "status": "failed"
+          },
+          {
+            "id": "vue_build",
+            "status": "warning"
+          },
+          {
+            "id": "visual_presentation",
+            "status": "passed"
+          }
+        ]
+      },
+      "artifacts": {
+        "oracle": {
+          "passed": false
+        }
+      },
+      "visualCheck": {
+        "passed": false
+      },
+      "eventAudit": {
+        "errorCount": 1,
+        "warningCount": 3
+      }
+    },
+    "mode": "contract",
+    "expected": {
+      "schemaVersion": 1,
+      "primaryFailureStage": "intent",
+      "stages": [
+        {
+          "id": "intent",
+          "label": "意图与标的",
+          "status": "failed",
+          "signals": [
+            "symbol missing"
+          ]
+        },
+        {
+          "id": "planning",
+          "label": "规划",
+          "status": "failed",
+          "signals": []
+        },
+        {
+          "id": "data",
+          "label": "数据与事实",
+          "status": "failed",
+          "signals": [
+            "final_data_file:failed",
+            "oracle:failed"
+          ]
+        },
+        {
+          "id": "artifact",
+          "label": "产物与构建",
+          "status": "warning",
+          "signals": [
+            "vue_build:warning"
+          ]
+        },
+        {
+          "id": "visual",
+          "label": "视觉交付",
+          "status": "failed",
+          "signals": [
+            "visual_presentation:passed"
+          ]
+        },
+        {
+          "id": "runtime",
+          "label": "运行可靠性",
+          "status": "failed",
+          "signals": [
+            "eventErrors:1",
+            "eventWarnings:3",
+            "unexpectedToolFailures:0"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "label": "Mission 验收",
+          "status": "passed",
+          "signals": [
+            "contract:no-live-mission"
+          ]
+        }
+      ],
+      "observedEventStages": []
+    }
+  },
+  {
+    "kind": "trace",
+    "value": {
+      "failures": [
+        "symbol missing",
+        "run_plan invalid"
+      ],
+      "validation": {
+        "checks": [
+          {
+            "id": "final_data_file",
+            "status": "failed"
+          },
+          {
+            "id": "vue_build",
+            "status": "warning"
+          },
+          {
+            "id": "visual_presentation",
+            "status": "passed"
+          }
+        ]
+      },
+      "artifacts": {
+        "oracle": {
+          "passed": false
+        }
+      },
+      "visualCheck": {
+        "passed": false
+      },
+      "eventAudit": {
+        "errorCount": 1,
+        "warningCount": 3
+      }
+    },
+    "mode": "e2e",
+    "expected": {
+      "schemaVersion": 1,
+      "primaryFailureStage": "intent",
+      "stages": [
+        {
+          "id": "intent",
+          "label": "意图与标的",
+          "status": "failed",
+          "signals": [
+            "symbol missing"
+          ]
+        },
+        {
+          "id": "planning",
+          "label": "规划",
+          "status": "failed",
+          "signals": []
+        },
+        {
+          "id": "data",
+          "label": "数据与事实",
+          "status": "failed",
+          "signals": [
+            "final_data_file:failed",
+            "oracle:failed"
+          ]
+        },
+        {
+          "id": "artifact",
+          "label": "产物与构建",
+          "status": "warning",
+          "signals": [
+            "vue_build:warning"
+          ]
+        },
+        {
+          "id": "visual",
+          "label": "视觉交付",
+          "status": "failed",
+          "signals": [
+            "visual_presentation:passed"
+          ]
+        },
+        {
+          "id": "runtime",
+          "label": "运行可靠性",
+          "status": "failed",
+          "signals": [
+            "eventErrors:1",
+            "eventWarnings:3",
+            "unexpectedToolFailures:0"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "label": "Mission 验收",
+          "status": "failed",
+          "signals": [
+            "mission:missing"
+          ]
+        }
+      ],
+      "observedEventStages": []
+    }
+  },
+  {
+    "kind": "trace",
+    "value": {
+      "agentExecution": {
+        "executed": true,
+        "acceptedReceiptId": "receipt",
+        "missionStatus": "completed",
+        "tools": {
+          "unexpectedFailureCount": 0
+        }
+      }
+    },
+    "mode": "contract",
+    "expected": {
+      "schemaVersion": 1,
+      "primaryFailureStage": null,
+      "stages": [
+        {
+          "id": "intent",
+          "label": "意图与标的",
+          "status": "passed",
+          "signals": []
+        },
+        {
+          "id": "planning",
+          "label": "规划",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "data",
+          "label": "数据与事实",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "artifact",
+          "label": "产物与构建",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "visual",
+          "label": "视觉交付",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "runtime",
+          "label": "运行可靠性",
+          "status": "passed",
+          "signals": [
+            "eventErrors:0",
+            "eventWarnings:0",
+            "unexpectedToolFailures:0"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "label": "Mission 验收",
+          "status": "passed",
+          "signals": [
+            "contract:no-live-mission"
+          ]
+        }
+      ],
+      "observedEventStages": []
+    }
+  },
+  {
+    "kind": "trace",
+    "value": {
+      "agentExecution": {
+        "executed": true,
+        "acceptedReceiptId": "receipt",
+        "missionStatus": "completed",
+        "tools": {
+          "unexpectedFailureCount": 0
+        }
+      }
+    },
+    "mode": "e2e",
+    "expected": {
+      "schemaVersion": 1,
+      "primaryFailureStage": null,
+      "stages": [
+        {
+          "id": "intent",
+          "label": "意图与标的",
+          "status": "passed",
+          "signals": []
+        },
+        {
+          "id": "planning",
+          "label": "规划",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "data",
+          "label": "数据与事实",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "artifact",
+          "label": "产物与构建",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "visual",
+          "label": "视觉交付",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "runtime",
+          "label": "运行可靠性",
+          "status": "passed",
+          "signals": [
+            "eventErrors:0",
+            "eventWarnings:0",
+            "unexpectedToolFailures:0"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "label": "Mission 验收",
+          "status": "passed",
+          "signals": [
+            "mission:completed"
+          ]
+        }
+      ],
+      "observedEventStages": []
+    }
+  },
+  {
+    "kind": "trace",
+    "value": {
+      "eventAudit": {
+        "errorCount": "1",
+        "warningCount": 1
+      },
+      "agentExecution": {
+        "tools": {
+          "unexpectedFailureCount": 0.1
+        }
+      }
+    },
+    "mode": "contract",
+    "expected": {
+      "schemaVersion": 1,
+      "primaryFailureStage": "runtime",
+      "stages": [
+        {
+          "id": "intent",
+          "label": "意图与标的",
+          "status": "passed",
+          "signals": []
+        },
+        {
+          "id": "planning",
+          "label": "规划",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "data",
+          "label": "数据与事实",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "artifact",
+          "label": "产物与构建",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "visual",
+          "label": "视觉交付",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "runtime",
+          "label": "运行可靠性",
+          "status": "failed",
+          "signals": [
+            "eventErrors:1",
+            "eventWarnings:1",
+            "unexpectedToolFailures:0.1"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "label": "Mission 验收",
+          "status": "passed",
+          "signals": [
+            "contract:no-live-mission"
+          ]
+        }
+      ],
+      "observedEventStages": []
+    }
+  },
+  {
+    "kind": "trace",
+    "value": {
+      "eventAudit": {
+        "errorCount": "1",
+        "warningCount": 1
+      },
+      "agentExecution": {
+        "tools": {
+          "unexpectedFailureCount": 0.1
+        }
+      }
+    },
+    "mode": "e2e",
+    "expected": {
+      "schemaVersion": 1,
+      "primaryFailureStage": "runtime",
+      "stages": [
+        {
+          "id": "intent",
+          "label": "意图与标的",
+          "status": "passed",
+          "signals": []
+        },
+        {
+          "id": "planning",
+          "label": "规划",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "data",
+          "label": "数据与事实",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "artifact",
+          "label": "产物与构建",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "visual",
+          "label": "视觉交付",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "runtime",
+          "label": "运行可靠性",
+          "status": "failed",
+          "signals": [
+            "eventErrors:1",
+            "eventWarnings:1",
+            "unexpectedToolFailures:0.1"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "label": "Mission 验收",
+          "status": "failed",
+          "signals": [
+            "mission:missing"
+          ]
+        }
+      ],
+      "observedEventStages": []
+    }
+  },
+  {
+    "kind": "trace",
+    "value": {
+      "validationChecks": [
+        {
+          "id": "chart_presence",
+          "status": "unknown"
+        },
+        {
+          "id": "intent_clarification",
+          "status": "passed"
+        }
+      ],
+      "artifacts": {
+        "oracle": {
+          "warning": true
+        }
+      }
+    },
+    "mode": "contract",
+    "expected": {
+      "schemaVersion": 1,
+      "primaryFailureStage": null,
+      "stages": [
+        {
+          "id": "intent",
+          "label": "意图与标的",
+          "status": "passed",
+          "signals": [
+            "intent_clarification:passed"
+          ]
+        },
+        {
+          "id": "planning",
+          "label": "规划",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "data",
+          "label": "数据与事实",
+          "status": "warning",
+          "signals": []
+        },
+        {
+          "id": "artifact",
+          "label": "产物与构建",
+          "status": "warning",
+          "signals": [
+            "chart_presence:unknown"
+          ]
+        },
+        {
+          "id": "visual",
+          "label": "视觉交付",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "runtime",
+          "label": "运行可靠性",
+          "status": "passed",
+          "signals": [
+            "eventErrors:0",
+            "eventWarnings:0",
+            "unexpectedToolFailures:0"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "label": "Mission 验收",
+          "status": "passed",
+          "signals": [
+            "contract:no-live-mission"
+          ]
+        }
+      ],
+      "observedEventStages": []
+    }
+  },
+  {
+    "kind": "trace",
+    "value": {
+      "validationChecks": [
+        {
+          "id": "chart_presence",
+          "status": "unknown"
+        },
+        {
+          "id": "intent_clarification",
+          "status": "passed"
+        }
+      ],
+      "artifacts": {
+        "oracle": {
+          "warning": true
+        }
+      }
+    },
+    "mode": "e2e",
+    "expected": {
+      "schemaVersion": 1,
+      "primaryFailureStage": "acceptance",
+      "stages": [
+        {
+          "id": "intent",
+          "label": "意图与标的",
+          "status": "passed",
+          "signals": [
+            "intent_clarification:passed"
+          ]
+        },
+        {
+          "id": "planning",
+          "label": "规划",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "data",
+          "label": "数据与事实",
+          "status": "warning",
+          "signals": []
+        },
+        {
+          "id": "artifact",
+          "label": "产物与构建",
+          "status": "warning",
+          "signals": [
+            "chart_presence:unknown"
+          ]
+        },
+        {
+          "id": "visual",
+          "label": "视觉交付",
+          "status": "unknown",
+          "signals": []
+        },
+        {
+          "id": "runtime",
+          "label": "运行可靠性",
+          "status": "passed",
+          "signals": [
+            "eventErrors:0",
+            "eventWarnings:0",
+            "unexpectedToolFailures:0"
+          ]
+        },
+        {
+          "id": "acceptance",
+          "label": "Mission 验收",
+          "status": "failed",
+          "signals": [
+            "mission:missing"
+          ]
+        }
+      ],
+      "observedEventStages": []
+    }
+  },
+  {
+    "kind": "calibration",
+    "samples": [],
+    "independent": false,
+    "expected": {
+      "passed": false,
+      "problems": [
+        "Judge 校准集不能为空",
+        "Judge verdict 一致率 0% 低于 80%",
+        "Judge Cohen kappa 0 低于 0.6"
+      ],
+      "summary": {
+        "caseCount": 0,
+        "agreementCount": 0,
+        "verdictAgreementRate": 0,
+        "cohenKappa": 0,
+        "scoreMeanAbsoluteError": 0,
+        "worstScoreError": {
+          "caseId": null,
+          "value": 0
+        },
+        "independentSampleCount": 0,
+        "disagreements": []
+      }
+    }
+  },
+  {
+    "kind": "calibration",
+    "samples": [],
+    "independent": true,
+    "expected": {
+      "passed": false,
+      "problems": [
+        "Judge 校准集不能为空",
+        "Judge verdict 一致率 0% 低于 80%",
+        "Judge Cohen kappa 0 低于 0.6"
+      ],
+      "summary": {
+        "caseCount": 0,
+        "agreementCount": 0,
+        "verdictAgreementRate": 0,
+        "cohenKappa": 0,
+        "scoreMeanAbsoluteError": 0,
+        "worstScoreError": {
+          "caseId": null,
+          "value": 0
+        },
+        "independentSampleCount": 0,
+        "disagreements": []
+      }
+    }
+  },
+  {
+    "kind": "calibration",
+    "samples": [
+      {
+        "caseId": "c0",
+        "human": {
+          "verdict": "passed",
+          "score": 90
+        },
+        "judge": {
+          "verdict": "passed",
+          "score": 85,
+          "independentFromGenerator": true
+        }
+      }
+    ],
+    "independent": false,
+    "expected": {
+      "passed": true,
+      "problems": [],
+      "summary": {
+        "caseCount": 1,
+        "agreementCount": 1,
+        "verdictAgreementRate": 100,
+        "cohenKappa": 1,
+        "scoreMeanAbsoluteError": 5,
+        "worstScoreError": {
+          "caseId": "c0",
+          "value": 5
+        },
+        "independentSampleCount": 1,
+        "disagreements": []
+      }
+    }
+  },
+  {
+    "kind": "calibration",
+    "samples": [
+      {
+        "caseId": "c0",
+        "human": {
+          "verdict": "passed",
+          "score": 90
+        },
+        "judge": {
+          "verdict": "passed",
+          "score": 85,
+          "independentFromGenerator": true
+        }
+      }
+    ],
+    "independent": true,
+    "expected": {
+      "passed": true,
+      "problems": [],
+      "summary": {
+        "caseCount": 1,
+        "agreementCount": 1,
+        "verdictAgreementRate": 100,
+        "cohenKappa": 1,
+        "scoreMeanAbsoluteError": 5,
+        "worstScoreError": {
+          "caseId": "c0",
+          "value": 5
+        },
+        "independentSampleCount": 1,
+        "disagreements": []
+      }
+    }
+  },
+  {
+    "kind": "calibration",
+    "samples": [
+      {
+        "caseId": "c0",
+        "human": {
+          "verdict": "passed",
+          "score": 90
+        },
+        "judge": {
+          "verdict": "passed",
+          "score": 85,
+          "independentFromGenerator": true
+        }
+      },
+      {
+        "caseId": "c1",
+        "human": {
+          "verdict": "warning",
+          "score": 83
+        },
+        "judge": {
+          "verdict": "warning",
+          "score": 81,
+          "independentFromGenerator": false
+        }
+      },
+      {
+        "caseId": "c2",
+        "human": {
+          "verdict": "failed",
+          "score": 76
+        },
+        "judge": {
+          "verdict": "failed",
+          "score": 77,
+          "independentFromGenerator": true
+        }
+      }
+    ],
+    "independent": false,
+    "expected": {
+      "passed": true,
+      "problems": [],
+      "summary": {
+        "caseCount": 3,
+        "agreementCount": 3,
+        "verdictAgreementRate": 100,
+        "cohenKappa": 1,
+        "scoreMeanAbsoluteError": 2.67,
+        "worstScoreError": {
+          "caseId": "c0",
+          "value": 5
+        },
+        "independentSampleCount": 2,
+        "disagreements": []
+      }
+    }
+  },
+  {
+    "kind": "calibration",
+    "samples": [
+      {
+        "caseId": "c0",
+        "human": {
+          "verdict": "passed",
+          "score": 90
+        },
+        "judge": {
+          "verdict": "passed",
+          "score": 85,
+          "independentFromGenerator": true
+        }
+      },
+      {
+        "caseId": "c1",
+        "human": {
+          "verdict": "warning",
+          "score": 83
+        },
+        "judge": {
+          "verdict": "warning",
+          "score": 81,
+          "independentFromGenerator": false
+        }
+      },
+      {
+        "caseId": "c2",
+        "human": {
+          "verdict": "failed",
+          "score": 76
+        },
+        "judge": {
+          "verdict": "failed",
+          "score": 77,
+          "independentFromGenerator": true
+        }
+      }
+    ],
+    "independent": true,
+    "expected": {
+      "passed": false,
+      "problems": [
+        "Judge 独立样本仅 2/3"
+      ],
+      "summary": {
+        "caseCount": 3,
+        "agreementCount": 3,
+        "verdictAgreementRate": 100,
+        "cohenKappa": 1,
+        "scoreMeanAbsoluteError": 2.67,
+        "worstScoreError": {
+          "caseId": "c0",
+          "value": 5
+        },
+        "independentSampleCount": 2,
+        "disagreements": []
+      }
+    }
+  },
+  {
+    "kind": "calibration",
+    "samples": [
+      {
+        "caseId": "c0",
+        "human": {
+          "verdict": "passed",
+          "score": 90
+        },
+        "judge": {
+          "verdict": "passed",
+          "score": 85,
+          "independentFromGenerator": true
+        }
+      },
+      {
+        "caseId": "c1",
+        "human": {
+          "verdict": "warning",
+          "score": 83
+        },
+        "judge": {
+          "verdict": "warning",
+          "score": 81,
+          "independentFromGenerator": false
+        }
+      },
+      {
+        "caseId": "c2",
+        "human": {
+          "verdict": "failed",
+          "score": 76
+        },
+        "judge": {
+          "verdict": "failed",
+          "score": 77,
+          "independentFromGenerator": true
+        }
+      },
+      {
+        "caseId": "c3",
+        "human": {
+          "verdict": "passed",
+          "score": 69
+        },
+        "judge": {
+          "verdict": "warning",
+          "score": 73,
+          "independentFromGenerator": false
+        }
+      },
+      {
+        "caseId": "c4",
+        "human": {
+          "verdict": "warning",
+          "score": 62
+        },
+        "judge": {
+          "verdict": "failed",
+          "score": 69,
+          "independentFromGenerator": true
+        }
+      },
+      {
+        "caseId": "c5",
+        "human": {
+          "verdict": "failed",
+          "score": 55
+        },
+        "judge": {
+          "verdict": "passed",
+          "score": 65,
+          "independentFromGenerator": false
+        }
+      },
+      {
+        "caseId": "c6",
+        "human": {
+          "verdict": "passed",
+          "score": 48
+        },
+        "judge": {
+          "verdict": "warning",
+          "score": 61,
+          "independentFromGenerator": true
+        }
+      },
+      {
+        "caseId": "c7",
+        "human": {
+          "verdict": "warning",
+          "score": 41
+        },
+        "judge": {
+          "verdict": "failed",
+          "score": 57,
+          "independentFromGenerator": false
+        }
+      }
+    ],
+    "independent": false,
+    "expected": {
+      "passed": false,
+      "problems": [
+        "Judge verdict 一致率 37.5% 低于 80%",
+        "Judge Cohen kappa 0.07 低于 0.6"
+      ],
+      "summary": {
+        "caseCount": 8,
+        "agreementCount": 3,
+        "verdictAgreementRate": 37.5,
+        "cohenKappa": 0.07,
+        "scoreMeanAbsoluteError": 7.25,
+        "worstScoreError": {
+          "caseId": "c7",
+          "value": 16
+        },
+        "independentSampleCount": 4,
+        "disagreements": [
+          "c3",
+          "c4",
+          "c5",
+          "c6",
+          "c7"
+        ]
+      }
+    }
+  },
+  {
+    "kind": "calibration",
+    "samples": [
+      {
+        "caseId": "c0",
+        "human": {
+          "verdict": "passed",
+          "score": 90
+        },
+        "judge": {
+          "verdict": "passed",
+          "score": 85,
+          "independentFromGenerator": true
+        }
+      },
+      {
+        "caseId": "c1",
+        "human": {
+          "verdict": "warning",
+          "score": 83
+        },
+        "judge": {
+          "verdict": "warning",
+          "score": 81,
+          "independentFromGenerator": false
+        }
+      },
+      {
+        "caseId": "c2",
+        "human": {
+          "verdict": "failed",
+          "score": 76
+        },
+        "judge": {
+          "verdict": "failed",
+          "score": 77,
+          "independentFromGenerator": true
+        }
+      },
+      {
+        "caseId": "c3",
+        "human": {
+          "verdict": "passed",
+          "score": 69
+        },
+        "judge": {
+          "verdict": "warning",
+          "score": 73,
+          "independentFromGenerator": false
+        }
+      },
+      {
+        "caseId": "c4",
+        "human": {
+          "verdict": "warning",
+          "score": 62
+        },
+        "judge": {
+          "verdict": "failed",
+          "score": 69,
+          "independentFromGenerator": true
+        }
+      },
+      {
+        "caseId": "c5",
+        "human": {
+          "verdict": "failed",
+          "score": 55
+        },
+        "judge": {
+          "verdict": "passed",
+          "score": 65,
+          "independentFromGenerator": false
+        }
+      },
+      {
+        "caseId": "c6",
+        "human": {
+          "verdict": "passed",
+          "score": 48
+        },
+        "judge": {
+          "verdict": "warning",
+          "score": 61,
+          "independentFromGenerator": true
+        }
+      },
+      {
+        "caseId": "c7",
+        "human": {
+          "verdict": "warning",
+          "score": 41
+        },
+        "judge": {
+          "verdict": "failed",
+          "score": 57,
+          "independentFromGenerator": false
+        }
+      }
+    ],
+    "independent": true,
+    "expected": {
+      "passed": false,
+      "problems": [
+        "Judge verdict 一致率 37.5% 低于 80%",
+        "Judge Cohen kappa 0.07 低于 0.6",
+        "Judge 独立样本仅 4/8"
+      ],
+      "summary": {
+        "caseCount": 8,
+        "agreementCount": 3,
+        "verdictAgreementRate": 37.5,
+        "cohenKappa": 0.07,
+        "scoreMeanAbsoluteError": 7.25,
+        "worstScoreError": {
+          "caseId": "c7",
+          "value": 16
+        },
+        "independentSampleCount": 4,
+        "disagreements": [
+          "c3",
+          "c4",
+          "c5",
+          "c6",
+          "c7"
+        ]
+      }
+    }
+  }
+]

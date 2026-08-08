@@ -1,0 +1,1784 @@
+[
+  {
+    "scenario": {
+      "name": "accepted"
+    },
+    "input": {
+      "missionId": "mission-fixture",
+      "generationId": "00000000-0000-4000-8000-000000000001",
+      "candidateVersion": 1,
+      "missionSpec": {
+        "schemaVersion": 1,
+        "framework": "PI Agent",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "objectiveSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "composition": {
+          "profileId": "finance",
+          "profileVersion": "1.0.0",
+          "domainPacks": [
+            {
+              "id": "finance",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPackId": "workspace",
+          "deliveryPackVersion": "1.0.0",
+          "compositionSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "capabilityId": "technical_analysis",
+        "runPlanId": "evidence-request",
+        "validationReportPath": ".data-agent/validation.json",
+        "expectedEntities": [],
+        "artifacts": [
+          {
+            "path": "src/**",
+            "role": "subject",
+            "mutability": "frozen",
+            "required": true
+          },
+          {
+            "path": ".data-agent/validation.json",
+            "role": "evidence",
+            "mutability": "derived",
+            "required": true
+          }
+        ],
+        "requiredValidationCheckIds": [
+          "vue_build",
+          "evidence_files"
+        ],
+        "allowedValidationWarnings": [],
+        "maxRepairAttempts": 2,
+        "nodes": [],
+        "acceptancePredicates": [],
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+      "preview": {
+        "url": "http://127.0.0.1:4100",
+        "port": 4100
+      }
+    },
+    "files": {
+      "src/App.vue": "export default function Page() { return \"研究看板\"; }\n",
+      ".data-agent/validation.json": "{\"projectId\":\"evidence-project\",\"runId\":\"evidence-request\",\"passed\":true,\"status\":\"passed\",\"checks\":[{\"id\":\"vue_build\",\"status\":\"passed\",\"summary\":\"Build complete\"},{\"id\":\"evidence_files\",\"status\":\"passed\",\"summary\":\"Evidence complete\"}]}"
+    },
+    "now": "2026-11-01T00:00:00.000Z",
+    "reads": 1,
+    "expected": {
+      "verdict": "accepted",
+      "reasonCodes": [],
+      "failedCheckIds": [],
+      "candidateVersion": 1,
+      "subjectHash": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+      "payload": {
+        "schemaVersion": 1,
+        "missionId": "mission-fixture",
+        "generationId": "00000000-0000-4000-8000-000000000001",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "candidateVersion": 1,
+        "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+        "validation": {
+          "reportPath": ".data-agent/validation.json",
+          "reportSha256": "sha256:2a27a23f5399ea363d8ea16faf9f92379e9ffd6bbad3f371c1f2685c78aea053",
+          "runId": "evidence-request",
+          "checks": [
+            {
+              "id": "vue_build",
+              "status": "passed",
+              "summarySha256": "sha256:d9e44c03b78d34897bb9b68df63555f470558e27b02712fa3bedd307f56701ab"
+            },
+            {
+              "id": "evidence_files",
+              "status": "passed",
+              "summarySha256": "sha256:8a0dc2a0ebc009ce845741d673e7a353c3fdc6f538863cd06e9f36fbeb7a6ffe"
+            }
+          ]
+        },
+        "artifacts": {
+          "subjectManifestSha256": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+          "evidenceManifestSha256": "sha256:ce026851ebddb98c6ea22e9bce93bfda3843b6c63ec6e7084a62a99b44ed747e",
+          "items": [
+            {
+              "path": "src/App.vue",
+              "role": "subject",
+              "bytes": 58,
+              "sha256": "sha256:94490326d6008c6ce024d445f1865f3ed61626c3d901298fd9f96587b6cfc604"
+            }
+          ],
+          "evidenceItems": [
+            {
+              "path": ".data-agent/validation.json",
+              "role": "evidence",
+              "bytes": 239,
+              "sha256": "sha256:2a27a23f5399ea363d8ea16faf9f92379e9ffd6bbad3f371c1f2685c78aea053"
+            }
+          ],
+          "issues": []
+        },
+        "preview": {
+          "url": "http://127.0.0.1:4100",
+          "port": 4100,
+          "httpStatus": 200,
+          "responseSha256": "sha256:17615508d46dc2ca4e5c025ba5fb9997d0643cc18003af03618c2682a7db346d",
+          "readyAt": "2026-11-01T00:00:00.000Z"
+        },
+        "decision": {
+          "verdict": "accepted",
+          "reasonCodes": [],
+          "failedCheckIds": []
+        },
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "receiptHash": "sha256:58d2a6f52fa0c095c3437e1386760f47e51ce67eb67bcedd73eeb39fdd17d056"
+    }
+  },
+  {
+    "scenario": {
+      "name": "wrong_request",
+      "report": {
+        "projectId": "evidence-project",
+        "runId": "old-request",
+        "passed": true,
+        "status": "passed",
+        "checks": [
+          {
+            "id": "vue_build",
+            "status": "passed",
+            "summary": "Build complete"
+          },
+          {
+            "id": "evidence_files",
+            "status": "passed",
+            "summary": "Evidence complete"
+          }
+        ]
+      }
+    },
+    "input": {
+      "missionId": "mission-fixture",
+      "generationId": "00000000-0000-4000-8000-000000000001",
+      "candidateVersion": 1,
+      "missionSpec": {
+        "schemaVersion": 1,
+        "framework": "PI Agent",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "objectiveSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "composition": {
+          "profileId": "finance",
+          "profileVersion": "1.0.0",
+          "domainPacks": [
+            {
+              "id": "finance",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPackId": "workspace",
+          "deliveryPackVersion": "1.0.0",
+          "compositionSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "capabilityId": "technical_analysis",
+        "runPlanId": "evidence-request",
+        "validationReportPath": ".data-agent/validation.json",
+        "expectedEntities": [],
+        "artifacts": [
+          {
+            "path": "src/**",
+            "role": "subject",
+            "mutability": "frozen",
+            "required": true
+          },
+          {
+            "path": ".data-agent/validation.json",
+            "role": "evidence",
+            "mutability": "derived",
+            "required": true
+          }
+        ],
+        "requiredValidationCheckIds": [
+          "vue_build",
+          "evidence_files"
+        ],
+        "allowedValidationWarnings": [],
+        "maxRepairAttempts": 2,
+        "nodes": [],
+        "acceptancePredicates": [],
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+      "preview": {
+        "url": "http://127.0.0.1:4100",
+        "port": 4100
+      }
+    },
+    "files": {
+      "src/App.vue": "export default function Page() { return \"研究看板\"; }\n",
+      ".data-agent/validation.json": "{\"projectId\":\"evidence-project\",\"runId\":\"old-request\",\"passed\":true,\"status\":\"passed\",\"checks\":[{\"id\":\"vue_build\",\"status\":\"passed\",\"summary\":\"Build complete\"},{\"id\":\"evidence_files\",\"status\":\"passed\",\"summary\":\"Evidence complete\"}]}"
+    },
+    "now": "2026-11-01T00:00:00.000Z",
+    "reads": 0,
+    "expected": {
+      "verdict": "stale",
+      "reasonCodes": [
+        "VALIDATION_RUN_ID_MISMATCH"
+      ],
+      "failedCheckIds": [],
+      "candidateVersion": 1,
+      "subjectHash": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+      "payload": {
+        "schemaVersion": 1,
+        "missionId": "mission-fixture",
+        "generationId": "00000000-0000-4000-8000-000000000001",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "candidateVersion": 1,
+        "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+        "validation": {
+          "reportPath": ".data-agent/validation.json",
+          "reportSha256": "sha256:d9c85af6bf1a869a39546aa7c0f0bd75fa6658b42d6cf740815ee2afe80334dc",
+          "runId": "old-request",
+          "checks": [
+            {
+              "id": "vue_build",
+              "status": "passed",
+              "summarySha256": "sha256:d9e44c03b78d34897bb9b68df63555f470558e27b02712fa3bedd307f56701ab"
+            },
+            {
+              "id": "evidence_files",
+              "status": "passed",
+              "summarySha256": "sha256:8a0dc2a0ebc009ce845741d673e7a353c3fdc6f538863cd06e9f36fbeb7a6ffe"
+            }
+          ]
+        },
+        "artifacts": {
+          "subjectManifestSha256": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+          "evidenceManifestSha256": "sha256:1387f2b00f128a8e23b8b2a4939b7e89a8d1fa79cb869253f50b376e047928a1",
+          "items": [
+            {
+              "path": "src/App.vue",
+              "role": "subject",
+              "bytes": 58,
+              "sha256": "sha256:94490326d6008c6ce024d445f1865f3ed61626c3d901298fd9f96587b6cfc604"
+            }
+          ],
+          "evidenceItems": [
+            {
+              "path": ".data-agent/validation.json",
+              "role": "evidence",
+              "bytes": 234,
+              "sha256": "sha256:d9c85af6bf1a869a39546aa7c0f0bd75fa6658b42d6cf740815ee2afe80334dc"
+            }
+          ],
+          "issues": []
+        },
+        "preview": {
+          "url": "http://127.0.0.1:4100",
+          "port": 4100,
+          "httpStatus": 0,
+          "responseSha256": "sha256:75bc44437030c9b357627b004da36fbbad81bac96a5c7ef9e33371219f3bedde",
+          "readyAt": "2026-11-01T00:00:00.000Z"
+        },
+        "decision": {
+          "verdict": "stale",
+          "reasonCodes": [
+            "VALIDATION_RUN_ID_MISMATCH"
+          ],
+          "failedCheckIds": []
+        },
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "receiptHash": "sha256:bf7f7e38d284305f435c635ff0ea19f94420ea95482669af1a768d7420d04b2a"
+    }
+  },
+  {
+    "scenario": {
+      "name": "duplicate",
+      "report": {
+        "projectId": "evidence-project",
+        "runId": "evidence-request",
+        "passed": true,
+        "status": "passed",
+        "checks": [
+          {
+            "id": "vue_build",
+            "status": "passed",
+            "summary": "Build complete"
+          },
+          {
+            "id": "evidence_files",
+            "status": "passed",
+            "summary": "Evidence complete"
+          },
+          {
+            "id": "vue_build",
+            "status": "passed",
+            "summary": "Build complete"
+          }
+        ]
+      }
+    },
+    "input": {
+      "missionId": "mission-fixture",
+      "generationId": "00000000-0000-4000-8000-000000000001",
+      "candidateVersion": 1,
+      "missionSpec": {
+        "schemaVersion": 1,
+        "framework": "PI Agent",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "objectiveSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "composition": {
+          "profileId": "finance",
+          "profileVersion": "1.0.0",
+          "domainPacks": [
+            {
+              "id": "finance",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPackId": "workspace",
+          "deliveryPackVersion": "1.0.0",
+          "compositionSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "capabilityId": "technical_analysis",
+        "runPlanId": "evidence-request",
+        "validationReportPath": ".data-agent/validation.json",
+        "expectedEntities": [],
+        "artifacts": [
+          {
+            "path": "src/**",
+            "role": "subject",
+            "mutability": "frozen",
+            "required": true
+          },
+          {
+            "path": ".data-agent/validation.json",
+            "role": "evidence",
+            "mutability": "derived",
+            "required": true
+          }
+        ],
+        "requiredValidationCheckIds": [
+          "vue_build",
+          "evidence_files"
+        ],
+        "allowedValidationWarnings": [],
+        "maxRepairAttempts": 2,
+        "nodes": [],
+        "acceptancePredicates": [],
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+      "preview": {
+        "url": "http://127.0.0.1:4100",
+        "port": 4100
+      }
+    },
+    "files": {
+      "src/App.vue": "export default function Page() { return \"研究看板\"; }\n",
+      ".data-agent/validation.json": "{\"projectId\":\"evidence-project\",\"runId\":\"evidence-request\",\"passed\":true,\"status\":\"passed\",\"checks\":[{\"id\":\"vue_build\",\"status\":\"passed\",\"summary\":\"Build complete\"},{\"id\":\"evidence_files\",\"status\":\"passed\",\"summary\":\"Evidence complete\"},{\"id\":\"vue_build\",\"status\":\"passed\",\"summary\":\"Build complete\"}]}"
+    },
+    "now": "2026-11-01T00:00:00.000Z",
+    "reads": 0,
+    "expected": {
+      "verdict": "rejected",
+      "reasonCodes": [
+        "VALIDATION_CHECK_DUPLICATED"
+      ],
+      "failedCheckIds": [
+        "vue_build"
+      ],
+      "candidateVersion": 1,
+      "subjectHash": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+      "payload": {
+        "schemaVersion": 1,
+        "missionId": "mission-fixture",
+        "generationId": "00000000-0000-4000-8000-000000000001",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "candidateVersion": 1,
+        "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+        "validation": {
+          "reportPath": ".data-agent/validation.json",
+          "reportSha256": "sha256:378b76ffc61144e6d084e7d0173acfff26cea8838f850ac1b593a671e7eba4fa",
+          "runId": "evidence-request",
+          "checks": [
+            {
+              "id": "vue_build",
+              "status": "passed",
+              "summarySha256": "sha256:d9e44c03b78d34897bb9b68df63555f470558e27b02712fa3bedd307f56701ab"
+            },
+            {
+              "id": "evidence_files",
+              "status": "passed",
+              "summarySha256": "sha256:8a0dc2a0ebc009ce845741d673e7a353c3fdc6f538863cd06e9f36fbeb7a6ffe"
+            },
+            {
+              "id": "vue_build",
+              "status": "passed",
+              "summarySha256": "sha256:d9e44c03b78d34897bb9b68df63555f470558e27b02712fa3bedd307f56701ab"
+            }
+          ]
+        },
+        "artifacts": {
+          "subjectManifestSha256": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+          "evidenceManifestSha256": "sha256:ef1255f618c7c6ff04e3eb64e8163c25cab6989761374ae02b6a7961106adeaa",
+          "items": [
+            {
+              "path": "src/App.vue",
+              "role": "subject",
+              "bytes": 58,
+              "sha256": "sha256:94490326d6008c6ce024d445f1865f3ed61626c3d901298fd9f96587b6cfc604"
+            }
+          ],
+          "evidenceItems": [
+            {
+              "path": ".data-agent/validation.json",
+              "role": "evidence",
+              "bytes": 304,
+              "sha256": "sha256:378b76ffc61144e6d084e7d0173acfff26cea8838f850ac1b593a671e7eba4fa"
+            }
+          ],
+          "issues": []
+        },
+        "preview": {
+          "url": "http://127.0.0.1:4100",
+          "port": 4100,
+          "httpStatus": 0,
+          "responseSha256": "sha256:75bc44437030c9b357627b004da36fbbad81bac96a5c7ef9e33371219f3bedde",
+          "readyAt": "2026-11-01T00:00:00.000Z"
+        },
+        "decision": {
+          "verdict": "rejected",
+          "reasonCodes": [
+            "VALIDATION_CHECK_DUPLICATED"
+          ],
+          "failedCheckIds": [
+            "vue_build"
+          ]
+        },
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "receiptHash": "sha256:0b5a02e22e3f911ac1193f72cda3e485b6b41e59e353f82e0d2b1ec96c38dc57"
+    }
+  },
+  {
+    "scenario": {
+      "name": "contradiction",
+      "report": {
+        "projectId": "evidence-project",
+        "runId": "evidence-request",
+        "passed": true,
+        "status": "passed",
+        "checks": [
+          {
+            "id": "vue_build",
+            "status": "failed",
+            "summary": "Build complete"
+          },
+          {
+            "id": "evidence_files",
+            "status": "passed",
+            "summary": "Evidence complete"
+          }
+        ]
+      }
+    },
+    "input": {
+      "missionId": "mission-fixture",
+      "generationId": "00000000-0000-4000-8000-000000000001",
+      "candidateVersion": 1,
+      "missionSpec": {
+        "schemaVersion": 1,
+        "framework": "PI Agent",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "objectiveSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "composition": {
+          "profileId": "finance",
+          "profileVersion": "1.0.0",
+          "domainPacks": [
+            {
+              "id": "finance",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPackId": "workspace",
+          "deliveryPackVersion": "1.0.0",
+          "compositionSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "capabilityId": "technical_analysis",
+        "runPlanId": "evidence-request",
+        "validationReportPath": ".data-agent/validation.json",
+        "expectedEntities": [],
+        "artifacts": [
+          {
+            "path": "src/**",
+            "role": "subject",
+            "mutability": "frozen",
+            "required": true
+          },
+          {
+            "path": ".data-agent/validation.json",
+            "role": "evidence",
+            "mutability": "derived",
+            "required": true
+          }
+        ],
+        "requiredValidationCheckIds": [
+          "vue_build",
+          "evidence_files"
+        ],
+        "allowedValidationWarnings": [],
+        "maxRepairAttempts": 2,
+        "nodes": [],
+        "acceptancePredicates": [],
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+      "preview": {
+        "url": "http://127.0.0.1:4100",
+        "port": 4100
+      }
+    },
+    "files": {
+      "src/App.vue": "export default function Page() { return \"研究看板\"; }\n",
+      ".data-agent/validation.json": "{\"projectId\":\"evidence-project\",\"runId\":\"evidence-request\",\"passed\":true,\"status\":\"passed\",\"checks\":[{\"id\":\"vue_build\",\"status\":\"failed\",\"summary\":\"Build complete\"},{\"id\":\"evidence_files\",\"status\":\"passed\",\"summary\":\"Evidence complete\"}]}"
+    },
+    "now": "2026-11-01T00:00:00.000Z",
+    "reads": 0,
+    "expected": {
+      "verdict": "rejected",
+      "reasonCodes": [
+        "VALIDATION_REPORT_CONTRADICTS_CHECKS"
+      ],
+      "failedCheckIds": [
+        "vue_build"
+      ],
+      "candidateVersion": 1,
+      "subjectHash": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+      "payload": {
+        "schemaVersion": 1,
+        "missionId": "mission-fixture",
+        "generationId": "00000000-0000-4000-8000-000000000001",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "candidateVersion": 1,
+        "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+        "validation": {
+          "reportPath": ".data-agent/validation.json",
+          "reportSha256": "sha256:3e241920c0a8374874a0f7bd4a6c900c88ac48b5ad3a0c00779fc66e306a7004",
+          "runId": "evidence-request",
+          "checks": [
+            {
+              "id": "vue_build",
+              "status": "failed",
+              "summarySha256": "sha256:d9e44c03b78d34897bb9b68df63555f470558e27b02712fa3bedd307f56701ab"
+            },
+            {
+              "id": "evidence_files",
+              "status": "passed",
+              "summarySha256": "sha256:8a0dc2a0ebc009ce845741d673e7a353c3fdc6f538863cd06e9f36fbeb7a6ffe"
+            }
+          ]
+        },
+        "artifacts": {
+          "subjectManifestSha256": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+          "evidenceManifestSha256": "sha256:180b7016ecddbc53d5fa8fde038c92c51f3c7a24a32b03a13147a37a25b509a2",
+          "items": [
+            {
+              "path": "src/App.vue",
+              "role": "subject",
+              "bytes": 58,
+              "sha256": "sha256:94490326d6008c6ce024d445f1865f3ed61626c3d901298fd9f96587b6cfc604"
+            }
+          ],
+          "evidenceItems": [
+            {
+              "path": ".data-agent/validation.json",
+              "role": "evidence",
+              "bytes": 239,
+              "sha256": "sha256:3e241920c0a8374874a0f7bd4a6c900c88ac48b5ad3a0c00779fc66e306a7004"
+            }
+          ],
+          "issues": []
+        },
+        "preview": {
+          "url": "http://127.0.0.1:4100",
+          "port": 4100,
+          "httpStatus": 0,
+          "responseSha256": "sha256:75bc44437030c9b357627b004da36fbbad81bac96a5c7ef9e33371219f3bedde",
+          "readyAt": "2026-11-01T00:00:00.000Z"
+        },
+        "decision": {
+          "verdict": "rejected",
+          "reasonCodes": [
+            "VALIDATION_REPORT_CONTRADICTS_CHECKS"
+          ],
+          "failedCheckIds": [
+            "vue_build"
+          ]
+        },
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "receiptHash": "sha256:f252c2f5ef176747cd8f9f056b1b038bc3de5e9bc2bab9c77741ef5db958f504"
+    }
+  },
+  {
+    "scenario": {
+      "name": "build_failed",
+      "report": {
+        "projectId": "evidence-project",
+        "runId": "evidence-request",
+        "passed": false,
+        "status": "failed",
+        "checks": [
+          {
+            "id": "vue_build",
+            "status": "failed",
+            "summary": "Build complete"
+          },
+          {
+            "id": "evidence_files",
+            "status": "passed",
+            "summary": "Evidence complete"
+          }
+        ]
+      }
+    },
+    "input": {
+      "missionId": "mission-fixture",
+      "generationId": "00000000-0000-4000-8000-000000000001",
+      "candidateVersion": 1,
+      "missionSpec": {
+        "schemaVersion": 1,
+        "framework": "PI Agent",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "objectiveSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "composition": {
+          "profileId": "finance",
+          "profileVersion": "1.0.0",
+          "domainPacks": [
+            {
+              "id": "finance",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPackId": "workspace",
+          "deliveryPackVersion": "1.0.0",
+          "compositionSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "capabilityId": "technical_analysis",
+        "runPlanId": "evidence-request",
+        "validationReportPath": ".data-agent/validation.json",
+        "expectedEntities": [],
+        "artifacts": [
+          {
+            "path": "src/**",
+            "role": "subject",
+            "mutability": "frozen",
+            "required": true
+          },
+          {
+            "path": ".data-agent/validation.json",
+            "role": "evidence",
+            "mutability": "derived",
+            "required": true
+          }
+        ],
+        "requiredValidationCheckIds": [
+          "vue_build",
+          "evidence_files"
+        ],
+        "allowedValidationWarnings": [],
+        "maxRepairAttempts": 2,
+        "nodes": [],
+        "acceptancePredicates": [],
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+      "preview": {
+        "url": "http://127.0.0.1:4100",
+        "port": 4100
+      }
+    },
+    "files": {
+      "src/App.vue": "export default function Page() { return \"研究看板\"; }\n",
+      ".data-agent/validation.json": "{\"projectId\":\"evidence-project\",\"runId\":\"evidence-request\",\"passed\":false,\"status\":\"failed\",\"checks\":[{\"id\":\"vue_build\",\"status\":\"failed\",\"summary\":\"Build complete\"},{\"id\":\"evidence_files\",\"status\":\"passed\",\"summary\":\"Evidence complete\"}]}"
+    },
+    "now": "2026-11-01T00:00:00.000Z",
+    "reads": 0,
+    "expected": {
+      "verdict": "repair_required",
+      "reasonCodes": [
+        "REQUIRED_VALIDATION_CHECK_FAILED"
+      ],
+      "failedCheckIds": [
+        "vue_build"
+      ],
+      "candidateVersion": 1,
+      "subjectHash": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+      "payload": {
+        "schemaVersion": 1,
+        "missionId": "mission-fixture",
+        "generationId": "00000000-0000-4000-8000-000000000001",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "candidateVersion": 1,
+        "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+        "validation": {
+          "reportPath": ".data-agent/validation.json",
+          "reportSha256": "sha256:fca8b9c0905b650c8808c55a417895124526d9c247cfd4952fa25c88fbb0473d",
+          "runId": "evidence-request",
+          "checks": [
+            {
+              "id": "vue_build",
+              "status": "failed",
+              "summarySha256": "sha256:d9e44c03b78d34897bb9b68df63555f470558e27b02712fa3bedd307f56701ab"
+            },
+            {
+              "id": "evidence_files",
+              "status": "passed",
+              "summarySha256": "sha256:8a0dc2a0ebc009ce845741d673e7a353c3fdc6f538863cd06e9f36fbeb7a6ffe"
+            }
+          ]
+        },
+        "artifacts": {
+          "subjectManifestSha256": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+          "evidenceManifestSha256": "sha256:c293c1d8eda861ea1e08f18952be3a67bc1d2716cf60ebcbcbbd08f61137202a",
+          "items": [
+            {
+              "path": "src/App.vue",
+              "role": "subject",
+              "bytes": 58,
+              "sha256": "sha256:94490326d6008c6ce024d445f1865f3ed61626c3d901298fd9f96587b6cfc604"
+            }
+          ],
+          "evidenceItems": [
+            {
+              "path": ".data-agent/validation.json",
+              "role": "evidence",
+              "bytes": 240,
+              "sha256": "sha256:fca8b9c0905b650c8808c55a417895124526d9c247cfd4952fa25c88fbb0473d"
+            }
+          ],
+          "issues": []
+        },
+        "preview": {
+          "url": "http://127.0.0.1:4100",
+          "port": 4100,
+          "httpStatus": 0,
+          "responseSha256": "sha256:75bc44437030c9b357627b004da36fbbad81bac96a5c7ef9e33371219f3bedde",
+          "readyAt": "2026-11-01T00:00:00.000Z"
+        },
+        "decision": {
+          "verdict": "repair_required",
+          "reasonCodes": [
+            "REQUIRED_VALIDATION_CHECK_FAILED"
+          ],
+          "failedCheckIds": [
+            "vue_build"
+          ]
+        },
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "receiptHash": "sha256:7b389c39d47c29b1c682292661aa4beb0b838626ecb636b7a1a27ee7440bb4d7"
+    }
+  },
+  {
+    "scenario": {
+      "name": "infrastructure_warning",
+      "report": {
+        "projectId": "evidence-project",
+        "runId": "evidence-request",
+        "passed": false,
+        "status": "warning",
+        "checks": [
+          {
+            "id": "vue_build",
+            "status": "warning",
+            "summary": "Build complete"
+          },
+          {
+            "id": "evidence_files",
+            "status": "passed",
+            "summary": "Evidence complete"
+          }
+        ]
+      }
+    },
+    "input": {
+      "missionId": "mission-fixture",
+      "generationId": "00000000-0000-4000-8000-000000000001",
+      "candidateVersion": 1,
+      "missionSpec": {
+        "schemaVersion": 1,
+        "framework": "PI Agent",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "objectiveSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "composition": {
+          "profileId": "finance",
+          "profileVersion": "1.0.0",
+          "domainPacks": [
+            {
+              "id": "finance",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPackId": "workspace",
+          "deliveryPackVersion": "1.0.0",
+          "compositionSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "capabilityId": "technical_analysis",
+        "runPlanId": "evidence-request",
+        "validationReportPath": ".data-agent/validation.json",
+        "expectedEntities": [],
+        "artifacts": [
+          {
+            "path": "src/**",
+            "role": "subject",
+            "mutability": "frozen",
+            "required": true
+          },
+          {
+            "path": ".data-agent/validation.json",
+            "role": "evidence",
+            "mutability": "derived",
+            "required": true
+          }
+        ],
+        "requiredValidationCheckIds": [
+          "vue_build",
+          "evidence_files"
+        ],
+        "allowedValidationWarnings": [],
+        "maxRepairAttempts": 2,
+        "nodes": [],
+        "acceptancePredicates": [],
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+      "preview": {
+        "url": "http://127.0.0.1:4100",
+        "port": 4100
+      }
+    },
+    "files": {
+      "src/App.vue": "export default function Page() { return \"研究看板\"; }\n",
+      ".data-agent/validation.json": "{\"projectId\":\"evidence-project\",\"runId\":\"evidence-request\",\"passed\":false,\"status\":\"warning\",\"checks\":[{\"id\":\"vue_build\",\"status\":\"warning\",\"summary\":\"Build complete\"},{\"id\":\"evidence_files\",\"status\":\"passed\",\"summary\":\"Evidence complete\"}]}"
+    },
+    "now": "2026-11-01T00:00:00.000Z",
+    "reads": 0,
+    "expected": {
+      "verdict": "retry_infrastructure",
+      "reasonCodes": [
+        "REQUIRED_VALIDATION_INFRASTRUCTURE_WARNING"
+      ],
+      "failedCheckIds": [
+        "vue_build"
+      ],
+      "candidateVersion": 1,
+      "subjectHash": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+      "payload": {
+        "schemaVersion": 1,
+        "missionId": "mission-fixture",
+        "generationId": "00000000-0000-4000-8000-000000000001",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "candidateVersion": 1,
+        "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+        "validation": {
+          "reportPath": ".data-agent/validation.json",
+          "reportSha256": "sha256:b63ba86d54963398f9dc32545465848d55afce7a157ab42dfc2762e782279cf9",
+          "runId": "evidence-request",
+          "checks": [
+            {
+              "id": "vue_build",
+              "status": "warning",
+              "summarySha256": "sha256:d9e44c03b78d34897bb9b68df63555f470558e27b02712fa3bedd307f56701ab"
+            },
+            {
+              "id": "evidence_files",
+              "status": "passed",
+              "summarySha256": "sha256:8a0dc2a0ebc009ce845741d673e7a353c3fdc6f538863cd06e9f36fbeb7a6ffe"
+            }
+          ]
+        },
+        "artifacts": {
+          "subjectManifestSha256": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+          "evidenceManifestSha256": "sha256:c4910492effef935a5c3edfd9e0c05cdc134b0db8f0b8382fd6c641f78ac906e",
+          "items": [
+            {
+              "path": "src/App.vue",
+              "role": "subject",
+              "bytes": 58,
+              "sha256": "sha256:94490326d6008c6ce024d445f1865f3ed61626c3d901298fd9f96587b6cfc604"
+            }
+          ],
+          "evidenceItems": [
+            {
+              "path": ".data-agent/validation.json",
+              "role": "evidence",
+              "bytes": 242,
+              "sha256": "sha256:b63ba86d54963398f9dc32545465848d55afce7a157ab42dfc2762e782279cf9"
+            }
+          ],
+          "issues": []
+        },
+        "preview": {
+          "url": "http://127.0.0.1:4100",
+          "port": 4100,
+          "httpStatus": 0,
+          "responseSha256": "sha256:75bc44437030c9b357627b004da36fbbad81bac96a5c7ef9e33371219f3bedde",
+          "readyAt": "2026-11-01T00:00:00.000Z"
+        },
+        "decision": {
+          "verdict": "retry_infrastructure",
+          "reasonCodes": [
+            "REQUIRED_VALIDATION_INFRASTRUCTURE_WARNING"
+          ],
+          "failedCheckIds": [
+            "vue_build"
+          ]
+        },
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "receiptHash": "sha256:f8ec8b03204418c8502b5d62e0e3163ff0c68749cb6d2a50a78e242934466b2a"
+    }
+  },
+  {
+    "scenario": {
+      "name": "malformed_checks",
+      "report": {
+        "projectId": "evidence-project",
+        "runId": "evidence-request",
+        "passed": true,
+        "status": "passed",
+        "checks": [
+          {}
+        ]
+      }
+    },
+    "input": {
+      "missionId": "mission-fixture",
+      "generationId": "00000000-0000-4000-8000-000000000001",
+      "candidateVersion": 1,
+      "missionSpec": {
+        "schemaVersion": 1,
+        "framework": "PI Agent",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "objectiveSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "composition": {
+          "profileId": "finance",
+          "profileVersion": "1.0.0",
+          "domainPacks": [
+            {
+              "id": "finance",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPackId": "workspace",
+          "deliveryPackVersion": "1.0.0",
+          "compositionSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "capabilityId": "technical_analysis",
+        "runPlanId": "evidence-request",
+        "validationReportPath": ".data-agent/validation.json",
+        "expectedEntities": [],
+        "artifacts": [
+          {
+            "path": "src/**",
+            "role": "subject",
+            "mutability": "frozen",
+            "required": true
+          },
+          {
+            "path": ".data-agent/validation.json",
+            "role": "evidence",
+            "mutability": "derived",
+            "required": true
+          }
+        ],
+        "requiredValidationCheckIds": [
+          "vue_build",
+          "evidence_files"
+        ],
+        "allowedValidationWarnings": [],
+        "maxRepairAttempts": 2,
+        "nodes": [],
+        "acceptancePredicates": [],
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+      "preview": {
+        "url": "http://127.0.0.1:4100",
+        "port": 4100
+      }
+    },
+    "files": {
+      "src/App.vue": "export default function Page() { return \"研究看板\"; }\n",
+      ".data-agent/validation.json": "{\"projectId\":\"evidence-project\",\"runId\":\"evidence-request\",\"passed\":true,\"status\":\"passed\",\"checks\":[{}]}"
+    },
+    "now": "2026-11-01T00:00:00.000Z",
+    "reads": 0,
+    "expected": {
+      "verdict": "rejected",
+      "reasonCodes": [
+        "VALIDATION_CHECK_INVALID"
+      ],
+      "failedCheckIds": [],
+      "candidateVersion": 1,
+      "subjectHash": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+      "payload": {
+        "schemaVersion": 1,
+        "missionId": "mission-fixture",
+        "generationId": "00000000-0000-4000-8000-000000000001",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "candidateVersion": 1,
+        "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+        "validation": {
+          "reportPath": ".data-agent/validation.json",
+          "reportSha256": "sha256:78a477039e3eb0b499dba82708a8bf12896c5a2b1f64acb812caea3d0619a49b",
+          "runId": "evidence-request",
+          "checks": []
+        },
+        "artifacts": {
+          "subjectManifestSha256": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+          "evidenceManifestSha256": "sha256:3fa37a3ee059816fafc0d794349bbda45ec7b26b1838e8c355a5cc38b17e578c",
+          "items": [
+            {
+              "path": "src/App.vue",
+              "role": "subject",
+              "bytes": 58,
+              "sha256": "sha256:94490326d6008c6ce024d445f1865f3ed61626c3d901298fd9f96587b6cfc604"
+            }
+          ],
+          "evidenceItems": [
+            {
+              "path": ".data-agent/validation.json",
+              "role": "evidence",
+              "bytes": 105,
+              "sha256": "sha256:78a477039e3eb0b499dba82708a8bf12896c5a2b1f64acb812caea3d0619a49b"
+            }
+          ],
+          "issues": []
+        },
+        "preview": {
+          "url": "http://127.0.0.1:4100",
+          "port": 4100,
+          "httpStatus": 0,
+          "responseSha256": "sha256:75bc44437030c9b357627b004da36fbbad81bac96a5c7ef9e33371219f3bedde",
+          "readyAt": "2026-11-01T00:00:00.000Z"
+        },
+        "decision": {
+          "verdict": "rejected",
+          "reasonCodes": [
+            "VALIDATION_CHECK_INVALID"
+          ],
+          "failedCheckIds": []
+        },
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "receiptHash": "sha256:a02d07392b21c9f6ec465ba27727911feab00d9fe8e4e32c721370b3c1206700"
+    }
+  },
+  {
+    "scenario": {
+      "name": "missing_report",
+      "omitReport": true
+    },
+    "input": {
+      "missionId": "mission-fixture",
+      "generationId": "00000000-0000-4000-8000-000000000001",
+      "candidateVersion": 1,
+      "missionSpec": {
+        "schemaVersion": 1,
+        "framework": "PI Agent",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "objectiveSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "composition": {
+          "profileId": "finance",
+          "profileVersion": "1.0.0",
+          "domainPacks": [
+            {
+              "id": "finance",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPackId": "workspace",
+          "deliveryPackVersion": "1.0.0",
+          "compositionSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "capabilityId": "technical_analysis",
+        "runPlanId": "evidence-request",
+        "validationReportPath": ".data-agent/validation.json",
+        "expectedEntities": [],
+        "artifacts": [
+          {
+            "path": "src/**",
+            "role": "subject",
+            "mutability": "frozen",
+            "required": true
+          },
+          {
+            "path": ".data-agent/validation.json",
+            "role": "evidence",
+            "mutability": "derived",
+            "required": true
+          }
+        ],
+        "requiredValidationCheckIds": [
+          "vue_build",
+          "evidence_files"
+        ],
+        "allowedValidationWarnings": [],
+        "maxRepairAttempts": 2,
+        "nodes": [],
+        "acceptancePredicates": [],
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+      "preview": {
+        "url": "http://127.0.0.1:4100",
+        "port": 4100
+      }
+    },
+    "files": {
+      "src/App.vue": "export default function Page() { return \"研究看板\"; }\n"
+    },
+    "now": "2026-11-01T00:00:00.000Z",
+    "reads": 0,
+    "expected": {
+      "verdict": "retry_infrastructure",
+      "reasonCodes": [
+        "VALIDATION_REPORT_UNAVAILABLE",
+        "REQUIRED_DERIVED_EVIDENCE_UNAVAILABLE"
+      ],
+      "failedCheckIds": [],
+      "candidateVersion": 1,
+      "subjectHash": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+      "payload": {
+        "schemaVersion": 1,
+        "missionId": "mission-fixture",
+        "generationId": "00000000-0000-4000-8000-000000000001",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "candidateVersion": 1,
+        "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+        "validation": {
+          "reportPath": ".data-agent/validation.json",
+          "reportSha256": "sha256:5f25d797b9f5c2aa6f386ea17e012f0bffe0f24b9f3eb6a46b5436a6220a2186",
+          "runId": null,
+          "checks": []
+        },
+        "artifacts": {
+          "subjectManifestSha256": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+          "evidenceManifestSha256": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "items": [
+            {
+              "path": "src/App.vue",
+              "role": "subject",
+              "bytes": 58,
+              "sha256": "sha256:94490326d6008c6ce024d445f1865f3ed61626c3d901298fd9f96587b6cfc604"
+            }
+          ],
+          "evidenceItems": [],
+          "issues": [
+            {
+              "path": ".data-agent/validation.json",
+              "role": "evidence",
+              "code": "REQUIRED_ARTIFACT_MISSING"
+            }
+          ]
+        },
+        "preview": {
+          "url": "http://127.0.0.1:4100",
+          "port": 4100,
+          "httpStatus": 0,
+          "responseSha256": "sha256:75bc44437030c9b357627b004da36fbbad81bac96a5c7ef9e33371219f3bedde",
+          "readyAt": "2026-11-01T00:00:00.000Z"
+        },
+        "decision": {
+          "verdict": "retry_infrastructure",
+          "reasonCodes": [
+            "VALIDATION_REPORT_UNAVAILABLE",
+            "REQUIRED_DERIVED_EVIDENCE_UNAVAILABLE"
+          ],
+          "failedCheckIds": []
+        },
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "receiptHash": "sha256:4af35cf742ac8f25b21de211f2417b064832e8a7e0a86568905f7ace69362690"
+    }
+  },
+  {
+    "scenario": {
+      "name": "missing_subject",
+      "removeSubject": true
+    },
+    "input": {
+      "missionId": "mission-fixture",
+      "generationId": "00000000-0000-4000-8000-000000000001",
+      "candidateVersion": 1,
+      "missionSpec": {
+        "schemaVersion": 1,
+        "framework": "PI Agent",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "objectiveSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "composition": {
+          "profileId": "finance",
+          "profileVersion": "1.0.0",
+          "domainPacks": [
+            {
+              "id": "finance",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPackId": "workspace",
+          "deliveryPackVersion": "1.0.0",
+          "compositionSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "capabilityId": "technical_analysis",
+        "runPlanId": "evidence-request",
+        "validationReportPath": ".data-agent/validation.json",
+        "expectedEntities": [],
+        "artifacts": [
+          {
+            "path": "src/App.vue",
+            "role": "subject",
+            "mutability": "frozen",
+            "required": true
+          },
+          {
+            "path": ".data-agent/validation.json",
+            "role": "evidence",
+            "mutability": "derived",
+            "required": true
+          }
+        ],
+        "requiredValidationCheckIds": [
+          "vue_build",
+          "evidence_files"
+        ],
+        "allowedValidationWarnings": [],
+        "maxRepairAttempts": 2,
+        "nodes": [],
+        "acceptancePredicates": [],
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "missionSpecSha256": "sha256:240ad7155b915f50e4065a2e53db440a89da181e076c4bf2d74d68db569ff396",
+      "preview": {
+        "url": "http://127.0.0.1:4100",
+        "port": 4100
+      }
+    },
+    "files": {
+      ".data-agent/validation.json": "{\"projectId\":\"evidence-project\",\"runId\":\"evidence-request\",\"passed\":true,\"status\":\"passed\",\"checks\":[{\"id\":\"vue_build\",\"status\":\"passed\",\"summary\":\"Build complete\"},{\"id\":\"evidence_files\",\"status\":\"passed\",\"summary\":\"Evidence complete\"}]}"
+    },
+    "now": "2026-11-01T00:00:00.000Z",
+    "reads": 0,
+    "expected": {
+      "verdict": "repair_required",
+      "reasonCodes": [
+        "REQUIRED_SUBJECT_ARTIFACT_UNAVAILABLE"
+      ],
+      "failedCheckIds": [],
+      "candidateVersion": 1,
+      "subjectHash": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "payload": {
+        "schemaVersion": 1,
+        "missionId": "mission-fixture",
+        "generationId": "00000000-0000-4000-8000-000000000001",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "candidateVersion": 1,
+        "missionSpecSha256": "sha256:240ad7155b915f50e4065a2e53db440a89da181e076c4bf2d74d68db569ff396",
+        "validation": {
+          "reportPath": ".data-agent/validation.json",
+          "reportSha256": "sha256:2a27a23f5399ea363d8ea16faf9f92379e9ffd6bbad3f371c1f2685c78aea053",
+          "runId": "evidence-request",
+          "checks": [
+            {
+              "id": "vue_build",
+              "status": "passed",
+              "summarySha256": "sha256:d9e44c03b78d34897bb9b68df63555f470558e27b02712fa3bedd307f56701ab"
+            },
+            {
+              "id": "evidence_files",
+              "status": "passed",
+              "summarySha256": "sha256:8a0dc2a0ebc009ce845741d673e7a353c3fdc6f538863cd06e9f36fbeb7a6ffe"
+            }
+          ]
+        },
+        "artifacts": {
+          "subjectManifestSha256": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "evidenceManifestSha256": "sha256:ce026851ebddb98c6ea22e9bce93bfda3843b6c63ec6e7084a62a99b44ed747e",
+          "items": [],
+          "evidenceItems": [
+            {
+              "path": ".data-agent/validation.json",
+              "role": "evidence",
+              "bytes": 239,
+              "sha256": "sha256:2a27a23f5399ea363d8ea16faf9f92379e9ffd6bbad3f371c1f2685c78aea053"
+            }
+          ],
+          "issues": [
+            {
+              "path": "src/App.vue",
+              "role": "subject",
+              "code": "REQUIRED_ARTIFACT_MISSING"
+            }
+          ]
+        },
+        "preview": {
+          "url": "http://127.0.0.1:4100",
+          "port": 4100,
+          "httpStatus": 0,
+          "responseSha256": "sha256:75bc44437030c9b357627b004da36fbbad81bac96a5c7ef9e33371219f3bedde",
+          "readyAt": "2026-11-01T00:00:00.000Z"
+        },
+        "decision": {
+          "verdict": "repair_required",
+          "reasonCodes": [
+            "REQUIRED_SUBJECT_ARTIFACT_UNAVAILABLE"
+          ],
+          "failedCheckIds": []
+        },
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "receiptHash": "sha256:34ed9acfa81c947641c8444896c233781cb53755b54d61f45080f31d0105fe02"
+    }
+  },
+  {
+    "scenario": {
+      "name": "preview_unavailable",
+      "httpStatus": 503
+    },
+    "input": {
+      "missionId": "mission-fixture",
+      "generationId": "00000000-0000-4000-8000-000000000001",
+      "candidateVersion": 1,
+      "missionSpec": {
+        "schemaVersion": 1,
+        "framework": "PI Agent",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "objectiveSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "composition": {
+          "profileId": "finance",
+          "profileVersion": "1.0.0",
+          "domainPacks": [
+            {
+              "id": "finance",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPackId": "workspace",
+          "deliveryPackVersion": "1.0.0",
+          "compositionSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "capabilityId": "technical_analysis",
+        "runPlanId": "evidence-request",
+        "validationReportPath": ".data-agent/validation.json",
+        "expectedEntities": [],
+        "artifacts": [
+          {
+            "path": "src/**",
+            "role": "subject",
+            "mutability": "frozen",
+            "required": true
+          },
+          {
+            "path": ".data-agent/validation.json",
+            "role": "evidence",
+            "mutability": "derived",
+            "required": true
+          }
+        ],
+        "requiredValidationCheckIds": [
+          "vue_build",
+          "evidence_files"
+        ],
+        "allowedValidationWarnings": [],
+        "maxRepairAttempts": 2,
+        "nodes": [],
+        "acceptancePredicates": [],
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+      "preview": {
+        "url": "http://127.0.0.1:4100",
+        "port": 4100
+      }
+    },
+    "files": {
+      "src/App.vue": "export default function Page() { return \"研究看板\"; }\n",
+      ".data-agent/validation.json": "{\"projectId\":\"evidence-project\",\"runId\":\"evidence-request\",\"passed\":true,\"status\":\"passed\",\"checks\":[{\"id\":\"vue_build\",\"status\":\"passed\",\"summary\":\"Build complete\"},{\"id\":\"evidence_files\",\"status\":\"passed\",\"summary\":\"Evidence complete\"}]}"
+    },
+    "now": "2026-11-01T00:00:00.000Z",
+    "reads": 2,
+    "expected": {
+      "verdict": "retry_infrastructure",
+      "reasonCodes": [
+        "PREVIEW_HTTP_NOT_READY"
+      ],
+      "failedCheckIds": [],
+      "candidateVersion": 1,
+      "subjectHash": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+      "payload": {
+        "schemaVersion": 1,
+        "missionId": "mission-fixture",
+        "generationId": "00000000-0000-4000-8000-000000000001",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "candidateVersion": 1,
+        "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+        "validation": {
+          "reportPath": ".data-agent/validation.json",
+          "reportSha256": "sha256:2a27a23f5399ea363d8ea16faf9f92379e9ffd6bbad3f371c1f2685c78aea053",
+          "runId": "evidence-request",
+          "checks": [
+            {
+              "id": "vue_build",
+              "status": "passed",
+              "summarySha256": "sha256:d9e44c03b78d34897bb9b68df63555f470558e27b02712fa3bedd307f56701ab"
+            },
+            {
+              "id": "evidence_files",
+              "status": "passed",
+              "summarySha256": "sha256:8a0dc2a0ebc009ce845741d673e7a353c3fdc6f538863cd06e9f36fbeb7a6ffe"
+            }
+          ]
+        },
+        "artifacts": {
+          "subjectManifestSha256": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+          "evidenceManifestSha256": "sha256:ce026851ebddb98c6ea22e9bce93bfda3843b6c63ec6e7084a62a99b44ed747e",
+          "items": [
+            {
+              "path": "src/App.vue",
+              "role": "subject",
+              "bytes": 58,
+              "sha256": "sha256:94490326d6008c6ce024d445f1865f3ed61626c3d901298fd9f96587b6cfc604"
+            }
+          ],
+          "evidenceItems": [
+            {
+              "path": ".data-agent/validation.json",
+              "role": "evidence",
+              "bytes": 239,
+              "sha256": "sha256:2a27a23f5399ea363d8ea16faf9f92379e9ffd6bbad3f371c1f2685c78aea053"
+            }
+          ],
+          "issues": []
+        },
+        "preview": {
+          "url": "http://127.0.0.1:4100",
+          "port": 4100,
+          "httpStatus": 0,
+          "responseSha256": "sha256:75bc44437030c9b357627b004da36fbbad81bac96a5c7ef9e33371219f3bedde",
+          "readyAt": "2026-11-01T00:00:00.000Z"
+        },
+        "decision": {
+          "verdict": "retry_infrastructure",
+          "reasonCodes": [
+            "PREVIEW_HTTP_NOT_READY"
+          ],
+          "failedCheckIds": []
+        },
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "receiptHash": "sha256:fa669ec14b764e87bae8efa386d45037206c183487fce3e124d774f442c1dc5a"
+    }
+  },
+  {
+    "scenario": {
+      "name": "subject_mutated",
+      "mutateSubject": true
+    },
+    "input": {
+      "missionId": "mission-fixture",
+      "generationId": "00000000-0000-4000-8000-000000000001",
+      "candidateVersion": 1,
+      "missionSpec": {
+        "schemaVersion": 1,
+        "framework": "PI Agent",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "objectiveSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "composition": {
+          "profileId": "finance",
+          "profileVersion": "1.0.0",
+          "domainPacks": [
+            {
+              "id": "finance",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPackId": "workspace",
+          "deliveryPackVersion": "1.0.0",
+          "compositionSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "capabilityId": "technical_analysis",
+        "runPlanId": "evidence-request",
+        "validationReportPath": ".data-agent/validation.json",
+        "expectedEntities": [],
+        "artifacts": [
+          {
+            "path": "src/**",
+            "role": "subject",
+            "mutability": "frozen",
+            "required": true
+          },
+          {
+            "path": ".data-agent/validation.json",
+            "role": "evidence",
+            "mutability": "derived",
+            "required": true
+          }
+        ],
+        "requiredValidationCheckIds": [
+          "vue_build",
+          "evidence_files"
+        ],
+        "allowedValidationWarnings": [],
+        "maxRepairAttempts": 2,
+        "nodes": [],
+        "acceptancePredicates": [],
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+      "preview": {
+        "url": "http://127.0.0.1:4100",
+        "port": 4100
+      }
+    },
+    "files": {
+      "src/App.vue": "export default function Page() { return \"研究看板\"; }\n",
+      ".data-agent/validation.json": "{\"projectId\":\"evidence-project\",\"runId\":\"evidence-request\",\"passed\":true,\"status\":\"passed\",\"checks\":[{\"id\":\"vue_build\",\"status\":\"passed\",\"summary\":\"Build complete\"},{\"id\":\"evidence_files\",\"status\":\"passed\",\"summary\":\"Evidence complete\"}]}"
+    },
+    "now": "2026-11-01T00:00:00.000Z",
+    "reads": 1,
+    "expected": {
+      "verdict": "stale",
+      "reasonCodes": [
+        "SUBJECT_MANIFEST_CHANGED_DURING_VERIFICATION"
+      ],
+      "failedCheckIds": [],
+      "candidateVersion": 1,
+      "subjectHash": "sha256:4fc40635a4b451d7cf4ca25aa82ded6a5d061a38cc4832cb5e3efee5be99b2a7",
+      "payload": {
+        "schemaVersion": 1,
+        "missionId": "mission-fixture",
+        "generationId": "00000000-0000-4000-8000-000000000001",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "candidateVersion": 1,
+        "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+        "validation": {
+          "reportPath": ".data-agent/validation.json",
+          "reportSha256": "sha256:2a27a23f5399ea363d8ea16faf9f92379e9ffd6bbad3f371c1f2685c78aea053",
+          "runId": "evidence-request",
+          "checks": [
+            {
+              "id": "vue_build",
+              "status": "passed",
+              "summarySha256": "sha256:d9e44c03b78d34897bb9b68df63555f470558e27b02712fa3bedd307f56701ab"
+            },
+            {
+              "id": "evidence_files",
+              "status": "passed",
+              "summarySha256": "sha256:8a0dc2a0ebc009ce845741d673e7a353c3fdc6f538863cd06e9f36fbeb7a6ffe"
+            }
+          ]
+        },
+        "artifacts": {
+          "subjectManifestSha256": "sha256:4fc40635a4b451d7cf4ca25aa82ded6a5d061a38cc4832cb5e3efee5be99b2a7",
+          "evidenceManifestSha256": "sha256:ce026851ebddb98c6ea22e9bce93bfda3843b6c63ec6e7084a62a99b44ed747e",
+          "items": [
+            {
+              "path": "src/App.vue",
+              "role": "subject",
+              "bytes": 69,
+              "sha256": "sha256:4d84f0e50d2768aa5a7eb782976cf6e5a70a70a358ed7afe04d15915efea3009"
+            }
+          ],
+          "evidenceItems": [
+            {
+              "path": ".data-agent/validation.json",
+              "role": "evidence",
+              "bytes": 239,
+              "sha256": "sha256:2a27a23f5399ea363d8ea16faf9f92379e9ffd6bbad3f371c1f2685c78aea053"
+            }
+          ],
+          "issues": []
+        },
+        "preview": {
+          "url": "http://127.0.0.1:4100",
+          "port": 4100,
+          "httpStatus": 200,
+          "responseSha256": "sha256:17615508d46dc2ca4e5c025ba5fb9997d0643cc18003af03618c2682a7db346d",
+          "readyAt": "2026-11-01T00:00:00.000Z"
+        },
+        "decision": {
+          "verdict": "stale",
+          "reasonCodes": [
+            "SUBJECT_MANIFEST_CHANGED_DURING_VERIFICATION"
+          ],
+          "failedCheckIds": []
+        },
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "receiptHash": "sha256:42fbd9fd09007aa88bc2bfec46d34265b565e1b108a66becacb333c608523b5c"
+    }
+  },
+  {
+    "scenario": {
+      "name": "report_mutated",
+      "mutateReport": true
+    },
+    "input": {
+      "missionId": "mission-fixture",
+      "generationId": "00000000-0000-4000-8000-000000000001",
+      "candidateVersion": 1,
+      "missionSpec": {
+        "schemaVersion": 1,
+        "framework": "PI Agent",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "objectiveSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "composition": {
+          "profileId": "finance",
+          "profileVersion": "1.0.0",
+          "domainPacks": [
+            {
+              "id": "finance",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPackId": "workspace",
+          "deliveryPackVersion": "1.0.0",
+          "compositionSha256": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        },
+        "capabilityId": "technical_analysis",
+        "runPlanId": "evidence-request",
+        "validationReportPath": ".data-agent/validation.json",
+        "expectedEntities": [],
+        "artifacts": [
+          {
+            "path": "src/**",
+            "role": "subject",
+            "mutability": "frozen",
+            "required": true
+          },
+          {
+            "path": ".data-agent/validation.json",
+            "role": "evidence",
+            "mutability": "derived",
+            "required": true
+          }
+        ],
+        "requiredValidationCheckIds": [
+          "vue_build",
+          "evidence_files"
+        ],
+        "allowedValidationWarnings": [],
+        "maxRepairAttempts": 2,
+        "nodes": [],
+        "acceptancePredicates": [],
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+      "preview": {
+        "url": "http://127.0.0.1:4100",
+        "port": 4100
+      }
+    },
+    "files": {
+      "src/App.vue": "export default function Page() { return \"研究看板\"; }\n",
+      ".data-agent/validation.json": "{\"projectId\":\"evidence-project\",\"runId\":\"evidence-request\",\"passed\":true,\"status\":\"passed\",\"checks\":[{\"id\":\"vue_build\",\"status\":\"passed\",\"summary\":\"Build complete\"},{\"id\":\"evidence_files\",\"status\":\"passed\",\"summary\":\"Evidence complete\"}]}"
+    },
+    "now": "2026-11-01T00:00:00.000Z",
+    "reads": 1,
+    "expected": {
+      "verdict": "stale",
+      "reasonCodes": [
+        "VALIDATION_REPORT_CHANGED_DURING_VERIFICATION"
+      ],
+      "failedCheckIds": [],
+      "candidateVersion": 1,
+      "subjectHash": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+      "payload": {
+        "schemaVersion": 1,
+        "missionId": "mission-fixture",
+        "generationId": "00000000-0000-4000-8000-000000000001",
+        "projectId": "evidence-project",
+        "requestId": "evidence-request",
+        "candidateVersion": 1,
+        "missionSpecSha256": "sha256:aef77d12f28bdadc46675ac2a0a7da8261e8f0954f9efb92fb0b0231f79a77a2",
+        "validation": {
+          "reportPath": ".data-agent/validation.json",
+          "reportSha256": "sha256:512ff0c83bec1690ff2c5d7ba68037e892d5a0431fc955efe8a7111150885cbe",
+          "runId": "replacement-request",
+          "checks": [
+            {
+              "id": "vue_build",
+              "status": "passed",
+              "summarySha256": "sha256:d9e44c03b78d34897bb9b68df63555f470558e27b02712fa3bedd307f56701ab"
+            },
+            {
+              "id": "evidence_files",
+              "status": "passed",
+              "summarySha256": "sha256:8a0dc2a0ebc009ce845741d673e7a353c3fdc6f538863cd06e9f36fbeb7a6ffe"
+            }
+          ]
+        },
+        "artifacts": {
+          "subjectManifestSha256": "sha256:e60c681ccb959b685ead108148d0a2702938f983f13c416258d74eafe232fd0f",
+          "evidenceManifestSha256": "sha256:78a540f8762b841c5d90ad172552b084395f5297c95987920959ce5fc4b49827",
+          "items": [
+            {
+              "path": "src/App.vue",
+              "role": "subject",
+              "bytes": 58,
+              "sha256": "sha256:94490326d6008c6ce024d445f1865f3ed61626c3d901298fd9f96587b6cfc604"
+            }
+          ],
+          "evidenceItems": [
+            {
+              "path": ".data-agent/validation.json",
+              "role": "evidence",
+              "bytes": 242,
+              "sha256": "sha256:512ff0c83bec1690ff2c5d7ba68037e892d5a0431fc955efe8a7111150885cbe"
+            }
+          ],
+          "issues": []
+        },
+        "preview": {
+          "url": "http://127.0.0.1:4100",
+          "port": 4100,
+          "httpStatus": 200,
+          "responseSha256": "sha256:17615508d46dc2ca4e5c025ba5fb9997d0643cc18003af03618c2682a7db346d",
+          "readyAt": "2026-11-01T00:00:00.000Z"
+        },
+        "decision": {
+          "verdict": "stale",
+          "reasonCodes": [
+            "VALIDATION_REPORT_CHANGED_DURING_VERIFICATION"
+          ],
+          "failedCheckIds": []
+        },
+        "createdAt": "2026-11-01T00:00:00.000Z"
+      },
+      "receiptHash": "sha256:f6b8e51ecff903a739e57c90122826d3f997d6e38eda4cf7c91ee89ac65dd9ec"
+    }
+  }
+]

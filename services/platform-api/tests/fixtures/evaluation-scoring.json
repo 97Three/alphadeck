@@ -1,0 +1,1951 @@
+{
+  "scores": [
+    {
+      "input": null,
+      "expected": 60
+    },
+    {
+      "input": {},
+      "expected": 60
+    },
+    {
+      "input": [],
+      "expected": 60
+    },
+    {
+      "input": {
+        "passed": true
+      },
+      "expected": 100
+    },
+    {
+      "input": {
+        "passed": false,
+        "failures": [
+          "one",
+          "two"
+        ]
+      },
+      "expected": 36
+    },
+    {
+      "input": {
+        "score": 88.5
+      },
+      "expected": 89
+    },
+    {
+      "input": {
+        "evaluation": {
+          "score": 150
+        }
+      },
+      "expected": 100
+    },
+    {
+      "input": {
+        "evaluation": {
+          "score": -1
+        },
+        "score": 99
+      },
+      "expected": 0
+    },
+    {
+      "input": {
+        "score": 65.49
+      },
+      "expected": 65
+    },
+    {
+      "input": {
+        "id": "stable",
+        "passed": true,
+        "firstPassPassed": true,
+        "durationMs": 10
+      },
+      "expected": 100
+    },
+    {
+      "input": {
+        "id": "flaky",
+        "passed": true,
+        "firstPassPassed": false,
+        "repairAttempts": 1,
+        "durationMs": 150,
+        "stability": {
+          "attempts": [
+            {
+              "passed": true,
+              "score": 100
+            },
+            {
+              "passed": false,
+              "score": 20
+            }
+          ]
+        },
+        "evaluation": {
+          "dimensions": [
+            {
+              "id": "grounding",
+              "score": 90
+            },
+            {
+              "id": "task",
+              "score": 80
+            }
+          ]
+        }
+      },
+      "expected": 100
+    }
+  ],
+  "qualities": [
+    {
+      "input": [],
+      "repeatCount": 3,
+      "expected": {
+        "caseCount": 0,
+        "firstPassCount": 0,
+        "finalPassCount": 0,
+        "firstPassRate": 0,
+        "finalPassRate": 0,
+        "repairedCaseCount": 0,
+        "repairRate": 0,
+        "averageScore": 0,
+        "durationMs": {
+          "total": 0,
+          "average": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "dimensions": {
+          "contract": 0,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 3,
+          "attemptCount": 0,
+          "passedAttemptCount": 0,
+          "passRate": 0,
+          "flakyCaseIds": [],
+          "confidence95": {
+            "lower": 0,
+            "upper": 0
+          },
+          "scoreStdDev": {
+            "average": 0,
+            "max": {
+              "id": null,
+              "value": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": [
+        null,
+        {},
+        [],
+        {
+          "passed": true
+        },
+        {
+          "passed": false,
+          "failures": [
+            "one",
+            "two"
+          ]
+        },
+        {
+          "score": 88.5
+        },
+        {
+          "evaluation": {
+            "score": 150
+          }
+        },
+        {
+          "evaluation": {
+            "score": -1
+          },
+          "score": 99
+        },
+        {
+          "score": 65.49
+        },
+        {
+          "id": "stable",
+          "passed": true,
+          "firstPassPassed": true,
+          "durationMs": 10
+        },
+        {
+          "id": "flaky",
+          "passed": true,
+          "firstPassPassed": false,
+          "repairAttempts": 1,
+          "durationMs": 150,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 100
+              },
+              {
+                "passed": false,
+                "score": 20
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "grounding",
+                "score": 90
+              },
+              {
+                "id": "task",
+                "score": 80
+              }
+            ]
+          }
+        }
+      ],
+      "repeatCount": 3,
+      "expected": {
+        "caseCount": 11,
+        "firstPassCount": 1,
+        "finalPassCount": 3,
+        "firstPassRate": 9,
+        "finalPassRate": 27,
+        "repairedCaseCount": 1,
+        "repairRate": 9,
+        "averageScore": 70,
+        "durationMs": {
+          "total": 160,
+          "average": 15,
+          "p50": 0,
+          "p95": 150
+        },
+        "dimensions": {
+          "contract": 0,
+          "grounding": 90,
+          "task": 80,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 3,
+          "attemptCount": 12,
+          "passedAttemptCount": 3,
+          "passRate": 25,
+          "flakyCaseIds": [
+            "flaky"
+          ],
+          "confidence95": {
+            "lower": 8.89,
+            "upper": 53.23
+          },
+          "scoreStdDev": {
+            "average": 3.64,
+            "max": {
+              "id": "flaky",
+              "value": 40
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": [
+        {
+          "id": "stable",
+          "passed": true,
+          "firstPassPassed": true,
+          "durationMs": 10
+        },
+        {
+          "id": "flaky",
+          "passed": true,
+          "firstPassPassed": false,
+          "repairAttempts": 1,
+          "durationMs": 150,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 100
+              },
+              {
+                "passed": false,
+                "score": 20
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "grounding",
+                "score": 90
+              },
+              {
+                "id": "task",
+                "score": 80
+              }
+            ]
+          }
+        }
+      ],
+      "repeatCount": 3,
+      "expected": {
+        "caseCount": 2,
+        "firstPassCount": 1,
+        "finalPassCount": 2,
+        "firstPassRate": 50,
+        "finalPassRate": 100,
+        "repairedCaseCount": 1,
+        "repairRate": 50,
+        "averageScore": 100,
+        "durationMs": {
+          "total": 160,
+          "average": 80,
+          "p50": 10,
+          "p95": 150
+        },
+        "dimensions": {
+          "contract": 0,
+          "grounding": 90,
+          "task": 80,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 3,
+          "attemptCount": 3,
+          "passedAttemptCount": 2,
+          "passRate": 67,
+          "flakyCaseIds": [
+            "flaky"
+          ],
+          "confidence95": {
+            "lower": 20.77,
+            "upper": 93.85
+          },
+          "scoreStdDev": {
+            "average": 20,
+            "max": {
+              "id": "flaky",
+              "value": 40
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": [
+        {
+          "id": "case-0",
+          "passed": true,
+          "firstPassPassed": true,
+          "durationMs": 0.1,
+          "repairAttempts": 0,
+          "score": 0,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 0
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 0
+              },
+              {
+                "id": "grounding",
+                "score": 80
+              }
+            ]
+          }
+        }
+      ],
+      "repeatCount": 3,
+      "expected": {
+        "caseCount": 1,
+        "firstPassCount": 1,
+        "finalPassCount": 1,
+        "firstPassRate": 100,
+        "finalPassRate": 100,
+        "repairedCaseCount": 0,
+        "repairRate": 0,
+        "averageScore": 0,
+        "durationMs": {
+          "total": 0.1,
+          "average": 0,
+          "p50": 0.1,
+          "p95": 0.1
+        },
+        "dimensions": {
+          "contract": 0,
+          "grounding": 80,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 3,
+          "attemptCount": 2,
+          "passedAttemptCount": 2,
+          "passRate": 100,
+          "flakyCaseIds": [],
+          "confidence95": {
+            "lower": 34.24,
+            "upper": 100
+          },
+          "scoreStdDev": {
+            "average": 50,
+            "max": {
+              "id": "case-0",
+              "value": 50
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": [
+        {
+          "id": "case-0",
+          "passed": true,
+          "firstPassPassed": true,
+          "durationMs": 0.1,
+          "repairAttempts": 0,
+          "score": 0,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 0
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 0
+              },
+              {
+                "id": "grounding",
+                "score": 80
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-1",
+          "passed": false,
+          "firstPassPassed": false,
+          "durationMs": 0.2,
+          "repairAttempts": 1,
+          "score": 17,
+          "stability": {
+            "attempts": [
+              {
+                "passed": false,
+                "score": 5
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 8
+              },
+              {
+                "id": "grounding",
+                "score": 79
+              }
+            ]
+          }
+        }
+      ],
+      "repeatCount": 3,
+      "expected": {
+        "caseCount": 2,
+        "firstPassCount": 1,
+        "finalPassCount": 1,
+        "firstPassRate": 50,
+        "finalPassRate": 50,
+        "repairedCaseCount": 1,
+        "repairRate": 50,
+        "averageScore": 9,
+        "durationMs": {
+          "total": 0.30000000000000004,
+          "average": 0,
+          "p50": 0.1,
+          "p95": 0.2
+        },
+        "dimensions": {
+          "contract": 4,
+          "grounding": 80,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 3,
+          "attemptCount": 4,
+          "passedAttemptCount": 3,
+          "passRate": 75,
+          "flakyCaseIds": [
+            "case-1"
+          ],
+          "confidence95": {
+            "lower": 30.06,
+            "upper": 95.44
+          },
+          "scoreStdDev": {
+            "average": 48.75,
+            "max": {
+              "id": "case-0",
+              "value": 50
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": [
+        {
+          "id": "case-0",
+          "passed": true,
+          "firstPassPassed": true,
+          "durationMs": 0.1,
+          "repairAttempts": 0,
+          "score": 0,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 0
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 0
+              },
+              {
+                "id": "grounding",
+                "score": 80
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-1",
+          "passed": false,
+          "firstPassPassed": false,
+          "durationMs": 0.2,
+          "repairAttempts": 1,
+          "score": 17,
+          "stability": {
+            "attempts": [
+              {
+                "passed": false,
+                "score": 5
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 8
+              },
+              {
+                "id": "grounding",
+                "score": 79
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-2",
+          "passed": true,
+          "firstPassPassed": false,
+          "durationMs": 0.30000000000000004,
+          "repairAttempts": 0,
+          "score": 34,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 10
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 16
+              },
+              {
+                "id": "grounding",
+                "score": 78
+              }
+            ]
+          }
+        }
+      ],
+      "repeatCount": 3,
+      "expected": {
+        "caseCount": 3,
+        "firstPassCount": 1,
+        "finalPassCount": 2,
+        "firstPassRate": 33,
+        "finalPassRate": 67,
+        "repairedCaseCount": 1,
+        "repairRate": 33,
+        "averageScore": 17,
+        "durationMs": {
+          "total": 0.6000000000000001,
+          "average": 0,
+          "p50": 0.2,
+          "p95": 0.30000000000000004
+        },
+        "dimensions": {
+          "contract": 8,
+          "grounding": 79,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 3,
+          "attemptCount": 6,
+          "passedAttemptCount": 5,
+          "passRate": 83,
+          "flakyCaseIds": [
+            "case-1"
+          ],
+          "confidence95": {
+            "lower": 43.65,
+            "upper": 96.99
+          },
+          "scoreStdDev": {
+            "average": 47.5,
+            "max": {
+              "id": "case-0",
+              "value": 50
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": [
+        {
+          "id": "case-0",
+          "passed": true,
+          "firstPassPassed": true,
+          "durationMs": 0.1,
+          "repairAttempts": 0,
+          "score": 0,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 0
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 0
+              },
+              {
+                "id": "grounding",
+                "score": 80
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-1",
+          "passed": false,
+          "firstPassPassed": false,
+          "durationMs": 0.2,
+          "repairAttempts": 1,
+          "score": 17,
+          "stability": {
+            "attempts": [
+              {
+                "passed": false,
+                "score": 5
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 8
+              },
+              {
+                "id": "grounding",
+                "score": 79
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-2",
+          "passed": true,
+          "firstPassPassed": false,
+          "durationMs": 0.30000000000000004,
+          "repairAttempts": 0,
+          "score": 34,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 10
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 16
+              },
+              {
+                "id": "grounding",
+                "score": 78
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-3",
+          "passed": false,
+          "firstPassPassed": true,
+          "durationMs": 0.4,
+          "repairAttempts": 1,
+          "score": 51,
+          "stability": {
+            "attempts": [
+              {
+                "passed": false,
+                "score": 15
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 24
+              },
+              {
+                "id": "grounding",
+                "score": 77
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-4",
+          "passed": true,
+          "firstPassPassed": false,
+          "durationMs": 0.5,
+          "repairAttempts": 0,
+          "score": 68,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 20
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 32
+              },
+              {
+                "id": "grounding",
+                "score": 76
+              }
+            ]
+          }
+        }
+      ],
+      "repeatCount": 3,
+      "expected": {
+        "caseCount": 5,
+        "firstPassCount": 2,
+        "finalPassCount": 3,
+        "firstPassRate": 40,
+        "finalPassRate": 60,
+        "repairedCaseCount": 2,
+        "repairRate": 40,
+        "averageScore": 34,
+        "durationMs": {
+          "total": 1.5,
+          "average": 0,
+          "p50": 0.30000000000000004,
+          "p95": 0.5
+        },
+        "dimensions": {
+          "contract": 16,
+          "grounding": 78,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 3,
+          "attemptCount": 10,
+          "passedAttemptCount": 8,
+          "passRate": 80,
+          "flakyCaseIds": [
+            "case-1",
+            "case-3"
+          ],
+          "confidence95": {
+            "lower": 49.02,
+            "upper": 94.33
+          },
+          "scoreStdDev": {
+            "average": 45,
+            "max": {
+              "id": "case-0",
+              "value": 50
+            }
+          }
+        }
+      }
+    },
+    {
+      "input": [
+        {
+          "id": "case-0",
+          "passed": true,
+          "firstPassPassed": true,
+          "durationMs": 0.1,
+          "repairAttempts": 0,
+          "score": 0,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 0
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 0
+              },
+              {
+                "id": "grounding",
+                "score": 80
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-1",
+          "passed": false,
+          "firstPassPassed": false,
+          "durationMs": 0.2,
+          "repairAttempts": 1,
+          "score": 17,
+          "stability": {
+            "attempts": [
+              {
+                "passed": false,
+                "score": 5
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 8
+              },
+              {
+                "id": "grounding",
+                "score": 79
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-2",
+          "passed": true,
+          "firstPassPassed": false,
+          "durationMs": 0.30000000000000004,
+          "repairAttempts": 0,
+          "score": 34,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 10
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 16
+              },
+              {
+                "id": "grounding",
+                "score": 78
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-3",
+          "passed": false,
+          "firstPassPassed": true,
+          "durationMs": 0.4,
+          "repairAttempts": 1,
+          "score": 51,
+          "stability": {
+            "attempts": [
+              {
+                "passed": false,
+                "score": 15
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 24
+              },
+              {
+                "id": "grounding",
+                "score": 77
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-4",
+          "passed": true,
+          "firstPassPassed": false,
+          "durationMs": 0.5,
+          "repairAttempts": 0,
+          "score": 68,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 20
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 32
+              },
+              {
+                "id": "grounding",
+                "score": 76
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-5",
+          "passed": false,
+          "firstPassPassed": false,
+          "durationMs": 0.6000000000000001,
+          "repairAttempts": 1,
+          "score": 85,
+          "stability": {
+            "attempts": [
+              {
+                "passed": false,
+                "score": 25
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 40
+              },
+              {
+                "id": "grounding",
+                "score": 75
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-6",
+          "passed": true,
+          "firstPassPassed": true,
+          "durationMs": 0.7000000000000001,
+          "repairAttempts": 0,
+          "score": 1,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 30
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 48
+              },
+              {
+                "id": "grounding",
+                "score": 74
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-7",
+          "passed": false,
+          "firstPassPassed": false,
+          "durationMs": 0.8,
+          "repairAttempts": 1,
+          "score": 18,
+          "stability": {
+            "attempts": [
+              {
+                "passed": false,
+                "score": 35
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 56
+              },
+              {
+                "id": "grounding",
+                "score": 73
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-8",
+          "passed": true,
+          "firstPassPassed": false,
+          "durationMs": 0.9,
+          "repairAttempts": 0,
+          "score": 35,
+          "stability": {
+            "attempts": [
+              {
+                "passed": true,
+                "score": 40
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 64
+              },
+              {
+                "id": "grounding",
+                "score": 72
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-9",
+          "passed": false,
+          "firstPassPassed": true,
+          "durationMs": 1,
+          "repairAttempts": 1,
+          "score": 52,
+          "stability": {
+            "attempts": [
+              {
+                "passed": false,
+                "score": 45
+              },
+              {
+                "passed": true,
+                "score": 100
+              }
+            ]
+          },
+          "evaluation": {
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 72
+              },
+              {
+                "id": "grounding",
+                "score": 71
+              }
+            ]
+          }
+        }
+      ],
+      "repeatCount": 3,
+      "expected": {
+        "caseCount": 10,
+        "firstPassCount": 4,
+        "finalPassCount": 5,
+        "firstPassRate": 40,
+        "finalPassRate": 50,
+        "repairedCaseCount": 5,
+        "repairRate": 50,
+        "averageScore": 36,
+        "durationMs": {
+          "total": 5.500000000000001,
+          "average": 1,
+          "p50": 0.5,
+          "p95": 1
+        },
+        "dimensions": {
+          "contract": 36,
+          "grounding": 76,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 3,
+          "attemptCount": 20,
+          "passedAttemptCount": 15,
+          "passRate": 75,
+          "flakyCaseIds": [
+            "case-1",
+            "case-3",
+            "case-5",
+            "case-7",
+            "case-9"
+          ],
+          "confidence95": {
+            "lower": 53.13,
+            "upper": 88.81
+          },
+          "scoreStdDev": {
+            "average": 38.75,
+            "max": {
+              "id": "case-0",
+              "value": 50
+            }
+          }
+        }
+      }
+    }
+  ],
+  "weighted": [
+    {
+      "input": [],
+      "expected": 0
+    },
+    {
+      "input": [
+        {
+          "id": "contract",
+          "score": 80.4,
+          "weight": 25
+        },
+        {
+          "id": "task",
+          "score": 92.8,
+          "weight": 75
+        }
+      ],
+      "expected": 90
+    },
+    {
+      "input": [
+        {
+          "score": 10,
+          "weight": 0
+        }
+      ],
+      "expected": 0
+    },
+    {
+      "input": [
+        {
+          "score": 500,
+          "weight": 1
+        },
+        {
+          "score": -20,
+          "weight": 2
+        }
+      ],
+      "expected": 33
+    }
+  ],
+  "intervals": [
+    {
+      "passed": -1,
+      "total": 0,
+      "expected": {
+        "lower": 0,
+        "upper": 0
+      }
+    },
+    {
+      "passed": 0,
+      "total": 0,
+      "expected": {
+        "lower": 0,
+        "upper": 0
+      }
+    },
+    {
+      "passed": 1,
+      "total": 0,
+      "expected": {
+        "lower": 0,
+        "upper": 0
+      }
+    },
+    {
+      "passed": 0,
+      "total": 0,
+      "expected": {
+        "lower": 0,
+        "upper": 0
+      }
+    },
+    {
+      "passed": 1,
+      "total": 0,
+      "expected": {
+        "lower": 0,
+        "upper": 0
+      }
+    },
+    {
+      "passed": -1,
+      "total": 1,
+      "expected": {
+        "lower": 0,
+        "upper": 79.35
+      }
+    },
+    {
+      "passed": 0,
+      "total": 1,
+      "expected": {
+        "lower": 0,
+        "upper": 79.35
+      }
+    },
+    {
+      "passed": 1,
+      "total": 1,
+      "expected": {
+        "lower": 20.65,
+        "upper": 100
+      }
+    },
+    {
+      "passed": 1,
+      "total": 1,
+      "expected": {
+        "lower": 20.65,
+        "upper": 100
+      }
+    },
+    {
+      "passed": 2,
+      "total": 1,
+      "expected": {
+        "lower": 20.65,
+        "upper": 100
+      }
+    },
+    {
+      "passed": -1,
+      "total": 2,
+      "expected": {
+        "lower": 0,
+        "upper": 65.76
+      }
+    },
+    {
+      "passed": 0,
+      "total": 2,
+      "expected": {
+        "lower": 0,
+        "upper": 65.76
+      }
+    },
+    {
+      "passed": 1,
+      "total": 2,
+      "expected": {
+        "lower": 9.45,
+        "upper": 90.55
+      }
+    },
+    {
+      "passed": 2,
+      "total": 2,
+      "expected": {
+        "lower": 34.24,
+        "upper": 100
+      }
+    },
+    {
+      "passed": 3,
+      "total": 2,
+      "expected": {
+        "lower": 34.24,
+        "upper": 100
+      }
+    },
+    {
+      "passed": -1,
+      "total": 3,
+      "expected": {
+        "lower": 0,
+        "upper": 56.15
+      }
+    },
+    {
+      "passed": 0,
+      "total": 3,
+      "expected": {
+        "lower": 0,
+        "upper": 56.15
+      }
+    },
+    {
+      "passed": 1,
+      "total": 3,
+      "expected": {
+        "lower": 6.15,
+        "upper": 79.23
+      }
+    },
+    {
+      "passed": 3,
+      "total": 3,
+      "expected": {
+        "lower": 43.85,
+        "upper": 100
+      }
+    },
+    {
+      "passed": 4,
+      "total": 3,
+      "expected": {
+        "lower": 43.85,
+        "upper": 100
+      }
+    },
+    {
+      "passed": -1,
+      "total": 10,
+      "expected": {
+        "lower": 0,
+        "upper": 27.75
+      }
+    },
+    {
+      "passed": 0,
+      "total": 10,
+      "expected": {
+        "lower": 0,
+        "upper": 27.75
+      }
+    },
+    {
+      "passed": 1,
+      "total": 10,
+      "expected": {
+        "lower": 1.79,
+        "upper": 40.42
+      }
+    },
+    {
+      "passed": 10,
+      "total": 10,
+      "expected": {
+        "lower": 72.25,
+        "upper": 100
+      }
+    },
+    {
+      "passed": 11,
+      "total": 10,
+      "expected": {
+        "lower": 72.25,
+        "upper": 100
+      }
+    },
+    {
+      "passed": -1,
+      "total": 99,
+      "expected": {
+        "lower": 0,
+        "upper": 3.74
+      }
+    },
+    {
+      "passed": 0,
+      "total": 99,
+      "expected": {
+        "lower": 0,
+        "upper": 3.74
+      }
+    },
+    {
+      "passed": 1,
+      "total": 99,
+      "expected": {
+        "lower": 0.18,
+        "upper": 5.5
+      }
+    },
+    {
+      "passed": 99,
+      "total": 99,
+      "expected": {
+        "lower": 96.26,
+        "upper": 100
+      }
+    },
+    {
+      "passed": 100,
+      "total": 99,
+      "expected": {
+        "lower": 96.26,
+        "upper": 100
+      }
+    }
+  ],
+  "gates": [
+    {
+      "input": null,
+      "expected": {
+        "passed": false,
+        "failures": [
+          "runner_not_passed"
+        ]
+      }
+    },
+    {
+      "input": {},
+      "expected": {
+        "passed": false,
+        "failures": [
+          "runner_not_passed"
+        ]
+      }
+    },
+    {
+      "input": [],
+      "expected": {
+        "passed": false,
+        "failures": [
+          "runner_not_passed"
+        ]
+      }
+    },
+    {
+      "input": {
+        "passed": true
+      },
+      "expected": {
+        "passed": true,
+        "failures": []
+      }
+    },
+    {
+      "input": {
+        "passed": false,
+        "failures": [
+          "one",
+          "two"
+        ]
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "runner_not_passed",
+          "runner_has_failures"
+        ]
+      }
+    },
+    {
+      "input": {
+        "score": 88.5
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "runner_not_passed"
+        ]
+      }
+    },
+    {
+      "input": {
+        "evaluation": {
+          "score": 150
+        }
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "runner_not_passed"
+        ]
+      }
+    },
+    {
+      "input": {
+        "evaluation": {
+          "score": -1
+        },
+        "score": 99
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "runner_not_passed"
+        ]
+      }
+    },
+    {
+      "input": {
+        "score": 65.49
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "runner_not_passed"
+        ]
+      }
+    },
+    {
+      "input": {
+        "id": "stable",
+        "passed": true,
+        "firstPassPassed": true,
+        "durationMs": 10
+      },
+      "expected": {
+        "passed": true,
+        "failures": []
+      }
+    },
+    {
+      "input": {
+        "id": "flaky",
+        "passed": true,
+        "firstPassPassed": false,
+        "repairAttempts": 1,
+        "durationMs": 150,
+        "stability": {
+          "attempts": [
+            {
+              "passed": true,
+              "score": 100
+            },
+            {
+              "passed": false,
+              "score": 20
+            }
+          ]
+        },
+        "evaluation": {
+          "dimensions": [
+            {
+              "id": "grounding",
+              "score": 90
+            },
+            {
+              "id": "task",
+              "score": 80
+            }
+          ]
+        }
+      },
+      "expected": {
+        "passed": true,
+        "failures": []
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "validation": {
+          "status": "failed"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "validation_failed"
+        ]
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "validation": {
+          "checks": [
+            {
+              "passed": false
+            }
+          ]
+        }
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "validation_check_failed"
+        ]
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "artifacts": {
+          "oracle": {
+            "checks": [
+              {
+                "passed": false,
+                "severity": "warning"
+              }
+            ]
+          }
+        }
+      },
+      "expected": {
+        "passed": true,
+        "failures": []
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "artifacts": {
+          "oracle": {
+            "checks": [
+              {
+                "passed": false,
+                "severity": "error"
+              }
+            ]
+          }
+        }
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "oracle_failed"
+        ]
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "visualCheck": {}
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "visual_failed"
+        ]
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "eventAudit": {
+          "errorCount": 0
+        }
+      },
+      "expected": {
+        "passed": true,
+        "failures": []
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "eventAudit": {
+          "errorCount": 1
+        }
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "event_error"
+        ]
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "eventAudit": {
+          "errorCount": -1
+        }
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "event_error_count_invalid"
+        ]
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "eventAudit": {
+          "errorCount": 1.2
+        }
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "event_error_count_invalid"
+        ]
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "eventAudit": {
+          "errorCount": null
+        }
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "event_error_count_invalid"
+        ]
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "eventAudit": {
+          "errorCount": "1"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "event_error_count_invalid"
+        ]
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "eventAudit": {
+          "errorCount": true
+        }
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "event_error_count_invalid"
+        ]
+      }
+    },
+    {
+      "input": {
+        "passed": true,
+        "agentExecution": {
+          "tools": {
+            "unexpectedFailureCount": 2
+          }
+        }
+      },
+      "expected": {
+        "passed": false,
+        "failures": [
+          "unexpected_tool_failure"
+        ]
+      }
+    }
+  ],
+  "deviations": [
+    {
+      "input": [],
+      "expected": 0
+    },
+    {
+      "input": [
+        1
+      ],
+      "expected": 0
+    },
+    {
+      "input": [
+        0.1,
+        0.2,
+        0.3
+      ],
+      "expected": 0.08
+    },
+    {
+      "input": [
+        10,
+        20,
+        30
+      ],
+      "expected": 8.16
+    },
+    {
+      "input": [
+        100,
+        20,
+        90
+      ],
+      "expected": 35.59
+    }
+  ]
+}
