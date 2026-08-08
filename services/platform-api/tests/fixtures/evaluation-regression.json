@@ -1,0 +1,178 @@
+[
+  {
+    "current": {
+      "results": [
+        {
+          "id": "same",
+          "score": 59,
+          "passed": false,
+          "firstPassPassed": false
+        },
+        {
+          "id": "added",
+          "score": 99,
+          "passed": true
+        }
+      ]
+    },
+    "baseline": {
+      "results": [
+        {
+          "id": "same",
+          "score": 80,
+          "passed": true,
+          "firstPassPassed": true
+        },
+        {
+          "id": "removed",
+          "score": 90,
+          "passed": true
+        }
+      ]
+    },
+    "expected": {
+      "matchedCaseCount": 1,
+      "currentOnlyCaseIds": [
+        "added"
+      ],
+      "baselineOnlyCaseIds": [
+        "removed"
+      ],
+      "scoreDelta": -21,
+      "passRegressions": [
+        "same"
+      ],
+      "firstPassRegressions": [
+        "same"
+      ],
+      "cases": [
+        {
+          "id": "same",
+          "baselineScore": 80,
+          "currentScore": 59,
+          "scoreDelta": -21,
+          "baselinePassed": true,
+          "currentPassed": false,
+          "baselineFirstPassPassed": true,
+          "currentFirstPassPassed": false
+        }
+      ]
+    }
+  },
+  {
+    "current": {
+      "results": [
+        {
+          "id": "same",
+          "score": 80,
+          "passed": true,
+          "firstPassPassed": false
+        },
+        {
+          "id": "added",
+          "score": 99,
+          "passed": true
+        }
+      ]
+    },
+    "baseline": {
+      "results": [
+        {
+          "id": "same",
+          "score": 80,
+          "passed": true,
+          "firstPassPassed": true
+        },
+        {
+          "id": "removed",
+          "score": 90,
+          "passed": true
+        }
+      ]
+    },
+    "expected": {
+      "matchedCaseCount": 1,
+      "currentOnlyCaseIds": [
+        "added"
+      ],
+      "baselineOnlyCaseIds": [
+        "removed"
+      ],
+      "scoreDelta": 0,
+      "passRegressions": [],
+      "firstPassRegressions": [
+        "same"
+      ],
+      "cases": [
+        {
+          "id": "same",
+          "baselineScore": 80,
+          "currentScore": 80,
+          "scoreDelta": 0,
+          "baselinePassed": true,
+          "currentPassed": true,
+          "baselineFirstPassPassed": true,
+          "currentFirstPassPassed": false
+        }
+      ]
+    }
+  },
+  {
+    "current": {
+      "results": [
+        {
+          "id": "same",
+          "score": 95,
+          "passed": true,
+          "firstPassPassed": false
+        },
+        {
+          "id": "added",
+          "score": 99,
+          "passed": true
+        }
+      ]
+    },
+    "baseline": {
+      "results": [
+        {
+          "id": "same",
+          "score": 80,
+          "passed": true,
+          "firstPassPassed": true
+        },
+        {
+          "id": "removed",
+          "score": 90,
+          "passed": true
+        }
+      ]
+    },
+    "expected": {
+      "matchedCaseCount": 1,
+      "currentOnlyCaseIds": [
+        "added"
+      ],
+      "baselineOnlyCaseIds": [
+        "removed"
+      ],
+      "scoreDelta": 15,
+      "passRegressions": [],
+      "firstPassRegressions": [
+        "same"
+      ],
+      "cases": [
+        {
+          "id": "same",
+          "baselineScore": 80,
+          "currentScore": 95,
+          "scoreDelta": 15,
+          "baselinePassed": true,
+          "currentPassed": true,
+          "baselineFirstPassPassed": true,
+          "currentFirstPassPassed": false
+        }
+      ]
+    }
+  }
+]

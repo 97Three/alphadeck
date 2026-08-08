@@ -1,0 +1,4999 @@
+{
+  "cases": [
+    {
+      "input": {
+        "id": "stock-fundamental-maotai",
+        "name": "贵州茅台基本面看板",
+        "question": "贵州茅台最近财务怎么样？生成基本面看板。",
+        "capabilityId": "fundamental_analysis",
+        "productionSupported": true,
+        "expectedExecutionLane": "model_custom",
+        "expectedVariantId": "fundamental-quality-scorecard",
+        "expectedSymbol": "600519",
+        "expectedAssetType": "stock",
+        "expectedRawFiles": [
+          "quote.json",
+          "financials.json",
+          "fundamental-indicators.json",
+          "announcements.json"
+        ],
+        "expectedDatasets": [
+          "quote",
+          "financials",
+          "fundamental_indicators",
+          "announcements"
+        ],
+        "oracleAssertions": [
+          {
+            "id": "fundamental-symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "fundamental-source",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "no-guaranteed-return",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险|必然上涨|必涨"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "source_grounding"
+        ]
+      },
+      "expected": {
+        "id": "stock-fundamental-maotai",
+        "name": "贵州茅台基本面看板",
+        "question": "贵州茅台最近财务怎么样？生成基本面看板。",
+        "capabilityId": "fundamental_analysis",
+        "capabilityLabel": "基本面研究",
+        "type": "generated_project",
+        "typeLabel": "生成项目",
+        "expectedSymbols": [
+          "600519"
+        ],
+        "expectedAssetType": "stock",
+        "expectedTemplateId": null,
+        "expectedVariantId": "fundamental-quality-scorecard",
+        "expectedDatasets": [
+          "quote",
+          "financials",
+          "fundamental_indicators",
+          "announcements"
+        ],
+        "expectedRawFiles": [
+          "quote.json",
+          "financials.json",
+          "fundamental-indicators.json",
+          "announcements.json"
+        ],
+        "expectedFinalFields": [],
+        "tags": [
+          "fundamental_analysis",
+          "generated_project",
+          "asset:stock",
+          "variant:fundamental-quality-scorecard",
+          "coverage:contract",
+          "coverage:production",
+          "safety:no_guaranteed_return",
+          "safety:source_grounding"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": true,
+        "oracleAssertions": [
+          {
+            "id": "fundamental-symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "fundamental-source",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "no-guaranteed-return",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险|必然上涨|必涨"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "source_grounding"
+        ],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "index-technical-hs300",
+        "name": "沪深300技术趋势看板",
+        "question": "生成沪深300最近120天趋势看板。",
+        "capabilityId": "technical_analysis",
+        "productionSupported": true,
+        "expectedExecutionLane": "model_custom",
+        "expectedVariantId": "technical-kline-trader",
+        "expectedSymbol": "000300",
+        "expectedAssetType": "index",
+        "expectedRawFiles": [
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json"
+        ],
+        "expectedDatasets": [
+          "quote",
+          "kline",
+          "technical_indicators"
+        ],
+        "oracleAssertions": [
+          {
+            "id": "technical-symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "000300"
+          },
+          {
+            "id": "technical-bars",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 20
+          },
+          {
+            "id": "no-guaranteed-return",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险|必然上涨|必涨"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "source_grounding"
+        ]
+      },
+      "expected": {
+        "id": "index-technical-hs300",
+        "name": "沪深300技术趋势看板",
+        "question": "生成沪深300最近120天趋势看板。",
+        "capabilityId": "technical_analysis",
+        "capabilityLabel": "技术分析",
+        "type": "generated_project",
+        "typeLabel": "生成项目",
+        "expectedSymbols": [
+          "000300"
+        ],
+        "expectedAssetType": "index",
+        "expectedTemplateId": null,
+        "expectedVariantId": "technical-kline-trader",
+        "expectedDatasets": [
+          "quote",
+          "kline",
+          "technical_indicators"
+        ],
+        "expectedRawFiles": [
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json"
+        ],
+        "expectedFinalFields": [],
+        "tags": [
+          "technical_analysis",
+          "generated_project",
+          "asset:index",
+          "variant:technical-kline-trader",
+          "coverage:contract",
+          "coverage:production",
+          "safety:no_guaranteed_return",
+          "safety:source_grounding"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": true,
+        "oracleAssertions": [
+          {
+            "id": "technical-symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "000300"
+          },
+          {
+            "id": "technical-bars",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 20
+          },
+          {
+            "id": "no-guaranteed-return",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险|必然上涨|必涨"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "source_grounding"
+        ],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "etf-technical-300etf",
+        "name": "沪深300ETF技术趋势看板",
+        "question": "510300 沪深300ETF 最近120天走势如何？生成趋势看板。",
+        "capabilityId": "technical_analysis",
+        "expectedVariantId": "technical-kline-trader",
+        "expectedSymbol": "510300",
+        "expectedAssetType": "etf",
+        "expectedRawFiles": [
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json"
+        ],
+        "expectedDatasets": [
+          "quote",
+          "kline",
+          "technical_indicators"
+        ]
+      },
+      "expected": {
+        "id": "etf-technical-300etf",
+        "name": "沪深300ETF技术趋势看板",
+        "question": "510300 沪深300ETF 最近120天走势如何？生成趋势看板。",
+        "capabilityId": "technical_analysis",
+        "capabilityLabel": "技术分析",
+        "type": "generated_project",
+        "typeLabel": "生成项目",
+        "expectedSymbols": [
+          "510300"
+        ],
+        "expectedAssetType": "etf",
+        "expectedTemplateId": null,
+        "expectedVariantId": "technical-kline-trader",
+        "expectedDatasets": [
+          "quote",
+          "kline",
+          "technical_indicators"
+        ],
+        "expectedRawFiles": [
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json"
+        ],
+        "expectedFinalFields": [],
+        "tags": [
+          "technical_analysis",
+          "generated_project",
+          "asset:etf",
+          "variant:technical-kline-trader",
+          "coverage:contract"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": false,
+        "oracleAssertions": [],
+        "safetyTags": [],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "backtest-300etf-ma-crossover",
+        "name": "沪深300ETF均线突破回测",
+        "question": "用最近一年的 20/60 日均线突破规则回测 510300，生成回测复盘看板。",
+        "capabilityId": "backtest_review",
+        "productionSupported": true,
+        "expectedVariantId": "backtest-performance-review",
+        "expectedSymbol": "510300",
+        "expectedAssetType": "etf",
+        "expectedRawFiles": [
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json",
+          "backtest-ma-crossover.json"
+        ],
+        "expectedDatasets": [
+          "quote",
+          "kline",
+          "technical_indicators",
+          "backtest"
+        ],
+        "expectedFinalFields": [
+          "backtest"
+        ],
+        "oracleAssertions": [
+          {
+            "id": "backtest-equity-curve",
+            "target": "finalData",
+            "path": "backtest.equity_curve",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "backtest-no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "backtest_disclosure"
+        ]
+      },
+      "expected": {
+        "id": "backtest-300etf-ma-crossover",
+        "name": "沪深300ETF均线突破回测",
+        "question": "用最近一年的 20/60 日均线突破规则回测 510300，生成回测复盘看板。",
+        "capabilityId": "backtest_review",
+        "capabilityLabel": "策略回测",
+        "type": "generated_project",
+        "typeLabel": "生成项目",
+        "expectedSymbols": [
+          "510300"
+        ],
+        "expectedAssetType": "etf",
+        "expectedTemplateId": null,
+        "expectedVariantId": "backtest-performance-review",
+        "expectedDatasets": [
+          "quote",
+          "kline",
+          "technical_indicators",
+          "backtest"
+        ],
+        "expectedRawFiles": [
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json",
+          "backtest-ma-crossover.json"
+        ],
+        "expectedFinalFields": [
+          "backtest"
+        ],
+        "tags": [
+          "backtest_review",
+          "generated_project",
+          "asset:etf",
+          "variant:backtest-performance-review",
+          "coverage:contract",
+          "coverage:production",
+          "safety:no_guaranteed_return",
+          "safety:backtest_disclosure"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": true,
+        "oracleAssertions": [
+          {
+            "id": "backtest-equity-curve",
+            "target": "finalData",
+            "path": "backtest.equity_curve",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "backtest-no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "backtest_disclosure"
+        ],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "asset-comparison-bluechips",
+        "name": "多标的横向选股对比",
+        "question": "对比贵州茅台、平安银行、宁德时代最近120个交易日的行情、波动、回撤和财务质量，生成选股分析看板。",
+        "capabilityId": "asset_comparison",
+        "productionSupported": true,
+        "expectedSymbol": "600519",
+        "expectedAssetType": "stock",
+        "expectedSymbols": [
+          "600519",
+          "000001",
+          "300750"
+        ],
+        "expectedTemplateId": "stock-selection",
+        "expectedVariantId": "selection-ranking-matrix",
+        "expectedRawFiles": [
+          "batch-quotes.json",
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json",
+          "financials.json"
+        ],
+        "expectedDatasets": [
+          "600519_quote",
+          "600519_kline",
+          "600519_technical_indicators",
+          "600519_financials",
+          "600519_fundamental_indicators",
+          "000001_quote",
+          "300750_quote"
+        ],
+        "expectedFinalFields": [
+          "assets",
+          "comparison",
+          "selectionRanking",
+          "financialQuality",
+          "correlation",
+          "liquidity"
+        ],
+        "oracleAssertions": [
+          {
+            "id": "comparison-assets",
+            "target": "finalData",
+            "path": "assets",
+            "operator": "length_gte",
+            "value": 3
+          },
+          {
+            "id": "comparison-no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险|必涨"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "source_grounding"
+        ]
+      },
+      "expected": {
+        "id": "asset-comparison-bluechips",
+        "name": "多标的横向选股对比",
+        "question": "对比贵州茅台、平安银行、宁德时代最近120个交易日的行情、波动、回撤和财务质量，生成选股分析看板。",
+        "capabilityId": "asset_comparison",
+        "capabilityLabel": "标的对比",
+        "type": "generated_project",
+        "typeLabel": "生成项目",
+        "expectedSymbols": [
+          "600519",
+          "000001",
+          "300750"
+        ],
+        "expectedAssetType": "stock",
+        "expectedTemplateId": "stock-selection",
+        "expectedVariantId": "selection-ranking-matrix",
+        "expectedDatasets": [
+          "600519_quote",
+          "600519_kline",
+          "600519_technical_indicators",
+          "600519_financials",
+          "600519_fundamental_indicators",
+          "000001_quote",
+          "300750_quote"
+        ],
+        "expectedRawFiles": [
+          "batch-quotes.json",
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json",
+          "financials.json"
+        ],
+        "expectedFinalFields": [
+          "assets",
+          "comparison",
+          "selectionRanking",
+          "financialQuality",
+          "correlation",
+          "liquidity"
+        ],
+        "tags": [
+          "asset_comparison",
+          "generated_project",
+          "asset:stock",
+          "template:stock-selection",
+          "variant:selection-ranking-matrix",
+          "coverage:contract",
+          "coverage:production",
+          "safety:no_guaranteed_return",
+          "safety:source_grounding",
+          "data:multi_symbol"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": true,
+        "oracleAssertions": [
+          {
+            "id": "comparison-assets",
+            "target": "finalData",
+            "path": "assets",
+            "operator": "length_gte",
+            "value": 3
+          },
+          {
+            "id": "comparison-no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险|必涨"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "source_grounding"
+        ],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "broad-a-share-buy-candidates",
+        "name": "宽域 A 股买入候选推荐",
+        "question": "帮我推荐6月3日要买的股票，给我推荐10个",
+        "capabilityId": "asset_comparison",
+        "expectedTemplateId": "stock-selection",
+        "expectedVariantId": "selection-ranking-matrix",
+        "expectedRawFiles": [
+          "a-share-screener.json",
+          "batch-quotes.json"
+        ],
+        "expectedFinalFields": [
+          "assets",
+          "comparison",
+          "selectionRanking",
+          "financialQuality",
+          "correlation",
+          "liquidity",
+          "tradingPlan",
+          "screener"
+        ]
+      },
+      "expected": {
+        "id": "broad-a-share-buy-candidates",
+        "name": "宽域 A 股买入候选推荐",
+        "question": "帮我推荐6月3日要买的股票，给我推荐10个",
+        "capabilityId": "asset_comparison",
+        "capabilityLabel": "标的对比",
+        "type": "generated_project",
+        "typeLabel": "生成项目",
+        "expectedSymbols": [],
+        "expectedAssetType": null,
+        "expectedTemplateId": "stock-selection",
+        "expectedVariantId": "selection-ranking-matrix",
+        "expectedDatasets": [],
+        "expectedRawFiles": [
+          "a-share-screener.json",
+          "batch-quotes.json"
+        ],
+        "expectedFinalFields": [
+          "assets",
+          "comparison",
+          "selectionRanking",
+          "financialQuality",
+          "correlation",
+          "liquidity",
+          "tradingPlan",
+          "screener"
+        ],
+        "tags": [
+          "asset_comparison",
+          "generated_project",
+          "template:stock-selection",
+          "variant:selection-ranking-matrix",
+          "coverage:contract"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": false,
+        "oracleAssertions": [],
+        "safetyTags": [],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "portfolio-risk-adjustment",
+        "name": "持仓调仓风险分析",
+        "question": "我当前持有杭钢股份、京沪高铁、三七互娱、中国黄金、完美世界，帮我先集中风险，再决定是否动用现金，生成调仓分析看板。",
+        "capabilityId": "portfolio_risk",
+        "productionSupported": true,
+        "expectedExecutionLane": "model_custom",
+        "expectedSymbol": "600126",
+        "expectedAssetType": "stock",
+        "expectedSymbols": [
+          "600126",
+          "601816",
+          "002555",
+          "600916",
+          "002624"
+        ],
+        "expectedTemplateId": "holding-analysis",
+        "expectedVariantId": "portfolio-rebalance-plan",
+        "expectedRawFiles": [
+          "batch-quotes.json",
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json",
+          "financials.json"
+        ],
+        "expectedDatasets": [
+          "600126_quote",
+          "600126_kline",
+          "601816_quote",
+          "002555_quote",
+          "600916_quote",
+          "002624_quote"
+        ],
+        "expectedFinalFields": [
+          "portfolio",
+          "holdings",
+          "assets",
+          "comparison",
+          "correlation",
+          "liquidity"
+        ],
+        "oracleAssertions": [
+          {
+            "id": "portfolio-holdings",
+            "target": "finalData",
+            "path": "holdings",
+            "operator": "length_gte",
+            "value": 5
+          },
+          {
+            "id": "portfolio-no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险|必涨"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "portfolio_risk_disclosure"
+        ]
+      },
+      "expected": {
+        "id": "portfolio-risk-adjustment",
+        "name": "持仓调仓风险分析",
+        "question": "我当前持有杭钢股份、京沪高铁、三七互娱、中国黄金、完美世界，帮我先集中风险，再决定是否动用现金，生成调仓分析看板。",
+        "capabilityId": "portfolio_risk",
+        "capabilityLabel": "组合风控",
+        "type": "generated_project",
+        "typeLabel": "生成项目",
+        "expectedSymbols": [
+          "600126",
+          "601816",
+          "002555",
+          "600916",
+          "002624"
+        ],
+        "expectedAssetType": "stock",
+        "expectedTemplateId": "holding-analysis",
+        "expectedVariantId": "portfolio-rebalance-plan",
+        "expectedDatasets": [
+          "600126_quote",
+          "600126_kline",
+          "601816_quote",
+          "002555_quote",
+          "600916_quote",
+          "002624_quote"
+        ],
+        "expectedRawFiles": [
+          "batch-quotes.json",
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json",
+          "financials.json"
+        ],
+        "expectedFinalFields": [
+          "portfolio",
+          "holdings",
+          "assets",
+          "comparison",
+          "correlation",
+          "liquidity"
+        ],
+        "tags": [
+          "portfolio_risk",
+          "generated_project",
+          "asset:stock",
+          "template:holding-analysis",
+          "variant:portfolio-rebalance-plan",
+          "coverage:contract",
+          "coverage:production",
+          "safety:no_guaranteed_return",
+          "safety:portfolio_risk_disclosure",
+          "data:multi_symbol"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": true,
+        "oracleAssertions": [
+          {
+            "id": "portfolio-holdings",
+            "target": "finalData",
+            "path": "holdings",
+            "operator": "length_gte",
+            "value": 5
+          },
+          {
+            "id": "portfolio-no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险|必涨"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "portfolio_risk_disclosure"
+        ],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "stock-diagnosis-citic-no-false-clarification",
+        "name": "中信证券自然语言诊断不误澄清",
+        "question": "中信证券最近怎么样",
+        "capabilityId": "stock_diagnosis",
+        "productionSupported": true,
+        "expectedExecutionLane": "deterministic_standard",
+        "expectClarification": false,
+        "expectedSymbol": "600030",
+        "expectedAssetType": "stock",
+        "expectedTemplateId": "single-stock-diagnosis",
+        "expectedVariantId": "single-stock-command-center",
+        "expectedRawFiles": [
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json",
+          "financials.json",
+          "announcements.json"
+        ],
+        "expectedDatasets": [
+          "quote",
+          "kline",
+          "technical_indicators",
+          "financials",
+          "announcements"
+        ],
+        "visualCheck": true,
+        "expectedVisualKeywords": [
+          "中信证券",
+          "K 线",
+          "数据信源"
+        ],
+        "oracleAssertions": [
+          {
+            "id": "diagnosis-symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600030"
+          },
+          {
+            "id": "diagnosis-sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "diagnosis-no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险|必然上涨|必涨"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "source_grounding"
+        ]
+      },
+      "expected": {
+        "id": "stock-diagnosis-citic-no-false-clarification",
+        "name": "中信证券自然语言诊断不误澄清",
+        "question": "中信证券最近怎么样",
+        "capabilityId": "stock_diagnosis",
+        "capabilityLabel": "个股诊断",
+        "type": "generated_project",
+        "typeLabel": "生成项目",
+        "expectedSymbols": [
+          "600030"
+        ],
+        "expectedAssetType": "stock",
+        "expectedTemplateId": "single-stock-diagnosis",
+        "expectedVariantId": "single-stock-command-center",
+        "expectedDatasets": [
+          "quote",
+          "kline",
+          "technical_indicators",
+          "financials",
+          "announcements"
+        ],
+        "expectedRawFiles": [
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json",
+          "financials.json",
+          "announcements.json"
+        ],
+        "expectedFinalFields": [],
+        "tags": [
+          "stock_diagnosis",
+          "generated_project",
+          "asset:stock",
+          "template:single-stock-diagnosis",
+          "variant:single-stock-command-center",
+          "intent:no_false_clarification",
+          "visual:playwright",
+          "coverage:contract",
+          "coverage:production",
+          "safety:no_guaranteed_return",
+          "safety:source_grounding"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": true,
+        "oracleAssertions": [
+          {
+            "id": "diagnosis-symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600030"
+          },
+          {
+            "id": "diagnosis-sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "diagnosis-no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险|必然上涨|必涨"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "source_grounding"
+        ],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": true
+      }
+    },
+    {
+      "input": {
+        "id": "stock-diagnosis-citic-custom-no-cards",
+        "name": "中信证券连续工作台无卡片定制",
+        "question": "中信证券最近怎么样？生成连续的金融分析工作台，不要卡片式界面，不要圆角卡片网格，用分区线、指标带、主图和表格组织信息。",
+        "capabilityId": "stock_diagnosis",
+        "expectedExecutionLane": "model_custom",
+        "expectedNoCardSurface": true,
+        "expectClarification": false,
+        "expectedSymbol": "600030",
+        "expectedAssetType": "stock",
+        "expectedTemplateId": "single-stock-diagnosis",
+        "expectedVariantId": "single-stock-command-center",
+        "expectedRawFiles": [
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json",
+          "financials.json",
+          "announcements.json"
+        ],
+        "expectedDatasets": [
+          "quote",
+          "kline",
+          "technical_indicators",
+          "financials",
+          "announcements"
+        ],
+        "visualCheck": true,
+        "expectedVisualKeywords": [
+          "中信证券",
+          "K 线",
+          "数据信源"
+        ],
+        "oracleAssertions": [
+          {
+            "id": "custom-diagnosis-symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600030"
+          },
+          {
+            "id": "custom-no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险|必然上涨|必涨"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "source_grounding"
+        ]
+      },
+      "expected": {
+        "id": "stock-diagnosis-citic-custom-no-cards",
+        "name": "中信证券连续工作台无卡片定制",
+        "question": "中信证券最近怎么样？生成连续的金融分析工作台，不要卡片式界面，不要圆角卡片网格，用分区线、指标带、主图和表格组织信息。",
+        "capabilityId": "stock_diagnosis",
+        "capabilityLabel": "个股诊断",
+        "type": "generated_project",
+        "typeLabel": "生成项目",
+        "expectedSymbols": [
+          "600030"
+        ],
+        "expectedAssetType": "stock",
+        "expectedTemplateId": "single-stock-diagnosis",
+        "expectedVariantId": "single-stock-command-center",
+        "expectedDatasets": [
+          "quote",
+          "kline",
+          "technical_indicators",
+          "financials",
+          "announcements"
+        ],
+        "expectedRawFiles": [
+          "quote.json",
+          "kline-daily-qfq.json",
+          "technical-indicators.json",
+          "financials.json",
+          "announcements.json"
+        ],
+        "expectedFinalFields": [],
+        "tags": [
+          "stock_diagnosis",
+          "generated_project",
+          "asset:stock",
+          "template:single-stock-diagnosis",
+          "variant:single-stock-command-center",
+          "intent:no_false_clarification",
+          "visual:playwright",
+          "coverage:contract",
+          "safety:no_guaranteed_return",
+          "safety:source_grounding"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": false,
+        "oracleAssertions": [
+          {
+            "id": "custom-diagnosis-symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600030"
+          },
+          {
+            "id": "custom-no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险|必然上涨|必涨"
+          }
+        ],
+        "safetyTags": [
+          "no_guaranteed_return",
+          "source_grounding"
+        ],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": true
+      }
+    },
+    {
+      "input": {
+        "id": "clarification-missing-symbol",
+        "name": "缺少标的时进入意图澄清",
+        "question": "帮我看看最近有哪些股票值得关注，生成可视化看板。",
+        "capabilityId": "asset_comparison",
+        "expectClarification": true,
+        "expectedMissing": [
+          "comparison_universe"
+        ]
+      },
+      "expected": {
+        "id": "clarification-missing-symbol",
+        "name": "缺少标的时进入意图澄清",
+        "question": "帮我看看最近有哪些股票值得关注，生成可视化看板。",
+        "capabilityId": "asset_comparison",
+        "capabilityLabel": "标的对比",
+        "type": "clarification_required",
+        "typeLabel": "意图澄清",
+        "expectedSymbols": [],
+        "expectedAssetType": null,
+        "expectedTemplateId": null,
+        "expectedVariantId": null,
+        "expectedDatasets": [],
+        "expectedRawFiles": [],
+        "expectedFinalFields": [],
+        "tags": [
+          "asset_comparison",
+          "clarification_required",
+          "intent:clarification_required",
+          "coverage:contract"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": false,
+        "oracleAssertions": [],
+        "safetyTags": [],
+        "hasImageAttachment": false,
+        "expectClarification": true,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "portfolio-image-contract",
+        "name": "上传持仓截图证据链与看板",
+        "question": "我上传了一张持仓截图，里面包含杭钢股份、京沪高铁、三七互娱、中国黄金、完美世界。请先识别截图字段，再结合实时行情做调仓风险看板。",
+        "capabilityId": "portfolio_risk",
+        "imageAttachment": {
+          "filename": "portfolio-screenshot.png"
+        },
+        "expectedSymbol": "600126",
+        "expectedAssetType": "stock",
+        "expectedSymbols": [
+          "600126",
+          "601816",
+          "002555",
+          "600916",
+          "002624"
+        ],
+        "expectedTemplateId": "holding-analysis",
+        "expectedVariantId": "portfolio-rebalance-plan",
+        "expectedEvidenceFiles": [
+          "evidence/image_extraction.json"
+        ],
+        "expectedImageExtraction": true,
+        "expectedDatasets": [
+          "600126_quote",
+          "601816_quote",
+          "uploaded_image_attachment"
+        ],
+        "expectedFinalFields": [
+          "portfolio",
+          "holdings",
+          "assets",
+          "comparison",
+          "correlation",
+          "liquidity",
+          "imageExtraction"
+        ],
+        "visualCheck": true,
+        "expectedVisualKeywords": [
+          "持仓",
+          "仓位",
+          "数据信源"
+        ]
+      },
+      "expected": {
+        "id": "portfolio-image-contract",
+        "name": "上传持仓截图证据链与看板",
+        "question": "我上传了一张持仓截图，里面包含杭钢股份、京沪高铁、三七互娱、中国黄金、完美世界。请先识别截图字段，再结合实时行情做调仓风险看板。",
+        "capabilityId": "portfolio_risk",
+        "capabilityLabel": "组合风控",
+        "type": "generated_project",
+        "typeLabel": "生成项目",
+        "expectedSymbols": [
+          "600126",
+          "601816",
+          "002555",
+          "600916",
+          "002624"
+        ],
+        "expectedAssetType": "stock",
+        "expectedTemplateId": "holding-analysis",
+        "expectedVariantId": "portfolio-rebalance-plan",
+        "expectedDatasets": [
+          "600126_quote",
+          "601816_quote",
+          "uploaded_image_attachment"
+        ],
+        "expectedRawFiles": [],
+        "expectedFinalFields": [
+          "portfolio",
+          "holdings",
+          "assets",
+          "comparison",
+          "correlation",
+          "liquidity",
+          "imageExtraction"
+        ],
+        "tags": [
+          "portfolio_risk",
+          "generated_project",
+          "asset:stock",
+          "template:holding-analysis",
+          "variant:portfolio-rebalance-plan",
+          "input:image_attachment",
+          "visual:playwright",
+          "evidence:image_extraction",
+          "coverage:contract",
+          "data:multi_symbol"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": false,
+        "oracleAssertions": [],
+        "safetyTags": [],
+        "hasImageAttachment": true,
+        "expectClarification": false,
+        "visualCheck": true
+      }
+    },
+    {
+      "input": {
+        "id": "clarification-continuation-bluechips",
+        "name": "澄清回复后继续原始计划",
+        "type": "clarification_continuation",
+        "question": "帮我对比几只股票，生成看板。",
+        "followupAnswer": "贵州茅台、平安银行、宁德时代，最近120个交易日，综合比较趋势、回撤和财务质量。",
+        "capabilityId": "asset_comparison",
+        "expectedSymbol": "600519",
+        "expectedAssetType": "stock",
+        "expectedSymbols": [
+          "600519",
+          "000001",
+          "300750"
+        ],
+        "expectedTemplateId": "stock-selection",
+        "expectedVariantId": "selection-ranking-matrix",
+        "expectedFinalFields": [
+          "assets",
+          "comparison",
+          "selectionRanking",
+          "financialQuality"
+        ]
+      },
+      "expected": {
+        "id": "clarification-continuation-bluechips",
+        "name": "澄清回复后继续原始计划",
+        "question": "帮我对比几只股票，生成看板。",
+        "capabilityId": "asset_comparison",
+        "capabilityLabel": "标的对比",
+        "type": "clarification_continuation",
+        "typeLabel": "澄清承接",
+        "expectedSymbols": [
+          "600519",
+          "000001",
+          "300750"
+        ],
+        "expectedAssetType": "stock",
+        "expectedTemplateId": "stock-selection",
+        "expectedVariantId": "selection-ranking-matrix",
+        "expectedDatasets": [],
+        "expectedRawFiles": [],
+        "expectedFinalFields": [
+          "assets",
+          "comparison",
+          "selectionRanking",
+          "financialQuality"
+        ],
+        "tags": [
+          "asset_comparison",
+          "clarification_continuation",
+          "asset:stock",
+          "template:stock-selection",
+          "variant:selection-ranking-matrix",
+          "intent:clarification_continuation",
+          "coverage:contract",
+          "data:multi_symbol"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": false,
+        "oracleAssertions": [],
+        "safetyTags": [],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "runtime-registry-deepseek-v4-flash",
+        "name": "DeepSeek 默认与本地 Qwen 双模型运行时注册表",
+        "type": "runtime_registry",
+        "question": "验证平台保留 DeepSeek 默认模型并暴露受控的本地 Qwen profile，同时拒绝未注册模型与中转配置。",
+        "capabilityId": "technical_analysis"
+      },
+      "expected": {
+        "id": "runtime-registry-deepseek-v4-flash",
+        "name": "DeepSeek 默认与本地 Qwen 双模型运行时注册表",
+        "question": "验证平台保留 DeepSeek 默认模型并暴露受控的本地 Qwen profile，同时拒绝未注册模型与中转配置。",
+        "capabilityId": "technical_analysis",
+        "capabilityLabel": "技术分析",
+        "type": "runtime_registry",
+        "typeLabel": "运行时注册",
+        "expectedSymbols": [],
+        "expectedAssetType": null,
+        "expectedTemplateId": null,
+        "expectedVariantId": null,
+        "expectedDatasets": [],
+        "expectedRawFiles": [],
+        "expectedFinalFields": [],
+        "tags": [
+          "technical_analysis",
+          "runtime_registry",
+          "runtime:deepseek_v4_flash",
+          "coverage:contract"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": false,
+        "oracleAssertions": [],
+        "safetyTags": [],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "validation-repair-contract",
+        "name": "自动验证失败后的修复计划",
+        "type": "repair_plan",
+        "question": "生成项目验证失败时，需要给 Agent 结构化修复计划。",
+        "capabilityId": "technical_analysis"
+      },
+      "expected": {
+        "id": "validation-repair-contract",
+        "name": "自动验证失败后的修复计划",
+        "question": "生成项目验证失败时，需要给 Agent 结构化修复计划。",
+        "capabilityId": "technical_analysis",
+        "capabilityLabel": "技术分析",
+        "type": "repair_plan",
+        "typeLabel": "修复计划",
+        "expectedSymbols": [],
+        "expectedAssetType": null,
+        "expectedTemplateId": null,
+        "expectedVariantId": null,
+        "expectedDatasets": [],
+        "expectedRawFiles": [],
+        "expectedFinalFields": [],
+        "tags": [
+          "technical_analysis",
+          "repair_plan",
+          "validation:repair_plan",
+          "coverage:contract"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": false,
+        "oracleAssertions": [],
+        "safetyTags": [],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "source-degradation-contract",
+        "name": "数据源降级证据与 warning 链路",
+        "type": "source_degradation_contract",
+        "question": "验证东方财富数据缺口时，备用信源和数据质量 warning 能稳定进入证据与页面。",
+        "capabilityId": "stock_diagnosis",
+        "expectedSymbol": "600519",
+        "expectedAssetType": "stock",
+        "expectedQualityStatus": "warning",
+        "expectedSourceProviders": [
+          "eastmoney",
+          "tencent"
+        ],
+        "expectedDatasets": [
+          "quote",
+          "kline",
+          "financials"
+        ]
+      },
+      "expected": {
+        "id": "source-degradation-contract",
+        "name": "数据源降级证据与 warning 链路",
+        "question": "验证东方财富数据缺口时，备用信源和数据质量 warning 能稳定进入证据与页面。",
+        "capabilityId": "stock_diagnosis",
+        "capabilityLabel": "个股诊断",
+        "type": "source_degradation_contract",
+        "typeLabel": "信源降级",
+        "expectedSymbols": [
+          "600519"
+        ],
+        "expectedAssetType": "stock",
+        "expectedTemplateId": null,
+        "expectedVariantId": null,
+        "expectedDatasets": [
+          "quote",
+          "kline",
+          "financials"
+        ],
+        "expectedRawFiles": [],
+        "expectedFinalFields": [],
+        "tags": [
+          "stock_diagnosis",
+          "source_degradation_contract",
+          "asset:stock",
+          "data:source_degradation",
+          "coverage:contract"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": false,
+        "oracleAssertions": [],
+        "safetyTags": [],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "dashboard-renderer-capability-contract",
+        "name": "DashboardSpec 全变体能力矩阵",
+        "type": "renderer_capability_contract",
+        "question": "验证所有可视化变体都被显式登记，并且未实现的专业 renderer 必须失败关闭。",
+        "capabilityId": "stock_diagnosis",
+        "variantExpectations": [
+          {
+            "templateId": "single-stock-diagnosis",
+            "variantId": "single-stock-command-center",
+            "supported": true
+          },
+          {
+            "templateId": "single-stock-diagnosis",
+            "variantId": "single-stock-fundamental-snapshot",
+            "supported": true
+          },
+          {
+            "templateId": "technical-timing",
+            "variantId": "technical-kline-trader",
+            "supported": true
+          },
+          {
+            "templateId": "technical-timing",
+            "variantId": "technical-breakout-watch",
+            "supported": false
+          },
+          {
+            "templateId": "fundamental-research",
+            "variantId": "fundamental-quality-scorecard",
+            "supported": true
+          },
+          {
+            "templateId": "fundamental-research",
+            "variantId": "fundamental-report-trend",
+            "supported": false
+          },
+          {
+            "templateId": "stock-selection",
+            "variantId": "selection-ranking-matrix",
+            "supported": true
+          },
+          {
+            "templateId": "stock-selection",
+            "variantId": "selection-correlation-risk-map",
+            "supported": false
+          },
+          {
+            "templateId": "stock-selection",
+            "variantId": "selection-liquidity-trend-board",
+            "supported": false
+          },
+          {
+            "templateId": "sector-rotation",
+            "variantId": "sector-rotation-radar",
+            "supported": false
+          },
+          {
+            "templateId": "sector-rotation",
+            "variantId": "sector-capital-flow-board",
+            "supported": false
+          },
+          {
+            "templateId": "strategy-research",
+            "variantId": "strategy-hypothesis-canvas",
+            "supported": true
+          },
+          {
+            "templateId": "strategy-research",
+            "variantId": "strategy-signal-lab",
+            "supported": false
+          },
+          {
+            "templateId": "backtest-review",
+            "variantId": "backtest-performance-review",
+            "supported": true
+          },
+          {
+            "templateId": "backtest-review",
+            "variantId": "backtest-trade-forensics",
+            "supported": false
+          },
+          {
+            "templateId": "holding-analysis",
+            "variantId": "portfolio-risk-console",
+            "supported": true
+          },
+          {
+            "templateId": "holding-analysis",
+            "variantId": "portfolio-rebalance-plan",
+            "supported": false
+          }
+        ],
+        "selectionExpectations": [
+          {
+            "capabilityId": "sector_rotation",
+            "question": "对比 510300 和 159915 的板块轮动与相对强弱",
+            "symbolCount": 2,
+            "expectedTemplateId": "sector-rotation",
+            "expectedVariantId": "sector-rotation-radar"
+          },
+          {
+            "capabilityId": "sector_rotation",
+            "question": "观察板块主力资金净流入、净流出和成交额热度",
+            "symbolCount": 2,
+            "dataSignals": [
+              "sectorCapitalFlow"
+            ],
+            "expectedTemplateId": "sector-rotation",
+            "expectedVariantId": "sector-capital-flow-board"
+          },
+          {
+            "capabilityId": "strategy_research",
+            "question": "研究一个均线突破策略假设与规则",
+            "symbolCount": 1,
+            "expectedTemplateId": "strategy-research",
+            "expectedVariantId": "strategy-hypothesis-canvas"
+          },
+          {
+            "capabilityId": "strategy_research",
+            "question": "定义入场、出场、过滤参数和择时信号",
+            "symbolCount": 1,
+            "dataSignals": [
+              "technicalIndicators"
+            ],
+            "expectedTemplateId": "strategy-research",
+            "expectedVariantId": "strategy-signal-lab"
+          }
+        ]
+      },
+      "expected": {
+        "id": "dashboard-renderer-capability-contract",
+        "name": "DashboardSpec 全变体能力矩阵",
+        "question": "验证所有可视化变体都被显式登记，并且未实现的专业 renderer 必须失败关闭。",
+        "capabilityId": "stock_diagnosis",
+        "capabilityLabel": "个股诊断",
+        "type": "renderer_capability_contract",
+        "typeLabel": "渲染能力路由",
+        "expectedSymbols": [],
+        "expectedAssetType": null,
+        "expectedTemplateId": null,
+        "expectedVariantId": null,
+        "expectedDatasets": [],
+        "expectedRawFiles": [],
+        "expectedFinalFields": [],
+        "tags": [
+          "stock_diagnosis",
+          "renderer_capability_contract",
+          "dashboard:renderer_capability",
+          "coverage:routing",
+          "sector_rotation",
+          "template:sector-rotation",
+          "variant:sector-rotation-radar",
+          "variant:sector-capital-flow-board",
+          "strategy_research",
+          "template:strategy-research",
+          "variant:strategy-hypothesis-canvas",
+          "variant:strategy-signal-lab"
+        ],
+        "coverageLevel": "routing",
+        "productionSupported": false,
+        "oracleAssertions": [],
+        "safetyTags": [],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {},
+      "expected": {
+        "id": "unknown",
+        "name": "未命名用例",
+        "question": "",
+        "capabilityId": "unknown",
+        "capabilityLabel": "unknown",
+        "type": "generated_project",
+        "typeLabel": "生成项目",
+        "expectedSymbols": [],
+        "expectedAssetType": null,
+        "expectedTemplateId": null,
+        "expectedVariantId": null,
+        "expectedDatasets": [],
+        "expectedRawFiles": [],
+        "expectedFinalFields": [],
+        "tags": [
+          "generated_project",
+          "coverage:contract"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": false,
+        "oracleAssertions": [],
+        "safetyTags": [],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "id": "edge",
+        "expectedSymbols": [
+          "600519",
+          null,
+          600519
+        ],
+        "expectedSymbol": "600519",
+        "imageAttachment": {},
+        "selectionExpectations": [
+          {
+            "capabilityId": "technical_analysis",
+            "expectedVariantId": "trend"
+          }
+        ]
+      },
+      "expected": {
+        "id": "edge",
+        "name": "edge",
+        "question": "",
+        "capabilityId": "unknown",
+        "capabilityLabel": "unknown",
+        "type": "generated_project",
+        "typeLabel": "生成项目",
+        "expectedSymbols": [
+          "600519",
+          "null"
+        ],
+        "expectedAssetType": null,
+        "expectedTemplateId": null,
+        "expectedVariantId": null,
+        "expectedDatasets": [],
+        "expectedRawFiles": [],
+        "expectedFinalFields": [],
+        "tags": [
+          "generated_project",
+          "input:image_attachment",
+          "coverage:contract",
+          "technical_analysis",
+          "variant:trend",
+          "data:multi_symbol"
+        ],
+        "coverageLevel": "contract",
+        "productionSupported": false,
+        "oracleAssertions": [],
+        "safetyTags": [],
+        "hasImageAttachment": true,
+        "expectClarification": false,
+        "visualCheck": false
+      }
+    },
+    {
+      "input": {
+        "type": "renderer_capability_contract",
+        "visualCheck": true,
+        "expectedSymbols": [
+          "600519",
+          "600036"
+        ]
+      },
+      "expected": {
+        "id": "unknown",
+        "name": "未命名用例",
+        "question": "",
+        "capabilityId": "unknown",
+        "capabilityLabel": "unknown",
+        "type": "renderer_capability_contract",
+        "typeLabel": "渲染能力路由",
+        "expectedSymbols": [
+          "600519",
+          "600036"
+        ],
+        "expectedAssetType": null,
+        "expectedTemplateId": null,
+        "expectedVariantId": null,
+        "expectedDatasets": [],
+        "expectedRawFiles": [],
+        "expectedFinalFields": [],
+        "tags": [
+          "renderer_capability_contract",
+          "visual:playwright",
+          "dashboard:renderer_capability",
+          "coverage:routing",
+          "data:multi_symbol"
+        ],
+        "coverageLevel": "routing",
+        "productionSupported": false,
+        "oracleAssertions": [],
+        "safetyTags": [],
+        "hasImageAttachment": false,
+        "expectClarification": false,
+        "visualCheck": true
+      }
+    }
+  ],
+  "oracles": [
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-0",
+            "target": "finalData",
+            "path": "price",
+            "operator": "exists",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-0",
+            "target": "finalData",
+            "operator": "exists",
+            "passed": true,
+            "severity": "error",
+            "summary": "finalData.price exists 通过",
+            "actual": 10.1
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-1",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "exists",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-1",
+            "target": "finalData",
+            "operator": "exists",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.missing 未满足 exists"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-1 finalData.missing 未满足 exists"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-2",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "exists",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-2",
+            "target": "finalData",
+            "operator": "exists",
+            "passed": true,
+            "severity": "error",
+            "summary": "finalData.caption exists 通过",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-3",
+            "target": "page",
+            "path": "",
+            "operator": "exists",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-3",
+            "target": "page",
+            "operator": "exists",
+            "passed": true,
+            "severity": "error",
+            "summary": "page. exists 通过",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-4",
+            "target": "finalData",
+            "path": "price",
+            "operator": "not_exists",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-4",
+            "target": "finalData",
+            "operator": "not_exists",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.price 未满足 not_exists",
+            "actual": 10.1
+          }
+        ],
+        "failures": [
+          "oracle:oracle-4 finalData.price 未满足 not_exists"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-5",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "not_exists",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-5",
+            "target": "finalData",
+            "operator": "not_exists",
+            "passed": true,
+            "severity": "error",
+            "summary": "finalData.missing not_exists 通过"
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-6",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "not_exists",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-6",
+            "target": "finalData",
+            "operator": "not_exists",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.caption 未满足 not_exists",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-6 finalData.caption 未满足 not_exists"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-7",
+            "target": "page",
+            "path": "",
+            "operator": "not_exists",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-7",
+            "target": "page",
+            "operator": "not_exists",
+            "passed": false,
+            "severity": "error",
+            "summary": "page. 未满足 not_exists",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-7 page. 未满足 not_exists"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-8",
+            "target": "finalData",
+            "path": "price",
+            "operator": "equals",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-8",
+            "target": "finalData",
+            "operator": "equals",
+            "passed": true,
+            "severity": "error",
+            "summary": "finalData.price equals 通过",
+            "actual": 10.1
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-9",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "equals",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-9",
+            "target": "finalData",
+            "operator": "equals",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.missing 未满足 equals"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-9 finalData.missing 未满足 equals"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-10",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "equals",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-10",
+            "target": "finalData",
+            "operator": "equals",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.caption 未满足 equals",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-10 finalData.caption 未满足 equals"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-11",
+            "target": "page",
+            "path": "",
+            "operator": "equals",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-11",
+            "target": "page",
+            "operator": "equals",
+            "passed": false,
+            "severity": "error",
+            "summary": "page. 未满足 equals",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-11 page. 未满足 equals"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-12",
+            "target": "finalData",
+            "path": "price",
+            "operator": "not_equals",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-12",
+            "target": "finalData",
+            "operator": "not_equals",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.price 未满足 not_equals",
+            "actual": 10.1
+          }
+        ],
+        "failures": [
+          "oracle:oracle-12 finalData.price 未满足 not_equals"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-13",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "not_equals",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-13",
+            "target": "finalData",
+            "operator": "not_equals",
+            "passed": true,
+            "severity": "error",
+            "summary": "finalData.missing not_equals 通过"
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-14",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "not_equals",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-14",
+            "target": "finalData",
+            "operator": "not_equals",
+            "passed": true,
+            "severity": "error",
+            "summary": "finalData.caption not_equals 通过",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-15",
+            "target": "page",
+            "path": "",
+            "operator": "not_equals",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-15",
+            "target": "page",
+            "operator": "not_equals",
+            "passed": true,
+            "severity": "error",
+            "summary": "page. not_equals 通过",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-16",
+            "target": "finalData",
+            "path": "price",
+            "operator": "gte",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-16",
+            "target": "finalData",
+            "operator": "gte",
+            "passed": true,
+            "severity": "error",
+            "summary": "finalData.price gte 通过",
+            "actual": 10.1
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-17",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "gte",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-17",
+            "target": "finalData",
+            "operator": "gte",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.missing 未满足 gte"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-17 finalData.missing 未满足 gte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-18",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "gte",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-18",
+            "target": "finalData",
+            "operator": "gte",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.caption 未满足 gte",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-18 finalData.caption 未满足 gte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-19",
+            "target": "page",
+            "path": "",
+            "operator": "gte",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-19",
+            "target": "page",
+            "operator": "gte",
+            "passed": false,
+            "severity": "error",
+            "summary": "page. 未满足 gte",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-19 page. 未满足 gte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-20",
+            "target": "finalData",
+            "path": "price",
+            "operator": "lte",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-20",
+            "target": "finalData",
+            "operator": "lte",
+            "passed": true,
+            "severity": "error",
+            "summary": "finalData.price lte 通过",
+            "actual": 10.1
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-21",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "lte",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-21",
+            "target": "finalData",
+            "operator": "lte",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.missing 未满足 lte"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-21 finalData.missing 未满足 lte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-22",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "lte",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-22",
+            "target": "finalData",
+            "operator": "lte",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.caption 未满足 lte",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-22 finalData.caption 未满足 lte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-23",
+            "target": "page",
+            "path": "",
+            "operator": "lte",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-23",
+            "target": "page",
+            "operator": "lte",
+            "passed": false,
+            "severity": "error",
+            "summary": "page. 未满足 lte",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-23 page. 未满足 lte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-24",
+            "target": "finalData",
+            "path": "price",
+            "operator": "between",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-24",
+            "target": "finalData",
+            "operator": "between",
+            "passed": true,
+            "severity": "error",
+            "summary": "finalData.price between 通过",
+            "actual": 10.1
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-25",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "between",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-25",
+            "target": "finalData",
+            "operator": "between",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.missing 未满足 between"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-25 finalData.missing 未满足 between"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-26",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "between",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-26",
+            "target": "finalData",
+            "operator": "between",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.caption 未满足 between",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-26 finalData.caption 未满足 between"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-27",
+            "target": "page",
+            "path": "",
+            "operator": "between",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-27",
+            "target": "page",
+            "operator": "between",
+            "passed": false,
+            "severity": "error",
+            "summary": "page. 未满足 between",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-27 page. 未满足 between"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-28",
+            "target": "finalData",
+            "path": "price",
+            "operator": "contains",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-28",
+            "target": "finalData",
+            "operator": "contains",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.price 未满足 contains",
+            "actual": 10.1
+          }
+        ],
+        "failures": [
+          "oracle:oracle-28 finalData.price 未满足 contains"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-29",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "contains",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-29",
+            "target": "finalData",
+            "operator": "contains",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.missing 未满足 contains"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-29 finalData.missing 未满足 contains"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-30",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "contains",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-30",
+            "target": "finalData",
+            "operator": "contains",
+            "passed": true,
+            "severity": "error",
+            "summary": "finalData.caption contains 通过",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-31",
+            "target": "page",
+            "path": "",
+            "operator": "contains",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-31",
+            "target": "page",
+            "operator": "contains",
+            "passed": true,
+            "severity": "error",
+            "summary": "page. contains 通过",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-32",
+            "target": "finalData",
+            "path": "price",
+            "operator": "not_contains",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-32",
+            "target": "finalData",
+            "operator": "not_contains",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.price 未满足 not_contains",
+            "actual": 10.1
+          }
+        ],
+        "failures": [
+          "oracle:oracle-32 finalData.price 未满足 not_contains"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-33",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "not_contains",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-33",
+            "target": "finalData",
+            "operator": "not_contains",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.missing 未满足 not_contains"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-33 finalData.missing 未满足 not_contains"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-34",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "not_contains",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-34",
+            "target": "finalData",
+            "operator": "not_contains",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.caption 未满足 not_contains",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-34 finalData.caption 未满足 not_contains"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-35",
+            "target": "page",
+            "path": "",
+            "operator": "not_contains",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-35",
+            "target": "page",
+            "operator": "not_contains",
+            "passed": false,
+            "severity": "error",
+            "summary": "page. 未满足 not_contains",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-35 page. 未满足 not_contains"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-36",
+            "target": "finalData",
+            "path": "price",
+            "operator": "matches",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-36",
+            "target": "finalData",
+            "operator": "matches",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.price 未满足 matches",
+            "actual": 10.1
+          }
+        ],
+        "failures": [
+          "oracle:oracle-36 finalData.price 未满足 matches"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-37",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "matches",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-37",
+            "target": "finalData",
+            "operator": "matches",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.missing 未满足 matches"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-37 finalData.missing 未满足 matches"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-38",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "matches",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-38",
+            "target": "finalData",
+            "operator": "matches",
+            "passed": true,
+            "severity": "error",
+            "summary": "finalData.caption matches 通过",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-39",
+            "target": "page",
+            "path": "",
+            "operator": "matches",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-39",
+            "target": "page",
+            "operator": "matches",
+            "passed": true,
+            "severity": "error",
+            "summary": "page. matches 通过",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-40",
+            "target": "finalData",
+            "path": "price",
+            "operator": "not_matches",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-40",
+            "target": "finalData",
+            "operator": "not_matches",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.price 未满足 not_matches",
+            "actual": 10.1
+          }
+        ],
+        "failures": [
+          "oracle:oracle-40 finalData.price 未满足 not_matches"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-41",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "not_matches",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-41",
+            "target": "finalData",
+            "operator": "not_matches",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.missing 未满足 not_matches"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-41 finalData.missing 未满足 not_matches"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-42",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "not_matches",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-42",
+            "target": "finalData",
+            "operator": "not_matches",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.caption 未满足 not_matches",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-42 finalData.caption 未满足 not_matches"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-43",
+            "target": "page",
+            "path": "",
+            "operator": "not_matches",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-43",
+            "target": "page",
+            "operator": "not_matches",
+            "passed": false,
+            "severity": "error",
+            "summary": "page. 未满足 not_matches",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-43 page. 未满足 not_matches"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-44",
+            "target": "finalData",
+            "path": "price",
+            "operator": "length_gte",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-44",
+            "target": "finalData",
+            "operator": "length_gte",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.price 未满足 length_gte",
+            "actual": 10.1
+          }
+        ],
+        "failures": [
+          "oracle:oracle-44 finalData.price 未满足 length_gte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-45",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "length_gte",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-45",
+            "target": "finalData",
+            "operator": "length_gte",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.missing 未满足 length_gte"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-45 finalData.missing 未满足 length_gte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-46",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "length_gte",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-46",
+            "target": "finalData",
+            "operator": "length_gte",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.caption 未满足 length_gte",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-46 finalData.caption 未满足 length_gte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-47",
+            "target": "page",
+            "path": "",
+            "operator": "length_gte",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-47",
+            "target": "page",
+            "operator": "length_gte",
+            "passed": false,
+            "severity": "error",
+            "summary": "page. 未满足 length_gte",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-47 page. 未满足 length_gte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-48",
+            "target": "finalData",
+            "path": "price",
+            "operator": "length_lte",
+            "value": 10.1,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-48",
+            "target": "finalData",
+            "operator": "length_lte",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.price 未满足 length_lte",
+            "actual": 10.1
+          }
+        ],
+        "failures": [
+          "oracle:oracle-48 finalData.price 未满足 length_lte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-49",
+            "target": "finalData",
+            "path": "missing",
+            "operator": "length_lte",
+            "value": null,
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-49",
+            "target": "finalData",
+            "operator": "length_lte",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.missing 未满足 length_lte"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-49 finalData.missing 未满足 length_lte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-50",
+            "target": "finalData",
+            "path": "caption",
+            "operator": "length_lte",
+            "value": "😀",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-50",
+            "target": "finalData",
+            "operator": "length_lte",
+            "passed": false,
+            "severity": "error",
+            "summary": "finalData.caption 未满足 length_lte",
+            "actual": "分析😀结果"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-50 finalData.caption 未满足 length_lte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "oracle-51",
+            "target": "page",
+            "path": "",
+            "operator": "length_lte",
+            "value": "风险",
+            "min": 9,
+            "max": 11,
+            "tolerance": 0.01
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": false,
+        "warning": false,
+        "checks": [
+          {
+            "id": "oracle-51",
+            "target": "page",
+            "operator": "length_lte",
+            "passed": false,
+            "severity": "error",
+            "summary": "page. 未满足 length_lte",
+            "actual": "<h1>风险提示</h1>\nreturn 10.10"
+          }
+        ],
+        "failures": [
+          "oracle:oracle-51 page. 未满足 length_lte"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "warn",
+            "target": "finalData",
+            "path": "nil",
+            "operator": "exists",
+            "severity": "warning"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": true,
+        "checks": [
+          {
+            "id": "warn",
+            "target": "finalData",
+            "operator": "exists",
+            "passed": false,
+            "severity": "warning",
+            "summary": "finalData.nil 未满足 exists",
+            "actual": null
+          }
+        ],
+        "failures": [],
+        "warnings": [
+          "oracle:warn finalData.nil 未满足 exists"
+        ]
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "array",
+            "target": "finalData",
+            "path": "assets.0.symbol",
+            "operator": "equals",
+            "value": "600519"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "array",
+            "target": "finalData",
+            "operator": "equals",
+            "passed": true,
+            "severity": "error",
+            "summary": "finalData.assets.0.symbol equals 通过",
+            "actual": "600519"
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "assertions": [
+          {
+            "id": "obj",
+            "target": "sources",
+            "operator": "equals",
+            "value": {
+              "sources": [
+                {
+                  "endpoint": "/quotes"
+                }
+              ]
+            }
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "price": 10.1,
+            "assets": [
+              {
+                "symbol": "600519"
+              },
+              null
+            ],
+            "caption": "分析😀结果",
+            "nil": null
+          },
+          "sources": {
+            "sources": [
+              {
+                "endpoint": "/quotes"
+              }
+            ]
+          },
+          "quality": {
+            "status": "warning"
+          },
+          "page": "<h1>风险提示</h1>\nreturn 10.10"
+        }
+      },
+      "expected": {
+        "passed": true,
+        "warning": false,
+        "checks": [
+          {
+            "id": "obj",
+            "target": "sources",
+            "operator": "equals",
+            "passed": true,
+            "severity": "error",
+            "summary": "sources. equals 通过",
+            "actual": {
+              "type": "object",
+              "keys": [
+                "sources"
+              ]
+            }
+          }
+        ],
+        "failures": [],
+        "warnings": []
+      }
+    }
+  ],
+  "validations": [
+    {
+      "input": [],
+      "ok": true,
+      "expected": []
+    },
+    {
+      "input": [
+        {
+          "id": "one",
+          "target": "page",
+          "operator": "contains",
+          "value": "x"
+        }
+      ],
+      "ok": true,
+      "expected": [
+        {
+          "id": "one",
+          "target": "page",
+          "operator": "contains",
+          "value": "x"
+        }
+      ]
+    },
+    {
+      "input": null,
+      "ok": false,
+      "error": "oracleAssertions 必须是数组。"
+    },
+    {
+      "input": [
+        {}
+      ],
+      "ok": false,
+      "error": "第 1 条 oracle 缺少有效 id。"
+    },
+    {
+      "input": [
+        {
+          "id": "a",
+          "target": "page",
+          "operator": "between",
+          "min": 2,
+          "max": 1
+        }
+      ],
+      "ok": false,
+      "error": "a 的 between 必须声明有效 min/max。"
+    },
+    {
+      "input": [
+        {
+          "id": "a",
+          "target": "page",
+          "operator": "matches",
+          "value": "["
+        }
+      ],
+      "ok": false,
+      "error": "a 的正则表达式无效。"
+    },
+    {
+      "input": [
+        {
+          "id": "a",
+          "target": "page",
+          "operator": "equals"
+        }
+      ],
+      "ok": false,
+      "error": "a 的 equals 必须声明 value。"
+    },
+    {
+      "input": [
+        {
+          "id": "a",
+          "target": "page",
+          "operator": "equals",
+          "value": 1,
+          "tolerance": -1
+        }
+      ],
+      "ok": false,
+      "error": "a 的 tolerance 必须是非负数。"
+    },
+    {
+      "input": [
+        {
+          "id": "a",
+          "target": "wrong",
+          "operator": "exists"
+        }
+      ],
+      "ok": false,
+      "error": "a 的 target 无效。"
+    }
+  ]
+}

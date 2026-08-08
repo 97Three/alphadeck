@@ -1,0 +1,6628 @@
+[
+  {
+    "report": {
+      "results": [],
+      "coverage": {
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byLevel": {
+          "production": {
+            "stock": {
+              "total": 1
+            }
+          }
+        },
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      }
+    },
+    "mtime": 1793664000000,
+    "path": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+    "expected": {
+      "id": "report-1793664000000",
+      "fileName": "report-1793664000000.json",
+      "filePath": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "mtimeMs": 1793664000000,
+      "passed": true,
+      "total": 0,
+      "passedCount": 0,
+      "failedCount": 0,
+      "passRate": 0,
+      "averageScore": 0,
+      "durationMs": 0,
+      "metadata": {
+        "trigger": null,
+        "reportSchemaVersion": null,
+        "startedAt": null,
+        "finishedAt": null,
+        "command": [],
+        "evaluator": {
+          "id": null,
+          "version": null,
+          "rubricVersion": null,
+          "concurrency": 1
+        },
+        "runtime": {
+          "cli": "benchmark",
+          "model": "deterministic",
+          "reasoningEffort": null,
+          "configuredModel": null,
+          "agentExecuted": false,
+          "executedCaseCount": 0,
+          "unattestedCaseIds": [],
+          "frameworkVersion": null,
+          "buildRevision": null
+        },
+        "suite": {
+          "mode": "contract",
+          "label": "确定性产物契约"
+        },
+        "dataset": {
+          "schemaVersion": 0,
+          "visibility": "public",
+          "promptsRedacted": false,
+          "sourceIdentitySha256": null
+        },
+        "retention": {
+          "databaseEvidenceRetained": false,
+          "workspaceRetained": false
+        },
+        "provenance": {
+          "gitCommit": null,
+          "gitRevision": null,
+          "buildRevision": null,
+          "frameworkVersion": null,
+          "casesSha256": null,
+          "promptsSha256": null,
+          "datasetRegistrySha256": null,
+          "snapshotManifestSha256": null
+        },
+        "dataSnapshots": {
+          "schemaVersion": 0,
+          "manifestId": null,
+          "manifestVersion": null,
+          "selected": []
+        },
+        "e2eQuality": null,
+        "selection": {
+          "selectedCases": [],
+          "limit": null,
+          "keepProjects": false,
+          "caseCount": 0,
+          "concurrency": 1,
+          "repeat": 1
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": null,
+          "skills": {}
+        }
+      },
+      "qualitySummary": {
+        "caseCount": 0,
+        "firstPassCount": 0,
+        "finalPassCount": 0,
+        "firstPassRate": 0,
+        "finalPassRate": 0,
+        "repairedCaseCount": 0,
+        "repairRate": 0,
+        "averageScore": 0,
+        "durationMs": {
+          "total": 0,
+          "average": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "dimensions": {
+          "contract": 0,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 1,
+          "attemptCount": 0,
+          "passedAttemptCount": 0,
+          "passRate": 0,
+          "flakyCaseIds": [],
+          "confidence95": {
+            "lower": 0,
+            "upper": 0
+          },
+          "scoreStdDev": {
+            "average": 0,
+            "max": {
+              "id": null,
+              "value": 0
+            }
+          }
+        }
+      },
+      "e2eQuality": null,
+      "coverage": {
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byType": {},
+        "byTag": {},
+        "byLevel": {
+          "routing": {},
+          "contract": {},
+          "live_e2e": {},
+          "production": {
+            "stock": {
+              "total": 1,
+              "passed": 0,
+              "failed": 0
+            }
+          }
+        },
+        "caseLevels": {},
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "failedTags": {},
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "tags": [],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      },
+      "results": []
+    }
+  },
+  {
+    "report": {
+      "results": [
+        {}
+      ],
+      "coverage": {
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byLevel": {
+          "production": {
+            "stock": {
+              "total": 1
+            }
+          }
+        },
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      }
+    },
+    "mtime": 1793664000000,
+    "path": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+    "expected": {
+      "id": "report-1793664000000",
+      "fileName": "report-1793664000000.json",
+      "filePath": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "mtimeMs": 1793664000000,
+      "passed": false,
+      "total": 1,
+      "passedCount": 0,
+      "failedCount": 1,
+      "passRate": 0,
+      "averageScore": 60,
+      "durationMs": 0,
+      "metadata": {
+        "trigger": null,
+        "reportSchemaVersion": null,
+        "startedAt": null,
+        "finishedAt": null,
+        "command": [],
+        "evaluator": {
+          "id": null,
+          "version": null,
+          "rubricVersion": null,
+          "concurrency": 1
+        },
+        "runtime": {
+          "cli": "benchmark",
+          "model": "deterministic",
+          "reasoningEffort": null,
+          "configuredModel": null,
+          "agentExecuted": false,
+          "executedCaseCount": 0,
+          "unattestedCaseIds": [],
+          "frameworkVersion": null,
+          "buildRevision": null
+        },
+        "suite": {
+          "mode": "contract",
+          "label": "确定性产物契约"
+        },
+        "dataset": {
+          "schemaVersion": 0,
+          "visibility": "public",
+          "promptsRedacted": false,
+          "sourceIdentitySha256": null
+        },
+        "retention": {
+          "databaseEvidenceRetained": false,
+          "workspaceRetained": false
+        },
+        "provenance": {
+          "gitCommit": null,
+          "gitRevision": null,
+          "buildRevision": null,
+          "frameworkVersion": null,
+          "casesSha256": null,
+          "promptsSha256": null,
+          "datasetRegistrySha256": null,
+          "snapshotManifestSha256": null
+        },
+        "dataSnapshots": {
+          "schemaVersion": 0,
+          "manifestId": null,
+          "manifestVersion": null,
+          "selected": []
+        },
+        "e2eQuality": null,
+        "selection": {
+          "selectedCases": [],
+          "limit": null,
+          "keepProjects": false,
+          "caseCount": 1,
+          "concurrency": 1,
+          "repeat": 1
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": null,
+          "skills": {}
+        }
+      },
+      "qualitySummary": {
+        "caseCount": 1,
+        "firstPassCount": 0,
+        "finalPassCount": 0,
+        "firstPassRate": 0,
+        "finalPassRate": 0,
+        "repairedCaseCount": 0,
+        "repairRate": 0,
+        "averageScore": 60,
+        "durationMs": {
+          "total": 0,
+          "average": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "dimensions": {
+          "contract": 0,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 1,
+          "attemptCount": 1,
+          "passedAttemptCount": 0,
+          "passRate": 0,
+          "flakyCaseIds": [],
+          "confidence95": {
+            "lower": 0,
+            "upper": 79.35
+          },
+          "scoreStdDev": {
+            "average": 0,
+            "max": {
+              "id": null,
+              "value": 0
+            }
+          }
+        }
+      },
+      "e2eQuality": null,
+      "coverage": {
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byType": {},
+        "byTag": {},
+        "byLevel": {
+          "routing": {},
+          "contract": {},
+          "live_e2e": {},
+          "production": {
+            "stock": {
+              "total": 1,
+              "passed": 0,
+              "failed": 0
+            }
+          }
+        },
+        "caseLevels": {},
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "failedTags": {},
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "tags": [],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "unknown",
+          "name": "unknown",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": false,
+          "firstPassPassed": false,
+          "finalPassed": false,
+          "score": 60,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [],
+          "validationStatus": "unknown",
+          "validationChecks": [],
+          "evaluation": null,
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        }
+      ]
+    }
+  },
+  {
+    "report": {
+      "results": [
+        {
+          "id": "case-1",
+          "passed": true,
+          "durationMs": 12.5,
+          "failures": [],
+          "validation": {
+            "status": "passed",
+            "checks": [
+              {
+                "id": "schema",
+                "status": "passed"
+              }
+            ]
+          },
+          "artifacts": {
+            "finalData": {
+              "templateId": "stock",
+              "klineRows": 12
+            },
+            "quality": {
+              "status": "warning"
+            }
+          },
+          "prefetch": {
+            "rawFiles": [
+              "a"
+            ],
+            "finalDataPath": "data/final.json"
+          }
+        },
+        {
+          "id": "case-1",
+          "passed": false,
+          "firstPassPassed": false,
+          "repairAttempts": 2,
+          "validation": {
+            "status": "failed",
+            "checks": [
+              {},
+              {
+                "id": "build",
+                "status": "failed",
+                "name": "Build",
+                "summary": "x"
+              }
+            ]
+          },
+          "evaluation": {
+            "evaluatorId": "rule-strict",
+            "score": 32,
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 50,
+                "weight": 0.3
+              },
+              {
+                "id": "bad"
+              }
+            ],
+            "semanticReview": {
+              "reviewer": {
+                "model": "fixture"
+              },
+              "dimensions": [
+                {
+                  "id": "grounding",
+                  "score": 50,
+                  "evidence": [
+                    "a"
+                  ]
+                }
+              ]
+            },
+            "checks": [
+              {}
+            ]
+          },
+          "stability": {
+            "attempts": [
+              {
+                "attempt": 1,
+                "passed": false,
+                "score": 32
+              },
+              {
+                "attempt": 2,
+                "passed": true,
+                "score": 98
+              }
+            ],
+            "flaky": true
+          },
+          "agentExecution": {
+            "executed": true,
+            "runs": [
+              {}
+            ],
+            "usage": {
+              "inputTokens": 10
+            },
+            "tools": {
+              "total": 2
+            }
+          },
+          "missionAcceptance": {
+            "status": "failed"
+          },
+          "traceDiagnostics": {
+            "stages": [
+              {
+                "id": "intent",
+                "status": "passed"
+              },
+              {
+                "id": "artifact",
+                "status": "failed"
+              }
+            ],
+            "primaryFailureStage": "artifact"
+          },
+          "eventAudit": {
+            "total": 2,
+            "stages": [
+              "intent"
+            ]
+          },
+          "visualCheck": {
+            "passed": false,
+            "screenshots": [
+              {
+                "path": "a.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-2",
+          "passed": true,
+          "evaluation": {
+            "score": 88.5
+          },
+          "symbols": [
+            0,
+            false,
+            null,
+            "a"
+          ],
+          "tags": [
+            1
+          ],
+          "firstPassPassed": true,
+          "finalPassed": true
+        }
+      ],
+      "coverage": {
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byLevel": {
+          "production": {
+            "stock": {
+              "total": 1
+            }
+          }
+        },
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      }
+    },
+    "mtime": 1793664000000,
+    "path": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+    "expected": {
+      "id": "report-1793664000000",
+      "fileName": "report-1793664000000.json",
+      "filePath": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "mtimeMs": 1793664000000,
+      "passed": false,
+      "total": 3,
+      "passedCount": 2,
+      "failedCount": 1,
+      "passRate": 67,
+      "averageScore": 74,
+      "durationMs": 12.5,
+      "metadata": {
+        "trigger": null,
+        "reportSchemaVersion": null,
+        "startedAt": null,
+        "finishedAt": null,
+        "command": [],
+        "evaluator": {
+          "id": null,
+          "version": null,
+          "rubricVersion": null,
+          "concurrency": 1
+        },
+        "runtime": {
+          "cli": "benchmark",
+          "model": "deterministic",
+          "reasoningEffort": null,
+          "configuredModel": null,
+          "agentExecuted": false,
+          "executedCaseCount": 0,
+          "unattestedCaseIds": [],
+          "frameworkVersion": null,
+          "buildRevision": null
+        },
+        "suite": {
+          "mode": "contract",
+          "label": "确定性产物契约"
+        },
+        "dataset": {
+          "schemaVersion": 0,
+          "visibility": "public",
+          "promptsRedacted": false,
+          "sourceIdentitySha256": null
+        },
+        "retention": {
+          "databaseEvidenceRetained": false,
+          "workspaceRetained": false
+        },
+        "provenance": {
+          "gitCommit": null,
+          "gitRevision": null,
+          "buildRevision": null,
+          "frameworkVersion": null,
+          "casesSha256": null,
+          "promptsSha256": null,
+          "datasetRegistrySha256": null,
+          "snapshotManifestSha256": null
+        },
+        "dataSnapshots": {
+          "schemaVersion": 0,
+          "manifestId": null,
+          "manifestVersion": null,
+          "selected": []
+        },
+        "e2eQuality": null,
+        "selection": {
+          "selectedCases": [],
+          "limit": null,
+          "keepProjects": false,
+          "caseCount": 3,
+          "concurrency": 1,
+          "repeat": 1
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": null,
+          "skills": {}
+        }
+      },
+      "qualitySummary": {
+        "caseCount": 3,
+        "firstPassCount": 2,
+        "finalPassCount": 2,
+        "firstPassRate": 67,
+        "finalPassRate": 67,
+        "repairedCaseCount": 1,
+        "repairRate": 33,
+        "averageScore": 74,
+        "durationMs": {
+          "total": 12.5,
+          "average": 4,
+          "p50": 0,
+          "p95": 12.5
+        },
+        "dimensions": {
+          "contract": 50,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 1,
+          "attemptCount": 4,
+          "passedAttemptCount": 3,
+          "passRate": 75,
+          "flakyCaseIds": [
+            "case-1"
+          ],
+          "confidence95": {
+            "lower": 30.06,
+            "upper": 95.44
+          },
+          "scoreStdDev": {
+            "average": 11,
+            "max": {
+              "id": "case-1",
+              "value": 33
+            }
+          }
+        }
+      },
+      "e2eQuality": null,
+      "coverage": {
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byType": {},
+        "byTag": {},
+        "byLevel": {
+          "routing": {},
+          "contract": {},
+          "live_e2e": {},
+          "production": {
+            "stock": {
+              "total": 1,
+              "passed": 0,
+              "failed": 0
+            }
+          }
+        },
+        "caseLevels": {},
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "failedTags": {},
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "tags": [],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "case-1",
+          "name": "case-1",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 12.5,
+          "passed": true,
+          "firstPassPassed": true,
+          "finalPassed": true,
+          "score": 100,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "fixture"
+          ],
+          "validationStatus": "passed",
+          "validationChecks": [
+            {
+              "id": "schema",
+              "name": "schema",
+              "status": "passed",
+              "summary": ""
+            }
+          ],
+          "evaluation": null,
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": "stock",
+            "finalDataPath": "data/final.json",
+            "rawFileCount": 1,
+            "klineRows": 12,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": "warning",
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        },
+        {
+          "id": "case-1",
+          "name": "case-1",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": false,
+          "firstPassPassed": false,
+          "finalPassed": false,
+          "score": 32,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 2,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": {
+            "executed": true,
+            "cli": null,
+            "provider": null,
+            "model": null,
+            "requestId": null,
+            "runIds": [],
+            "runs": [
+              {
+                "id": "",
+                "runInstanceId": "",
+                "requestId": null,
+                "status": null,
+                "provider": null,
+                "model": null,
+                "frameworkVersion": null,
+                "buildRevision": null,
+                "startedAt": null,
+                "completedAt": null,
+                "turns": 0,
+                "usage": {
+                  "inputTokens": 0,
+                  "outputTokens": 0,
+                  "totalTokens": 0,
+                  "cachedInputTokens": 0,
+                  "cacheMissInputTokens": 0,
+                  "reasoningTokens": 0
+                },
+                "tools": {
+                  "total": 0,
+                  "succeeded": 0,
+                  "failed": 0,
+                  "uncertain": 0,
+                  "unexpectedFailureCount": 0,
+                  "workspaceWriteSucceeded": 0,
+                  "submitResultSucceeded": 0
+                }
+              }
+            ],
+            "missionId": null,
+            "generationId": null,
+            "missionStatus": null,
+            "candidateVersion": 0,
+            "acceptedReceiptId": null,
+            "acceptedReceiptHash": null,
+            "acceptedReceiptType": null,
+            "acceptedReceiptVerdict": null,
+            "acceptedSourceRunId": null,
+            "acceptedSourceRequestId": null,
+            "acceptedCandidateSource": null,
+            "frameworkVersion": null,
+            "buildRevision": null,
+            "gitRevision": null,
+            "startedAt": null,
+            "completedAt": null,
+            "turns": 0,
+            "usage": {
+              "inputTokens": 10,
+              "outputTokens": 0,
+              "totalTokens": 0,
+              "cachedInputTokens": 0,
+              "cacheMissInputTokens": 0,
+              "reasoningTokens": 0
+            },
+            "tools": {
+              "total": 2,
+              "succeeded": 0,
+              "failed": 0,
+              "uncertain": 0,
+              "unexpectedFailureCount": 0,
+              "workspaceWriteSucceeded": 0,
+              "submitResultSucceeded": 0
+            }
+          },
+          "missionAcceptance": {
+            "missionId": null,
+            "generationId": null,
+            "status": "failed",
+            "candidateVersion": 0,
+            "acceptedReceiptId": null,
+            "acceptedReceiptHash": null,
+            "acceptedReceiptType": null,
+            "acceptedReceiptVerdict": null,
+            "acceptedSourceRunId": null,
+            "acceptedSourceRequestId": null,
+            "acceptedCandidateSource": null
+          },
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "fixture"
+          ],
+          "validationStatus": "failed",
+          "validationChecks": [
+            {
+              "id": "unknown",
+              "name": "检查项",
+              "status": "unknown",
+              "summary": ""
+            },
+            {
+              "id": "build",
+              "name": "Build",
+              "status": "failed",
+              "summary": "x"
+            }
+          ],
+          "evaluation": {
+            "evaluatorId": "rule-strict",
+            "evaluatorVersion": "",
+            "rubricVersion": "",
+            "hardGatePassed": false,
+            "passed": false,
+            "score": 32,
+            "checks": [
+              {
+                "id": "unknown",
+                "name": "评测项",
+                "status": "failed",
+                "summary": ""
+              }
+            ],
+            "dimensions": [
+              {
+                "id": "contract",
+                "label": "contract",
+                "score": 50,
+                "weight": 0.3,
+                "status": "unknown",
+                "summary": ""
+              }
+            ],
+            "semanticReview": {
+              "schemaVersion": 1,
+              "reviewer": {
+                "provider": "",
+                "model": "fixture",
+                "promptVersion": "",
+                "independentFromGenerator": false
+              },
+              "verdict": "failed",
+              "score": 0,
+              "summary": "",
+              "dimensions": [
+                {
+                  "id": "grounding",
+                  "score": 50,
+                  "rationale": "",
+                  "evidence": [
+                    "a"
+                  ]
+                }
+              ],
+              "usage": null
+            }
+          },
+          "stability": {
+            "passed": false,
+            "repeatCount": 2,
+            "passedAttempts": 1,
+            "passRate": 0,
+            "flaky": true,
+            "attempts": [
+              {
+                "attempt": 1,
+                "passed": false,
+                "firstPassPassed": false,
+                "score": 32,
+                "durationMs": 0,
+                "repairAttempts": 0,
+                "projectId": null,
+                "projectPath": null,
+                "requestId": null,
+                "failures": [],
+                "agentAttested": null
+              },
+              {
+                "attempt": 2,
+                "passed": true,
+                "firstPassPassed": false,
+                "score": 98,
+                "durationMs": 0,
+                "repairAttempts": 0,
+                "projectId": null,
+                "projectPath": null,
+                "requestId": null,
+                "failures": [],
+                "agentAttested": null
+              }
+            ]
+          },
+          "eventAudit": {
+            "total": 2,
+            "warningCount": 0,
+            "errorCount": 0,
+            "eventTypes": [],
+            "stages": [
+              "intent"
+            ]
+          },
+          "traceDiagnostics": {
+            "schemaVersion": 1,
+            "primaryFailureStage": "artifact",
+            "stages": [
+              {
+                "id": "intent",
+                "label": "intent",
+                "status": "passed",
+                "signals": []
+              },
+              {
+                "id": "artifact",
+                "label": "artifact",
+                "status": "failed",
+                "signals": []
+              }
+            ],
+            "observedEventStages": []
+          },
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": {
+            "passed": false,
+            "screenshotPath": null,
+            "screenshots": [
+              {
+                "viewport": "unknown",
+                "path": "a.png",
+                "width": 0,
+                "height": 0
+              }
+            ],
+            "accessibilityIssueCount": 0,
+            "failures": []
+          }
+        },
+        {
+          "id": "case-2",
+          "name": "case-2",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": true,
+          "firstPassPassed": true,
+          "finalPassed": true,
+          "score": 89,
+          "failures": [],
+          "symbols": [
+            "0",
+            "false",
+            "null",
+            "a"
+          ],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "1"
+          ],
+          "validationStatus": "unknown",
+          "validationChecks": [],
+          "evaluation": {
+            "evaluatorId": "",
+            "evaluatorVersion": "",
+            "rubricVersion": "",
+            "hardGatePassed": false,
+            "passed": false,
+            "score": 88.5,
+            "checks": [],
+            "dimensions": [],
+            "semanticReview": null
+          },
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        }
+      ]
+    }
+  },
+  {
+    "report": {
+      "results": [
+        {},
+        {
+          "id": "case-1",
+          "passed": true,
+          "durationMs": 12.5,
+          "failures": [],
+          "validation": {
+            "status": "passed",
+            "checks": [
+              {
+                "id": "schema",
+                "status": "passed"
+              }
+            ]
+          },
+          "artifacts": {
+            "finalData": {
+              "templateId": "stock",
+              "klineRows": 12
+            },
+            "quality": {
+              "status": "warning"
+            }
+          },
+          "prefetch": {
+            "rawFiles": [
+              "a"
+            ],
+            "finalDataPath": "data/final.json"
+          }
+        },
+        {
+          "id": "case-1",
+          "passed": false,
+          "firstPassPassed": false,
+          "repairAttempts": 2,
+          "validation": {
+            "status": "failed",
+            "checks": [
+              {},
+              {
+                "id": "build",
+                "status": "failed",
+                "name": "Build",
+                "summary": "x"
+              }
+            ]
+          },
+          "evaluation": {
+            "evaluatorId": "rule-strict",
+            "score": 32,
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 50,
+                "weight": 0.3
+              },
+              {
+                "id": "bad"
+              }
+            ],
+            "semanticReview": {
+              "reviewer": {
+                "model": "fixture"
+              },
+              "dimensions": [
+                {
+                  "id": "grounding",
+                  "score": 50,
+                  "evidence": [
+                    "a"
+                  ]
+                }
+              ]
+            },
+            "checks": [
+              {}
+            ]
+          },
+          "stability": {
+            "attempts": [
+              {
+                "attempt": 1,
+                "passed": false,
+                "score": 32
+              },
+              {
+                "attempt": 2,
+                "passed": true,
+                "score": 98
+              }
+            ],
+            "flaky": true
+          },
+          "agentExecution": {
+            "executed": true,
+            "runs": [
+              {}
+            ],
+            "usage": {
+              "inputTokens": 10
+            },
+            "tools": {
+              "total": 2
+            }
+          },
+          "missionAcceptance": {
+            "status": "failed"
+          },
+          "traceDiagnostics": {
+            "stages": [
+              {
+                "id": "intent",
+                "status": "passed"
+              },
+              {
+                "id": "artifact",
+                "status": "failed"
+              }
+            ],
+            "primaryFailureStage": "artifact"
+          },
+          "eventAudit": {
+            "total": 2,
+            "stages": [
+              "intent"
+            ]
+          },
+          "visualCheck": {
+            "passed": false,
+            "screenshots": [
+              {
+                "path": "a.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-2",
+          "passed": true,
+          "evaluation": {
+            "score": 88.5
+          },
+          "symbols": [
+            0,
+            false,
+            null,
+            "a"
+          ],
+          "tags": [
+            1
+          ],
+          "firstPassPassed": true,
+          "finalPassed": true
+        }
+      ],
+      "coverage": {
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byLevel": {
+          "production": {
+            "stock": {
+              "total": 1
+            }
+          }
+        },
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      }
+    },
+    "mtime": 1793664000000,
+    "path": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+    "expected": {
+      "id": "report-1793664000000",
+      "fileName": "report-1793664000000.json",
+      "filePath": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "mtimeMs": 1793664000000,
+      "passed": false,
+      "total": 4,
+      "passedCount": 2,
+      "failedCount": 2,
+      "passRate": 50,
+      "averageScore": 70,
+      "durationMs": 12.5,
+      "metadata": {
+        "trigger": null,
+        "reportSchemaVersion": null,
+        "startedAt": null,
+        "finishedAt": null,
+        "command": [],
+        "evaluator": {
+          "id": null,
+          "version": null,
+          "rubricVersion": null,
+          "concurrency": 1
+        },
+        "runtime": {
+          "cli": "benchmark",
+          "model": "deterministic",
+          "reasoningEffort": null,
+          "configuredModel": null,
+          "agentExecuted": false,
+          "executedCaseCount": 0,
+          "unattestedCaseIds": [],
+          "frameworkVersion": null,
+          "buildRevision": null
+        },
+        "suite": {
+          "mode": "contract",
+          "label": "确定性产物契约"
+        },
+        "dataset": {
+          "schemaVersion": 0,
+          "visibility": "public",
+          "promptsRedacted": false,
+          "sourceIdentitySha256": null
+        },
+        "retention": {
+          "databaseEvidenceRetained": false,
+          "workspaceRetained": false
+        },
+        "provenance": {
+          "gitCommit": null,
+          "gitRevision": null,
+          "buildRevision": null,
+          "frameworkVersion": null,
+          "casesSha256": null,
+          "promptsSha256": null,
+          "datasetRegistrySha256": null,
+          "snapshotManifestSha256": null
+        },
+        "dataSnapshots": {
+          "schemaVersion": 0,
+          "manifestId": null,
+          "manifestVersion": null,
+          "selected": []
+        },
+        "e2eQuality": null,
+        "selection": {
+          "selectedCases": [],
+          "limit": null,
+          "keepProjects": false,
+          "caseCount": 4,
+          "concurrency": 1,
+          "repeat": 1
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": null,
+          "skills": {}
+        }
+      },
+      "qualitySummary": {
+        "caseCount": 4,
+        "firstPassCount": 2,
+        "finalPassCount": 2,
+        "firstPassRate": 50,
+        "finalPassRate": 50,
+        "repairedCaseCount": 1,
+        "repairRate": 25,
+        "averageScore": 70,
+        "durationMs": {
+          "total": 12.5,
+          "average": 3,
+          "p50": 0,
+          "p95": 12.5
+        },
+        "dimensions": {
+          "contract": 50,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 1,
+          "attemptCount": 5,
+          "passedAttemptCount": 3,
+          "passRate": 60,
+          "flakyCaseIds": [
+            "case-1"
+          ],
+          "confidence95": {
+            "lower": 23.07,
+            "upper": 88.24
+          },
+          "scoreStdDev": {
+            "average": 8.25,
+            "max": {
+              "id": "case-1",
+              "value": 33
+            }
+          }
+        }
+      },
+      "e2eQuality": null,
+      "coverage": {
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byType": {},
+        "byTag": {},
+        "byLevel": {
+          "routing": {},
+          "contract": {},
+          "live_e2e": {},
+          "production": {
+            "stock": {
+              "total": 1,
+              "passed": 0,
+              "failed": 0
+            }
+          }
+        },
+        "caseLevels": {},
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "failedTags": {},
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "tags": [],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "unknown",
+          "name": "unknown",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": false,
+          "firstPassPassed": false,
+          "finalPassed": false,
+          "score": 60,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [],
+          "validationStatus": "unknown",
+          "validationChecks": [],
+          "evaluation": null,
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        },
+        {
+          "id": "case-1",
+          "name": "case-1",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 12.5,
+          "passed": true,
+          "firstPassPassed": true,
+          "finalPassed": true,
+          "score": 100,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "fixture"
+          ],
+          "validationStatus": "passed",
+          "validationChecks": [
+            {
+              "id": "schema",
+              "name": "schema",
+              "status": "passed",
+              "summary": ""
+            }
+          ],
+          "evaluation": null,
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": "stock",
+            "finalDataPath": "data/final.json",
+            "rawFileCount": 1,
+            "klineRows": 12,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": "warning",
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        },
+        {
+          "id": "case-1",
+          "name": "case-1",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": false,
+          "firstPassPassed": false,
+          "finalPassed": false,
+          "score": 32,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 2,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": {
+            "executed": true,
+            "cli": null,
+            "provider": null,
+            "model": null,
+            "requestId": null,
+            "runIds": [],
+            "runs": [
+              {
+                "id": "",
+                "runInstanceId": "",
+                "requestId": null,
+                "status": null,
+                "provider": null,
+                "model": null,
+                "frameworkVersion": null,
+                "buildRevision": null,
+                "startedAt": null,
+                "completedAt": null,
+                "turns": 0,
+                "usage": {
+                  "inputTokens": 0,
+                  "outputTokens": 0,
+                  "totalTokens": 0,
+                  "cachedInputTokens": 0,
+                  "cacheMissInputTokens": 0,
+                  "reasoningTokens": 0
+                },
+                "tools": {
+                  "total": 0,
+                  "succeeded": 0,
+                  "failed": 0,
+                  "uncertain": 0,
+                  "unexpectedFailureCount": 0,
+                  "workspaceWriteSucceeded": 0,
+                  "submitResultSucceeded": 0
+                }
+              }
+            ],
+            "missionId": null,
+            "generationId": null,
+            "missionStatus": null,
+            "candidateVersion": 0,
+            "acceptedReceiptId": null,
+            "acceptedReceiptHash": null,
+            "acceptedReceiptType": null,
+            "acceptedReceiptVerdict": null,
+            "acceptedSourceRunId": null,
+            "acceptedSourceRequestId": null,
+            "acceptedCandidateSource": null,
+            "frameworkVersion": null,
+            "buildRevision": null,
+            "gitRevision": null,
+            "startedAt": null,
+            "completedAt": null,
+            "turns": 0,
+            "usage": {
+              "inputTokens": 10,
+              "outputTokens": 0,
+              "totalTokens": 0,
+              "cachedInputTokens": 0,
+              "cacheMissInputTokens": 0,
+              "reasoningTokens": 0
+            },
+            "tools": {
+              "total": 2,
+              "succeeded": 0,
+              "failed": 0,
+              "uncertain": 0,
+              "unexpectedFailureCount": 0,
+              "workspaceWriteSucceeded": 0,
+              "submitResultSucceeded": 0
+            }
+          },
+          "missionAcceptance": {
+            "missionId": null,
+            "generationId": null,
+            "status": "failed",
+            "candidateVersion": 0,
+            "acceptedReceiptId": null,
+            "acceptedReceiptHash": null,
+            "acceptedReceiptType": null,
+            "acceptedReceiptVerdict": null,
+            "acceptedSourceRunId": null,
+            "acceptedSourceRequestId": null,
+            "acceptedCandidateSource": null
+          },
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "fixture"
+          ],
+          "validationStatus": "failed",
+          "validationChecks": [
+            {
+              "id": "unknown",
+              "name": "检查项",
+              "status": "unknown",
+              "summary": ""
+            },
+            {
+              "id": "build",
+              "name": "Build",
+              "status": "failed",
+              "summary": "x"
+            }
+          ],
+          "evaluation": {
+            "evaluatorId": "rule-strict",
+            "evaluatorVersion": "",
+            "rubricVersion": "",
+            "hardGatePassed": false,
+            "passed": false,
+            "score": 32,
+            "checks": [
+              {
+                "id": "unknown",
+                "name": "评测项",
+                "status": "failed",
+                "summary": ""
+              }
+            ],
+            "dimensions": [
+              {
+                "id": "contract",
+                "label": "contract",
+                "score": 50,
+                "weight": 0.3,
+                "status": "unknown",
+                "summary": ""
+              }
+            ],
+            "semanticReview": {
+              "schemaVersion": 1,
+              "reviewer": {
+                "provider": "",
+                "model": "fixture",
+                "promptVersion": "",
+                "independentFromGenerator": false
+              },
+              "verdict": "failed",
+              "score": 0,
+              "summary": "",
+              "dimensions": [
+                {
+                  "id": "grounding",
+                  "score": 50,
+                  "rationale": "",
+                  "evidence": [
+                    "a"
+                  ]
+                }
+              ],
+              "usage": null
+            }
+          },
+          "stability": {
+            "passed": false,
+            "repeatCount": 2,
+            "passedAttempts": 1,
+            "passRate": 0,
+            "flaky": true,
+            "attempts": [
+              {
+                "attempt": 1,
+                "passed": false,
+                "firstPassPassed": false,
+                "score": 32,
+                "durationMs": 0,
+                "repairAttempts": 0,
+                "projectId": null,
+                "projectPath": null,
+                "requestId": null,
+                "failures": [],
+                "agentAttested": null
+              },
+              {
+                "attempt": 2,
+                "passed": true,
+                "firstPassPassed": false,
+                "score": 98,
+                "durationMs": 0,
+                "repairAttempts": 0,
+                "projectId": null,
+                "projectPath": null,
+                "requestId": null,
+                "failures": [],
+                "agentAttested": null
+              }
+            ]
+          },
+          "eventAudit": {
+            "total": 2,
+            "warningCount": 0,
+            "errorCount": 0,
+            "eventTypes": [],
+            "stages": [
+              "intent"
+            ]
+          },
+          "traceDiagnostics": {
+            "schemaVersion": 1,
+            "primaryFailureStage": "artifact",
+            "stages": [
+              {
+                "id": "intent",
+                "label": "intent",
+                "status": "passed",
+                "signals": []
+              },
+              {
+                "id": "artifact",
+                "label": "artifact",
+                "status": "failed",
+                "signals": []
+              }
+            ],
+            "observedEventStages": []
+          },
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": {
+            "passed": false,
+            "screenshotPath": null,
+            "screenshots": [
+              {
+                "viewport": "unknown",
+                "path": "a.png",
+                "width": 0,
+                "height": 0
+              }
+            ],
+            "accessibilityIssueCount": 0,
+            "failures": []
+          }
+        },
+        {
+          "id": "case-2",
+          "name": "case-2",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": true,
+          "firstPassPassed": true,
+          "finalPassed": true,
+          "score": 89,
+          "failures": [],
+          "symbols": [
+            "0",
+            "false",
+            "null",
+            "a"
+          ],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "1"
+          ],
+          "validationStatus": "unknown",
+          "validationChecks": [],
+          "evaluation": {
+            "evaluatorId": "",
+            "evaluatorVersion": "",
+            "rubricVersion": "",
+            "hardGatePassed": false,
+            "passed": false,
+            "score": 88.5,
+            "checks": [],
+            "dimensions": [],
+            "semanticReview": null
+          },
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        }
+      ]
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 3,
+      "metadata": {
+        "queue": {
+          "id": "q",
+          "leaseToken": "l"
+        },
+        "runtime": {
+          "cli": "pi",
+          "model": "m",
+          "agentExecuted": true
+        },
+        "selection": {
+          "repeat": 2,
+          "concurrency": 4
+        },
+        "suite": {
+          "mode": "e2e",
+          "executionClass": "live"
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": 2,
+          "skills": {
+            "research": {
+              "version": "1",
+              "sourceSha256": "h",
+              "packageSha256": "p"
+            }
+          }
+        }
+      },
+      "results": [],
+      "coverage": {
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byLevel": {
+          "production": {
+            "stock": {
+              "total": 1
+            }
+          }
+        },
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      }
+    },
+    "mtime": 1793664000000,
+    "path": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+    "expected": {
+      "id": "report-1793664000000",
+      "fileName": "report-1793664000000.json",
+      "filePath": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "mtimeMs": 1793664000000,
+      "passed": true,
+      "total": 0,
+      "passedCount": 0,
+      "failedCount": 0,
+      "passRate": 0,
+      "averageScore": 0,
+      "durationMs": 0,
+      "metadata": {
+        "trigger": null,
+        "queue": {
+          "id": "q",
+          "leaseToken": "l"
+        },
+        "reportSchemaVersion": 3,
+        "startedAt": null,
+        "finishedAt": null,
+        "command": [],
+        "evaluator": {
+          "id": null,
+          "version": null,
+          "rubricVersion": null,
+          "concurrency": 4
+        },
+        "runtime": {
+          "cli": "pi",
+          "model": "m",
+          "reasoningEffort": null,
+          "configuredModel": null,
+          "agentExecuted": true,
+          "executedCaseCount": 0,
+          "unattestedCaseIds": [],
+          "frameworkVersion": null,
+          "buildRevision": null
+        },
+        "suite": {
+          "mode": "e2e",
+          "label": "DeepSeek 真实生成 E2E",
+          "executionClass": "live"
+        },
+        "dataset": {
+          "schemaVersion": 0,
+          "visibility": "public",
+          "promptsRedacted": false,
+          "sourceIdentitySha256": null
+        },
+        "retention": {
+          "databaseEvidenceRetained": false,
+          "workspaceRetained": false
+        },
+        "provenance": {
+          "gitCommit": null,
+          "gitRevision": null,
+          "buildRevision": null,
+          "frameworkVersion": null,
+          "casesSha256": null,
+          "promptsSha256": null,
+          "datasetRegistrySha256": null,
+          "snapshotManifestSha256": null
+        },
+        "dataSnapshots": {
+          "schemaVersion": 0,
+          "manifestId": null,
+          "manifestVersion": null,
+          "selected": []
+        },
+        "e2eQuality": null,
+        "selection": {
+          "selectedCases": [],
+          "limit": null,
+          "keepProjects": false,
+          "caseCount": 0,
+          "concurrency": 4,
+          "repeat": 2
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": 2,
+          "skills": {
+            "research": {
+              "version": "1",
+              "hash": "h",
+              "packageHash": "p",
+              "sourceSha256": "h",
+              "packageSha256": "p",
+              "sourcePath": null,
+              "packagePath": null
+            }
+          }
+        }
+      },
+      "qualitySummary": {
+        "caseCount": 0,
+        "firstPassCount": 0,
+        "finalPassCount": 0,
+        "firstPassRate": 0,
+        "finalPassRate": 0,
+        "repairedCaseCount": 0,
+        "repairRate": 0,
+        "averageScore": 0,
+        "durationMs": {
+          "total": 0,
+          "average": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "dimensions": {
+          "contract": 0,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 2,
+          "attemptCount": 0,
+          "passedAttemptCount": 0,
+          "passRate": 0,
+          "flakyCaseIds": [],
+          "confidence95": {
+            "lower": 0,
+            "upper": 0
+          },
+          "scoreStdDev": {
+            "average": 0,
+            "max": {
+              "id": null,
+              "value": 0
+            }
+          }
+        }
+      },
+      "e2eQuality": null,
+      "coverage": {
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byType": {},
+        "byTag": {},
+        "byLevel": {
+          "routing": {},
+          "contract": {},
+          "live_e2e": {},
+          "production": {
+            "stock": {
+              "total": 1,
+              "passed": 0,
+              "failed": 0
+            }
+          }
+        },
+        "caseLevels": {},
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "failedTags": {},
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "tags": [],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      },
+      "results": []
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 3,
+      "metadata": {
+        "queue": {
+          "id": "q",
+          "leaseToken": "l"
+        },
+        "runtime": {
+          "cli": "pi",
+          "model": "m",
+          "agentExecuted": true
+        },
+        "selection": {
+          "repeat": 2,
+          "concurrency": 4
+        },
+        "suite": {
+          "mode": "e2e",
+          "executionClass": "live"
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": 2,
+          "skills": {
+            "research": {
+              "version": "1",
+              "sourceSha256": "h",
+              "packageSha256": "p"
+            }
+          }
+        }
+      },
+      "results": [
+        {}
+      ],
+      "coverage": {
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byLevel": {
+          "production": {
+            "stock": {
+              "total": 1
+            }
+          }
+        },
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      }
+    },
+    "mtime": 1793664000000,
+    "path": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+    "expected": {
+      "id": "report-1793664000000",
+      "fileName": "report-1793664000000.json",
+      "filePath": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "mtimeMs": 1793664000000,
+      "passed": false,
+      "total": 1,
+      "passedCount": 0,
+      "failedCount": 1,
+      "passRate": 0,
+      "averageScore": 60,
+      "durationMs": 0,
+      "metadata": {
+        "trigger": null,
+        "queue": {
+          "id": "q",
+          "leaseToken": "l"
+        },
+        "reportSchemaVersion": 3,
+        "startedAt": null,
+        "finishedAt": null,
+        "command": [],
+        "evaluator": {
+          "id": null,
+          "version": null,
+          "rubricVersion": null,
+          "concurrency": 4
+        },
+        "runtime": {
+          "cli": "pi",
+          "model": "m",
+          "reasoningEffort": null,
+          "configuredModel": null,
+          "agentExecuted": true,
+          "executedCaseCount": 0,
+          "unattestedCaseIds": [],
+          "frameworkVersion": null,
+          "buildRevision": null
+        },
+        "suite": {
+          "mode": "e2e",
+          "label": "DeepSeek 真实生成 E2E",
+          "executionClass": "live"
+        },
+        "dataset": {
+          "schemaVersion": 0,
+          "visibility": "public",
+          "promptsRedacted": false,
+          "sourceIdentitySha256": null
+        },
+        "retention": {
+          "databaseEvidenceRetained": false,
+          "workspaceRetained": false
+        },
+        "provenance": {
+          "gitCommit": null,
+          "gitRevision": null,
+          "buildRevision": null,
+          "frameworkVersion": null,
+          "casesSha256": null,
+          "promptsSha256": null,
+          "datasetRegistrySha256": null,
+          "snapshotManifestSha256": null
+        },
+        "dataSnapshots": {
+          "schemaVersion": 0,
+          "manifestId": null,
+          "manifestVersion": null,
+          "selected": []
+        },
+        "e2eQuality": null,
+        "selection": {
+          "selectedCases": [],
+          "limit": null,
+          "keepProjects": false,
+          "caseCount": 1,
+          "concurrency": 4,
+          "repeat": 2
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": 2,
+          "skills": {
+            "research": {
+              "version": "1",
+              "hash": "h",
+              "packageHash": "p",
+              "sourceSha256": "h",
+              "packageSha256": "p",
+              "sourcePath": null,
+              "packagePath": null
+            }
+          }
+        }
+      },
+      "qualitySummary": {
+        "caseCount": 1,
+        "firstPassCount": 0,
+        "finalPassCount": 0,
+        "firstPassRate": 0,
+        "finalPassRate": 0,
+        "repairedCaseCount": 0,
+        "repairRate": 0,
+        "averageScore": 60,
+        "durationMs": {
+          "total": 0,
+          "average": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "dimensions": {
+          "contract": 0,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 2,
+          "attemptCount": 1,
+          "passedAttemptCount": 0,
+          "passRate": 0,
+          "flakyCaseIds": [],
+          "confidence95": {
+            "lower": 0,
+            "upper": 79.35
+          },
+          "scoreStdDev": {
+            "average": 0,
+            "max": {
+              "id": null,
+              "value": 0
+            }
+          }
+        }
+      },
+      "e2eQuality": null,
+      "coverage": {
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byType": {},
+        "byTag": {},
+        "byLevel": {
+          "routing": {},
+          "contract": {},
+          "live_e2e": {},
+          "production": {
+            "stock": {
+              "total": 1,
+              "passed": 0,
+              "failed": 0
+            }
+          }
+        },
+        "caseLevels": {},
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "failedTags": {},
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "tags": [],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "unknown",
+          "name": "unknown",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": false,
+          "firstPassPassed": false,
+          "finalPassed": false,
+          "score": 60,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [],
+          "validationStatus": "unknown",
+          "validationChecks": [],
+          "evaluation": null,
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        }
+      ]
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 3,
+      "metadata": {
+        "queue": {
+          "id": "q",
+          "leaseToken": "l"
+        },
+        "runtime": {
+          "cli": "pi",
+          "model": "m",
+          "agentExecuted": true
+        },
+        "selection": {
+          "repeat": 2,
+          "concurrency": 4
+        },
+        "suite": {
+          "mode": "e2e",
+          "executionClass": "live"
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": 2,
+          "skills": {
+            "research": {
+              "version": "1",
+              "sourceSha256": "h",
+              "packageSha256": "p"
+            }
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "case-1",
+          "passed": true,
+          "durationMs": 12.5,
+          "failures": [],
+          "validation": {
+            "status": "passed",
+            "checks": [
+              {
+                "id": "schema",
+                "status": "passed"
+              }
+            ]
+          },
+          "artifacts": {
+            "finalData": {
+              "templateId": "stock",
+              "klineRows": 12
+            },
+            "quality": {
+              "status": "warning"
+            }
+          },
+          "prefetch": {
+            "rawFiles": [
+              "a"
+            ],
+            "finalDataPath": "data/final.json"
+          }
+        },
+        {
+          "id": "case-1",
+          "passed": false,
+          "firstPassPassed": false,
+          "repairAttempts": 2,
+          "validation": {
+            "status": "failed",
+            "checks": [
+              {},
+              {
+                "id": "build",
+                "status": "failed",
+                "name": "Build",
+                "summary": "x"
+              }
+            ]
+          },
+          "evaluation": {
+            "evaluatorId": "rule-strict",
+            "score": 32,
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 50,
+                "weight": 0.3
+              },
+              {
+                "id": "bad"
+              }
+            ],
+            "semanticReview": {
+              "reviewer": {
+                "model": "fixture"
+              },
+              "dimensions": [
+                {
+                  "id": "grounding",
+                  "score": 50,
+                  "evidence": [
+                    "a"
+                  ]
+                }
+              ]
+            },
+            "checks": [
+              {}
+            ]
+          },
+          "stability": {
+            "attempts": [
+              {
+                "attempt": 1,
+                "passed": false,
+                "score": 32
+              },
+              {
+                "attempt": 2,
+                "passed": true,
+                "score": 98
+              }
+            ],
+            "flaky": true
+          },
+          "agentExecution": {
+            "executed": true,
+            "runs": [
+              {}
+            ],
+            "usage": {
+              "inputTokens": 10
+            },
+            "tools": {
+              "total": 2
+            }
+          },
+          "missionAcceptance": {
+            "status": "failed"
+          },
+          "traceDiagnostics": {
+            "stages": [
+              {
+                "id": "intent",
+                "status": "passed"
+              },
+              {
+                "id": "artifact",
+                "status": "failed"
+              }
+            ],
+            "primaryFailureStage": "artifact"
+          },
+          "eventAudit": {
+            "total": 2,
+            "stages": [
+              "intent"
+            ]
+          },
+          "visualCheck": {
+            "passed": false,
+            "screenshots": [
+              {
+                "path": "a.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-2",
+          "passed": true,
+          "evaluation": {
+            "score": 88.5
+          },
+          "symbols": [
+            0,
+            false,
+            null,
+            "a"
+          ],
+          "tags": [
+            1
+          ],
+          "firstPassPassed": true,
+          "finalPassed": true
+        }
+      ],
+      "coverage": {
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byLevel": {
+          "production": {
+            "stock": {
+              "total": 1
+            }
+          }
+        },
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      }
+    },
+    "mtime": 1793664000000,
+    "path": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+    "expected": {
+      "id": "report-1793664000000",
+      "fileName": "report-1793664000000.json",
+      "filePath": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "mtimeMs": 1793664000000,
+      "passed": false,
+      "total": 3,
+      "passedCount": 2,
+      "failedCount": 1,
+      "passRate": 67,
+      "averageScore": 74,
+      "durationMs": 12.5,
+      "metadata": {
+        "trigger": null,
+        "queue": {
+          "id": "q",
+          "leaseToken": "l"
+        },
+        "reportSchemaVersion": 3,
+        "startedAt": null,
+        "finishedAt": null,
+        "command": [],
+        "evaluator": {
+          "id": null,
+          "version": null,
+          "rubricVersion": null,
+          "concurrency": 4
+        },
+        "runtime": {
+          "cli": "pi",
+          "model": "m",
+          "reasoningEffort": null,
+          "configuredModel": null,
+          "agentExecuted": true,
+          "executedCaseCount": 0,
+          "unattestedCaseIds": [],
+          "frameworkVersion": null,
+          "buildRevision": null
+        },
+        "suite": {
+          "mode": "e2e",
+          "label": "DeepSeek 真实生成 E2E",
+          "executionClass": "live"
+        },
+        "dataset": {
+          "schemaVersion": 0,
+          "visibility": "public",
+          "promptsRedacted": false,
+          "sourceIdentitySha256": null
+        },
+        "retention": {
+          "databaseEvidenceRetained": false,
+          "workspaceRetained": false
+        },
+        "provenance": {
+          "gitCommit": null,
+          "gitRevision": null,
+          "buildRevision": null,
+          "frameworkVersion": null,
+          "casesSha256": null,
+          "promptsSha256": null,
+          "datasetRegistrySha256": null,
+          "snapshotManifestSha256": null
+        },
+        "dataSnapshots": {
+          "schemaVersion": 0,
+          "manifestId": null,
+          "manifestVersion": null,
+          "selected": []
+        },
+        "e2eQuality": null,
+        "selection": {
+          "selectedCases": [],
+          "limit": null,
+          "keepProjects": false,
+          "caseCount": 3,
+          "concurrency": 4,
+          "repeat": 2
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": 2,
+          "skills": {
+            "research": {
+              "version": "1",
+              "hash": "h",
+              "packageHash": "p",
+              "sourceSha256": "h",
+              "packageSha256": "p",
+              "sourcePath": null,
+              "packagePath": null
+            }
+          }
+        }
+      },
+      "qualitySummary": {
+        "caseCount": 3,
+        "firstPassCount": 2,
+        "finalPassCount": 2,
+        "firstPassRate": 67,
+        "finalPassRate": 67,
+        "repairedCaseCount": 1,
+        "repairRate": 33,
+        "averageScore": 74,
+        "durationMs": {
+          "total": 12.5,
+          "average": 4,
+          "p50": 0,
+          "p95": 12.5
+        },
+        "dimensions": {
+          "contract": 50,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 2,
+          "attemptCount": 4,
+          "passedAttemptCount": 3,
+          "passRate": 75,
+          "flakyCaseIds": [
+            "case-1"
+          ],
+          "confidence95": {
+            "lower": 30.06,
+            "upper": 95.44
+          },
+          "scoreStdDev": {
+            "average": 11,
+            "max": {
+              "id": "case-1",
+              "value": 33
+            }
+          }
+        }
+      },
+      "e2eQuality": null,
+      "coverage": {
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byType": {},
+        "byTag": {},
+        "byLevel": {
+          "routing": {},
+          "contract": {},
+          "live_e2e": {},
+          "production": {
+            "stock": {
+              "total": 1,
+              "passed": 0,
+              "failed": 0
+            }
+          }
+        },
+        "caseLevels": {},
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "failedTags": {},
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "tags": [],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "case-1",
+          "name": "case-1",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 12.5,
+          "passed": true,
+          "firstPassPassed": true,
+          "finalPassed": true,
+          "score": 100,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "fixture"
+          ],
+          "validationStatus": "passed",
+          "validationChecks": [
+            {
+              "id": "schema",
+              "name": "schema",
+              "status": "passed",
+              "summary": ""
+            }
+          ],
+          "evaluation": null,
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": "stock",
+            "finalDataPath": "data/final.json",
+            "rawFileCount": 1,
+            "klineRows": 12,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": "warning",
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        },
+        {
+          "id": "case-1",
+          "name": "case-1",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": false,
+          "firstPassPassed": false,
+          "finalPassed": false,
+          "score": 32,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 2,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": {
+            "executed": true,
+            "cli": null,
+            "provider": null,
+            "model": null,
+            "requestId": null,
+            "runIds": [],
+            "runs": [
+              {
+                "id": "",
+                "runInstanceId": "",
+                "requestId": null,
+                "status": null,
+                "provider": null,
+                "model": null,
+                "frameworkVersion": null,
+                "buildRevision": null,
+                "startedAt": null,
+                "completedAt": null,
+                "turns": 0,
+                "usage": {
+                  "inputTokens": 0,
+                  "outputTokens": 0,
+                  "totalTokens": 0,
+                  "cachedInputTokens": 0,
+                  "cacheMissInputTokens": 0,
+                  "reasoningTokens": 0
+                },
+                "tools": {
+                  "total": 0,
+                  "succeeded": 0,
+                  "failed": 0,
+                  "uncertain": 0,
+                  "unexpectedFailureCount": 0,
+                  "workspaceWriteSucceeded": 0,
+                  "submitResultSucceeded": 0
+                }
+              }
+            ],
+            "missionId": null,
+            "generationId": null,
+            "missionStatus": null,
+            "candidateVersion": 0,
+            "acceptedReceiptId": null,
+            "acceptedReceiptHash": null,
+            "acceptedReceiptType": null,
+            "acceptedReceiptVerdict": null,
+            "acceptedSourceRunId": null,
+            "acceptedSourceRequestId": null,
+            "acceptedCandidateSource": null,
+            "frameworkVersion": null,
+            "buildRevision": null,
+            "gitRevision": null,
+            "startedAt": null,
+            "completedAt": null,
+            "turns": 0,
+            "usage": {
+              "inputTokens": 10,
+              "outputTokens": 0,
+              "totalTokens": 0,
+              "cachedInputTokens": 0,
+              "cacheMissInputTokens": 0,
+              "reasoningTokens": 0
+            },
+            "tools": {
+              "total": 2,
+              "succeeded": 0,
+              "failed": 0,
+              "uncertain": 0,
+              "unexpectedFailureCount": 0,
+              "workspaceWriteSucceeded": 0,
+              "submitResultSucceeded": 0
+            }
+          },
+          "missionAcceptance": {
+            "missionId": null,
+            "generationId": null,
+            "status": "failed",
+            "candidateVersion": 0,
+            "acceptedReceiptId": null,
+            "acceptedReceiptHash": null,
+            "acceptedReceiptType": null,
+            "acceptedReceiptVerdict": null,
+            "acceptedSourceRunId": null,
+            "acceptedSourceRequestId": null,
+            "acceptedCandidateSource": null
+          },
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "fixture"
+          ],
+          "validationStatus": "failed",
+          "validationChecks": [
+            {
+              "id": "unknown",
+              "name": "检查项",
+              "status": "unknown",
+              "summary": ""
+            },
+            {
+              "id": "build",
+              "name": "Build",
+              "status": "failed",
+              "summary": "x"
+            }
+          ],
+          "evaluation": {
+            "evaluatorId": "rule-strict",
+            "evaluatorVersion": "",
+            "rubricVersion": "",
+            "hardGatePassed": false,
+            "passed": false,
+            "score": 32,
+            "checks": [
+              {
+                "id": "unknown",
+                "name": "评测项",
+                "status": "failed",
+                "summary": ""
+              }
+            ],
+            "dimensions": [
+              {
+                "id": "contract",
+                "label": "contract",
+                "score": 50,
+                "weight": 0.3,
+                "status": "unknown",
+                "summary": ""
+              }
+            ],
+            "semanticReview": {
+              "schemaVersion": 1,
+              "reviewer": {
+                "provider": "",
+                "model": "fixture",
+                "promptVersion": "",
+                "independentFromGenerator": false
+              },
+              "verdict": "failed",
+              "score": 0,
+              "summary": "",
+              "dimensions": [
+                {
+                  "id": "grounding",
+                  "score": 50,
+                  "rationale": "",
+                  "evidence": [
+                    "a"
+                  ]
+                }
+              ],
+              "usage": null
+            }
+          },
+          "stability": {
+            "passed": false,
+            "repeatCount": 2,
+            "passedAttempts": 1,
+            "passRate": 0,
+            "flaky": true,
+            "attempts": [
+              {
+                "attempt": 1,
+                "passed": false,
+                "firstPassPassed": false,
+                "score": 32,
+                "durationMs": 0,
+                "repairAttempts": 0,
+                "projectId": null,
+                "projectPath": null,
+                "requestId": null,
+                "failures": [],
+                "agentAttested": null
+              },
+              {
+                "attempt": 2,
+                "passed": true,
+                "firstPassPassed": false,
+                "score": 98,
+                "durationMs": 0,
+                "repairAttempts": 0,
+                "projectId": null,
+                "projectPath": null,
+                "requestId": null,
+                "failures": [],
+                "agentAttested": null
+              }
+            ]
+          },
+          "eventAudit": {
+            "total": 2,
+            "warningCount": 0,
+            "errorCount": 0,
+            "eventTypes": [],
+            "stages": [
+              "intent"
+            ]
+          },
+          "traceDiagnostics": {
+            "schemaVersion": 1,
+            "primaryFailureStage": "artifact",
+            "stages": [
+              {
+                "id": "intent",
+                "label": "intent",
+                "status": "passed",
+                "signals": []
+              },
+              {
+                "id": "artifact",
+                "label": "artifact",
+                "status": "failed",
+                "signals": []
+              }
+            ],
+            "observedEventStages": []
+          },
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": {
+            "passed": false,
+            "screenshotPath": null,
+            "screenshots": [
+              {
+                "viewport": "unknown",
+                "path": "a.png",
+                "width": 0,
+                "height": 0
+              }
+            ],
+            "accessibilityIssueCount": 0,
+            "failures": []
+          }
+        },
+        {
+          "id": "case-2",
+          "name": "case-2",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": true,
+          "firstPassPassed": true,
+          "finalPassed": true,
+          "score": 89,
+          "failures": [],
+          "symbols": [
+            "0",
+            "false",
+            "null",
+            "a"
+          ],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "1"
+          ],
+          "validationStatus": "unknown",
+          "validationChecks": [],
+          "evaluation": {
+            "evaluatorId": "",
+            "evaluatorVersion": "",
+            "rubricVersion": "",
+            "hardGatePassed": false,
+            "passed": false,
+            "score": 88.5,
+            "checks": [],
+            "dimensions": [],
+            "semanticReview": null
+          },
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        }
+      ]
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 3,
+      "metadata": {
+        "queue": {
+          "id": "q",
+          "leaseToken": "l"
+        },
+        "runtime": {
+          "cli": "pi",
+          "model": "m",
+          "agentExecuted": true
+        },
+        "selection": {
+          "repeat": 2,
+          "concurrency": 4
+        },
+        "suite": {
+          "mode": "e2e",
+          "executionClass": "live"
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": 2,
+          "skills": {
+            "research": {
+              "version": "1",
+              "sourceSha256": "h",
+              "packageSha256": "p"
+            }
+          }
+        }
+      },
+      "results": [
+        {},
+        {
+          "id": "case-1",
+          "passed": true,
+          "durationMs": 12.5,
+          "failures": [],
+          "validation": {
+            "status": "passed",
+            "checks": [
+              {
+                "id": "schema",
+                "status": "passed"
+              }
+            ]
+          },
+          "artifacts": {
+            "finalData": {
+              "templateId": "stock",
+              "klineRows": 12
+            },
+            "quality": {
+              "status": "warning"
+            }
+          },
+          "prefetch": {
+            "rawFiles": [
+              "a"
+            ],
+            "finalDataPath": "data/final.json"
+          }
+        },
+        {
+          "id": "case-1",
+          "passed": false,
+          "firstPassPassed": false,
+          "repairAttempts": 2,
+          "validation": {
+            "status": "failed",
+            "checks": [
+              {},
+              {
+                "id": "build",
+                "status": "failed",
+                "name": "Build",
+                "summary": "x"
+              }
+            ]
+          },
+          "evaluation": {
+            "evaluatorId": "rule-strict",
+            "score": 32,
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 50,
+                "weight": 0.3
+              },
+              {
+                "id": "bad"
+              }
+            ],
+            "semanticReview": {
+              "reviewer": {
+                "model": "fixture"
+              },
+              "dimensions": [
+                {
+                  "id": "grounding",
+                  "score": 50,
+                  "evidence": [
+                    "a"
+                  ]
+                }
+              ]
+            },
+            "checks": [
+              {}
+            ]
+          },
+          "stability": {
+            "attempts": [
+              {
+                "attempt": 1,
+                "passed": false,
+                "score": 32
+              },
+              {
+                "attempt": 2,
+                "passed": true,
+                "score": 98
+              }
+            ],
+            "flaky": true
+          },
+          "agentExecution": {
+            "executed": true,
+            "runs": [
+              {}
+            ],
+            "usage": {
+              "inputTokens": 10
+            },
+            "tools": {
+              "total": 2
+            }
+          },
+          "missionAcceptance": {
+            "status": "failed"
+          },
+          "traceDiagnostics": {
+            "stages": [
+              {
+                "id": "intent",
+                "status": "passed"
+              },
+              {
+                "id": "artifact",
+                "status": "failed"
+              }
+            ],
+            "primaryFailureStage": "artifact"
+          },
+          "eventAudit": {
+            "total": 2,
+            "stages": [
+              "intent"
+            ]
+          },
+          "visualCheck": {
+            "passed": false,
+            "screenshots": [
+              {
+                "path": "a.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-2",
+          "passed": true,
+          "evaluation": {
+            "score": 88.5
+          },
+          "symbols": [
+            0,
+            false,
+            null,
+            "a"
+          ],
+          "tags": [
+            1
+          ],
+          "firstPassPassed": true,
+          "finalPassed": true
+        }
+      ],
+      "coverage": {
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byLevel": {
+          "production": {
+            "stock": {
+              "total": 1
+            }
+          }
+        },
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      }
+    },
+    "mtime": 1793664000000,
+    "path": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+    "expected": {
+      "id": "report-1793664000000",
+      "fileName": "report-1793664000000.json",
+      "filePath": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "mtimeMs": 1793664000000,
+      "passed": false,
+      "total": 4,
+      "passedCount": 2,
+      "failedCount": 2,
+      "passRate": 50,
+      "averageScore": 70,
+      "durationMs": 12.5,
+      "metadata": {
+        "trigger": null,
+        "queue": {
+          "id": "q",
+          "leaseToken": "l"
+        },
+        "reportSchemaVersion": 3,
+        "startedAt": null,
+        "finishedAt": null,
+        "command": [],
+        "evaluator": {
+          "id": null,
+          "version": null,
+          "rubricVersion": null,
+          "concurrency": 4
+        },
+        "runtime": {
+          "cli": "pi",
+          "model": "m",
+          "reasoningEffort": null,
+          "configuredModel": null,
+          "agentExecuted": true,
+          "executedCaseCount": 0,
+          "unattestedCaseIds": [],
+          "frameworkVersion": null,
+          "buildRevision": null
+        },
+        "suite": {
+          "mode": "e2e",
+          "label": "DeepSeek 真实生成 E2E",
+          "executionClass": "live"
+        },
+        "dataset": {
+          "schemaVersion": 0,
+          "visibility": "public",
+          "promptsRedacted": false,
+          "sourceIdentitySha256": null
+        },
+        "retention": {
+          "databaseEvidenceRetained": false,
+          "workspaceRetained": false
+        },
+        "provenance": {
+          "gitCommit": null,
+          "gitRevision": null,
+          "buildRevision": null,
+          "frameworkVersion": null,
+          "casesSha256": null,
+          "promptsSha256": null,
+          "datasetRegistrySha256": null,
+          "snapshotManifestSha256": null
+        },
+        "dataSnapshots": {
+          "schemaVersion": 0,
+          "manifestId": null,
+          "manifestVersion": null,
+          "selected": []
+        },
+        "e2eQuality": null,
+        "selection": {
+          "selectedCases": [],
+          "limit": null,
+          "keepProjects": false,
+          "caseCount": 4,
+          "concurrency": 4,
+          "repeat": 2
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": 2,
+          "skills": {
+            "research": {
+              "version": "1",
+              "hash": "h",
+              "packageHash": "p",
+              "sourceSha256": "h",
+              "packageSha256": "p",
+              "sourcePath": null,
+              "packagePath": null
+            }
+          }
+        }
+      },
+      "qualitySummary": {
+        "caseCount": 4,
+        "firstPassCount": 2,
+        "finalPassCount": 2,
+        "firstPassRate": 50,
+        "finalPassRate": 50,
+        "repairedCaseCount": 1,
+        "repairRate": 25,
+        "averageScore": 70,
+        "durationMs": {
+          "total": 12.5,
+          "average": 3,
+          "p50": 0,
+          "p95": 12.5
+        },
+        "dimensions": {
+          "contract": 50,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 2,
+          "attemptCount": 5,
+          "passedAttemptCount": 3,
+          "passRate": 60,
+          "flakyCaseIds": [
+            "case-1"
+          ],
+          "confidence95": {
+            "lower": 23.07,
+            "upper": 88.24
+          },
+          "scoreStdDev": {
+            "average": 8.25,
+            "max": {
+              "id": "case-1",
+              "value": 33
+            }
+          }
+        }
+      },
+      "e2eQuality": null,
+      "coverage": {
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byType": {},
+        "byTag": {},
+        "byLevel": {
+          "routing": {},
+          "contract": {},
+          "live_e2e": {},
+          "production": {
+            "stock": {
+              "total": 1,
+              "passed": 0,
+              "failed": 0
+            }
+          }
+        },
+        "caseLevels": {},
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "failedTags": {},
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "tags": [],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "unknown",
+          "name": "unknown",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": false,
+          "firstPassPassed": false,
+          "finalPassed": false,
+          "score": 60,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [],
+          "validationStatus": "unknown",
+          "validationChecks": [],
+          "evaluation": null,
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        },
+        {
+          "id": "case-1",
+          "name": "case-1",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 12.5,
+          "passed": true,
+          "firstPassPassed": true,
+          "finalPassed": true,
+          "score": 100,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "fixture"
+          ],
+          "validationStatus": "passed",
+          "validationChecks": [
+            {
+              "id": "schema",
+              "name": "schema",
+              "status": "passed",
+              "summary": ""
+            }
+          ],
+          "evaluation": null,
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": "stock",
+            "finalDataPath": "data/final.json",
+            "rawFileCount": 1,
+            "klineRows": 12,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": "warning",
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        },
+        {
+          "id": "case-1",
+          "name": "case-1",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": false,
+          "firstPassPassed": false,
+          "finalPassed": false,
+          "score": 32,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 2,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": {
+            "executed": true,
+            "cli": null,
+            "provider": null,
+            "model": null,
+            "requestId": null,
+            "runIds": [],
+            "runs": [
+              {
+                "id": "",
+                "runInstanceId": "",
+                "requestId": null,
+                "status": null,
+                "provider": null,
+                "model": null,
+                "frameworkVersion": null,
+                "buildRevision": null,
+                "startedAt": null,
+                "completedAt": null,
+                "turns": 0,
+                "usage": {
+                  "inputTokens": 0,
+                  "outputTokens": 0,
+                  "totalTokens": 0,
+                  "cachedInputTokens": 0,
+                  "cacheMissInputTokens": 0,
+                  "reasoningTokens": 0
+                },
+                "tools": {
+                  "total": 0,
+                  "succeeded": 0,
+                  "failed": 0,
+                  "uncertain": 0,
+                  "unexpectedFailureCount": 0,
+                  "workspaceWriteSucceeded": 0,
+                  "submitResultSucceeded": 0
+                }
+              }
+            ],
+            "missionId": null,
+            "generationId": null,
+            "missionStatus": null,
+            "candidateVersion": 0,
+            "acceptedReceiptId": null,
+            "acceptedReceiptHash": null,
+            "acceptedReceiptType": null,
+            "acceptedReceiptVerdict": null,
+            "acceptedSourceRunId": null,
+            "acceptedSourceRequestId": null,
+            "acceptedCandidateSource": null,
+            "frameworkVersion": null,
+            "buildRevision": null,
+            "gitRevision": null,
+            "startedAt": null,
+            "completedAt": null,
+            "turns": 0,
+            "usage": {
+              "inputTokens": 10,
+              "outputTokens": 0,
+              "totalTokens": 0,
+              "cachedInputTokens": 0,
+              "cacheMissInputTokens": 0,
+              "reasoningTokens": 0
+            },
+            "tools": {
+              "total": 2,
+              "succeeded": 0,
+              "failed": 0,
+              "uncertain": 0,
+              "unexpectedFailureCount": 0,
+              "workspaceWriteSucceeded": 0,
+              "submitResultSucceeded": 0
+            }
+          },
+          "missionAcceptance": {
+            "missionId": null,
+            "generationId": null,
+            "status": "failed",
+            "candidateVersion": 0,
+            "acceptedReceiptId": null,
+            "acceptedReceiptHash": null,
+            "acceptedReceiptType": null,
+            "acceptedReceiptVerdict": null,
+            "acceptedSourceRunId": null,
+            "acceptedSourceRequestId": null,
+            "acceptedCandidateSource": null
+          },
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "fixture"
+          ],
+          "validationStatus": "failed",
+          "validationChecks": [
+            {
+              "id": "unknown",
+              "name": "检查项",
+              "status": "unknown",
+              "summary": ""
+            },
+            {
+              "id": "build",
+              "name": "Build",
+              "status": "failed",
+              "summary": "x"
+            }
+          ],
+          "evaluation": {
+            "evaluatorId": "rule-strict",
+            "evaluatorVersion": "",
+            "rubricVersion": "",
+            "hardGatePassed": false,
+            "passed": false,
+            "score": 32,
+            "checks": [
+              {
+                "id": "unknown",
+                "name": "评测项",
+                "status": "failed",
+                "summary": ""
+              }
+            ],
+            "dimensions": [
+              {
+                "id": "contract",
+                "label": "contract",
+                "score": 50,
+                "weight": 0.3,
+                "status": "unknown",
+                "summary": ""
+              }
+            ],
+            "semanticReview": {
+              "schemaVersion": 1,
+              "reviewer": {
+                "provider": "",
+                "model": "fixture",
+                "promptVersion": "",
+                "independentFromGenerator": false
+              },
+              "verdict": "failed",
+              "score": 0,
+              "summary": "",
+              "dimensions": [
+                {
+                  "id": "grounding",
+                  "score": 50,
+                  "rationale": "",
+                  "evidence": [
+                    "a"
+                  ]
+                }
+              ],
+              "usage": null
+            }
+          },
+          "stability": {
+            "passed": false,
+            "repeatCount": 2,
+            "passedAttempts": 1,
+            "passRate": 0,
+            "flaky": true,
+            "attempts": [
+              {
+                "attempt": 1,
+                "passed": false,
+                "firstPassPassed": false,
+                "score": 32,
+                "durationMs": 0,
+                "repairAttempts": 0,
+                "projectId": null,
+                "projectPath": null,
+                "requestId": null,
+                "failures": [],
+                "agentAttested": null
+              },
+              {
+                "attempt": 2,
+                "passed": true,
+                "firstPassPassed": false,
+                "score": 98,
+                "durationMs": 0,
+                "repairAttempts": 0,
+                "projectId": null,
+                "projectPath": null,
+                "requestId": null,
+                "failures": [],
+                "agentAttested": null
+              }
+            ]
+          },
+          "eventAudit": {
+            "total": 2,
+            "warningCount": 0,
+            "errorCount": 0,
+            "eventTypes": [],
+            "stages": [
+              "intent"
+            ]
+          },
+          "traceDiagnostics": {
+            "schemaVersion": 1,
+            "primaryFailureStage": "artifact",
+            "stages": [
+              {
+                "id": "intent",
+                "label": "intent",
+                "status": "passed",
+                "signals": []
+              },
+              {
+                "id": "artifact",
+                "label": "artifact",
+                "status": "failed",
+                "signals": []
+              }
+            ],
+            "observedEventStages": []
+          },
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": {
+            "passed": false,
+            "screenshotPath": null,
+            "screenshots": [
+              {
+                "viewport": "unknown",
+                "path": "a.png",
+                "width": 0,
+                "height": 0
+              }
+            ],
+            "accessibilityIssueCount": 0,
+            "failures": []
+          }
+        },
+        {
+          "id": "case-2",
+          "name": "case-2",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": true,
+          "firstPassPassed": true,
+          "finalPassed": true,
+          "score": 89,
+          "failures": [],
+          "symbols": [
+            "0",
+            "false",
+            "null",
+            "a"
+          ],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "1"
+          ],
+          "validationStatus": "unknown",
+          "validationChecks": [],
+          "evaluation": {
+            "evaluatorId": "",
+            "evaluatorVersion": "",
+            "rubricVersion": "",
+            "hardGatePassed": false,
+            "passed": false,
+            "score": 88.5,
+            "checks": [],
+            "dimensions": [],
+            "semanticReview": null
+          },
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        }
+      ]
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 2.5,
+      "metadata": {
+        "runtime": {
+          "cli": 1,
+          "model": null
+        },
+        "selection": {
+          "repeat": 0,
+          "concurrency": 90,
+          "limit": 2
+        },
+        "suite": {
+          "mode": "bad"
+        },
+        "dataset": {
+          "visibility": "hidden"
+        },
+        "dataSnapshots": {
+          "selected": [
+            {},
+            {
+              "caseId": "c",
+              "id": "s"
+            }
+          ]
+        },
+        "e2eQuality": {
+          "summary": {
+            "turns": {
+              "max": {
+                "id": "c",
+                "value": 3
+              }
+            }
+          }
+        }
+      },
+      "results": [],
+      "coverage": {
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byLevel": {
+          "production": {
+            "stock": {
+              "total": 1
+            }
+          }
+        },
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      }
+    },
+    "mtime": 1793664000000,
+    "path": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+    "expected": {
+      "id": "report-1793664000000",
+      "fileName": "report-1793664000000.json",
+      "filePath": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "mtimeMs": 1793664000000,
+      "passed": true,
+      "total": 0,
+      "passedCount": 0,
+      "failedCount": 0,
+      "passRate": 0,
+      "averageScore": 0,
+      "durationMs": 0,
+      "metadata": {
+        "trigger": null,
+        "reportSchemaVersion": null,
+        "startedAt": null,
+        "finishedAt": null,
+        "command": [],
+        "evaluator": {
+          "id": null,
+          "version": null,
+          "rubricVersion": null,
+          "concurrency": 16
+        },
+        "runtime": {
+          "cli": "benchmark",
+          "model": "deterministic",
+          "reasoningEffort": null,
+          "configuredModel": null,
+          "agentExecuted": false,
+          "executedCaseCount": 0,
+          "unattestedCaseIds": [],
+          "frameworkVersion": null,
+          "buildRevision": null
+        },
+        "suite": {
+          "mode": "contract",
+          "label": "确定性产物契约"
+        },
+        "dataset": {
+          "schemaVersion": 0,
+          "visibility": "hidden",
+          "promptsRedacted": false,
+          "sourceIdentitySha256": null
+        },
+        "retention": {
+          "databaseEvidenceRetained": false,
+          "workspaceRetained": false
+        },
+        "provenance": {
+          "gitCommit": null,
+          "gitRevision": null,
+          "buildRevision": null,
+          "frameworkVersion": null,
+          "casesSha256": null,
+          "promptsSha256": null,
+          "datasetRegistrySha256": null,
+          "snapshotManifestSha256": null
+        },
+        "dataSnapshots": {
+          "schemaVersion": 0,
+          "manifestId": null,
+          "manifestVersion": null,
+          "selected": [
+            {
+              "caseId": "c",
+              "id": "s",
+              "asOf": "",
+              "payloadSha256": ""
+            }
+          ]
+        },
+        "e2eQuality": {
+          "passed": false,
+          "problems": [],
+          "thresholds": {
+            "maxTurnsPerCase": 0,
+            "maxCacheMissInputTokensPerCase": 0,
+            "maxUnexpectedToolFailures": 0
+          },
+          "summary": {
+            "caseCount": 0,
+            "measuredCaseCount": 0,
+            "missingMetricsCaseIds": [],
+            "turns": {
+              "total": 0,
+              "average": 0,
+              "max": {
+                "id": "c",
+                "value": 3
+              }
+            },
+            "cacheMissInputTokens": {
+              "total": 0,
+              "average": 0,
+              "max": {
+                "id": null,
+                "value": 0
+              }
+            },
+            "tools": {
+              "unexpectedFailureCount": 0,
+              "affectedCaseIds": []
+            }
+          }
+        },
+        "selection": {
+          "selectedCases": [],
+          "limit": 2,
+          "keepProjects": false,
+          "caseCount": 0,
+          "concurrency": 16,
+          "repeat": 1
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": null,
+          "skills": {}
+        }
+      },
+      "qualitySummary": {
+        "caseCount": 0,
+        "firstPassCount": 0,
+        "finalPassCount": 0,
+        "firstPassRate": 0,
+        "finalPassRate": 0,
+        "repairedCaseCount": 0,
+        "repairRate": 0,
+        "averageScore": 0,
+        "durationMs": {
+          "total": 0,
+          "average": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "dimensions": {
+          "contract": 0,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 1,
+          "attemptCount": 0,
+          "passedAttemptCount": 0,
+          "passRate": 0,
+          "flakyCaseIds": [],
+          "confidence95": {
+            "lower": 0,
+            "upper": 0
+          },
+          "scoreStdDev": {
+            "average": 0,
+            "max": {
+              "id": null,
+              "value": 0
+            }
+          }
+        }
+      },
+      "e2eQuality": {
+        "passed": false,
+        "problems": [],
+        "thresholds": {
+          "maxTurnsPerCase": 0,
+          "maxCacheMissInputTokensPerCase": 0,
+          "maxUnexpectedToolFailures": 0
+        },
+        "summary": {
+          "caseCount": 0,
+          "measuredCaseCount": 0,
+          "missingMetricsCaseIds": [],
+          "turns": {
+            "total": 0,
+            "average": 0,
+            "max": {
+              "id": "c",
+              "value": 3
+            }
+          },
+          "cacheMissInputTokens": {
+            "total": 0,
+            "average": 0,
+            "max": {
+              "id": null,
+              "value": 0
+            }
+          },
+          "tools": {
+            "unexpectedFailureCount": 0,
+            "affectedCaseIds": []
+          }
+        }
+      },
+      "coverage": {
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byType": {},
+        "byTag": {},
+        "byLevel": {
+          "routing": {},
+          "contract": {},
+          "live_e2e": {},
+          "production": {
+            "stock": {
+              "total": 1,
+              "passed": 0,
+              "failed": 0
+            }
+          }
+        },
+        "caseLevels": {},
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "failedTags": {},
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "tags": [],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      },
+      "results": []
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 2.5,
+      "metadata": {
+        "runtime": {
+          "cli": 1,
+          "model": null
+        },
+        "selection": {
+          "repeat": 0,
+          "concurrency": 90,
+          "limit": 2
+        },
+        "suite": {
+          "mode": "bad"
+        },
+        "dataset": {
+          "visibility": "hidden"
+        },
+        "dataSnapshots": {
+          "selected": [
+            {},
+            {
+              "caseId": "c",
+              "id": "s"
+            }
+          ]
+        },
+        "e2eQuality": {
+          "summary": {
+            "turns": {
+              "max": {
+                "id": "c",
+                "value": 3
+              }
+            }
+          }
+        }
+      },
+      "results": [
+        {}
+      ],
+      "coverage": {
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byLevel": {
+          "production": {
+            "stock": {
+              "total": 1
+            }
+          }
+        },
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      }
+    },
+    "mtime": 1793664000000,
+    "path": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+    "expected": {
+      "id": "report-1793664000000",
+      "fileName": "report-1793664000000.json",
+      "filePath": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "mtimeMs": 1793664000000,
+      "passed": false,
+      "total": 1,
+      "passedCount": 0,
+      "failedCount": 1,
+      "passRate": 0,
+      "averageScore": 60,
+      "durationMs": 0,
+      "metadata": {
+        "trigger": null,
+        "reportSchemaVersion": null,
+        "startedAt": null,
+        "finishedAt": null,
+        "command": [],
+        "evaluator": {
+          "id": null,
+          "version": null,
+          "rubricVersion": null,
+          "concurrency": 16
+        },
+        "runtime": {
+          "cli": "benchmark",
+          "model": "deterministic",
+          "reasoningEffort": null,
+          "configuredModel": null,
+          "agentExecuted": false,
+          "executedCaseCount": 0,
+          "unattestedCaseIds": [],
+          "frameworkVersion": null,
+          "buildRevision": null
+        },
+        "suite": {
+          "mode": "contract",
+          "label": "确定性产物契约"
+        },
+        "dataset": {
+          "schemaVersion": 0,
+          "visibility": "hidden",
+          "promptsRedacted": false,
+          "sourceIdentitySha256": null
+        },
+        "retention": {
+          "databaseEvidenceRetained": false,
+          "workspaceRetained": false
+        },
+        "provenance": {
+          "gitCommit": null,
+          "gitRevision": null,
+          "buildRevision": null,
+          "frameworkVersion": null,
+          "casesSha256": null,
+          "promptsSha256": null,
+          "datasetRegistrySha256": null,
+          "snapshotManifestSha256": null
+        },
+        "dataSnapshots": {
+          "schemaVersion": 0,
+          "manifestId": null,
+          "manifestVersion": null,
+          "selected": [
+            {
+              "caseId": "c",
+              "id": "s",
+              "asOf": "",
+              "payloadSha256": ""
+            }
+          ]
+        },
+        "e2eQuality": {
+          "passed": false,
+          "problems": [],
+          "thresholds": {
+            "maxTurnsPerCase": 0,
+            "maxCacheMissInputTokensPerCase": 0,
+            "maxUnexpectedToolFailures": 0
+          },
+          "summary": {
+            "caseCount": 0,
+            "measuredCaseCount": 0,
+            "missingMetricsCaseIds": [],
+            "turns": {
+              "total": 0,
+              "average": 0,
+              "max": {
+                "id": "c",
+                "value": 3
+              }
+            },
+            "cacheMissInputTokens": {
+              "total": 0,
+              "average": 0,
+              "max": {
+                "id": null,
+                "value": 0
+              }
+            },
+            "tools": {
+              "unexpectedFailureCount": 0,
+              "affectedCaseIds": []
+            }
+          }
+        },
+        "selection": {
+          "selectedCases": [],
+          "limit": 2,
+          "keepProjects": false,
+          "caseCount": 1,
+          "concurrency": 16,
+          "repeat": 1
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": null,
+          "skills": {}
+        }
+      },
+      "qualitySummary": {
+        "caseCount": 1,
+        "firstPassCount": 0,
+        "finalPassCount": 0,
+        "firstPassRate": 0,
+        "finalPassRate": 0,
+        "repairedCaseCount": 0,
+        "repairRate": 0,
+        "averageScore": 60,
+        "durationMs": {
+          "total": 0,
+          "average": 0,
+          "p50": 0,
+          "p95": 0
+        },
+        "dimensions": {
+          "contract": 0,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 1,
+          "attemptCount": 1,
+          "passedAttemptCount": 0,
+          "passRate": 0,
+          "flakyCaseIds": [],
+          "confidence95": {
+            "lower": 0,
+            "upper": 79.35
+          },
+          "scoreStdDev": {
+            "average": 0,
+            "max": {
+              "id": null,
+              "value": 0
+            }
+          }
+        }
+      },
+      "e2eQuality": {
+        "passed": false,
+        "problems": [],
+        "thresholds": {
+          "maxTurnsPerCase": 0,
+          "maxCacheMissInputTokensPerCase": 0,
+          "maxUnexpectedToolFailures": 0
+        },
+        "summary": {
+          "caseCount": 0,
+          "measuredCaseCount": 0,
+          "missingMetricsCaseIds": [],
+          "turns": {
+            "total": 0,
+            "average": 0,
+            "max": {
+              "id": "c",
+              "value": 3
+            }
+          },
+          "cacheMissInputTokens": {
+            "total": 0,
+            "average": 0,
+            "max": {
+              "id": null,
+              "value": 0
+            }
+          },
+          "tools": {
+            "unexpectedFailureCount": 0,
+            "affectedCaseIds": []
+          }
+        }
+      },
+      "coverage": {
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byType": {},
+        "byTag": {},
+        "byLevel": {
+          "routing": {},
+          "contract": {},
+          "live_e2e": {},
+          "production": {
+            "stock": {
+              "total": 1,
+              "passed": 0,
+              "failed": 0
+            }
+          }
+        },
+        "caseLevels": {},
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "failedTags": {},
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "tags": [],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "unknown",
+          "name": "unknown",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": false,
+          "firstPassPassed": false,
+          "finalPassed": false,
+          "score": 60,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [],
+          "validationStatus": "unknown",
+          "validationChecks": [],
+          "evaluation": null,
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        }
+      ]
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 2.5,
+      "metadata": {
+        "runtime": {
+          "cli": 1,
+          "model": null
+        },
+        "selection": {
+          "repeat": 0,
+          "concurrency": 90,
+          "limit": 2
+        },
+        "suite": {
+          "mode": "bad"
+        },
+        "dataset": {
+          "visibility": "hidden"
+        },
+        "dataSnapshots": {
+          "selected": [
+            {},
+            {
+              "caseId": "c",
+              "id": "s"
+            }
+          ]
+        },
+        "e2eQuality": {
+          "summary": {
+            "turns": {
+              "max": {
+                "id": "c",
+                "value": 3
+              }
+            }
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "case-1",
+          "passed": true,
+          "durationMs": 12.5,
+          "failures": [],
+          "validation": {
+            "status": "passed",
+            "checks": [
+              {
+                "id": "schema",
+                "status": "passed"
+              }
+            ]
+          },
+          "artifacts": {
+            "finalData": {
+              "templateId": "stock",
+              "klineRows": 12
+            },
+            "quality": {
+              "status": "warning"
+            }
+          },
+          "prefetch": {
+            "rawFiles": [
+              "a"
+            ],
+            "finalDataPath": "data/final.json"
+          }
+        },
+        {
+          "id": "case-1",
+          "passed": false,
+          "firstPassPassed": false,
+          "repairAttempts": 2,
+          "validation": {
+            "status": "failed",
+            "checks": [
+              {},
+              {
+                "id": "build",
+                "status": "failed",
+                "name": "Build",
+                "summary": "x"
+              }
+            ]
+          },
+          "evaluation": {
+            "evaluatorId": "rule-strict",
+            "score": 32,
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 50,
+                "weight": 0.3
+              },
+              {
+                "id": "bad"
+              }
+            ],
+            "semanticReview": {
+              "reviewer": {
+                "model": "fixture"
+              },
+              "dimensions": [
+                {
+                  "id": "grounding",
+                  "score": 50,
+                  "evidence": [
+                    "a"
+                  ]
+                }
+              ]
+            },
+            "checks": [
+              {}
+            ]
+          },
+          "stability": {
+            "attempts": [
+              {
+                "attempt": 1,
+                "passed": false,
+                "score": 32
+              },
+              {
+                "attempt": 2,
+                "passed": true,
+                "score": 98
+              }
+            ],
+            "flaky": true
+          },
+          "agentExecution": {
+            "executed": true,
+            "runs": [
+              {}
+            ],
+            "usage": {
+              "inputTokens": 10
+            },
+            "tools": {
+              "total": 2
+            }
+          },
+          "missionAcceptance": {
+            "status": "failed"
+          },
+          "traceDiagnostics": {
+            "stages": [
+              {
+                "id": "intent",
+                "status": "passed"
+              },
+              {
+                "id": "artifact",
+                "status": "failed"
+              }
+            ],
+            "primaryFailureStage": "artifact"
+          },
+          "eventAudit": {
+            "total": 2,
+            "stages": [
+              "intent"
+            ]
+          },
+          "visualCheck": {
+            "passed": false,
+            "screenshots": [
+              {
+                "path": "a.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-2",
+          "passed": true,
+          "evaluation": {
+            "score": 88.5
+          },
+          "symbols": [
+            0,
+            false,
+            null,
+            "a"
+          ],
+          "tags": [
+            1
+          ],
+          "firstPassPassed": true,
+          "finalPassed": true
+        }
+      ],
+      "coverage": {
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byLevel": {
+          "production": {
+            "stock": {
+              "total": 1
+            }
+          }
+        },
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      }
+    },
+    "mtime": 1793664000000,
+    "path": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+    "expected": {
+      "id": "report-1793664000000",
+      "fileName": "report-1793664000000.json",
+      "filePath": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "mtimeMs": 1793664000000,
+      "passed": false,
+      "total": 3,
+      "passedCount": 2,
+      "failedCount": 1,
+      "passRate": 67,
+      "averageScore": 74,
+      "durationMs": 12.5,
+      "metadata": {
+        "trigger": null,
+        "reportSchemaVersion": null,
+        "startedAt": null,
+        "finishedAt": null,
+        "command": [],
+        "evaluator": {
+          "id": null,
+          "version": null,
+          "rubricVersion": null,
+          "concurrency": 16
+        },
+        "runtime": {
+          "cli": "benchmark",
+          "model": "deterministic",
+          "reasoningEffort": null,
+          "configuredModel": null,
+          "agentExecuted": false,
+          "executedCaseCount": 0,
+          "unattestedCaseIds": [],
+          "frameworkVersion": null,
+          "buildRevision": null
+        },
+        "suite": {
+          "mode": "contract",
+          "label": "确定性产物契约"
+        },
+        "dataset": {
+          "schemaVersion": 0,
+          "visibility": "hidden",
+          "promptsRedacted": false,
+          "sourceIdentitySha256": null
+        },
+        "retention": {
+          "databaseEvidenceRetained": false,
+          "workspaceRetained": false
+        },
+        "provenance": {
+          "gitCommit": null,
+          "gitRevision": null,
+          "buildRevision": null,
+          "frameworkVersion": null,
+          "casesSha256": null,
+          "promptsSha256": null,
+          "datasetRegistrySha256": null,
+          "snapshotManifestSha256": null
+        },
+        "dataSnapshots": {
+          "schemaVersion": 0,
+          "manifestId": null,
+          "manifestVersion": null,
+          "selected": [
+            {
+              "caseId": "c",
+              "id": "s",
+              "asOf": "",
+              "payloadSha256": ""
+            }
+          ]
+        },
+        "e2eQuality": {
+          "passed": false,
+          "problems": [],
+          "thresholds": {
+            "maxTurnsPerCase": 0,
+            "maxCacheMissInputTokensPerCase": 0,
+            "maxUnexpectedToolFailures": 0
+          },
+          "summary": {
+            "caseCount": 0,
+            "measuredCaseCount": 0,
+            "missingMetricsCaseIds": [],
+            "turns": {
+              "total": 0,
+              "average": 0,
+              "max": {
+                "id": "c",
+                "value": 3
+              }
+            },
+            "cacheMissInputTokens": {
+              "total": 0,
+              "average": 0,
+              "max": {
+                "id": null,
+                "value": 0
+              }
+            },
+            "tools": {
+              "unexpectedFailureCount": 0,
+              "affectedCaseIds": []
+            }
+          }
+        },
+        "selection": {
+          "selectedCases": [],
+          "limit": 2,
+          "keepProjects": false,
+          "caseCount": 3,
+          "concurrency": 16,
+          "repeat": 1
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": null,
+          "skills": {}
+        }
+      },
+      "qualitySummary": {
+        "caseCount": 3,
+        "firstPassCount": 2,
+        "finalPassCount": 2,
+        "firstPassRate": 67,
+        "finalPassRate": 67,
+        "repairedCaseCount": 1,
+        "repairRate": 33,
+        "averageScore": 74,
+        "durationMs": {
+          "total": 12.5,
+          "average": 4,
+          "p50": 0,
+          "p95": 12.5
+        },
+        "dimensions": {
+          "contract": 50,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 1,
+          "attemptCount": 4,
+          "passedAttemptCount": 3,
+          "passRate": 75,
+          "flakyCaseIds": [
+            "case-1"
+          ],
+          "confidence95": {
+            "lower": 30.06,
+            "upper": 95.44
+          },
+          "scoreStdDev": {
+            "average": 11,
+            "max": {
+              "id": "case-1",
+              "value": 33
+            }
+          }
+        }
+      },
+      "e2eQuality": {
+        "passed": false,
+        "problems": [],
+        "thresholds": {
+          "maxTurnsPerCase": 0,
+          "maxCacheMissInputTokensPerCase": 0,
+          "maxUnexpectedToolFailures": 0
+        },
+        "summary": {
+          "caseCount": 0,
+          "measuredCaseCount": 0,
+          "missingMetricsCaseIds": [],
+          "turns": {
+            "total": 0,
+            "average": 0,
+            "max": {
+              "id": "c",
+              "value": 3
+            }
+          },
+          "cacheMissInputTokens": {
+            "total": 0,
+            "average": 0,
+            "max": {
+              "id": null,
+              "value": 0
+            }
+          },
+          "tools": {
+            "unexpectedFailureCount": 0,
+            "affectedCaseIds": []
+          }
+        }
+      },
+      "coverage": {
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byType": {},
+        "byTag": {},
+        "byLevel": {
+          "routing": {},
+          "contract": {},
+          "live_e2e": {},
+          "production": {
+            "stock": {
+              "total": 1,
+              "passed": 0,
+              "failed": 0
+            }
+          }
+        },
+        "caseLevels": {},
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "failedTags": {},
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "tags": [],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "case-1",
+          "name": "case-1",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 12.5,
+          "passed": true,
+          "firstPassPassed": true,
+          "finalPassed": true,
+          "score": 100,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "fixture"
+          ],
+          "validationStatus": "passed",
+          "validationChecks": [
+            {
+              "id": "schema",
+              "name": "schema",
+              "status": "passed",
+              "summary": ""
+            }
+          ],
+          "evaluation": null,
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": "stock",
+            "finalDataPath": "data/final.json",
+            "rawFileCount": 1,
+            "klineRows": 12,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": "warning",
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        },
+        {
+          "id": "case-1",
+          "name": "case-1",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": false,
+          "firstPassPassed": false,
+          "finalPassed": false,
+          "score": 32,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 2,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": {
+            "executed": true,
+            "cli": null,
+            "provider": null,
+            "model": null,
+            "requestId": null,
+            "runIds": [],
+            "runs": [
+              {
+                "id": "",
+                "runInstanceId": "",
+                "requestId": null,
+                "status": null,
+                "provider": null,
+                "model": null,
+                "frameworkVersion": null,
+                "buildRevision": null,
+                "startedAt": null,
+                "completedAt": null,
+                "turns": 0,
+                "usage": {
+                  "inputTokens": 0,
+                  "outputTokens": 0,
+                  "totalTokens": 0,
+                  "cachedInputTokens": 0,
+                  "cacheMissInputTokens": 0,
+                  "reasoningTokens": 0
+                },
+                "tools": {
+                  "total": 0,
+                  "succeeded": 0,
+                  "failed": 0,
+                  "uncertain": 0,
+                  "unexpectedFailureCount": 0,
+                  "workspaceWriteSucceeded": 0,
+                  "submitResultSucceeded": 0
+                }
+              }
+            ],
+            "missionId": null,
+            "generationId": null,
+            "missionStatus": null,
+            "candidateVersion": 0,
+            "acceptedReceiptId": null,
+            "acceptedReceiptHash": null,
+            "acceptedReceiptType": null,
+            "acceptedReceiptVerdict": null,
+            "acceptedSourceRunId": null,
+            "acceptedSourceRequestId": null,
+            "acceptedCandidateSource": null,
+            "frameworkVersion": null,
+            "buildRevision": null,
+            "gitRevision": null,
+            "startedAt": null,
+            "completedAt": null,
+            "turns": 0,
+            "usage": {
+              "inputTokens": 10,
+              "outputTokens": 0,
+              "totalTokens": 0,
+              "cachedInputTokens": 0,
+              "cacheMissInputTokens": 0,
+              "reasoningTokens": 0
+            },
+            "tools": {
+              "total": 2,
+              "succeeded": 0,
+              "failed": 0,
+              "uncertain": 0,
+              "unexpectedFailureCount": 0,
+              "workspaceWriteSucceeded": 0,
+              "submitResultSucceeded": 0
+            }
+          },
+          "missionAcceptance": {
+            "missionId": null,
+            "generationId": null,
+            "status": "failed",
+            "candidateVersion": 0,
+            "acceptedReceiptId": null,
+            "acceptedReceiptHash": null,
+            "acceptedReceiptType": null,
+            "acceptedReceiptVerdict": null,
+            "acceptedSourceRunId": null,
+            "acceptedSourceRequestId": null,
+            "acceptedCandidateSource": null
+          },
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "fixture"
+          ],
+          "validationStatus": "failed",
+          "validationChecks": [
+            {
+              "id": "unknown",
+              "name": "检查项",
+              "status": "unknown",
+              "summary": ""
+            },
+            {
+              "id": "build",
+              "name": "Build",
+              "status": "failed",
+              "summary": "x"
+            }
+          ],
+          "evaluation": {
+            "evaluatorId": "rule-strict",
+            "evaluatorVersion": "",
+            "rubricVersion": "",
+            "hardGatePassed": false,
+            "passed": false,
+            "score": 32,
+            "checks": [
+              {
+                "id": "unknown",
+                "name": "评测项",
+                "status": "failed",
+                "summary": ""
+              }
+            ],
+            "dimensions": [
+              {
+                "id": "contract",
+                "label": "contract",
+                "score": 50,
+                "weight": 0.3,
+                "status": "unknown",
+                "summary": ""
+              }
+            ],
+            "semanticReview": {
+              "schemaVersion": 1,
+              "reviewer": {
+                "provider": "",
+                "model": "fixture",
+                "promptVersion": "",
+                "independentFromGenerator": false
+              },
+              "verdict": "failed",
+              "score": 0,
+              "summary": "",
+              "dimensions": [
+                {
+                  "id": "grounding",
+                  "score": 50,
+                  "rationale": "",
+                  "evidence": [
+                    "a"
+                  ]
+                }
+              ],
+              "usage": null
+            }
+          },
+          "stability": {
+            "passed": false,
+            "repeatCount": 2,
+            "passedAttempts": 1,
+            "passRate": 0,
+            "flaky": true,
+            "attempts": [
+              {
+                "attempt": 1,
+                "passed": false,
+                "firstPassPassed": false,
+                "score": 32,
+                "durationMs": 0,
+                "repairAttempts": 0,
+                "projectId": null,
+                "projectPath": null,
+                "requestId": null,
+                "failures": [],
+                "agentAttested": null
+              },
+              {
+                "attempt": 2,
+                "passed": true,
+                "firstPassPassed": false,
+                "score": 98,
+                "durationMs": 0,
+                "repairAttempts": 0,
+                "projectId": null,
+                "projectPath": null,
+                "requestId": null,
+                "failures": [],
+                "agentAttested": null
+              }
+            ]
+          },
+          "eventAudit": {
+            "total": 2,
+            "warningCount": 0,
+            "errorCount": 0,
+            "eventTypes": [],
+            "stages": [
+              "intent"
+            ]
+          },
+          "traceDiagnostics": {
+            "schemaVersion": 1,
+            "primaryFailureStage": "artifact",
+            "stages": [
+              {
+                "id": "intent",
+                "label": "intent",
+                "status": "passed",
+                "signals": []
+              },
+              {
+                "id": "artifact",
+                "label": "artifact",
+                "status": "failed",
+                "signals": []
+              }
+            ],
+            "observedEventStages": []
+          },
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": {
+            "passed": false,
+            "screenshotPath": null,
+            "screenshots": [
+              {
+                "viewport": "unknown",
+                "path": "a.png",
+                "width": 0,
+                "height": 0
+              }
+            ],
+            "accessibilityIssueCount": 0,
+            "failures": []
+          }
+        },
+        {
+          "id": "case-2",
+          "name": "case-2",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": true,
+          "firstPassPassed": true,
+          "finalPassed": true,
+          "score": 89,
+          "failures": [],
+          "symbols": [
+            "0",
+            "false",
+            "null",
+            "a"
+          ],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "1"
+          ],
+          "validationStatus": "unknown",
+          "validationChecks": [],
+          "evaluation": {
+            "evaluatorId": "",
+            "evaluatorVersion": "",
+            "rubricVersion": "",
+            "hardGatePassed": false,
+            "passed": false,
+            "score": 88.5,
+            "checks": [],
+            "dimensions": [],
+            "semanticReview": null
+          },
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        }
+      ]
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 2.5,
+      "metadata": {
+        "runtime": {
+          "cli": 1,
+          "model": null
+        },
+        "selection": {
+          "repeat": 0,
+          "concurrency": 90,
+          "limit": 2
+        },
+        "suite": {
+          "mode": "bad"
+        },
+        "dataset": {
+          "visibility": "hidden"
+        },
+        "dataSnapshots": {
+          "selected": [
+            {},
+            {
+              "caseId": "c",
+              "id": "s"
+            }
+          ]
+        },
+        "e2eQuality": {
+          "summary": {
+            "turns": {
+              "max": {
+                "id": "c",
+                "value": 3
+              }
+            }
+          }
+        }
+      },
+      "results": [
+        {},
+        {
+          "id": "case-1",
+          "passed": true,
+          "durationMs": 12.5,
+          "failures": [],
+          "validation": {
+            "status": "passed",
+            "checks": [
+              {
+                "id": "schema",
+                "status": "passed"
+              }
+            ]
+          },
+          "artifacts": {
+            "finalData": {
+              "templateId": "stock",
+              "klineRows": 12
+            },
+            "quality": {
+              "status": "warning"
+            }
+          },
+          "prefetch": {
+            "rawFiles": [
+              "a"
+            ],
+            "finalDataPath": "data/final.json"
+          }
+        },
+        {
+          "id": "case-1",
+          "passed": false,
+          "firstPassPassed": false,
+          "repairAttempts": 2,
+          "validation": {
+            "status": "failed",
+            "checks": [
+              {},
+              {
+                "id": "build",
+                "status": "failed",
+                "name": "Build",
+                "summary": "x"
+              }
+            ]
+          },
+          "evaluation": {
+            "evaluatorId": "rule-strict",
+            "score": 32,
+            "dimensions": [
+              {
+                "id": "contract",
+                "score": 50,
+                "weight": 0.3
+              },
+              {
+                "id": "bad"
+              }
+            ],
+            "semanticReview": {
+              "reviewer": {
+                "model": "fixture"
+              },
+              "dimensions": [
+                {
+                  "id": "grounding",
+                  "score": 50,
+                  "evidence": [
+                    "a"
+                  ]
+                }
+              ]
+            },
+            "checks": [
+              {}
+            ]
+          },
+          "stability": {
+            "attempts": [
+              {
+                "attempt": 1,
+                "passed": false,
+                "score": 32
+              },
+              {
+                "attempt": 2,
+                "passed": true,
+                "score": 98
+              }
+            ],
+            "flaky": true
+          },
+          "agentExecution": {
+            "executed": true,
+            "runs": [
+              {}
+            ],
+            "usage": {
+              "inputTokens": 10
+            },
+            "tools": {
+              "total": 2
+            }
+          },
+          "missionAcceptance": {
+            "status": "failed"
+          },
+          "traceDiagnostics": {
+            "stages": [
+              {
+                "id": "intent",
+                "status": "passed"
+              },
+              {
+                "id": "artifact",
+                "status": "failed"
+              }
+            ],
+            "primaryFailureStage": "artifact"
+          },
+          "eventAudit": {
+            "total": 2,
+            "stages": [
+              "intent"
+            ]
+          },
+          "visualCheck": {
+            "passed": false,
+            "screenshots": [
+              {
+                "path": "a.png"
+              }
+            ]
+          }
+        },
+        {
+          "id": "case-2",
+          "passed": true,
+          "evaluation": {
+            "score": 88.5
+          },
+          "symbols": [
+            0,
+            false,
+            null,
+            "a"
+          ],
+          "tags": [
+            1
+          ],
+          "firstPassPassed": true,
+          "finalPassed": true
+        }
+      ],
+      "coverage": {
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byLevel": {
+          "production": {
+            "stock": {
+              "total": 1
+            }
+          }
+        },
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      }
+    },
+    "mtime": 1793664000000,
+    "path": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+    "expected": {
+      "id": "report-1793664000000",
+      "fileName": "report-1793664000000.json",
+      "filePath": "tmp/alphadeck-benchmark-reports/report-1793664000000.json",
+      "createdAt": "2026-11-03T00:00:00.000Z",
+      "mtimeMs": 1793664000000,
+      "passed": false,
+      "total": 4,
+      "passedCount": 2,
+      "failedCount": 2,
+      "passRate": 50,
+      "averageScore": 70,
+      "durationMs": 12.5,
+      "metadata": {
+        "trigger": null,
+        "reportSchemaVersion": null,
+        "startedAt": null,
+        "finishedAt": null,
+        "command": [],
+        "evaluator": {
+          "id": null,
+          "version": null,
+          "rubricVersion": null,
+          "concurrency": 16
+        },
+        "runtime": {
+          "cli": "benchmark",
+          "model": "deterministic",
+          "reasoningEffort": null,
+          "configuredModel": null,
+          "agentExecuted": false,
+          "executedCaseCount": 0,
+          "unattestedCaseIds": [],
+          "frameworkVersion": null,
+          "buildRevision": null
+        },
+        "suite": {
+          "mode": "contract",
+          "label": "确定性产物契约"
+        },
+        "dataset": {
+          "schemaVersion": 0,
+          "visibility": "hidden",
+          "promptsRedacted": false,
+          "sourceIdentitySha256": null
+        },
+        "retention": {
+          "databaseEvidenceRetained": false,
+          "workspaceRetained": false
+        },
+        "provenance": {
+          "gitCommit": null,
+          "gitRevision": null,
+          "buildRevision": null,
+          "frameworkVersion": null,
+          "casesSha256": null,
+          "promptsSha256": null,
+          "datasetRegistrySha256": null,
+          "snapshotManifestSha256": null
+        },
+        "dataSnapshots": {
+          "schemaVersion": 0,
+          "manifestId": null,
+          "manifestVersion": null,
+          "selected": [
+            {
+              "caseId": "c",
+              "id": "s",
+              "asOf": "",
+              "payloadSha256": ""
+            }
+          ]
+        },
+        "e2eQuality": {
+          "passed": false,
+          "problems": [],
+          "thresholds": {
+            "maxTurnsPerCase": 0,
+            "maxCacheMissInputTokensPerCase": 0,
+            "maxUnexpectedToolFailures": 0
+          },
+          "summary": {
+            "caseCount": 0,
+            "measuredCaseCount": 0,
+            "missingMetricsCaseIds": [],
+            "turns": {
+              "total": 0,
+              "average": 0,
+              "max": {
+                "id": "c",
+                "value": 3
+              }
+            },
+            "cacheMissInputTokens": {
+              "total": 0,
+              "average": 0,
+              "max": {
+                "id": null,
+                "value": 0
+              }
+            },
+            "tools": {
+              "unexpectedFailureCount": 0,
+              "affectedCaseIds": []
+            }
+          }
+        },
+        "selection": {
+          "selectedCases": [],
+          "limit": 2,
+          "keepProjects": false,
+          "caseCount": 4,
+          "concurrency": 16,
+          "repeat": 1
+        },
+        "skillLockSnapshot": {
+          "schemaVersion": null,
+          "skills": {}
+        }
+      },
+      "qualitySummary": {
+        "caseCount": 4,
+        "firstPassCount": 2,
+        "finalPassCount": 2,
+        "firstPassRate": 50,
+        "finalPassRate": 50,
+        "repairedCaseCount": 1,
+        "repairRate": 25,
+        "averageScore": 70,
+        "durationMs": {
+          "total": 12.5,
+          "average": 3,
+          "p50": 0,
+          "p95": 12.5
+        },
+        "dimensions": {
+          "contract": 50,
+          "grounding": 0,
+          "task": 0,
+          "visual": 0,
+          "reliability": 0,
+          "efficiency": 0,
+          "safety": 0
+        },
+        "stability": {
+          "repeatCount": 1,
+          "attemptCount": 5,
+          "passedAttemptCount": 3,
+          "passRate": 60,
+          "flakyCaseIds": [
+            "case-1"
+          ],
+          "confidence95": {
+            "lower": 23.07,
+            "upper": 88.24
+          },
+          "scoreStdDev": {
+            "average": 8.25,
+            "max": {
+              "id": "case-1",
+              "value": 33
+            }
+          }
+        }
+      },
+      "e2eQuality": {
+        "passed": false,
+        "problems": [],
+        "thresholds": {
+          "maxTurnsPerCase": 0,
+          "maxCacheMissInputTokensPerCase": 0,
+          "maxUnexpectedToolFailures": 0
+        },
+        "summary": {
+          "caseCount": 0,
+          "measuredCaseCount": 0,
+          "missingMetricsCaseIds": [],
+          "turns": {
+            "total": 0,
+            "average": 0,
+            "max": {
+              "id": "c",
+              "value": 3
+            }
+          },
+          "cacheMissInputTokens": {
+            "total": 0,
+            "average": 0,
+            "max": {
+              "id": null,
+              "value": 0
+            }
+          },
+          "tools": {
+            "unexpectedFailureCount": 0,
+            "affectedCaseIds": []
+          }
+        }
+      },
+      "coverage": {
+        "byCapability": {
+          "stock": {
+            "total": 2,
+            "passed": 1,
+            "failed": 1
+          }
+        },
+        "byType": {},
+        "byTag": {},
+        "byLevel": {
+          "routing": {},
+          "contract": {},
+          "live_e2e": {},
+          "production": {
+            "stock": {
+              "total": 1,
+              "passed": 0,
+              "failed": 0
+            }
+          }
+        },
+        "caseLevels": {},
+        "caseTags": {
+          "case-1": [
+            "fixture"
+          ]
+        },
+        "failedTags": {},
+        "requiredCoverage": {
+          "capabilities": [
+            "stock"
+          ],
+          "tags": [],
+          "levels": {
+            "production": [
+              "stock"
+            ]
+          }
+        }
+      },
+      "results": [
+        {
+          "id": "unknown",
+          "name": "unknown",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": false,
+          "firstPassPassed": false,
+          "finalPassed": false,
+          "score": 60,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [],
+          "validationStatus": "unknown",
+          "validationChecks": [],
+          "evaluation": null,
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        },
+        {
+          "id": "case-1",
+          "name": "case-1",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 12.5,
+          "passed": true,
+          "firstPassPassed": true,
+          "finalPassed": true,
+          "score": 100,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "fixture"
+          ],
+          "validationStatus": "passed",
+          "validationChecks": [
+            {
+              "id": "schema",
+              "name": "schema",
+              "status": "passed",
+              "summary": ""
+            }
+          ],
+          "evaluation": null,
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": "stock",
+            "finalDataPath": "data/final.json",
+            "rawFileCount": 1,
+            "klineRows": 12,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": "warning",
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        },
+        {
+          "id": "case-1",
+          "name": "case-1",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": false,
+          "firstPassPassed": false,
+          "finalPassed": false,
+          "score": 32,
+          "failures": [],
+          "symbols": [],
+          "repairAttempts": 2,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": {
+            "executed": true,
+            "cli": null,
+            "provider": null,
+            "model": null,
+            "requestId": null,
+            "runIds": [],
+            "runs": [
+              {
+                "id": "",
+                "runInstanceId": "",
+                "requestId": null,
+                "status": null,
+                "provider": null,
+                "model": null,
+                "frameworkVersion": null,
+                "buildRevision": null,
+                "startedAt": null,
+                "completedAt": null,
+                "turns": 0,
+                "usage": {
+                  "inputTokens": 0,
+                  "outputTokens": 0,
+                  "totalTokens": 0,
+                  "cachedInputTokens": 0,
+                  "cacheMissInputTokens": 0,
+                  "reasoningTokens": 0
+                },
+                "tools": {
+                  "total": 0,
+                  "succeeded": 0,
+                  "failed": 0,
+                  "uncertain": 0,
+                  "unexpectedFailureCount": 0,
+                  "workspaceWriteSucceeded": 0,
+                  "submitResultSucceeded": 0
+                }
+              }
+            ],
+            "missionId": null,
+            "generationId": null,
+            "missionStatus": null,
+            "candidateVersion": 0,
+            "acceptedReceiptId": null,
+            "acceptedReceiptHash": null,
+            "acceptedReceiptType": null,
+            "acceptedReceiptVerdict": null,
+            "acceptedSourceRunId": null,
+            "acceptedSourceRequestId": null,
+            "acceptedCandidateSource": null,
+            "frameworkVersion": null,
+            "buildRevision": null,
+            "gitRevision": null,
+            "startedAt": null,
+            "completedAt": null,
+            "turns": 0,
+            "usage": {
+              "inputTokens": 10,
+              "outputTokens": 0,
+              "totalTokens": 0,
+              "cachedInputTokens": 0,
+              "cacheMissInputTokens": 0,
+              "reasoningTokens": 0
+            },
+            "tools": {
+              "total": 2,
+              "succeeded": 0,
+              "failed": 0,
+              "uncertain": 0,
+              "unexpectedFailureCount": 0,
+              "workspaceWriteSucceeded": 0,
+              "submitResultSucceeded": 0
+            }
+          },
+          "missionAcceptance": {
+            "missionId": null,
+            "generationId": null,
+            "status": "failed",
+            "candidateVersion": 0,
+            "acceptedReceiptId": null,
+            "acceptedReceiptHash": null,
+            "acceptedReceiptType": null,
+            "acceptedReceiptVerdict": null,
+            "acceptedSourceRunId": null,
+            "acceptedSourceRequestId": null,
+            "acceptedCandidateSource": null
+          },
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "fixture"
+          ],
+          "validationStatus": "failed",
+          "validationChecks": [
+            {
+              "id": "unknown",
+              "name": "检查项",
+              "status": "unknown",
+              "summary": ""
+            },
+            {
+              "id": "build",
+              "name": "Build",
+              "status": "failed",
+              "summary": "x"
+            }
+          ],
+          "evaluation": {
+            "evaluatorId": "rule-strict",
+            "evaluatorVersion": "",
+            "rubricVersion": "",
+            "hardGatePassed": false,
+            "passed": false,
+            "score": 32,
+            "checks": [
+              {
+                "id": "unknown",
+                "name": "评测项",
+                "status": "failed",
+                "summary": ""
+              }
+            ],
+            "dimensions": [
+              {
+                "id": "contract",
+                "label": "contract",
+                "score": 50,
+                "weight": 0.3,
+                "status": "unknown",
+                "summary": ""
+              }
+            ],
+            "semanticReview": {
+              "schemaVersion": 1,
+              "reviewer": {
+                "provider": "",
+                "model": "fixture",
+                "promptVersion": "",
+                "independentFromGenerator": false
+              },
+              "verdict": "failed",
+              "score": 0,
+              "summary": "",
+              "dimensions": [
+                {
+                  "id": "grounding",
+                  "score": 50,
+                  "rationale": "",
+                  "evidence": [
+                    "a"
+                  ]
+                }
+              ],
+              "usage": null
+            }
+          },
+          "stability": {
+            "passed": false,
+            "repeatCount": 2,
+            "passedAttempts": 1,
+            "passRate": 0,
+            "flaky": true,
+            "attempts": [
+              {
+                "attempt": 1,
+                "passed": false,
+                "firstPassPassed": false,
+                "score": 32,
+                "durationMs": 0,
+                "repairAttempts": 0,
+                "projectId": null,
+                "projectPath": null,
+                "requestId": null,
+                "failures": [],
+                "agentAttested": null
+              },
+              {
+                "attempt": 2,
+                "passed": true,
+                "firstPassPassed": false,
+                "score": 98,
+                "durationMs": 0,
+                "repairAttempts": 0,
+                "projectId": null,
+                "projectPath": null,
+                "requestId": null,
+                "failures": [],
+                "agentAttested": null
+              }
+            ]
+          },
+          "eventAudit": {
+            "total": 2,
+            "warningCount": 0,
+            "errorCount": 0,
+            "eventTypes": [],
+            "stages": [
+              "intent"
+            ]
+          },
+          "traceDiagnostics": {
+            "schemaVersion": 1,
+            "primaryFailureStage": "artifact",
+            "stages": [
+              {
+                "id": "intent",
+                "label": "intent",
+                "status": "passed",
+                "signals": []
+              },
+              {
+                "id": "artifact",
+                "label": "artifact",
+                "status": "failed",
+                "signals": []
+              }
+            ],
+            "observedEventStages": []
+          },
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": {
+            "passed": false,
+            "screenshotPath": null,
+            "screenshots": [
+              {
+                "viewport": "unknown",
+                "path": "a.png",
+                "width": 0,
+                "height": 0
+              }
+            ],
+            "accessibilityIssueCount": 0,
+            "failures": []
+          }
+        },
+        {
+          "id": "case-2",
+          "name": "case-2",
+          "question": "",
+          "projectId": null,
+          "projectPath": null,
+          "requestId": null,
+          "durationMs": 0,
+          "passed": true,
+          "firstPassPassed": true,
+          "finalPassed": true,
+          "score": 89,
+          "failures": [],
+          "symbols": [
+            "0",
+            "false",
+            "null",
+            "a"
+          ],
+          "repairAttempts": 0,
+          "platformRepairCount": 0,
+          "agentExecuted": false,
+          "agentExecution": null,
+          "missionAcceptance": null,
+          "capabilityId": "unknown",
+          "capabilityLabel": "unknown",
+          "type": "generated_project",
+          "typeLabel": "生成项目",
+          "tags": [
+            "1"
+          ],
+          "validationStatus": "unknown",
+          "validationChecks": [],
+          "evaluation": {
+            "evaluatorId": "",
+            "evaluatorVersion": "",
+            "rubricVersion": "",
+            "hardGatePassed": false,
+            "passed": false,
+            "score": 88.5,
+            "checks": [],
+            "dimensions": [],
+            "semanticReview": null
+          },
+          "stability": null,
+          "eventAudit": null,
+          "traceDiagnostics": null,
+          "artifacts": {
+            "templateId": null,
+            "finalDataPath": null,
+            "rawFileCount": 0,
+            "klineRows": 0,
+            "reportRows": 0,
+            "announcementRows": 0,
+            "tradeRows": 0,
+            "assetCount": 0,
+            "holdingCount": 0,
+            "comparisonRows": 0,
+            "qualityStatus": null,
+            "hasImageExtraction": false
+          },
+          "visualCheck": null
+        }
+      ]
+    }
+  }
+]

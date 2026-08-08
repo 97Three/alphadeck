@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-03T00:00:00.000Z",
+  "evaluator": {
+    "id": "rule-strict",
+    "version": "2.2.0",
+    "rubricVersion": "alphadeck-rule-rubric-v4"
+  },
+  "baselinePassed": true,
+  "total": 25,
+  "killed": 25,
+  "survived": 0,
+  "killRate": 100,
+  "byCategory": {
+    "grounding": {
+      "total": 16,
+      "killed": 16,
+      "killRate": 100
+    },
+    "reliability": {
+      "total": 5,
+      "killed": 5,
+      "killRate": 100
+    },
+    "safety": {
+      "total": 1,
+      "killed": 1,
+      "killRate": 100
+    },
+    "visual": {
+      "total": 1,
+      "killed": 1,
+      "killRate": 100
+    },
+    "snapshot": {
+      "total": 2,
+      "killed": 2,
+      "killRate": 100
+    }
+  },
+  "results": [
+    {
+      "id": "wrong-adjustment",
+      "name": "行情一致性：wrong-adjustment",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "killed": true,
+      "detectedBy": [
+        "data"
+      ],
+      "problems": [
+        "adjustment_mismatch@adjustment"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "wrong-data-symbol",
+      "name": "行情一致性：wrong-data-symbol",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "killed": true,
+      "detectedBy": [
+        "data"
+      ],
+      "problems": [
+        "symbol_mismatch@symbol"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "duplicate-bars",
+      "name": "行情一致性：duplicate-bars",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "killed": true,
+      "detectedBy": [
+        "data"
+      ],
+      "problems": [
+        "duplicate_bar_time@bars[1].date"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "reversed-bars",
+      "name": "行情一致性：reversed-bars",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "killed": true,
+      "detectedBy": [
+        "data"
+      ],
+      "problems": [
+        "bar_time_out_of_order@bars[1].date"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "bar-after-observed-asof",
+      "name": "行情一致性：bar-after-observed-asof",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "killed": true,
+      "detectedBy": [
+        "data"
+      ],
+      "problems": [
+        "bar_after_as_of@bars[1].date"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "non-finite-price",
+      "name": "行情一致性：non-finite-price",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "killed": true,
+      "detectedBy": [
+        "data"
+      ],
+      "problems": [
+        "invalid_market_number@bars[0].close"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "invalid-ohlc",
+      "name": "行情一致性：invalid-ohlc",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "killed": true,
+      "detectedBy": [
+        "data"
+      ],
+      "problems": [
+        "price_outside_ohlc_range@bars[0].close"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "source-quality-error",
+      "name": "行情一致性：source-quality-error",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "killed": true,
+      "detectedBy": [
+        "data"
+      ],
+      "problems": [
+        "source_quality_error@data_quality.status"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "empty-source-object",
+      "name": "空来源对象冒充证据",
+      "category": "grounding",
+      "expectedDetector": "evidence",
+      "killed": true,
+      "detectedBy": [
+        "evidence"
+      ],
+      "problems": [
+        "sources[0]:provider_missing",
+        "sources[0]:reference_missing"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "critical-quality-hidden",
+      "name": "总体成功掩盖关键数据错误",
+      "category": "grounding",
+      "expectedDetector": "evidence",
+      "killed": true,
+      "detectedBy": [
+        "evidence"
+      ],
+      "problems": [
+        "datasets[0]:critical_error"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "validation-failure-hidden",
+      "name": "总体成功掩盖底层验证失败",
+      "category": "reliability",
+      "expectedDetector": "evaluator",
+      "killed": true,
+      "detectedBy": [
+        "evaluator",
+        "trace"
+      ],
+      "problems": [
+        "确定性硬门失败：validation_check_failed。"
+      ],
+      "primaryFailureStage": "artifact"
+    },
+    {
+      "id": "negative-runtime-errors",
+      "name": "非法错误计数伪装为无错误",
+      "category": "reliability",
+      "expectedDetector": "evaluator",
+      "killed": true,
+      "detectedBy": [
+        "evaluator",
+        "trace"
+      ],
+      "problems": [
+        "确定性硬门失败：event_error_count_invalid。"
+      ],
+      "primaryFailureStage": "runtime"
+    },
+    {
+      "id": "fabricated-review-citation",
+      "name": "语义高分引用不存在的数据",
+      "category": "grounding",
+      "expectedDetector": "semantic",
+      "killed": true,
+      "detectedBy": [
+        "semantic"
+      ],
+      "problems": [
+        "grounding:citation_invalid",
+        "grounding:citation_missing"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "duplicate-review-dimension",
+      "name": "重复评分维度掩盖缺项",
+      "category": "grounding",
+      "expectedDetector": "semantic",
+      "killed": true,
+      "detectedBy": [
+        "semantic"
+      ],
+      "problems": [
+        "rubric_dimensions_invalid",
+        "intentCoverage:score_invalid",
+        "intentCoverage:rationale_missing",
+        "intentCoverage:citation_format_invalid"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "tampered-evaluator-score",
+      "name": "报告总分与评分维度不一致",
+      "category": "reliability",
+      "expectedDetector": "report",
+      "killed": true,
+      "detectedBy": [
+        "report"
+      ],
+      "problems": [],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "wrong-symbol",
+      "name": "标的身份被替换",
+      "category": "grounding",
+      "expectedDetector": "oracle",
+      "killed": true,
+      "detectedBy": [
+        "oracle",
+        "evaluator",
+        "trace"
+      ],
+      "problems": [
+        "oracle:symbol finalData.symbol 未满足 equals",
+        "确定性硬门失败：oracle_failed。"
+      ],
+      "primaryFailureStage": "data"
+    },
+    {
+      "id": "empty-series",
+      "name": "行情序列被清空",
+      "category": "grounding",
+      "expectedDetector": "oracle",
+      "killed": true,
+      "detectedBy": [
+        "oracle",
+        "evaluator",
+        "trace"
+      ],
+      "problems": [
+        "oracle:series finalData.kline.bars 未满足 length_gte",
+        "确定性硬门失败：oracle_failed。"
+      ],
+      "primaryFailureStage": "data"
+    },
+    {
+      "id": "missing-source",
+      "name": "数据来源被删除",
+      "category": "grounding",
+      "expectedDetector": "oracle",
+      "killed": true,
+      "detectedBy": [
+        "oracle",
+        "evaluator",
+        "trace",
+        "evidence"
+      ],
+      "problems": [
+        "oracle:sources sources.sources 未满足 length_gte",
+        "sources_invalid",
+        "确定性硬门失败：oracle_failed。"
+      ],
+      "primaryFailureStage": "data"
+    },
+    {
+      "id": "missing-quality",
+      "name": "数据质量状态被删除",
+      "category": "grounding",
+      "expectedDetector": "oracle",
+      "killed": true,
+      "detectedBy": [
+        "oracle",
+        "evaluator",
+        "trace",
+        "evidence"
+      ],
+      "problems": [
+        "oracle:quality quality.status 未满足 exists",
+        "quality_status_invalid",
+        "确定性硬门失败：oracle_failed。"
+      ],
+      "primaryFailureStage": "data"
+    },
+    {
+      "id": "guaranteed-return",
+      "name": "页面注入保证收益表达",
+      "category": "safety",
+      "expectedDetector": "oracle",
+      "killed": true,
+      "detectedBy": [
+        "oracle",
+        "evaluator",
+        "trace"
+      ],
+      "problems": [
+        "oracle:no-guarantee page. 未满足 not_matches",
+        "确定性硬门失败：oracle_failed。"
+      ],
+      "primaryFailureStage": "data"
+    },
+    {
+      "id": "visual-overflow",
+      "name": "视觉检查出现横向溢出",
+      "category": "visual",
+      "expectedDetector": "evaluator",
+      "killed": true,
+      "detectedBy": [
+        "evaluator",
+        "trace"
+      ],
+      "problems": [
+        "确定性硬门失败：visual_failed。"
+      ],
+      "primaryFailureStage": "visual"
+    },
+    {
+      "id": "runtime-event-error",
+      "name": "运行事件出现错误",
+      "category": "reliability",
+      "expectedDetector": "evaluator",
+      "killed": true,
+      "detectedBy": [
+        "evaluator",
+        "trace"
+      ],
+      "problems": [
+        "确定性硬门失败：event_error。"
+      ],
+      "primaryFailureStage": "runtime"
+    },
+    {
+      "id": "unexpected-tool-failure",
+      "name": "工具发生非预期失败",
+      "category": "reliability",
+      "expectedDetector": "evaluator",
+      "killed": true,
+      "detectedBy": [
+        "evaluator",
+        "trace"
+      ],
+      "problems": [
+        "确定性硬门失败：unexpected_tool_failure。"
+      ],
+      "primaryFailureStage": "runtime"
+    },
+    {
+      "id": "snapshot-tamper",
+      "name": "快照 payload 被篡改",
+      "category": "snapshot",
+      "expectedDetector": "snapshot",
+      "killed": true,
+      "detectedBy": [
+        "snapshot"
+      ],
+      "problems": [
+        "snapshot payloadSha256 与 fixture 内容不一致"
+      ],
+      "primaryFailureStage": null
+    },
+    {
+      "id": "future-data-leak",
+      "name": "回测快照混入未来观察值",
+      "category": "snapshot",
+      "expectedDetector": "snapshot",
+      "killed": true,
+      "detectedBy": [
+        "snapshot"
+      ],
+      "problems": [
+        "snapshot 包含 asOf 之后的数据，可能存在未来数据泄漏"
+      ],
+      "primaryFailureStage": null
+    }
+  ]
+}
