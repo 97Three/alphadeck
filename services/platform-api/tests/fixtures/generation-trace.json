@@ -1,0 +1,2749 @@
+[
+  {
+    "kind": "normalize_status",
+    "args": [
+      null
+    ],
+    "expected": "unknown"
+  },
+  {
+    "kind": "normalize_status",
+    "args": [
+      "ok"
+    ],
+    "expected": "success"
+  },
+  {
+    "kind": "normalize_status",
+    "args": [
+      "failed"
+    ],
+    "expected": "error"
+  },
+  {
+    "kind": "normalize_status",
+    "args": [
+      "cancelled"
+    ],
+    "expected": "unknown"
+  },
+  {
+    "kind": "normalize_status",
+    "args": [
+      "processing"
+    ],
+    "expected": "pending"
+  },
+  {
+    "kind": "normalize_status",
+    "args": [
+      "needs_clarification"
+    ],
+    "expected": "warning"
+  },
+  {
+    "kind": "normalize_status",
+    "args": [
+      "skipped"
+    ],
+    "expected": "unknown"
+  },
+  {
+    "kind": "normalize_status",
+    "args": [
+      "PASSED"
+    ],
+    "expected": "success"
+  },
+  {
+    "kind": "normalize_status",
+    "args": [
+      false
+    ],
+    "expected": "unknown"
+  },
+  {
+    "kind": "normalize_status",
+    "args": [
+      0
+    ],
+    "expected": "unknown"
+  },
+  {
+    "kind": "workspace_stage",
+    "args": [
+      {}
+    ],
+    "expected": "system"
+  },
+  {
+    "kind": "workspace_events",
+    "args": [
+      "project",
+      [
+        {}
+      ]
+    ],
+    "expected": [
+      {
+        "id": "workspace:project:0:1970-01-01T00:00:00.000Z",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "system",
+        "status": "unknown",
+        "title": "工作空间事件",
+        "summary": "工作空间事件",
+        "timestamp": "1970-01-01T00:00:00.000Z",
+        "requestId": null,
+        "artifactPath": null,
+        "metadata": {
+          "eventType": "",
+          "rawStage": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "workspace_stage",
+    "args": [
+      {
+        "stage": "evidence_verification",
+        "event_type": "completed"
+      }
+    ],
+    "expected": "data"
+  },
+  {
+    "kind": "workspace_events",
+    "args": [
+      "project",
+      [
+        {
+          "stage": "evidence_verification",
+          "event_type": "completed"
+        }
+      ]
+    ],
+    "expected": [
+      {
+        "id": "workspace:project:0:1970-01-01T00:00:00.000Z",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "data",
+        "status": "unknown",
+        "title": "completed",
+        "summary": "evidence_verification",
+        "timestamp": "1970-01-01T00:00:00.000Z",
+        "requestId": null,
+        "artifactPath": null,
+        "metadata": {
+          "eventType": "completed",
+          "rawStage": "evidence_verification"
+        }
+      }
+    ]
+  },
+  {
+    "kind": "workspace_stage",
+    "args": [
+      {
+        "stage": "validation",
+        "event_type": "data_checked"
+      }
+    ],
+    "expected": "data"
+  },
+  {
+    "kind": "workspace_events",
+    "args": [
+      "project",
+      [
+        {
+          "stage": "validation",
+          "event_type": "data_checked"
+        }
+      ]
+    ],
+    "expected": [
+      {
+        "id": "workspace:project:0:1970-01-01T00:00:00.000Z",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "data",
+        "status": "unknown",
+        "title": "data_checked",
+        "summary": "validation",
+        "timestamp": "1970-01-01T00:00:00.000Z",
+        "requestId": null,
+        "artifactPath": null,
+        "metadata": {
+          "eventType": "data_checked",
+          "rawStage": "validation"
+        }
+      }
+    ]
+  },
+  {
+    "kind": "workspace_stage",
+    "args": [
+      {
+        "stage": "repair"
+      }
+    ],
+    "expected": "repair"
+  },
+  {
+    "kind": "workspace_events",
+    "args": [
+      "project",
+      [
+        {
+          "stage": "repair"
+        }
+      ]
+    ],
+    "expected": [
+      {
+        "id": "workspace:project:0:1970-01-01T00:00:00.000Z",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "repair",
+        "status": "unknown",
+        "title": "repair",
+        "summary": "repair",
+        "timestamp": "1970-01-01T00:00:00.000Z",
+        "requestId": null,
+        "artifactPath": null,
+        "metadata": {
+          "eventType": "",
+          "rawStage": "repair"
+        }
+      }
+    ]
+  },
+  {
+    "kind": "workspace_stage",
+    "args": [
+      {
+        "event_type": "intent_clarification_required"
+      }
+    ],
+    "expected": "planning"
+  },
+  {
+    "kind": "workspace_events",
+    "args": [
+      "project",
+      [
+        {
+          "event_type": "intent_clarification_required"
+        }
+      ]
+    ],
+    "expected": [
+      {
+        "id": "workspace:project:0:1970-01-01T00:00:00.000Z",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "planning",
+        "status": "unknown",
+        "title": "意图需要澄清",
+        "summary": "工作空间事件",
+        "timestamp": "1970-01-01T00:00:00.000Z",
+        "requestId": null,
+        "artifactPath": null,
+        "metadata": {
+          "eventType": "intent_clarification_required",
+          "rawStage": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "workspace_stage",
+    "args": [
+      {
+        "event_type": "generation_queue_started"
+      }
+    ],
+    "expected": "request"
+  },
+  {
+    "kind": "workspace_events",
+    "args": [
+      "project",
+      [
+        {
+          "event_type": "generation_queue_started"
+        }
+      ]
+    ],
+    "expected": [
+      {
+        "id": "workspace:project:0:1970-01-01T00:00:00.000Z",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "request",
+        "status": "unknown",
+        "title": "generation_queue_started",
+        "summary": "工作空间事件",
+        "timestamp": "1970-01-01T00:00:00.000Z",
+        "requestId": null,
+        "artifactPath": null,
+        "metadata": {
+          "eventType": "generation_queue_started",
+          "rawStage": ""
+        }
+      }
+    ]
+  },
+  {
+    "kind": "workspace_stage",
+    "args": [
+      {
+        "stage": "execution"
+      }
+    ],
+    "expected": "artifact"
+  },
+  {
+    "kind": "workspace_events",
+    "args": [
+      "project",
+      [
+        {
+          "stage": "execution"
+        }
+      ]
+    ],
+    "expected": [
+      {
+        "id": "workspace:project:0:1970-01-01T00:00:00.000Z",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "artifact",
+        "status": "unknown",
+        "title": "execution",
+        "summary": "execution",
+        "timestamp": "1970-01-01T00:00:00.000Z",
+        "requestId": null,
+        "artifactPath": null,
+        "metadata": {
+          "eventType": "",
+          "rawStage": "execution"
+        }
+      }
+    ]
+  },
+  {
+    "kind": "message_stage",
+    "args": [
+      "chat",
+      "user",
+      {}
+    ],
+    "expected": "request"
+  },
+  {
+    "kind": "message_title",
+    "args": [
+      "chat",
+      "user",
+      {}
+    ],
+    "expected": "用户消息"
+  },
+  {
+    "kind": "message_stage",
+    "args": [
+      "chat",
+      "assistant",
+      {}
+    ],
+    "expected": "completion"
+  },
+  {
+    "kind": "message_title",
+    "args": [
+      "chat",
+      "assistant",
+      {}
+    ],
+    "expected": "Agent 回复"
+  },
+  {
+    "kind": "message_stage",
+    "args": [
+      "thinking",
+      "user",
+      {}
+    ],
+    "expected": "request"
+  },
+  {
+    "kind": "message_title",
+    "args": [
+      "thinking",
+      "user",
+      {}
+    ],
+    "expected": "Agent 思考"
+  },
+  {
+    "kind": "message_stage",
+    "args": [
+      "thinking",
+      "assistant",
+      {}
+    ],
+    "expected": "planning"
+  },
+  {
+    "kind": "message_title",
+    "args": [
+      "thinking",
+      "assistant",
+      {}
+    ],
+    "expected": "Agent 思考"
+  },
+  {
+    "kind": "message_stage",
+    "args": [
+      "error",
+      "user",
+      {}
+    ],
+    "expected": "system"
+  },
+  {
+    "kind": "message_title",
+    "args": [
+      "error",
+      "user",
+      {}
+    ],
+    "expected": "Agent 错误"
+  },
+  {
+    "kind": "message_stage",
+    "args": [
+      "error",
+      "assistant",
+      {}
+    ],
+    "expected": "system"
+  },
+  {
+    "kind": "message_title",
+    "args": [
+      "error",
+      "assistant",
+      {}
+    ],
+    "expected": "Agent 错误"
+  },
+  {
+    "kind": "message_stage",
+    "args": [
+      "tool_use",
+      "user",
+      {
+        "toolName": "Read"
+      }
+    ],
+    "expected": "tooling"
+  },
+  {
+    "kind": "message_title",
+    "args": [
+      "tool_use",
+      "user",
+      {
+        "toolName": "Read"
+      }
+    ],
+    "expected": "工具调用：Read"
+  },
+  {
+    "kind": "message_stage",
+    "args": [
+      "tool_use",
+      "assistant",
+      {
+        "toolName": "Read"
+      }
+    ],
+    "expected": "tooling"
+  },
+  {
+    "kind": "message_title",
+    "args": [
+      "tool_use",
+      "assistant",
+      {
+        "toolName": "Read"
+      }
+    ],
+    "expected": "工具调用：Read"
+  },
+  {
+    "kind": "message_stage",
+    "args": [
+      "tool_result",
+      "user",
+      {
+        "toolName": "Read"
+      }
+    ],
+    "expected": "tooling"
+  },
+  {
+    "kind": "message_title",
+    "args": [
+      "tool_result",
+      "user",
+      {
+        "toolName": "Read"
+      }
+    ],
+    "expected": "工具结果：Read"
+  },
+  {
+    "kind": "message_stage",
+    "args": [
+      "tool_result",
+      "assistant",
+      {
+        "toolName": "Read"
+      }
+    ],
+    "expected": "tooling"
+  },
+  {
+    "kind": "message_title",
+    "args": [
+      "tool_result",
+      "assistant",
+      {
+        "toolName": "Read"
+      }
+    ],
+    "expected": "工具结果：Read"
+  },
+  {
+    "kind": "queue_events",
+    "args": [
+      "project",
+      {
+        "items": [
+          {
+            "requestId": "req",
+            "status": "queued",
+            "cliPreference": "pi",
+            "selectedModel": "deepseek-v4-flash",
+            "instructionPreview": "test",
+            "queuedAt": "2026-11-03T00:00:00.000Z",
+            "startedAt": "2026-11-03T00:01:00.000Z",
+            "completedAt": "2026-11-03T00:02:00.000Z",
+            "errorMessage": null
+          }
+        ]
+      }
+    ],
+    "expected": [
+      {
+        "id": "generation-queue:project:req:queued",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "request",
+        "status": "pending",
+        "title": "队列：已入队",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "queued",
+          "cliPreference": "pi",
+          "selectedModel": "deepseek-v4-flash"
+        }
+      },
+      {
+        "id": "generation-queue:project:req:started",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "tooling",
+        "status": "success",
+        "title": "队列：开始执行",
+        "summary": "生成任务从队列取出并开始执行。",
+        "timestamp": "2026-11-03T00:01:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "queued"
+        }
+      },
+      {
+        "id": "generation-queue:project:req:finished",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "system",
+        "status": "pending",
+        "title": "队列：执行结束",
+        "summary": "生成任务状态：queued",
+        "timestamp": "2026-11-03T00:02:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "queued"
+        }
+      }
+    ]
+  },
+  {
+    "kind": "queue_events",
+    "args": [
+      "project",
+      {
+        "items": [
+          {
+            "requestId": "req",
+            "status": "running",
+            "cliPreference": "pi",
+            "selectedModel": "deepseek-v4-flash",
+            "instructionPreview": "test",
+            "queuedAt": "2026-11-03T00:00:00.000Z",
+            "startedAt": "2026-11-03T00:01:00.000Z",
+            "completedAt": "2026-11-03T00:02:00.000Z",
+            "errorMessage": null
+          }
+        ]
+      }
+    ],
+    "expected": [
+      {
+        "id": "generation-queue:project:req:queued",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "request",
+        "status": "success",
+        "title": "队列：已入队",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "running",
+          "cliPreference": "pi",
+          "selectedModel": "deepseek-v4-flash"
+        }
+      },
+      {
+        "id": "generation-queue:project:req:started",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "tooling",
+        "status": "pending",
+        "title": "队列：开始执行",
+        "summary": "生成任务从队列取出并开始执行。",
+        "timestamp": "2026-11-03T00:01:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "running"
+        }
+      },
+      {
+        "id": "generation-queue:project:req:finished",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "system",
+        "status": "pending",
+        "title": "队列：执行结束",
+        "summary": "生成任务状态：running",
+        "timestamp": "2026-11-03T00:02:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "running"
+        }
+      }
+    ]
+  },
+  {
+    "kind": "queue_events",
+    "args": [
+      "project",
+      {
+        "items": [
+          {
+            "requestId": "req",
+            "status": "completed",
+            "cliPreference": "pi",
+            "selectedModel": "deepseek-v4-flash",
+            "instructionPreview": "test",
+            "queuedAt": "2026-11-03T00:00:00.000Z",
+            "startedAt": "2026-11-03T00:01:00.000Z",
+            "completedAt": "2026-11-03T00:02:00.000Z",
+            "errorMessage": null
+          }
+        ]
+      }
+    ],
+    "expected": [
+      {
+        "id": "generation-queue:project:req:queued",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "request",
+        "status": "success",
+        "title": "队列：已入队",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "completed",
+          "cliPreference": "pi",
+          "selectedModel": "deepseek-v4-flash"
+        }
+      },
+      {
+        "id": "generation-queue:project:req:started",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "tooling",
+        "status": "success",
+        "title": "队列：开始执行",
+        "summary": "生成任务从队列取出并开始执行。",
+        "timestamp": "2026-11-03T00:01:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "completed"
+        }
+      },
+      {
+        "id": "generation-queue:project:req:finished",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "completion",
+        "status": "success",
+        "title": "队列：执行结束",
+        "summary": "生成任务状态：completed",
+        "timestamp": "2026-11-03T00:02:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "completed"
+        }
+      }
+    ]
+  },
+  {
+    "kind": "queue_events",
+    "args": [
+      "project",
+      {
+        "items": [
+          {
+            "requestId": "req",
+            "status": "cancelled",
+            "cliPreference": "pi",
+            "selectedModel": "deepseek-v4-flash",
+            "instructionPreview": "test",
+            "queuedAt": "2026-11-03T00:00:00.000Z",
+            "startedAt": "2026-11-03T00:01:00.000Z",
+            "completedAt": "2026-11-03T00:02:00.000Z",
+            "errorMessage": null
+          }
+        ]
+      }
+    ],
+    "expected": [
+      {
+        "id": "generation-queue:project:req:queued",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "request",
+        "status": "success",
+        "title": "队列：已入队",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "cancelled",
+          "cliPreference": "pi",
+          "selectedModel": "deepseek-v4-flash"
+        }
+      },
+      {
+        "id": "generation-queue:project:req:started",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "tooling",
+        "status": "success",
+        "title": "队列：开始执行",
+        "summary": "生成任务从队列取出并开始执行。",
+        "timestamp": "2026-11-03T00:01:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "cancelled"
+        }
+      },
+      {
+        "id": "generation-queue:project:req:finished",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "system",
+        "status": "warning",
+        "title": "队列：执行结束",
+        "summary": "生成任务状态：cancelled",
+        "timestamp": "2026-11-03T00:02:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "cancelled"
+        }
+      }
+    ]
+  },
+  {
+    "kind": "queue_events",
+    "args": [
+      "project",
+      {
+        "items": [
+          {
+            "requestId": "req",
+            "status": "failed",
+            "cliPreference": "pi",
+            "selectedModel": "deepseek-v4-flash",
+            "instructionPreview": "test",
+            "queuedAt": "2026-11-03T00:00:00.000Z",
+            "startedAt": "2026-11-03T00:01:00.000Z",
+            "completedAt": "2026-11-03T00:02:00.000Z",
+            "errorMessage": null
+          }
+        ]
+      }
+    ],
+    "expected": [
+      {
+        "id": "generation-queue:project:req:queued",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "request",
+        "status": "success",
+        "title": "队列：已入队",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "failed",
+          "cliPreference": "pi",
+          "selectedModel": "deepseek-v4-flash"
+        }
+      },
+      {
+        "id": "generation-queue:project:req:started",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "tooling",
+        "status": "success",
+        "title": "队列：开始执行",
+        "summary": "生成任务从队列取出并开始执行。",
+        "timestamp": "2026-11-03T00:01:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "failed"
+        }
+      },
+      {
+        "id": "generation-queue:project:req:finished",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "system",
+        "status": "error",
+        "title": "队列：执行结束",
+        "summary": "生成任务状态：failed",
+        "timestamp": "2026-11-03T00:02:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-queue.json",
+        "metadata": {
+          "queueStatus": "failed"
+        }
+      }
+    ]
+  },
+  {
+    "kind": "state_events",
+    "args": [
+      "project",
+      {
+        "requestId": "req",
+        "status": "running",
+        "activeStep": "planning",
+        "updatedAt": "2026-11-03T00:00:00.000Z",
+        "repairAttemptCount": 0,
+        "steps": [
+          {
+            "id": "planning",
+            "label": "规划",
+            "status": "pending",
+            "summary": "test",
+            "startedAt": "2026-11-03T00:00:00.000Z",
+            "completedAt": null,
+            "metadata": {
+              "custom": 1
+            }
+          }
+        ]
+      }
+    ],
+    "expected": [
+      {
+        "id": "generation-state:project:req:planning",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "planning",
+        "status": "pending",
+        "title": "状态机：规划",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-state.json",
+        "metadata": {
+          "runStatus": "running",
+          "stepStatus": "pending",
+          "activeStep": "planning",
+          "repairAttemptCount": 0,
+          "custom": 1
+        }
+      }
+    ]
+  },
+  {
+    "kind": "state_events",
+    "args": [
+      "project",
+      {
+        "requestId": "req",
+        "status": "running",
+        "activeStep": "planning",
+        "updatedAt": "2026-11-03T00:00:00.000Z",
+        "repairAttemptCount": 0,
+        "steps": [
+          {
+            "id": "planning",
+            "label": "规划",
+            "status": "running",
+            "summary": "test",
+            "startedAt": "2026-11-03T00:00:00.000Z",
+            "completedAt": null,
+            "metadata": {
+              "custom": 1
+            }
+          }
+        ]
+      }
+    ],
+    "expected": [
+      {
+        "id": "generation-state:project:req:planning",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "planning",
+        "status": "pending",
+        "title": "状态机：规划",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-state.json",
+        "metadata": {
+          "runStatus": "running",
+          "stepStatus": "running",
+          "activeStep": "planning",
+          "repairAttemptCount": 0,
+          "custom": 1
+        }
+      }
+    ]
+  },
+  {
+    "kind": "state_events",
+    "args": [
+      "project",
+      {
+        "requestId": "req",
+        "status": "running",
+        "activeStep": "planning",
+        "updatedAt": "2026-11-03T00:00:00.000Z",
+        "repairAttemptCount": 0,
+        "steps": [
+          {
+            "id": "planning",
+            "label": "规划",
+            "status": "success",
+            "summary": "test",
+            "startedAt": "2026-11-03T00:00:00.000Z",
+            "completedAt": null,
+            "metadata": {
+              "custom": 1
+            }
+          }
+        ]
+      }
+    ],
+    "expected": [
+      {
+        "id": "generation-state:project:req:planning",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "planning",
+        "status": "success",
+        "title": "状态机：规划",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-state.json",
+        "metadata": {
+          "runStatus": "running",
+          "stepStatus": "success",
+          "activeStep": "planning",
+          "repairAttemptCount": 0,
+          "custom": 1
+        }
+      }
+    ]
+  },
+  {
+    "kind": "state_events",
+    "args": [
+      "project",
+      {
+        "requestId": "req",
+        "status": "running",
+        "activeStep": "planning",
+        "updatedAt": "2026-11-03T00:00:00.000Z",
+        "repairAttemptCount": 0,
+        "steps": [
+          {
+            "id": "planning",
+            "label": "规划",
+            "status": "warning",
+            "summary": "test",
+            "startedAt": "2026-11-03T00:00:00.000Z",
+            "completedAt": null,
+            "metadata": {
+              "custom": 1
+            }
+          }
+        ]
+      }
+    ],
+    "expected": [
+      {
+        "id": "generation-state:project:req:planning",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "planning",
+        "status": "warning",
+        "title": "状态机：规划",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-state.json",
+        "metadata": {
+          "runStatus": "running",
+          "stepStatus": "warning",
+          "activeStep": "planning",
+          "repairAttemptCount": 0,
+          "custom": 1
+        }
+      }
+    ]
+  },
+  {
+    "kind": "state_events",
+    "args": [
+      "project",
+      {
+        "requestId": "req",
+        "status": "running",
+        "activeStep": "planning",
+        "updatedAt": "2026-11-03T00:00:00.000Z",
+        "repairAttemptCount": 0,
+        "steps": [
+          {
+            "id": "planning",
+            "label": "规划",
+            "status": "failed",
+            "summary": "test",
+            "startedAt": "2026-11-03T00:00:00.000Z",
+            "completedAt": null,
+            "metadata": {
+              "custom": 1
+            }
+          }
+        ]
+      }
+    ],
+    "expected": [
+      {
+        "id": "generation-state:project:req:planning",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "planning",
+        "status": "error",
+        "title": "状态机：规划",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-state.json",
+        "metadata": {
+          "runStatus": "running",
+          "stepStatus": "failed",
+          "activeStep": "planning",
+          "repairAttemptCount": 0,
+          "custom": 1
+        }
+      }
+    ]
+  },
+  {
+    "kind": "state_events",
+    "args": [
+      "project",
+      {
+        "requestId": "req",
+        "status": "running",
+        "activeStep": "planning",
+        "updatedAt": "2026-11-03T00:00:00.000Z",
+        "repairAttemptCount": 0,
+        "steps": [
+          {
+            "id": "planning",
+            "label": "规划",
+            "status": "skipped",
+            "summary": "test",
+            "startedAt": "2026-11-03T00:00:00.000Z",
+            "completedAt": null,
+            "metadata": {
+              "custom": 1
+            }
+          }
+        ]
+      }
+    ],
+    "expected": [
+      {
+        "id": "generation-state:project:req:planning",
+        "projectId": "project",
+        "source": "workspace_event",
+        "stage": "planning",
+        "status": "success",
+        "title": "状态机：规划",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/generation-state.json",
+        "metadata": {
+          "runStatus": "running",
+          "stepStatus": "skipped",
+          "activeStep": "planning",
+          "repairAttemptCount": 0,
+          "custom": 1
+        }
+      }
+    ]
+  },
+  {
+    "kind": "evidence_events",
+    "args": [
+      "project",
+      {
+        "runId": "req",
+        "question": "test",
+        "status": "ready",
+        "capabilityId": "technical_analysis",
+        "symbols": [
+          "600519"
+        ],
+        "expectedArtifacts": [
+          "app/page.tsx"
+        ],
+        "updatedAt": "2026-11-03T00:00:00.000Z"
+      },
+      {
+        "passed": true,
+        "checks": [
+          {
+            "id": "one",
+            "status": "passed"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00.000Z",
+        "reportPath": ".data-agent/validation.json",
+        "runId": "req"
+      },
+      {
+        "steps": [
+          {
+            "checkId": "one",
+            "checkName": "build",
+            "summary": "fix"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json"
+      },
+      {
+        "passed": true,
+        "status": "passed",
+        "checks": [
+          {
+            "id": "one",
+            "status": "passed"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00.000Z",
+        "requestId": "req"
+      },
+      {
+        "passed": true,
+        "status": "passed",
+        "viewports": [
+          {
+            "screenshotPath": "one.png"
+          }
+        ],
+        "failures": [],
+        "warnings": [],
+        "updatedAt": "2026-11-03T00:00:00.000Z",
+        "requestId": "req"
+      }
+    ],
+    "expected": [
+      {
+        "id": "run-plan:project:req",
+        "projectId": "project",
+        "source": "run_plan",
+        "stage": "planning",
+        "status": "unknown",
+        "title": "当前执行计划",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/finance-run-plan.json",
+        "metadata": {
+          "capabilityId": "technical_analysis",
+          "symbols": [
+            "600519"
+          ],
+          "expectedArtifacts": [
+            "app/page.tsx"
+          ]
+        }
+      },
+      {
+        "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "success",
+        "title": "最新验证报告",
+        "summary": "验证通过，1 项检查完成。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/validation.json",
+        "metadata": {
+          "failedChecks": 0,
+          "warningChecks": 0,
+          "checkCount": 1
+        }
+      },
+      {
+        "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "repair_plan",
+        "stage": "repair",
+        "status": "warning",
+        "title": "验证修复计划",
+        "summary": "需要处理 1 个修复步骤：build",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": null,
+        "artifactPath": ".data-agent/validation-repair-plan.json",
+        "metadata": {
+          "steps": [
+            {
+              "checkId": "one",
+              "checkName": "build",
+              "summary": "fix"
+            }
+          ]
+        }
+      },
+      {
+        "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "success",
+        "title": "产物 Schema 契约",
+        "summary": "契约检查通过，1 项结构检查完成。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/artifact-contracts.json",
+        "metadata": {
+          "failed": [],
+          "warnings": []
+        }
+      },
+      {
+        "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "success",
+        "title": "视觉验收",
+        "summary": "视觉验收通过，覆盖 1 个视口。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/visual-validation.json",
+        "metadata": {
+          "screenshots": [
+            "one.png"
+          ],
+          "failures": [],
+          "warnings": []
+        }
+      }
+    ]
+  },
+  {
+    "kind": "dedupe_timeline",
+    "args": [
+      [
+        {
+          "id": "run-plan:project:req",
+          "projectId": "project",
+          "source": "run_plan",
+          "stage": "planning",
+          "status": "unknown",
+          "title": "当前执行计划",
+          "summary": "test",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/finance-run-plan.json",
+          "metadata": {
+            "capabilityId": "technical_analysis",
+            "symbols": [
+              "600519"
+            ],
+            "expectedArtifacts": [
+              "app/page.tsx"
+            ]
+          }
+        },
+        {
+          "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "success",
+          "title": "最新验证报告",
+          "summary": "验证通过，1 项检查完成。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/validation.json",
+          "metadata": {
+            "failedChecks": 0,
+            "warningChecks": 0,
+            "checkCount": 1
+          }
+        },
+        {
+          "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "repair_plan",
+          "stage": "repair",
+          "status": "warning",
+          "title": "验证修复计划",
+          "summary": "需要处理 1 个修复步骤：build",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": null,
+          "artifactPath": ".data-agent/validation-repair-plan.json",
+          "metadata": {
+            "steps": [
+              {
+                "checkId": "one",
+                "checkName": "build",
+                "summary": "fix"
+              }
+            ]
+          }
+        },
+        {
+          "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "success",
+          "title": "产物 Schema 契约",
+          "summary": "契约检查通过，1 项结构检查完成。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/artifact-contracts.json",
+          "metadata": {
+            "failed": [],
+            "warnings": []
+          }
+        },
+        {
+          "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "success",
+          "title": "视觉验收",
+          "summary": "视觉验收通过，覆盖 1 个视口。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/visual-validation.json",
+          "metadata": {
+            "screenshots": [
+              "one.png"
+            ],
+            "failures": [],
+            "warnings": []
+          }
+        },
+        {
+          "id": "run-plan:project:req",
+          "projectId": "project",
+          "source": "run_plan",
+          "stage": "planning",
+          "status": "unknown",
+          "title": "当前执行计划",
+          "summary": "test",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/finance-run-plan.json",
+          "metadata": {
+            "capabilityId": "technical_analysis",
+            "symbols": [
+              "600519"
+            ],
+            "expectedArtifacts": [
+              "app/page.tsx"
+            ]
+          }
+        },
+        {
+          "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "success",
+          "title": "最新验证报告",
+          "summary": "验证通过，1 项检查完成。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/validation.json",
+          "metadata": {
+            "failedChecks": 0,
+            "warningChecks": 0,
+            "checkCount": 1
+          }
+        },
+        {
+          "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "repair_plan",
+          "stage": "repair",
+          "status": "warning",
+          "title": "验证修复计划",
+          "summary": "需要处理 1 个修复步骤：build",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": null,
+          "artifactPath": ".data-agent/validation-repair-plan.json",
+          "metadata": {
+            "steps": [
+              {
+                "checkId": "one",
+                "checkName": "build",
+                "summary": "fix"
+              }
+            ]
+          }
+        },
+        {
+          "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "success",
+          "title": "产物 Schema 契约",
+          "summary": "契约检查通过，1 项结构检查完成。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/artifact-contracts.json",
+          "metadata": {
+            "failed": [],
+            "warnings": []
+          }
+        },
+        {
+          "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "success",
+          "title": "视觉验收",
+          "summary": "视觉验收通过，覆盖 1 个视口。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/visual-validation.json",
+          "metadata": {
+            "screenshots": [
+              "one.png"
+            ],
+            "failures": [],
+            "warnings": []
+          }
+        }
+      ]
+    ],
+    "expected": [
+      {
+        "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "success",
+        "title": "产物 Schema 契约",
+        "summary": "契约检查通过，1 项结构检查完成。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/artifact-contracts.json",
+        "metadata": {
+          "failed": [],
+          "warnings": []
+        }
+      },
+      {
+        "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "repair_plan",
+        "stage": "repair",
+        "status": "warning",
+        "title": "验证修复计划",
+        "summary": "需要处理 1 个修复步骤：build",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": null,
+        "artifactPath": ".data-agent/validation-repair-plan.json",
+        "metadata": {
+          "steps": [
+            {
+              "checkId": "one",
+              "checkName": "build",
+              "summary": "fix"
+            }
+          ]
+        }
+      },
+      {
+        "id": "run-plan:project:req",
+        "projectId": "project",
+        "source": "run_plan",
+        "stage": "planning",
+        "status": "unknown",
+        "title": "当前执行计划",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/finance-run-plan.json",
+        "metadata": {
+          "capabilityId": "technical_analysis",
+          "symbols": [
+            "600519"
+          ],
+          "expectedArtifacts": [
+            "app/page.tsx"
+          ]
+        }
+      },
+      {
+        "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "success",
+        "title": "最新验证报告",
+        "summary": "验证通过，1 项检查完成。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/validation.json",
+        "metadata": {
+          "failedChecks": 0,
+          "warningChecks": 0,
+          "checkCount": 1
+        }
+      },
+      {
+        "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "success",
+        "title": "视觉验收",
+        "summary": "视觉验收通过，覆盖 1 个视口。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/visual-validation.json",
+        "metadata": {
+          "screenshots": [
+            "one.png"
+          ],
+          "failures": [],
+          "warnings": []
+        }
+      }
+    ]
+  },
+  {
+    "kind": "build_stages",
+    "args": [
+      [
+        {
+          "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "success",
+          "title": "产物 Schema 契约",
+          "summary": "契约检查通过，1 项结构检查完成。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/artifact-contracts.json",
+          "metadata": {
+            "failed": [],
+            "warnings": []
+          }
+        },
+        {
+          "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "repair_plan",
+          "stage": "repair",
+          "status": "warning",
+          "title": "验证修复计划",
+          "summary": "需要处理 1 个修复步骤：build",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": null,
+          "artifactPath": ".data-agent/validation-repair-plan.json",
+          "metadata": {
+            "steps": [
+              {
+                "checkId": "one",
+                "checkName": "build",
+                "summary": "fix"
+              }
+            ]
+          }
+        },
+        {
+          "id": "run-plan:project:req",
+          "projectId": "project",
+          "source": "run_plan",
+          "stage": "planning",
+          "status": "unknown",
+          "title": "当前执行计划",
+          "summary": "test",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/finance-run-plan.json",
+          "metadata": {
+            "capabilityId": "technical_analysis",
+            "symbols": [
+              "600519"
+            ],
+            "expectedArtifacts": [
+              "app/page.tsx"
+            ]
+          }
+        },
+        {
+          "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "success",
+          "title": "最新验证报告",
+          "summary": "验证通过，1 项检查完成。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/validation.json",
+          "metadata": {
+            "failedChecks": 0,
+            "warningChecks": 0,
+            "checkCount": 1
+          }
+        },
+        {
+          "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "success",
+          "title": "视觉验收",
+          "summary": "视觉验收通过，覆盖 1 个视口。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/visual-validation.json",
+          "metadata": {
+            "screenshots": [
+              "one.png"
+            ],
+            "failures": [],
+            "warnings": []
+          }
+        }
+      ]
+    ],
+    "expected": [
+      {
+        "id": "request",
+        "label": "请求",
+        "status": "unknown",
+        "eventCount": 0,
+        "lastEventAt": null
+      },
+      {
+        "id": "planning",
+        "label": "规划",
+        "status": "unknown",
+        "eventCount": 1,
+        "lastEventAt": "2026-11-03T00:00:00.000Z"
+      },
+      {
+        "id": "data",
+        "label": "数据",
+        "status": "unknown",
+        "eventCount": 0,
+        "lastEventAt": null
+      },
+      {
+        "id": "tooling",
+        "label": "工具",
+        "status": "unknown",
+        "eventCount": 0,
+        "lastEventAt": null
+      },
+      {
+        "id": "artifact",
+        "label": "产物",
+        "status": "unknown",
+        "eventCount": 0,
+        "lastEventAt": null
+      },
+      {
+        "id": "validation",
+        "label": "验证",
+        "status": "success",
+        "eventCount": 3,
+        "lastEventAt": "2026-11-03T00:00:00.000Z"
+      },
+      {
+        "id": "repair",
+        "label": "修复",
+        "status": "warning",
+        "eventCount": 1,
+        "lastEventAt": "2026-11-03T00:00:00.000Z"
+      },
+      {
+        "id": "completion",
+        "label": "完成",
+        "status": "unknown",
+        "eventCount": 0,
+        "lastEventAt": null
+      }
+    ]
+  },
+  {
+    "kind": "current_issue_window",
+    "args": [
+      [
+        {
+          "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "success",
+          "title": "产物 Schema 契约",
+          "summary": "契约检查通过，1 项结构检查完成。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/artifact-contracts.json",
+          "metadata": {
+            "failed": [],
+            "warnings": []
+          }
+        },
+        {
+          "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "repair_plan",
+          "stage": "repair",
+          "status": "warning",
+          "title": "验证修复计划",
+          "summary": "需要处理 1 个修复步骤：build",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": null,
+          "artifactPath": ".data-agent/validation-repair-plan.json",
+          "metadata": {
+            "steps": [
+              {
+                "checkId": "one",
+                "checkName": "build",
+                "summary": "fix"
+              }
+            ]
+          }
+        },
+        {
+          "id": "run-plan:project:req",
+          "projectId": "project",
+          "source": "run_plan",
+          "stage": "planning",
+          "status": "unknown",
+          "title": "当前执行计划",
+          "summary": "test",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/finance-run-plan.json",
+          "metadata": {
+            "capabilityId": "technical_analysis",
+            "symbols": [
+              "600519"
+            ],
+            "expectedArtifacts": [
+              "app/page.tsx"
+            ]
+          }
+        },
+        {
+          "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "success",
+          "title": "最新验证报告",
+          "summary": "验证通过，1 项检查完成。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/validation.json",
+          "metadata": {
+            "failedChecks": 0,
+            "warningChecks": 0,
+            "checkCount": 1
+          }
+        },
+        {
+          "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "success",
+          "title": "视觉验收",
+          "summary": "视觉验收通过，覆盖 1 个视口。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/visual-validation.json",
+          "metadata": {
+            "screenshots": [
+              "one.png"
+            ],
+            "failures": [],
+            "warnings": []
+          }
+        }
+      ]
+    ],
+    "expected": []
+  },
+  {
+    "kind": "evidence_events",
+    "args": [
+      "project",
+      {
+        "runId": "req",
+        "question": "test",
+        "status": "ready",
+        "capabilityId": "technical_analysis",
+        "symbols": [
+          "600519"
+        ],
+        "expectedArtifacts": [
+          "app/page.tsx"
+        ],
+        "updatedAt": "2026-11-03T00:00:00.000Z"
+      },
+      {
+        "passed": false,
+        "checks": [
+          {
+            "id": "one",
+            "status": "failed"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00.000Z",
+        "reportPath": ".data-agent/validation.json",
+        "runId": "req"
+      },
+      {
+        "steps": [
+          {
+            "checkId": "one",
+            "checkName": "build",
+            "summary": "fix"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json"
+      },
+      {
+        "passed": false,
+        "status": "failed",
+        "checks": [
+          {
+            "id": "one",
+            "status": "failed"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00.000Z",
+        "requestId": "req"
+      },
+      {
+        "passed": false,
+        "status": "failed",
+        "viewports": [
+          {
+            "screenshotPath": "one.png"
+          }
+        ],
+        "failures": [
+          "bad"
+        ],
+        "warnings": [],
+        "updatedAt": "2026-11-03T00:00:00.000Z",
+        "requestId": "req"
+      }
+    ],
+    "expected": [
+      {
+        "id": "run-plan:project:req",
+        "projectId": "project",
+        "source": "run_plan",
+        "stage": "planning",
+        "status": "unknown",
+        "title": "当前执行计划",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/finance-run-plan.json",
+        "metadata": {
+          "capabilityId": "technical_analysis",
+          "symbols": [
+            "600519"
+          ],
+          "expectedArtifacts": [
+            "app/page.tsx"
+          ]
+        }
+      },
+      {
+        "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "error",
+        "title": "最新验证报告",
+        "summary": "验证未通过：1 项失败，0 项警告。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/validation.json",
+        "metadata": {
+          "failedChecks": 1,
+          "warningChecks": 0,
+          "checkCount": 1
+        }
+      },
+      {
+        "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "repair_plan",
+        "stage": "repair",
+        "status": "warning",
+        "title": "验证修复计划",
+        "summary": "需要处理 1 个修复步骤：build",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": null,
+        "artifactPath": ".data-agent/validation-repair-plan.json",
+        "metadata": {
+          "steps": [
+            {
+              "checkId": "one",
+              "checkName": "build",
+              "summary": "fix"
+            }
+          ]
+        }
+      },
+      {
+        "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "error",
+        "title": "产物 Schema 契约",
+        "summary": "契约检查未通过：1 项失败。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/artifact-contracts.json",
+        "metadata": {
+          "failed": [
+            "one"
+          ],
+          "warnings": []
+        }
+      },
+      {
+        "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "error",
+        "title": "视觉验收",
+        "summary": "视觉验收未通过：1 个阻断项。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/visual-validation.json",
+        "metadata": {
+          "screenshots": [
+            "one.png"
+          ],
+          "failures": [
+            "bad"
+          ],
+          "warnings": []
+        }
+      }
+    ]
+  },
+  {
+    "kind": "dedupe_timeline",
+    "args": [
+      [
+        {
+          "id": "run-plan:project:req",
+          "projectId": "project",
+          "source": "run_plan",
+          "stage": "planning",
+          "status": "unknown",
+          "title": "当前执行计划",
+          "summary": "test",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/finance-run-plan.json",
+          "metadata": {
+            "capabilityId": "technical_analysis",
+            "symbols": [
+              "600519"
+            ],
+            "expectedArtifacts": [
+              "app/page.tsx"
+            ]
+          }
+        },
+        {
+          "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "error",
+          "title": "最新验证报告",
+          "summary": "验证未通过：1 项失败，0 项警告。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/validation.json",
+          "metadata": {
+            "failedChecks": 1,
+            "warningChecks": 0,
+            "checkCount": 1
+          }
+        },
+        {
+          "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "repair_plan",
+          "stage": "repair",
+          "status": "warning",
+          "title": "验证修复计划",
+          "summary": "需要处理 1 个修复步骤：build",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": null,
+          "artifactPath": ".data-agent/validation-repair-plan.json",
+          "metadata": {
+            "steps": [
+              {
+                "checkId": "one",
+                "checkName": "build",
+                "summary": "fix"
+              }
+            ]
+          }
+        },
+        {
+          "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "error",
+          "title": "产物 Schema 契约",
+          "summary": "契约检查未通过：1 项失败。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/artifact-contracts.json",
+          "metadata": {
+            "failed": [
+              "one"
+            ],
+            "warnings": []
+          }
+        },
+        {
+          "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "error",
+          "title": "视觉验收",
+          "summary": "视觉验收未通过：1 个阻断项。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/visual-validation.json",
+          "metadata": {
+            "screenshots": [
+              "one.png"
+            ],
+            "failures": [
+              "bad"
+            ],
+            "warnings": []
+          }
+        },
+        {
+          "id": "run-plan:project:req",
+          "projectId": "project",
+          "source": "run_plan",
+          "stage": "planning",
+          "status": "unknown",
+          "title": "当前执行计划",
+          "summary": "test",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/finance-run-plan.json",
+          "metadata": {
+            "capabilityId": "technical_analysis",
+            "symbols": [
+              "600519"
+            ],
+            "expectedArtifacts": [
+              "app/page.tsx"
+            ]
+          }
+        },
+        {
+          "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "error",
+          "title": "最新验证报告",
+          "summary": "验证未通过：1 项失败，0 项警告。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/validation.json",
+          "metadata": {
+            "failedChecks": 1,
+            "warningChecks": 0,
+            "checkCount": 1
+          }
+        },
+        {
+          "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "repair_plan",
+          "stage": "repair",
+          "status": "warning",
+          "title": "验证修复计划",
+          "summary": "需要处理 1 个修复步骤：build",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": null,
+          "artifactPath": ".data-agent/validation-repair-plan.json",
+          "metadata": {
+            "steps": [
+              {
+                "checkId": "one",
+                "checkName": "build",
+                "summary": "fix"
+              }
+            ]
+          }
+        },
+        {
+          "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "error",
+          "title": "产物 Schema 契约",
+          "summary": "契约检查未通过：1 项失败。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/artifact-contracts.json",
+          "metadata": {
+            "failed": [
+              "one"
+            ],
+            "warnings": []
+          }
+        },
+        {
+          "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "error",
+          "title": "视觉验收",
+          "summary": "视觉验收未通过：1 个阻断项。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/visual-validation.json",
+          "metadata": {
+            "screenshots": [
+              "one.png"
+            ],
+            "failures": [
+              "bad"
+            ],
+            "warnings": []
+          }
+        }
+      ]
+    ],
+    "expected": [
+      {
+        "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "error",
+        "title": "产物 Schema 契约",
+        "summary": "契约检查未通过：1 项失败。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/artifact-contracts.json",
+        "metadata": {
+          "failed": [
+            "one"
+          ],
+          "warnings": []
+        }
+      },
+      {
+        "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "repair_plan",
+        "stage": "repair",
+        "status": "warning",
+        "title": "验证修复计划",
+        "summary": "需要处理 1 个修复步骤：build",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": null,
+        "artifactPath": ".data-agent/validation-repair-plan.json",
+        "metadata": {
+          "steps": [
+            {
+              "checkId": "one",
+              "checkName": "build",
+              "summary": "fix"
+            }
+          ]
+        }
+      },
+      {
+        "id": "run-plan:project:req",
+        "projectId": "project",
+        "source": "run_plan",
+        "stage": "planning",
+        "status": "unknown",
+        "title": "当前执行计划",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/finance-run-plan.json",
+        "metadata": {
+          "capabilityId": "technical_analysis",
+          "symbols": [
+            "600519"
+          ],
+          "expectedArtifacts": [
+            "app/page.tsx"
+          ]
+        }
+      },
+      {
+        "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "error",
+        "title": "最新验证报告",
+        "summary": "验证未通过：1 项失败，0 项警告。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/validation.json",
+        "metadata": {
+          "failedChecks": 1,
+          "warningChecks": 0,
+          "checkCount": 1
+        }
+      },
+      {
+        "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "error",
+        "title": "视觉验收",
+        "summary": "视觉验收未通过：1 个阻断项。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/visual-validation.json",
+        "metadata": {
+          "screenshots": [
+            "one.png"
+          ],
+          "failures": [
+            "bad"
+          ],
+          "warnings": []
+        }
+      }
+    ]
+  },
+  {
+    "kind": "build_stages",
+    "args": [
+      [
+        {
+          "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "error",
+          "title": "产物 Schema 契约",
+          "summary": "契约检查未通过：1 项失败。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/artifact-contracts.json",
+          "metadata": {
+            "failed": [
+              "one"
+            ],
+            "warnings": []
+          }
+        },
+        {
+          "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "repair_plan",
+          "stage": "repair",
+          "status": "warning",
+          "title": "验证修复计划",
+          "summary": "需要处理 1 个修复步骤：build",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": null,
+          "artifactPath": ".data-agent/validation-repair-plan.json",
+          "metadata": {
+            "steps": [
+              {
+                "checkId": "one",
+                "checkName": "build",
+                "summary": "fix"
+              }
+            ]
+          }
+        },
+        {
+          "id": "run-plan:project:req",
+          "projectId": "project",
+          "source": "run_plan",
+          "stage": "planning",
+          "status": "unknown",
+          "title": "当前执行计划",
+          "summary": "test",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/finance-run-plan.json",
+          "metadata": {
+            "capabilityId": "technical_analysis",
+            "symbols": [
+              "600519"
+            ],
+            "expectedArtifacts": [
+              "app/page.tsx"
+            ]
+          }
+        },
+        {
+          "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "error",
+          "title": "最新验证报告",
+          "summary": "验证未通过：1 项失败，0 项警告。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/validation.json",
+          "metadata": {
+            "failedChecks": 1,
+            "warningChecks": 0,
+            "checkCount": 1
+          }
+        },
+        {
+          "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "error",
+          "title": "视觉验收",
+          "summary": "视觉验收未通过：1 个阻断项。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/visual-validation.json",
+          "metadata": {
+            "screenshots": [
+              "one.png"
+            ],
+            "failures": [
+              "bad"
+            ],
+            "warnings": []
+          }
+        }
+      ]
+    ],
+    "expected": [
+      {
+        "id": "request",
+        "label": "请求",
+        "status": "unknown",
+        "eventCount": 0,
+        "lastEventAt": null
+      },
+      {
+        "id": "planning",
+        "label": "规划",
+        "status": "unknown",
+        "eventCount": 1,
+        "lastEventAt": "2026-11-03T00:00:00.000Z"
+      },
+      {
+        "id": "data",
+        "label": "数据",
+        "status": "unknown",
+        "eventCount": 0,
+        "lastEventAt": null
+      },
+      {
+        "id": "tooling",
+        "label": "工具",
+        "status": "unknown",
+        "eventCount": 0,
+        "lastEventAt": null
+      },
+      {
+        "id": "artifact",
+        "label": "产物",
+        "status": "unknown",
+        "eventCount": 0,
+        "lastEventAt": null
+      },
+      {
+        "id": "validation",
+        "label": "验证",
+        "status": "error",
+        "eventCount": 3,
+        "lastEventAt": "2026-11-03T00:00:00.000Z"
+      },
+      {
+        "id": "repair",
+        "label": "修复",
+        "status": "warning",
+        "eventCount": 1,
+        "lastEventAt": "2026-11-03T00:00:00.000Z"
+      },
+      {
+        "id": "completion",
+        "label": "完成",
+        "status": "unknown",
+        "eventCount": 0,
+        "lastEventAt": null
+      }
+    ]
+  },
+  {
+    "kind": "current_issue_window",
+    "args": [
+      [
+        {
+          "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "error",
+          "title": "产物 Schema 契约",
+          "summary": "契约检查未通过：1 项失败。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/artifact-contracts.json",
+          "metadata": {
+            "failed": [
+              "one"
+            ],
+            "warnings": []
+          }
+        },
+        {
+          "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "repair_plan",
+          "stage": "repair",
+          "status": "warning",
+          "title": "验证修复计划",
+          "summary": "需要处理 1 个修复步骤：build",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": null,
+          "artifactPath": ".data-agent/validation-repair-plan.json",
+          "metadata": {
+            "steps": [
+              {
+                "checkId": "one",
+                "checkName": "build",
+                "summary": "fix"
+              }
+            ]
+          }
+        },
+        {
+          "id": "run-plan:project:req",
+          "projectId": "project",
+          "source": "run_plan",
+          "stage": "planning",
+          "status": "unknown",
+          "title": "当前执行计划",
+          "summary": "test",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/finance-run-plan.json",
+          "metadata": {
+            "capabilityId": "technical_analysis",
+            "symbols": [
+              "600519"
+            ],
+            "expectedArtifacts": [
+              "app/page.tsx"
+            ]
+          }
+        },
+        {
+          "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "error",
+          "title": "最新验证报告",
+          "summary": "验证未通过：1 项失败，0 项警告。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/validation.json",
+          "metadata": {
+            "failedChecks": 1,
+            "warningChecks": 0,
+            "checkCount": 1
+          }
+        },
+        {
+          "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+          "projectId": "project",
+          "source": "validation",
+          "stage": "validation",
+          "status": "error",
+          "title": "视觉验收",
+          "summary": "视觉验收未通过：1 个阻断项。",
+          "timestamp": "2026-11-03T00:00:00.000Z",
+          "requestId": "req",
+          "artifactPath": ".data-agent/visual-validation.json",
+          "metadata": {
+            "screenshots": [
+              "one.png"
+            ],
+            "failures": [
+              "bad"
+            ],
+            "warnings": []
+          }
+        }
+      ]
+    ],
+    "expected": [
+      {
+        "id": "artifact-contracts:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "error",
+        "title": "产物 Schema 契约",
+        "summary": "契约检查未通过：1 项失败。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/artifact-contracts.json",
+        "metadata": {
+          "failed": [
+            "one"
+          ],
+          "warnings": []
+        }
+      },
+      {
+        "id": "repair-plan:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "repair_plan",
+        "stage": "repair",
+        "status": "warning",
+        "title": "验证修复计划",
+        "summary": "需要处理 1 个修复步骤：build",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": null,
+        "artifactPath": ".data-agent/validation-repair-plan.json",
+        "metadata": {
+          "steps": [
+            {
+              "checkId": "one",
+              "checkName": "build",
+              "summary": "fix"
+            }
+          ]
+        }
+      },
+      {
+        "id": "run-plan:project:req",
+        "projectId": "project",
+        "source": "run_plan",
+        "stage": "planning",
+        "status": "unknown",
+        "title": "当前执行计划",
+        "summary": "test",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/finance-run-plan.json",
+        "metadata": {
+          "capabilityId": "technical_analysis",
+          "symbols": [
+            "600519"
+          ],
+          "expectedArtifacts": [
+            "app/page.tsx"
+          ]
+        }
+      },
+      {
+        "id": "validation-report:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "error",
+        "title": "最新验证报告",
+        "summary": "验证未通过：1 项失败，0 项警告。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/validation.json",
+        "metadata": {
+          "failedChecks": 1,
+          "warningChecks": 0,
+          "checkCount": 1
+        }
+      },
+      {
+        "id": "visual-validation:project:2026-11-03T00:00:00.000Z",
+        "projectId": "project",
+        "source": "validation",
+        "stage": "validation",
+        "status": "error",
+        "title": "视觉验收",
+        "summary": "视觉验收未通过：1 个阻断项。",
+        "timestamp": "2026-11-03T00:00:00.000Z",
+        "requestId": "req",
+        "artifactPath": ".data-agent/visual-validation.json",
+        "metadata": {
+          "screenshots": [
+            "one.png"
+          ],
+          "failures": [
+            "bad"
+          ],
+          "warnings": []
+        }
+      }
+    ]
+  },
+  {
+    "kind": "state_events",
+    "args": [
+      "project",
+      null
+    ],
+    "expected": []
+  },
+  {
+    "kind": "queue_events",
+    "args": [
+      "project",
+      null
+    ],
+    "expected": []
+  },
+  {
+    "kind": "evidence_events",
+    "args": [
+      "project",
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "expected": []
+  }
+]

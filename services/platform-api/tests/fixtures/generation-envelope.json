@@ -1,0 +1,1233 @@
+[
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "expected": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    }
+  },
+  {
+    "input": null,
+    "error": "Data Agent generation envelope must be an object."
+  },
+  {
+    "input": [],
+    "error": "Data Agent generation envelope must be an object."
+  },
+  {
+    "input": {
+      "schemaVersion": 1,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "Unsupported Data Agent generation envelope schema."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "other",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "Unsupported Data Agent generation envelope kind."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      }
+    },
+    "error": "Data Agent generation envelope payload is required."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 0,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "Unsupported Data Agent composition lock schema."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 2,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "Unsupported Data Agent composition lock schema."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": true,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "Unsupported Data Agent composition lock schema."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "UPPER",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "composition.profile.id must be a stable lowercase identifier."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "a",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "composition.profile.id must be a stable lowercase identifier."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "valid.id",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "composition.sha256 does not match the composition contents."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "composition.profile.version must be a semantic version."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0+build"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "composition.profile.version must be a semantic version."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0-beta"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "composition.sha256 does not match the composition contents."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "composition.domainPacks must contain at least one Domain Pack."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          },
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "composition.domainPacks contains duplicate IDs."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 0,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "Unsupported Data Agent scope schema."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 2,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "Unsupported Data Agent scope schema."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": true,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "Unsupported Data Agent scope schema."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "scope.projectId must be a bounded scope identifier."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project space",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "scope.projectId must be a bounded scope identifier."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "scope.projectId must be a bounded scope identifier."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "scope.domainPackIds must contain at least one Domain Pack."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics",
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "scope.domainPackIds contains duplicate IDs."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "unsigned"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "scope.integrationScopeSha256 must be a SHA-256 identity."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:a4fbf59090b030224037edfdc31fc38ade6043ed43661f6c9cf2e18bec460e82"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "scope.integrationScopeSha256 must be a SHA-256 identity."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "unsigned"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "composition.sha256 must be a SHA-256 identity."
+  },
+  {
+    "input": {
+      "schemaVersion": 3,
+      "kind": "data-agent.generation",
+      "composition": {
+        "schemaVersion": 1,
+        "profile": {
+          "id": "sales.studio",
+          "version": "1.0.0"
+        },
+        "domainPacks": [
+          {
+            "id": "sales.analytics",
+            "version": "1.0.0"
+          }
+        ],
+        "deliveryPack": {
+          "id": "workspace.next-dashboard",
+          "version": "1.0.0"
+        },
+        "capability": {
+          "id": "sales.overview"
+        },
+        "sha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "scope": {
+        "schemaVersion": 1,
+        "consumerId": "sales-studio",
+        "tenantId": "tenant-1",
+        "projectId": "project-1",
+        "workspaceId": "project-1",
+        "requestId": "request-1",
+        "agentProfileId": "sales.studio",
+        "domainPackIds": [
+          "sales.analytics"
+        ],
+        "integrationScopeSha256": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+      },
+      "payload": {
+        "objective": "Analyse revenue"
+      }
+    },
+    "error": "composition.sha256 does not match the composition contents."
+  }
+]
