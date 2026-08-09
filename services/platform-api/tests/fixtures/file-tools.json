@@ -1,0 +1,438 @@
+[
+  {
+    "name": "list_files-0",
+    "tool": "list_files",
+    "input": {
+      "path": "."
+    },
+    "files": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    },
+    "expected": {
+      "ok": true,
+      "data": {
+        "entryCount": 7,
+        "truncated": false,
+        "skippedUnsafeLinks": 0,
+        "skippedSensitivePaths": 2
+      },
+      "content": "dir\tapp\ndir\tapp/components\nfile 37b\tapp/components/Chart.tsx\nfile 44b\tsrc/App.vue\ndir\tdata_file\nfile 34b\tdata_file/final.json\nfile 20b\tnotes.txt"
+    },
+    "resulting": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    }
+  },
+  {
+    "name": "read_file-1",
+    "tool": "read_file",
+    "input": {
+      "path": "src/App.vue"
+    },
+    "files": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    },
+    "expected": {
+      "ok": true,
+      "data": {
+        "path": "src/App.vue",
+        "bytes": 44,
+        "truncated": false,
+        "originalChars": 44
+      },
+      "content": "const a = 1;\nconst b = 2;\nexport default a;\n"
+    },
+    "resulting": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    }
+  },
+  {
+    "name": "read_file_range-2",
+    "tool": "read_file_range",
+    "input": {
+      "path": "src/App.vue",
+      "startLine": 2,
+      "endLine": 3
+    },
+    "files": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    },
+    "expected": {
+      "ok": true,
+      "data": {
+        "path": "src/App.vue",
+        "startLine": 2,
+        "endLine": 3,
+        "totalLines": 4,
+        "truncated": false
+      },
+      "content": "2: const b = 2;\n3: export default a;"
+    },
+    "resulting": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    }
+  },
+  {
+    "name": "read_file-3",
+    "tool": "read_file",
+    "input": {
+      "path": "data_file/final.json"
+    },
+    "files": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    },
+    "expected": {
+      "ok": false,
+      "error": {
+        "code": "STRUCTURED_JSON_QUERY_REQUIRED",
+        "message": "Use one query_json call with all required paths in its pointers array for data_file/final.json; raw JSON reads are disabled to prevent sequential scans and context inflation.",
+        "details": {
+          "path": "data_file/final.json",
+          "characters": 34,
+          "reason": "structured_path_policy"
+        }
+      },
+      "content": "Use one query_json call with all required paths in its pointers array for data_file/final.json; raw JSON reads are disabled to prevent sequential scans and context inflation."
+    },
+    "resulting": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    }
+  },
+  {
+    "name": "search_files-4",
+    "tool": "search_files",
+    "input": {
+      "query": "const",
+      "path": "app"
+    },
+    "files": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    },
+    "expected": {
+      "ok": true,
+      "data": {
+        "matchCount": 3,
+        "truncated": false,
+        "skippedLargeFiles": 0,
+        "skippedUnsafeLinks": 0,
+        "skippedSensitivePaths": 1
+      },
+      "content": "app/components/Chart.tsx:1:8: export const Chart = \"研究图表\";\nsrc/App.vue:1:1: const a = 1;\nsrc/App.vue:2:1: const b = 2;"
+    },
+    "resulting": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    }
+  },
+  {
+    "name": "edit_file-5",
+    "tool": "edit_file",
+    "input": {
+      "path": "src/App.vue",
+      "oldText": "const a = 1;",
+      "newText": "const a = 3;"
+    },
+    "files": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    },
+    "expected": {
+      "ok": true,
+      "data": {
+        "path": "src/App.vue",
+        "bytes": 44,
+        "created": false,
+        "beforeSha256": "9d1ab1fc21085524b81845ca5f20e2d9c5b2682c6259da9bc283ae62f7844e4f",
+        "afterSha256": "0bf003dcf562e9552162db4fc4cfcbc0162e31ebf94208cc64f4c71b50492c59",
+        "replacements": 1
+      },
+      "content": "Edited src/App.vue (1 replacement)."
+    },
+    "resulting": {
+      "src/App.vue": "const a = 3;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    }
+  },
+  {
+    "name": "apply_patch-6",
+    "tool": "apply_patch",
+    "input": {
+      "path": "src/App.vue",
+      "edits": [
+        {
+          "oldText": "const a = 1;",
+          "newText": "const a = 4;"
+        },
+        {
+          "oldText": "const b = 2;",
+          "newText": "const b = 5;"
+        }
+      ]
+    },
+    "files": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    },
+    "expected": {
+      "ok": true,
+      "data": {
+        "path": "src/App.vue",
+        "bytes": 44,
+        "created": false,
+        "beforeSha256": "9d1ab1fc21085524b81845ca5f20e2d9c5b2682c6259da9bc283ae62f7844e4f",
+        "afterSha256": "7a7f7b9a7f9578d81bda26e3c6097233404be1cc4054e5d8b9253b35eb47ee8e",
+        "replacements": 2
+      },
+      "content": "Patched src/App.vue (2 replacements)."
+    },
+    "resulting": {
+      "src/App.vue": "const a = 4;\nconst b = 5;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    }
+  },
+  {
+    "name": "write_file-7",
+    "tool": "write_file",
+    "input": {
+      "path": "app/new.ts",
+      "content": "export const value = 7;\n"
+    },
+    "files": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    },
+    "expected": {
+      "ok": true,
+      "data": {
+        "path": "app/new.ts",
+        "bytes": 24,
+        "created": true,
+        "beforeSha256": null,
+        "afterSha256": "dba5525f220c84140898e139c63711ff45edbeb3ee0c29ea13def12c97201106"
+      },
+      "content": "Created app/new.ts (24 bytes)."
+    },
+    "resulting": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}",
+      "app/new.ts": "export const value = 7;\n"
+    }
+  },
+  {
+    "name": "write_file-8",
+    "tool": "write_file",
+    "input": {
+      "path": "public/value.json",
+      "content": "eyJvayI6dHJ1ZX0=",
+      "encoding": "base64"
+    },
+    "files": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    },
+    "expected": {
+      "ok": true,
+      "data": {
+        "path": "public/value.json",
+        "bytes": 11,
+        "created": true,
+        "beforeSha256": null,
+        "afterSha256": "4062edaf750fb8074e7e83e0c9028c94e32468a8b6f1614774328ef045150f93"
+      },
+      "content": "Created public/value.json (11 bytes)."
+    },
+    "resulting": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}",
+      "public/value.json": "{\"ok\":true}"
+    }
+  },
+  {
+    "name": "submit_result-9",
+    "tool": "submit_result",
+    "input": {
+      "summary": "Ready",
+      "artifacts": [
+        "src/App.vue",
+        "src/App.vue"
+      ],
+      "notes": "Candidate only"
+    },
+    "files": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    },
+    "expected": {
+      "ok": true,
+      "data": {
+        "summary": "Ready",
+        "artifacts": [
+          "src/App.vue"
+        ],
+        "notes": "Candidate only",
+        "candidateStatus": "candidate_complete",
+        "verifiedArtifacts": [
+          "src/App.vue"
+        ]
+      },
+      "content": "Candidate submitted for platform verification: Ready\nArtifacts: src/App.vue"
+    },
+    "resulting": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    }
+  },
+  {
+    "name": "write_file-10",
+    "tool": "write_file",
+    "input": {
+      "path": "package.json",
+      "content": "{}"
+    },
+    "files": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    },
+    "expected": {
+      "ok": false,
+      "error": {
+        "code": "SENSITIVE_PATH_DENIED",
+        "message": "Writing to package.json is not permitted."
+      },
+      "content": "Writing to package.json is not permitted."
+    },
+    "resulting": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    }
+  },
+  {
+    "name": "edit_file-11",
+    "tool": "edit_file",
+    "input": {
+      "path": "src/App.vue",
+      "oldText": "const",
+      "newText": "let"
+    },
+    "files": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    },
+    "expected": {
+      "ok": false,
+      "error": {
+        "code": "EDIT_MATCH_AMBIGUOUS",
+        "message": "oldText occurs more than once in src/App.vue; provide a unique match."
+      },
+      "content": "oldText occurs more than once in src/App.vue; provide a unique match."
+    },
+    "resulting": {
+      "src/App.vue": "const a = 1;\nconst b = 2;\nexport default a;\n",
+      "app/components/Chart.tsx": "export const Chart = \"研究图表\";\n",
+      "data_file/final.json": "{\"price\":123.45,\"symbol\":\"600519\"}",
+      "notes.txt": "A note\nNeedle found\n",
+      ".env.local": "PRIVATE=not-for-agent",
+      "app/credentials.json": "{\"private\":\"redacted\"}"
+    }
+  }
+]

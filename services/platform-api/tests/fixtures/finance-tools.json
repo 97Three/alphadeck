@@ -1,0 +1,582 @@
+[
+  {
+    "options": {},
+    "expected": [
+      {
+        "name": "list_files",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "read_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "read_file_range",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "search_files",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "write_file",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "edit_file",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "apply_patch",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "inspect_dashboard_contract",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_json",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_text_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "quant_api_get",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "submit_result",
+        "effect": "pure",
+        "idempotency": "intrinsic",
+        "terminal": true
+      },
+      {
+        "name": "quant_extract_uploaded_image",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      }
+    ]
+  },
+  {
+    "options": {
+      "targetedReadsOnly": true
+    },
+    "expected": [
+      {
+        "name": "write_file",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "edit_file",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "apply_patch",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "inspect_dashboard_contract",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_json",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_text_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "quant_api_get",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "submit_result",
+        "effect": "pure",
+        "idempotency": "intrinsic",
+        "terminal": true
+      },
+      {
+        "name": "quant_extract_uploaded_image",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      }
+    ]
+  },
+  {
+    "options": {
+      "includeDashboardInspector": false,
+      "includeQuantApi": false,
+      "includeImageExtraction": false
+    },
+    "expected": [
+      {
+        "name": "list_files",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "read_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "read_file_range",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "search_files",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "write_file",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "edit_file",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "apply_patch",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "query_json",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_text_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "submit_result",
+        "effect": "pure",
+        "idempotency": "intrinsic",
+        "terminal": true
+      }
+    ]
+  },
+  {
+    "options": {
+      "includeDashboardSpec": true,
+      "includeSemanticEdit": true
+    },
+    "expected": [
+      {
+        "name": "list_files",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "read_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "read_file_range",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "search_files",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "write_file",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "edit_file",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "apply_patch",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "inspect_dashboard_contract",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_json",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_text_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "apply_dashboard_spec",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "semantic_edit",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "quant_api_get",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "submit_result",
+        "effect": "pure",
+        "idempotency": "intrinsic",
+        "terminal": true
+      },
+      {
+        "name": "quant_extract_uploaded_image",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      }
+    ]
+  },
+  {
+    "options": {
+      "profile": "repair"
+    },
+    "error": "PI Agent repair tools require a trusted failure-scoped write allowlist."
+  },
+  {
+    "options": {
+      "profile": "repair",
+      "profileAllowedWriteGlobs": [
+        "src/App.vue"
+      ],
+      "includeDefaultWriteGlobs": false
+    },
+    "expected": [
+      {
+        "name": "list_files",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "read_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "read_file_range",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "search_files",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "write_file",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "edit_file",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "apply_patch",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "inspect_dashboard_contract",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_json",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_text_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "quant_api_get",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "submit_result",
+        "effect": "pure",
+        "idempotency": "intrinsic",
+        "terminal": true
+      },
+      {
+        "name": "quant_extract_uploaded_image",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      }
+    ]
+  },
+  {
+    "options": {
+      "allowedMutationToolNames": []
+    },
+    "expected": [
+      {
+        "name": "list_files",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "read_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "read_file_range",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "search_files",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "inspect_dashboard_contract",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_json",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_text_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "quant_api_get",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "submit_result",
+        "effect": "pure",
+        "idempotency": "intrinsic",
+        "terminal": true
+      },
+      {
+        "name": "quant_extract_uploaded_image",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      }
+    ]
+  },
+  {
+    "options": {
+      "allowedMutationToolNames": [
+        "write_file"
+      ]
+    },
+    "expected": [
+      {
+        "name": "list_files",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "read_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "read_file_range",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "search_files",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "write_file",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "inspect_dashboard_contract",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_json",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_text_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "quant_api_get",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "submit_result",
+        "effect": "pure",
+        "idempotency": "intrinsic",
+        "terminal": true
+      },
+      {
+        "name": "quant_extract_uploaded_image",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      }
+    ]
+  },
+  {
+    "options": {
+      "allowedMutationToolNames": [
+        "invented"
+      ]
+    },
+    "error": "Unknown PI Agent mutation tool allowlist entries: invented"
+  },
+  {
+    "options": {
+      "preparedSurface": "standard"
+    },
+    "error": "Finance prepared surfaces require quant API, image extraction, and plugin tools to be disabled."
+  },
+  {
+    "options": {
+      "preparedSurface": "standard",
+      "includeDefaultWriteGlobs": false,
+      "includeQuantApi": false,
+      "includeImageExtraction": false,
+      "includeDashboardSpec": true,
+      "includeSemanticEdit": true,
+      "allowedWriteGlobs": [
+        "src/App.vue",
+        "src/style.css"
+      ]
+    },
+    "expected": [
+      {
+        "name": "apply_dashboard_spec",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "submit_result",
+        "effect": "pure",
+        "idempotency": "intrinsic",
+        "terminal": true
+      }
+    ]
+  },
+  {
+    "options": {
+      "preparedSurface": "standard",
+      "includeDefaultWriteGlobs": false,
+      "includeQuantApi": false,
+      "includeImageExtraction": false,
+      "includeDashboardSpec": true,
+      "includeSemanticEdit": true,
+      "allowedWriteGlobs": [
+        "evidence/**"
+      ]
+    },
+    "error": "Finance prepared surfaces reject writes outside the certified app source scope."
+  },
+  {
+    "options": {
+      "preparedSurface": "custom",
+      "includeDefaultWriteGlobs": false,
+      "includeQuantApi": false,
+      "includeImageExtraction": false,
+      "includeDashboardSpec": true,
+      "includeSemanticEdit": true,
+      "allowedWriteGlobs": [
+        "src/App.vue",
+        "src/style.css"
+      ]
+    },
+    "expected": [
+      {
+        "name": "query_json",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "query_text_file",
+        "effect": "read",
+        "idempotency": "intrinsic"
+      },
+      {
+        "name": "semantic_edit",
+        "effect": "workspace_write",
+        "idempotency": "reconcile_required"
+      },
+      {
+        "name": "submit_result",
+        "effect": "pure",
+        "idempotency": "intrinsic",
+        "terminal": true
+      }
+    ]
+  },
+  {
+    "options": {
+      "preparedSurface": "custom",
+      "includeDefaultWriteGlobs": false,
+      "includeQuantApi": false,
+      "includeImageExtraction": false,
+      "includeDashboardSpec": true,
+      "includeSemanticEdit": true,
+      "allowedWriteGlobs": [
+        "evidence/**"
+      ]
+    },
+    "error": "Finance prepared surfaces reject writes outside the certified app source scope."
+  }
+]

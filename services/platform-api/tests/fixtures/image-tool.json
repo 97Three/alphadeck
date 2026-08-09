@@ -1,0 +1,476 @@
+{
+  "images": {
+    "public/png.png": "iVBORw0KGgoAAAAAAAAAAAAAAyAAAAJY",
+    "public/a.gif": "R0lGODlhIAAQAA==",
+    "public/a.webp": "UklGRgAAAABXRUJQVlA4WAAAAAAAAAAAYwAAMQAA",
+    "public/fake.png": "PHN2Zz48L3N2Zz4="
+  },
+  "cases": [
+    {
+      "name": "empty",
+      "input": {},
+      "attachments": [],
+      "expected": {
+        "ok": true,
+        "data": {
+          "schemaVersion": 1,
+          "runtime": "PI Agent",
+          "tool": "image-extraction",
+          "status": "no_attachments",
+          "message": "未找到上传图片附件，请确认 .data-agent/attachments.json 是否包含 attachments。"
+        },
+        "content": "未找到上传图片附件，请确认 .data-agent/attachments.json 是否包含 attachments。",
+        "metadata": {
+          "runtime": "PI Agent",
+          "status": "no_attachments",
+          "imageCount": 0
+        }
+      }
+    },
+    {
+      "name": "png_context",
+      "input": {
+        "prompt": "读取持仓"
+      },
+      "attachments": [
+        {
+          "id": "img",
+          "name": "账户.png",
+          "path": "public/png.png",
+          "url": "/local-image"
+        }
+      ],
+      "expected": {
+        "ok": true,
+        "data": {
+          "schemaVersion": 1,
+          "runtime": "PI Agent",
+          "tool": "image-extraction",
+          "status": "metadata_ready",
+          "createdAt": "2026-11-03T00:00:00.000Z",
+          "attachmentContextPath": ".data-agent/attachments.json",
+          "prompt": "读取持仓",
+          "images": [
+            {
+              "id": "img",
+              "name": "账户.png",
+              "path": "public/png.png",
+              "url": "/local-image",
+              "publicUrl": null,
+              "mimeType": "image/png",
+              "size": 24,
+              "width": 800,
+              "height": 600,
+              "sha256": "b7e8e732513575bbeebe638d76c26b00b3978ddd95754d11f5cb11d0bb6e150f"
+            }
+          ],
+          "visualRecognition": {
+            "status": "manual_confirmation_required",
+            "reason": "PI Agent 已确认图片文件、路径、格式、尺寸和哈希。当前未启用视觉模型或第三方 OCR，无法确认的截图字段必须交由用户确认。",
+            "fallbackRule": "所有无法可靠读取的截图字段必须保留 null，并在 evidence/data_quality.json 中列出需要用户确认的字段。"
+          },
+          "imageExtraction": {
+            "source": "uploaded_image",
+            "extractedFields": {
+              "account_total_asset": null,
+              "cash_available": null,
+              "market_value": null,
+              "daily_pnl": null,
+              "total_pnl": null,
+              "position_ratio": null,
+              "holdings": []
+            },
+            "needs_manual_confirmation": true,
+            "manual_confirmation_fields": [
+              "account_total_asset",
+              "cash_available",
+              "market_value",
+              "daily_pnl",
+              "total_pnl",
+              "position_ratio",
+              "holdings[].name",
+              "holdings[].symbol_if_visible_or_resolved",
+              "holdings[].quantity",
+              "holdings[].cost_price",
+              "holdings[].current_price",
+              "holdings[].market_value",
+              "holdings[].pnl",
+              "holdings[].pnl_percent"
+            ]
+          },
+          "dashboardContract": {
+            "requiredFinalDataFields": [
+              "portfolio",
+              "holdings",
+              "assets",
+              "comparison",
+              "imageExtraction"
+            ],
+            "evidenceFiles": [
+              "evidence/image_extraction.json",
+              "evidence/data_quality.json",
+              "evidence/sources.json"
+            ]
+          }
+        },
+        "content": "PI Agent verified 1 uploaded image(s). OCR is disabled; uncertain portfolio fields require manual confirmation.",
+        "metadata": {
+          "runtime": "PI Agent",
+          "status": "metadata_ready",
+          "imageCount": 1
+        }
+      }
+    },
+    {
+      "name": "gif_direct",
+      "input": {
+        "imagePath": "public/a.gif"
+      },
+      "expected": {
+        "ok": true,
+        "data": {
+          "schemaVersion": 1,
+          "runtime": "PI Agent",
+          "tool": "image-extraction",
+          "status": "metadata_ready",
+          "createdAt": "2026-11-03T00:00:00.000Z",
+          "attachmentContextPath": ".data-agent/attachments.json",
+          "prompt": null,
+          "images": [
+            {
+              "id": "image-1",
+              "name": "a.gif",
+              "path": "public/a.gif",
+              "url": null,
+              "publicUrl": null,
+              "mimeType": "image/gif",
+              "size": 10,
+              "width": 32,
+              "height": 16,
+              "sha256": "db0ef540545c45fd3a212fed22d41a36756ccc643df64da62044c94853329f54"
+            }
+          ],
+          "visualRecognition": {
+            "status": "manual_confirmation_required",
+            "reason": "PI Agent 已确认图片文件、路径、格式、尺寸和哈希。当前未启用视觉模型或第三方 OCR，无法确认的截图字段必须交由用户确认。",
+            "fallbackRule": "所有无法可靠读取的截图字段必须保留 null，并在 evidence/data_quality.json 中列出需要用户确认的字段。"
+          },
+          "imageExtraction": {
+            "source": "uploaded_image",
+            "extractedFields": {
+              "account_total_asset": null,
+              "cash_available": null,
+              "market_value": null,
+              "daily_pnl": null,
+              "total_pnl": null,
+              "position_ratio": null,
+              "holdings": []
+            },
+            "needs_manual_confirmation": true,
+            "manual_confirmation_fields": [
+              "account_total_asset",
+              "cash_available",
+              "market_value",
+              "daily_pnl",
+              "total_pnl",
+              "position_ratio",
+              "holdings[].name",
+              "holdings[].symbol_if_visible_or_resolved",
+              "holdings[].quantity",
+              "holdings[].cost_price",
+              "holdings[].current_price",
+              "holdings[].market_value",
+              "holdings[].pnl",
+              "holdings[].pnl_percent"
+            ]
+          },
+          "dashboardContract": {
+            "requiredFinalDataFields": [
+              "portfolio",
+              "holdings",
+              "assets",
+              "comparison",
+              "imageExtraction"
+            ],
+            "evidenceFiles": [
+              "evidence/image_extraction.json",
+              "evidence/data_quality.json",
+              "evidence/sources.json"
+            ]
+          }
+        },
+        "content": "PI Agent verified 1 uploaded image(s). OCR is disabled; uncertain portfolio fields require manual confirmation.",
+        "metadata": {
+          "runtime": "PI Agent",
+          "status": "metadata_ready",
+          "imageCount": 1
+        }
+      }
+    },
+    {
+      "name": "webp_direct",
+      "input": {
+        "imagePath": "public/a.webp"
+      },
+      "expected": {
+        "ok": true,
+        "data": {
+          "schemaVersion": 1,
+          "runtime": "PI Agent",
+          "tool": "image-extraction",
+          "status": "metadata_ready",
+          "createdAt": "2026-11-03T00:00:00.000Z",
+          "attachmentContextPath": ".data-agent/attachments.json",
+          "prompt": null,
+          "images": [
+            {
+              "id": "image-1",
+              "name": "a.webp",
+              "path": "public/a.webp",
+              "url": null,
+              "publicUrl": null,
+              "mimeType": "image/webp",
+              "size": 30,
+              "width": 100,
+              "height": 50,
+              "sha256": "dfc497b1864520b5284e9e46c28f6330a1163f5b7e4c443c31f6ba1dd9e69e71"
+            }
+          ],
+          "visualRecognition": {
+            "status": "manual_confirmation_required",
+            "reason": "PI Agent 已确认图片文件、路径、格式、尺寸和哈希。当前未启用视觉模型或第三方 OCR，无法确认的截图字段必须交由用户确认。",
+            "fallbackRule": "所有无法可靠读取的截图字段必须保留 null，并在 evidence/data_quality.json 中列出需要用户确认的字段。"
+          },
+          "imageExtraction": {
+            "source": "uploaded_image",
+            "extractedFields": {
+              "account_total_asset": null,
+              "cash_available": null,
+              "market_value": null,
+              "daily_pnl": null,
+              "total_pnl": null,
+              "position_ratio": null,
+              "holdings": []
+            },
+            "needs_manual_confirmation": true,
+            "manual_confirmation_fields": [
+              "account_total_asset",
+              "cash_available",
+              "market_value",
+              "daily_pnl",
+              "total_pnl",
+              "position_ratio",
+              "holdings[].name",
+              "holdings[].symbol_if_visible_or_resolved",
+              "holdings[].quantity",
+              "holdings[].cost_price",
+              "holdings[].current_price",
+              "holdings[].market_value",
+              "holdings[].pnl",
+              "holdings[].pnl_percent"
+            ]
+          },
+          "dashboardContract": {
+            "requiredFinalDataFields": [
+              "portfolio",
+              "holdings",
+              "assets",
+              "comparison",
+              "imageExtraction"
+            ],
+            "evidenceFiles": [
+              "evidence/image_extraction.json",
+              "evidence/data_quality.json",
+              "evidence/sources.json"
+            ]
+          }
+        },
+        "content": "PI Agent verified 1 uploaded image(s). OCR is disabled; uncertain portfolio fields require manual confirmation.",
+        "metadata": {
+          "runtime": "PI Agent",
+          "status": "metadata_ready",
+          "imageCount": 1
+        }
+      }
+    },
+    {
+      "name": "fake_extension",
+      "input": {
+        "imagePath": "public/fake.png"
+      },
+      "expected": {
+        "ok": false,
+        "error": {
+          "code": "UNSUPPORTED_IMAGE",
+          "message": "Attachment is not a supported PNG, JPEG, GIF, or WebP image: public/fake.png."
+        },
+        "content": "Attachment is not a supported PNG, JPEG, GIF, or WebP image: public/fake.png."
+      }
+    },
+    {
+      "name": "absolute",
+      "input": {
+        "imagePath": "/etc/passwd"
+      },
+      "expected": {
+        "ok": false,
+        "error": {
+          "code": "ABSOLUTE_PATH_DENIED",
+          "message": "PI Agent image tool inputs must use workspace-relative paths."
+        },
+        "content": "PI Agent image tool inputs must use workspace-relative paths."
+      }
+    },
+    {
+      "name": "invalid_field",
+      "input": {
+        "path": "public/png.png"
+      },
+      "expected": {
+        "parseError": {
+          "code": "INVALID_TOOL_INPUT",
+          "message": "Unknown image-extraction input field: path."
+        }
+      }
+    },
+    {
+      "name": "too_many",
+      "input": {},
+      "attachments": [
+        {
+          "path": "public/png.png"
+        },
+        {
+          "path": "public/a.gif"
+        }
+      ],
+      "options": {
+        "maxAttachments": 1
+      },
+      "expected": {
+        "ok": false,
+        "error": {
+          "code": "TOO_MANY_ATTACHMENTS",
+          "message": "Image extraction accepts at most 1 attachments.",
+          "details": {
+            "count": 2,
+            "maxAttachments": 1
+          }
+        },
+        "content": "Image extraction accepts at most 1 attachments."
+      }
+    },
+    {
+      "name": "too_large",
+      "input": {
+        "imagePath": "public/png.png"
+      },
+      "options": {
+        "maxImageBytes": 10
+      },
+      "expected": {
+        "ok": false,
+        "error": {
+          "code": "IMAGE_TOO_LARGE",
+          "message": "Image png.png exceeds 10 bytes.",
+          "details": {
+            "size": 24,
+            "maxImageBytes": 10
+          }
+        },
+        "content": "Image png.png exceeds 10 bytes."
+      }
+    },
+    {
+      "name": "output_budget",
+      "input": {},
+      "attachments": [
+        {
+          "path": "public/png.png"
+        }
+      ],
+      "options": {
+        "maxOutputChars": 1024
+      },
+      "expected": {
+        "ok": false,
+        "error": {
+          "code": "TOOL_OUTPUT_TOO_LARGE",
+          "message": "Image metadata output exceeds the PI Agent 1024-character limit.",
+          "details": {
+            "payloadCharacters": 1437,
+            "maxOutputChars": 1024,
+            "imageCount": 1
+          }
+        },
+        "content": "Image metadata output exceeds the PI Agent 1024-character limit."
+      }
+    },
+    {
+      "name": "missing_image_path",
+      "input": {},
+      "attachments": [
+        {
+          "name": "missing.png"
+        }
+      ],
+      "expected": {
+        "ok": false,
+        "error": {
+          "code": "INVALID_ATTACHMENT",
+          "message": "Attachment missing.png is missing workspace-relative path."
+        },
+        "content": "Attachment missing.png is missing workspace-relative path."
+      }
+    },
+    {
+      "name": "invalid_name_type",
+      "input": {},
+      "attachments": [
+        {
+          "path": "public/png.png",
+          "name": 1
+        }
+      ],
+      "expected": {
+        "ok": false,
+        "error": {
+          "code": "INVALID_ATTACHMENT",
+          "message": "attachment.name must be a string of at most 256 characters."
+        },
+        "content": "attachment.name must be a string of at most 256 characters."
+      }
+    },
+    {
+      "name": "bad_context_entries",
+      "input": {},
+      "attachments": [
+        null
+      ],
+      "expected": {
+        "ok": false,
+        "error": {
+          "code": "INVALID_ATTACHMENT_CONTEXT",
+          "message": "Every attachments entry must be a JSON object."
+        },
+        "content": "Every attachments entry must be a JSON object."
+      }
+    },
+    {
+      "name": "bad_max_attachments",
+      "input": {},
+      "attachments": [],
+      "options": {
+        "maxAttachments": 101
+      },
+      "expected": {
+        "ok": false,
+        "error": {
+          "code": "INVALID_LIMIT",
+          "message": "maxAttachments must be an integer between 1 and 100."
+        },
+        "content": "maxAttachments must be an integer between 1 and 100."
+      }
+    }
+  ]
+}

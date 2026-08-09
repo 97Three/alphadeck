@@ -1,0 +1,19 @@
+{
+  "src/lib/domains/finance/agent-profile.ts": "de2d743c380f1140fd7608451d19ed2b14079a75338ff085b4306103dbbeeaeb",
+  "src/lib/data-agent/index.ts": "06aaf8644d8594d06d9d292463801bbf06bc4b6aff393a67f4c54c3166101c16",
+  "src/lib/data-agent/contracts.ts": "dc22cf45bff8c7b4348b7a02098ec98eb06b8d4f0e07d79d11a635d2cf528781",
+  "src/lib/data-agent/registry.ts": "9daee6e94fe9980a5ba93ccad876f08d9a28adb43a5101ef4755684cf5e7a591",
+  "src/lib/data-agent/workspace-layout.ts": "e80b1074c0f09dab54317192188a87e3e7424848866317a8a3e6c93d3acb58bb",
+  "src/lib/data-agent/image-attachments.ts": "5fe2a9aa53da79ffd31ddcb2286ba83ac859bce520a9694d9efd5842cc94682d",
+  "src/lib/server/image-assets.ts": "bae9fc2b9200c36a732052e7c054e1ae31f01ab510be9ebd957b438a94c91d1c",
+  "src/lib/data-agent/generation-runtime.ts": "4a3bed667d4e5527bd173aa52f5674418e37aa9af5093fcfae3a71557547f941",
+  "src/lib/data-agent/delivery-packs/index.ts": "c0e97b5dbad30c00ca14b56b94b60e5b572b090b8312e6527be17348a916c3ee",
+  "src/lib/data-agent/delivery-packs/next-dashboard.ts": "1df6a879e925dbbe9a15b509a70a43161aa19341921fab523c9ba784e59242bf",
+  "src/lib/data-agent/workspace-path.ts": "5b5d26c446b81a3e5f6c9e2d6b111c0201c15f88b895fcbde5f5298235ba88f5",
+  "src/lib/data-agent/workspace-files.ts": "0b17b5ae6b46ac0f54e822ec7ac6b0a1d7ad68feba698c1c8016a3e0b5df0627",
+  "src/lib/data-agent/application-catalog.ts": "dab28b63c45630938fae77669e10db48644ff445168fb4475158768542c76aea",
+  "src/lib/config/data-agent.ts": "6e15999eac845bccc833743c6696a8b325e55aa749cd71583f39f6bd41dbbb6a",
+  "src/lib/domains/finance/capabilities.ts": "a99c9caab57ef6d4d80f08cdc7268150456e2feb7f3d1825b69ca1dd1012234d",
+  "src/lib/domains/finance/workspace-artifacts.ts": "1fa609de0b0b674005f2a26fca2b3c62875ef23058e42133b0dc763aafb8cae3",
+  "src/lib/domains/finance/visualization-templates.ts": "82eb9d5642d0c4e0fb1a075947c38c806e4bbf0ea934af42ed43a21116d703c6"
+}
