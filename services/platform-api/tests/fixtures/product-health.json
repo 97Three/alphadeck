@@ -1,0 +1,1454 @@
+[
+  {
+    "kind": "product",
+    "requests": [],
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "generatedAt": "2026-11-03T12:00:00.000Z",
+      "windowDays": 7,
+      "sampled": false,
+      "firstResearch": {
+        "available": false,
+        "observationHours": 24,
+        "researchers": 0,
+        "maturedResearchers": 0,
+        "observingResearchers": 0,
+        "acceptedResearchers": 0,
+        "completionRate": null,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "invalidDeliveryTimings": 0,
+        "error": "首次研究指标需要全历史首次提交时间。"
+      },
+      "summary": {
+        "requests": 0,
+        "activeProjects": 0,
+        "completedRequests": 0,
+        "failedRequests": 0,
+        "cancelledRequests": 0,
+        "activeRequests": 0,
+        "clarificationRequests": 0,
+        "acceptedDeliveries": 0,
+        "completedMissions": 0,
+        "unverifiedCompletedMissions": 0,
+        "terminalMissions": 0,
+        "reports": 3,
+        "uniqueResearchers": 0,
+        "repeatResearchers": 0,
+        "requestCompletionRate": null,
+        "missionAcceptanceRate": null,
+        "evidenceCompletenessRate": null,
+        "repeatResearcherRate": null,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "p95DeliveryMs": null,
+        "deliveryTimingSamples": 0,
+        "invalidDeliveryTimings": 0,
+        "medianQueueWaitMs": null,
+        "p90QueueWaitMs": null,
+        "queueTimingSamples": 0,
+        "invalidQueueTimings": 0
+      },
+      "error": null
+    }
+  },
+  {
+    "kind": "product",
+    "requests": [],
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "generatedAt": "2026-11-03T12:00:00.000Z",
+      "windowDays": 7,
+      "sampled": false,
+      "firstResearch": {
+        "available": false,
+        "observationHours": 24,
+        "researchers": 0,
+        "maturedResearchers": 0,
+        "observingResearchers": 0,
+        "acceptedResearchers": 0,
+        "completionRate": null,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "invalidDeliveryTimings": 0,
+        "error": "首次研究指标需要全历史首次提交时间。"
+      },
+      "summary": {
+        "requests": 0,
+        "activeProjects": 0,
+        "completedRequests": 0,
+        "failedRequests": 0,
+        "cancelledRequests": 0,
+        "activeRequests": 0,
+        "clarificationRequests": 0,
+        "acceptedDeliveries": 0,
+        "completedMissions": 0,
+        "unverifiedCompletedMissions": 0,
+        "terminalMissions": 0,
+        "reports": 3,
+        "uniqueResearchers": 0,
+        "repeatResearchers": 0,
+        "requestCompletionRate": null,
+        "missionAcceptanceRate": null,
+        "evidenceCompletenessRate": null,
+        "repeatResearcherRate": null,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "p95DeliveryMs": null,
+        "deliveryTimingSamples": 0,
+        "invalidDeliveryTimings": 0,
+        "medianQueueWaitMs": null,
+        "p90QueueWaitMs": null,
+        "queueTimingSamples": 0,
+        "invalidQueueTimings": 0
+      },
+      "error": null
+    }
+  },
+  {
+    "kind": "product",
+    "requests": [
+      {
+        "projectId": "p0",
+        "actorUserId": "u0",
+        "status": "completed",
+        "createdAt": "2026-11-03T11:00:00.000Z",
+        "completedAt": "2026-11-03T11:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T11:00:00.000Z",
+          "startedAt": "2026-11-03T11:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m0",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r0",
+          "completedAt": "2026-11-03T11:10:00.000Z",
+          "acceptedReceipt": {
+            "id": "r0",
+            "missionId": "m0",
+            "candidateVersion": 1,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      }
+    ],
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "generatedAt": "2026-11-03T12:00:00.000Z",
+      "windowDays": 7,
+      "sampled": false,
+      "firstResearch": {
+        "available": false,
+        "observationHours": 24,
+        "researchers": 0,
+        "maturedResearchers": 0,
+        "observingResearchers": 0,
+        "acceptedResearchers": 0,
+        "completionRate": null,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "invalidDeliveryTimings": 0,
+        "error": "首次研究指标需要全历史首次提交时间。"
+      },
+      "summary": {
+        "requests": 1,
+        "activeProjects": 1,
+        "completedRequests": 1,
+        "failedRequests": 0,
+        "cancelledRequests": 0,
+        "activeRequests": 0,
+        "clarificationRequests": 0,
+        "acceptedDeliveries": 1,
+        "completedMissions": 1,
+        "unverifiedCompletedMissions": 0,
+        "terminalMissions": 1,
+        "reports": 3,
+        "uniqueResearchers": 1,
+        "repeatResearchers": 0,
+        "requestCompletionRate": 100,
+        "missionAcceptanceRate": 100,
+        "evidenceCompletenessRate": 100,
+        "repeatResearcherRate": 0,
+        "medianDeliveryMs": 600000,
+        "p90DeliveryMs": 600000,
+        "p95DeliveryMs": 600000,
+        "deliveryTimingSamples": 1,
+        "invalidDeliveryTimings": 0,
+        "medianQueueWaitMs": 2000,
+        "p90QueueWaitMs": 2000,
+        "queueTimingSamples": 1,
+        "invalidQueueTimings": 0
+      },
+      "error": null
+    }
+  },
+  {
+    "kind": "product",
+    "requests": [
+      {
+        "projectId": "p0",
+        "actorUserId": "u0",
+        "status": "completed",
+        "createdAt": "2026-11-03T11:00:00.000Z",
+        "completedAt": "2026-11-03T10:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T11:00:00.000Z",
+          "startedAt": "2026-11-03T10:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m0",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r0",
+          "completedAt": "2026-11-03T10:59:59.999Z",
+          "acceptedReceipt": {
+            "id": "r0",
+            "missionId": "m0",
+            "candidateVersion": 2,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      }
+    ],
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "generatedAt": "2026-11-03T12:00:00.000Z",
+      "windowDays": 7,
+      "sampled": false,
+      "firstResearch": {
+        "available": false,
+        "observationHours": 24,
+        "researchers": 0,
+        "maturedResearchers": 0,
+        "observingResearchers": 0,
+        "acceptedResearchers": 0,
+        "completionRate": null,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "invalidDeliveryTimings": 0,
+        "error": "首次研究指标需要全历史首次提交时间。"
+      },
+      "summary": {
+        "requests": 1,
+        "activeProjects": 1,
+        "completedRequests": 1,
+        "failedRequests": 0,
+        "cancelledRequests": 0,
+        "activeRequests": 0,
+        "clarificationRequests": 0,
+        "acceptedDeliveries": 0,
+        "completedMissions": 1,
+        "unverifiedCompletedMissions": 1,
+        "terminalMissions": 1,
+        "reports": 3,
+        "uniqueResearchers": 1,
+        "repeatResearchers": 0,
+        "requestCompletionRate": 100,
+        "missionAcceptanceRate": 0,
+        "evidenceCompletenessRate": 0,
+        "repeatResearcherRate": 0,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "p95DeliveryMs": null,
+        "deliveryTimingSamples": 0,
+        "invalidDeliveryTimings": 0,
+        "medianQueueWaitMs": null,
+        "p90QueueWaitMs": null,
+        "queueTimingSamples": 0,
+        "invalidQueueTimings": 1
+      },
+      "error": null
+    }
+  },
+  {
+    "kind": "product",
+    "requests": [
+      {
+        "projectId": "p0",
+        "actorUserId": "u0",
+        "status": "completed",
+        "createdAt": "2026-11-03T11:00:00.000Z",
+        "completedAt": "2026-11-03T11:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T11:00:00.000Z",
+          "startedAt": "2026-11-03T11:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m0",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r0",
+          "completedAt": "2026-11-03T11:10:00.000Z",
+          "acceptedReceipt": {
+            "id": "r0",
+            "missionId": "m0",
+            "candidateVersion": 1,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p1",
+        "actorUserId": "u1",
+        "status": "failed",
+        "createdAt": "2026-11-03T10:00:00.000Z",
+        "completedAt": "2026-11-03T10:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T10:00:00.000Z",
+          "startedAt": "2026-11-03T10:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m1",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r1",
+          "completedAt": "2026-11-03T10:10:00.000Z",
+          "acceptedReceipt": null
+        }
+      },
+      {
+        "projectId": "p2",
+        "actorUserId": "u2",
+        "status": "cancelled",
+        "createdAt": "2026-11-03T09:00:00.000Z",
+        "completedAt": "2026-11-03T09:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T09:00:00.000Z",
+          "startedAt": "2026-11-03T09:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m2",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r2",
+          "completedAt": "2026-11-03T09:10:00.000Z",
+          "acceptedReceipt": {
+            "id": "r2",
+            "missionId": "m2",
+            "candidateVersion": 1,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p0",
+        "actorUserId": "u3",
+        "status": "needs_clarification",
+        "createdAt": "2026-11-03T08:00:00.000Z",
+        "completedAt": "2026-11-03T08:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T08:00:00.000Z",
+          "startedAt": "2026-11-03T08:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m3",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r3",
+          "completedAt": "2026-11-03T08:10:00.000Z",
+          "acceptedReceipt": null
+        }
+      }
+    ],
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "generatedAt": "2026-11-03T12:00:00.000Z",
+      "windowDays": 7,
+      "sampled": false,
+      "firstResearch": {
+        "available": false,
+        "observationHours": 24,
+        "researchers": 0,
+        "maturedResearchers": 0,
+        "observingResearchers": 0,
+        "acceptedResearchers": 0,
+        "completionRate": null,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "invalidDeliveryTimings": 0,
+        "error": "首次研究指标需要全历史首次提交时间。"
+      },
+      "summary": {
+        "requests": 4,
+        "activeProjects": 3,
+        "completedRequests": 1,
+        "failedRequests": 1,
+        "cancelledRequests": 1,
+        "activeRequests": 0,
+        "clarificationRequests": 1,
+        "acceptedDeliveries": 2,
+        "completedMissions": 2,
+        "unverifiedCompletedMissions": 0,
+        "terminalMissions": 4,
+        "reports": 3,
+        "uniqueResearchers": 4,
+        "repeatResearchers": 0,
+        "requestCompletionRate": 33.3,
+        "missionAcceptanceRate": 50,
+        "evidenceCompletenessRate": 100,
+        "repeatResearcherRate": 0,
+        "medianDeliveryMs": 600000,
+        "p90DeliveryMs": 600000,
+        "p95DeliveryMs": 600000,
+        "deliveryTimingSamples": 2,
+        "invalidDeliveryTimings": 0,
+        "medianQueueWaitMs": 2000,
+        "p90QueueWaitMs": 2000,
+        "queueTimingSamples": 4,
+        "invalidQueueTimings": 0
+      },
+      "error": null
+    }
+  },
+  {
+    "kind": "product",
+    "requests": [
+      {
+        "projectId": "p0",
+        "actorUserId": "u0",
+        "status": "completed",
+        "createdAt": "2026-11-03T11:00:00.000Z",
+        "completedAt": "2026-11-03T10:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T11:00:00.000Z",
+          "startedAt": "2026-11-03T10:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m0",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r0",
+          "completedAt": "2026-11-03T10:59:59.999Z",
+          "acceptedReceipt": {
+            "id": "r0",
+            "missionId": "m0",
+            "candidateVersion": 2,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p1",
+        "actorUserId": "u1",
+        "status": "failed",
+        "createdAt": "2026-11-03T10:00:00.000Z",
+        "completedAt": "2026-11-03T09:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T10:00:00.000Z",
+          "startedAt": "2026-11-03T09:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m1",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r1",
+          "completedAt": "2026-11-03T09:59:59.999Z",
+          "acceptedReceipt": null
+        }
+      },
+      {
+        "projectId": "p2",
+        "actorUserId": "u2",
+        "status": "cancelled",
+        "createdAt": "2026-11-03T09:00:00.000Z",
+        "completedAt": "2026-11-03T08:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T09:00:00.000Z",
+          "startedAt": "2026-11-03T08:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m2",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r2",
+          "completedAt": "2026-11-03T08:59:59.999Z",
+          "acceptedReceipt": {
+            "id": "r2",
+            "missionId": "m2",
+            "candidateVersion": 2,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p0",
+        "actorUserId": "u3",
+        "status": "needs_clarification",
+        "createdAt": "2026-11-03T08:00:00.000Z",
+        "completedAt": "2026-11-03T07:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T08:00:00.000Z",
+          "startedAt": "2026-11-03T07:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m3",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r3",
+          "completedAt": "2026-11-03T07:59:59.999Z",
+          "acceptedReceipt": null
+        }
+      }
+    ],
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "generatedAt": "2026-11-03T12:00:00.000Z",
+      "windowDays": 7,
+      "sampled": false,
+      "firstResearch": {
+        "available": false,
+        "observationHours": 24,
+        "researchers": 0,
+        "maturedResearchers": 0,
+        "observingResearchers": 0,
+        "acceptedResearchers": 0,
+        "completionRate": null,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "invalidDeliveryTimings": 0,
+        "error": "首次研究指标需要全历史首次提交时间。"
+      },
+      "summary": {
+        "requests": 4,
+        "activeProjects": 3,
+        "completedRequests": 1,
+        "failedRequests": 1,
+        "cancelledRequests": 1,
+        "activeRequests": 0,
+        "clarificationRequests": 1,
+        "acceptedDeliveries": 0,
+        "completedMissions": 2,
+        "unverifiedCompletedMissions": 2,
+        "terminalMissions": 4,
+        "reports": 3,
+        "uniqueResearchers": 4,
+        "repeatResearchers": 0,
+        "requestCompletionRate": 33.3,
+        "missionAcceptanceRate": 0,
+        "evidenceCompletenessRate": 0,
+        "repeatResearcherRate": 0,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "p95DeliveryMs": null,
+        "deliveryTimingSamples": 0,
+        "invalidDeliveryTimings": 0,
+        "medianQueueWaitMs": null,
+        "p90QueueWaitMs": null,
+        "queueTimingSamples": 0,
+        "invalidQueueTimings": 4
+      },
+      "error": null
+    }
+  },
+  {
+    "kind": "product",
+    "requests": [
+      {
+        "projectId": "p0",
+        "actorUserId": "u0",
+        "status": "completed",
+        "createdAt": "2026-11-03T11:00:00.000Z",
+        "completedAt": "2026-11-03T11:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T11:00:00.000Z",
+          "startedAt": "2026-11-03T11:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m0",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r0",
+          "completedAt": "2026-11-03T11:10:00.000Z",
+          "acceptedReceipt": {
+            "id": "r0",
+            "missionId": "m0",
+            "candidateVersion": 1,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p1",
+        "actorUserId": "u1",
+        "status": "failed",
+        "createdAt": "2026-11-03T10:00:00.000Z",
+        "completedAt": "2026-11-03T10:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T10:00:00.000Z",
+          "startedAt": "2026-11-03T10:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m1",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r1",
+          "completedAt": "2026-11-03T10:10:00.000Z",
+          "acceptedReceipt": null
+        }
+      },
+      {
+        "projectId": "p2",
+        "actorUserId": "u2",
+        "status": "cancelled",
+        "createdAt": "2026-11-03T09:00:00.000Z",
+        "completedAt": "2026-11-03T09:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T09:00:00.000Z",
+          "startedAt": "2026-11-03T09:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m2",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r2",
+          "completedAt": "2026-11-03T09:10:00.000Z",
+          "acceptedReceipt": {
+            "id": "r2",
+            "missionId": "m2",
+            "candidateVersion": 1,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p0",
+        "actorUserId": "u3",
+        "status": "needs_clarification",
+        "createdAt": "2026-11-03T08:00:00.000Z",
+        "completedAt": "2026-11-03T08:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T08:00:00.000Z",
+          "startedAt": "2026-11-03T08:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m3",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r3",
+          "completedAt": "2026-11-03T08:10:00.000Z",
+          "acceptedReceipt": null
+        }
+      },
+      {
+        "projectId": "p1",
+        "actorUserId": "u0",
+        "status": "running",
+        "createdAt": "2026-11-03T07:00:00.000Z",
+        "completedAt": "2026-11-03T07:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T07:00:00.000Z",
+          "startedAt": "2026-11-03T07:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m4",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r4",
+          "completedAt": "2026-11-03T07:10:00.000Z",
+          "acceptedReceipt": {
+            "id": "r4",
+            "missionId": "m4",
+            "candidateVersion": 1,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p2",
+        "actorUserId": "u1",
+        "status": "completed",
+        "createdAt": "2026-11-03T06:00:00.000Z",
+        "completedAt": "2026-11-03T06:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T06:00:00.000Z",
+          "startedAt": "2026-11-03T06:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m5",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r5",
+          "completedAt": "2026-11-03T06:10:00.000Z",
+          "acceptedReceipt": null
+        }
+      },
+      {
+        "projectId": "p0",
+        "actorUserId": "u2",
+        "status": "failed",
+        "createdAt": "2026-11-03T05:00:00.000Z",
+        "completedAt": "2026-11-03T05:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T05:00:00.000Z",
+          "startedAt": "2026-11-03T05:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m6",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r6",
+          "completedAt": "2026-11-03T05:10:00.000Z",
+          "acceptedReceipt": {
+            "id": "r6",
+            "missionId": "m6",
+            "candidateVersion": 1,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p1",
+        "actorUserId": "u3",
+        "status": "cancelled",
+        "createdAt": "2026-11-03T04:00:00.000Z",
+        "completedAt": "2026-11-03T04:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T04:00:00.000Z",
+          "startedAt": "2026-11-03T04:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m7",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r7",
+          "completedAt": "2026-11-03T04:10:00.000Z",
+          "acceptedReceipt": null
+        }
+      },
+      {
+        "projectId": "p2",
+        "actorUserId": "u0",
+        "status": "needs_clarification",
+        "createdAt": "2026-11-03T03:00:00.000Z",
+        "completedAt": "2026-11-03T03:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T03:00:00.000Z",
+          "startedAt": "2026-11-03T03:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m8",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r8",
+          "completedAt": "2026-11-03T03:10:00.000Z",
+          "acceptedReceipt": {
+            "id": "r8",
+            "missionId": "m8",
+            "candidateVersion": 1,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p0",
+        "actorUserId": "u1",
+        "status": "running",
+        "createdAt": "2026-11-03T02:00:00.000Z",
+        "completedAt": "2026-11-03T02:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T02:00:00.000Z",
+          "startedAt": "2026-11-03T02:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m9",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r9",
+          "completedAt": "2026-11-03T02:10:00.000Z",
+          "acceptedReceipt": null
+        }
+      },
+      {
+        "projectId": "p1",
+        "actorUserId": "u2",
+        "status": "completed",
+        "createdAt": "2026-11-03T01:00:00.000Z",
+        "completedAt": "2026-11-03T01:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T01:00:00.000Z",
+          "startedAt": "2026-11-03T01:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m10",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r10",
+          "completedAt": "2026-11-03T01:10:00.000Z",
+          "acceptedReceipt": {
+            "id": "r10",
+            "missionId": "m10",
+            "candidateVersion": 1,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p2",
+        "actorUserId": "u3",
+        "status": "failed",
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "completedAt": "2026-11-03T00:10:00.000Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T00:00:00.000Z",
+          "startedAt": "2026-11-03T00:00:02.000Z"
+        },
+        "agentMission": {
+          "id": "m11",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r11",
+          "completedAt": "2026-11-03T00:10:00.000Z",
+          "acceptedReceipt": null
+        }
+      }
+    ],
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "generatedAt": "2026-11-03T12:00:00.000Z",
+      "windowDays": 7,
+      "sampled": false,
+      "firstResearch": {
+        "available": false,
+        "observationHours": 24,
+        "researchers": 0,
+        "maturedResearchers": 0,
+        "observingResearchers": 0,
+        "acceptedResearchers": 0,
+        "completionRate": null,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "invalidDeliveryTimings": 0,
+        "error": "首次研究指标需要全历史首次提交时间。"
+      },
+      "summary": {
+        "requests": 12,
+        "activeProjects": 3,
+        "completedRequests": 3,
+        "failedRequests": 3,
+        "cancelledRequests": 2,
+        "activeRequests": 2,
+        "clarificationRequests": 2,
+        "acceptedDeliveries": 6,
+        "completedMissions": 6,
+        "unverifiedCompletedMissions": 0,
+        "terminalMissions": 12,
+        "reports": 3,
+        "uniqueResearchers": 4,
+        "repeatResearchers": 4,
+        "requestCompletionRate": 37.5,
+        "missionAcceptanceRate": 50,
+        "evidenceCompletenessRate": 100,
+        "repeatResearcherRate": 100,
+        "medianDeliveryMs": 600000,
+        "p90DeliveryMs": 600000,
+        "p95DeliveryMs": 600000,
+        "deliveryTimingSamples": 6,
+        "invalidDeliveryTimings": 0,
+        "medianQueueWaitMs": 2000,
+        "p90QueueWaitMs": 2000,
+        "queueTimingSamples": 12,
+        "invalidQueueTimings": 0
+      },
+      "error": null
+    }
+  },
+  {
+    "kind": "product",
+    "requests": [
+      {
+        "projectId": "p0",
+        "actorUserId": "u0",
+        "status": "completed",
+        "createdAt": "2026-11-03T11:00:00.000Z",
+        "completedAt": "2026-11-03T10:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T11:00:00.000Z",
+          "startedAt": "2026-11-03T10:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m0",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r0",
+          "completedAt": "2026-11-03T10:59:59.999Z",
+          "acceptedReceipt": {
+            "id": "r0",
+            "missionId": "m0",
+            "candidateVersion": 2,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p1",
+        "actorUserId": "u1",
+        "status": "failed",
+        "createdAt": "2026-11-03T10:00:00.000Z",
+        "completedAt": "2026-11-03T09:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T10:00:00.000Z",
+          "startedAt": "2026-11-03T09:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m1",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r1",
+          "completedAt": "2026-11-03T09:59:59.999Z",
+          "acceptedReceipt": null
+        }
+      },
+      {
+        "projectId": "p2",
+        "actorUserId": "u2",
+        "status": "cancelled",
+        "createdAt": "2026-11-03T09:00:00.000Z",
+        "completedAt": "2026-11-03T08:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T09:00:00.000Z",
+          "startedAt": "2026-11-03T08:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m2",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r2",
+          "completedAt": "2026-11-03T08:59:59.999Z",
+          "acceptedReceipt": {
+            "id": "r2",
+            "missionId": "m2",
+            "candidateVersion": 2,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p0",
+        "actorUserId": "u3",
+        "status": "needs_clarification",
+        "createdAt": "2026-11-03T08:00:00.000Z",
+        "completedAt": "2026-11-03T07:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T08:00:00.000Z",
+          "startedAt": "2026-11-03T07:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m3",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r3",
+          "completedAt": "2026-11-03T07:59:59.999Z",
+          "acceptedReceipt": null
+        }
+      },
+      {
+        "projectId": "p1",
+        "actorUserId": "u0",
+        "status": "running",
+        "createdAt": "2026-11-03T07:00:00.000Z",
+        "completedAt": "2026-11-03T06:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T07:00:00.000Z",
+          "startedAt": "2026-11-03T06:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m4",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r4",
+          "completedAt": "2026-11-03T06:59:59.999Z",
+          "acceptedReceipt": {
+            "id": "r4",
+            "missionId": "m4",
+            "candidateVersion": 2,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p2",
+        "actorUserId": "u1",
+        "status": "completed",
+        "createdAt": "2026-11-03T06:00:00.000Z",
+        "completedAt": "2026-11-03T05:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T06:00:00.000Z",
+          "startedAt": "2026-11-03T05:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m5",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r5",
+          "completedAt": "2026-11-03T05:59:59.999Z",
+          "acceptedReceipt": null
+        }
+      },
+      {
+        "projectId": "p0",
+        "actorUserId": "u2",
+        "status": "failed",
+        "createdAt": "2026-11-03T05:00:00.000Z",
+        "completedAt": "2026-11-03T04:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T05:00:00.000Z",
+          "startedAt": "2026-11-03T04:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m6",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r6",
+          "completedAt": "2026-11-03T04:59:59.999Z",
+          "acceptedReceipt": {
+            "id": "r6",
+            "missionId": "m6",
+            "candidateVersion": 2,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p1",
+        "actorUserId": "u3",
+        "status": "cancelled",
+        "createdAt": "2026-11-03T04:00:00.000Z",
+        "completedAt": "2026-11-03T03:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T04:00:00.000Z",
+          "startedAt": "2026-11-03T03:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m7",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r7",
+          "completedAt": "2026-11-03T03:59:59.999Z",
+          "acceptedReceipt": null
+        }
+      },
+      {
+        "projectId": "p2",
+        "actorUserId": "u0",
+        "status": "needs_clarification",
+        "createdAt": "2026-11-03T03:00:00.000Z",
+        "completedAt": "2026-11-03T02:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T03:00:00.000Z",
+          "startedAt": "2026-11-03T02:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m8",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r8",
+          "completedAt": "2026-11-03T02:59:59.999Z",
+          "acceptedReceipt": {
+            "id": "r8",
+            "missionId": "m8",
+            "candidateVersion": 2,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p0",
+        "actorUserId": "u1",
+        "status": "running",
+        "createdAt": "2026-11-03T02:00:00.000Z",
+        "completedAt": "2026-11-03T01:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T02:00:00.000Z",
+          "startedAt": "2026-11-03T01:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m9",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r9",
+          "completedAt": "2026-11-03T01:59:59.999Z",
+          "acceptedReceipt": null
+        }
+      },
+      {
+        "projectId": "p1",
+        "actorUserId": "u2",
+        "status": "completed",
+        "createdAt": "2026-11-03T01:00:00.000Z",
+        "completedAt": "2026-11-03T00:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T01:00:00.000Z",
+          "startedAt": "2026-11-03T00:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m10",
+          "status": "completed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r10",
+          "completedAt": "2026-11-03T00:59:59.999Z",
+          "acceptedReceipt": {
+            "id": "r10",
+            "missionId": "m10",
+            "candidateVersion": 2,
+            "receiptType": "acceptance",
+            "verdict": "accepted"
+          }
+        }
+      },
+      {
+        "projectId": "p2",
+        "actorUserId": "u3",
+        "status": "failed",
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "completedAt": "2026-11-02T23:59:59.999Z",
+        "generationJob": {
+          "queuedAt": "2026-11-03T00:00:00.000Z",
+          "startedAt": "2026-11-02T23:59:59.999Z"
+        },
+        "agentMission": {
+          "id": "m11",
+          "status": "failed",
+          "candidateVersion": 1,
+          "acceptedReceiptId": "r11",
+          "completedAt": "2026-11-02T23:59:59.999Z",
+          "acceptedReceipt": null
+        }
+      }
+    ],
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "generatedAt": "2026-11-03T12:00:00.000Z",
+      "windowDays": 7,
+      "sampled": false,
+      "firstResearch": {
+        "available": false,
+        "observationHours": 24,
+        "researchers": 0,
+        "maturedResearchers": 0,
+        "observingResearchers": 0,
+        "acceptedResearchers": 0,
+        "completionRate": null,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "invalidDeliveryTimings": 0,
+        "error": "首次研究指标需要全历史首次提交时间。"
+      },
+      "summary": {
+        "requests": 12,
+        "activeProjects": 3,
+        "completedRequests": 3,
+        "failedRequests": 3,
+        "cancelledRequests": 2,
+        "activeRequests": 2,
+        "clarificationRequests": 2,
+        "acceptedDeliveries": 0,
+        "completedMissions": 6,
+        "unverifiedCompletedMissions": 6,
+        "terminalMissions": 12,
+        "reports": 3,
+        "uniqueResearchers": 4,
+        "repeatResearchers": 4,
+        "requestCompletionRate": 37.5,
+        "missionAcceptanceRate": 0,
+        "evidenceCompletenessRate": 0,
+        "repeatResearcherRate": 100,
+        "medianDeliveryMs": null,
+        "p90DeliveryMs": null,
+        "p95DeliveryMs": null,
+        "deliveryTimingSamples": 0,
+        "invalidDeliveryTimings": 0,
+        "medianQueueWaitMs": null,
+        "p90QueueWaitMs": null,
+        "queueTimingSamples": 0,
+        "invalidQueueTimings": 12
+      },
+      "error": null
+    }
+  },
+  {
+    "kind": "first",
+    "firstRequests": [],
+    "acceptedRequests": [],
+    "since": "2026-10-27T12:00:00.000Z",
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "observationHours": 24,
+      "researchers": 0,
+      "maturedResearchers": 0,
+      "observingResearchers": 0,
+      "acceptedResearchers": 0,
+      "completionRate": null,
+      "medianDeliveryMs": null,
+      "p90DeliveryMs": null,
+      "invalidDeliveryTimings": 0,
+      "error": null
+    }
+  },
+  {
+    "kind": "first",
+    "firstRequests": [],
+    "acceptedRequests": [],
+    "since": "2026-10-27T12:00:00.000Z",
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "observationHours": 24,
+      "researchers": 0,
+      "maturedResearchers": 0,
+      "observingResearchers": 0,
+      "acceptedResearchers": 0,
+      "completionRate": null,
+      "medianDeliveryMs": null,
+      "p90DeliveryMs": null,
+      "invalidDeliveryTimings": 0,
+      "error": null
+    }
+  },
+  {
+    "kind": "first",
+    "firstRequests": [
+      {
+        "actorUserId": "u0",
+        "_min": {
+          "createdAt": "2026-11-03T00:00:00.000Z"
+        }
+      }
+    ],
+    "acceptedRequests": [
+      {
+        "actorUserId": "u0",
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "completedAt": "2026-11-03T00:00:00.000Z"
+      }
+    ],
+    "since": "2026-10-27T12:00:00.000Z",
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "observationHours": 24,
+      "researchers": 1,
+      "maturedResearchers": 0,
+      "observingResearchers": 1,
+      "acceptedResearchers": 0,
+      "completionRate": null,
+      "medianDeliveryMs": null,
+      "p90DeliveryMs": null,
+      "invalidDeliveryTimings": 0,
+      "error": null
+    }
+  },
+  {
+    "kind": "first",
+    "firstRequests": [
+      {
+        "actorUserId": "u0",
+        "_min": {
+          "createdAt": "2026-11-03T00:00:00.000Z"
+        }
+      }
+    ],
+    "acceptedRequests": [
+      {
+        "actorUserId": "u0",
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "completedAt": null
+      }
+    ],
+    "since": "2026-10-27T12:00:00.000Z",
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "observationHours": 24,
+      "researchers": 1,
+      "maturedResearchers": 0,
+      "observingResearchers": 1,
+      "acceptedResearchers": 0,
+      "completionRate": null,
+      "medianDeliveryMs": null,
+      "p90DeliveryMs": null,
+      "invalidDeliveryTimings": 0,
+      "error": null
+    }
+  },
+  {
+    "kind": "first",
+    "firstRequests": [
+      {
+        "actorUserId": "u0",
+        "_min": {
+          "createdAt": "2026-11-03T00:00:00.000Z"
+        }
+      },
+      {
+        "actorUserId": "u1",
+        "_min": {
+          "createdAt": "2026-11-02T12:00:00.000Z"
+        }
+      },
+      {
+        "actorUserId": "u2",
+        "_min": {
+          "createdAt": "2026-11-02T00:00:00.000Z"
+        }
+      },
+      {
+        "actorUserId": "u3",
+        "_min": {
+          "createdAt": "2026-11-01T12:00:00.000Z"
+        }
+      },
+      {
+        "actorUserId": "u4",
+        "_min": {
+          "createdAt": "2026-11-01T00:00:00.000Z"
+        }
+      }
+    ],
+    "acceptedRequests": [
+      {
+        "actorUserId": "u0",
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "completedAt": "2026-11-03T00:00:00.000Z"
+      },
+      {
+        "actorUserId": "u1",
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "completedAt": "2026-11-02T13:00:00.000Z"
+      },
+      {
+        "actorUserId": "u2",
+        "createdAt": "2026-11-02T00:00:00.000Z",
+        "completedAt": "2026-11-02T02:00:00.000Z"
+      },
+      {
+        "actorUserId": "u3",
+        "createdAt": "2026-11-01T12:00:00.000Z",
+        "completedAt": "2026-11-01T15:00:00.000Z"
+      },
+      {
+        "actorUserId": "u4",
+        "createdAt": "2026-11-01T00:00:00.000Z",
+        "completedAt": "2026-11-01T04:00:00.000Z"
+      }
+    ],
+    "since": "2026-10-27T12:00:00.000Z",
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "observationHours": 24,
+      "researchers": 5,
+      "maturedResearchers": 4,
+      "observingResearchers": 1,
+      "acceptedResearchers": 4,
+      "completionRate": 100,
+      "medianDeliveryMs": 9000000,
+      "p90DeliveryMs": 13320000,
+      "invalidDeliveryTimings": 0,
+      "error": null
+    }
+  },
+  {
+    "kind": "first",
+    "firstRequests": [
+      {
+        "actorUserId": "u0",
+        "_min": {
+          "createdAt": "2026-11-03T00:00:00.000Z"
+        }
+      },
+      {
+        "actorUserId": "u1",
+        "_min": {
+          "createdAt": "2026-11-02T12:00:00.000Z"
+        }
+      },
+      {
+        "actorUserId": "u2",
+        "_min": {
+          "createdAt": "2026-11-02T00:00:00.000Z"
+        }
+      },
+      {
+        "actorUserId": "u3",
+        "_min": {
+          "createdAt": "2026-11-01T12:00:00.000Z"
+        }
+      },
+      {
+        "actorUserId": "u4",
+        "_min": {
+          "createdAt": "2026-11-01T00:00:00.000Z"
+        }
+      }
+    ],
+    "acceptedRequests": [
+      {
+        "actorUserId": "u0",
+        "createdAt": "2026-11-03T00:00:00.000Z",
+        "completedAt": null
+      },
+      {
+        "actorUserId": "u1",
+        "createdAt": "2026-11-02T12:00:00.000Z",
+        "completedAt": null
+      },
+      {
+        "actorUserId": "u2",
+        "createdAt": "2026-11-02T00:00:00.000Z",
+        "completedAt": null
+      },
+      {
+        "actorUserId": "u3",
+        "createdAt": "2026-11-01T12:00:00.000Z",
+        "completedAt": null
+      },
+      {
+        "actorUserId": "u4",
+        "createdAt": "2026-11-01T00:00:00.000Z",
+        "completedAt": null
+      }
+    ],
+    "since": "2026-10-27T12:00:00.000Z",
+    "now": "2026-11-03T12:00:00.000Z",
+    "expected": {
+      "available": true,
+      "observationHours": 24,
+      "researchers": 5,
+      "maturedResearchers": 4,
+      "observingResearchers": 1,
+      "acceptedResearchers": 0,
+      "completionRate": 0,
+      "medianDeliveryMs": null,
+      "p90DeliveryMs": null,
+      "invalidDeliveryTimings": 4,
+      "error": null
+    }
+  }
+]

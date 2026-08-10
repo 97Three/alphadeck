@@ -1,0 +1,468 @@
+[
+  {
+    "name": "quote",
+    "input": {
+      "path": "/api/v1/quotes/realtime/600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "price": 120,
+      "source": "db",
+      "fetched_at": "2025-01-10T08:00:00Z"
+    },
+    "body": "{\"symbol\":\"600519\",\"price\":120,\"source\":\"db\",\"fetched_at\":\"2025-01-10T08:00:00Z\"}",
+    "expected": [
+      {
+        "ok": true,
+        "data": {
+          "status": 200,
+          "bytes": 81,
+          "truncated": false,
+          "assessment": {
+            "version": 1,
+            "status": "passed",
+            "usable": true,
+            "rowCount": null,
+            "issues": [],
+            "issueCount": 0
+          },
+          "receipt": {
+            "sourceId": "db",
+            "operationId": "GET /api/v1/quotes/realtime/600519",
+            "observedAt": "2026-11-03T00:00:00.000Z",
+            "fetchedAt": "2025-01-10T08:00:00Z",
+            "fetchedAtOrigin": "source",
+            "querySha256": "sha256:7d39c9b3b50cca28482aaaf21cc94a20f5612684998022411773f4c3510bf03f",
+            "responseSha256": "sha256:1d3d7f30517e337c7366be4cbba4d6f26295ab783cce97a53bf8dbcc4a80747e"
+          }
+        },
+        "content": "{\"symbol\":\"600519\",\"price\":120,\"source\":\"db\",\"fetched_at\":\"2025-01-10T08:00:00Z\"}"
+      }
+    ],
+    "calls": [
+      "http://127.0.0.1:8000/api/v1/quotes/realtime/600519"
+    ]
+  },
+  {
+    "name": "query_encoding",
+    "input": {
+      "path": "/api/v1/symbols/resolve",
+      "query": {
+        "q": "沪深 300~*",
+        "k": [
+          1,
+          false,
+          "值"
+        ]
+      }
+    },
+    "payload": {
+      "results": []
+    },
+    "body": "{\"results\":[]}",
+    "expected": [
+      {
+        "ok": true,
+        "data": {
+          "status": 200,
+          "bytes": 14,
+          "truncated": false,
+          "assessment": {
+            "version": 1,
+            "status": "passed",
+            "usable": true,
+            "rowCount": null,
+            "issues": [],
+            "issueCount": 0
+          },
+          "receipt": {
+            "sourceId": "local-market-api",
+            "operationId": "GET /api/v1/symbols/resolve",
+            "observedAt": "2026-11-03T00:00:00.000Z",
+            "fetchedAt": "2026-11-03T00:00:00.000Z",
+            "fetchedAtOrigin": "observed",
+            "querySha256": "sha256:463c6aaa3ad1de04db6736e603c6d91034a528f4add3b22e1a2c3206a268b52c",
+            "responseSha256": "sha256:5021e624e752b001ce3e3846e8f158ed4aeb93a4c9a72fdb35a0c5b14a0eea84"
+          }
+        },
+        "content": "{\"results\":[]}"
+      }
+    ],
+    "calls": [
+      "http://127.0.0.1:8000/api/v1/symbols/resolve?q=%E6%B2%AA%E6%B7%B1+300%7E*&k=1&k=false&k=%E5%80%BC"
+    ]
+  },
+  {
+    "name": "wrong_symbol",
+    "input": {
+      "path": "/api/v1/quotes/realtime/600519"
+    },
+    "payload": {
+      "symbol": "600036",
+      "price": 120,
+      "source": "db",
+      "fetched_at": "2025-01-10T08:00:00Z"
+    },
+    "body": "{\"symbol\":\"600036\",\"price\":120,\"source\":\"db\",\"fetched_at\":\"2025-01-10T08:00:00Z\"}",
+    "expected": [
+      {
+        "ok": false,
+        "error": {
+          "code": "QUANT_API_DATA_INVALID",
+          "message": "Market data failed consistency checks: symbol_mismatch@symbol",
+          "details": {
+            "assessment": {
+              "version": 1,
+              "status": "failed",
+              "usable": false,
+              "rowCount": null,
+              "issues": [
+                {
+                  "code": "symbol_mismatch",
+                  "path": "symbol",
+                  "severity": "error"
+                }
+              ],
+              "issueCount": 1
+            }
+          }
+        }
+      }
+    ],
+    "calls": [
+      "http://127.0.0.1:8000/api/v1/quotes/realtime/600519"
+    ]
+  },
+  {
+    "name": "quality_warning",
+    "input": {
+      "path": "/api/v1/quotes/realtime/600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "price": 120,
+      "source": "db",
+      "fetched_at": "2025-01-10T08:00:00Z",
+      "data_quality": {
+        "status": "warning",
+        "warnings": [
+          "延迟"
+        ]
+      }
+    },
+    "body": "{\"symbol\":\"600519\",\"price\":120,\"source\":\"db\",\"fetched_at\":\"2025-01-10T08:00:00Z\",\"data_quality\":{\"status\":\"warning\",\"warnings\":[\"延迟\"]}}",
+    "expected": [
+      {
+        "ok": true,
+        "data": {
+          "status": 200,
+          "bytes": 139,
+          "truncated": false,
+          "assessment": {
+            "version": 1,
+            "status": "warning",
+            "usable": true,
+            "rowCount": null,
+            "issues": [
+              {
+                "code": "source_quality_warning",
+                "path": "data_quality.status",
+                "severity": "warning"
+              }
+            ],
+            "issueCount": 1
+          },
+          "receipt": {
+            "sourceId": "db",
+            "operationId": "GET /api/v1/quotes/realtime/600519",
+            "observedAt": "2026-11-03T00:00:00.000Z",
+            "fetchedAt": "2025-01-10T08:00:00Z",
+            "fetchedAtOrigin": "source",
+            "querySha256": "sha256:7d39c9b3b50cca28482aaaf21cc94a20f5612684998022411773f4c3510bf03f",
+            "responseSha256": "sha256:bf8d586648e1072a541871d79f5a2c6251fd7d66669c42190aef0f1db5fe91ef"
+          }
+        },
+        "content": "{\"$piAgent\":{\"kind\":\"quant_api_data_quality\",\"assessment\":{\"version\":1,\"status\":\"warning\",\"usable\":true,\"rowCount\":null,\"issues\":[{\"code\":\"source_quality_warning\",\"path\":\"data_quality.status\",\"severity\":\"warning\"}],\"issueCount\":1}},\"data\":{\"symbol\":\"600519\",\"price\":120,\"source\":\"db\",\"fetched_at\":\"2025-01-10T08:00:00Z\",\"data_quality\":{\"status\":\"warning\",\"warnings\":[\"延迟\"]}}}"
+      }
+    ],
+    "calls": [
+      "http://127.0.0.1:8000/api/v1/quotes/realtime/600519"
+    ]
+  },
+  {
+    "name": "invalid_json",
+    "input": {
+      "path": "/api/v1/registry"
+    },
+    "body": "broken JSON",
+    "expected": [
+      {
+        "ok": false,
+        "error": {
+          "code": "QUANT_API_INVALID_JSON",
+          "message": "The local API did not return valid JSON."
+        }
+      }
+    ],
+    "calls": [
+      "http://127.0.0.1:8000/api/v1/registry"
+    ]
+  },
+  {
+    "name": "too_large",
+    "input": {
+      "path": "/api/v1/registry"
+    },
+    "body": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "options": {
+      "maxResponseBytes": 32
+    },
+    "expected": [
+      {
+        "ok": false,
+        "error": {
+          "code": "QUANT_API_INCOMPLETE_RESPONSE",
+          "message": "The response exceeded the byte budget. Retry with a narrower date range or smaller limit."
+        },
+        "content": "{\"$piAgent\":{\"kind\":\"quant_api_result_window\",\"version\":1,\"truncated\":true,\"sourcePath\":\"/api/v1/registry\",\"responseBytesRead\":32,\"responseByteLimitReached\":true,\"strategy\":\"response_byte_limit\",\"originalCharactersRead\":32,\"retryHint\":\"Retry with a narrower date range, smaller limit, or smaller page_size.\"},\"preview\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"}"
+      }
+    ],
+    "calls": [
+      "http://127.0.0.1:8000/api/v1/registry"
+    ]
+  },
+  {
+    "name": "http_failure",
+    "input": {
+      "path": "/api/v1/registry"
+    },
+    "payload": {
+      "detail": "unavailable"
+    },
+    "status": 502,
+    "body": "{\"detail\":\"unavailable\"}",
+    "expected": [
+      {
+        "ok": false,
+        "error": {
+          "code": "QUANT_API_HTTP_ERROR",
+          "message": "Local quant API returned HTTP 502.",
+          "details": {
+            "status": 502,
+            "bodyTruncated": false
+          }
+        },
+        "content": "{\"detail\":\"unavailable\"}"
+      }
+    ],
+    "calls": [
+      "http://127.0.0.1:8000/api/v1/registry"
+    ]
+  },
+  {
+    "name": "budget",
+    "input": {
+      "path": "/api/v1/registry"
+    },
+    "payload": {
+      "providers": []
+    },
+    "options": {
+      "maxRequests": 1
+    },
+    "repeat": 2,
+    "body": "{\"providers\":[]}",
+    "expected": [
+      {
+        "ok": true,
+        "data": {
+          "status": 200,
+          "bytes": 16,
+          "truncated": false,
+          "assessment": {
+            "version": 1,
+            "status": "passed",
+            "usable": true,
+            "rowCount": null,
+            "issues": [],
+            "issueCount": 0
+          },
+          "receipt": {
+            "sourceId": "local-market-api",
+            "operationId": "GET /api/v1/registry",
+            "observedAt": "2026-11-03T00:00:00.000Z",
+            "fetchedAt": "2026-11-03T00:00:00.000Z",
+            "fetchedAtOrigin": "observed",
+            "querySha256": "sha256:6e05d9080c4b02c5da7e792c75e2b0c445d0f2dec1d447f1919118b76f3fc598",
+            "responseSha256": "sha256:ee203d24e9722116c133153095cd65f7d94d8261bed4bd77da698dda07e8c98d"
+          }
+        },
+        "content": "{\"providers\":[]}"
+      },
+      {
+        "ok": false,
+        "error": {
+          "code": "QUANT_API_REQUEST_BUDGET_EXCEEDED",
+          "message": "This PI Agent run exceeded its 1-request quant API budget."
+        },
+        "content": "This PI Agent run exceeded its 1-request quant API budget."
+      }
+    ],
+    "calls": [
+      "http://127.0.0.1:8000/api/v1/registry"
+    ]
+  },
+  {
+    "name": "path_0",
+    "input": {
+      "path": "http://example.com"
+    },
+    "payload": {},
+    "body": "{}",
+    "expected": [
+      {
+        "ok": false,
+        "error": {
+          "code": "QUANT_API_PATH_DENIED",
+          "message": "quant_api_get only accepts paths beginning with /api/v1/."
+        },
+        "content": "quant_api_get only accepts paths beginning with /api/v1/."
+      }
+    ],
+    "calls": []
+  },
+  {
+    "name": "path_1",
+    "input": {
+      "path": "/api/v1/quotes/realtime/.."
+    },
+    "payload": {},
+    "body": "{}",
+    "expected": [
+      {
+        "ok": false,
+        "error": {
+          "code": "QUANT_API_PATH_DENIED",
+          "message": "API path traversal and encoded separators are denied."
+        },
+        "content": "API path traversal and encoded separators are denied."
+      }
+    ],
+    "calls": []
+  },
+  {
+    "name": "path_2",
+    "input": {
+      "path": "/api/v1/quotes/realtime/%2Fetc"
+    },
+    "payload": {},
+    "body": "{}",
+    "expected": [
+      {
+        "ok": false,
+        "error": {
+          "code": "QUANT_API_PATH_DENIED",
+          "message": "API path traversal and encoded separators are denied."
+        },
+        "content": "API path traversal and encoded separators are denied."
+      }
+    ],
+    "calls": []
+  },
+  {
+    "name": "path_3",
+    "input": {
+      "path": "/api/v1/quotes/realtime/%ZZ"
+    },
+    "payload": {},
+    "body": "{}",
+    "expected": [
+      {
+        "ok": false,
+        "error": {
+          "code": "QUANT_API_PATH_DENIED",
+          "message": "The API path contains malformed percent encoding."
+        },
+        "content": "The API path contains malformed percent encoding."
+      }
+    ],
+    "calls": []
+  },
+  {
+    "name": "path_4",
+    "input": {
+      "path": "/api/v1/admin/write"
+    },
+    "payload": {},
+    "body": "{}",
+    "expected": [
+      {
+        "ok": false,
+        "error": {
+          "code": "QUANT_API_ENDPOINT_DENIED",
+          "message": "The requested local API endpoint is not in the PI Agent read-only quant allowlist."
+        },
+        "content": "The requested local API endpoint is not in the PI Agent read-only quant allowlist."
+      }
+    ],
+    "calls": []
+  },
+  {
+    "name": "path_5",
+    "input": {
+      "path": "/api/v1/quotes/realtime/600519?x=1"
+    },
+    "payload": {},
+    "body": "{}",
+    "expected": [
+      {
+        "ok": false,
+        "error": {
+          "code": "QUANT_API_PATH_DENIED",
+          "message": "The API path must not contain query text, fragments, backslashes, or control characters."
+        },
+        "content": "The API path must not contain query text, fragments, backslashes, or control characters."
+      }
+    ],
+    "calls": []
+  },
+  {
+    "name": "invalid_query",
+    "input": {
+      "path": "/api/v1/registry",
+      "query": {
+        "x": {
+          "a": 1
+        }
+      }
+    },
+    "payload": {},
+    "body": "{}",
+    "expected": [
+      {
+        "parseError": {
+          "code": "INVALID_TOOL_INPUT",
+          "message": "query.x must be a string, finite number, boolean, or an array of those values."
+        }
+      }
+    ],
+    "calls": []
+  },
+  {
+    "name": "missing_path",
+    "input": {
+      "query": {}
+    },
+    "payload": {},
+    "body": "{}",
+    "expected": [
+      {
+        "parseError": {
+          "code": "INVALID_TOOL_INPUT",
+          "message": "path must be a non-empty string."
+        }
+      }
+    ],
+    "calls": []
+  }
+]

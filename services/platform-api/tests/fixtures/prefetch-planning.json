@@ -1,0 +1,258 @@
+{
+  "plans": [
+    {
+      "input": {},
+      "expected": {
+        "symbols": [],
+        "historyLimit": 120,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "timeRange": "最近5日"
+      },
+      "expected": {
+        "symbols": [],
+        "historyLimit": 20,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "timeRange": "最近30个交易日"
+      },
+      "expected": {
+        "symbols": [],
+        "historyLimit": 30,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "timeRange": "一年"
+      },
+      "expected": {
+        "symbols": [],
+        "historyLimit": 252,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "timeRange": "过去三个月"
+      },
+      "expected": {
+        "symbols": [],
+        "historyLimit": 63,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "timeRange": "半年"
+      },
+      "expected": {
+        "symbols": [],
+        "historyLimit": 126,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "timeRange": "去年下半年"
+      },
+      "expected": {
+        "symbols": [],
+        "historyLimit": 126,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "timeRange": "年初至今"
+      },
+      "expected": {
+        "symbols": [],
+        "historyLimit": 252,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "timeRange": "两年"
+      },
+      "expected": {
+        "symbols": [],
+        "historyLimit": 500,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "queryRewrite": {
+          "timeRange": {
+            "unit": "year",
+            "value": 2
+          }
+        }
+      },
+      "expected": {
+        "symbols": [],
+        "historyLimit": 500,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "timeRange": "一年",
+        "queryRewrite": {
+          "timeRange": {
+            "unit": "month",
+            "value": 2,
+            "label": "最近两个月"
+          }
+        }
+      },
+      "expected": {
+        "symbols": [],
+        "historyLimit": 42,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "question": "最近500天",
+        "timeRange": "最近20天"
+      },
+      "expected": {
+        "symbols": [],
+        "historyLimit": 20,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "symbols": [
+          "600519",
+          {
+            "secid": "0.000001"
+          },
+          "600519",
+          {
+            "ticker": "SH600000"
+          },
+          "510300",
+          "830000"
+        ]
+      },
+      "expected": {
+        "symbols": [
+          "600519",
+          "000001",
+          "510300"
+        ],
+        "historyLimit": 120,
+        "broad": false
+      }
+    },
+    {
+      "input": {
+        "dataRequirements": [
+          "/api/v1/research/screeners/a-share/short-term-candidates"
+        ],
+        "queryRewrite": {
+          "broadUniverse": false
+        }
+      },
+      "expected": {
+        "symbols": [],
+        "historyLimit": 120,
+        "broad": false
+      }
+    }
+  ],
+  "questions": [
+    {
+      "input": "推荐5只股票，给出买入区间",
+      "expected": {
+        "intent": true,
+        "mode": "short_term",
+        "limit": 5,
+        "tradeDate": null
+      }
+    },
+    {
+      "input": "比较贵州茅台与银行",
+      "expected": {
+        "intent": false,
+        "mode": "short_term",
+        "limit": 5,
+        "tradeDate": null
+      }
+    },
+    {
+      "input": "挑选1个趋势最强的",
+      "expected": {
+        "intent": false,
+        "mode": "trend_liquidity",
+        "limit": 3,
+        "tradeDate": null
+      }
+    },
+    {
+      "input": "2025年2月29日涨停接力",
+      "expected": {
+        "intent": false,
+        "mode": "limit_up_relay",
+        "limit": 5,
+        "tradeDate": null
+      }
+    },
+    {
+      "input": "2024/02/29选五只",
+      "expected": {
+        "intent": false,
+        "mode": "short_term",
+        "limit": 5,
+        "tradeDate": "2024-02-29"
+      }
+    },
+    {
+      "input": "11月3日股票",
+      "expected": {
+        "intent": false,
+        "mode": "short_term",
+        "limit": 5,
+        "tradeDate": "2026-11-03"
+      }
+    },
+    {
+      "input": "最近20天波动",
+      "expected": {
+        "intent": false,
+        "mode": "short_term",
+        "limit": 5,
+        "tradeDate": null
+      }
+    },
+    {
+      "input": "均线流动性",
+      "expected": {
+        "intent": false,
+        "mode": "trend_liquidity",
+        "limit": 5,
+        "tradeDate": null
+      }
+    },
+    {
+      "input": "1个交易日操作建议",
+      "expected": {
+        "intent": true,
+        "mode": "short_term",
+        "limit": 3,
+        "tradeDate": null
+      }
+    }
+  ]
+}

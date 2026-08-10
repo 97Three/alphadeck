@@ -1,0 +1,771 @@
+[
+  {
+    "method": "same_origin_mutation",
+    "url": "http://127.0.0.1:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100"
+    },
+    "env": {},
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://127.0.0.1:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100"
+    },
+    "env": {},
+    "expected": null
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://127.0.0.1:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://127.0.0.1:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": {
+      "status": 403,
+      "message": "管理接口未配置 ALPHADECK_ADMIN_TOKEN，已拒绝非本机写入。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://127.0.0.1:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://127.0.0.1:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": {
+      "status": 401,
+      "message": "缺少有效的 AlphaDeck 管理令牌。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://127.0.0.1:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://127.0.0.1:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": {
+      "status": 401,
+      "message": "缺少有效的 AlphaDeck 管理令牌。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "http://localhost:3100"
+    },
+    "env": {},
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "http://localhost:3100"
+    },
+    "env": {},
+    "expected": null
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "http://localhost:3100"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "http://localhost:3100"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": {
+      "status": 403,
+      "message": "管理接口未配置 ALPHADECK_ADMIN_TOKEN，已拒绝非本机写入。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "http://localhost:3100"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "http://localhost:3100"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": {
+      "status": 401,
+      "message": "缺少有效的 AlphaDeck 管理令牌。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "http://localhost:3100"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "http://localhost:3100"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": {
+      "status": 401,
+      "message": "缺少有效的 AlphaDeck 管理令牌。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100",
+      "x-forwarded-host": "127.0.0.1:3100",
+      "origin": "http://127.0.0.1:3100"
+    },
+    "env": {},
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100",
+      "x-forwarded-host": "127.0.0.1:3100",
+      "origin": "http://127.0.0.1:3100"
+    },
+    "env": {},
+    "expected": null
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100",
+      "x-forwarded-host": "127.0.0.1:3100",
+      "origin": "http://127.0.0.1:3100"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100",
+      "x-forwarded-host": "127.0.0.1:3100",
+      "origin": "http://127.0.0.1:3100"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": {
+      "status": 403,
+      "message": "管理接口未配置 ALPHADECK_ADMIN_TOKEN，已拒绝非本机写入。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100",
+      "x-forwarded-host": "127.0.0.1:3100",
+      "origin": "http://127.0.0.1:3100"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100",
+      "x-forwarded-host": "127.0.0.1:3100",
+      "origin": "http://127.0.0.1:3100"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": {
+      "status": 401,
+      "message": "缺少有效的 AlphaDeck 管理令牌。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100",
+      "x-forwarded-host": "127.0.0.1:3100",
+      "origin": "http://127.0.0.1:3100"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "127.0.0.1:3100",
+      "x-forwarded-host": "127.0.0.1:3100",
+      "origin": "http://127.0.0.1:3100"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": {
+      "status": 401,
+      "message": "缺少有效的 AlphaDeck 管理令牌。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "https://evil.test"
+    },
+    "env": {},
+    "expected": {
+      "status": 403,
+      "message": "管理请求必须来自同源页面。"
+    }
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "https://evil.test"
+    },
+    "env": {},
+    "expected": {
+      "status": 403,
+      "message": "管理请求必须来自同源页面。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "https://evil.test"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": {
+      "status": 403,
+      "message": "管理请求必须来自同源页面。"
+    }
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "https://evil.test"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": {
+      "status": 403,
+      "message": "管理请求必须来自同源页面。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "https://evil.test"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": {
+      "status": 403,
+      "message": "管理请求必须来自同源页面。"
+    }
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "https://evil.test"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": {
+      "status": 403,
+      "message": "管理请求必须来自同源页面。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "https://evil.test"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": {
+      "status": 403,
+      "message": "管理请求必须来自同源页面。"
+    }
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "origin": "https://evil.test"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": {
+      "status": 403,
+      "message": "管理请求必须来自同源页面。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "sec-fetch-site": "cross-site"
+    },
+    "env": {},
+    "expected": {
+      "status": 403,
+      "message": "拒绝跨站管理请求。"
+    }
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "sec-fetch-site": "cross-site"
+    },
+    "env": {},
+    "expected": {
+      "status": 403,
+      "message": "拒绝跨站管理请求。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "sec-fetch-site": "cross-site"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": {
+      "status": 403,
+      "message": "拒绝跨站管理请求。"
+    }
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "sec-fetch-site": "cross-site"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": {
+      "status": 403,
+      "message": "拒绝跨站管理请求。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "sec-fetch-site": "cross-site"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": {
+      "status": 403,
+      "message": "拒绝跨站管理请求。"
+    }
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "sec-fetch-site": "cross-site"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": {
+      "status": 403,
+      "message": "拒绝跨站管理请求。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "sec-fetch-site": "cross-site"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": {
+      "status": 403,
+      "message": "拒绝跨站管理请求。"
+    }
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://localhost:3100/api/skills",
+    "headers": {
+      "host": "localhost:3100",
+      "sec-fetch-site": "cross-site"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": {
+      "status": 403,
+      "message": "拒绝跨站管理请求。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "https://example.test/api/skills",
+    "headers": {
+      "host": "example.test",
+      "origin": "https://example.test"
+    },
+    "env": {},
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "https://example.test/api/skills",
+    "headers": {
+      "host": "example.test",
+      "origin": "https://example.test"
+    },
+    "env": {},
+    "expected": {
+      "status": 403,
+      "message": "管理接口未配置 ALPHADECK_ADMIN_TOKEN，已拒绝非本机写入。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "https://example.test/api/skills",
+    "headers": {
+      "host": "example.test",
+      "origin": "https://example.test"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "https://example.test/api/skills",
+    "headers": {
+      "host": "example.test",
+      "origin": "https://example.test"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": {
+      "status": 403,
+      "message": "管理接口未配置 ALPHADECK_ADMIN_TOKEN，已拒绝非本机写入。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "https://example.test/api/skills",
+    "headers": {
+      "host": "example.test",
+      "origin": "https://example.test"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "https://example.test/api/skills",
+    "headers": {
+      "host": "example.test",
+      "origin": "https://example.test"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": {
+      "status": 401,
+      "message": "缺少有效的 AlphaDeck 管理令牌。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "https://example.test/api/skills",
+    "headers": {
+      "host": "example.test",
+      "origin": "https://example.test"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": null
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "https://example.test/api/skills",
+    "headers": {
+      "host": "example.test",
+      "origin": "https://example.test"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": {
+      "status": 401,
+      "message": "缺少有效的 AlphaDeck 管理令牌。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://127.0.0.1/api/skills",
+    "headers": {
+      "host": "127.0.0.1",
+      "origin": "null"
+    },
+    "env": {},
+    "expected": {
+      "status": 403,
+      "message": "请求 Origin 无效。"
+    }
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://127.0.0.1/api/skills",
+    "headers": {
+      "host": "127.0.0.1",
+      "origin": "null"
+    },
+    "env": {},
+    "expected": {
+      "status": 403,
+      "message": "请求 Origin 无效。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://127.0.0.1/api/skills",
+    "headers": {
+      "host": "127.0.0.1",
+      "origin": "null"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": {
+      "status": 403,
+      "message": "请求 Origin 无效。"
+    }
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://127.0.0.1/api/skills",
+    "headers": {
+      "host": "127.0.0.1",
+      "origin": "null"
+    },
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "expected": {
+      "status": 403,
+      "message": "请求 Origin 无效。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://127.0.0.1/api/skills",
+    "headers": {
+      "host": "127.0.0.1",
+      "origin": "null"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": {
+      "status": 403,
+      "message": "请求 Origin 无效。"
+    }
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://127.0.0.1/api/skills",
+    "headers": {
+      "host": "127.0.0.1",
+      "origin": "null"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin"
+    },
+    "expected": {
+      "status": 403,
+      "message": "请求 Origin 无效。"
+    }
+  },
+  {
+    "method": "same_origin_mutation",
+    "url": "http://127.0.0.1/api/skills",
+    "headers": {
+      "host": "127.0.0.1",
+      "origin": "null"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": {
+      "status": 403,
+      "message": "请求 Origin 无效。"
+    }
+  },
+  {
+    "method": "privileged_mutation",
+    "url": "http://127.0.0.1/api/skills",
+    "headers": {
+      "host": "127.0.0.1",
+      "origin": "null"
+    },
+    "env": {
+      "ALPHADECK_ADMIN_TOKEN": "synthetic-admin",
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "expected": {
+      "status": 403,
+      "message": "请求 Origin 无效。"
+    }
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "input": {
+      "b": 2,
+      "a": 1
+    },
+    "expected": "43258cff783fe7036d8a43033f830adfc60ec037382473548ac742b888292777"
+  },
+  {
+    "input": {
+      "z": 1,
+      "a": 1e-7,
+      "b": 0.000001,
+      "c": 100000000000000000000,
+      "d": 1e+21,
+      "e": 0,
+      "f": 0.002,
+      "g": 333333333.3333333
+    },
+    "expected": "f19b8b2f87ed3d8a6c858abfc62602c8d98dba329458ba73fcf20a3a47617601"
+  },
+  {
+    "input": {
+      "😀": "测试",
+      "￿": "terminal",
+      "a": [
+        true,
+        null,
+        1.2345678901234567
+      ]
+    },
+    "expected": "0bd9033a790789ad6df52f132e3f37575cb428ca19e5b6cae31a8f713a04231f"
+  },
+  {
+    "input": {
+      "preview": {
+        "port": 4100,
+        "httpStatus": 200
+      },
+      "candidateVersion": 1
+    },
+    "expected": "593c6e7d33d0e2d94557807afe0b3141d6eab29b325fd057318a37da347bb769"
+  }
+]

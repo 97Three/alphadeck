@@ -1,0 +1,1490 @@
+[
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": true,
+      "preparedIntent": "standard",
+      "hasAttachments": true,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": true,
+      "preparedIntent": "standard",
+      "hasAttachments": true,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": true,
+      "preparedIntent": "standard",
+      "hasAttachments": false,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "deterministic_standard",
+      "phase": "deterministic-prepare",
+      "providerMode": "deterministic",
+      "reasoningEffort": "low",
+      "budgets": {
+        "maxTurns": 2,
+        "maxToolCalls": 2,
+        "maxOutputTokens": 1,
+        "maxCacheMissInputTokens": 1,
+        "maxPreparedInputTokens": 1,
+        "maxCumulativePreparedInputTokens": 1,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": true,
+      "preparedIntent": "standard",
+      "hasAttachments": false,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": true,
+      "preparedIntent": "custom",
+      "hasAttachments": true,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": true,
+      "preparedIntent": "custom",
+      "hasAttachments": true,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": true,
+      "preparedIntent": "custom",
+      "hasAttachments": false,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_custom",
+      "phase": "inspect-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 12,
+        "maxOutputTokens": 8000,
+        "maxCacheMissInputTokens": 24000,
+        "maxPreparedInputTokens": 24000,
+        "maxCumulativePreparedInputTokens": 144000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": true,
+      "preparedIntent": "custom",
+      "hasAttachments": false,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_custom",
+      "phase": "inspect-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 12,
+        "maxOutputTokens": 8000,
+        "maxCacheMissInputTokens": 24000,
+        "maxPreparedInputTokens": 24000,
+        "maxCumulativePreparedInputTokens": 144000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": true,
+      "preparedIntent": null,
+      "hasAttachments": true,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": true,
+      "preparedIntent": null,
+      "hasAttachments": true,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": true,
+      "preparedIntent": null,
+      "hasAttachments": false,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": true,
+      "preparedIntent": null,
+      "hasAttachments": false,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": false,
+      "preparedIntent": "standard",
+      "hasAttachments": true,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": false,
+      "preparedIntent": "standard",
+      "hasAttachments": true,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": false,
+      "preparedIntent": "standard",
+      "hasAttachments": false,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": false,
+      "preparedIntent": "standard",
+      "hasAttachments": false,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": false,
+      "preparedIntent": "custom",
+      "hasAttachments": true,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": false,
+      "preparedIntent": "custom",
+      "hasAttachments": true,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": false,
+      "preparedIntent": "custom",
+      "hasAttachments": false,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": false,
+      "preparedIntent": "custom",
+      "hasAttachments": false,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": false,
+      "preparedIntent": null,
+      "hasAttachments": true,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": false,
+      "preparedIntent": null,
+      "hasAttachments": true,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": false,
+      "preparedIntent": null,
+      "hasAttachments": false,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "generation",
+      "platformPrepared": false,
+      "preparedIntent": null,
+      "hasAttachments": false,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_data_preparation",
+      "phase": "data-prepare-edit-submit",
+      "providerMode": "model",
+      "reasoningEffort": "high",
+      "budgets": {
+        "maxTurns": 8,
+        "maxToolCalls": 20,
+        "maxOutputTokens": 16000,
+        "maxCacheMissInputTokens": 60000,
+        "maxPreparedInputTokens": 60000,
+        "maxCumulativePreparedInputTokens": 480000,
+        "progressStallTurns": 2
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": true,
+      "preparedIntent": "standard",
+      "hasAttachments": true,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": true,
+      "preparedIntent": "standard",
+      "hasAttachments": true,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": true,
+      "preparedIntent": "standard",
+      "hasAttachments": false,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": true,
+      "preparedIntent": "standard",
+      "hasAttachments": false,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": true,
+      "preparedIntent": "custom",
+      "hasAttachments": true,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": true,
+      "preparedIntent": "custom",
+      "hasAttachments": true,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": true,
+      "preparedIntent": "custom",
+      "hasAttachments": false,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": true,
+      "preparedIntent": "custom",
+      "hasAttachments": false,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": true,
+      "preparedIntent": null,
+      "hasAttachments": true,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": true,
+      "preparedIntent": null,
+      "hasAttachments": true,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": true,
+      "preparedIntent": null,
+      "hasAttachments": false,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": true,
+      "preparedIntent": null,
+      "hasAttachments": false,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": false,
+      "preparedIntent": "standard",
+      "hasAttachments": true,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": false,
+      "preparedIntent": "standard",
+      "hasAttachments": true,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": false,
+      "preparedIntent": "standard",
+      "hasAttachments": false,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": false,
+      "preparedIntent": "standard",
+      "hasAttachments": false,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": false,
+      "preparedIntent": "custom",
+      "hasAttachments": true,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": false,
+      "preparedIntent": "custom",
+      "hasAttachments": true,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": false,
+      "preparedIntent": "custom",
+      "hasAttachments": false,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": false,
+      "preparedIntent": "custom",
+      "hasAttachments": false,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": false,
+      "preparedIntent": null,
+      "hasAttachments": true,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": false,
+      "preparedIntent": null,
+      "hasAttachments": true,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": false,
+      "preparedIntent": null,
+      "hasAttachments": false,
+      "dashboardSpecReady": true
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  },
+  {
+    "input": {
+      "profile": "repair",
+      "platformPrepared": false,
+      "preparedIntent": null,
+      "hasAttachments": false,
+      "dashboardSpecReady": false
+    },
+    "expected": {
+      "schemaVersion": 1,
+      "lane": "model_repair",
+      "phase": "failure-scoped-repair",
+      "providerMode": "model",
+      "reasoningEffort": "medium",
+      "budgets": {
+        "maxTurns": 3,
+        "maxToolCalls": 8,
+        "maxOutputTokens": 6000,
+        "maxCacheMissInputTokens": 20000,
+        "maxPreparedInputTokens": 20000,
+        "maxCumulativePreparedInputTokens": 60000,
+        "progressStallTurns": 1
+      },
+      "invariants": {
+        "stableToolSchema": true,
+        "singleWriter": true,
+        "terminalSubmissionRequired": true,
+        "platformVerificationRequired": true
+      }
+    }
+  }
+]
