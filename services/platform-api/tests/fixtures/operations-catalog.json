@@ -1,0 +1,4332 @@
+[
+  {
+    "env": {},
+    "services": [
+      {
+        "id": "web",
+        "name": "Vue/Vite 主前端",
+        "summary": "Vue 产品入口；API、任务执行和权限由 Python 平台服务提供。",
+        "runtime": "node",
+        "kind": "application",
+        "domain": "product-shell",
+        "owner": "frontend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "endpoint": "http://localhost:3200",
+        "commands": {
+          "start": "npm run dev",
+          "health": "npm run doctor"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "market-data",
+          "memory",
+          "knowledge",
+          "modelport",
+          "loki"
+        ],
+        "capabilities": [
+          "workspace",
+          "generation-console",
+          "evaluation",
+          "operations"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:3200/api/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "market-data",
+        "name": "Python 市场数据后端",
+        "summary": "FastAPI 市场数据、股票池、回测、ClickHouse 同步和 provider 编排。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "market-data",
+        "owner": "backend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MARKET_API_ENABLED",
+        "requiredEnv": "ALPHADECK_MARKET_API_REQUIRED",
+        "endpoint": "http://127.0.0.1:8103",
+        "commands": {
+          "start": "cd services/market-data && uv run alphadeck-market-api",
+          "test": "cd services/market-data && uv run pytest"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "clickhouse"
+        ],
+        "capabilities": [
+          "quotes",
+          "research-universe",
+          "backtests",
+          "analytics"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:8103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "memory",
+        "name": "用户记忆服务",
+        "summary": "可选的版本化 HTTP 个性化能力；独立部署、独立存储并可无状态降级。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "personalization",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MEMORY_ENABLED",
+        "requiredEnv": "ALPHADECK_MEMORY_REQUIRED",
+        "endpoint": "http://127.0.0.1:38089",
+        "commands": {
+          "health": "curl http://127.0.0.1:38089/readyz"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "preference-memory",
+          "contextual-recall",
+          "attributed-outcomes",
+          "user-usage-fence",
+          "subject-scoped-token-broker"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38089/readyz",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "knowledge",
+        "name": "Agent Knowledge Platform",
+        "summary": "通过 AKEP v0.1 提供已发布、带引用、受 Space 与 purpose 治理的共享知识。",
+        "runtime": "node",
+        "kind": "api",
+        "domain": "governed-knowledge",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_KNOWLEDGE_ENABLED",
+        "requiredEnv": "ALPHADECK_KNOWLEDGE_REQUIRED",
+        "endpoint": "http://localhost:33005",
+        "commands": {
+          "health": "curl http://localhost:33005/health/ready",
+          "discovery": "curl http://localhost:33005/.well-known/akep"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "akep-discovery",
+          "governed-context-pack",
+          "immutable-citations",
+          "exposure-usage-feedback"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:33005/health/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "modelport",
+        "name": "ModelPort 模型网关",
+        "summary": "统一承接 Qwen、DeepSeek 等模型的 OpenAI/Anthropic 协议、鉴权、路由、配额和用量证据。",
+        "runtime": "rust",
+        "kind": "api",
+        "domain": "model-gateway",
+        "owner": "ai-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MODELPORT_ENABLED",
+        "requiredEnv": "ALPHADECK_MODELPORT_REQUIRED",
+        "endpoint": "http://127.0.0.1:38082",
+        "commands": {
+          "health": "curl http://127.0.0.1:38082/livez"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "openai-compatible",
+          "anthropic-compatible",
+          "local-qwen-routing",
+          "provider-governance"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38082/livez",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "timescaledb",
+        "name": "PostgreSQL / TimescaleDB",
+        "summary": "应用事实库和量化时序事实库。",
+        "runtime": "postgresql",
+        "kind": "database",
+        "domain": "storage",
+        "owner": "storage-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "enabledEnv": "ALPHADECK_DATABASE_ENABLED",
+        "requiredEnv": "ALPHADECK_DATABASE_REQUIRED",
+        "dockerService": "timescaledb",
+        "endpoint": "postgresql://alphadeck:***@127.0.0.1:35437/alphadeck?schema=public",
+        "commands": {
+          "start": "npm run db:up",
+          "init": "npm run db:init",
+          "inspect": "npm run db:doctor"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "projects",
+          "evaluation-state",
+          "time-series",
+          "strategy-data"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "postgresql",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "redis",
+        "name": "Redis 短期缓存",
+        "summary": "跨进程短 TTL 缓存、热点行情摘要和后续任务进度状态。",
+        "runtime": "redis",
+        "kind": "cache",
+        "domain": "runtime-cache",
+        "owner": "backend-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_REDIS_CACHE_ENABLED",
+        "requiredEnv": "ALPHADECK_REDIS_REQUIRED",
+        "dockerService": "redis",
+        "endpoint": "redis://127.0.0.1:36384/0",
+        "commands": {
+          "start": "npm run redis:up",
+          "cli": "npm run redis:cli"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "cache-aside",
+          "hot-query-cache",
+          "runtime-state"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "redis",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "clickhouse",
+        "name": "ClickHouse 分析加速层",
+        "summary": "append-only 评测事件、生成事件、全市场宽表和大规模研究扫描。",
+        "runtime": "clickhouse",
+        "kind": "analytics",
+        "domain": "analytics",
+        "owner": "storage-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": false,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_CLICKHOUSE_ENABLED",
+        "requiredEnv": "ALPHADECK_CLICKHOUSE_REQUIRED",
+        "dockerService": "clickhouse",
+        "endpoint": "http://127.0.0.1:38127",
+        "commands": {
+          "start": "docker compose up -d clickhouse",
+          "health": "curl http://127.0.0.1:38127/ping"
+        },
+        "dependencies": [
+          "timescaledb"
+        ],
+        "capabilities": [
+          "analytics-acceleration",
+          "event-log",
+          "wide-table"
+        ],
+        "enabled": false,
+        "required": false,
+        "requirement": "disabled",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38127/ping",
+        "configurationStatus": "disabled",
+        "issues": []
+      },
+      {
+        "id": "loki",
+        "name": "Loki 集中日志",
+        "summary": "本地集中日志存储，承接 Docker、Next、评测和运行日志。",
+        "runtime": "loki",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "loki",
+        "endpoint": "http://127.0.0.1:33103",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "centralized-logs",
+          "incident-debugging"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "grafana",
+        "name": "Grafana 可观测性面板",
+        "summary": "Loki 查询入口和后续指标看板承载。",
+        "runtime": "grafana",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "grafana",
+        "endpoint": "http://127.0.0.1:33015",
+        "commands": {
+          "start": "npm run obs:up",
+          "open": "open http://localhost:33015"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-query",
+          "dashboarding"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33015/api/health",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "alloy",
+        "name": "Grafana Alloy 日志采集器",
+        "summary": "采集 Docker 日志和本地运行日志并写入 Loki。",
+        "runtime": "alloy",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "alloy",
+        "endpoint": "http://127.0.0.1:33148",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-collection",
+          "docker-log-bridge"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33148/-/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      }
+    ],
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "serviceCount": 11,
+      "enabledCount": 10,
+      "requiredCount": 2,
+      "dependencyCount": 13
+    },
+    "dependencies": [
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "market-data",
+        "toName": "Python 市场数据后端",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "memory",
+        "toName": "用户记忆服务",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "knowledge",
+        "toName": "Agent Knowledge Platform",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "modelport",
+        "toName": "ModelPort 模型网关",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "clickhouse",
+        "toName": "ClickHouse 分析加速层",
+        "active": false
+      },
+      {
+        "from": "clickhouse",
+        "fromName": "ClickHouse 分析加速层",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": false
+      },
+      {
+        "from": "grafana",
+        "fromName": "Grafana 可观测性面板",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "alloy",
+        "fromName": "Grafana Alloy 日志采集器",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      }
+    ],
+    "degradation": {
+      "mode": "auto",
+      "components": {
+        "database": {
+          "enabled": true,
+          "required": true
+        },
+        "knowledge": {
+          "enabled": true,
+          "required": false
+        },
+        "marketApi": {
+          "enabled": true,
+          "required": false
+        },
+        "memory": {
+          "enabled": true,
+          "required": false
+        },
+        "modelPort": {
+          "enabled": true,
+          "required": false
+        },
+        "observability": {
+          "enabled": true,
+          "required": false
+        },
+        "redis": {
+          "enabled": true,
+          "required": false
+        }
+      }
+    }
+  },
+  {
+    "env": {
+      "ALPHADECK_DEGRADATION_MODE": "offline"
+    },
+    "services": [
+      {
+        "id": "web",
+        "name": "Vue/Vite 主前端",
+        "summary": "Vue 产品入口；API、任务执行和权限由 Python 平台服务提供。",
+        "runtime": "node",
+        "kind": "application",
+        "domain": "product-shell",
+        "owner": "frontend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "endpoint": "http://localhost:3200",
+        "commands": {
+          "start": "npm run dev",
+          "health": "npm run doctor"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "market-data",
+          "memory",
+          "knowledge",
+          "modelport",
+          "loki"
+        ],
+        "capabilities": [
+          "workspace",
+          "generation-console",
+          "evaluation",
+          "operations"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:3200/api/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "market-data",
+        "name": "Python 市场数据后端",
+        "summary": "FastAPI 市场数据、股票池、回测、ClickHouse 同步和 provider 编排。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "market-data",
+        "owner": "backend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MARKET_API_ENABLED",
+        "requiredEnv": "ALPHADECK_MARKET_API_REQUIRED",
+        "endpoint": "http://127.0.0.1:8103",
+        "commands": {
+          "start": "cd services/market-data && uv run alphadeck-market-api",
+          "test": "cd services/market-data && uv run pytest"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "clickhouse"
+        ],
+        "capabilities": [
+          "quotes",
+          "research-universe",
+          "backtests",
+          "analytics"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:8103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "memory",
+        "name": "用户记忆服务",
+        "summary": "可选的版本化 HTTP 个性化能力；独立部署、独立存储并可无状态降级。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "personalization",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MEMORY_ENABLED",
+        "requiredEnv": "ALPHADECK_MEMORY_REQUIRED",
+        "endpoint": "http://127.0.0.1:38089",
+        "commands": {
+          "health": "curl http://127.0.0.1:38089/readyz"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "preference-memory",
+          "contextual-recall",
+          "attributed-outcomes",
+          "user-usage-fence",
+          "subject-scoped-token-broker"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38089/readyz",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "knowledge",
+        "name": "Agent Knowledge Platform",
+        "summary": "通过 AKEP v0.1 提供已发布、带引用、受 Space 与 purpose 治理的共享知识。",
+        "runtime": "node",
+        "kind": "api",
+        "domain": "governed-knowledge",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_KNOWLEDGE_ENABLED",
+        "requiredEnv": "ALPHADECK_KNOWLEDGE_REQUIRED",
+        "endpoint": "http://localhost:33005",
+        "commands": {
+          "health": "curl http://localhost:33005/health/ready",
+          "discovery": "curl http://localhost:33005/.well-known/akep"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "akep-discovery",
+          "governed-context-pack",
+          "immutable-citations",
+          "exposure-usage-feedback"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:33005/health/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "modelport",
+        "name": "ModelPort 模型网关",
+        "summary": "统一承接 Qwen、DeepSeek 等模型的 OpenAI/Anthropic 协议、鉴权、路由、配额和用量证据。",
+        "runtime": "rust",
+        "kind": "api",
+        "domain": "model-gateway",
+        "owner": "ai-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MODELPORT_ENABLED",
+        "requiredEnv": "ALPHADECK_MODELPORT_REQUIRED",
+        "endpoint": "http://127.0.0.1:38082",
+        "commands": {
+          "health": "curl http://127.0.0.1:38082/livez"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "openai-compatible",
+          "anthropic-compatible",
+          "local-qwen-routing",
+          "provider-governance"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38082/livez",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "timescaledb",
+        "name": "PostgreSQL / TimescaleDB",
+        "summary": "应用事实库和量化时序事实库。",
+        "runtime": "postgresql",
+        "kind": "database",
+        "domain": "storage",
+        "owner": "storage-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "enabledEnv": "ALPHADECK_DATABASE_ENABLED",
+        "requiredEnv": "ALPHADECK_DATABASE_REQUIRED",
+        "dockerService": "timescaledb",
+        "endpoint": "postgresql://alphadeck:***@127.0.0.1:35437/alphadeck?schema=public",
+        "commands": {
+          "start": "npm run db:up",
+          "init": "npm run db:init",
+          "inspect": "npm run db:doctor"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "projects",
+          "evaluation-state",
+          "time-series",
+          "strategy-data"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "postgresql",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "redis",
+        "name": "Redis 短期缓存",
+        "summary": "跨进程短 TTL 缓存、热点行情摘要和后续任务进度状态。",
+        "runtime": "redis",
+        "kind": "cache",
+        "domain": "runtime-cache",
+        "owner": "backend-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_REDIS_CACHE_ENABLED",
+        "requiredEnv": "ALPHADECK_REDIS_REQUIRED",
+        "dockerService": "redis",
+        "endpoint": "redis://127.0.0.1:36384/0",
+        "commands": {
+          "start": "npm run redis:up",
+          "cli": "npm run redis:cli"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "cache-aside",
+          "hot-query-cache",
+          "runtime-state"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "redis",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "clickhouse",
+        "name": "ClickHouse 分析加速层",
+        "summary": "append-only 评测事件、生成事件、全市场宽表和大规模研究扫描。",
+        "runtime": "clickhouse",
+        "kind": "analytics",
+        "domain": "analytics",
+        "owner": "storage-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": false,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_CLICKHOUSE_ENABLED",
+        "requiredEnv": "ALPHADECK_CLICKHOUSE_REQUIRED",
+        "dockerService": "clickhouse",
+        "endpoint": "http://127.0.0.1:38127",
+        "commands": {
+          "start": "docker compose up -d clickhouse",
+          "health": "curl http://127.0.0.1:38127/ping"
+        },
+        "dependencies": [
+          "timescaledb"
+        ],
+        "capabilities": [
+          "analytics-acceleration",
+          "event-log",
+          "wide-table"
+        ],
+        "enabled": false,
+        "required": false,
+        "requirement": "disabled",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38127/ping",
+        "configurationStatus": "disabled",
+        "issues": []
+      },
+      {
+        "id": "loki",
+        "name": "Loki 集中日志",
+        "summary": "本地集中日志存储，承接 Docker、Next、评测和运行日志。",
+        "runtime": "loki",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "loki",
+        "endpoint": "http://127.0.0.1:33103",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "centralized-logs",
+          "incident-debugging"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "grafana",
+        "name": "Grafana 可观测性面板",
+        "summary": "Loki 查询入口和后续指标看板承载。",
+        "runtime": "grafana",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "grafana",
+        "endpoint": "http://127.0.0.1:33015",
+        "commands": {
+          "start": "npm run obs:up",
+          "open": "open http://localhost:33015"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-query",
+          "dashboarding"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33015/api/health",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "alloy",
+        "name": "Grafana Alloy 日志采集器",
+        "summary": "采集 Docker 日志和本地运行日志并写入 Loki。",
+        "runtime": "alloy",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "alloy",
+        "endpoint": "http://127.0.0.1:33148",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-collection",
+          "docker-log-bridge"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33148/-/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      }
+    ],
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "serviceCount": 11,
+      "enabledCount": 10,
+      "requiredCount": 2,
+      "dependencyCount": 13
+    },
+    "dependencies": [
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "market-data",
+        "toName": "Python 市场数据后端",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "memory",
+        "toName": "用户记忆服务",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "knowledge",
+        "toName": "Agent Knowledge Platform",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "modelport",
+        "toName": "ModelPort 模型网关",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "clickhouse",
+        "toName": "ClickHouse 分析加速层",
+        "active": false
+      },
+      {
+        "from": "clickhouse",
+        "fromName": "ClickHouse 分析加速层",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": false
+      },
+      {
+        "from": "grafana",
+        "fromName": "Grafana 可观测性面板",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "alloy",
+        "fromName": "Grafana Alloy 日志采集器",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      }
+    ],
+    "degradation": {
+      "mode": "offline",
+      "components": {
+        "database": {
+          "enabled": true,
+          "required": false
+        },
+        "knowledge": {
+          "enabled": false,
+          "required": false
+        },
+        "marketApi": {
+          "enabled": false,
+          "required": false
+        },
+        "memory": {
+          "enabled": false,
+          "required": false
+        },
+        "modelPort": {
+          "enabled": false,
+          "required": false
+        },
+        "observability": {
+          "enabled": false,
+          "required": false
+        },
+        "redis": {
+          "enabled": false,
+          "required": false
+        }
+      }
+    }
+  },
+  {
+    "env": {
+      "ALPHADECK_DEGRADATION_MODE": "strict"
+    },
+    "services": [
+      {
+        "id": "web",
+        "name": "Vue/Vite 主前端",
+        "summary": "Vue 产品入口；API、任务执行和权限由 Python 平台服务提供。",
+        "runtime": "node",
+        "kind": "application",
+        "domain": "product-shell",
+        "owner": "frontend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "endpoint": "http://localhost:3200",
+        "commands": {
+          "start": "npm run dev",
+          "health": "npm run doctor"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "market-data",
+          "memory",
+          "knowledge",
+          "modelport",
+          "loki"
+        ],
+        "capabilities": [
+          "workspace",
+          "generation-console",
+          "evaluation",
+          "operations"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:3200/api/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "market-data",
+        "name": "Python 市场数据后端",
+        "summary": "FastAPI 市场数据、股票池、回测、ClickHouse 同步和 provider 编排。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "market-data",
+        "owner": "backend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MARKET_API_ENABLED",
+        "requiredEnv": "ALPHADECK_MARKET_API_REQUIRED",
+        "endpoint": "http://127.0.0.1:8103",
+        "commands": {
+          "start": "cd services/market-data && uv run alphadeck-market-api",
+          "test": "cd services/market-data && uv run pytest"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "clickhouse"
+        ],
+        "capabilities": [
+          "quotes",
+          "research-universe",
+          "backtests",
+          "analytics"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:8103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "memory",
+        "name": "用户记忆服务",
+        "summary": "可选的版本化 HTTP 个性化能力；独立部署、独立存储并可无状态降级。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "personalization",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MEMORY_ENABLED",
+        "requiredEnv": "ALPHADECK_MEMORY_REQUIRED",
+        "endpoint": "http://127.0.0.1:38089",
+        "commands": {
+          "health": "curl http://127.0.0.1:38089/readyz"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "preference-memory",
+          "contextual-recall",
+          "attributed-outcomes",
+          "user-usage-fence",
+          "subject-scoped-token-broker"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38089/readyz",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "knowledge",
+        "name": "Agent Knowledge Platform",
+        "summary": "通过 AKEP v0.1 提供已发布、带引用、受 Space 与 purpose 治理的共享知识。",
+        "runtime": "node",
+        "kind": "api",
+        "domain": "governed-knowledge",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_KNOWLEDGE_ENABLED",
+        "requiredEnv": "ALPHADECK_KNOWLEDGE_REQUIRED",
+        "endpoint": "http://localhost:33005",
+        "commands": {
+          "health": "curl http://localhost:33005/health/ready",
+          "discovery": "curl http://localhost:33005/.well-known/akep"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "akep-discovery",
+          "governed-context-pack",
+          "immutable-citations",
+          "exposure-usage-feedback"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:33005/health/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "modelport",
+        "name": "ModelPort 模型网关",
+        "summary": "统一承接 Qwen、DeepSeek 等模型的 OpenAI/Anthropic 协议、鉴权、路由、配额和用量证据。",
+        "runtime": "rust",
+        "kind": "api",
+        "domain": "model-gateway",
+        "owner": "ai-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MODELPORT_ENABLED",
+        "requiredEnv": "ALPHADECK_MODELPORT_REQUIRED",
+        "endpoint": "http://127.0.0.1:38082",
+        "commands": {
+          "health": "curl http://127.0.0.1:38082/livez"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "openai-compatible",
+          "anthropic-compatible",
+          "local-qwen-routing",
+          "provider-governance"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38082/livez",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "timescaledb",
+        "name": "PostgreSQL / TimescaleDB",
+        "summary": "应用事实库和量化时序事实库。",
+        "runtime": "postgresql",
+        "kind": "database",
+        "domain": "storage",
+        "owner": "storage-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "enabledEnv": "ALPHADECK_DATABASE_ENABLED",
+        "requiredEnv": "ALPHADECK_DATABASE_REQUIRED",
+        "dockerService": "timescaledb",
+        "endpoint": "postgresql://alphadeck:***@127.0.0.1:35437/alphadeck?schema=public",
+        "commands": {
+          "start": "npm run db:up",
+          "init": "npm run db:init",
+          "inspect": "npm run db:doctor"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "projects",
+          "evaluation-state",
+          "time-series",
+          "strategy-data"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "postgresql",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "redis",
+        "name": "Redis 短期缓存",
+        "summary": "跨进程短 TTL 缓存、热点行情摘要和后续任务进度状态。",
+        "runtime": "redis",
+        "kind": "cache",
+        "domain": "runtime-cache",
+        "owner": "backend-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_REDIS_CACHE_ENABLED",
+        "requiredEnv": "ALPHADECK_REDIS_REQUIRED",
+        "dockerService": "redis",
+        "endpoint": "redis://127.0.0.1:36384/0",
+        "commands": {
+          "start": "npm run redis:up",
+          "cli": "npm run redis:cli"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "cache-aside",
+          "hot-query-cache",
+          "runtime-state"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "redis",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "clickhouse",
+        "name": "ClickHouse 分析加速层",
+        "summary": "append-only 评测事件、生成事件、全市场宽表和大规模研究扫描。",
+        "runtime": "clickhouse",
+        "kind": "analytics",
+        "domain": "analytics",
+        "owner": "storage-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": false,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_CLICKHOUSE_ENABLED",
+        "requiredEnv": "ALPHADECK_CLICKHOUSE_REQUIRED",
+        "dockerService": "clickhouse",
+        "endpoint": "http://127.0.0.1:38127",
+        "commands": {
+          "start": "docker compose up -d clickhouse",
+          "health": "curl http://127.0.0.1:38127/ping"
+        },
+        "dependencies": [
+          "timescaledb"
+        ],
+        "capabilities": [
+          "analytics-acceleration",
+          "event-log",
+          "wide-table"
+        ],
+        "enabled": false,
+        "required": false,
+        "requirement": "disabled",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38127/ping",
+        "configurationStatus": "disabled",
+        "issues": []
+      },
+      {
+        "id": "loki",
+        "name": "Loki 集中日志",
+        "summary": "本地集中日志存储，承接 Docker、Next、评测和运行日志。",
+        "runtime": "loki",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "loki",
+        "endpoint": "http://127.0.0.1:33103",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "centralized-logs",
+          "incident-debugging"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "grafana",
+        "name": "Grafana 可观测性面板",
+        "summary": "Loki 查询入口和后续指标看板承载。",
+        "runtime": "grafana",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "grafana",
+        "endpoint": "http://127.0.0.1:33015",
+        "commands": {
+          "start": "npm run obs:up",
+          "open": "open http://localhost:33015"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-query",
+          "dashboarding"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33015/api/health",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "alloy",
+        "name": "Grafana Alloy 日志采集器",
+        "summary": "采集 Docker 日志和本地运行日志并写入 Loki。",
+        "runtime": "alloy",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "alloy",
+        "endpoint": "http://127.0.0.1:33148",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-collection",
+          "docker-log-bridge"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33148/-/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      }
+    ],
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "serviceCount": 11,
+      "enabledCount": 10,
+      "requiredCount": 2,
+      "dependencyCount": 13
+    },
+    "dependencies": [
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "market-data",
+        "toName": "Python 市场数据后端",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "memory",
+        "toName": "用户记忆服务",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "knowledge",
+        "toName": "Agent Knowledge Platform",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "modelport",
+        "toName": "ModelPort 模型网关",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "clickhouse",
+        "toName": "ClickHouse 分析加速层",
+        "active": false
+      },
+      {
+        "from": "clickhouse",
+        "fromName": "ClickHouse 分析加速层",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": false
+      },
+      {
+        "from": "grafana",
+        "fromName": "Grafana 可观测性面板",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "alloy",
+        "fromName": "Grafana Alloy 日志采集器",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      }
+    ],
+    "degradation": {
+      "mode": "strict",
+      "components": {
+        "database": {
+          "enabled": true,
+          "required": true
+        },
+        "knowledge": {
+          "enabled": true,
+          "required": false
+        },
+        "marketApi": {
+          "enabled": true,
+          "required": true
+        },
+        "memory": {
+          "enabled": true,
+          "required": false
+        },
+        "modelPort": {
+          "enabled": true,
+          "required": true
+        },
+        "observability": {
+          "enabled": true,
+          "required": true
+        },
+        "redis": {
+          "enabled": true,
+          "required": true
+        }
+      }
+    }
+  },
+  {
+    "env": {
+      "NODE_ENV": "test"
+    },
+    "services": [
+      {
+        "id": "web",
+        "name": "Vue/Vite 主前端",
+        "summary": "Vue 产品入口；API、任务执行和权限由 Python 平台服务提供。",
+        "runtime": "node",
+        "kind": "application",
+        "domain": "product-shell",
+        "owner": "frontend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "endpoint": "http://localhost:3200",
+        "commands": {
+          "start": "npm run dev",
+          "health": "npm run doctor"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "market-data",
+          "memory",
+          "knowledge",
+          "modelport",
+          "loki"
+        ],
+        "capabilities": [
+          "workspace",
+          "generation-console",
+          "evaluation",
+          "operations"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:3200/api/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "market-data",
+        "name": "Python 市场数据后端",
+        "summary": "FastAPI 市场数据、股票池、回测、ClickHouse 同步和 provider 编排。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "market-data",
+        "owner": "backend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MARKET_API_ENABLED",
+        "requiredEnv": "ALPHADECK_MARKET_API_REQUIRED",
+        "endpoint": "http://127.0.0.1:8103",
+        "commands": {
+          "start": "cd services/market-data && uv run alphadeck-market-api",
+          "test": "cd services/market-data && uv run pytest"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "clickhouse"
+        ],
+        "capabilities": [
+          "quotes",
+          "research-universe",
+          "backtests",
+          "analytics"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:8103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "memory",
+        "name": "用户记忆服务",
+        "summary": "可选的版本化 HTTP 个性化能力；独立部署、独立存储并可无状态降级。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "personalization",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MEMORY_ENABLED",
+        "requiredEnv": "ALPHADECK_MEMORY_REQUIRED",
+        "endpoint": "http://127.0.0.1:38089",
+        "commands": {
+          "health": "curl http://127.0.0.1:38089/readyz"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "preference-memory",
+          "contextual-recall",
+          "attributed-outcomes",
+          "user-usage-fence",
+          "subject-scoped-token-broker"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38089/readyz",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "knowledge",
+        "name": "Agent Knowledge Platform",
+        "summary": "通过 AKEP v0.1 提供已发布、带引用、受 Space 与 purpose 治理的共享知识。",
+        "runtime": "node",
+        "kind": "api",
+        "domain": "governed-knowledge",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_KNOWLEDGE_ENABLED",
+        "requiredEnv": "ALPHADECK_KNOWLEDGE_REQUIRED",
+        "endpoint": "http://localhost:33005",
+        "commands": {
+          "health": "curl http://localhost:33005/health/ready",
+          "discovery": "curl http://localhost:33005/.well-known/akep"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "akep-discovery",
+          "governed-context-pack",
+          "immutable-citations",
+          "exposure-usage-feedback"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:33005/health/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "modelport",
+        "name": "ModelPort 模型网关",
+        "summary": "统一承接 Qwen、DeepSeek 等模型的 OpenAI/Anthropic 协议、鉴权、路由、配额和用量证据。",
+        "runtime": "rust",
+        "kind": "api",
+        "domain": "model-gateway",
+        "owner": "ai-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MODELPORT_ENABLED",
+        "requiredEnv": "ALPHADECK_MODELPORT_REQUIRED",
+        "endpoint": "http://127.0.0.1:38082",
+        "commands": {
+          "health": "curl http://127.0.0.1:38082/livez"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "openai-compatible",
+          "anthropic-compatible",
+          "local-qwen-routing",
+          "provider-governance"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38082/livez",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "timescaledb",
+        "name": "PostgreSQL / TimescaleDB",
+        "summary": "应用事实库和量化时序事实库。",
+        "runtime": "postgresql",
+        "kind": "database",
+        "domain": "storage",
+        "owner": "storage-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "enabledEnv": "ALPHADECK_DATABASE_ENABLED",
+        "requiredEnv": "ALPHADECK_DATABASE_REQUIRED",
+        "dockerService": "timescaledb",
+        "endpoint": "postgresql://alphadeck:***@127.0.0.1:35437/alphadeck?schema=public",
+        "commands": {
+          "start": "npm run db:up",
+          "init": "npm run db:init",
+          "inspect": "npm run db:doctor"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "projects",
+          "evaluation-state",
+          "time-series",
+          "strategy-data"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "postgresql",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "redis",
+        "name": "Redis 短期缓存",
+        "summary": "跨进程短 TTL 缓存、热点行情摘要和后续任务进度状态。",
+        "runtime": "redis",
+        "kind": "cache",
+        "domain": "runtime-cache",
+        "owner": "backend-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_REDIS_CACHE_ENABLED",
+        "requiredEnv": "ALPHADECK_REDIS_REQUIRED",
+        "dockerService": "redis",
+        "endpoint": "redis://127.0.0.1:36384/0",
+        "commands": {
+          "start": "npm run redis:up",
+          "cli": "npm run redis:cli"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "cache-aside",
+          "hot-query-cache",
+          "runtime-state"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "redis",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "clickhouse",
+        "name": "ClickHouse 分析加速层",
+        "summary": "append-only 评测事件、生成事件、全市场宽表和大规模研究扫描。",
+        "runtime": "clickhouse",
+        "kind": "analytics",
+        "domain": "analytics",
+        "owner": "storage-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": false,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_CLICKHOUSE_ENABLED",
+        "requiredEnv": "ALPHADECK_CLICKHOUSE_REQUIRED",
+        "dockerService": "clickhouse",
+        "endpoint": "http://127.0.0.1:38127",
+        "commands": {
+          "start": "docker compose up -d clickhouse",
+          "health": "curl http://127.0.0.1:38127/ping"
+        },
+        "dependencies": [
+          "timescaledb"
+        ],
+        "capabilities": [
+          "analytics-acceleration",
+          "event-log",
+          "wide-table"
+        ],
+        "enabled": false,
+        "required": false,
+        "requirement": "disabled",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38127/ping",
+        "configurationStatus": "disabled",
+        "issues": []
+      },
+      {
+        "id": "loki",
+        "name": "Loki 集中日志",
+        "summary": "本地集中日志存储，承接 Docker、Next、评测和运行日志。",
+        "runtime": "loki",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "loki",
+        "endpoint": "http://127.0.0.1:33103",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "centralized-logs",
+          "incident-debugging"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "grafana",
+        "name": "Grafana 可观测性面板",
+        "summary": "Loki 查询入口和后续指标看板承载。",
+        "runtime": "grafana",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "grafana",
+        "endpoint": "http://127.0.0.1:33015",
+        "commands": {
+          "start": "npm run obs:up",
+          "open": "open http://localhost:33015"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-query",
+          "dashboarding"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33015/api/health",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "alloy",
+        "name": "Grafana Alloy 日志采集器",
+        "summary": "采集 Docker 日志和本地运行日志并写入 Loki。",
+        "runtime": "alloy",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "alloy",
+        "endpoint": "http://127.0.0.1:33148",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-collection",
+          "docker-log-bridge"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33148/-/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      }
+    ],
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "serviceCount": 11,
+      "enabledCount": 10,
+      "requiredCount": 2,
+      "dependencyCount": 13
+    },
+    "dependencies": [
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "market-data",
+        "toName": "Python 市场数据后端",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "memory",
+        "toName": "用户记忆服务",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "knowledge",
+        "toName": "Agent Knowledge Platform",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "modelport",
+        "toName": "ModelPort 模型网关",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "clickhouse",
+        "toName": "ClickHouse 分析加速层",
+        "active": false
+      },
+      {
+        "from": "clickhouse",
+        "fromName": "ClickHouse 分析加速层",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": false
+      },
+      {
+        "from": "grafana",
+        "fromName": "Grafana 可观测性面板",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "alloy",
+        "fromName": "Grafana Alloy 日志采集器",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      }
+    ],
+    "degradation": {
+      "mode": "auto",
+      "components": {
+        "database": {
+          "enabled": true,
+          "required": true
+        },
+        "knowledge": {
+          "enabled": false,
+          "required": false
+        },
+        "marketApi": {
+          "enabled": true,
+          "required": false
+        },
+        "memory": {
+          "enabled": false,
+          "required": false
+        },
+        "modelPort": {
+          "enabled": true,
+          "required": false
+        },
+        "observability": {
+          "enabled": true,
+          "required": false
+        },
+        "redis": {
+          "enabled": true,
+          "required": false
+        }
+      }
+    }
+  },
+  {
+    "env": {
+      "DATABASE_URL": "postgresql://fixture:synthetic@localhost:1234/db?password=synthetic&token=fixture",
+      "ALPHADECK_MEMORY_ENABLED": "off"
+    },
+    "services": [
+      {
+        "id": "web",
+        "name": "Vue/Vite 主前端",
+        "summary": "Vue 产品入口；API、任务执行和权限由 Python 平台服务提供。",
+        "runtime": "node",
+        "kind": "application",
+        "domain": "product-shell",
+        "owner": "frontend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "endpoint": "http://localhost:3200",
+        "commands": {
+          "start": "npm run dev",
+          "health": "npm run doctor"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "market-data",
+          "memory",
+          "knowledge",
+          "modelport",
+          "loki"
+        ],
+        "capabilities": [
+          "workspace",
+          "generation-console",
+          "evaluation",
+          "operations"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:3200/api/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "market-data",
+        "name": "Python 市场数据后端",
+        "summary": "FastAPI 市场数据、股票池、回测、ClickHouse 同步和 provider 编排。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "market-data",
+        "owner": "backend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MARKET_API_ENABLED",
+        "requiredEnv": "ALPHADECK_MARKET_API_REQUIRED",
+        "endpoint": "http://127.0.0.1:8103",
+        "commands": {
+          "start": "cd services/market-data && uv run alphadeck-market-api",
+          "test": "cd services/market-data && uv run pytest"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "clickhouse"
+        ],
+        "capabilities": [
+          "quotes",
+          "research-universe",
+          "backtests",
+          "analytics"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:8103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "memory",
+        "name": "用户记忆服务",
+        "summary": "可选的版本化 HTTP 个性化能力；独立部署、独立存储并可无状态降级。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "personalization",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MEMORY_ENABLED",
+        "requiredEnv": "ALPHADECK_MEMORY_REQUIRED",
+        "endpoint": "http://127.0.0.1:38089",
+        "commands": {
+          "health": "curl http://127.0.0.1:38089/readyz"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "preference-memory",
+          "contextual-recall",
+          "attributed-outcomes",
+          "user-usage-fence",
+          "subject-scoped-token-broker"
+        ],
+        "enabled": false,
+        "required": false,
+        "requirement": "disabled",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38089/readyz",
+        "configurationStatus": "disabled",
+        "issues": []
+      },
+      {
+        "id": "knowledge",
+        "name": "Agent Knowledge Platform",
+        "summary": "通过 AKEP v0.1 提供已发布、带引用、受 Space 与 purpose 治理的共享知识。",
+        "runtime": "node",
+        "kind": "api",
+        "domain": "governed-knowledge",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_KNOWLEDGE_ENABLED",
+        "requiredEnv": "ALPHADECK_KNOWLEDGE_REQUIRED",
+        "endpoint": "http://localhost:33005",
+        "commands": {
+          "health": "curl http://localhost:33005/health/ready",
+          "discovery": "curl http://localhost:33005/.well-known/akep"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "akep-discovery",
+          "governed-context-pack",
+          "immutable-citations",
+          "exposure-usage-feedback"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:33005/health/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "modelport",
+        "name": "ModelPort 模型网关",
+        "summary": "统一承接 Qwen、DeepSeek 等模型的 OpenAI/Anthropic 协议、鉴权、路由、配额和用量证据。",
+        "runtime": "rust",
+        "kind": "api",
+        "domain": "model-gateway",
+        "owner": "ai-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MODELPORT_ENABLED",
+        "requiredEnv": "ALPHADECK_MODELPORT_REQUIRED",
+        "endpoint": "http://127.0.0.1:38082",
+        "commands": {
+          "health": "curl http://127.0.0.1:38082/livez"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "openai-compatible",
+          "anthropic-compatible",
+          "local-qwen-routing",
+          "provider-governance"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38082/livez",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "timescaledb",
+        "name": "PostgreSQL / TimescaleDB",
+        "summary": "应用事实库和量化时序事实库。",
+        "runtime": "postgresql",
+        "kind": "database",
+        "domain": "storage",
+        "owner": "storage-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "enabledEnv": "ALPHADECK_DATABASE_ENABLED",
+        "requiredEnv": "ALPHADECK_DATABASE_REQUIRED",
+        "dockerService": "timescaledb",
+        "endpoint": "postgresql://fixture:***@localhost:1234/db?password=***&token=***",
+        "commands": {
+          "start": "npm run db:up",
+          "init": "npm run db:init",
+          "inspect": "npm run db:doctor"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "projects",
+          "evaluation-state",
+          "time-series",
+          "strategy-data"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "env",
+        "endpointEnvKey": "DATABASE_URL",
+        "endpointProtocol": "postgresql",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "redis",
+        "name": "Redis 短期缓存",
+        "summary": "跨进程短 TTL 缓存、热点行情摘要和后续任务进度状态。",
+        "runtime": "redis",
+        "kind": "cache",
+        "domain": "runtime-cache",
+        "owner": "backend-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_REDIS_CACHE_ENABLED",
+        "requiredEnv": "ALPHADECK_REDIS_REQUIRED",
+        "dockerService": "redis",
+        "endpoint": "redis://127.0.0.1:36384/0",
+        "commands": {
+          "start": "npm run redis:up",
+          "cli": "npm run redis:cli"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "cache-aside",
+          "hot-query-cache",
+          "runtime-state"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "redis",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "clickhouse",
+        "name": "ClickHouse 分析加速层",
+        "summary": "append-only 评测事件、生成事件、全市场宽表和大规模研究扫描。",
+        "runtime": "clickhouse",
+        "kind": "analytics",
+        "domain": "analytics",
+        "owner": "storage-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": false,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_CLICKHOUSE_ENABLED",
+        "requiredEnv": "ALPHADECK_CLICKHOUSE_REQUIRED",
+        "dockerService": "clickhouse",
+        "endpoint": "http://127.0.0.1:38127",
+        "commands": {
+          "start": "docker compose up -d clickhouse",
+          "health": "curl http://127.0.0.1:38127/ping"
+        },
+        "dependencies": [
+          "timescaledb"
+        ],
+        "capabilities": [
+          "analytics-acceleration",
+          "event-log",
+          "wide-table"
+        ],
+        "enabled": false,
+        "required": false,
+        "requirement": "disabled",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38127/ping",
+        "configurationStatus": "disabled",
+        "issues": []
+      },
+      {
+        "id": "loki",
+        "name": "Loki 集中日志",
+        "summary": "本地集中日志存储，承接 Docker、Next、评测和运行日志。",
+        "runtime": "loki",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "loki",
+        "endpoint": "http://127.0.0.1:33103",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "centralized-logs",
+          "incident-debugging"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "grafana",
+        "name": "Grafana 可观测性面板",
+        "summary": "Loki 查询入口和后续指标看板承载。",
+        "runtime": "grafana",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "grafana",
+        "endpoint": "http://127.0.0.1:33015",
+        "commands": {
+          "start": "npm run obs:up",
+          "open": "open http://localhost:33015"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-query",
+          "dashboarding"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33015/api/health",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "alloy",
+        "name": "Grafana Alloy 日志采集器",
+        "summary": "采集 Docker 日志和本地运行日志并写入 Loki。",
+        "runtime": "alloy",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "alloy",
+        "endpoint": "http://127.0.0.1:33148",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-collection",
+          "docker-log-bridge"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33148/-/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      }
+    ],
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "serviceCount": 11,
+      "enabledCount": 9,
+      "requiredCount": 2,
+      "dependencyCount": 13
+    },
+    "dependencies": [
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "market-data",
+        "toName": "Python 市场数据后端",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "memory",
+        "toName": "用户记忆服务",
+        "active": false
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "knowledge",
+        "toName": "Agent Knowledge Platform",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "modelport",
+        "toName": "ModelPort 模型网关",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "clickhouse",
+        "toName": "ClickHouse 分析加速层",
+        "active": false
+      },
+      {
+        "from": "clickhouse",
+        "fromName": "ClickHouse 分析加速层",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": false
+      },
+      {
+        "from": "grafana",
+        "fromName": "Grafana 可观测性面板",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "alloy",
+        "fromName": "Grafana Alloy 日志采集器",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      }
+    ],
+    "degradation": {
+      "mode": "auto",
+      "components": {
+        "database": {
+          "enabled": true,
+          "required": true
+        },
+        "knowledge": {
+          "enabled": true,
+          "required": false
+        },
+        "marketApi": {
+          "enabled": true,
+          "required": false
+        },
+        "memory": {
+          "enabled": false,
+          "required": false
+        },
+        "modelPort": {
+          "enabled": true,
+          "required": false
+        },
+        "observability": {
+          "enabled": true,
+          "required": false
+        },
+        "redis": {
+          "enabled": true,
+          "required": false
+        }
+      }
+    }
+  },
+  {
+    "env": {
+      "ALPHADECK_MEMORY_REQUIRED": "yes",
+      "ALPHADECK_REDIS_REQUIRED": "on",
+      "ALPHADECK_MARKET_API_URL": "https://example.test/prefix?secret=fixture"
+    },
+    "services": [
+      {
+        "id": "web",
+        "name": "Vue/Vite 主前端",
+        "summary": "Vue 产品入口；API、任务执行和权限由 Python 平台服务提供。",
+        "runtime": "node",
+        "kind": "application",
+        "domain": "product-shell",
+        "owner": "frontend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "endpoint": "http://localhost:3200",
+        "commands": {
+          "start": "npm run dev",
+          "health": "npm run doctor"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "market-data",
+          "memory",
+          "knowledge",
+          "modelport",
+          "loki"
+        ],
+        "capabilities": [
+          "workspace",
+          "generation-console",
+          "evaluation",
+          "operations"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:3200/api/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "market-data",
+        "name": "Python 市场数据后端",
+        "summary": "FastAPI 市场数据、股票池、回测、ClickHouse 同步和 provider 编排。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "market-data",
+        "owner": "backend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MARKET_API_ENABLED",
+        "requiredEnv": "ALPHADECK_MARKET_API_REQUIRED",
+        "endpoint": "https://example.test/prefix?secret=***",
+        "commands": {
+          "start": "cd services/market-data && uv run alphadeck-market-api",
+          "test": "cd services/market-data && uv run pytest"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "clickhouse"
+        ],
+        "capabilities": [
+          "quotes",
+          "research-universe",
+          "backtests",
+          "analytics"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "env",
+        "endpointEnvKey": "ALPHADECK_MARKET_API_URL",
+        "endpointProtocol": "http",
+        "healthUrl": "https://example.test/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "memory",
+        "name": "用户记忆服务",
+        "summary": "可选的版本化 HTTP 个性化能力；独立部署、独立存储并可无状态降级。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "personalization",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MEMORY_ENABLED",
+        "requiredEnv": "ALPHADECK_MEMORY_REQUIRED",
+        "endpoint": "http://127.0.0.1:38089",
+        "commands": {
+          "health": "curl http://127.0.0.1:38089/readyz"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "preference-memory",
+          "contextual-recall",
+          "attributed-outcomes",
+          "user-usage-fence",
+          "subject-scoped-token-broker"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38089/readyz",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "knowledge",
+        "name": "Agent Knowledge Platform",
+        "summary": "通过 AKEP v0.1 提供已发布、带引用、受 Space 与 purpose 治理的共享知识。",
+        "runtime": "node",
+        "kind": "api",
+        "domain": "governed-knowledge",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_KNOWLEDGE_ENABLED",
+        "requiredEnv": "ALPHADECK_KNOWLEDGE_REQUIRED",
+        "endpoint": "http://localhost:33005",
+        "commands": {
+          "health": "curl http://localhost:33005/health/ready",
+          "discovery": "curl http://localhost:33005/.well-known/akep"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "akep-discovery",
+          "governed-context-pack",
+          "immutable-citations",
+          "exposure-usage-feedback"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:33005/health/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "modelport",
+        "name": "ModelPort 模型网关",
+        "summary": "统一承接 Qwen、DeepSeek 等模型的 OpenAI/Anthropic 协议、鉴权、路由、配额和用量证据。",
+        "runtime": "rust",
+        "kind": "api",
+        "domain": "model-gateway",
+        "owner": "ai-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MODELPORT_ENABLED",
+        "requiredEnv": "ALPHADECK_MODELPORT_REQUIRED",
+        "endpoint": "http://127.0.0.1:38082",
+        "commands": {
+          "health": "curl http://127.0.0.1:38082/livez"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "openai-compatible",
+          "anthropic-compatible",
+          "local-qwen-routing",
+          "provider-governance"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38082/livez",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "timescaledb",
+        "name": "PostgreSQL / TimescaleDB",
+        "summary": "应用事实库和量化时序事实库。",
+        "runtime": "postgresql",
+        "kind": "database",
+        "domain": "storage",
+        "owner": "storage-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "enabledEnv": "ALPHADECK_DATABASE_ENABLED",
+        "requiredEnv": "ALPHADECK_DATABASE_REQUIRED",
+        "dockerService": "timescaledb",
+        "endpoint": "postgresql://alphadeck:***@127.0.0.1:35437/alphadeck?schema=public",
+        "commands": {
+          "start": "npm run db:up",
+          "init": "npm run db:init",
+          "inspect": "npm run db:doctor"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "projects",
+          "evaluation-state",
+          "time-series",
+          "strategy-data"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "postgresql",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "redis",
+        "name": "Redis 短期缓存",
+        "summary": "跨进程短 TTL 缓存、热点行情摘要和后续任务进度状态。",
+        "runtime": "redis",
+        "kind": "cache",
+        "domain": "runtime-cache",
+        "owner": "backend-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_REDIS_CACHE_ENABLED",
+        "requiredEnv": "ALPHADECK_REDIS_REQUIRED",
+        "dockerService": "redis",
+        "endpoint": "redis://127.0.0.1:36384/0",
+        "commands": {
+          "start": "npm run redis:up",
+          "cli": "npm run redis:cli"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "cache-aside",
+          "hot-query-cache",
+          "runtime-state"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "redis",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "clickhouse",
+        "name": "ClickHouse 分析加速层",
+        "summary": "append-only 评测事件、生成事件、全市场宽表和大规模研究扫描。",
+        "runtime": "clickhouse",
+        "kind": "analytics",
+        "domain": "analytics",
+        "owner": "storage-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": false,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_CLICKHOUSE_ENABLED",
+        "requiredEnv": "ALPHADECK_CLICKHOUSE_REQUIRED",
+        "dockerService": "clickhouse",
+        "endpoint": "http://127.0.0.1:38127",
+        "commands": {
+          "start": "docker compose up -d clickhouse",
+          "health": "curl http://127.0.0.1:38127/ping"
+        },
+        "dependencies": [
+          "timescaledb"
+        ],
+        "capabilities": [
+          "analytics-acceleration",
+          "event-log",
+          "wide-table"
+        ],
+        "enabled": false,
+        "required": false,
+        "requirement": "disabled",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38127/ping",
+        "configurationStatus": "disabled",
+        "issues": []
+      },
+      {
+        "id": "loki",
+        "name": "Loki 集中日志",
+        "summary": "本地集中日志存储，承接 Docker、Next、评测和运行日志。",
+        "runtime": "loki",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "loki",
+        "endpoint": "http://127.0.0.1:33103",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "centralized-logs",
+          "incident-debugging"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "grafana",
+        "name": "Grafana 可观测性面板",
+        "summary": "Loki 查询入口和后续指标看板承载。",
+        "runtime": "grafana",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "grafana",
+        "endpoint": "http://127.0.0.1:33015",
+        "commands": {
+          "start": "npm run obs:up",
+          "open": "open http://localhost:33015"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-query",
+          "dashboarding"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33015/api/health",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "alloy",
+        "name": "Grafana Alloy 日志采集器",
+        "summary": "采集 Docker 日志和本地运行日志并写入 Loki。",
+        "runtime": "alloy",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "alloy",
+        "endpoint": "http://127.0.0.1:33148",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-collection",
+          "docker-log-bridge"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33148/-/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      }
+    ],
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "serviceCount": 11,
+      "enabledCount": 10,
+      "requiredCount": 4,
+      "dependencyCount": 13
+    },
+    "dependencies": [
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "market-data",
+        "toName": "Python 市场数据后端",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "memory",
+        "toName": "用户记忆服务",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "knowledge",
+        "toName": "Agent Knowledge Platform",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "modelport",
+        "toName": "ModelPort 模型网关",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "clickhouse",
+        "toName": "ClickHouse 分析加速层",
+        "active": false
+      },
+      {
+        "from": "clickhouse",
+        "fromName": "ClickHouse 分析加速层",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": false
+      },
+      {
+        "from": "grafana",
+        "fromName": "Grafana 可观测性面板",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "alloy",
+        "fromName": "Grafana Alloy 日志采集器",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      }
+    ],
+    "degradation": {
+      "mode": "auto",
+      "components": {
+        "database": {
+          "enabled": true,
+          "required": true
+        },
+        "knowledge": {
+          "enabled": true,
+          "required": false
+        },
+        "marketApi": {
+          "enabled": true,
+          "required": false
+        },
+        "memory": {
+          "enabled": true,
+          "required": true
+        },
+        "modelPort": {
+          "enabled": true,
+          "required": false
+        },
+        "observability": {
+          "enabled": true,
+          "required": false
+        },
+        "redis": {
+          "enabled": true,
+          "required": true
+        }
+      }
+    }
+  },
+  {
+    "env": {
+      "ALPHADECK_DATABASE_ENABLED": "false",
+      "ALPHADECK_DEGRADATION_MODE": " STRICT "
+    },
+    "services": [
+      {
+        "id": "web",
+        "name": "Vue/Vite 主前端",
+        "summary": "Vue 产品入口；API、任务执行和权限由 Python 平台服务提供。",
+        "runtime": "node",
+        "kind": "application",
+        "domain": "product-shell",
+        "owner": "frontend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "endpoint": "http://localhost:3200",
+        "commands": {
+          "start": "npm run dev",
+          "health": "npm run doctor"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "market-data",
+          "memory",
+          "knowledge",
+          "modelport",
+          "loki"
+        ],
+        "capabilities": [
+          "workspace",
+          "generation-console",
+          "evaluation",
+          "operations"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:3200/api/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "market-data",
+        "name": "Python 市场数据后端",
+        "summary": "FastAPI 市场数据、股票池、回测、ClickHouse 同步和 provider 编排。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "market-data",
+        "owner": "backend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MARKET_API_ENABLED",
+        "requiredEnv": "ALPHADECK_MARKET_API_REQUIRED",
+        "endpoint": "http://127.0.0.1:8103",
+        "commands": {
+          "start": "cd services/market-data && uv run alphadeck-market-api",
+          "test": "cd services/market-data && uv run pytest"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "clickhouse"
+        ],
+        "capabilities": [
+          "quotes",
+          "research-universe",
+          "backtests",
+          "analytics"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:8103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "memory",
+        "name": "用户记忆服务",
+        "summary": "可选的版本化 HTTP 个性化能力；独立部署、独立存储并可无状态降级。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "personalization",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MEMORY_ENABLED",
+        "requiredEnv": "ALPHADECK_MEMORY_REQUIRED",
+        "endpoint": "http://127.0.0.1:38089",
+        "commands": {
+          "health": "curl http://127.0.0.1:38089/readyz"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "preference-memory",
+          "contextual-recall",
+          "attributed-outcomes",
+          "user-usage-fence",
+          "subject-scoped-token-broker"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38089/readyz",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "knowledge",
+        "name": "Agent Knowledge Platform",
+        "summary": "通过 AKEP v0.1 提供已发布、带引用、受 Space 与 purpose 治理的共享知识。",
+        "runtime": "node",
+        "kind": "api",
+        "domain": "governed-knowledge",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_KNOWLEDGE_ENABLED",
+        "requiredEnv": "ALPHADECK_KNOWLEDGE_REQUIRED",
+        "endpoint": "http://localhost:33005",
+        "commands": {
+          "health": "curl http://localhost:33005/health/ready",
+          "discovery": "curl http://localhost:33005/.well-known/akep"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "akep-discovery",
+          "governed-context-pack",
+          "immutable-citations",
+          "exposure-usage-feedback"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:33005/health/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "modelport",
+        "name": "ModelPort 模型网关",
+        "summary": "统一承接 Qwen、DeepSeek 等模型的 OpenAI/Anthropic 协议、鉴权、路由、配额和用量证据。",
+        "runtime": "rust",
+        "kind": "api",
+        "domain": "model-gateway",
+        "owner": "ai-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MODELPORT_ENABLED",
+        "requiredEnv": "ALPHADECK_MODELPORT_REQUIRED",
+        "endpoint": "http://127.0.0.1:38082",
+        "commands": {
+          "health": "curl http://127.0.0.1:38082/livez"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "openai-compatible",
+          "anthropic-compatible",
+          "local-qwen-routing",
+          "provider-governance"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38082/livez",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "timescaledb",
+        "name": "PostgreSQL / TimescaleDB",
+        "summary": "应用事实库和量化时序事实库。",
+        "runtime": "postgresql",
+        "kind": "database",
+        "domain": "storage",
+        "owner": "storage-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "enabledEnv": "ALPHADECK_DATABASE_ENABLED",
+        "requiredEnv": "ALPHADECK_DATABASE_REQUIRED",
+        "dockerService": "timescaledb",
+        "endpoint": "postgresql://alphadeck:***@127.0.0.1:35437/alphadeck?schema=public",
+        "commands": {
+          "start": "npm run db:up",
+          "init": "npm run db:init",
+          "inspect": "npm run db:doctor"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "projects",
+          "evaluation-state",
+          "time-series",
+          "strategy-data"
+        ],
+        "enabled": false,
+        "required": false,
+        "requirement": "disabled",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "postgresql",
+        "healthUrl": null,
+        "configurationStatus": "disabled",
+        "issues": []
+      },
+      {
+        "id": "redis",
+        "name": "Redis 短期缓存",
+        "summary": "跨进程短 TTL 缓存、热点行情摘要和后续任务进度状态。",
+        "runtime": "redis",
+        "kind": "cache",
+        "domain": "runtime-cache",
+        "owner": "backend-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_REDIS_CACHE_ENABLED",
+        "requiredEnv": "ALPHADECK_REDIS_REQUIRED",
+        "dockerService": "redis",
+        "endpoint": "redis://127.0.0.1:36384/0",
+        "commands": {
+          "start": "npm run redis:up",
+          "cli": "npm run redis:cli"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "cache-aside",
+          "hot-query-cache",
+          "runtime-state"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "redis",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "clickhouse",
+        "name": "ClickHouse 分析加速层",
+        "summary": "append-only 评测事件、生成事件、全市场宽表和大规模研究扫描。",
+        "runtime": "clickhouse",
+        "kind": "analytics",
+        "domain": "analytics",
+        "owner": "storage-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": false,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_CLICKHOUSE_ENABLED",
+        "requiredEnv": "ALPHADECK_CLICKHOUSE_REQUIRED",
+        "dockerService": "clickhouse",
+        "endpoint": "http://127.0.0.1:38127",
+        "commands": {
+          "start": "docker compose up -d clickhouse",
+          "health": "curl http://127.0.0.1:38127/ping"
+        },
+        "dependencies": [
+          "timescaledb"
+        ],
+        "capabilities": [
+          "analytics-acceleration",
+          "event-log",
+          "wide-table"
+        ],
+        "enabled": false,
+        "required": false,
+        "requirement": "disabled",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38127/ping",
+        "configurationStatus": "disabled",
+        "issues": []
+      },
+      {
+        "id": "loki",
+        "name": "Loki 集中日志",
+        "summary": "本地集中日志存储，承接 Docker、Next、评测和运行日志。",
+        "runtime": "loki",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "loki",
+        "endpoint": "http://127.0.0.1:33103",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "centralized-logs",
+          "incident-debugging"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "grafana",
+        "name": "Grafana 可观测性面板",
+        "summary": "Loki 查询入口和后续指标看板承载。",
+        "runtime": "grafana",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "grafana",
+        "endpoint": "http://127.0.0.1:33015",
+        "commands": {
+          "start": "npm run obs:up",
+          "open": "open http://localhost:33015"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-query",
+          "dashboarding"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33015/api/health",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "alloy",
+        "name": "Grafana Alloy 日志采集器",
+        "summary": "采集 Docker 日志和本地运行日志并写入 Loki。",
+        "runtime": "alloy",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "alloy",
+        "endpoint": "http://127.0.0.1:33148",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-collection",
+          "docker-log-bridge"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33148/-/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      }
+    ],
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "serviceCount": 11,
+      "enabledCount": 9,
+      "requiredCount": 1,
+      "dependencyCount": 13
+    },
+    "dependencies": [
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": false
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "market-data",
+        "toName": "Python 市场数据后端",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "memory",
+        "toName": "用户记忆服务",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "knowledge",
+        "toName": "Agent Knowledge Platform",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "modelport",
+        "toName": "ModelPort 模型网关",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": false
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "clickhouse",
+        "toName": "ClickHouse 分析加速层",
+        "active": false
+      },
+      {
+        "from": "clickhouse",
+        "fromName": "ClickHouse 分析加速层",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": false
+      },
+      {
+        "from": "grafana",
+        "fromName": "Grafana 可观测性面板",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "alloy",
+        "fromName": "Grafana Alloy 日志采集器",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      }
+    ],
+    "degradation": {
+      "mode": "strict",
+      "components": {
+        "database": {
+          "enabled": false,
+          "required": true
+        },
+        "knowledge": {
+          "enabled": true,
+          "required": false
+        },
+        "marketApi": {
+          "enabled": true,
+          "required": true
+        },
+        "memory": {
+          "enabled": true,
+          "required": false
+        },
+        "modelPort": {
+          "enabled": true,
+          "required": true
+        },
+        "observability": {
+          "enabled": true,
+          "required": true
+        },
+        "redis": {
+          "enabled": true,
+          "required": true
+        }
+      }
+    }
+  },
+  {
+    "env": {
+      "ALPHADECK_MODELPORT_ENABLED": "invalid"
+    },
+    "services": [
+      {
+        "id": "web",
+        "name": "Vue/Vite 主前端",
+        "summary": "Vue 产品入口；API、任务执行和权限由 Python 平台服务提供。",
+        "runtime": "node",
+        "kind": "application",
+        "domain": "product-shell",
+        "owner": "frontend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "endpoint": "http://localhost:3200",
+        "commands": {
+          "start": "npm run dev",
+          "health": "npm run doctor"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "market-data",
+          "memory",
+          "knowledge",
+          "modelport",
+          "loki"
+        ],
+        "capabilities": [
+          "workspace",
+          "generation-console",
+          "evaluation",
+          "operations"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:3200/api/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "market-data",
+        "name": "Python 市场数据后端",
+        "summary": "FastAPI 市场数据、股票池、回测、ClickHouse 同步和 provider 编排。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "market-data",
+        "owner": "backend-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MARKET_API_ENABLED",
+        "requiredEnv": "ALPHADECK_MARKET_API_REQUIRED",
+        "endpoint": "http://127.0.0.1:8103",
+        "commands": {
+          "start": "cd services/market-data && uv run alphadeck-market-api",
+          "test": "cd services/market-data && uv run pytest"
+        },
+        "dependencies": [
+          "timescaledb",
+          "redis",
+          "clickhouse"
+        ],
+        "capabilities": [
+          "quotes",
+          "research-universe",
+          "backtests",
+          "analytics"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:8103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "memory",
+        "name": "用户记忆服务",
+        "summary": "可选的版本化 HTTP 个性化能力；独立部署、独立存储并可无状态降级。",
+        "runtime": "python",
+        "kind": "api",
+        "domain": "personalization",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MEMORY_ENABLED",
+        "requiredEnv": "ALPHADECK_MEMORY_REQUIRED",
+        "endpoint": "http://127.0.0.1:38089",
+        "commands": {
+          "health": "curl http://127.0.0.1:38089/readyz"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "preference-memory",
+          "contextual-recall",
+          "attributed-outcomes",
+          "user-usage-fence",
+          "subject-scoped-token-broker"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38089/readyz",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "knowledge",
+        "name": "Agent Knowledge Platform",
+        "summary": "通过 AKEP v0.1 提供已发布、带引用、受 Space 与 purpose 治理的共享知识。",
+        "runtime": "node",
+        "kind": "api",
+        "domain": "governed-knowledge",
+        "owner": "platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_KNOWLEDGE_ENABLED",
+        "requiredEnv": "ALPHADECK_KNOWLEDGE_REQUIRED",
+        "endpoint": "http://localhost:33005",
+        "commands": {
+          "health": "curl http://localhost:33005/health/ready",
+          "discovery": "curl http://localhost:33005/.well-known/akep"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "akep-discovery",
+          "governed-context-pack",
+          "immutable-citations",
+          "exposure-usage-feedback"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://localhost:33005/health/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "modelport",
+        "name": "ModelPort 模型网关",
+        "summary": "统一承接 Qwen、DeepSeek 等模型的 OpenAI/Anthropic 协议、鉴权、路由、配额和用量证据。",
+        "runtime": "rust",
+        "kind": "api",
+        "domain": "model-gateway",
+        "owner": "ai-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_MODELPORT_ENABLED",
+        "requiredEnv": "ALPHADECK_MODELPORT_REQUIRED",
+        "endpoint": "http://127.0.0.1:38082",
+        "commands": {
+          "health": "curl http://127.0.0.1:38082/livez"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "openai-compatible",
+          "anthropic-compatible",
+          "local-qwen-routing",
+          "provider-governance"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38082/livez",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "timescaledb",
+        "name": "PostgreSQL / TimescaleDB",
+        "summary": "应用事实库和量化时序事实库。",
+        "runtime": "postgresql",
+        "kind": "database",
+        "domain": "storage",
+        "owner": "storage-platform",
+        "lifecycle": "core",
+        "enabledByDefault": true,
+        "requiredByDefault": true,
+        "enabledEnv": "ALPHADECK_DATABASE_ENABLED",
+        "requiredEnv": "ALPHADECK_DATABASE_REQUIRED",
+        "dockerService": "timescaledb",
+        "endpoint": "postgresql://alphadeck:***@127.0.0.1:35437/alphadeck?schema=public",
+        "commands": {
+          "start": "npm run db:up",
+          "init": "npm run db:init",
+          "inspect": "npm run db:doctor"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "projects",
+          "evaluation-state",
+          "time-series",
+          "strategy-data"
+        ],
+        "enabled": true,
+        "required": true,
+        "requirement": "required",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "postgresql",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "redis",
+        "name": "Redis 短期缓存",
+        "summary": "跨进程短 TTL 缓存、热点行情摘要和后续任务进度状态。",
+        "runtime": "redis",
+        "kind": "cache",
+        "domain": "runtime-cache",
+        "owner": "backend-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_REDIS_CACHE_ENABLED",
+        "requiredEnv": "ALPHADECK_REDIS_REQUIRED",
+        "dockerService": "redis",
+        "endpoint": "redis://127.0.0.1:36384/0",
+        "commands": {
+          "start": "npm run redis:up",
+          "cli": "npm run redis:cli"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "cache-aside",
+          "hot-query-cache",
+          "runtime-state"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "redis",
+        "healthUrl": null,
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "clickhouse",
+        "name": "ClickHouse 分析加速层",
+        "summary": "append-only 评测事件、生成事件、全市场宽表和大规模研究扫描。",
+        "runtime": "clickhouse",
+        "kind": "analytics",
+        "domain": "analytics",
+        "owner": "storage-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": false,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_CLICKHOUSE_ENABLED",
+        "requiredEnv": "ALPHADECK_CLICKHOUSE_REQUIRED",
+        "dockerService": "clickhouse",
+        "endpoint": "http://127.0.0.1:38127",
+        "commands": {
+          "start": "docker compose up -d clickhouse",
+          "health": "curl http://127.0.0.1:38127/ping"
+        },
+        "dependencies": [
+          "timescaledb"
+        ],
+        "capabilities": [
+          "analytics-acceleration",
+          "event-log",
+          "wide-table"
+        ],
+        "enabled": false,
+        "required": false,
+        "requirement": "disabled",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:38127/ping",
+        "configurationStatus": "disabled",
+        "issues": []
+      },
+      {
+        "id": "loki",
+        "name": "Loki 集中日志",
+        "summary": "本地集中日志存储，承接 Docker、Next、评测和运行日志。",
+        "runtime": "loki",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "loki",
+        "endpoint": "http://127.0.0.1:33103",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [],
+        "capabilities": [
+          "centralized-logs",
+          "incident-debugging"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33103/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "grafana",
+        "name": "Grafana 可观测性面板",
+        "summary": "Loki 查询入口和后续指标看板承载。",
+        "runtime": "grafana",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "grafana",
+        "endpoint": "http://127.0.0.1:33015",
+        "commands": {
+          "start": "npm run obs:up",
+          "open": "open http://localhost:33015"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-query",
+          "dashboarding"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33015/api/health",
+        "configurationStatus": "ok",
+        "issues": []
+      },
+      {
+        "id": "alloy",
+        "name": "Grafana Alloy 日志采集器",
+        "summary": "采集 Docker 日志和本地运行日志并写入 Loki。",
+        "runtime": "alloy",
+        "kind": "observability",
+        "domain": "observability",
+        "owner": "ops-platform",
+        "lifecycle": "supporting",
+        "enabledByDefault": true,
+        "requiredByDefault": false,
+        "enabledEnv": "ALPHADECK_OBSERVABILITY_ENABLED",
+        "requiredEnv": "ALPHADECK_OBSERVABILITY_REQUIRED",
+        "dockerService": "alloy",
+        "endpoint": "http://127.0.0.1:33148",
+        "commands": {
+          "start": "npm run obs:up",
+          "logs": "npm run obs:logs"
+        },
+        "dependencies": [
+          "loki"
+        ],
+        "capabilities": [
+          "log-collection",
+          "docker-log-bridge"
+        ],
+        "enabled": true,
+        "required": false,
+        "requirement": "optional",
+        "endpointSource": "default",
+        "endpointEnvKey": null,
+        "endpointProtocol": "http",
+        "healthUrl": "http://127.0.0.1:33148/-/ready",
+        "configurationStatus": "ok",
+        "issues": []
+      }
+    ],
+    "validation": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "serviceCount": 11,
+      "enabledCount": 10,
+      "requiredCount": 2,
+      "dependencyCount": 13
+    },
+    "dependencies": [
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "market-data",
+        "toName": "Python 市场数据后端",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "memory",
+        "toName": "用户记忆服务",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "knowledge",
+        "toName": "Agent Knowledge Platform",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "modelport",
+        "toName": "ModelPort 模型网关",
+        "active": true
+      },
+      {
+        "from": "web",
+        "fromName": "Vue/Vite 主前端",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "redis",
+        "toName": "Redis 短期缓存",
+        "active": true
+      },
+      {
+        "from": "market-data",
+        "fromName": "Python 市场数据后端",
+        "to": "clickhouse",
+        "toName": "ClickHouse 分析加速层",
+        "active": false
+      },
+      {
+        "from": "clickhouse",
+        "fromName": "ClickHouse 分析加速层",
+        "to": "timescaledb",
+        "toName": "PostgreSQL / TimescaleDB",
+        "active": false
+      },
+      {
+        "from": "grafana",
+        "fromName": "Grafana 可观测性面板",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      },
+      {
+        "from": "alloy",
+        "fromName": "Grafana Alloy 日志采集器",
+        "to": "loki",
+        "toName": "Loki 集中日志",
+        "active": true
+      }
+    ],
+    "degradation": {
+      "mode": "auto",
+      "components": {
+        "database": {
+          "enabled": true,
+          "required": true
+        },
+        "knowledge": {
+          "enabled": true,
+          "required": false
+        },
+        "marketApi": {
+          "enabled": true,
+          "required": false
+        },
+        "memory": {
+          "enabled": true,
+          "required": false
+        },
+        "modelPort": {
+          "enabled": true,
+          "required": false
+        },
+        "observability": {
+          "enabled": true,
+          "required": false
+        },
+        "redis": {
+          "enabled": true,
+          "required": false
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,1809 @@
+[
+  {
+    "kind": "project",
+    "workspace": {
+      "summary": {
+        "healthy": 0,
+        "warning": 0,
+        "unknown": 1,
+        "failed": 0,
+        "total": 1,
+        "averageScore": 90
+      }
+    },
+    "expected": {
+      "id": "project",
+      "label": "项目健康",
+      "score": 64,
+      "status": "failed",
+      "summary": "衡量生成工作空间的产物完整性、验证结果和交付可靠性。",
+      "factors": [
+        {
+          "id": "active-delivery-score",
+          "label": "活跃交付分",
+          "score": 90,
+          "weight": 45,
+          "status": "ok",
+          "summary": "1 个非归档候选工作空间平均 90 分。"
+        },
+        {
+          "id": "showcase-ratio",
+          "label": "可演示占比",
+          "score": 0,
+          "weight": 30,
+          "status": "failed",
+          "summary": "0/1 个活跃工作空间可直接演示。"
+        },
+        {
+          "id": "repair-pressure",
+          "label": "修复压力",
+          "score": 93,
+          "weight": 20,
+          "status": "ok",
+          "summary": "0 个待修复、1 个风险项。"
+        },
+        {
+          "id": "archive-hygiene",
+          "label": "历史归档",
+          "score": 100,
+          "weight": 5,
+          "status": "ok",
+          "summary": "0 个历史失败工作空间建议归档，不纳入主平台可用性。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "runtime",
+    "systemChecks": [
+      {
+        "id": "database",
+        "status": "ok"
+      },
+      {
+        "id": "docker-timescaledb",
+        "status": "ok"
+      },
+      {
+        "id": "market-api",
+        "status": "ok"
+      },
+      {
+        "id": "node-runtime",
+        "status": "ok"
+      },
+      {
+        "id": "npm-cli",
+        "status": "ok"
+      },
+      {
+        "id": "agent-cli",
+        "status": "ok"
+      },
+      {
+        "id": "workspace-storage",
+        "status": "ok"
+      },
+      {
+        "id": "repo-baseline",
+        "status": "ok"
+      },
+      {
+        "id": "quant-schema",
+        "status": "ok"
+      }
+    ],
+    "logSources": [
+      {
+        "exists": true
+      },
+      {
+        "exists": true
+      }
+    ],
+    "expected": {
+      "id": "runtime",
+      "label": "运行健康",
+      "score": 100,
+      "status": "ok",
+      "summary": "衡量基础服务、工具链、存储结构和日志可观测性。",
+      "factors": [
+        {
+          "id": "core-services",
+          "label": "核心服务",
+          "score": 100,
+          "weight": 40,
+          "status": "ok",
+          "summary": "数据库、TimescaleDB、Docker 和量化数据后端可用性。"
+        },
+        {
+          "id": "toolchain",
+          "label": "工具链",
+          "score": 100,
+          "weight": 20,
+          "status": "ok",
+          "summary": "Node.js、npm、Agent CLI 是否满足生成链路要求。"
+        },
+        {
+          "id": "storage-schema",
+          "label": "存储与表结构",
+          "score": 100,
+          "weight": 25,
+          "status": "ok",
+          "summary": "工作空间目录、基础文件和 quant schema 是否完整。"
+        },
+        {
+          "id": "observability",
+          "label": "可观测性",
+          "score": 100,
+          "weight": 15,
+          "status": "ok",
+          "summary": "2/2 个日志源可读。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "strategy",
+    "strategy": {
+      "summary": {
+        "templates": 10,
+        "readyTemplates": 0,
+        "syncedSymbols": 0,
+        "trackedSymbols": 10,
+        "syncedBars": 12000,
+        "parameterScans": 0
+      },
+      "research": {
+        "source": "market-api",
+        "error": null,
+        "primaryUniverseId": "u",
+        "universes": [
+          {
+            "id": "u",
+            "latestTs": null
+          }
+        ]
+      },
+      "scanRuns": [],
+      "scanJobs": []
+    },
+    "expected": {
+      "id": "strategy",
+      "label": "策略健康",
+      "score": 18,
+      "status": "failed",
+      "summary": "衡量策略目录、股票池行情覆盖、数据新鲜度和回测扫描准备度。",
+      "factors": [
+        {
+          "id": "template-readiness",
+          "label": "策略目录",
+          "score": 0,
+          "weight": 25,
+          "status": "failed",
+          "summary": "0/10 个策略模板 ready。"
+        },
+        {
+          "id": "universe-coverage",
+          "label": "股票池覆盖",
+          "score": 0,
+          "weight": 30,
+          "status": "failed",
+          "summary": "0/10 个标的已有行情覆盖，12,000 根 K 线。"
+        },
+        {
+          "id": "freshness",
+          "label": "数据新鲜度",
+          "score": 0,
+          "weight": 20,
+          "status": "failed",
+          "summary": "主股票池暂无最新数据时间。"
+        },
+        {
+          "id": "scan-backtest",
+          "label": "回测准备度",
+          "score": 55,
+          "weight": 15,
+          "status": "failed",
+          "summary": "0 个参数扫描已配置，等待真实扫描沉淀。"
+        },
+        {
+          "id": "research-source",
+          "label": "研究数据源",
+          "score": 100,
+          "weight": 10,
+          "status": "ok",
+          "summary": "研究数据来自 market-api。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "summary",
+    "checks": [
+      {
+        "id": "database",
+        "status": "ok"
+      },
+      {
+        "id": "docker-timescaledb",
+        "status": "ok"
+      },
+      {
+        "id": "market-api",
+        "status": "ok"
+      },
+      {
+        "id": "node-runtime",
+        "status": "ok"
+      },
+      {
+        "id": "npm-cli",
+        "status": "ok"
+      },
+      {
+        "id": "agent-cli",
+        "status": "ok"
+      },
+      {
+        "id": "workspace-storage",
+        "status": "ok"
+      },
+      {
+        "id": "repo-baseline",
+        "status": "ok"
+      },
+      {
+        "id": "quant-schema",
+        "status": "ok"
+      }
+    ],
+    "logs": [
+      {
+        "exists": true
+      },
+      {
+        "exists": true
+      }
+    ],
+    "expected": {
+      "status": "ok",
+      "score": 100,
+      "ok": 9,
+      "warning": 0,
+      "failed": 0,
+      "unknown": 0,
+      "logSources": 2
+    }
+  },
+  {
+    "kind": "project",
+    "workspace": {
+      "summary": {
+        "healthy": 0,
+        "warning": 2,
+        "unknown": 1,
+        "failed": 3,
+        "total": 1,
+        "averageScore": 60
+      }
+    },
+    "expected": {
+      "id": "project",
+      "label": "项目健康",
+      "score": 37,
+      "status": "failed",
+      "summary": "衡量生成工作空间的产物完整性、验证结果和交付可靠性。",
+      "factors": [
+        {
+          "id": "active-delivery-score",
+          "label": "活跃交付分",
+          "score": 60,
+          "weight": 45,
+          "status": "failed",
+          "summary": "1 个非归档候选工作空间平均 60 分。"
+        },
+        {
+          "id": "showcase-ratio",
+          "label": "可演示占比",
+          "score": 0,
+          "weight": 30,
+          "status": "failed",
+          "summary": "0/1 个活跃工作空间可直接演示。"
+        },
+        {
+          "id": "repair-pressure",
+          "label": "修复压力",
+          "score": 25,
+          "weight": 20,
+          "status": "failed",
+          "summary": "3 个待修复、3 个风险项。"
+        },
+        {
+          "id": "archive-hygiene",
+          "label": "历史归档",
+          "score": 100,
+          "weight": 5,
+          "status": "ok",
+          "summary": "0 个历史失败工作空间建议归档，不纳入主平台可用性。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "runtime",
+    "systemChecks": [
+      {
+        "id": "database",
+        "status": "failed"
+      },
+      {
+        "id": "docker-timescaledb",
+        "status": "warning"
+      },
+      {
+        "id": "market-api",
+        "status": "unknown"
+      },
+      {
+        "id": "node-runtime",
+        "status": "failed"
+      },
+      {
+        "id": "npm-cli",
+        "status": "warning"
+      },
+      {
+        "id": "agent-cli",
+        "status": "unknown"
+      },
+      {
+        "id": "workspace-storage",
+        "status": "failed"
+      },
+      {
+        "id": "repo-baseline",
+        "status": "warning"
+      },
+      {
+        "id": "quant-schema",
+        "status": "unknown"
+      }
+    ],
+    "logSources": [
+      {
+        "exists": true
+      },
+      {
+        "exists": false
+      }
+    ],
+    "expected": {
+      "id": "runtime",
+      "label": "运行健康",
+      "score": 47,
+      "status": "failed",
+      "summary": "衡量基础服务、工具链、存储结构和日志可观测性。",
+      "factors": [
+        {
+          "id": "core-services",
+          "label": "核心服务",
+          "score": 41,
+          "weight": 40,
+          "status": "failed",
+          "summary": "数据库、TimescaleDB、Docker 和量化数据后端可用性。"
+        },
+        {
+          "id": "toolchain",
+          "label": "工具链",
+          "score": 55,
+          "weight": 20,
+          "status": "failed",
+          "summary": "Node.js、npm、Agent CLI 是否满足生成链路要求。"
+        },
+        {
+          "id": "storage-schema",
+          "label": "存储与表结构",
+          "score": 50,
+          "weight": 25,
+          "status": "failed",
+          "summary": "工作空间目录、基础文件和 quant schema 是否完整。"
+        },
+        {
+          "id": "observability",
+          "label": "可观测性",
+          "score": 50,
+          "weight": 15,
+          "status": "failed",
+          "summary": "1/2 个日志源可读。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "strategy",
+    "strategy": {
+      "summary": {
+        "templates": 10,
+        "readyTemplates": 0,
+        "syncedSymbols": 0,
+        "trackedSymbols": 10,
+        "syncedBars": 12000,
+        "parameterScans": 0
+      },
+      "research": {
+        "source": "fallback",
+        "error": "controlled",
+        "primaryUniverseId": "u",
+        "universes": [
+          {
+            "id": "u",
+            "latestTs": null
+          }
+        ]
+      },
+      "scanRuns": [],
+      "scanJobs": [
+        {
+          "status": "failed"
+        },
+        {
+          "status": "queued"
+        }
+      ]
+    },
+    "expected": {
+      "id": "strategy",
+      "label": "策略健康",
+      "score": 15,
+      "status": "failed",
+      "summary": "衡量策略目录、股票池行情覆盖、数据新鲜度和回测扫描准备度。",
+      "factors": [
+        {
+          "id": "template-readiness",
+          "label": "策略目录",
+          "score": 0,
+          "weight": 25,
+          "status": "failed",
+          "summary": "0/10 个策略模板 ready。"
+        },
+        {
+          "id": "universe-coverage",
+          "label": "股票池覆盖",
+          "score": 0,
+          "weight": 30,
+          "status": "failed",
+          "summary": "0/10 个标的已有行情覆盖，12,000 根 K 线。"
+        },
+        {
+          "id": "freshness",
+          "label": "数据新鲜度",
+          "score": 0,
+          "weight": 20,
+          "status": "failed",
+          "summary": "主股票池暂无最新数据时间。"
+        },
+        {
+          "id": "scan-backtest",
+          "label": "回测准备度",
+          "score": 55,
+          "weight": 15,
+          "status": "failed",
+          "summary": "0 个参数扫描已配置，等待真实扫描沉淀。"
+        },
+        {
+          "id": "research-source",
+          "label": "研究数据源",
+          "score": 65,
+          "weight": 10,
+          "status": "failed",
+          "summary": "market-api 降级：controlled"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "summary",
+    "checks": [
+      {
+        "id": "database",
+        "status": "failed"
+      },
+      {
+        "id": "docker-timescaledb",
+        "status": "warning"
+      },
+      {
+        "id": "market-api",
+        "status": "unknown"
+      },
+      {
+        "id": "node-runtime",
+        "status": "failed"
+      },
+      {
+        "id": "npm-cli",
+        "status": "warning"
+      },
+      {
+        "id": "agent-cli",
+        "status": "unknown"
+      },
+      {
+        "id": "workspace-storage",
+        "status": "failed"
+      },
+      {
+        "id": "repo-baseline",
+        "status": "warning"
+      },
+      {
+        "id": "quant-schema",
+        "status": "unknown"
+      }
+    ],
+    "logs": [
+      {
+        "exists": true
+      },
+      {
+        "exists": false
+      }
+    ],
+    "expected": {
+      "status": "failed",
+      "score": 16,
+      "ok": 0,
+      "warning": 3,
+      "failed": 3,
+      "unknown": 3,
+      "logSources": 1
+    }
+  },
+  {
+    "kind": "project",
+    "workspace": {
+      "summary": {
+        "healthy": 1,
+        "warning": 0,
+        "unknown": 1,
+        "failed": 0,
+        "total": 2,
+        "averageScore": 90
+      }
+    },
+    "expected": {
+      "id": "project",
+      "label": "项目健康",
+      "score": 79,
+      "status": "warning",
+      "summary": "衡量生成工作空间的产物完整性、验证结果和交付可靠性。",
+      "factors": [
+        {
+          "id": "active-delivery-score",
+          "label": "活跃交付分",
+          "score": 90,
+          "weight": 45,
+          "status": "ok",
+          "summary": "2 个非归档候选工作空间平均 90 分。"
+        },
+        {
+          "id": "showcase-ratio",
+          "label": "可演示占比",
+          "score": 50,
+          "weight": 30,
+          "status": "failed",
+          "summary": "1/2 个活跃工作空间可直接演示。"
+        },
+        {
+          "id": "repair-pressure",
+          "label": "修复压力",
+          "score": 93,
+          "weight": 20,
+          "status": "ok",
+          "summary": "0 个待修复、1 个风险项。"
+        },
+        {
+          "id": "archive-hygiene",
+          "label": "历史归档",
+          "score": 100,
+          "weight": 5,
+          "status": "ok",
+          "summary": "0 个历史失败工作空间建议归档，不纳入主平台可用性。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "runtime",
+    "systemChecks": [
+      {
+        "id": "database",
+        "status": "ok"
+      },
+      {
+        "id": "docker-timescaledb",
+        "status": "ok"
+      },
+      {
+        "id": "market-api",
+        "status": "ok"
+      },
+      {
+        "id": "node-runtime",
+        "status": "ok"
+      },
+      {
+        "id": "npm-cli",
+        "status": "ok"
+      },
+      {
+        "id": "agent-cli",
+        "status": "ok"
+      },
+      {
+        "id": "workspace-storage",
+        "status": "ok"
+      },
+      {
+        "id": "repo-baseline",
+        "status": "ok"
+      },
+      {
+        "id": "quant-schema",
+        "status": "ok"
+      }
+    ],
+    "logSources": [
+      {
+        "exists": true
+      },
+      {
+        "exists": true
+      }
+    ],
+    "expected": {
+      "id": "runtime",
+      "label": "运行健康",
+      "score": 100,
+      "status": "ok",
+      "summary": "衡量基础服务、工具链、存储结构和日志可观测性。",
+      "factors": [
+        {
+          "id": "core-services",
+          "label": "核心服务",
+          "score": 100,
+          "weight": 40,
+          "status": "ok",
+          "summary": "数据库、TimescaleDB、Docker 和量化数据后端可用性。"
+        },
+        {
+          "id": "toolchain",
+          "label": "工具链",
+          "score": 100,
+          "weight": 20,
+          "status": "ok",
+          "summary": "Node.js、npm、Agent CLI 是否满足生成链路要求。"
+        },
+        {
+          "id": "storage-schema",
+          "label": "存储与表结构",
+          "score": 100,
+          "weight": 25,
+          "status": "ok",
+          "summary": "工作空间目录、基础文件和 quant schema 是否完整。"
+        },
+        {
+          "id": "observability",
+          "label": "可观测性",
+          "score": 100,
+          "weight": 15,
+          "status": "ok",
+          "summary": "2/2 个日志源可读。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "strategy",
+    "strategy": {
+      "summary": {
+        "templates": 10,
+        "readyTemplates": 1,
+        "syncedSymbols": 1,
+        "trackedSymbols": 10,
+        "syncedBars": 12000,
+        "parameterScans": 1
+      },
+      "research": {
+        "source": "market-api",
+        "error": null,
+        "primaryUniverseId": "u",
+        "universes": [
+          {
+            "id": "u",
+            "latestTs": "2026-10-31"
+          }
+        ]
+      },
+      "scanRuns": [
+        {
+          "total": 10,
+          "succeeded": 10
+        }
+      ],
+      "scanJobs": []
+    },
+    "expected": {
+      "id": "strategy",
+      "label": "策略健康",
+      "score": 51,
+      "status": "failed",
+      "summary": "衡量策略目录、股票池行情覆盖、数据新鲜度和回测扫描准备度。",
+      "factors": [
+        {
+          "id": "template-readiness",
+          "label": "策略目录",
+          "score": 10,
+          "weight": 25,
+          "status": "failed",
+          "summary": "1/10 个策略模板 ready。"
+        },
+        {
+          "id": "universe-coverage",
+          "label": "股票池覆盖",
+          "score": 10,
+          "weight": 30,
+          "status": "failed",
+          "summary": "1/10 个标的已有行情覆盖，12,000 根 K 线。"
+        },
+        {
+          "id": "freshness",
+          "label": "数据新鲜度",
+          "score": 100,
+          "weight": 20,
+          "status": "ok",
+          "summary": "主股票池最新数据 2026-10-31，距今 3 天。"
+        },
+        {
+          "id": "scan-backtest",
+          "label": "回测准备度",
+          "score": 100,
+          "weight": 15,
+          "status": "ok",
+          "summary": "最近 1 次扫描成功 10/10 组参数。"
+        },
+        {
+          "id": "research-source",
+          "label": "研究数据源",
+          "score": 100,
+          "weight": 10,
+          "status": "ok",
+          "summary": "研究数据来自 market-api。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "summary",
+    "checks": [
+      {
+        "id": "database",
+        "status": "ok"
+      },
+      {
+        "id": "docker-timescaledb",
+        "status": "ok"
+      },
+      {
+        "id": "market-api",
+        "status": "ok"
+      },
+      {
+        "id": "node-runtime",
+        "status": "ok"
+      },
+      {
+        "id": "npm-cli",
+        "status": "ok"
+      },
+      {
+        "id": "agent-cli",
+        "status": "ok"
+      },
+      {
+        "id": "workspace-storage",
+        "status": "ok"
+      },
+      {
+        "id": "repo-baseline",
+        "status": "ok"
+      },
+      {
+        "id": "quant-schema",
+        "status": "ok"
+      }
+    ],
+    "logs": [
+      {
+        "exists": true
+      },
+      {
+        "exists": true
+      }
+    ],
+    "expected": {
+      "status": "ok",
+      "score": 100,
+      "ok": 9,
+      "warning": 0,
+      "failed": 0,
+      "unknown": 0,
+      "logSources": 2
+    }
+  },
+  {
+    "kind": "project",
+    "workspace": {
+      "summary": {
+        "healthy": 1,
+        "warning": 2,
+        "unknown": 1,
+        "failed": 3,
+        "total": 2,
+        "averageScore": 60
+      }
+    },
+    "expected": {
+      "id": "project",
+      "label": "项目健康",
+      "score": 52,
+      "status": "failed",
+      "summary": "衡量生成工作空间的产物完整性、验证结果和交付可靠性。",
+      "factors": [
+        {
+          "id": "active-delivery-score",
+          "label": "活跃交付分",
+          "score": 60,
+          "weight": 45,
+          "status": "failed",
+          "summary": "2 个非归档候选工作空间平均 60 分。"
+        },
+        {
+          "id": "showcase-ratio",
+          "label": "可演示占比",
+          "score": 50,
+          "weight": 30,
+          "status": "failed",
+          "summary": "1/2 个活跃工作空间可直接演示。"
+        },
+        {
+          "id": "repair-pressure",
+          "label": "修复压力",
+          "score": 25,
+          "weight": 20,
+          "status": "failed",
+          "summary": "3 个待修复、3 个风险项。"
+        },
+        {
+          "id": "archive-hygiene",
+          "label": "历史归档",
+          "score": 100,
+          "weight": 5,
+          "status": "ok",
+          "summary": "0 个历史失败工作空间建议归档，不纳入主平台可用性。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "runtime",
+    "systemChecks": [
+      {
+        "id": "database",
+        "status": "failed"
+      },
+      {
+        "id": "docker-timescaledb",
+        "status": "warning"
+      },
+      {
+        "id": "market-api",
+        "status": "unknown"
+      },
+      {
+        "id": "node-runtime",
+        "status": "failed"
+      },
+      {
+        "id": "npm-cli",
+        "status": "warning"
+      },
+      {
+        "id": "agent-cli",
+        "status": "unknown"
+      },
+      {
+        "id": "workspace-storage",
+        "status": "failed"
+      },
+      {
+        "id": "repo-baseline",
+        "status": "warning"
+      },
+      {
+        "id": "quant-schema",
+        "status": "unknown"
+      }
+    ],
+    "logSources": [
+      {
+        "exists": true
+      },
+      {
+        "exists": false
+      }
+    ],
+    "expected": {
+      "id": "runtime",
+      "label": "运行健康",
+      "score": 47,
+      "status": "failed",
+      "summary": "衡量基础服务、工具链、存储结构和日志可观测性。",
+      "factors": [
+        {
+          "id": "core-services",
+          "label": "核心服务",
+          "score": 41,
+          "weight": 40,
+          "status": "failed",
+          "summary": "数据库、TimescaleDB、Docker 和量化数据后端可用性。"
+        },
+        {
+          "id": "toolchain",
+          "label": "工具链",
+          "score": 55,
+          "weight": 20,
+          "status": "failed",
+          "summary": "Node.js、npm、Agent CLI 是否满足生成链路要求。"
+        },
+        {
+          "id": "storage-schema",
+          "label": "存储与表结构",
+          "score": 50,
+          "weight": 25,
+          "status": "failed",
+          "summary": "工作空间目录、基础文件和 quant schema 是否完整。"
+        },
+        {
+          "id": "observability",
+          "label": "可观测性",
+          "score": 50,
+          "weight": 15,
+          "status": "failed",
+          "summary": "1/2 个日志源可读。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "strategy",
+    "strategy": {
+      "summary": {
+        "templates": 10,
+        "readyTemplates": 1,
+        "syncedSymbols": 1,
+        "trackedSymbols": 10,
+        "syncedBars": 12000,
+        "parameterScans": 1
+      },
+      "research": {
+        "source": "fallback",
+        "error": "controlled",
+        "primaryUniverseId": "u",
+        "universes": [
+          {
+            "id": "u",
+            "latestTs": "2026-10-31"
+          }
+        ]
+      },
+      "scanRuns": [
+        {
+          "total": 10,
+          "succeeded": 3
+        }
+      ],
+      "scanJobs": [
+        {
+          "status": "failed"
+        },
+        {
+          "status": "queued"
+        }
+      ]
+    },
+    "expected": {
+      "id": "strategy",
+      "label": "策略健康",
+      "score": 35,
+      "status": "failed",
+      "summary": "衡量策略目录、股票池行情覆盖、数据新鲜度和回测扫描准备度。",
+      "factors": [
+        {
+          "id": "template-readiness",
+          "label": "策略目录",
+          "score": 10,
+          "weight": 25,
+          "status": "failed",
+          "summary": "1/10 个策略模板 ready。"
+        },
+        {
+          "id": "universe-coverage",
+          "label": "股票池覆盖",
+          "score": 10,
+          "weight": 30,
+          "status": "failed",
+          "summary": "1/10 个标的已有行情覆盖，12,000 根 K 线。"
+        },
+        {
+          "id": "freshness",
+          "label": "数据新鲜度",
+          "score": 100,
+          "weight": 20,
+          "status": "ok",
+          "summary": "主股票池最新数据 2026-10-31，距今 3 天。"
+        },
+        {
+          "id": "scan-backtest",
+          "label": "回测准备度",
+          "score": 20,
+          "weight": 15,
+          "status": "failed",
+          "summary": "最近 1 次扫描成功 3/10 组参数。"
+        },
+        {
+          "id": "research-source",
+          "label": "研究数据源",
+          "score": 65,
+          "weight": 10,
+          "status": "failed",
+          "summary": "market-api 降级：controlled"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "summary",
+    "checks": [
+      {
+        "id": "database",
+        "status": "failed"
+      },
+      {
+        "id": "docker-timescaledb",
+        "status": "warning"
+      },
+      {
+        "id": "market-api",
+        "status": "unknown"
+      },
+      {
+        "id": "node-runtime",
+        "status": "failed"
+      },
+      {
+        "id": "npm-cli",
+        "status": "warning"
+      },
+      {
+        "id": "agent-cli",
+        "status": "unknown"
+      },
+      {
+        "id": "workspace-storage",
+        "status": "failed"
+      },
+      {
+        "id": "repo-baseline",
+        "status": "warning"
+      },
+      {
+        "id": "quant-schema",
+        "status": "unknown"
+      }
+    ],
+    "logs": [
+      {
+        "exists": true
+      },
+      {
+        "exists": false
+      }
+    ],
+    "expected": {
+      "status": "failed",
+      "score": 16,
+      "ok": 0,
+      "warning": 3,
+      "failed": 3,
+      "unknown": 3,
+      "logSources": 1
+    }
+  },
+  {
+    "kind": "project",
+    "workspace": {
+      "summary": {
+        "healthy": 10,
+        "warning": 0,
+        "unknown": 1,
+        "failed": 0,
+        "total": 11,
+        "averageScore": 90
+      }
+    },
+    "expected": {
+      "id": "project",
+      "label": "项目健康",
+      "score": 91,
+      "status": "ok",
+      "summary": "衡量生成工作空间的产物完整性、验证结果和交付可靠性。",
+      "factors": [
+        {
+          "id": "active-delivery-score",
+          "label": "活跃交付分",
+          "score": 90,
+          "weight": 45,
+          "status": "ok",
+          "summary": "11 个非归档候选工作空间平均 90 分。"
+        },
+        {
+          "id": "showcase-ratio",
+          "label": "可演示占比",
+          "score": 91,
+          "weight": 30,
+          "status": "ok",
+          "summary": "10/11 个活跃工作空间可直接演示。"
+        },
+        {
+          "id": "repair-pressure",
+          "label": "修复压力",
+          "score": 93,
+          "weight": 20,
+          "status": "ok",
+          "summary": "0 个待修复、1 个风险项。"
+        },
+        {
+          "id": "archive-hygiene",
+          "label": "历史归档",
+          "score": 100,
+          "weight": 5,
+          "status": "ok",
+          "summary": "0 个历史失败工作空间建议归档，不纳入主平台可用性。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "runtime",
+    "systemChecks": [
+      {
+        "id": "database",
+        "status": "ok"
+      },
+      {
+        "id": "docker-timescaledb",
+        "status": "ok"
+      },
+      {
+        "id": "market-api",
+        "status": "ok"
+      },
+      {
+        "id": "node-runtime",
+        "status": "ok"
+      },
+      {
+        "id": "npm-cli",
+        "status": "ok"
+      },
+      {
+        "id": "agent-cli",
+        "status": "ok"
+      },
+      {
+        "id": "workspace-storage",
+        "status": "ok"
+      },
+      {
+        "id": "repo-baseline",
+        "status": "ok"
+      },
+      {
+        "id": "quant-schema",
+        "status": "ok"
+      }
+    ],
+    "logSources": [
+      {
+        "exists": true
+      },
+      {
+        "exists": true
+      }
+    ],
+    "expected": {
+      "id": "runtime",
+      "label": "运行健康",
+      "score": 100,
+      "status": "ok",
+      "summary": "衡量基础服务、工具链、存储结构和日志可观测性。",
+      "factors": [
+        {
+          "id": "core-services",
+          "label": "核心服务",
+          "score": 100,
+          "weight": 40,
+          "status": "ok",
+          "summary": "数据库、TimescaleDB、Docker 和量化数据后端可用性。"
+        },
+        {
+          "id": "toolchain",
+          "label": "工具链",
+          "score": 100,
+          "weight": 20,
+          "status": "ok",
+          "summary": "Node.js、npm、Agent CLI 是否满足生成链路要求。"
+        },
+        {
+          "id": "storage-schema",
+          "label": "存储与表结构",
+          "score": 100,
+          "weight": 25,
+          "status": "ok",
+          "summary": "工作空间目录、基础文件和 quant schema 是否完整。"
+        },
+        {
+          "id": "observability",
+          "label": "可观测性",
+          "score": 100,
+          "weight": 15,
+          "status": "ok",
+          "summary": "2/2 个日志源可读。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "strategy",
+    "strategy": {
+      "summary": {
+        "templates": 10,
+        "readyTemplates": 10,
+        "syncedSymbols": 10,
+        "trackedSymbols": 10,
+        "syncedBars": 12000,
+        "parameterScans": 10
+      },
+      "research": {
+        "source": "market-api",
+        "error": null,
+        "primaryUniverseId": "u",
+        "universes": [
+          {
+            "id": "u",
+            "latestTs": "2026-10-31"
+          }
+        ]
+      },
+      "scanRuns": [
+        {
+          "total": 10,
+          "succeeded": 10
+        }
+      ],
+      "scanJobs": []
+    },
+    "expected": {
+      "id": "strategy",
+      "label": "策略健康",
+      "score": 100,
+      "status": "ok",
+      "summary": "衡量策略目录、股票池行情覆盖、数据新鲜度和回测扫描准备度。",
+      "factors": [
+        {
+          "id": "template-readiness",
+          "label": "策略目录",
+          "score": 100,
+          "weight": 25,
+          "status": "ok",
+          "summary": "10/10 个策略模板 ready。"
+        },
+        {
+          "id": "universe-coverage",
+          "label": "股票池覆盖",
+          "score": 100,
+          "weight": 30,
+          "status": "ok",
+          "summary": "10/10 个标的已有行情覆盖，12,000 根 K 线。"
+        },
+        {
+          "id": "freshness",
+          "label": "数据新鲜度",
+          "score": 100,
+          "weight": 20,
+          "status": "ok",
+          "summary": "主股票池最新数据 2026-10-31，距今 3 天。"
+        },
+        {
+          "id": "scan-backtest",
+          "label": "回测准备度",
+          "score": 100,
+          "weight": 15,
+          "status": "ok",
+          "summary": "最近 1 次扫描成功 10/10 组参数。"
+        },
+        {
+          "id": "research-source",
+          "label": "研究数据源",
+          "score": 100,
+          "weight": 10,
+          "status": "ok",
+          "summary": "研究数据来自 market-api。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "summary",
+    "checks": [
+      {
+        "id": "database",
+        "status": "ok"
+      },
+      {
+        "id": "docker-timescaledb",
+        "status": "ok"
+      },
+      {
+        "id": "market-api",
+        "status": "ok"
+      },
+      {
+        "id": "node-runtime",
+        "status": "ok"
+      },
+      {
+        "id": "npm-cli",
+        "status": "ok"
+      },
+      {
+        "id": "agent-cli",
+        "status": "ok"
+      },
+      {
+        "id": "workspace-storage",
+        "status": "ok"
+      },
+      {
+        "id": "repo-baseline",
+        "status": "ok"
+      },
+      {
+        "id": "quant-schema",
+        "status": "ok"
+      }
+    ],
+    "logs": [
+      {
+        "exists": true
+      },
+      {
+        "exists": true
+      }
+    ],
+    "expected": {
+      "status": "ok",
+      "score": 100,
+      "ok": 9,
+      "warning": 0,
+      "failed": 0,
+      "unknown": 0,
+      "logSources": 2
+    }
+  },
+  {
+    "kind": "project",
+    "workspace": {
+      "summary": {
+        "healthy": 10,
+        "warning": 2,
+        "unknown": 1,
+        "failed": 3,
+        "total": 11,
+        "averageScore": 60
+      }
+    },
+    "expected": {
+      "id": "project",
+      "label": "项目健康",
+      "score": 64,
+      "status": "failed",
+      "summary": "衡量生成工作空间的产物完整性、验证结果和交付可靠性。",
+      "factors": [
+        {
+          "id": "active-delivery-score",
+          "label": "活跃交付分",
+          "score": 60,
+          "weight": 45,
+          "status": "failed",
+          "summary": "11 个非归档候选工作空间平均 60 分。"
+        },
+        {
+          "id": "showcase-ratio",
+          "label": "可演示占比",
+          "score": 91,
+          "weight": 30,
+          "status": "ok",
+          "summary": "10/11 个活跃工作空间可直接演示。"
+        },
+        {
+          "id": "repair-pressure",
+          "label": "修复压力",
+          "score": 25,
+          "weight": 20,
+          "status": "failed",
+          "summary": "3 个待修复、3 个风险项。"
+        },
+        {
+          "id": "archive-hygiene",
+          "label": "历史归档",
+          "score": 100,
+          "weight": 5,
+          "status": "ok",
+          "summary": "0 个历史失败工作空间建议归档，不纳入主平台可用性。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "runtime",
+    "systemChecks": [
+      {
+        "id": "database",
+        "status": "failed"
+      },
+      {
+        "id": "docker-timescaledb",
+        "status": "warning"
+      },
+      {
+        "id": "market-api",
+        "status": "unknown"
+      },
+      {
+        "id": "node-runtime",
+        "status": "failed"
+      },
+      {
+        "id": "npm-cli",
+        "status": "warning"
+      },
+      {
+        "id": "agent-cli",
+        "status": "unknown"
+      },
+      {
+        "id": "workspace-storage",
+        "status": "failed"
+      },
+      {
+        "id": "repo-baseline",
+        "status": "warning"
+      },
+      {
+        "id": "quant-schema",
+        "status": "unknown"
+      }
+    ],
+    "logSources": [
+      {
+        "exists": true
+      },
+      {
+        "exists": false
+      }
+    ],
+    "expected": {
+      "id": "runtime",
+      "label": "运行健康",
+      "score": 47,
+      "status": "failed",
+      "summary": "衡量基础服务、工具链、存储结构和日志可观测性。",
+      "factors": [
+        {
+          "id": "core-services",
+          "label": "核心服务",
+          "score": 41,
+          "weight": 40,
+          "status": "failed",
+          "summary": "数据库、TimescaleDB、Docker 和量化数据后端可用性。"
+        },
+        {
+          "id": "toolchain",
+          "label": "工具链",
+          "score": 55,
+          "weight": 20,
+          "status": "failed",
+          "summary": "Node.js、npm、Agent CLI 是否满足生成链路要求。"
+        },
+        {
+          "id": "storage-schema",
+          "label": "存储与表结构",
+          "score": 50,
+          "weight": 25,
+          "status": "failed",
+          "summary": "工作空间目录、基础文件和 quant schema 是否完整。"
+        },
+        {
+          "id": "observability",
+          "label": "可观测性",
+          "score": 50,
+          "weight": 15,
+          "status": "failed",
+          "summary": "1/2 个日志源可读。"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "strategy",
+    "strategy": {
+      "summary": {
+        "templates": 10,
+        "readyTemplates": 10,
+        "syncedSymbols": 10,
+        "trackedSymbols": 10,
+        "syncedBars": 12000,
+        "parameterScans": 10
+      },
+      "research": {
+        "source": "fallback",
+        "error": "controlled",
+        "primaryUniverseId": "u",
+        "universes": [
+          {
+            "id": "u",
+            "latestTs": "2026-10-31"
+          }
+        ]
+      },
+      "scanRuns": [
+        {
+          "total": 10,
+          "succeeded": 3
+        }
+      ],
+      "scanJobs": [
+        {
+          "status": "failed"
+        },
+        {
+          "status": "queued"
+        }
+      ]
+    },
+    "expected": {
+      "id": "strategy",
+      "label": "策略健康",
+      "score": 85,
+      "status": "ok",
+      "summary": "衡量策略目录、股票池行情覆盖、数据新鲜度和回测扫描准备度。",
+      "factors": [
+        {
+          "id": "template-readiness",
+          "label": "策略目录",
+          "score": 100,
+          "weight": 25,
+          "status": "ok",
+          "summary": "10/10 个策略模板 ready。"
+        },
+        {
+          "id": "universe-coverage",
+          "label": "股票池覆盖",
+          "score": 100,
+          "weight": 30,
+          "status": "ok",
+          "summary": "10/10 个标的已有行情覆盖，12,000 根 K 线。"
+        },
+        {
+          "id": "freshness",
+          "label": "数据新鲜度",
+          "score": 100,
+          "weight": 20,
+          "status": "ok",
+          "summary": "主股票池最新数据 2026-10-31，距今 3 天。"
+        },
+        {
+          "id": "scan-backtest",
+          "label": "回测准备度",
+          "score": 20,
+          "weight": 15,
+          "status": "failed",
+          "summary": "最近 1 次扫描成功 3/10 组参数。"
+        },
+        {
+          "id": "research-source",
+          "label": "研究数据源",
+          "score": 65,
+          "weight": 10,
+          "status": "failed",
+          "summary": "market-api 降级：controlled"
+        }
+      ]
+    }
+  },
+  {
+    "kind": "summary",
+    "checks": [
+      {
+        "id": "database",
+        "status": "failed"
+      },
+      {
+        "id": "docker-timescaledb",
+        "status": "warning"
+      },
+      {
+        "id": "market-api",
+        "status": "unknown"
+      },
+      {
+        "id": "node-runtime",
+        "status": "failed"
+      },
+      {
+        "id": "npm-cli",
+        "status": "warning"
+      },
+      {
+        "id": "agent-cli",
+        "status": "unknown"
+      },
+      {
+        "id": "workspace-storage",
+        "status": "failed"
+      },
+      {
+        "id": "repo-baseline",
+        "status": "warning"
+      },
+      {
+        "id": "quant-schema",
+        "status": "unknown"
+      }
+    ],
+    "logs": [
+      {
+        "exists": true
+      },
+      {
+        "exists": false
+      }
+    ],
+    "expected": {
+      "status": "failed",
+      "score": 16,
+      "ok": 0,
+      "warning": 3,
+      "failed": 3,
+      "unknown": 3,
+      "logSources": 1
+    }
+  },
+  {
+    "kind": "log",
+    "raw": "",
+    "expected": {
+      "id": "3-",
+      "lineNumber": 3,
+      "timestamp": "2026-11-03T00:00:00.000Z",
+      "timestampSource": "source-modified",
+      "level": null,
+      "message": "",
+      "raw": ""
+    }
+  },
+  {
+    "kind": "log",
+    "raw": "plain text",
+    "expected": {
+      "id": "3-706c61696e2074657874",
+      "lineNumber": 3,
+      "timestamp": "2026-11-03T00:00:00.000Z",
+      "timestampSource": "source-modified",
+      "level": null,
+      "message": "plain text",
+      "raw": "plain text"
+    }
+  },
+  {
+    "kind": "log",
+    "raw": "2026-11-03T01:02:03.000Z ERROR fixture",
+    "expected": {
+      "id": "3-323032362d31312d30335430",
+      "lineNumber": 3,
+      "timestamp": "2026-11-03T01:02:03.000Z",
+      "timestampSource": "line",
+      "level": "ERROR",
+      "message": "2026-11-03T01:02:03.000Z ERROR fixture",
+      "raw": "2026-11-03T01:02:03.000Z ERROR fixture"
+    }
+  },
+  {
+    "kind": "log",
+    "raw": "[2026-11-03 01:02:03] info fixture",
+    "expected": {
+      "id": "3-5b323032362d31312d303320",
+      "lineNumber": 3,
+      "timestamp": "2026-11-02T17:02:03.000Z",
+      "timestampSource": "line",
+      "level": "INFO",
+      "message": "[2026-11-03 01:02:03] info fixture",
+      "raw": "[2026-11-03 01:02:03] info fixture"
+    }
+  },
+  {
+    "kind": "log",
+    "raw": "{\"timestamp\":\"2026-11-03T01:02:03+08:00\",\"level\":\"debug\",\"message\":\"中文 message\"}",
+    "expected": {
+      "id": "3-7b2274696d657374616d7022",
+      "lineNumber": 3,
+      "timestamp": "2026-11-02T17:02:03.000Z",
+      "timestampSource": "line",
+      "level": "debug",
+      "message": "中文 message",
+      "raw": "{\"timestamp\":\"2026-11-03T01:02:03+08:00\",\"level\":\"debug\",\"message\":\"中文 message\"}"
+    }
+  },
+  {
+    "kind": "log",
+    "raw": "{\"time\":\"2026-11-03T00:00:00Z\",\"severity\":\"WARN\",\"msg\":\"fixture\"}",
+    "expected": {
+      "id": "3-7b2274696d65223a22323032",
+      "lineNumber": 3,
+      "timestamp": "2026-11-03T00:00:00.000Z",
+      "timestampSource": "line",
+      "level": "WARN",
+      "message": "fixture",
+      "raw": "{\"time\":\"2026-11-03T00:00:00Z\",\"severity\":\"WARN\",\"msg\":\"fixture\"}"
+    }
+  },
+  {
+    "kind": "log",
+    "raw": "null",
+    "expected": {
+      "id": "3-6e756c6c",
+      "lineNumber": 3,
+      "timestamp": "2026-11-03T00:00:00.000Z",
+      "timestampSource": "source-modified",
+      "level": null,
+      "message": "null",
+      "raw": "null"
+    }
+  },
+  {
+    "kind": "log",
+    "raw": "[]",
+    "expected": {
+      "id": "3-5b5d",
+      "lineNumber": 3,
+      "timestamp": "2026-11-03T00:00:00.000Z",
+      "timestampSource": "source-modified",
+      "level": null,
+      "message": "[]",
+      "raw": "[]"
+    }
+  }
+]
