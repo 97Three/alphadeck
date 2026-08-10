@@ -1,0 +1,1347 @@
+{
+  "configs": [
+    {
+      "kind": "memory",
+      "environment": {},
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {},
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "NODE_ENV": "test"
+      },
+      "expected": {
+        "enabled": false,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "NODE_ENV": "test"
+      },
+      "expected": {
+        "enabled": false,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_DEGRADATION_MODE": "offline"
+      },
+      "expected": {
+        "enabled": false,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_DEGRADATION_MODE": "offline"
+      },
+      "expected": {
+        "enabled": false,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "NODE_ENV": "production"
+      },
+      "error": "Production personal memory requires a scoped token broker."
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "NODE_ENV": "production"
+      },
+      "error": "Production governed knowledge endpoint must use HTTPS."
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_MEMORY_ENABLED": "false",
+        "ALPHADECK_KNOWLEDGE_ENABLED": "false"
+      },
+      "expected": {
+        "enabled": false,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_MEMORY_ENABLED": "false",
+        "ALPHADECK_KNOWLEDGE_ENABLED": "false"
+      },
+      "expected": {
+        "enabled": false,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_MEMORY_REQUIRED": "1"
+      },
+      "expected": {
+        "enabled": true,
+        "required": true,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_MEMORY_REQUIRED": "1"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_MEMORY_API_URL": "https://EXAMPLE.com/base/"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "https://example.com/base",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_MEMORY_API_URL": "https://EXAMPLE.com/base/"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_MEMORY_API_URL": "http://user:pass@localhost:1"
+      },
+      "error": "ALPHADECK_MEMORY_API_URL must be an HTTP(S) base URL without credentials."
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_MEMORY_API_URL": "http://user:pass@localhost:1"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_MEMORY_TIMEOUT_MS": "200abc"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 200,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_MEMORY_TIMEOUT_MS": "200abc"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_MEMORY_TIMEOUT_MS": "1"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_MEMORY_TIMEOUT_MS": "1"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "NODE_ENV": "production",
+        "ALPHADECK_MEMORY_BEARER_TOKEN": "synthetic-fixture-only"
+      },
+      "error": "Static personal memory bearer tokens are forbidden in production."
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "NODE_ENV": "production",
+        "ALPHADECK_MEMORY_BEARER_TOKEN": "synthetic-fixture-only"
+      },
+      "error": "Production governed knowledge endpoint must use HTTPS."
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_REQUIRED": "1"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_REQUIRED": "1"
+      },
+      "expected": {
+        "enabled": true,
+        "required": true,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_API_URL": "https://EXAMPLE.com/base/"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_API_URL": "https://EXAMPLE.com/base/"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "https://example.com/base",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_API_URL": "http://user:pass@localhost:1"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_API_URL": "http://user:pass@localhost:1"
+      },
+      "error": "ALPHADECK_KNOWLEDGE_API_URL must be an HTTP(S) URL without credentials, query, or fragment."
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_TIMEOUT_MS": "200abc"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_TIMEOUT_MS": "200abc"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 200,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_TIMEOUT_MS": "1"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_TIMEOUT_MS": "1"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "NODE_ENV": "production",
+        "ALPHADECK_KNOWLEDGE_BEARER_TOKEN": "synthetic-fixture-only"
+      },
+      "error": "Production personal memory requires a scoped token broker."
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "NODE_ENV": "production",
+        "ALPHADECK_KNOWLEDGE_BEARER_TOKEN": "synthetic-fixture-only"
+      },
+      "error": "Production governed knowledge endpoint must use HTTPS."
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_MEMORY_TOKEN_BROKER_URL": "http://localhost:38089/token"
+      },
+      "error": "Personal memory token broker URL, client ID and client secret are all required."
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_MEMORY_TOKEN_BROKER_URL": "http://localhost:38089/token"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_MEMORY_TOKEN_BROKER_URL": "http://localhost:38089/token",
+        "ALPHADECK_MEMORY_TOKEN_BROKER_CLIENT_ID": "client",
+        "ALPHADECK_MEMORY_TOKEN_BROKER_CLIENT_SECRET": "synthetic-fixture-only"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": {
+          "url": "http://localhost:38089/token",
+          "clientId": "client",
+          "clientSecret": "synthetic-fixture-only",
+          "audience": "evolvable-memory-api"
+        },
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_MEMORY_TOKEN_BROKER_URL": "http://localhost:38089/token",
+        "ALPHADECK_MEMORY_TOKEN_BROKER_CLIENT_ID": "client",
+        "ALPHADECK_MEMORY_TOKEN_BROKER_CLIENT_SECRET": "synthetic-fixture-only"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_API_URL": "https://knowledge.example",
+        "ALPHADECK_KNOWLEDGE_OAUTH_TOKEN_URL": "https://oauth.example/token",
+        "ALPHADECK_KNOWLEDGE_OAUTH_CLIENT_ID": "client",
+        "ALPHADECK_KNOWLEDGE_OAUTH_CLIENT_SECRET": "synthetic-fixture-only"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_API_URL": "https://knowledge.example",
+        "ALPHADECK_KNOWLEDGE_OAUTH_TOKEN_URL": "https://oauth.example/token",
+        "ALPHADECK_KNOWLEDGE_OAUTH_CLIENT_ID": "client",
+        "ALPHADECK_KNOWLEDGE_OAUTH_CLIENT_SECRET": "synthetic-fixture-only"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "https://knowledge.example",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": {
+          "tokenUrl": "https://oauth.example/token",
+          "clientId": "client",
+          "clientSecret": "synthetic-fixture-only",
+          "resource": "https://knowledge.example/akep/0.1",
+          "scope": "akep:query akep:read akep:feedback"
+        },
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_SPACES": "urn:one,urn:two,urn:one"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_SPACES": "urn:one,urn:two,urn:one"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "urn:one",
+          "urn:two"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_PURPOSE": "Invalid purpose"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "requireProductionReady": false,
+        "apiUrl": "http://127.0.0.1:38089",
+        "tenantId": "alphadeck-local",
+        "purpose": "personalization",
+        "timeoutMs": 5000,
+        "recallLimit": 6,
+        "maxProjectionCharacters": 2000,
+        "bearerToken": null,
+        "tokenBroker": null,
+        "expectedContract": "evolvable-memory-http/v1"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_KNOWLEDGE_PURPOSE": "Invalid purpose"
+      },
+      "error": "ALPHADECK_KNOWLEDGE_PURPOSE is invalid."
+    },
+    {
+      "kind": "memory",
+      "environment": {
+        "ALPHADECK_MEMORY_TENANT_ID": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "error": "ALPHADECK_MEMORY_TENANT_ID must be at most 128 characters."
+    },
+    {
+      "kind": "knowledge",
+      "environment": {
+        "ALPHADECK_MEMORY_TENANT_ID": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "expected": {
+        "enabled": true,
+        "required": false,
+        "apiUrl": "http://localhost:33005",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.local/spaces/default"
+        ],
+        "projectSpacesEnabled": true,
+        "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+        "timeoutMs": 2000,
+        "maxContextCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ],
+        "bearerToken": null,
+        "oauth": null,
+        "expectedVersion": "0.1"
+      }
+    }
+  ],
+  "scopes": [
+    {
+      "input": {
+        "projectId": "project-a",
+        "memory": {
+          "tenantId": "tenant-alphadeck"
+        },
+        "knowledge": {
+          "spaces": [
+            "https://knowledge.example/shared",
+            "https://knowledge.example/shared"
+          ],
+          "projectSpacesEnabled": true,
+          "projectSpaceBaseUrl": "https://knowledge.example/projects"
+        },
+        "environment": {}
+      },
+      "expected": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project-a",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-alphadeck",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project-a"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-a",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-a",
+            "https://knowledge.example/shared"
+          ]
+        },
+        "scopeSha256": "sha256:7c76910e39cb3f0fad6b40f3ad6fe9813ca20f65ea4a87f6c2b1aa4622250d41"
+      },
+      "headers": {
+        "X-ModelPort-Organization-Id": "org_local",
+        "X-ModelPort-Project-Id": "prj_alphadeck",
+        "X-ModelPort-Environment-Id": "env_development"
+      }
+    },
+    {
+      "input": {
+        "projectId": "project-a",
+        "memory": {
+          "tenantId": "tenant-alphadeck"
+        },
+        "knowledge": {
+          "spaces": [
+            "https://knowledge.example/shared",
+            "https://knowledge.example/shared"
+          ],
+          "projectSpacesEnabled": false,
+          "projectSpaceBaseUrl": "https://knowledge.example/projects"
+        },
+        "environment": {}
+      },
+      "expected": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project-a",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-alphadeck",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project-a"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/shared"
+          ],
+          "projectSpaceId": null,
+          "requestedSpaceIds": [
+            "https://knowledge.example/shared"
+          ]
+        },
+        "scopeSha256": "sha256:ab95add9b5fc8e264b71c6f5277733a363ddfddf93dd271526a9cbcdaece86aa"
+      },
+      "headers": {
+        "X-ModelPort-Organization-Id": "org_local",
+        "X-ModelPort-Project-Id": "prj_alphadeck",
+        "X-ModelPort-Environment-Id": "env_development"
+      }
+    },
+    {
+      "input": {
+        "projectId": "project-b",
+        "memory": {
+          "tenantId": "tenant-alphadeck"
+        },
+        "knowledge": {
+          "spaces": [
+            "https://knowledge.example/shared",
+            "https://knowledge.example/shared"
+          ],
+          "projectSpacesEnabled": true,
+          "projectSpaceBaseUrl": "https://knowledge.example/projects"
+        },
+        "environment": {}
+      },
+      "expected": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project-b",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-alphadeck",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project-b"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project-b",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project-b",
+            "https://knowledge.example/shared"
+          ]
+        },
+        "scopeSha256": "sha256:0f5c9337e7fd66c37ca449a3e8334824185251878363ff1ef47356438fc5e1fe"
+      },
+      "headers": {
+        "X-ModelPort-Organization-Id": "org_local",
+        "X-ModelPort-Project-Id": "prj_alphadeck",
+        "X-ModelPort-Environment-Id": "env_development"
+      }
+    },
+    {
+      "input": {
+        "projectId": "project-b",
+        "memory": {
+          "tenantId": "tenant-alphadeck"
+        },
+        "knowledge": {
+          "spaces": [
+            "https://knowledge.example/shared",
+            "https://knowledge.example/shared"
+          ],
+          "projectSpacesEnabled": false,
+          "projectSpaceBaseUrl": "https://knowledge.example/projects"
+        },
+        "environment": {}
+      },
+      "expected": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project-b",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-alphadeck",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project-b"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/shared"
+          ],
+          "projectSpaceId": null,
+          "requestedSpaceIds": [
+            "https://knowledge.example/shared"
+          ]
+        },
+        "scopeSha256": "sha256:af963ee676b792ea7480372d5d6afd13ab5e211bd8e2736e7fc15f9782814f8b"
+      },
+      "headers": {
+        "X-ModelPort-Organization-Id": "org_local",
+        "X-ModelPort-Project-Id": "prj_alphadeck",
+        "X-ModelPort-Environment-Id": "env_development"
+      }
+    },
+    {
+      "input": {
+        "projectId": "project 中文",
+        "memory": {
+          "tenantId": "tenant-alphadeck"
+        },
+        "knowledge": {
+          "spaces": [
+            "https://knowledge.example/shared",
+            "https://knowledge.example/shared"
+          ],
+          "projectSpacesEnabled": true,
+          "projectSpaceBaseUrl": "https://knowledge.example/projects"
+        },
+        "environment": {}
+      },
+      "expected": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project 中文",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-alphadeck",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project 中文"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project%20%E4%B8%AD%E6%96%87",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project%20%E4%B8%AD%E6%96%87",
+            "https://knowledge.example/shared"
+          ]
+        },
+        "scopeSha256": "sha256:1f8a553d5f98334853d8035ab617224001533be5af95269179f4a97ffcc34211"
+      },
+      "headers": {
+        "X-ModelPort-Organization-Id": "org_local",
+        "X-ModelPort-Project-Id": "prj_alphadeck",
+        "X-ModelPort-Environment-Id": "env_development"
+      }
+    },
+    {
+      "input": {
+        "projectId": "project 中文",
+        "memory": {
+          "tenantId": "tenant-alphadeck"
+        },
+        "knowledge": {
+          "spaces": [
+            "https://knowledge.example/shared",
+            "https://knowledge.example/shared"
+          ],
+          "projectSpacesEnabled": false,
+          "projectSpaceBaseUrl": "https://knowledge.example/projects"
+        },
+        "environment": {}
+      },
+      "expected": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project 中文",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-alphadeck",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project 中文"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/shared"
+          ],
+          "projectSpaceId": null,
+          "requestedSpaceIds": [
+            "https://knowledge.example/shared"
+          ]
+        },
+        "scopeSha256": "sha256:7bb1d1457dc0fbc186d3023cfa62f161a335a74c6ca8beed913cc7580e0927bc"
+      },
+      "headers": {
+        "X-ModelPort-Organization-Id": "org_local",
+        "X-ModelPort-Project-Id": "prj_alphadeck",
+        "X-ModelPort-Environment-Id": "env_development"
+      }
+    },
+    {
+      "input": {
+        "projectId": "project/a",
+        "memory": {
+          "tenantId": "tenant-alphadeck"
+        },
+        "knowledge": {
+          "spaces": [
+            "https://knowledge.example/shared",
+            "https://knowledge.example/shared"
+          ],
+          "projectSpacesEnabled": true,
+          "projectSpaceBaseUrl": "https://knowledge.example/projects"
+        },
+        "environment": {}
+      },
+      "expected": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project/a",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-alphadeck",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project/a"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/shared"
+          ],
+          "projectSpaceId": "https://knowledge.example/projects/project%2Fa",
+          "requestedSpaceIds": [
+            "https://knowledge.example/projects/project%2Fa",
+            "https://knowledge.example/shared"
+          ]
+        },
+        "scopeSha256": "sha256:b6cfc4c48d31851a718f77278a59eb73e86aa2fa242ffda076900bdfe121471f"
+      },
+      "headers": {
+        "X-ModelPort-Organization-Id": "org_local",
+        "X-ModelPort-Project-Id": "prj_alphadeck",
+        "X-ModelPort-Environment-Id": "env_development"
+      }
+    },
+    {
+      "input": {
+        "projectId": "project/a",
+        "memory": {
+          "tenantId": "tenant-alphadeck"
+        },
+        "knowledge": {
+          "spaces": [
+            "https://knowledge.example/shared",
+            "https://knowledge.example/shared"
+          ],
+          "projectSpacesEnabled": false,
+          "projectSpaceBaseUrl": "https://knowledge.example/projects"
+        },
+        "environment": {}
+      },
+      "expected": {
+        "schemaVersion": 1,
+        "consumerId": "alphadeck",
+        "projectId": "project/a",
+        "modelPort": {
+          "organizationId": "org_local",
+          "projectId": "prj_alphadeck",
+          "environmentId": "env_development"
+        },
+        "memory": {
+          "tenantId": "tenant-alphadeck",
+          "context": {
+            "product": "alphadeck",
+            "project_id": "project/a"
+          }
+        },
+        "knowledge": {
+          "sharedSpaceIds": [
+            "https://knowledge.example/shared"
+          ],
+          "projectSpaceId": null,
+          "requestedSpaceIds": [
+            "https://knowledge.example/shared"
+          ]
+        },
+        "scopeSha256": "sha256:f534901a20088f1665c81d268e038a4924954e9e72287a87b03f46a9afad802b"
+      },
+      "headers": {
+        "X-ModelPort-Organization-Id": "org_local",
+        "X-ModelPort-Project-Id": "prj_alphadeck",
+        "X-ModelPort-Environment-Id": "env_development"
+      }
+    },
+    {
+      "input": {
+        "projectId": "",
+        "memory": {
+          "tenantId": "tenant-alphadeck"
+        },
+        "knowledge": {
+          "spaces": [
+            "https://knowledge.example/shared",
+            "https://knowledge.example/shared"
+          ],
+          "projectSpacesEnabled": true,
+          "projectSpaceBaseUrl": "https://knowledge.example/projects"
+        },
+        "environment": {}
+      },
+      "error": "Project integration scope project ID is invalid."
+    },
+    {
+      "input": {
+        "projectId": "",
+        "memory": {
+          "tenantId": "tenant-alphadeck"
+        },
+        "knowledge": {
+          "spaces": [
+            "https://knowledge.example/shared",
+            "https://knowledge.example/shared"
+          ],
+          "projectSpacesEnabled": false,
+          "projectSpaceBaseUrl": "https://knowledge.example/projects"
+        },
+        "environment": {}
+      },
+      "error": "Project integration scope project ID is invalid."
+    }
+  ]
+}

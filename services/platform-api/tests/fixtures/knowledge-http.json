@@ -1,0 +1,1803 @@
+{
+  "config": {
+    "enabled": true,
+    "required": false,
+    "apiUrl": "https://knowledge.example",
+    "purpose": "quant-research",
+    "spaces": [
+      "https://knowledge.local/spaces/default"
+    ],
+    "projectSpacesEnabled": true,
+    "projectSpaceBaseUrl": "https://knowledge.local/spaces/alphadeck/projects",
+    "timeoutMs": 2000,
+    "maxContextCharacters": 8000,
+    "supportedObligations": [
+      "cite",
+      "no-train"
+    ],
+    "bearerToken": "synthetic-fixture-only",
+    "oauth": null,
+    "expectedVersion": "0.1"
+  },
+  "discovery": {
+    "protocol": "akep",
+    "versions": [
+      "0.1"
+    ],
+    "operations": [
+      "query",
+      "receipt",
+      "usage",
+      "feedback"
+    ],
+    "profiles": [
+      "lexical"
+    ],
+    "supportedExtensions": [
+      {
+        "uri": "https://knowledge.example/extensions/akep/context-pack/0.1"
+      }
+    ],
+    "baseUrl": "https://knowledge.example/akep/0.1",
+    "expiresAt": "2030-01-01T00:00:00Z"
+  },
+  "pack": {
+    "contextPackId": "pack",
+    "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "createdAt": "2026-11-03T00:00:00Z",
+    "exposureReceiptId": "exposure",
+    "policyEpoch": "epoch",
+    "purpose": "quant-research",
+    "passages": [
+      {
+        "citationId": "citation",
+        "chunkId": "chunk",
+        "rank": 1,
+        "recordId": "record",
+        "revisionId": "revision",
+        "score": 0.9,
+        "spaceId": "https://knowledge.example/spaces/shared",
+        "text": "Governed evidence",
+        "title": "Research"
+      }
+    ],
+    "citations": [
+      {
+        "citationId": "citation",
+        "chunkId": "chunk",
+        "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "locator": {
+          "page": 1
+        },
+        "quote": "evidence",
+        "recordId": "record",
+        "revisionId": "revision",
+        "spaceId": "https://knowledge.example/spaces/shared"
+      }
+    ],
+    "obligations": [
+      "cite",
+      "no-train"
+    ],
+    "quality": {
+      "decision": "suitable",
+      "reasons": [],
+      "citationCoverage": 1,
+      "lexicalCoverage": 0.8
+    },
+    "warnings": []
+  },
+  "usage": {
+    "usageId": "usage",
+    "exposureReceiptId": "exposure",
+    "spaceId": "https://knowledge.example/spaces/shared",
+    "policyEpoch": "epoch",
+    "createdAt": "2026-11-03T00:00:00Z",
+    "feedbackUntil": "2030-01-01T00:00:00Z"
+  },
+  "feedback": {
+    "feedbackId": "feedback",
+    "usageId": "usage",
+    "evidenceId": "evidence",
+    "policyEpoch": "epoch",
+    "receivedAt": "2026-11-03T00:00:00Z",
+    "status": "recorded",
+    "correlationClass": "business",
+    "eligibleForAggregation": true,
+    "evaluatorVersion": {
+      "uri": "urn:evaluator",
+      "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    }
+  },
+  "cases": [
+    {
+      "method": "discover",
+      "variant": "valid",
+      "input": null,
+      "raw": "{\"protocol\":\"akep\",\"versions\":[\"0.1\"],\"operations\":[\"query\",\"receipt\",\"usage\",\"feedback\"],\"profiles\":[\"lexical\"],\"supportedExtensions\":[{\"uri\":\"https://knowledge.example/extensions/akep/context-pack/0.1\"}],\"baseUrl\":\"https://knowledge.example/akep/0.1\",\"expiresAt\":\"2030-01-01T00:00:00Z\"}",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        }
+      ],
+      "expected": {
+        "result": {
+          "protocol": "akep",
+          "versions": [
+            "0.1"
+          ],
+          "operations": [
+            "query",
+            "receipt",
+            "usage",
+            "feedback"
+          ],
+          "profiles": [
+            "lexical"
+          ],
+          "supportedExtensions": [
+            "https://knowledge.example/extensions/akep/context-pack/0.1"
+          ],
+          "baseUrl": "https://knowledge.example/akep/0.1",
+          "expiresAt": "2030-01-01T00:00:00Z"
+        }
+      }
+    },
+    {
+      "method": "discover",
+      "variant": "empty",
+      "input": null,
+      "raw": "{}",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Invalid protocol response.",
+          "code": "INVALID_RESPONSE",
+          "status": null,
+          "requestId": null,
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "discover",
+      "variant": "array",
+      "input": null,
+      "raw": "[]",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Invalid AKEP discovery response.",
+          "code": "INVALID_RESPONSE",
+          "status": null,
+          "requestId": null,
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "discover",
+      "variant": "bad-json",
+      "input": null,
+      "raw": "broken JSON",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Governed knowledge service returned invalid JSON.",
+          "code": "INVALID_JSON",
+          "status": 200,
+          "requestId": "knowledge-fixture",
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "discover",
+      "variant": "rejected",
+      "input": null,
+      "raw": "{\"code\":\"FORBIDDEN\",\"traceId\":\"provider-trace\"}",
+      "status": 403,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Governed knowledge request was rejected.",
+          "code": "FORBIDDEN",
+          "status": 403,
+          "requestId": "knowledge-fixture",
+          "traceId": "provider-trace"
+        }
+      }
+    },
+    {
+      "method": "checkReady",
+      "variant": "valid",
+      "input": null,
+      "raw": "{\"status\":\"ready\"}",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/health/ready",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        }
+      ],
+      "expected": {
+        "result": null
+      }
+    },
+    {
+      "method": "checkReady",
+      "variant": "empty",
+      "input": null,
+      "raw": "{}",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/health/ready",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Governed knowledge service is not ready.",
+          "code": "NOT_READY",
+          "status": 503,
+          "requestId": "request----1",
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "checkReady",
+      "variant": "array",
+      "input": null,
+      "raw": "[]",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/health/ready",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Invalid AKEP readiness response.",
+          "code": "INVALID_RESPONSE",
+          "status": null,
+          "requestId": null,
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "checkReady",
+      "variant": "bad-json",
+      "input": null,
+      "raw": "broken JSON",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/health/ready",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Governed knowledge service returned invalid JSON.",
+          "code": "INVALID_JSON",
+          "status": 200,
+          "requestId": "knowledge-fixture",
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "checkReady",
+      "variant": "rejected",
+      "input": null,
+      "raw": "{\"code\":\"FORBIDDEN\",\"traceId\":\"provider-trace\"}",
+      "status": 403,
+      "calls": [
+        {
+          "url": "https://knowledge.example/health/ready",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Governed knowledge request was rejected.",
+          "code": "FORBIDDEN",
+          "status": 403,
+          "requestId": "knowledge-fixture",
+          "traceId": "provider-trace"
+        }
+      }
+    },
+    {
+      "method": "createContextPack",
+      "variant": "valid",
+      "input": {
+        "task": "Analyse 600519",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.example/spaces/shared"
+        ],
+        "maxCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ]
+      },
+      "raw": "{\"contextPackId\":\"pack\",\"contextDigest\":\"sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"createdAt\":\"2026-11-03T00:00:00Z\",\"exposureReceiptId\":\"exposure\",\"policyEpoch\":\"epoch\",\"purpose\":\"quant-research\",\"passages\":[{\"citationId\":\"citation\",\"chunkId\":\"chunk\",\"rank\":1,\"recordId\":\"record\",\"revisionId\":\"revision\",\"score\":0.9,\"spaceId\":\"https://knowledge.example/spaces/shared\",\"text\":\"Governed evidence\",\"title\":\"Research\"}],\"citations\":[{\"citationId\":\"citation\",\"chunkId\":\"chunk\",\"payloadDigest\":\"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"locator\":{\"page\":1},\"quote\":\"evidence\",\"recordId\":\"record\",\"revisionId\":\"revision\",\"spaceId\":\"https://knowledge.example/spaces/shared\"}],\"obligations\":[\"cite\",\"no-train\"],\"quality\":{\"decision\":\"suitable\",\"reasons\":[],\"citationCoverage\":1,\"lexicalCoverage\":0.8},\"warnings\":[]}",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/context-packs",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "budget": {
+              "maxCharacters": 8000
+            },
+            "critical": [],
+            "extensions": {},
+            "mode": "lexical",
+            "purpose": "quant-research",
+            "spaces": [
+              "https://knowledge.example/spaces/shared"
+            ],
+            "supportedObligations": [
+              "cite",
+              "no-train"
+            ],
+            "task": "Analyse 600519"
+          }
+        }
+      ],
+      "expected": {
+        "result": {
+          "contextPackId": "pack",
+          "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "createdAt": "2026-11-03T00:00:00Z",
+          "exposureReceiptId": "exposure",
+          "policyEpoch": "epoch",
+          "purpose": "quant-research",
+          "passages": [
+            {
+              "citationId": "citation",
+              "chunkId": "chunk",
+              "rank": 1,
+              "recordId": "record",
+              "revisionId": "revision",
+              "score": 0.9,
+              "spaceId": "https://knowledge.example/spaces/shared",
+              "text": "Governed evidence",
+              "title": "Research"
+            }
+          ],
+          "citations": [
+            {
+              "citationId": "citation",
+              "chunkId": "chunk",
+              "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "locator": {
+                "page": 1
+              },
+              "quote": "evidence",
+              "recordId": "record",
+              "revisionId": "revision",
+              "spaceId": "https://knowledge.example/spaces/shared"
+            }
+          ],
+          "obligations": [
+            "cite",
+            "no-train"
+          ],
+          "quality": {
+            "decision": "suitable",
+            "reasons": [],
+            "citationCoverage": 1,
+            "lexicalCoverage": 0.8
+          },
+          "warnings": []
+        }
+      }
+    },
+    {
+      "method": "createContextPack",
+      "variant": "empty",
+      "input": {
+        "task": "Analyse 600519",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.example/spaces/shared"
+        ],
+        "maxCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ]
+      },
+      "raw": "{}",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/context-packs",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "budget": {
+              "maxCharacters": 8000
+            },
+            "critical": [],
+            "extensions": {},
+            "mode": "lexical",
+            "purpose": "quant-research",
+            "spaces": [
+              "https://knowledge.example/spaces/shared"
+            ],
+            "supportedObligations": [
+              "cite",
+              "no-train"
+            ],
+            "task": "Analyse 600519"
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Invalid context quality response.",
+          "code": "INVALID_RESPONSE",
+          "status": null,
+          "requestId": null,
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "createContextPack",
+      "variant": "array",
+      "input": {
+        "task": "Analyse 600519",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.example/spaces/shared"
+        ],
+        "maxCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ]
+      },
+      "raw": "[]",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/context-packs",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "budget": {
+              "maxCharacters": 8000
+            },
+            "critical": [],
+            "extensions": {},
+            "mode": "lexical",
+            "purpose": "quant-research",
+            "spaces": [
+              "https://knowledge.example/spaces/shared"
+            ],
+            "supportedObligations": [
+              "cite",
+              "no-train"
+            ],
+            "task": "Analyse 600519"
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Invalid context pack response.",
+          "code": "INVALID_RESPONSE",
+          "status": null,
+          "requestId": null,
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "createContextPack",
+      "variant": "bad-json",
+      "input": {
+        "task": "Analyse 600519",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.example/spaces/shared"
+        ],
+        "maxCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ]
+      },
+      "raw": "broken JSON",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/context-packs",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "budget": {
+              "maxCharacters": 8000
+            },
+            "critical": [],
+            "extensions": {},
+            "mode": "lexical",
+            "purpose": "quant-research",
+            "spaces": [
+              "https://knowledge.example/spaces/shared"
+            ],
+            "supportedObligations": [
+              "cite",
+              "no-train"
+            ],
+            "task": "Analyse 600519"
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Governed knowledge service returned invalid JSON.",
+          "code": "INVALID_JSON",
+          "status": 200,
+          "requestId": "knowledge-fixture",
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "createContextPack",
+      "variant": "rejected",
+      "input": {
+        "task": "Analyse 600519",
+        "purpose": "quant-research",
+        "spaces": [
+          "https://knowledge.example/spaces/shared"
+        ],
+        "maxCharacters": 8000,
+        "supportedObligations": [
+          "cite",
+          "no-train"
+        ]
+      },
+      "raw": "{\"code\":\"FORBIDDEN\",\"traceId\":\"provider-trace\"}",
+      "status": 403,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/context-packs",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "budget": {
+              "maxCharacters": 8000
+            },
+            "critical": [],
+            "extensions": {},
+            "mode": "lexical",
+            "purpose": "quant-research",
+            "spaces": [
+              "https://knowledge.example/spaces/shared"
+            ],
+            "supportedObligations": [
+              "cite",
+              "no-train"
+            ],
+            "task": "Analyse 600519"
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Governed knowledge request was rejected.",
+          "code": "FORBIDDEN",
+          "status": 403,
+          "requestId": "knowledge-fixture",
+          "traceId": "provider-trace"
+        }
+      }
+    },
+    {
+      "method": "recordUsage",
+      "variant": "valid",
+      "input": {
+        "clientUsageId": "client-usage",
+        "exposureReceiptId": "exposure",
+        "spaceId": "https://knowledge.example/spaces/shared",
+        "citations": [
+          {
+            "citationId": "citation",
+            "revisionId": "revision",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "influence": "seen"
+          }
+        ],
+        "taskCategory": "quant-research",
+        "purpose": "quant-research",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "occurredAt": "2026-11-03T00:00:00Z"
+      },
+      "raw": "{\"usageId\":\"usage\",\"exposureReceiptId\":\"exposure\",\"spaceId\":\"https://knowledge.example/spaces/shared\",\"policyEpoch\":\"epoch\",\"createdAt\":\"2026-11-03T00:00:00Z\",\"feedbackUntil\":\"2030-01-01T00:00:00Z\"}",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/usages",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "idempotency-key": "idempotency-1",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "clientUsageId": "client-usage",
+            "exposureReceiptId": "exposure",
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "citations": [
+              {
+                "citationId": "citation",
+                "revisionId": "revision",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "influence": "seen"
+              }
+            ],
+            "taskCategory": "quant-research",
+            "purpose": "quant-research",
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "occurredAt": "2026-11-03T00:00:00Z",
+            "critical": [],
+            "extensions": {}
+          }
+        }
+      ],
+      "expected": {
+        "result": {
+          "usageId": "usage",
+          "exposureReceiptId": "exposure",
+          "spaceId": "https://knowledge.example/spaces/shared",
+          "policyEpoch": "epoch",
+          "createdAt": "2026-11-03T00:00:00Z",
+          "feedbackUntil": "2030-01-01T00:00:00Z"
+        }
+      }
+    },
+    {
+      "method": "recordUsage",
+      "variant": "empty",
+      "input": {
+        "clientUsageId": "client-usage",
+        "exposureReceiptId": "exposure",
+        "spaceId": "https://knowledge.example/spaces/shared",
+        "citations": [
+          {
+            "citationId": "citation",
+            "revisionId": "revision",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "influence": "seen"
+          }
+        ],
+        "taskCategory": "quant-research",
+        "purpose": "quant-research",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "occurredAt": "2026-11-03T00:00:00Z"
+      },
+      "raw": "{}",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/usages",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "idempotency-key": "idempotency-1",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "clientUsageId": "client-usage",
+            "exposureReceiptId": "exposure",
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "citations": [
+              {
+                "citationId": "citation",
+                "revisionId": "revision",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "influence": "seen"
+              }
+            ],
+            "taskCategory": "quant-research",
+            "purpose": "quant-research",
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "occurredAt": "2026-11-03T00:00:00Z",
+            "critical": [],
+            "extensions": {}
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Invalid usageId response.",
+          "code": "INVALID_RESPONSE",
+          "status": null,
+          "requestId": null,
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "recordUsage",
+      "variant": "array",
+      "input": {
+        "clientUsageId": "client-usage",
+        "exposureReceiptId": "exposure",
+        "spaceId": "https://knowledge.example/spaces/shared",
+        "citations": [
+          {
+            "citationId": "citation",
+            "revisionId": "revision",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "influence": "seen"
+          }
+        ],
+        "taskCategory": "quant-research",
+        "purpose": "quant-research",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "occurredAt": "2026-11-03T00:00:00Z"
+      },
+      "raw": "[]",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/usages",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "idempotency-key": "idempotency-1",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "clientUsageId": "client-usage",
+            "exposureReceiptId": "exposure",
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "citations": [
+              {
+                "citationId": "citation",
+                "revisionId": "revision",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "influence": "seen"
+              }
+            ],
+            "taskCategory": "quant-research",
+            "purpose": "quant-research",
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "occurredAt": "2026-11-03T00:00:00Z",
+            "critical": [],
+            "extensions": {}
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Invalid usage receipt response.",
+          "code": "INVALID_RESPONSE",
+          "status": null,
+          "requestId": null,
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "recordUsage",
+      "variant": "bad-json",
+      "input": {
+        "clientUsageId": "client-usage",
+        "exposureReceiptId": "exposure",
+        "spaceId": "https://knowledge.example/spaces/shared",
+        "citations": [
+          {
+            "citationId": "citation",
+            "revisionId": "revision",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "influence": "seen"
+          }
+        ],
+        "taskCategory": "quant-research",
+        "purpose": "quant-research",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "occurredAt": "2026-11-03T00:00:00Z"
+      },
+      "raw": "broken JSON",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/usages",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "idempotency-key": "idempotency-1",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "clientUsageId": "client-usage",
+            "exposureReceiptId": "exposure",
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "citations": [
+              {
+                "citationId": "citation",
+                "revisionId": "revision",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "influence": "seen"
+              }
+            ],
+            "taskCategory": "quant-research",
+            "purpose": "quant-research",
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "occurredAt": "2026-11-03T00:00:00Z",
+            "critical": [],
+            "extensions": {}
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Governed knowledge service returned invalid JSON.",
+          "code": "INVALID_JSON",
+          "status": 200,
+          "requestId": "knowledge-fixture",
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "recordUsage",
+      "variant": "rejected",
+      "input": {
+        "clientUsageId": "client-usage",
+        "exposureReceiptId": "exposure",
+        "spaceId": "https://knowledge.example/spaces/shared",
+        "citations": [
+          {
+            "citationId": "citation",
+            "revisionId": "revision",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "influence": "seen"
+          }
+        ],
+        "taskCategory": "quant-research",
+        "purpose": "quant-research",
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "occurredAt": "2026-11-03T00:00:00Z"
+      },
+      "raw": "{\"code\":\"FORBIDDEN\",\"traceId\":\"provider-trace\"}",
+      "status": 403,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/usages",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "idempotency-key": "idempotency-1",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "clientUsageId": "client-usage",
+            "exposureReceiptId": "exposure",
+            "spaceId": "https://knowledge.example/spaces/shared",
+            "citations": [
+              {
+                "citationId": "citation",
+                "revisionId": "revision",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "influence": "seen"
+              }
+            ],
+            "taskCategory": "quant-research",
+            "purpose": "quant-research",
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "occurredAt": "2026-11-03T00:00:00Z",
+            "critical": [],
+            "extensions": {}
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Governed knowledge request was rejected.",
+          "code": "FORBIDDEN",
+          "status": 403,
+          "requestId": "knowledge-fixture",
+          "traceId": "provider-trace"
+        }
+      }
+    },
+    {
+      "method": "recordFeedback",
+      "variant": "valid",
+      "input": {
+        "feedbackId": "feedback",
+        "usageId": "usage",
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "taskCategory": "quant-research",
+        "outcome": "helped",
+        "metrics": [
+          {
+            "name": "business.user_outcome",
+            "value": 1,
+            "unit": "score"
+          }
+        ],
+        "evaluatorVersion": {
+          "uri": "urn:evaluator",
+          "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        },
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "evidenceRefs": [
+          "urn:receipt"
+        ],
+        "observedAt": "2026-11-03T00:00:00Z",
+        "privacy": {
+          "rawTaskStored": false,
+          "aggregation": "pseudonymized"
+        }
+      },
+      "raw": "{\"feedbackId\":\"feedback\",\"usageId\":\"usage\",\"evidenceId\":\"evidence\",\"policyEpoch\":\"epoch\",\"receivedAt\":\"2026-11-03T00:00:00Z\",\"status\":\"recorded\",\"correlationClass\":\"business\",\"eligibleForAggregation\":true,\"evaluatorVersion\":{\"uri\":\"urn:evaluator\",\"digest\":\"sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc\"}}",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/feedback",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "idempotency-key": "idempotency-1",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "feedbackId": "feedback",
+            "usageId": "usage",
+            "citations": [
+              {
+                "citationId": "citation",
+                "chunkId": "chunk",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "quote": "evidence",
+                "recordId": "record",
+                "revisionId": "revision",
+                "spaceId": "https://knowledge.example/spaces/shared"
+              }
+            ],
+            "taskCategory": "quant-research",
+            "outcome": "helped",
+            "metrics": [
+              {
+                "name": "business.user_outcome",
+                "value": 1,
+                "unit": "score"
+              }
+            ],
+            "evaluatorVersion": {
+              "uri": "urn:evaluator",
+              "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            },
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "evidenceRefs": [
+              "urn:receipt"
+            ],
+            "observedAt": "2026-11-03T00:00:00Z",
+            "privacy": {
+              "rawTaskStored": false,
+              "aggregation": "pseudonymized"
+            },
+            "critical": [],
+            "extensions": {}
+          }
+        }
+      ],
+      "expected": {
+        "result": {
+          "feedbackId": "feedback",
+          "usageId": "usage",
+          "evidenceId": "evidence",
+          "policyEpoch": "epoch",
+          "receivedAt": "2026-11-03T00:00:00Z",
+          "status": "recorded",
+          "correlationClass": "business",
+          "eligibleForAggregation": true,
+          "evaluatorVersion": {
+            "uri": "urn:evaluator",
+            "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        }
+      }
+    },
+    {
+      "method": "recordFeedback",
+      "variant": "empty",
+      "input": {
+        "feedbackId": "feedback",
+        "usageId": "usage",
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "taskCategory": "quant-research",
+        "outcome": "helped",
+        "metrics": [
+          {
+            "name": "business.user_outcome",
+            "value": 1,
+            "unit": "score"
+          }
+        ],
+        "evaluatorVersion": {
+          "uri": "urn:evaluator",
+          "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        },
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "evidenceRefs": [
+          "urn:receipt"
+        ],
+        "observedAt": "2026-11-03T00:00:00Z",
+        "privacy": {
+          "rawTaskStored": false,
+          "aggregation": "pseudonymized"
+        }
+      },
+      "raw": "{}",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/feedback",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "idempotency-key": "idempotency-1",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "feedbackId": "feedback",
+            "usageId": "usage",
+            "citations": [
+              {
+                "citationId": "citation",
+                "chunkId": "chunk",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "quote": "evidence",
+                "recordId": "record",
+                "revisionId": "revision",
+                "spaceId": "https://knowledge.example/spaces/shared"
+              }
+            ],
+            "taskCategory": "quant-research",
+            "outcome": "helped",
+            "metrics": [
+              {
+                "name": "business.user_outcome",
+                "value": 1,
+                "unit": "score"
+              }
+            ],
+            "evaluatorVersion": {
+              "uri": "urn:evaluator",
+              "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            },
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "evidenceRefs": [
+              "urn:receipt"
+            ],
+            "observedAt": "2026-11-03T00:00:00Z",
+            "privacy": {
+              "rawTaskStored": false,
+              "aggregation": "pseudonymized"
+            },
+            "critical": [],
+            "extensions": {}
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Invalid evaluatorVersion response.",
+          "code": "INVALID_RESPONSE",
+          "status": null,
+          "requestId": null,
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "recordFeedback",
+      "variant": "array",
+      "input": {
+        "feedbackId": "feedback",
+        "usageId": "usage",
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "taskCategory": "quant-research",
+        "outcome": "helped",
+        "metrics": [
+          {
+            "name": "business.user_outcome",
+            "value": 1,
+            "unit": "score"
+          }
+        ],
+        "evaluatorVersion": {
+          "uri": "urn:evaluator",
+          "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        },
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "evidenceRefs": [
+          "urn:receipt"
+        ],
+        "observedAt": "2026-11-03T00:00:00Z",
+        "privacy": {
+          "rawTaskStored": false,
+          "aggregation": "pseudonymized"
+        }
+      },
+      "raw": "[]",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/feedback",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "idempotency-key": "idempotency-1",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "feedbackId": "feedback",
+            "usageId": "usage",
+            "citations": [
+              {
+                "citationId": "citation",
+                "chunkId": "chunk",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "quote": "evidence",
+                "recordId": "record",
+                "revisionId": "revision",
+                "spaceId": "https://knowledge.example/spaces/shared"
+              }
+            ],
+            "taskCategory": "quant-research",
+            "outcome": "helped",
+            "metrics": [
+              {
+                "name": "business.user_outcome",
+                "value": 1,
+                "unit": "score"
+              }
+            ],
+            "evaluatorVersion": {
+              "uri": "urn:evaluator",
+              "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            },
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "evidenceRefs": [
+              "urn:receipt"
+            ],
+            "observedAt": "2026-11-03T00:00:00Z",
+            "privacy": {
+              "rawTaskStored": false,
+              "aggregation": "pseudonymized"
+            },
+            "critical": [],
+            "extensions": {}
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Invalid feedback receipt response.",
+          "code": "INVALID_RESPONSE",
+          "status": null,
+          "requestId": null,
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "recordFeedback",
+      "variant": "bad-json",
+      "input": {
+        "feedbackId": "feedback",
+        "usageId": "usage",
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "taskCategory": "quant-research",
+        "outcome": "helped",
+        "metrics": [
+          {
+            "name": "business.user_outcome",
+            "value": 1,
+            "unit": "score"
+          }
+        ],
+        "evaluatorVersion": {
+          "uri": "urn:evaluator",
+          "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        },
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "evidenceRefs": [
+          "urn:receipt"
+        ],
+        "observedAt": "2026-11-03T00:00:00Z",
+        "privacy": {
+          "rawTaskStored": false,
+          "aggregation": "pseudonymized"
+        }
+      },
+      "raw": "broken JSON",
+      "status": 200,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/feedback",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "idempotency-key": "idempotency-1",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "feedbackId": "feedback",
+            "usageId": "usage",
+            "citations": [
+              {
+                "citationId": "citation",
+                "chunkId": "chunk",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "quote": "evidence",
+                "recordId": "record",
+                "revisionId": "revision",
+                "spaceId": "https://knowledge.example/spaces/shared"
+              }
+            ],
+            "taskCategory": "quant-research",
+            "outcome": "helped",
+            "metrics": [
+              {
+                "name": "business.user_outcome",
+                "value": 1,
+                "unit": "score"
+              }
+            ],
+            "evaluatorVersion": {
+              "uri": "urn:evaluator",
+              "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            },
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "evidenceRefs": [
+              "urn:receipt"
+            ],
+            "observedAt": "2026-11-03T00:00:00Z",
+            "privacy": {
+              "rawTaskStored": false,
+              "aggregation": "pseudonymized"
+            },
+            "critical": [],
+            "extensions": {}
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Governed knowledge service returned invalid JSON.",
+          "code": "INVALID_JSON",
+          "status": 200,
+          "requestId": "knowledge-fixture",
+          "traceId": null
+        }
+      }
+    },
+    {
+      "method": "recordFeedback",
+      "variant": "rejected",
+      "input": {
+        "feedbackId": "feedback",
+        "usageId": "usage",
+        "citations": [
+          {
+            "citationId": "citation",
+            "chunkId": "chunk",
+            "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "locator": {
+              "page": 1
+            },
+            "quote": "evidence",
+            "recordId": "record",
+            "revisionId": "revision",
+            "spaceId": "https://knowledge.example/spaces/shared"
+          }
+        ],
+        "taskCategory": "quant-research",
+        "outcome": "helped",
+        "metrics": [
+          {
+            "name": "business.user_outcome",
+            "value": 1,
+            "unit": "score"
+          }
+        ],
+        "evaluatorVersion": {
+          "uri": "urn:evaluator",
+          "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        },
+        "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "evidenceRefs": [
+          "urn:receipt"
+        ],
+        "observedAt": "2026-11-03T00:00:00Z",
+        "privacy": {
+          "rawTaskStored": false,
+          "aggregation": "pseudonymized"
+        }
+      },
+      "raw": "{\"code\":\"FORBIDDEN\",\"traceId\":\"provider-trace\"}",
+      "status": 403,
+      "calls": [
+        {
+          "url": "https://knowledge.example/.well-known/akep",
+          "method": "GET",
+          "headers": {
+            "accept": "application/json",
+            "x-request-id": "request----1"
+          }
+        },
+        {
+          "url": "https://knowledge.example/akep/0.1/feedback",
+          "method": "POST",
+          "headers": {
+            "accept": "application/json",
+            "akep-version": "0.1",
+            "authorization": "Bearer synthetic-fixture-only",
+            "content-type": "application/json",
+            "idempotency-key": "idempotency-1",
+            "x-request-id": "request----1"
+          },
+          "body": {
+            "akepVersion": "0.1",
+            "feedbackId": "feedback",
+            "usageId": "usage",
+            "citations": [
+              {
+                "citationId": "citation",
+                "chunkId": "chunk",
+                "payloadDigest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "locator": {
+                  "page": 1
+                },
+                "quote": "evidence",
+                "recordId": "record",
+                "revisionId": "revision",
+                "spaceId": "https://knowledge.example/spaces/shared"
+              }
+            ],
+            "taskCategory": "quant-research",
+            "outcome": "helped",
+            "metrics": [
+              {
+                "name": "business.user_outcome",
+                "value": 1,
+                "unit": "score"
+              }
+            ],
+            "evaluatorVersion": {
+              "uri": "urn:evaluator",
+              "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+            },
+            "contextDigest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "evidenceRefs": [
+              "urn:receipt"
+            ],
+            "observedAt": "2026-11-03T00:00:00Z",
+            "privacy": {
+              "rawTaskStored": false,
+              "aggregation": "pseudonymized"
+            },
+            "critical": [],
+            "extensions": {}
+          }
+        }
+      ],
+      "expected": {
+        "error": {
+          "message": "Governed knowledge request was rejected.",
+          "code": "FORBIDDEN",
+          "status": 403,
+          "requestId": "knowledge-fixture",
+          "traceId": "provider-trace"
+        }
+      }
+    }
+  ],
+  "endpointCases": [
+    {
+      "baseUrl": "https://evil.example/akep/0.1",
+      "expected": {
+        "code": "UNTRUSTED_DISCOVERY_ENDPOINT"
+      }
+    },
+    {
+      "baseUrl": "https://knowledge.example/other",
+      "expected": {
+        "code": "UNTRUSTED_DISCOVERY_ENDPOINT"
+      }
+    },
+    {
+      "baseUrl": "http://knowledge.example/akep/0.1",
+      "expected": {
+        "code": "UNTRUSTED_DISCOVERY_ENDPOINT"
+      }
+    },
+    {
+      "baseUrl": "https://knowledge.example:443/akep/0.1",
+      "expected": {
+        "result": {
+          "protocol": "akep",
+          "versions": [
+            "0.1"
+          ],
+          "operations": [
+            "query",
+            "receipt",
+            "usage",
+            "feedback"
+          ],
+          "profiles": [
+            "lexical"
+          ],
+          "supportedExtensions": [
+            "https://knowledge.example/extensions/akep/context-pack/0.1"
+          ],
+          "baseUrl": "https://knowledge.example/akep/0.1",
+          "expiresAt": "2030-01-01T00:00:00Z"
+        }
+      }
+    }
+  ]
+}
