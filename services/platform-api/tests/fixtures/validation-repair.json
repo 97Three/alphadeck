@@ -1,0 +1,904 @@
+[
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "next_build",
+          "name": "检查项 next_build",
+          "summary": "检查失败",
+          "status": "failed",
+          "details": "详情"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "next_build",
+            "checkName": "检查项 next_build",
+            "summary": "检查失败",
+            "actions": [
+              "根据失败详情定位并修复 TypeScript、Next.js 或 CSS 错误。",
+              "动态 JSON 字段必须使用 JsonRecord、asRecord、asArray、numeric 等守卫函数处理。"
+            ],
+            "details": "详情"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "src/App.vue",
+        "src/style.css"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：next_build\n- 唯一可写范围：src/App.vue 和 src/style.css\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；失败详情点名的 app/** 文件与相关导入\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 检查项 next_build（next_build）：检查失败\n   细节：详情\n\n最小修复动作：\n1. 检查项 next_build（next_build）\n   1. 根据失败详情定位并修复 TypeScript、Next.js 或 CSS 错误。\n   2. 动态 JSON 字段必须使用 JsonRecord、asRecord、asArray、numeric 等守卫函数处理。\n\n完成条件（平台复验前候选）：\n- next_build：报告点名的类型、导入或样式错误已在关联 app 文件中消除。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "preview_http_200",
+          "name": "检查项 preview_http_200",
+          "summary": "检查失败",
+          "status": "failed",
+          "details": "详情"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "preview_http_200",
+            "checkName": "检查项 preview_http_200",
+            "summary": "检查失败",
+            "actions": [
+              "根据失败详情修复页面加载时抛出的运行时异常。",
+              "保持 src/App.vue、app/layout.tsx 和 src/style.css 的导入与渲染链路有效。"
+            ],
+            "details": "详情"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "src/App.vue",
+        "src/style.css"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：preview_http_200\n- 唯一可写范围：src/App.vue 和 src/style.css\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；失败详情点名的 app/** 文件与相关导入\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 检查项 preview_http_200（preview_http_200）：检查失败\n   细节：详情\n\n最小修复动作：\n1. 检查项 preview_http_200（preview_http_200）\n   1. 根据失败详情修复页面加载时抛出的运行时异常。\n   2. 保持 src/App.vue、app/layout.tsx 和 src/style.css 的导入与渲染链路有效。\n\n完成条件（平台复验前候选）：\n- preview_http_200：报告点名的页面加载异常已消除，渲染入口不再抛错。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "visual_presentation",
+          "name": "检查项 visual_presentation",
+          "summary": "检查失败",
+          "status": "failed",
+          "details": "详情"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "visual_presentation",
+            "checkName": "检查项 visual_presentation",
+            "summary": "检查失败",
+            "actions": [
+              "只查看 .data-agent/visual-validation.json 指向的失败 viewport、截图与指标。",
+              "修复桌面/移动端布局：首屏不能空白，不能横向溢出，文本不能互相遮挡。",
+              "把独立白色圆角卡片网格合并为连续金融工作台：主画布共用背景，以细分区线、连续指标带、主图、矩阵和表格建立层级；移除重复圆角、阴影和 card 套 card。",
+              "指标带按实际数量均衡分栏；移除桌面端 N+1 孤项和大片空白，避免金额、价格和百分比拆行或竖排。",
+              "移动端 390x844 首屏必须露出一个可用的核心图表、矩阵或表格；如果摘要区过高，压缩或下移次要指标和免责声明，并移除用户可见的渠道证据、模板名称与组件契约说明。"
+            ],
+            "details": "详情"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "src/App.vue",
+        "src/style.css"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：visual_presentation\n- 唯一可写范围：src/App.vue 和 src/style.css\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；.data-agent/visual-validation.json（仅失败 viewport 和其截图路径）；src/App.vue 与 src/style.css（只读相关区段）\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 检查项 visual_presentation（visual_presentation）：检查失败\n   细节：详情\n\n最小修复动作：\n1. 检查项 visual_presentation（visual_presentation）\n   1. 只查看 .data-agent/visual-validation.json 指向的失败 viewport、截图与指标。\n   2. 修复桌面/移动端布局：首屏不能空白，不能横向溢出，文本不能互相遮挡。\n   3. 把独立白色圆角卡片网格合并为连续金融工作台：主画布共用背景，以细分区线、连续指标带、主图、矩阵和表格建立层级；移除重复圆角、阴影和 card 套 card。\n   4. 指标带按实际数量均衡分栏；移除桌面端 N+1 孤项和大片空白，避免金额、价格和百分比拆行或竖排。\n   5. 移动端 390x844 首屏必须露出一个可用的核心图表、矩阵或表格；如果摘要区过高，压缩或下移次要指标和免责声明，并移除用户可见的渠道证据、模板名称与组件契约说明。\n\n完成条件（平台复验前候选）：\n- visual_presentation：失败 viewport 的首屏主体可见，且无空白、横向溢出或文本遮挡。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "final_data_file",
+          "name": "检查项 final_data_file",
+          "summary": "检查失败",
+          "status": "failed",
+          "details": "详情"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "final_data_file",
+            "checkName": "检查项 final_data_file",
+            "summary": "检查失败",
+            "actions": [
+              "生成或修复 data_file/final/dashboard-data.json。",
+              "读取 .data-agent/finance-run-plan.json 和现有 raw/final/evidence 数据，按真实数据重组 final 文件，不要只创建空 JSON。",
+              "确保 final 数据包含 symbol/name/source/as_of、quote.price/change_percent/quote_time，以及 kline.bars[] 或 history.bars[]；每根 K 线至少包含 date/open/high/low/close/volume 或 amount。",
+              "多标的任务必须覆盖 run_plan.symbols 中的全部代码，并写入 requestedSymbols、assets[] 与 comparison.rows[]；comparison.rows[] 必须包含 symbol/name、价格或收益、回撤/波动/成交额等可排序字段。",
+              "final 数据必须包含 visualization.template_id、variant_id、required_components 和 rendered_components，并与 run_plan.visualization.templateId 对齐。"
+            ],
+            "details": "详情"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "data_file/final/**"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：final_data_file\n- 唯一可写范围：data_file/final/**\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；.data-agent/finance-run-plan.json（只读 symbols/visualization）；data_file/final/dashboard-data.json\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 检查项 final_data_file（final_data_file）：检查失败\n   细节：详情\n\n最小修复动作：\n1. 检查项 final_data_file（final_data_file）\n   1. 生成或修复 data_file/final/dashboard-data.json。\n   2. 读取 .data-agent/finance-run-plan.json 和现有 raw/final/evidence 数据，按真实数据重组 final 文件，不要只创建空 JSON。\n   3. 确保 final 数据包含 symbol/name/source/as_of、quote.price/change_percent/quote_time，以及 kline.bars[] 或 history.bars[]；每根 K 线至少包含 date/open/high/low/close/volume 或 amount。\n   4. 多标的任务必须覆盖 run_plan.symbols 中的全部代码，并写入 requestedSymbols、assets[] 与 comparison.rows[]；comparison.rows[] 必须包含 symbol/name、价格或收益、回撤/波动/成交额等可排序字段。\n   5. final 数据必须包含 visualization.template_id、variant_id、required_components 和 rendered_components，并与 run_plan.visualization.templateId 对齐。\n\n完成条件（平台复验前候选）：\n- final_data_file：dashboard-data.json 覆盖计划标的、真实数据字段和 visualization 契约。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "evidence_files",
+          "name": "检查项 evidence_files",
+          "summary": "检查失败",
+          "status": "failed",
+          "details": "详情"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "evidence_files",
+            "checkName": "检查项 evidence_files",
+            "summary": "检查失败",
+            "actions": [
+              "生成 evidence/sources.json，记录 source、endpoint、fetched_at/as_of、样本量和 artifact_path。",
+              "生成 evidence/data_quality.json，记录 status、datasets/checks、缺失字段、警告和限制。",
+              "不要把鉴权凭据、会话凭据或密钥值写入 evidence。"
+            ],
+            "details": "详情"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "evidence/**"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：evidence_files\n- 唯一可写范围：evidence/**\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；evidence/sources.json 与 evidence/data_quality.json\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 检查项 evidence_files（evidence_files）：检查失败\n   细节：详情\n\n最小修复动作：\n1. 检查项 evidence_files（evidence_files）\n   1. 生成 evidence/sources.json，记录 source、endpoint、fetched_at/as_of、样本量和 artifact_path。\n   2. 生成 evidence/data_quality.json，记录 status、datasets/checks、缺失字段、警告和限制。\n   3. 不要把鉴权凭据、会话凭据或密钥值写入 evidence。\n\n完成条件（平台复验前候选）：\n- evidence_files：sources 与 data_quality evidence 完整记录来源、时效、质量和限制。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "artifact_contracts",
+          "name": "检查项 artifact_contracts",
+          "summary": "检查失败",
+          "status": "failed",
+          "details": "详情"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "artifact_contracts",
+            "checkName": "检查项 artifact_contracts",
+            "summary": "检查失败",
+            "actions": [
+              "只查看 .data-agent/artifact-contracts.json 中失败的契约项。",
+              "只修复 evidence/*.json 或 data_file/final/dashboard-data.json 的结构字段；run_plan、generation-state 和其他 .data-agent 结构由平台重建。"
+            ],
+            "details": "详情"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "data_file/final/**",
+        "evidence/**"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：artifact_contracts\n- 唯一可写范围：data_file/final/** 和 evidence/**\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；.data-agent/artifact-contracts.json（仅失败契约）；失败契约指向的 final/evidence 文件\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 检查项 artifact_contracts（artifact_contracts）：检查失败\n   细节：详情\n\n最小修复动作：\n1. 检查项 artifact_contracts（artifact_contracts）\n   1. 只查看 .data-agent/artifact-contracts.json 中失败的契约项。\n   2. 只修复 evidence/*.json 或 data_file/final/dashboard-data.json 的结构字段；run_plan、generation-state 和其他 .data-agent 结构由平台重建。\n\n完成条件（平台复验前候选）：\n- artifact_contracts：artifact-contracts 报告中的失败 JSON 字段已在 final/evidence 中补齐。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "artifact_policy",
+          "name": "检查项 artifact_policy",
+          "summary": "检查失败",
+          "status": "failed",
+          "details": "详情"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "artifact_policy",
+            "checkName": "检查项 artifact_policy",
+            "summary": "检查失败",
+            "actions": [
+              "移除外部 CDN、远程脚本、远程样式、远程字体、远程媒体和浏览器直连外部 API。",
+              "页面资源必须本地化；浏览器取数只能读取 data_file/final/dashboard-data.json 或同源 /api/market/**。",
+              "移除 MOCK_DATA、SAMPLE_DATA、STATIC_QUOTES、示例数据、模拟数据、占位数据和明文密钥。"
+            ],
+            "details": "详情"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "src/App.vue",
+        "src/style.css"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：artifact_policy\n- 唯一可写范围：src/App.vue 和 src/style.css\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；失败详情点名的 app/** 文件与相关区段\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 检查项 artifact_policy（artifact_policy）：检查失败\n   细节：详情\n\n最小修复动作：\n1. 检查项 artifact_policy（artifact_policy）\n   1. 移除外部 CDN、远程脚本、远程样式、远程字体、远程媒体和浏览器直连外部 API。\n   2. 页面资源必须本地化；浏览器取数只能读取 data_file/final/dashboard-data.json 或同源 /api/market/**。\n   3. 移除 MOCK_DATA、SAMPLE_DATA、STATIC_QUOTES、示例数据、模拟数据、占位数据和明文密钥。\n\n完成条件（平台复验前候选）：\n- artifact_policy：报告点名的远程资源、浏览器外连、mock 或敏感字面量已移除。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "dashboard_data_binding",
+          "name": "检查项 dashboard_data_binding",
+          "summary": "检查失败",
+          "status": "failed",
+          "details": "详情"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "dashboard_data_binding",
+            "checkName": "检查项 dashboard_data_binding",
+            "summary": "检查失败",
+            "actions": [
+              "让 src/App.vue 使用 AlphaDeck 标准数据绑定结构读取 data_file/final/dashboard-data.json。",
+              "保留 DATA_FILE、readDashboardData()、getBars() 或 data-source-file={DATA_FILE} 等标准入口。",
+              "不要把完整行情、K 线、财务或公告对象内联到页面代码。"
+            ],
+            "details": "详情"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "src/App.vue",
+        "src/style.css",
+        "data_file/final/**"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：dashboard_data_binding\n- 唯一可写范围：src/App.vue、src/style.css 和 data_file/final/**\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；src/App.vue 的数据读取与绑定区段；data_file/final/dashboard-data.json 的顶层结构\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 检查项 dashboard_data_binding（dashboard_data_binding）：检查失败\n   细节：详情\n\n最小修复动作：\n1. 检查项 dashboard_data_binding（dashboard_data_binding）\n   1. 让 src/App.vue 使用 AlphaDeck 标准数据绑定结构读取 data_file/final/dashboard-data.json。\n   2. 保留 DATA_FILE、readDashboardData()、getBars() 或 data-source-file={DATA_FILE} 等标准入口。\n   3. 不要把完整行情、K 线、财务或公告对象内联到页面代码。\n\n完成条件（平台复验前候选）：\n- dashboard_data_binding：页面通过标准入口读取 final 数据，且未内联完整行情对象。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "chart_presence",
+          "name": "检查项 chart_presence",
+          "summary": "检查失败",
+          "status": "failed",
+          "details": "详情"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "chart_presence",
+            "checkName": "检查项 chart_presence",
+            "summary": "检查失败",
+            "actions": [
+              "补齐真实金融图表：K 线/OHLC、成交量、均线、财务趋势、收益/回撤/波动或风险指标。",
+              "图表必须有语义染色、坐标/图例/tooltip/title 等读图辅助。",
+              "用户明确要求“累计收益曲线/收益曲线/净值曲线/折线图”时必须绘制带日期轴、统一尺度和图例的折线图，不能用柱状图、指标卡或 sparkline 替代。",
+              "用户明确要求“相关性矩阵/热力图/分散风险图谱”时必须绘制真实矩阵或热力图，并展示标的标签、数值和颜色刻度。"
+            ],
+            "details": "详情"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "src/App.vue",
+        "src/style.css"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：chart_presence\n- 唯一可写范围：src/App.vue 和 src/style.css\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；失败详情点名的 app/** 文件与相关区段\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 检查项 chart_presence（chart_presence）：检查失败\n   细节：详情\n\n最小修复动作：\n1. 检查项 chart_presence（chart_presence）\n   1. 补齐真实金融图表：K 线/OHLC、成交量、均线、财务趋势、收益/回撤/波动或风险指标。\n   2. 图表必须有语义染色、坐标/图例/tooltip/title 等读图辅助。\n   3. 用户明确要求“累计收益曲线/收益曲线/净值曲线/折线图”时必须绘制带日期轴、统一尺度和图例的折线图，不能用柱状图、指标卡或 sparkline 替代。\n   4. 用户明确要求“相关性矩阵/热力图/分散风险图谱”时必须绘制真实矩阵或热力图，并展示标的标签、数值和颜色刻度。\n\n完成条件（平台复验前候选）：\n- chart_presence：用户任务要求的核心金融图表及读图辅助已实际渲染。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "market_proxy",
+          "name": "检查项 market_proxy",
+          "summary": "检查失败",
+          "status": "failed",
+          "details": "详情"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "market_proxy",
+            "checkName": "检查项 market_proxy",
+            "summary": "检查失败",
+            "actions": [
+              "创建 app/api/market/[...path]/route.ts。",
+              "将 /api/market/** 转发到 http://127.0.0.1:8000/api/v1/** 并保留 query 参数。",
+              "前端刷新行情时调用 /api/market/**，不要从浏览器直连 8000 或外部接口。"
+            ],
+            "details": "详情"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "app/api/market/[...path]/route.ts"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：market_proxy\n- 唯一可写范围：app/api/market/[...path]/route.ts\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；失败详情点名的 app/** 文件与相关区段\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 检查项 market_proxy（market_proxy）：检查失败\n   细节：详情\n\n最小修复动作：\n1. 检查项 market_proxy（market_proxy）\n   1. 创建 app/api/market/[...path]/route.ts。\n   2. 将 /api/market/** 转发到 http://127.0.0.1:8000/api/v1/** 并保留 query 参数。\n   3. 前端刷新行情时调用 /api/market/**，不要从浏览器直连 8000 或外部接口。\n\n完成条件（平台复验前候选）：\n- market_proxy：同源 /api/market/** 路由按报告要求存在并保留查询参数。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "unknown",
+          "name": "检查项 unknown",
+          "summary": "检查失败",
+          "status": "failed",
+          "details": "详情"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "unknown",
+            "checkName": "检查项 unknown",
+            "summary": "检查失败",
+            "actions": [
+              "根据失败摘要和细节定位关联文件，只修复该失败项。"
+            ],
+            "details": "详情"
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：unknown\n- 唯一可写范围：无\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；失败详情明确指向的文件或区段\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 检查项 unknown（unknown）：检查失败\n   细节：详情\n\n最小修复动作：\n1. 检查项 unknown（unknown）\n   1. 根据失败摘要和细节定位关联文件，只修复该失败项。\n\n完成条件（平台复验前候选）：\n- unknown：检查项 unknown 的失败摘要已被对应文件修改直接解决。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "dashboard_data_binding",
+          "name": "页面绑定",
+          "summary": "交易执行计划",
+          "status": "failed"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "dashboard_data_binding",
+            "checkName": "页面绑定",
+            "summary": "交易执行计划",
+            "actions": [
+              "让 src/App.vue 使用 AlphaDeck 标准数据绑定结构读取 data_file/final/dashboard-data.json。",
+              "保留 DATA_FILE、readDashboardData()、getBars() 或 data-source-file={DATA_FILE} 等标准入口。",
+              "必须实际编辑 src/App.vue：删除 getTradingPlanRows、priceRange、TradingPlanPanel、tradingRows 变量和 <TradingPlanPanel ... /> 调用。",
+              "必须实际编辑 src/style.css：删除 .trading-plan-grid、.trade-card、.trade-title、.trade-rationale、.trade-abandon 等交易计划样式，或确保页面不再引用这些 class。",
+              "除“不是买卖建议/不构成交易指令”这类免责声明外，页面不得残留短线交易计划、买入区间、止损、目标价或仓位上限。",
+              "不要把完整行情、K 线、财务或公告对象内联到页面代码。"
+            ]
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "src/App.vue",
+        "src/style.css",
+        "data_file/final/**"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：dashboard_data_binding\n- 唯一可写范围：src/App.vue、src/style.css 和 data_file/final/**\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；src/App.vue 的数据读取与绑定区段；data_file/final/dashboard-data.json 的顶层结构\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 页面绑定（dashboard_data_binding）：交易执行计划\n\n最小修复动作：\n1. 页面绑定（dashboard_data_binding）\n   1. 让 src/App.vue 使用 AlphaDeck 标准数据绑定结构读取 data_file/final/dashboard-data.json。\n   2. 保留 DATA_FILE、readDashboardData()、getBars() 或 data-source-file={DATA_FILE} 等标准入口。\n   3. 必须实际编辑 src/App.vue：删除 getTradingPlanRows、priceRange、TradingPlanPanel、tradingRows 变量和 <TradingPlanPanel ... /> 调用。\n   4. 必须实际编辑 src/style.css：删除 .trading-plan-grid、.trade-card、.trade-title、.trade-rationale、.trade-abandon 等交易计划样式，或确保页面不再引用这些 class。\n   5. 除“不是买卖建议/不构成交易指令”这类免责声明外，页面不得残留短线交易计划、买入区间、止损、目标价或仓位上限。\n   6. 不要把完整行情、K 线、财务或公告对象内联到页面代码。\n\n完成条件（平台复验前候选）：\n- dashboard_data_binding：页面通过标准入口读取 final 数据，且未内联完整行情对象。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：报告状态异常但未提供失败 ID\n- 唯一可写范围：无\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n无失败项，但验证报告状态为失败，请重新检查产物。\n\n最小修复动作：\n请重新检查验证报告并补齐缺失产物。\n\n完成条件（平台复验前候选）：\n- 报告未提供失败 ID；仅提交已能由失败详情证明的修复。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "next_build",
+          "name": "检查项 next_build",
+          "summary": "失败",
+          "status": "failed"
+        },
+        {
+          "id": "preview_http_200",
+          "name": "检查项 preview_http_200",
+          "summary": "失败",
+          "status": "failed"
+        },
+        {
+          "id": "visual_presentation",
+          "name": "检查项 visual_presentation",
+          "summary": "失败",
+          "status": "failed"
+        },
+        {
+          "id": "final_data_file",
+          "name": "检查项 final_data_file",
+          "summary": "失败",
+          "status": "failed"
+        },
+        {
+          "id": "evidence_files",
+          "name": "检查项 evidence_files",
+          "summary": "失败",
+          "status": "failed"
+        },
+        {
+          "id": "artifact_contracts",
+          "name": "检查项 artifact_contracts",
+          "summary": "失败",
+          "status": "failed"
+        },
+        {
+          "id": "artifact_policy",
+          "name": "检查项 artifact_policy",
+          "summary": "失败",
+          "status": "failed"
+        },
+        {
+          "id": "dashboard_data_binding",
+          "name": "检查项 dashboard_data_binding",
+          "summary": "失败",
+          "status": "failed"
+        },
+        {
+          "id": "chart_presence",
+          "name": "检查项 chart_presence",
+          "summary": "失败",
+          "status": "failed"
+        },
+        {
+          "id": "market_proxy",
+          "name": "检查项 market_proxy",
+          "summary": "失败",
+          "status": "failed"
+        },
+        {
+          "id": "unknown",
+          "name": "检查项 unknown",
+          "summary": "失败",
+          "status": "failed"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "next_build",
+            "checkName": "检查项 next_build",
+            "summary": "失败",
+            "actions": [
+              "根据失败详情定位并修复 TypeScript、Next.js 或 CSS 错误。",
+              "动态 JSON 字段必须使用 JsonRecord、asRecord、asArray、numeric 等守卫函数处理。"
+            ]
+          },
+          {
+            "checkId": "preview_http_200",
+            "checkName": "检查项 preview_http_200",
+            "summary": "失败",
+            "actions": [
+              "根据失败详情修复页面加载时抛出的运行时异常。",
+              "保持 src/App.vue、app/layout.tsx 和 src/style.css 的导入与渲染链路有效。"
+            ]
+          },
+          {
+            "checkId": "visual_presentation",
+            "checkName": "检查项 visual_presentation",
+            "summary": "失败",
+            "actions": [
+              "只查看 .data-agent/visual-validation.json 指向的失败 viewport、截图与指标。",
+              "修复桌面/移动端布局：首屏不能空白，不能横向溢出，文本不能互相遮挡。",
+              "把独立白色圆角卡片网格合并为连续金融工作台：主画布共用背景，以细分区线、连续指标带、主图、矩阵和表格建立层级；移除重复圆角、阴影和 card 套 card。",
+              "指标带按实际数量均衡分栏；移除桌面端 N+1 孤项和大片空白，避免金额、价格和百分比拆行或竖排。",
+              "移动端 390x844 首屏必须露出一个可用的核心图表、矩阵或表格；如果摘要区过高，压缩或下移次要指标和免责声明，并移除用户可见的渠道证据、模板名称与组件契约说明。"
+            ]
+          },
+          {
+            "checkId": "final_data_file",
+            "checkName": "检查项 final_data_file",
+            "summary": "失败",
+            "actions": [
+              "生成或修复 data_file/final/dashboard-data.json。",
+              "读取 .data-agent/finance-run-plan.json 和现有 raw/final/evidence 数据，按真实数据重组 final 文件，不要只创建空 JSON。",
+              "确保 final 数据包含 symbol/name/source/as_of、quote.price/change_percent/quote_time，以及 kline.bars[] 或 history.bars[]；每根 K 线至少包含 date/open/high/low/close/volume 或 amount。",
+              "多标的任务必须覆盖 run_plan.symbols 中的全部代码，并写入 requestedSymbols、assets[] 与 comparison.rows[]；comparison.rows[] 必须包含 symbol/name、价格或收益、回撤/波动/成交额等可排序字段。",
+              "final 数据必须包含 visualization.template_id、variant_id、required_components 和 rendered_components，并与 run_plan.visualization.templateId 对齐。"
+            ]
+          },
+          {
+            "checkId": "evidence_files",
+            "checkName": "检查项 evidence_files",
+            "summary": "失败",
+            "actions": [
+              "生成 evidence/sources.json，记录 source、endpoint、fetched_at/as_of、样本量和 artifact_path。",
+              "生成 evidence/data_quality.json，记录 status、datasets/checks、缺失字段、警告和限制。",
+              "不要把鉴权凭据、会话凭据或密钥值写入 evidence。"
+            ]
+          },
+          {
+            "checkId": "artifact_contracts",
+            "checkName": "检查项 artifact_contracts",
+            "summary": "失败",
+            "actions": [
+              "只查看 .data-agent/artifact-contracts.json 中失败的契约项。",
+              "只修复 evidence/*.json 或 data_file/final/dashboard-data.json 的结构字段；run_plan、generation-state 和其他 .data-agent 结构由平台重建。"
+            ]
+          },
+          {
+            "checkId": "artifact_policy",
+            "checkName": "检查项 artifact_policy",
+            "summary": "失败",
+            "actions": [
+              "移除外部 CDN、远程脚本、远程样式、远程字体、远程媒体和浏览器直连外部 API。",
+              "页面资源必须本地化；浏览器取数只能读取 data_file/final/dashboard-data.json 或同源 /api/market/**。",
+              "移除 MOCK_DATA、SAMPLE_DATA、STATIC_QUOTES、示例数据、模拟数据、占位数据和明文密钥。"
+            ]
+          },
+          {
+            "checkId": "dashboard_data_binding",
+            "checkName": "检查项 dashboard_data_binding",
+            "summary": "失败",
+            "actions": [
+              "让 src/App.vue 使用 AlphaDeck 标准数据绑定结构读取 data_file/final/dashboard-data.json。",
+              "保留 DATA_FILE、readDashboardData()、getBars() 或 data-source-file={DATA_FILE} 等标准入口。",
+              "不要把完整行情、K 线、财务或公告对象内联到页面代码。"
+            ]
+          },
+          {
+            "checkId": "chart_presence",
+            "checkName": "检查项 chart_presence",
+            "summary": "失败",
+            "actions": [
+              "补齐真实金融图表：K 线/OHLC、成交量、均线、财务趋势、收益/回撤/波动或风险指标。",
+              "图表必须有语义染色、坐标/图例/tooltip/title 等读图辅助。",
+              "用户明确要求“累计收益曲线/收益曲线/净值曲线/折线图”时必须绘制带日期轴、统一尺度和图例的折线图，不能用柱状图、指标卡或 sparkline 替代。",
+              "用户明确要求“相关性矩阵/热力图/分散风险图谱”时必须绘制真实矩阵或热力图，并展示标的标签、数值和颜色刻度。"
+            ]
+          },
+          {
+            "checkId": "market_proxy",
+            "checkName": "检查项 market_proxy",
+            "summary": "失败",
+            "actions": [
+              "创建 app/api/market/[...path]/route.ts。",
+              "将 /api/market/** 转发到 http://127.0.0.1:8000/api/v1/** 并保留 query 参数。",
+              "前端刷新行情时调用 /api/market/**，不要从浏览器直连 8000 或外部接口。"
+            ]
+          },
+          {
+            "checkId": "unknown",
+            "checkName": "检查项 unknown",
+            "summary": "失败",
+            "actions": [
+              "根据失败摘要和细节定位关联文件，只修复该失败项。"
+            ]
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "src/App.vue",
+        "src/style.css",
+        "app/api/market/[...path]/route.ts",
+        "data_file/final/**",
+        "evidence/**"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：next_build、preview_http_200、visual_presentation、final_data_file、evidence_files、artifact_contracts、artifact_policy、dashboard_data_binding、chart_presence、market_proxy、unknown\n- 唯一可写范围：src/App.vue、src/style.css、app/api/market/[...path]/route.ts、data_file/final/** 和 evidence/**\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；失败详情点名的 app/** 文件与相关导入；.data-agent/visual-validation.json（仅失败 viewport 和其截图路径）；src/App.vue 与 src/style.css（只读相关区段）；.data-agent/finance-run-plan.json（只读 symbols/visualization）；data_file/final/dashboard-data.json；evidence/sources.json 与 evidence/data_quality.json；.data-agent/artifact-contracts.json（仅失败契约）；失败契约指向的 final/evidence 文件；失败详情点名的 app/** 文件与相关区段；src/App.vue 的数据读取与绑定区段；data_file/final/dashboard-data.json 的顶层结构；失败详情明确指向的文件或区段\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 检查项 next_build（next_build）：失败\n2. 检查项 preview_http_200（preview_http_200）：失败\n3. 检查项 visual_presentation（visual_presentation）：失败\n4. 检查项 final_data_file（final_data_file）：失败\n5. 检查项 evidence_files（evidence_files）：失败\n6. 检查项 artifact_contracts（artifact_contracts）：失败\n7. 检查项 artifact_policy（artifact_policy）：失败\n8. 检查项 dashboard_data_binding（dashboard_data_binding）：失败\n9. 检查项 chart_presence（chart_presence）：失败\n10. 检查项 market_proxy（market_proxy）：失败\n11. 检查项 unknown（unknown）：失败\n\n最小修复动作：\n1. 检查项 next_build（next_build）\n   1. 根据失败详情定位并修复 TypeScript、Next.js 或 CSS 错误。\n   2. 动态 JSON 字段必须使用 JsonRecord、asRecord、asArray、numeric 等守卫函数处理。\n2. 检查项 preview_http_200（preview_http_200）\n   1. 根据失败详情修复页面加载时抛出的运行时异常。\n   2. 保持 src/App.vue、app/layout.tsx 和 src/style.css 的导入与渲染链路有效。\n3. 检查项 visual_presentation（visual_presentation）\n   1. 只查看 .data-agent/visual-validation.json 指向的失败 viewport、截图与指标。\n   2. 修复桌面/移动端布局：首屏不能空白，不能横向溢出，文本不能互相遮挡。\n   3. 把独立白色圆角卡片网格合并为连续金融工作台：主画布共用背景，以细分区线、连续指标带、主图、矩阵和表格建立层级；移除重复圆角、阴影和 card 套 card。\n   4. 指标带按实际数量均衡分栏；移除桌面端 N+1 孤项和大片空白，避免金额、价格和百分比拆行或竖排。\n   5. 移动端 390x844 首屏必须露出一个可用的核心图表、矩阵或表格；如果摘要区过高，压缩或下移次要指标和免责声明，并移除用户可见的渠道证据、模板名称与组件契约说明。\n4. 检查项 final_data_file（final_data_file）\n   1. 生成或修复 data_file/final/dashboard-data.json。\n   2. 读取 .data-agent/finance-run-plan.json 和现有 raw/final/evidence 数据，按真实数据重组 final 文件，不要只创建空 JSON。\n   3. 确保 final 数据包含 symbol/name/source/as_of、quote.price/change_percent/quote_time，以及 kline.bars[] 或 history.bars[]；每根 K 线至少包含 date/open/high/low/close/volume 或 amount。\n   4. 多标的任务必须覆盖 run_plan.symbols 中的全部代码，并写入 requestedSymbols、assets[] 与 comparison.rows[]；comparison.rows[] 必须包含 symbol/name、价格或收益、回撤/波动/成交额等可排序字段。\n   5. final 数据必须包含 visualization.template_id、variant_id、required_components 和 rendered_components，并与 run_plan.visualization.templateId 对齐。\n5. 检查项 evidence_files（evidence_files）\n   1. 生成 evidence/sources.json，记录 source、endpoint、fetched_at/as_of、样本量和 artifact_path。\n   2. 生成 evidence/data_quality.json，记录 status、datasets/checks、缺失字段、警告和限制。\n   3. 不要把鉴权凭据、会话凭据或密钥值写入 evidence。\n6. 检查项 artifact_contracts（artifact_contracts）\n   1. 只查看 .data-agent/artifact-contracts.json 中失败的契约项。\n   2. 只修复 evidence/*.json 或 data_file/final/dashboard-data.json 的结构字段；run_plan、generation-state 和其他 .data-agent 结构由平台重建。\n7. 检查项 artifact_policy（artifact_policy）\n   1. 移除外部 CDN、远程脚本、远程样式、远程字体、远程媒体和浏览器直连外部 API。\n   2. 页面资源必须本地化；浏览器取数只能读取 data_file/final/dashboard-data.json 或同源 /api/market/**。\n   3. 移除 MOCK_DATA、SAMPLE_DATA、STATIC_QUOTES、示例数据、模拟数据、占位数据和明文密钥。\n8. 检查项 dashboard_data_binding（dashboard_data_binding）\n   1. 让 src/App.vue 使用 AlphaDeck 标准数据绑定结构读取 data_file/final/dashboard-data.json。\n   2. 保留 DATA_FILE、readDashboardData()、getBars() 或 data-source-file={DATA_FILE} 等标准入口。\n   3. 不要把完整行情、K 线、财务或公告对象内联到页面代码。\n9. 检查项 chart_presence（chart_presence）\n   1. 补齐真实金融图表：K 线/OHLC、成交量、均线、财务趋势、收益/回撤/波动或风险指标。\n   2. 图表必须有语义染色、坐标/图例/tooltip/title 等读图辅助。\n   3. 用户明确要求“累计收益曲线/收益曲线/净值曲线/折线图”时必须绘制带日期轴、统一尺度和图例的折线图，不能用柱状图、指标卡或 sparkline 替代。\n   4. 用户明确要求“相关性矩阵/热力图/分散风险图谱”时必须绘制真实矩阵或热力图，并展示标的标签、数值和颜色刻度。\n10. 检查项 market_proxy（market_proxy）\n   1. 创建 app/api/market/[...path]/route.ts。\n   2. 将 /api/market/** 转发到 http://127.0.0.1:8000/api/v1/** 并保留 query 参数。\n   3. 前端刷新行情时调用 /api/market/**，不要从浏览器直连 8000 或外部接口。\n11. 检查项 unknown（unknown）\n   1. 根据失败摘要和细节定位关联文件，只修复该失败项。\n\n完成条件（平台复验前候选）：\n- next_build：报告点名的类型、导入或样式错误已在关联 app 文件中消除。\n- preview_http_200：报告点名的页面加载异常已消除，渲染入口不再抛错。\n- visual_presentation：失败 viewport 的首屏主体可见，且无空白、横向溢出或文本遮挡。\n- final_data_file：dashboard-data.json 覆盖计划标的、真实数据字段和 visualization 契约。\n- evidence_files：sources 与 data_quality evidence 完整记录来源、时效、质量和限制。\n- artifact_contracts：artifact-contracts 报告中的失败 JSON 字段已在 final/evidence 中补齐。\n- artifact_policy：报告点名的远程资源、浏览器外连、mock 或敏感字面量已移除。\n- dashboard_data_binding：页面通过标准入口读取 final 数据，且未内联完整行情对象。\n- chart_presence：用户任务要求的核心金融图表及读图辅助已实际渲染。\n- market_proxy：同源 /api/market/** 路由按报告要求存在并保留查询参数。\n- unknown：检查项 unknown 的失败摘要已被对应文件修改直接解决。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "next_build",
+          "name": "构建",
+          "summary": "通过",
+          "status": "passed"
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：报告状态异常但未提供失败 ID\n- 唯一可写范围：无\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n无失败项，但验证报告状态为失败，请重新检查产物。\n\n最小修复动作：\n请重新检查验证报告并补齐缺失产物。\n\n完成条件（平台复验前候选）：\n- 报告未提供失败 ID；仅提交已能由失败详情证明的修复。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  },
+  {
+    "report": {
+      "schemaVersion": 1,
+      "projectId": "fixture",
+      "reportPath": ".data-agent/validation.json",
+      "checks": [
+        {
+          "id": "next_build",
+          "name": "构建",
+          "summary": "失败",
+          "status": "failed",
+          "details": "  细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀  "
+        }
+      ],
+      "status": "failed",
+      "passed": false
+    },
+    "options": {
+      "originalInstruction": "分析贵州茅台"
+    },
+    "expected": {
+      "plan": {
+        "schemaVersion": 1,
+        "status": "needed",
+        "projectId": "fixture",
+        "reportPath": ".data-agent/validation.json",
+        "repairPlanPath": ".data-agent/validation-repair-plan.json",
+        "steps": [
+          {
+            "checkId": "next_build",
+            "checkName": "构建",
+            "summary": "失败",
+            "actions": [
+              "根据失败详情定位并修复 TypeScript、Next.js 或 CSS 错误。",
+              "动态 JSON 字段必须使用 JsonRecord、asRecord、asArray、numeric 等守卫函数处理。"
+            ],
+            "details": "细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀\n...内容已截断..."
+          }
+        ],
+        "createdAt": "2026-11-03T00:00:00.000Z"
+      },
+      "globs": [
+        "src/App.vue",
+        "src/style.css"
+      ],
+      "instruction": "AlphaDeck failure-scoped repair packet\n\n目标：只修复本轮失败项，保留已有真实数据、有效分析和无关页面内容。\n原始用户需求：\n分析贵州茅台\n\n\n修复范围：\n- 失败 ID：next_build\n- 唯一可写范围：src/App.vue 和 src/style.css\n- 整个 `.data-agent/**` 是平台只读计划、报告与状态；你不得修改它。其结构修复和重新生成由平台负责。\n- 定向读取：.data-agent/validation.json（仅失败项）；.data-agent/validation-repair-plan.json（仅本轮步骤）；失败详情点名的 app/** 文件与相关导入\n- 不要扫描或通读未被失败项指向的目录和文件。\n\n失败项：\n1. 构建（next_build）：失败\n   细节：细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀细节😀\n...内容已截断...\n\n最小修复动作：\n1. 构建（next_build）\n   1. 根据失败详情定位并修复 TypeScript、Next.js 或 CSS 错误。\n   2. 动态 JSON 字段必须使用 JsonRecord、asRecord、asArray、numeric 等守卫函数处理。\n\n完成条件（平台复验前候选）：\n- next_build：报告点名的类型、导入或样式错误已在关联 app 文件中消除。\n\n执行契约：\n1. 使用本轮提供的 typed tools 定向读取和修改；只在需要新建失败产物时使用 write_file，否则优先 edit_file。\n2. 必须实际修改失败项关联文件，但不得顺带重写未失败模块；不得写入 mock、占位数据、凭据或密钥。\n3. 不要执行 shell、安装依赖、启动开发服务器、构建、预览或循环复验。构建、预览与自动验证由 AlphaDeck 平台统一执行。\n4. 完成上述失败项对应修改后，调用 submit_result，artifacts 只列出本轮实际修改的工作区相对路径；提交即结束本次物理运行，等待平台独立验证。"
+    }
+  }
+]

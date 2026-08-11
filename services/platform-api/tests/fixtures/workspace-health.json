@@ -1,0 +1,1265 @@
+[
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": null,
+      "queue": null,
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "awaiting_input",
+      "label": "等待补充",
+      "active": true,
+      "requestId": null,
+      "updatedAt": null
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": null,
+      "queue": {
+        "activeRequestId": "queue",
+        "items": [
+          {
+            "requestId": "queued",
+            "status": "queued"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00Z"
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "awaiting_input",
+      "label": "等待补充",
+      "active": true,
+      "requestId": "queue",
+      "updatedAt": "2026-11-03T00:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": null,
+      "queue": {
+        "items": [
+          {
+            "requestId": "running",
+            "status": "running"
+          }
+        ]
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "awaiting_input",
+      "label": "等待补充",
+      "active": true,
+      "requestId": null,
+      "updatedAt": null
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "pending",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": null,
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "running",
+      "label": "生成中",
+      "active": true,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "pending",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "activeRequestId": "queue",
+        "items": [
+          {
+            "requestId": "queued",
+            "status": "queued"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00Z"
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "running",
+      "label": "生成中",
+      "active": true,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "pending",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "items": [
+          {
+            "requestId": "running",
+            "status": "running"
+          }
+        ]
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "running",
+      "label": "生成中",
+      "active": true,
+      "requestId": "running",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "running",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": null,
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "running",
+      "label": "生成中",
+      "active": true,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "running",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "activeRequestId": "queue",
+        "items": [
+          {
+            "requestId": "queued",
+            "status": "queued"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00Z"
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "running",
+      "label": "生成中",
+      "active": true,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "running",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "items": [
+          {
+            "requestId": "running",
+            "status": "running"
+          }
+        ]
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "running",
+      "label": "生成中",
+      "active": true,
+      "requestId": "running",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "completed",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": null,
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "completed",
+      "label": "已完成",
+      "active": false,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "completed",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "activeRequestId": "queue",
+        "items": [
+          {
+            "requestId": "queued",
+            "status": "queued"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00Z"
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "completed",
+      "label": "已完成",
+      "active": false,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "completed",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "items": [
+          {
+            "requestId": "running",
+            "status": "running"
+          }
+        ]
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "completed",
+      "label": "已完成",
+      "active": false,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "failed",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": null,
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "failed",
+      "label": "失败",
+      "active": false,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "failed",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "activeRequestId": "queue",
+        "items": [
+          {
+            "requestId": "queued",
+            "status": "queued"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00Z"
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "failed",
+      "label": "失败",
+      "active": false,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "failed",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "items": [
+          {
+            "requestId": "running",
+            "status": "running"
+          }
+        ]
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "failed",
+      "label": "失败",
+      "active": false,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "cancelled",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": null,
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "cancelled",
+      "label": "已取消",
+      "active": false,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "cancelled",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "activeRequestId": "queue",
+        "items": [
+          {
+            "requestId": "queued",
+            "status": "queued"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00Z"
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "cancelled",
+      "label": "已取消",
+      "active": false,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "cancelled",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "items": [
+          {
+            "requestId": "running",
+            "status": "running"
+          }
+        ]
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "cancelled",
+      "label": "已取消",
+      "active": false,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "needs_clarification",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": null,
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "awaiting_input",
+      "label": "等待补充",
+      "active": true,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "needs_clarification",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "activeRequestId": "queue",
+        "items": [
+          {
+            "requestId": "queued",
+            "status": "queued"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00Z"
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "awaiting_input",
+      "label": "等待补充",
+      "active": true,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "needs_clarification",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "items": [
+          {
+            "requestId": "running",
+            "status": "running"
+          }
+        ]
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "awaiting_input",
+      "label": "等待补充",
+      "active": true,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "repairing",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": null,
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "repairing",
+      "label": "修复中",
+      "active": true,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "repairing",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "activeRequestId": "queue",
+        "items": [
+          {
+            "requestId": "queued",
+            "status": "queued"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00Z"
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "repairing",
+      "label": "修复中",
+      "active": true,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "repairing",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "items": [
+          {
+            "requestId": "running",
+            "status": "running"
+          }
+        ]
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "repairing",
+      "label": "修复中",
+      "active": true,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "refused",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": null,
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "idle",
+      "label": "空闲",
+      "active": false,
+      "requestId": "req",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "refused",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "activeRequestId": "queue",
+        "items": [
+          {
+            "requestId": "queued",
+            "status": "queued"
+          }
+        ],
+        "updatedAt": "2026-11-03T00:00:00Z"
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "queued",
+      "label": "排队中",
+      "active": true,
+      "requestId": "queued",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "lifecycle",
+    "input": {
+      "generationState": {
+        "status": "refused",
+        "requestId": "req",
+        "updatedAt": "2026-11-03T01:00:00Z"
+      },
+      "queue": {
+        "items": [
+          {
+            "requestId": "running",
+            "status": "running"
+          }
+        ]
+      },
+      "runPlanStatus": "needs_clarification"
+    },
+    "expected": {
+      "status": "running",
+      "label": "生成中",
+      "active": true,
+      "requestId": "running",
+      "updatedAt": "2026-11-03T01:00:00Z"
+    }
+  },
+  {
+    "kind": "quality",
+    "input": {
+      "dataQuality": null,
+      "sources": null
+    },
+    "expected": {
+      "status": "failed",
+      "datasetCount": 0,
+      "warningCount": 0,
+      "sourceCount": 0,
+      "updatedAt": null
+    }
+  },
+  {
+    "kind": "quality",
+    "input": {
+      "dataQuality": null,
+      "sources": {
+        "sources": [
+          1,
+          2
+        ]
+      }
+    },
+    "expected": {
+      "status": "failed",
+      "datasetCount": 0,
+      "warningCount": 0,
+      "sourceCount": 2,
+      "updatedAt": null
+    }
+  },
+  {
+    "kind": "quality",
+    "input": {
+      "dataQuality": {},
+      "sources": null
+    },
+    "expected": {
+      "status": "unknown",
+      "datasetCount": 0,
+      "warningCount": 0,
+      "sourceCount": 0,
+      "updatedAt": null
+    }
+  },
+  {
+    "kind": "quality",
+    "input": {
+      "dataQuality": {},
+      "sources": {
+        "sources": [
+          1,
+          2
+        ]
+      }
+    },
+    "expected": {
+      "status": "unknown",
+      "datasetCount": 0,
+      "warningCount": 0,
+      "sourceCount": 2,
+      "updatedAt": null
+    }
+  },
+  {
+    "kind": "quality",
+    "input": {
+      "dataQuality": {
+        "status": "ok",
+        "datasets": [
+          {
+            "source": "test"
+          },
+          {}
+        ],
+        "warnings": [
+          "one"
+        ],
+        "checks": [
+          {
+            "status": "warning"
+          }
+        ]
+      },
+      "sources": null
+    },
+    "expected": {
+      "status": "healthy",
+      "datasetCount": 2,
+      "warningCount": 2,
+      "sourceCount": 1,
+      "updatedAt": null
+    }
+  },
+  {
+    "kind": "quality",
+    "input": {
+      "dataQuality": {
+        "status": "ok",
+        "datasets": [
+          {
+            "source": "test"
+          },
+          {}
+        ],
+        "warnings": [
+          "one"
+        ],
+        "checks": [
+          {
+            "status": "warning"
+          }
+        ]
+      },
+      "sources": {
+        "sources": [
+          1,
+          2
+        ]
+      }
+    },
+    "expected": {
+      "status": "healthy",
+      "datasetCount": 2,
+      "warningCount": 2,
+      "sourceCount": 2,
+      "updatedAt": null
+    }
+  },
+  {
+    "kind": "quality",
+    "input": {
+      "dataQuality": {
+        "status": "warning",
+        "created_at": "date"
+      },
+      "sources": null
+    },
+    "expected": {
+      "status": "warning",
+      "datasetCount": 0,
+      "warningCount": 0,
+      "sourceCount": 0,
+      "updatedAt": "date"
+    }
+  },
+  {
+    "kind": "quality",
+    "input": {
+      "dataQuality": {
+        "status": "warning",
+        "created_at": "date"
+      },
+      "sources": {
+        "sources": [
+          1,
+          2
+        ]
+      }
+    },
+    "expected": {
+      "status": "warning",
+      "datasetCount": 0,
+      "warningCount": 0,
+      "sourceCount": 2,
+      "updatedAt": "date"
+    }
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "workspace",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "failed"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "workspace",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "profile",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "failed"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "profile",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "task",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "failed"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "task",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "plan",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "failed"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "plan",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "query_rewrite",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "failed"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "query_rewrite",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "run_plan",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "failed"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "run_plan",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "generation_state",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "unknown"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "generation_state",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "generation_queue",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "unknown"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "generation_queue",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "events",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "warning"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "events",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "final_data",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "failed"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "final_data",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "sources",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "failed"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "sources",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "data_quality",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "failed"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "data_quality",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "warning"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "artifact_contracts",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "unknown"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "artifact_contracts",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "visual_validation",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "unknown"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "visual_validation",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "validation",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "unknown"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "validation",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "failed"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": false,
+      "id": "page",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "failed"
+  },
+  {
+    "kind": "artifact",
+    "input": {
+      "exists": true,
+      "id": "page",
+      "validation": {
+        "passed": false
+      },
+      "dataQuality": {
+        "status": "warning"
+      }
+    },
+    "expected": "healthy"
+  }
+]

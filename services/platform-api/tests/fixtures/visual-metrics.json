@@ -1,0 +1,464 @@
+{
+  "surface": [
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 0,
+        "firstViewportCardLikeSurfaceCount": 0,
+        "cardGridClusterCount": 0,
+        "cardLikeSurfaceRatio": 0.3,
+        "firstViewportCardLikeSurfaceRatio": 0.3
+      },
+      "expected": {
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 0,
+        "firstViewportCardLikeSurfaceCount": 0,
+        "cardGridClusterCount": 0,
+        "cardLikeSurfaceRatio": 0.65,
+        "firstViewportCardLikeSurfaceRatio": 0.65
+      },
+      "expected": {
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 0,
+        "firstViewportCardLikeSurfaceCount": 0,
+        "cardGridClusterCount": 1,
+        "cardLikeSurfaceRatio": 0.3,
+        "firstViewportCardLikeSurfaceRatio": 0.3
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 0,
+        "firstViewportCardLikeSurfaceCount": 0,
+        "cardGridClusterCount": 1,
+        "cardLikeSurfaceRatio": 0.65,
+        "firstViewportCardLikeSurfaceRatio": 0.65
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 0,
+        "firstViewportCardLikeSurfaceCount": 4,
+        "cardGridClusterCount": 0,
+        "cardLikeSurfaceRatio": 0.3,
+        "firstViewportCardLikeSurfaceRatio": 0.3
+      },
+      "expected": {
+        "failures": [],
+        "warnings": [
+          "页面独立卡片式容器偏多，建议合并为连续数据区并减少圆角、阴影和重复外框。"
+        ]
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 0,
+        "firstViewportCardLikeSurfaceCount": 4,
+        "cardGridClusterCount": 0,
+        "cardLikeSurfaceRatio": 0.65,
+        "firstViewportCardLikeSurfaceRatio": 0.65
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 0,
+        "firstViewportCardLikeSurfaceCount": 4,
+        "cardGridClusterCount": 1,
+        "cardLikeSurfaceRatio": 0.3,
+        "firstViewportCardLikeSurfaceRatio": 0.3
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 0,
+        "firstViewportCardLikeSurfaceCount": 4,
+        "cardGridClusterCount": 1,
+        "cardLikeSurfaceRatio": 0.65,
+        "firstViewportCardLikeSurfaceRatio": 0.65
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 3,
+        "firstViewportCardLikeSurfaceCount": 0,
+        "cardGridClusterCount": 0,
+        "cardLikeSurfaceRatio": 0.3,
+        "firstViewportCardLikeSurfaceRatio": 0.3
+      },
+      "expected": {
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 3,
+        "firstViewportCardLikeSurfaceCount": 0,
+        "cardGridClusterCount": 0,
+        "cardLikeSurfaceRatio": 0.65,
+        "firstViewportCardLikeSurfaceRatio": 0.65
+      },
+      "expected": {
+        "failures": [],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 3,
+        "firstViewportCardLikeSurfaceCount": 0,
+        "cardGridClusterCount": 1,
+        "cardLikeSurfaceRatio": 0.3,
+        "firstViewportCardLikeSurfaceRatio": 0.3
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 3,
+        "firstViewportCardLikeSurfaceCount": 0,
+        "cardGridClusterCount": 1,
+        "cardLikeSurfaceRatio": 0.65,
+        "firstViewportCardLikeSurfaceRatio": 0.65
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 3,
+        "firstViewportCardLikeSurfaceCount": 4,
+        "cardGridClusterCount": 0,
+        "cardLikeSurfaceRatio": 0.3,
+        "firstViewportCardLikeSurfaceRatio": 0.3
+      },
+      "expected": {
+        "failures": [],
+        "warnings": [
+          "页面独立卡片式容器偏多，建议合并为连续数据区并减少圆角、阴影和重复外框。"
+        ]
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 3,
+        "firstViewportCardLikeSurfaceCount": 4,
+        "cardGridClusterCount": 0,
+        "cardLikeSurfaceRatio": 0.65,
+        "firstViewportCardLikeSurfaceRatio": 0.65
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 3,
+        "firstViewportCardLikeSurfaceCount": 4,
+        "cardGridClusterCount": 1,
+        "cardLikeSurfaceRatio": 0.3,
+        "firstViewportCardLikeSurfaceRatio": 0.3
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 3,
+        "firstViewportCardLikeSurfaceCount": 4,
+        "cardGridClusterCount": 1,
+        "cardLikeSurfaceRatio": 0.65,
+        "firstViewportCardLikeSurfaceRatio": 0.65
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 8,
+        "firstViewportCardLikeSurfaceCount": 0,
+        "cardGridClusterCount": 0,
+        "cardLikeSurfaceRatio": 0.3,
+        "firstViewportCardLikeSurfaceRatio": 0.3
+      },
+      "expected": {
+        "failures": [],
+        "warnings": [
+          "页面独立卡片式容器偏多，建议合并为连续数据区并减少圆角、阴影和重复外框。"
+        ]
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 8,
+        "firstViewportCardLikeSurfaceCount": 0,
+        "cardGridClusterCount": 0,
+        "cardLikeSurfaceRatio": 0.65,
+        "firstViewportCardLikeSurfaceRatio": 0.65
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 8,
+        "firstViewportCardLikeSurfaceCount": 0,
+        "cardGridClusterCount": 1,
+        "cardLikeSurfaceRatio": 0.3,
+        "firstViewportCardLikeSurfaceRatio": 0.3
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 8,
+        "firstViewportCardLikeSurfaceCount": 0,
+        "cardGridClusterCount": 1,
+        "cardLikeSurfaceRatio": 0.65,
+        "firstViewportCardLikeSurfaceRatio": 0.65
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 8,
+        "firstViewportCardLikeSurfaceCount": 4,
+        "cardGridClusterCount": 0,
+        "cardLikeSurfaceRatio": 0.3,
+        "firstViewportCardLikeSurfaceRatio": 0.3
+      },
+      "expected": {
+        "failures": [],
+        "warnings": [
+          "页面独立卡片式容器偏多，建议合并为连续数据区并减少圆角、阴影和重复外框。"
+        ]
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 8,
+        "firstViewportCardLikeSurfaceCount": 4,
+        "cardGridClusterCount": 0,
+        "cardLikeSurfaceRatio": 0.65,
+        "firstViewportCardLikeSurfaceRatio": 0.65
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 8,
+        "firstViewportCardLikeSurfaceCount": 4,
+        "cardGridClusterCount": 1,
+        "cardLikeSurfaceRatio": 0.3,
+        "firstViewportCardLikeSurfaceRatio": 0.3
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "input": {
+        "contentRegionCount": 20,
+        "cardLikeSurfaceCount": 8,
+        "firstViewportCardLikeSurfaceCount": 4,
+        "cardGridClusterCount": 1,
+        "cardLikeSurfaceRatio": 0.65,
+        "firstViewportCardLikeSurfaceRatio": 0.65
+      },
+      "expected": {
+        "failures": [
+          "页面由独立圆角卡片网格主导；金融看板应使用连续工作台画布，以分区线、数据带、主图、矩阵和表格组织内容。"
+        ],
+        "warnings": []
+      }
+    }
+  ],
+  "core": [
+    {
+      "input": {
+        "svgCount": 0,
+        "canvasCount": 0,
+        "rectCount": 0,
+        "firstViewportTableCount": 0,
+        "visibleGraphicCount": 0
+      },
+      "expected": [
+        "页面缺少可识别的图表元素。"
+      ]
+    },
+    {
+      "input": {
+        "svgCount": 0,
+        "canvasCount": 0,
+        "rectCount": 0,
+        "firstViewportTableCount": 1,
+        "visibleGraphicCount": 0
+      },
+      "expected": []
+    },
+    {
+      "input": {
+        "svgCount": 0,
+        "canvasCount": 0,
+        "rectCount": 12,
+        "firstViewportTableCount": 0,
+        "visibleGraphicCount": 0
+      },
+      "expected": []
+    },
+    {
+      "input": {
+        "svgCount": 0,
+        "canvasCount": 0,
+        "rectCount": 12,
+        "firstViewportTableCount": 1,
+        "visibleGraphicCount": 0
+      },
+      "expected": []
+    },
+    {
+      "input": {
+        "svgCount": 1,
+        "canvasCount": 0,
+        "rectCount": 0,
+        "firstViewportTableCount": 0,
+        "visibleGraphicCount": 0
+      },
+      "expected": []
+    },
+    {
+      "input": {
+        "svgCount": 1,
+        "canvasCount": 0,
+        "rectCount": 0,
+        "firstViewportTableCount": 1,
+        "visibleGraphicCount": 0
+      },
+      "expected": []
+    },
+    {
+      "input": {
+        "svgCount": 1,
+        "canvasCount": 0,
+        "rectCount": 12,
+        "firstViewportTableCount": 0,
+        "visibleGraphicCount": 0
+      },
+      "expected": []
+    },
+    {
+      "input": {
+        "svgCount": 1,
+        "canvasCount": 0,
+        "rectCount": 12,
+        "firstViewportTableCount": 1,
+        "visibleGraphicCount": 0
+      },
+      "expected": []
+    }
+  ]
+}
