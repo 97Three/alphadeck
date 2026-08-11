@@ -1,0 +1,2490 @@
+[
+  {
+    "action": "universe-members",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/research/universes/a-share-sample-research-pool/members",
+        "query": {
+          "page": "1",
+          "page_size": "10"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "universeId": "a-share-sample-research-pool",
+      "page": 1,
+      "pageSize": 10,
+      "total": 1,
+      "totalPages": 1,
+      "keyword": null,
+      "members": [
+        {
+          "symbol": "600519",
+          "code": "",
+          "name": null,
+          "industry": null,
+          "region": null,
+          "concepts": [],
+          "sectorHint": null,
+          "sectorTags": [],
+          "exchange": "UNKNOWN",
+          "assetType": "stock",
+          "currency": "CNY",
+          "timezone": "Asia/Shanghai",
+          "secid": null,
+          "provider": "eastmoney",
+          "securityStatus": "active",
+          "role": "member",
+          "weight": null,
+          "rowCount": 0,
+          "firstTs": null,
+          "lastTs": null,
+          "dataProvider": null,
+          "latestClose": null,
+          "latestChangePct": null,
+          "latestAmount": null,
+          "latestTurnover": null,
+          "strength20dPct": null,
+          "strength60dPct": null,
+          "ma20": null,
+          "ma60": null,
+          "trendStatus": "insufficient",
+          "avgAmount20d": null,
+          "avgVolume20d": null,
+          "avgTurnover20d": null,
+          "tradeStatus": null,
+          "isSt": null,
+          "limitUp": null,
+          "limitDown": null,
+          "peTtm": null,
+          "pbMrq": null,
+          "psTtm": null,
+          "pcfNcfTtm": null,
+          "dataStatus": "missing"
+        }
+      ],
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "universe-members",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "daily",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/research/universes/fixture/members",
+        "query": {
+          "page": "2",
+          "page_size": "100",
+          "keyword": "茅台"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 100,
+      "total": 1,
+      "totalPages": 1,
+      "keyword": null,
+      "members": [
+        {
+          "symbol": "600519",
+          "code": "",
+          "name": null,
+          "industry": null,
+          "region": null,
+          "concepts": [],
+          "sectorHint": null,
+          "sectorTags": [],
+          "exchange": "UNKNOWN",
+          "assetType": "stock",
+          "currency": "CNY",
+          "timezone": "Asia/Shanghai",
+          "secid": null,
+          "provider": "eastmoney",
+          "securityStatus": "active",
+          "role": "member",
+          "weight": null,
+          "rowCount": 0,
+          "firstTs": null,
+          "lastTs": null,
+          "dataProvider": null,
+          "latestClose": null,
+          "latestChangePct": null,
+          "latestAmount": null,
+          "latestTurnover": null,
+          "strength20dPct": null,
+          "strength60dPct": null,
+          "ma20": null,
+          "ma60": null,
+          "trendStatus": "insufficient",
+          "avgAmount20d": null,
+          "avgVolume20d": null,
+          "avgTurnover20d": null,
+          "tradeStatus": null,
+          "isSt": null,
+          "limitUp": null,
+          "limitDown": null,
+          "peTtm": null,
+          "pbMrq": null,
+          "psTtm": null,
+          "pcfNcfTtm": null,
+          "dataStatus": "missing"
+        }
+      ],
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "a-share-screener",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/research/screeners/a-share/short-term-candidates",
+        "query": {
+          "universe_id": "a-share-sample-research-pool",
+          "mode": "short_term",
+          "limit": "20"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "universeId": "a-share-sample-research-pool",
+      "mode": "short_term",
+      "tradeDate": null,
+      "timeframe": "daily",
+      "adjustment": "qfq",
+      "scannedSymbols": 0,
+      "totalCandidates": 0,
+      "limit": 0,
+      "candidates": [],
+      "dataBasis": "timescaledb.stock_bars",
+      "analytics": {
+        "engine": "timescaledb",
+        "status": "fallback",
+        "basis": "timescaledb.stock_bars",
+        "targetTradeDate": null,
+        "clickhouseTradeDate": null,
+        "autoSyncStatus": "not_needed",
+        "autoSyncRowsWritten": 0,
+        "message": null
+      },
+      "source": "alphadeck-market-api",
+      "notes": [],
+      "cacheStatus": "bypass",
+      "cacheTtlSeconds": null,
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "a-share-screener",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "daily",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/research/screeners/a-share/short-term-candidates",
+        "query": {
+          "universe_id": "fixture",
+          "mode": "trend_liquidity",
+          "limit": "100",
+          "trade_date": "2026-01-01"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "universeId": "a-share-sample-research-pool",
+      "mode": "short_term",
+      "tradeDate": null,
+      "timeframe": "daily",
+      "adjustment": "qfq",
+      "scannedSymbols": 0,
+      "totalCandidates": 0,
+      "limit": 0,
+      "candidates": [],
+      "dataBasis": "timescaledb.stock_bars",
+      "analytics": {
+        "engine": "timescaledb",
+        "status": "fallback",
+        "basis": "timescaledb.stock_bars",
+        "targetTradeDate": null,
+        "clickhouseTradeDate": null,
+        "autoSyncStatus": "not_needed",
+        "autoSyncRowsWritten": 0,
+        "message": null
+      },
+      "source": "alphadeck-market-api",
+      "notes": [],
+      "cacheStatus": "bypass",
+      "cacheTtlSeconds": null,
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "ingestion-jobs",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/ingestion/jobs",
+        "query": {
+          "limit": "20"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "jobs": [],
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "ingestion-jobs",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "daily",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/ingestion/jobs",
+        "query": {
+          "limit": "100",
+          "universe_id": "fixture"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "jobs": [],
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "control-ingestion-job",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/ingestion/jobs/job/control",
+        "query": {},
+        "method": "POST",
+        "body": {
+          "action": "resume"
+        },
+        "admin": "synthetic-market-admin"
+      }
+    ],
+    "expected": {
+      "jobId": "",
+      "action": "pause",
+      "status": "unknown",
+      "control": "unknown",
+      "updatedAt": "fixture"
+    }
+  },
+  {
+    "action": "control-ingestion-job",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "daily",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/ingestion/jobs/job/control",
+        "query": {},
+        "method": "POST",
+        "body": {
+          "action": "pause",
+          "reason": "fixture"
+        },
+        "admin": "synthetic-market-admin"
+      }
+    ],
+    "expected": {
+      "jobId": "",
+      "action": "pause",
+      "status": "unknown",
+      "control": "unknown",
+      "updatedAt": "fixture"
+    }
+  },
+  {
+    "action": "data-quality-scan",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/foundation/data-quality/scan",
+        "query": {},
+        "method": "POST",
+        "body": {
+          "universe_id": "a-share-sample-research-pool",
+          "timeframe": "daily",
+          "adjustment": "qfq",
+          "lookback_years": 5,
+          "persist": true
+        },
+        "admin": "synthetic-market-admin"
+      }
+    ],
+    "expected": {
+      "id": "",
+      "universeId": null,
+      "symbol": "600519",
+      "scope": "universe",
+      "timeframe": "daily",
+      "adjustment": "qfq",
+      "status": "completed",
+      "severity": "warning",
+      "checkedSymbols": 0,
+      "passedSymbols": 0,
+      "warningSymbols": 0,
+      "failedSymbols": 0,
+      "checkedRows": 0,
+      "issueCount": 0,
+      "issues": [],
+      "metrics": {},
+      "startedAt": "2026-11-03T00:00:00.000Z",
+      "completedAt": "2026-11-03T00:00:00.000Z"
+    }
+  },
+  {
+    "action": "data-quality-scan",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "daily",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/foundation/data-quality/scan",
+        "query": {},
+        "method": "POST",
+        "body": {
+          "universe_id": "fixture",
+          "symbols": [
+            "600519"
+          ],
+          "timeframe": "weekly",
+          "adjustment": "none",
+          "lookback_years": 2,
+          "persist": false
+        },
+        "admin": "synthetic-market-admin"
+      }
+    ],
+    "expected": {
+      "id": "",
+      "universeId": null,
+      "symbol": "600519",
+      "scope": "universe",
+      "timeframe": "daily",
+      "adjustment": "qfq",
+      "status": "completed",
+      "severity": "warning",
+      "checkedSymbols": 0,
+      "passedSymbols": 0,
+      "warningSymbols": 0,
+      "failedSymbols": 0,
+      "checkedRows": 0,
+      "issueCount": 0,
+      "issues": [],
+      "metrics": {},
+      "startedAt": "2026-11-03T00:00:00.000Z",
+      "completedAt": "2026-11-03T00:00:00.000Z"
+    }
+  },
+  {
+    "action": "sector-capital-flow",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/research/sector-capital-flow",
+        "query": {
+          "universe_id": "a-share-sample-research-pool",
+          "limit": "40"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "universeId": "",
+      "items": [],
+      "marketSummary": null,
+      "detail": null,
+      "source": "timescaledb",
+      "proxyNote": "",
+      "cacheStatus": "bypass",
+      "cacheTtlSeconds": null,
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "sector-capital-flow",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "daily",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/research/sector-capital-flow",
+        "query": {
+          "universe_id": "fixture",
+          "limit": "120",
+          "sector": "白酒",
+          "detail_days": "60"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "universeId": "",
+      "items": [],
+      "marketSummary": null,
+      "detail": null,
+      "source": "timescaledb",
+      "proxyNote": "",
+      "cacheStatus": "bypass",
+      "cacheTtlSeconds": null,
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "run-ingestion-batch",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/ingestion/baostock/history/batch",
+        "query": {},
+        "method": "POST",
+        "body": {
+          "universe_id": "a-share-sample-research-pool",
+          "offset": 0,
+          "batch_size": 25,
+          "period": "daily",
+          "adjustment": "qfq",
+          "limit": 1260,
+          "lookback_years": 5,
+          "include_valuation_factors": false,
+          "request_delay_seconds": 0.2
+        },
+        "admin": "synthetic-market-admin"
+      }
+    ],
+    "expected": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    }
+  },
+  {
+    "action": "run-ingestion-batch",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "daily",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/ingestion/baostock/history/batch",
+        "query": {},
+        "method": "POST",
+        "body": {
+          "universe_id": "fixture",
+          "offset": 0,
+          "batch_size": 200,
+          "period": "daily",
+          "adjustment": "none",
+          "limit": 500,
+          "lookback_years": 2,
+          "start": "2026-01-01",
+          "end": "2026-02-01",
+          "include_valuation_factors": true,
+          "request_delay_seconds": 0.2
+        },
+        "admin": "synthetic-market-admin"
+      }
+    ],
+    "expected": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    }
+  },
+  {
+    "action": "start-ingestion-autofill",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/ingestion/baostock/history/autofill",
+        "query": {},
+        "method": "POST",
+        "body": {
+          "universe_id": "a-share-sample-research-pool",
+          "offset": 0,
+          "batch_size": 25,
+          "period": "daily",
+          "adjustment": "qfq",
+          "limit": 1260,
+          "lookback_years": 5,
+          "include_valuation_factors": false,
+          "request_delay_seconds": 0.2,
+          "batch_delay_seconds": 0.2
+        },
+        "admin": "synthetic-market-admin"
+      }
+    ],
+    "expected": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    }
+  },
+  {
+    "action": "start-ingestion-autofill",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "daily",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/ingestion/baostock/history/autofill",
+        "query": {},
+        "method": "POST",
+        "body": {
+          "universe_id": "fixture",
+          "offset": 0,
+          "batch_size": 200,
+          "period": "daily",
+          "adjustment": "none",
+          "limit": 500,
+          "lookback_years": 2,
+          "start": "2026-01-01",
+          "end": "2026-02-01",
+          "include_valuation_factors": true,
+          "request_delay_seconds": 0.2,
+          "batch_delay_seconds": 0.2,
+          "max_batches": 4
+        },
+        "admin": "synthetic-market-admin"
+      }
+    ],
+    "expected": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    }
+  },
+  {
+    "action": "add-universe-member",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/research/universes/a-share-sample-research-pool/members",
+        "query": {},
+        "method": "POST",
+        "body": {
+          "query": "600519"
+        },
+        "admin": "synthetic-market-admin"
+      }
+    ],
+    "expected": {
+      "universe_id": "a-share-sample-research-pool",
+      "member": {
+        "symbol": "600519",
+        "code": "",
+        "name": null,
+        "industry": null,
+        "region": null,
+        "concepts": [],
+        "sectorHint": null,
+        "sectorTags": [],
+        "exchange": "UNKNOWN",
+        "assetType": "stock",
+        "currency": "CNY",
+        "timezone": "Asia/Shanghai",
+        "secid": null,
+        "provider": "eastmoney",
+        "securityStatus": "active",
+        "role": "member",
+        "weight": null,
+        "rowCount": 0,
+        "firstTs": null,
+        "lastTs": null,
+        "dataProvider": null,
+        "latestClose": null,
+        "latestChangePct": null,
+        "latestAmount": null,
+        "latestTurnover": null,
+        "strength20dPct": null,
+        "strength60dPct": null,
+        "ma20": null,
+        "ma60": null,
+        "trendStatus": "insufficient",
+        "avgAmount20d": null,
+        "avgVolume20d": null,
+        "avgTurnover20d": null,
+        "tradeStatus": null,
+        "isSt": null,
+        "limitUp": null,
+        "limitDown": null,
+        "peTtm": null,
+        "pbMrq": null,
+        "psTtm": null,
+        "pcfNcfTtm": null,
+        "dataStatus": "missing"
+      },
+      "candidates": [],
+      "ingestion": null
+    }
+  },
+  {
+    "action": "add-universe-member",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "daily",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/research/universes/fixture/members",
+        "query": {},
+        "method": "POST",
+        "body": {
+          "query": "600519"
+        },
+        "admin": "synthetic-market-admin"
+      },
+      {
+        "path": "/api/v1/ingestion/eastmoney/history",
+        "query": {},
+        "method": "POST",
+        "body": {
+          "universe_id": "fixture",
+          "symbols": [
+            "600519"
+          ],
+          "period": "daily",
+          "adjustment": "qfq",
+          "limit": 1260,
+          "lookback_years": 5
+        },
+        "admin": "synthetic-market-admin"
+      }
+    ],
+    "expected": {
+      "universe_id": "fixture",
+      "member": {
+        "symbol": "600519",
+        "code": "",
+        "name": null,
+        "industry": null,
+        "region": null,
+        "concepts": [],
+        "sectorHint": null,
+        "sectorTags": [],
+        "exchange": "UNKNOWN",
+        "assetType": "stock",
+        "currency": "CNY",
+        "timezone": "Asia/Shanghai",
+        "secid": null,
+        "provider": "eastmoney",
+        "securityStatus": "active",
+        "role": "member",
+        "weight": null,
+        "rowCount": 0,
+        "firstTs": null,
+        "lastTs": null,
+        "dataProvider": null,
+        "latestClose": null,
+        "latestChangePct": null,
+        "latestAmount": null,
+        "latestTurnover": null,
+        "strength20dPct": null,
+        "strength60dPct": null,
+        "ma20": null,
+        "ma60": null,
+        "trendStatus": "insufficient",
+        "avgAmount20d": null,
+        "avgVolume20d": null,
+        "avgTurnover20d": null,
+        "tradeStatus": null,
+        "isSt": null,
+        "limitUp": null,
+        "limitDown": null,
+        "peTtm": null,
+        "pbMrq": null,
+        "psTtm": null,
+        "pcfNcfTtm": null,
+        "dataStatus": "missing"
+      },
+      "candidates": [],
+      "ingestion": {
+        "symbol": "600519",
+        "fetched_at": "fixture",
+        "created_at": "fixture",
+        "updated_at": "fixture",
+        "member": {
+          "symbol": "600519"
+        },
+        "members": [
+          {
+            "symbol": "600519"
+          }
+        ],
+        "candidates": [],
+        "bars": [
+          {
+            "ts": "2026-01-01",
+            "open": 1,
+            "high": 2,
+            "low": 1,
+            "close": 2,
+            "volume": 10
+          }
+        ],
+        "jobs": [],
+        "events": [],
+        "items": [],
+        "issues": []
+      }
+    }
+  },
+  {
+    "action": "symbol-bars",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/research/bars/600519",
+        "query": {
+          "timeframe": "daily",
+          "adjustment": "qfq",
+          "limit": "240",
+          "include_metadata": "false"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "symbol": "600519",
+      "code": null,
+      "name": null,
+      "exchange": "UNKNOWN",
+      "assetType": "stock",
+      "currency": "CNY",
+      "timezone": "Asia/Shanghai",
+      "secid": null,
+      "provider": null,
+      "dataProvider": "unknown",
+      "timeframe": "daily",
+      "adjustment": "qfq",
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "previousClose": null,
+          "volume": 10,
+          "amount": null,
+          "amplitude": null,
+          "changePercent": null,
+          "changeAmount": null,
+          "turnover": null,
+          "tradeStatus": null,
+          "isSt": null,
+          "limitUp": null,
+          "limitDown": null,
+          "provider": "unknown"
+        }
+      ],
+      "summary": {
+        "rowCount": 1,
+        "firstTs": "2026-01-01",
+        "lastTs": "2026-01-01",
+        "latestClose": 2,
+        "previousClose": null,
+        "returnPct": null,
+        "high": 2,
+        "low": 1,
+        "totalVolume": 10,
+        "totalAmount": null
+      },
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "symbol-bars",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "daily",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/research/bars/600519",
+        "query": {
+          "timeframe": "weekly",
+          "adjustment": "none",
+          "limit": "500",
+          "include_metadata": "true",
+          "provider": "baostock"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "symbol": "600519",
+      "code": null,
+      "name": null,
+      "exchange": "UNKNOWN",
+      "assetType": "stock",
+      "currency": "CNY",
+      "timezone": "Asia/Shanghai",
+      "secid": null,
+      "provider": null,
+      "dataProvider": "unknown",
+      "timeframe": "daily",
+      "adjustment": "qfq",
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "previousClose": null,
+          "volume": 10,
+          "amount": null,
+          "amplitude": null,
+          "changePercent": null,
+          "changeAmount": null,
+          "turnover": null,
+          "tradeStatus": null,
+          "isSt": null,
+          "limitUp": null,
+          "limitDown": null,
+          "provider": "unknown"
+        }
+      ],
+      "summary": {
+        "rowCount": 1,
+        "firstTs": "2026-01-01",
+        "lastTs": "2026-01-01",
+        "latestClose": 2,
+        "previousClose": null,
+        "returnPct": null,
+        "high": 2,
+        "low": 1,
+        "totalVolume": 10,
+        "totalAmount": null
+      },
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "symbol-dividends",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/events/dividends/600519",
+        "query": {
+          "limit": "20"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "symbol": "600519",
+      "events": [],
+      "source": "eastmoney",
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "symbol-dividends",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "daily",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/events/dividends/600519",
+        "query": {
+          "limit": "500"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "symbol": "600519",
+      "events": [],
+      "source": "eastmoney",
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "realtime-quote",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/quotes/realtime/600519",
+        "query": {},
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "symbol": "600519",
+      "secid": null,
+      "name": null,
+      "assetType": "stock",
+      "market": "UNKNOWN",
+      "source": "unknown",
+      "currency": "CNY",
+      "timezone": "Asia/Shanghai",
+      "price": null,
+      "open": null,
+      "high": null,
+      "low": null,
+      "previousClose": null,
+      "changePercent": null,
+      "changeAmount": null,
+      "amplitude": null,
+      "turnover": null,
+      "volume": null,
+      "amount": null,
+      "marketCap": null,
+      "floatMarketCap": null,
+      "peTtm": null,
+      "pbMrq": null,
+      "industry": null,
+      "region": null,
+      "concepts": [],
+      "quoteTime": null,
+      "asOf": null,
+      "fetchedAt": "fixture",
+      "cacheStatus": null,
+      "cacheTtlSeconds": null,
+      "dataQualityStatus": null
+    }
+  },
+  {
+    "action": "realtime-quote",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "daily",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/quotes/realtime/600519",
+        "query": {},
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "symbol": "600519",
+      "secid": null,
+      "name": null,
+      "assetType": "stock",
+      "market": "UNKNOWN",
+      "source": "unknown",
+      "currency": "CNY",
+      "timezone": "Asia/Shanghai",
+      "price": null,
+      "open": null,
+      "high": null,
+      "low": null,
+      "previousClose": null,
+      "changePercent": null,
+      "changeAmount": null,
+      "amplitude": null,
+      "turnover": null,
+      "volume": null,
+      "amount": null,
+      "marketCap": null,
+      "floatMarketCap": null,
+      "peTtm": null,
+      "pbMrq": null,
+      "industry": null,
+      "region": null,
+      "concepts": [],
+      "quoteTime": null,
+      "asOf": null,
+      "fetchedAt": "fixture",
+      "cacheStatus": null,
+      "cacheTtlSeconds": null,
+      "dataQualityStatus": null
+    }
+  },
+  {
+    "action": "intraday-bars",
+    "body": {
+      "symbol": "600519",
+      "jobId": "job",
+      "control": "resume",
+      "query": "600519"
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/quotes/history/600519",
+        "query": {
+          "period": "minute1",
+          "adjustment": "none",
+          "limit": "241"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "symbol": "600519",
+      "code": null,
+      "name": null,
+      "exchange": "UNKNOWN",
+      "assetType": "stock",
+      "currency": "CNY",
+      "timezone": "Asia/Shanghai",
+      "secid": null,
+      "provider": null,
+      "dataProvider": "unknown",
+      "timeframe": "daily",
+      "adjustment": "qfq",
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "previousClose": null,
+          "volume": 10,
+          "amount": null,
+          "amplitude": null,
+          "changePercent": null,
+          "changeAmount": null,
+          "turnover": null,
+          "tradeStatus": null,
+          "isSt": null,
+          "limitUp": null,
+          "limitDown": null,
+          "provider": "unknown"
+        }
+      ],
+      "summary": {
+        "rowCount": 1,
+        "firstTs": "2026-01-01",
+        "lastTs": "2026-01-01",
+        "latestClose": 2,
+        "previousClose": null,
+        "returnPct": null,
+        "high": 2,
+        "low": 1,
+        "totalVolume": 10,
+        "totalAmount": null
+      },
+      "fetchedAt": "fixture"
+    }
+  },
+  {
+    "action": "intraday-bars",
+    "body": {
+      "symbol": "600519",
+      "universeId": "fixture",
+      "page": 2,
+      "pageSize": 150,
+      "keyword": " 茅台 ",
+      "tradeDate": " 2026-01-01 ",
+      "mode": "trend_liquidity",
+      "limit": 500,
+      "timeframe": "weekly",
+      "adjustment": "none",
+      "provider": "baostock",
+      "includeMetadata": true,
+      "jobId": "job",
+      "control": "pause",
+      "reason": "fixture",
+      "symbols": [
+        "600519"
+      ],
+      "lookbackYears": 2,
+      "persist": false,
+      "sector": "白酒",
+      "detailDays": 80,
+      "offset": -1,
+      "batchSize": 220,
+      "start": "2026-01-01",
+      "end": "2026-02-01",
+      "maxBatches": 4,
+      "includeValuationFactors": true,
+      "query": "600519",
+      "syncHistory": true,
+      "period": "minute5",
+      "refresh": true
+    },
+    "payload": {
+      "symbol": "600519",
+      "fetched_at": "fixture",
+      "created_at": "fixture",
+      "updated_at": "fixture",
+      "member": {
+        "symbol": "600519"
+      },
+      "members": [
+        {
+          "symbol": "600519"
+        }
+      ],
+      "candidates": [],
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "volume": 10
+        }
+      ],
+      "jobs": [],
+      "events": [],
+      "items": [],
+      "issues": []
+    },
+    "calls": [
+      {
+        "path": "/api/v1/quotes/history/600519",
+        "query": {
+          "period": "minute5",
+          "adjustment": "none",
+          "limit": "500",
+          "refresh": "true"
+        },
+        "method": "GET",
+        "body": null,
+        "admin": null
+      }
+    ],
+    "expected": {
+      "symbol": "600519",
+      "code": null,
+      "name": null,
+      "exchange": "UNKNOWN",
+      "assetType": "stock",
+      "currency": "CNY",
+      "timezone": "Asia/Shanghai",
+      "secid": null,
+      "provider": null,
+      "dataProvider": "unknown",
+      "timeframe": "daily",
+      "adjustment": "qfq",
+      "bars": [
+        {
+          "ts": "2026-01-01",
+          "open": 1,
+          "high": 2,
+          "low": 1,
+          "close": 2,
+          "previousClose": null,
+          "volume": 10,
+          "amount": null,
+          "amplitude": null,
+          "changePercent": null,
+          "changeAmount": null,
+          "turnover": null,
+          "tradeStatus": null,
+          "isSt": null,
+          "limitUp": null,
+          "limitDown": null,
+          "provider": "unknown"
+        }
+      ],
+      "summary": {
+        "rowCount": 1,
+        "firstTs": "2026-01-01",
+        "lastTs": "2026-01-01",
+        "latestClose": 2,
+        "previousClose": null,
+        "returnPct": null,
+        "high": 2,
+        "low": 1,
+        "totalVolume": 10,
+        "totalAmount": null
+      },
+      "fetchedAt": "fixture"
+    }
+  }
+]
