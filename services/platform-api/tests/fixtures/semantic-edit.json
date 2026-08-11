@@ -1,0 +1,919 @@
+[
+  {
+    "name": "function",
+    "content": "\"use client\";\n\nfunction PriceChart(){\n return <svg><text>价格😀</text></svg>;\n}\n\nexport default function Page(){\n return <main><PriceChart/></main>;\n}\n",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "PriceChart",
+      "replacement": "function PriceChart(){ return <figure>新价格</figure>; }"
+    },
+    "expected": {
+      "result": {
+        "content": "\"use client\";\n\nfunction PriceChart(){ return <figure>新价格</figure>; }\n\nexport default function Page(){\n return <main><PriceChart/></main>;\n}\n",
+        "startLine": 3,
+        "endLine": 5,
+        "target": "PriceChart"
+      }
+    }
+  },
+  {
+    "name": "default_async",
+    "content": "export default async function Home(){return <main/>;}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "Home",
+      "replacement": "function Home(){return <main/>;}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_IDENTITY_MISMATCH",
+        "message": "Replacement for Home must preserve its declaration kind, modifiers, async/generator status, and variable declaration kind.",
+        "details": {
+          "expected": {
+            "declarationKind": "function",
+            "modifierKinds": [
+              90,
+              95,
+              134
+            ],
+            "functionAsync": true,
+            "functionGenerator": false,
+            "variableKind": null
+          },
+          "received": {
+            "declarationKind": "function",
+            "modifierKinds": [],
+            "functionAsync": false,
+            "functionGenerator": false,
+            "variableKind": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "async",
+    "content": "export async function load(){return 1;}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "load",
+      "replacement": "export function load(){return 2;}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_IDENTITY_MISMATCH",
+        "message": "Replacement for load must preserve its declaration kind, modifiers, async/generator status, and variable declaration kind.",
+        "details": {
+          "expected": {
+            "declarationKind": "function",
+            "modifierKinds": [
+              95,
+              134
+            ],
+            "functionAsync": true,
+            "functionGenerator": false,
+            "variableKind": null
+          },
+          "received": {
+            "declarationKind": "function",
+            "modifierKinds": [
+              95
+            ],
+            "functionAsync": false,
+            "functionGenerator": false,
+            "variableKind": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "generator",
+    "content": "export async function* load(){yield 1;}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "load",
+      "replacement": "export async function load(){return 2;}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_IDENTITY_MISMATCH",
+        "message": "Replacement for load must preserve its declaration kind, modifiers, async/generator status, and variable declaration kind.",
+        "details": {
+          "expected": {
+            "declarationKind": "function",
+            "modifierKinds": [
+              95,
+              134
+            ],
+            "functionAsync": true,
+            "functionGenerator": true,
+            "variableKind": null
+          },
+          "received": {
+            "declarationKind": "function",
+            "modifierKinds": [
+              95,
+              134
+            ],
+            "functionAsync": true,
+            "functionGenerator": false,
+            "variableKind": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "declare",
+    "content": "export declare function load():string;",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "load",
+      "replacement": "export function load():string{return \"x\";}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_IDENTITY_MISMATCH",
+        "message": "Replacement for load must preserve its declaration kind, modifiers, async/generator status, and variable declaration kind.",
+        "details": {
+          "expected": {
+            "declarationKind": "function",
+            "modifierKinds": [
+              95,
+              138
+            ],
+            "functionAsync": false,
+            "functionGenerator": false,
+            "variableKind": null
+          },
+          "received": {
+            "declarationKind": "function",
+            "modifierKinds": [
+              95
+            ],
+            "functionAsync": false,
+            "functionGenerator": false,
+            "variableKind": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "abstract",
+    "content": "export abstract class Store {abstract load(): string;}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "Store",
+      "replacement": "export class Store {load(){return \"x\";}}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_IDENTITY_MISMATCH",
+        "message": "Replacement for Store must preserve its declaration kind, modifiers, async/generator status, and variable declaration kind.",
+        "details": {
+          "expected": {
+            "declarationKind": "class",
+            "modifierKinds": [
+              95,
+              128
+            ],
+            "functionAsync": null,
+            "functionGenerator": null,
+            "variableKind": null
+          },
+          "received": {
+            "declarationKind": "class",
+            "modifierKinds": [
+              95
+            ],
+            "functionAsync": null,
+            "functionGenerator": null,
+            "variableKind": null
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "variable_kind",
+    "content": "export const value=1;",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "value",
+      "replacement": "export let value=2;"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_IDENTITY_MISMATCH",
+        "message": "Replacement for value must preserve its declaration kind, modifiers, async/generator status, and variable declaration kind.",
+        "details": {
+          "expected": {
+            "declarationKind": "variable",
+            "modifierKinds": [
+              95
+            ],
+            "functionAsync": null,
+            "functionGenerator": null,
+            "variableKind": "const"
+          },
+          "received": {
+            "declarationKind": "variable",
+            "modifierKinds": [
+              95
+            ],
+            "functionAsync": null,
+            "functionGenerator": null,
+            "variableKind": "let"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "kind_change",
+    "content": "function go(){return 1;}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "go",
+      "replacement": "const go=()=>2;"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_IDENTITY_MISMATCH",
+        "message": "Replacement for go must preserve its declaration kind, modifiers, async/generator status, and variable declaration kind.",
+        "details": {
+          "expected": {
+            "declarationKind": "function",
+            "modifierKinds": [],
+            "functionAsync": false,
+            "functionGenerator": false,
+            "variableKind": null
+          },
+          "received": {
+            "declarationKind": "variable",
+            "modifierKinds": [],
+            "functionAsync": null,
+            "functionGenerator": null,
+            "variableKind": "const"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "multiple_vars",
+    "content": "const x=1, y=2;",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "x",
+      "replacement": "const x=3;"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_TARGET_UNSAFE",
+        "message": "Declaration x shares a variable statement with other symbols and cannot be replaced safely."
+      }
+    }
+  },
+  {
+    "name": "replacement_multiple_vars",
+    "content": "const x=1;",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "x",
+      "replacement": "const x=3,y=4;"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_IDENTITY_MISMATCH",
+        "message": "Replacement for x must contain exactly one variable declarator."
+      }
+    }
+  },
+  {
+    "name": "interface",
+    "content": "export interface A {x:number;}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "A",
+      "replacement": "export interface A {x:number;y:string;}"
+    },
+    "expected": {
+      "result": {
+        "content": "export interface A {x:number;y:string;}",
+        "startLine": 1,
+        "endLine": 1,
+        "target": "A"
+      }
+    }
+  },
+  {
+    "name": "type_alias",
+    "content": "export type A = number;",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "A",
+      "replacement": "export type A = string;"
+    },
+    "expected": {
+      "result": {
+        "content": "export type A = string;",
+        "startLine": 1,
+        "endLine": 1,
+        "target": "A"
+      }
+    }
+  },
+  {
+    "name": "class",
+    "content": "export class A {read(){return 1;}}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "A",
+      "replacement": "export class A {read(){return 2;}}"
+    },
+    "expected": {
+      "result": {
+        "content": "export class A {read(){return 2;}}",
+        "startLine": 1,
+        "endLine": 1,
+        "target": "A"
+      }
+    }
+  },
+  {
+    "name": "enum",
+    "content": "export const enum A {X=1}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "A",
+      "replacement": "export const enum A {X=2}"
+    },
+    "expected": {
+      "result": {
+        "content": "export const enum A {X=2}",
+        "startLine": 1,
+        "endLine": 1,
+        "target": "A"
+      }
+    }
+  },
+  {
+    "name": "variable",
+    "content": "export const x=1;",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "x",
+      "replacement": "export const x=2;"
+    },
+    "expected": {
+      "result": {
+        "content": "export const x=2;",
+        "startLine": 1,
+        "endLine": 1,
+        "target": "x"
+      }
+    }
+  },
+  {
+    "name": "ambiguous",
+    "content": "function go(x:string):string;\nfunction go(x:any){return x;}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "go",
+      "replacement": "function go(x:any){return x+1;}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_TARGET_AMBIGUOUS",
+        "message": "More than one top-level TypeScript declaration is named go in app/page.tsx. Do not retry this semantic target or reread the unchanged file; reuse beforeSha256 and the last query_text_file line numbers with kind=line_range."
+      }
+    }
+  },
+  {
+    "name": "source_invalid",
+    "content": "function broken( {",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "broken",
+      "replacement": "function broken(){}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_SOURCE_PARSE_FAILED",
+        "message": "Cannot safely edit app/page.tsx because its TypeScript syntax is invalid."
+      }
+    }
+  },
+  {
+    "name": "replacement_invalid",
+    "content": "function go(){}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "go",
+      "replacement": "function go( {"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_INVALID",
+        "message": "typescript_symbol replacement must be exactly one syntactically valid top-level statement."
+      }
+    }
+  },
+  {
+    "name": "extra_statement",
+    "content": "function go(){}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "go",
+      "replacement": "function go(){}; const x=1;"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_INVALID",
+        "message": "typescript_symbol replacement must be exactly one syntactically valid top-level statement."
+      }
+    }
+  },
+  {
+    "name": "missing_target",
+    "content": "function go(){}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "other",
+      "replacement": "function other(){}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_TARGET_NOT_FOUND",
+        "message": "No top-level TypeScript declaration named other exists in app/page.tsx."
+      }
+    }
+  },
+  {
+    "name": "rename",
+    "content": "function go(){}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "go",
+      "replacement": "function other(){}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_IDENTITY_MISMATCH",
+        "message": "Replacement must contain exactly one declaration for the target symbol go."
+      }
+    }
+  },
+  {
+    "name": "empty_replacement",
+    "content": "function go(){}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "go",
+      "replacement": ""
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_INVALID",
+        "message": "typescript_symbol replacement cannot be empty; use an explicit line_range edit to remove code."
+      }
+    }
+  },
+  {
+    "name": "same_symbol",
+    "content": "function go(){}",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "typescript_symbol",
+      "symbol": "go",
+      "replacement": "function go(){}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_NO_CHANGE",
+        "message": "The semantic edit does not change app/page.tsx."
+      }
+    }
+  },
+  {
+    "name": "css_unique",
+    "content": ".a { color:red;}\n.b{color:blue;}",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_rule",
+      "selector": ".a",
+      "replacement": ".a { color:green;}"
+    },
+    "expected": {
+      "result": {
+        "content": ".a { color:green;}\n.b{color:blue;}",
+        "startLine": 1,
+        "endLine": 1,
+        "target": ".a"
+      }
+    }
+  },
+  {
+    "name": "css_ambiguous",
+    "content": ".a { color:red;} @media (max-width:700px){.a{color:blue;}}",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_rule",
+      "selector": ".a",
+      "replacement": ".a{color:green;}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_TARGET_AMBIGUOUS",
+        "message": "CSS selector .a occurs more than once in app/globals.css. Do not retry this semantic target or reread the unchanged file; reuse beforeSha256 and the last query_text_file line numbers with kind=line_range."
+      }
+    }
+  },
+  {
+    "name": "css_missing",
+    "content": ".a{}",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_rule",
+      "selector": ".b",
+      "replacement": ".b{}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_TARGET_NOT_FOUND",
+        "message": "CSS selector .b was not found in app/globals.css. Query the exact existing selector; for a bounded multi-rule visual override, reuse beforeSha256 with kind=css_append instead of inventing a combined selector."
+      }
+    }
+  },
+  {
+    "name": "css_rename",
+    "content": ".a{}",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_rule",
+      "selector": ".a",
+      "replacement": ".b{}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_IDENTITY_MISMATCH",
+        "message": "Replacement selector must remain .a."
+      }
+    }
+  },
+  {
+    "name": "css_extra",
+    "content": ".a{}",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_rule",
+      "selector": ".a",
+      "replacement": ".a{} .b{}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_INVALID",
+        "message": "css_rule replacement must contain exactly one CSS rule."
+      }
+    }
+  },
+  {
+    "name": "css_bad_source",
+    "content": ".a { color:red;",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_rule",
+      "selector": ".a",
+      "replacement": ".a{}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_SOURCE_PARSE_FAILED",
+        "message": "Cannot safely edit app/globals.css because its CSS syntax is invalid."
+      }
+    }
+  },
+  {
+    "name": "css_bad_replacement",
+    "content": ".a{}",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_rule",
+      "selector": ".a",
+      "replacement": ".a { color: red;"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_INVALID",
+        "message": "css_rule replacement must contain one syntactically valid rule."
+      }
+    }
+  },
+  {
+    "name": "css_group",
+    "content": ".a, .b { color:red; }",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_rule",
+      "selector": ".a, .b",
+      "replacement": ".a, .b {color:blue;}"
+    },
+    "expected": {
+      "result": {
+        "content": ".a, .b {color:blue;}",
+        "startLine": 1,
+        "endLine": 1,
+        "target": ".a, .b"
+      }
+    }
+  },
+  {
+    "name": "css_append",
+    "content": ".a{color:red;}\n",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_append",
+      "replacement": "[data-visual-language=\"financial-workbench\"] .a { border-radius:0; }"
+    },
+    "expected": {
+      "result": {
+        "content": ".a{color:red;}\n\n[data-visual-language=\"financial-workbench\"] .a { border-radius:0; }\n",
+        "startLine": 3,
+        "endLine": 3,
+        "target": "append"
+      }
+    }
+  },
+  {
+    "name": "append_media",
+    "content": ".a{}",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_append",
+      "replacement": "@media(max-width:700px){.a{display:block;}}"
+    },
+    "expected": {
+      "result": {
+        "content": ".a{}\n\n@media(max-width:700px){.a{display:block;}}\n",
+        "startLine": 3,
+        "endLine": 3,
+        "target": "append"
+      }
+    }
+  },
+  {
+    "name": "append_empty",
+    "content": ".a{}",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_append",
+      "replacement": "  "
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_INVALID",
+        "message": "css_append replacement cannot be empty or whitespace-only."
+      }
+    }
+  },
+  {
+    "name": "append_invalid",
+    "content": ".a{}",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_append",
+      "replacement": ".b{color:red;"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_INVALID",
+        "message": "css_append replacement must contain syntactically valid CSS."
+      }
+    }
+  },
+  {
+    "name": "append_oversize",
+    "content": ".a{}",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "css_append",
+      "replacement": ".a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n.a{color:red;}\n"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_TARGET_UNSAFE",
+        "message": "css_append is limited to 16000 characters and 160 lines; append only the minimal override rules.",
+        "details": {
+          "replacementChars": 2999,
+          "replacementLines": 200,
+          "maxChars": 16000,
+          "maxLines": 160
+        }
+      }
+    }
+  },
+  {
+    "name": "range",
+    "content": "\"use client\";\n\nfunction PriceChart(){\n return <svg><text>价格😀</text></svg>;\n}\n\nexport default function Page(){\n return <main><PriceChart/></main>;\n}\n",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "line_range",
+      "startLine": 4,
+      "endLine": 4,
+      "replacement": " return <svg><text>新行情</text></svg>;"
+    },
+    "expected": {
+      "result": {
+        "content": "\"use client\";\n\nfunction PriceChart(){\n return <svg><text>新行情</text></svg>;\n}\n\nexport default function Page(){\n return <main><PriceChart/></main>;\n}\n",
+        "startLine": 4,
+        "endLine": 4,
+        "target": "4-4"
+      }
+    }
+  },
+  {
+    "name": "range_noop",
+    "content": "\"use client\";\n\nfunction PriceChart(){\n return <svg><text>价格😀</text></svg>;\n}\n\nexport default function Page(){\n return <main><PriceChart/></main>;\n}\n",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "line_range",
+      "startLine": 4,
+      "endLine": 4,
+      "replacement": " return <svg><text>价格😀</text></svg>;"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_NO_CHANGE",
+        "message": "The semantic edit does not change app/page.tsx."
+      }
+    }
+  },
+  {
+    "name": "range_invalid",
+    "content": "\"use client\";\n\nfunction PriceChart(){\n return <svg><text>价格😀</text></svg>;\n}\n\nexport default function Page(){\n return <main><PriceChart/></main>;\n}\n",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "line_range",
+      "startLine": 4,
+      "endLine": 4,
+      "replacement": " return <svg>"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_INVALID",
+        "message": "The semantic edit would leave app/page.tsx with invalid TypeScript syntax."
+      }
+    }
+  },
+  {
+    "name": "range_default_drop",
+    "content": "\"use client\";\n\nfunction PriceChart(){\n return <svg><text>价格😀</text></svg>;\n}\n\nexport default function Page(){\n return <main><PriceChart/></main>;\n}\n",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "line_range",
+      "startLine": 7,
+      "endLine": 7,
+      "replacement": "function Page(){"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_IDENTITY_MISMATCH",
+        "message": "The semantic edit must preserve the default export in app/page.tsx."
+      }
+    }
+  },
+  {
+    "name": "range_use_client_drop",
+    "content": "\"use client\";\n\nfunction PriceChart(){\n return <svg><text>价格😀</text></svg>;\n}\n\nexport default function Page(){\n return <main><PriceChart/></main>;\n}\n",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "line_range",
+      "startLine": 1,
+      "endLine": 1,
+      "replacement": "// removed directive"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_IDENTITY_MISMATCH",
+        "message": "The semantic edit must preserve the use client directive in app/page.tsx."
+      }
+    }
+  },
+  {
+    "name": "range_too_big",
+    "content": "\"use client\";\n\nfunction PriceChart(){\n return <svg><text>价格😀</text></svg>;\n}\n\nexport default function Page(){\n return <main><PriceChart/></main>;\n}\n",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "line_range",
+      "startLine": 1,
+      "endLine": 9,
+      "replacement": "export default function Page(){return null;}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_TARGET_UNSAFE",
+        "message": "line_range may replace at most 8 of 9 lines; use a named TypeScript declaration or CSS rule, or kind=css_append for a bounded multi-rule stylesheet override.",
+        "details": {
+          "affectedLines": 9,
+          "allowedLines": 8,
+          "totalLines": 9
+        }
+      }
+    }
+  },
+  {
+    "name": "range_outside",
+    "content": "\"use client\";\n\nfunction PriceChart(){\n return <svg><text>价格😀</text></svg>;\n}\n\nexport default function Page(){\n return <main><PriceChart/></main>;\n}\n",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "line_range",
+      "startLine": 30,
+      "endLine": 31,
+      "replacement": "// x"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_TARGET_NOT_FOUND",
+        "message": "Requested line range 30-31 exceeds the 9-line file."
+      }
+    }
+  },
+  {
+    "name": "range_css_invalid",
+    "content": ".a{\ncolor:red;\n}\n",
+    "input": {
+      "path": "app/globals.css",
+      "kind": "line_range",
+      "startLine": 2,
+      "endLine": 2,
+      "replacement": "{ invalid"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_REPLACEMENT_INVALID",
+        "message": "The semantic edit would leave app/globals.css with invalid CSS syntax."
+      }
+    }
+  },
+  {
+    "name": "range_crlf",
+    "content": "const a=1;\r\nconst b=2;\r\n",
+    "input": {
+      "path": "app/page.tsx",
+      "kind": "line_range",
+      "startLine": 2,
+      "endLine": 2,
+      "replacement": "const b=3;"
+    },
+    "expected": {
+      "result": {
+        "content": "const a=1;\r\nconst b=3;\r\n",
+        "startLine": 2,
+        "endLine": 2,
+        "target": "2-2"
+      }
+    }
+  },
+  {
+    "name": "wrong_extension",
+    "content": "{}",
+    "input": {
+      "path": "data_file/final/x.json",
+      "kind": "line_range",
+      "startLine": 1,
+      "endLine": 1,
+      "replacement": "{\"a\":1}"
+    },
+    "expected": {
+      "error": {
+        "code": "SEMANTIC_EDIT_FILE_TYPE_MISMATCH",
+        "message": "semantic_edit only supports existing .ts, .tsx, .vue, and .css source files."
+      }
+    }
+  }
+]

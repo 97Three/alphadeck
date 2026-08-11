@@ -1,0 +1,159 @@
+[
+  {
+    "input": {},
+    "key": "controlled-migration-only-key",
+    "error": "生产回放记录缺少 question"
+  },
+  {
+    "input": {
+      "question": ""
+    },
+    "key": "controlled-migration-only-key",
+    "error": "生产回放记录缺少 question"
+  },
+  {
+    "input": {
+      "question": "分析600519，邮箱someone@example.test 手机13800138000 账户1234567890123456 IP192.168.1.1",
+      "userId": "private"
+    },
+    "key": "controlled-migration-only-key",
+    "expected": {
+      "id": "shadow-f2b4c2c682fd6cbb",
+      "name": "脱敏生产回放 f2b4c2c6",
+      "question": "分析600519,邮箱[EMAIL] 手机[MOBILE] 账户[ACCOUNT] IP192.168.1.1",
+      "capabilityId": "unknown",
+      "type": "generated_project",
+      "productionSupported": false,
+      "privacy": {
+        "schemaVersion": 1,
+        "redacted": true,
+        "sourcePromptHmacSha256": "f2b4c2c682fd6cbba1103a0969dc07129a8adaa6c5199d61c3a99e38de603cfe",
+        "redactionTypes": [
+          "email",
+          "mobile",
+          "long_account"
+        ]
+      }
+    },
+    "attestation": {
+      "passed": true,
+      "problems": []
+    }
+  },
+  {
+    "input": {
+      "question": "用户身份11010519491231002X，研究600519"
+    },
+    "key": "controlled-migration-only-key",
+    "expected": {
+      "id": "shadow-4abc8a1f5e42cb3b",
+      "name": "脱敏生产回放 4abc8a1f",
+      "question": "用户身份[CN_ID],研究600519",
+      "capabilityId": "unknown",
+      "type": "generated_project",
+      "productionSupported": false,
+      "privacy": {
+        "schemaVersion": 1,
+        "redacted": true,
+        "sourcePromptHmacSha256": "4abc8a1f5e42cb3bda3f4f630fc8335d8d013e5509a80f62f389b04465b29f1a",
+        "redactionTypes": [
+          "cn_id"
+        ]
+      }
+    },
+    "attestation": {
+      "passed": true,
+      "problems": []
+    }
+  },
+  {
+    "input": {
+      "question": "ＡＢＣ ｔｅｓｔ＠ｅｘａｍｐｌｅ．ｃｏｍ"
+    },
+    "key": "controlled-migration-only-key",
+    "expected": {
+      "id": "shadow-5b63c3ce049cffe5",
+      "name": "脱敏生产回放 5b63c3ce",
+      "question": "ABC [EMAIL]",
+      "capabilityId": "unknown",
+      "type": "generated_project",
+      "productionSupported": false,
+      "privacy": {
+        "schemaVersion": 1,
+        "redacted": true,
+        "sourcePromptHmacSha256": "5b63c3ce049cffe5b36477b3c18feef45bd91b72895908a86091a3589807ca6b",
+        "redactionTypes": [
+          "email"
+        ]
+      }
+    },
+    "attestation": {
+      "passed": true,
+      "problems": []
+    }
+  },
+  {
+    "input": {
+      "question": "分析600519",
+      "capabilityId": "stock_diagnosis",
+      "expectedSymbols": [
+        "600519"
+      ],
+      "visualCheck": true
+    },
+    "key": "controlled-migration-only-key",
+    "expected": {
+      "id": "shadow-4d343bbbc05dcf2f",
+      "name": "脱敏生产回放 4d343bbb",
+      "question": "分析600519",
+      "capabilityId": "stock_diagnosis",
+      "type": "generated_project",
+      "productionSupported": false,
+      "privacy": {
+        "schemaVersion": 1,
+        "redacted": true,
+        "sourcePromptHmacSha256": "4d343bbbc05dcf2f531c9463915209058a50f790f7d8ddb249fbeef3f126722a",
+        "redactionTypes": []
+      },
+      "expectedSymbols": [
+        "600519"
+      ],
+      "visualCheck": true
+    },
+    "attestation": {
+      "passed": true,
+      "problems": []
+    }
+  },
+  {
+    "input": {
+      "question": null
+    },
+    "key": "controlled-migration-only-key",
+    "error": "生产回放记录缺少 question"
+  },
+  {
+    "input": {
+      "question": 123
+    },
+    "key": "controlled-migration-only-key",
+    "expected": {
+      "id": "shadow-d467f5e286295ffc",
+      "name": "脱敏生产回放 d467f5e2",
+      "question": "123",
+      "capabilityId": "unknown",
+      "type": "generated_project",
+      "productionSupported": false,
+      "privacy": {
+        "schemaVersion": 1,
+        "redacted": true,
+        "sourcePromptHmacSha256": "d467f5e286295ffc49fc94cf622b1b7057ebcac01ad974f8edbc1a548d361487",
+        "redactionTypes": []
+      }
+    },
+    "attestation": {
+      "passed": true,
+      "problems": []
+    }
+  }
+]
