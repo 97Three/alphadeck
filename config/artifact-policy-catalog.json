@@ -1,0 +1,207 @@
+{
+  "ARTIFACT_POLICY_MAX_FILE_BYTES": 300000,
+  "ARTIFACT_POLICY_ROOT_DIRS": [
+    "app",
+    "components",
+    "hooks",
+    "lib",
+    "src",
+    "styles"
+  ],
+  "ARTIFACT_POLICY_ROOT_FILES": [
+    "package.json",
+    "vite.config.ts",
+    "postcss.config.cjs",
+    "postcss.config.js",
+    "tailwind.config.js",
+    "tailwind.config.ts"
+  ],
+  "ARTIFACT_POLICY_SKIP_DIRS": [
+    ".git",
+    ".next",
+    ".turbo",
+    ".vercel",
+    "build",
+    "coverage",
+    "dist",
+    "node_modules"
+  ],
+  "ARTIFACT_POLICY_SOURCE_EXTENSIONS": [
+    ".css",
+    ".html",
+    ".js",
+    ".jsx",
+    ".json",
+    ".mjs",
+    ".ts",
+    ".tsx",
+    ".vue"
+  ],
+  "REMOTE_URL_PATTERN": {
+    "source": "\\bhttps?:\\/\\/[a-z0-9.-]+(?::\\d+)?[^\\s'\"`<>){}]*",
+    "flags": "gi"
+  },
+  "REMOTE_USAGE_PATTERNS": [
+    {
+      "label": "远程脚本",
+      "pattern": {
+        "source": "<script[^>]+src=[\"']https?:\\/\\/[^\"']+[\"']",
+        "flags": "gi"
+      }
+    },
+    {
+      "label": "远程样式",
+      "pattern": {
+        "source": "<link[^>]+href=[\"']https?:\\/\\/[^\"']+[\"']",
+        "flags": "gi"
+      }
+    },
+    {
+      "label": "CSS 远程资源",
+      "pattern": {
+        "source": "(?:@import\\s+(?:url\\()?[\"']?https?:\\/\\/|url\\(\\s*[\"']?https?:\\/\\/)[^'\")\\s]+",
+        "flags": "gi"
+      }
+    },
+    {
+      "label": "远程模块导入",
+      "pattern": {
+        "source": "(?:\\bfrom\\s+[\"']https?:\\/\\/[^\"']+[\"']|\\bimport\\s*\\(\\s*[\"']https?:\\/\\/[^\"']+[\"']\\s*\\))",
+        "flags": "gi"
+      }
+    },
+    {
+      "label": "浏览器直连外部接口",
+      "pattern": {
+        "source": "\\b(?:fetch|new\\s+EventSource|new\\s+WebSocket)\\s*\\(\\s*[\"']https?:\\/\\/[^\"']+[\"']",
+        "flags": "gi"
+      }
+    },
+    {
+      "label": "远程媒体资源",
+      "pattern": {
+        "source": "<(?:img|source|iframe)[^>]+(?:src|srcSet)=[\"']https?:\\/\\/[^\"']+[\"']",
+        "flags": "gi"
+      }
+    }
+  ],
+  "SENSITIVE_ARTIFACT_PATTERNS": [
+    {
+      "label": "明文 API key",
+      "pattern": {
+        "source": "\\b(?:sk|sk-proj|sk-ant|sk-cp)-[a-z0-9_-]{16,}\\b",
+        "flags": "i"
+      }
+    },
+    {
+      "label": "Bearer token",
+      "pattern": {
+        "source": "\\bbearer\\s+[a-z0-9._-]{16,}\\b",
+        "flags": "i"
+      }
+    },
+    {
+      "label": "环境变量密钥字面量",
+      "pattern": {
+        "source": "\\b(?:DEEPSEEK_API_KEY|OPENAI_API_KEY|ANTHROPIC_API_KEY|ANTHROPIC_AUTH_TOKEN|MINIMAX_API_KEY|CODEX_OPENAI_API_KEY)\\s*[:=]\\s*[\"'][^\"'\\n]{8,}[\"']",
+        "flags": "i"
+      }
+    },
+    {
+      "label": "AWS access key",
+      "pattern": {
+        "source": "\\bAKIA[0-9A-Z]{16}\\b",
+        "flags": ""
+      }
+    }
+  ],
+  "EXECUTION_ESCAPE_PATTERNS": [
+    {
+      "label": "Node 宿主能力导入",
+      "pattern": {
+        "source": "(?:\\bfrom\\s*|\\bimport\\s*\\(\\s*|\\brequire\\s*\\(\\s*)[\"'](?:node:)?(?:child_process|cluster|dgram|dns|http2?|https|inspector|module|net|os|process|tls|vm|worker_threads)[\"']",
+        "flags": "i"
+      }
+    },
+    {
+      "label": "CommonJS 动态加载",
+      "pattern": {
+        "source": "\\brequire\\s*\\(",
+        "flags": "i"
+      }
+    },
+    {
+      "label": "动态模块加载",
+      "pattern": {
+        "source": "\\bimport\\s*\\(",
+        "flags": "i"
+      }
+    },
+    {
+      "label": "宿主 process 特权访问",
+      "pattern": {
+        "source": "\\bprocess\\s*(?:\\.\\s*(?:env|binding|chdir|dlopen|getBuiltinModule|mainModule)|\\[\\s*[\"'](?:env|binding|chdir|dlopen|getBuiltinModule|mainModule)[\"'])",
+        "flags": "i"
+      }
+    },
+    {
+      "label": "动态代码执行",
+      "pattern": {
+        "source": "\\b(?:eval|Function)\\s*\\(|\\bWebAssembly\\b",
+        "flags": "i"
+      }
+    },
+    {
+      "label": "子进程执行 API",
+      "pattern": {
+        "source": "\\b(?:execFileSync|execFile|execSync|spawnSync|spawn|fork)\\s*\\(",
+        "flags": "i"
+      }
+    },
+    {
+      "label": "非受控网络客户端",
+      "pattern": {
+        "source": "\\bnew\\s+(?:EventSource|WebSocket|XMLHttpRequest)\\b|\\bsendBeacon\\s*\\(",
+        "flags": "i"
+      }
+    },
+    {
+      "label": "宿主绝对路径",
+      "pattern": {
+        "source": "[\"'](?:\\/(?:etc|home|proc|root|run|sys|var\\/run)\\/|[a-z]:\\\\(?:users|windows)\\\\)",
+        "flags": "i"
+      }
+    }
+  ],
+  "MOCK_ARTIFACT_PATTERNS": [
+    {
+      "label": "mock/sample 静态数据变量",
+      "pattern": {
+        "source": "\\b(?:MOCK|SAMPLE|DEMO|PLACEHOLDER|STATIC)_(?:DATA|QUOTE|QUOTES|KLINE|KLINES|HISTORY|FINANCIALS|REPORTS|ANNOUNCEMENTS|DASHBOARD_DATA)\\b",
+        "flags": "i"
+      }
+    },
+    {
+      "label": "mock/sample 静态数据命名",
+      "pattern": {
+        "source": "\\b(?:mockData|sampleData|demoData|placeholderData|staticQuotes|staticKlines|staticFinancials|staticDashboardData)\\b",
+        "flags": ""
+      }
+    },
+    {
+      "label": "示例或模拟数据标记",
+      "pattern": {
+        "source": "lorem ipsum|假数据|模拟数据|示例数据|样例数据|占位数据",
+        "flags": "i"
+      }
+    }
+  ],
+  "DISCOURAGED_VISUALIZATION_DEPENDENCIES": [
+    "@visx/visx",
+    "chart.js",
+    "d3",
+    "echarts",
+    "plotly.js",
+    "recharts"
+  ]
+}
