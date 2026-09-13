@@ -1,0 +1,1702 @@
+{
+  "schemaVersion": 1,
+  "contracts": [
+    {
+      "id": "workspace_contract",
+      "label": "Data Agent 工作空间契约",
+      "relativePath": ".data-agent/workspace.json",
+      "required": true,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "number",
+            "const": 1
+          },
+          "workspaceId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "projectName": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "platform": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "composition": {
+            "type": "object",
+            "properties": {
+              "schemaVersion": {
+                "type": "number",
+                "const": 1
+              },
+              "profile": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "version": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "id",
+                  "version"
+                ]
+              },
+              "domainPacks": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "version": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "version"
+                  ]
+                }
+              },
+              "deliveryPack": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "version": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "id",
+                  "version"
+                ]
+              },
+              "capability": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^sha256:[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "schemaVersion",
+              "profile",
+              "domainPacks",
+              "deliveryPack",
+              "capability",
+              "sha256"
+            ]
+          },
+          "runtime": {
+            "type": "object",
+            "properties": {
+              "framework": {
+                "type": "string",
+                "const": "PI Agent"
+              },
+              "executorId": {
+                "type": "string",
+                "const": "pi"
+              },
+              "modelId": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "modelProfileId": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "framework",
+              "executorId",
+              "modelId",
+              "modelProfileId"
+            ]
+          },
+          "createdAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "updatedAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "workspaceId",
+          "projectId",
+          "projectName",
+          "platform",
+          "composition",
+          "runtime",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      "extraValidate": null
+    },
+    {
+      "id": "profile_contract",
+      "label": "Agent Profile 契约",
+      "relativePath": ".data-agent/profile.json",
+      "required": true,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "number",
+            "const": 1
+          },
+          "profile": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "domainPackIds": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "defaultCapabilityId": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "deliveryPackId": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "id",
+              "version",
+              "domainPackIds",
+              "defaultCapabilityId",
+              "deliveryPackId"
+            ],
+            "additionalProperties": {}
+          },
+          "selectedCapabilityId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "composition": {
+            "type": "object",
+            "properties": {
+              "schemaVersion": {
+                "type": "number",
+                "const": 1
+              },
+              "profile": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "version": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "id",
+                  "version"
+                ]
+              },
+              "domainPacks": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "version": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "version"
+                  ]
+                }
+              },
+              "deliveryPack": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "version": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "id",
+                  "version"
+                ]
+              },
+              "capability": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^sha256:[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "schemaVersion",
+              "profile",
+              "domainPacks",
+              "deliveryPack",
+              "capability",
+              "sha256"
+            ]
+          },
+          "selectionSource": {
+            "type": "string",
+            "enum": [
+              "manual",
+              "default",
+              "inferred"
+            ]
+          },
+          "updatedAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "profile",
+          "selectedCapabilityId",
+          "composition",
+          "selectionSource",
+          "updatedAt"
+        ],
+        "additionalProperties": {}
+      },
+      "extraValidate": null
+    },
+    {
+      "id": "task_contract",
+      "label": "Data Agent Task 契约",
+      "relativePath": ".data-agent/task.json",
+      "required": true,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "number",
+            "const": 1
+          },
+          "originalQuery": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "objective": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "entities": {
+            "type": "array",
+            "items": {}
+          },
+          "resolvedEntities": {
+            "type": "array",
+            "items": {}
+          },
+          "metrics": {
+            "type": "array",
+            "items": {}
+          },
+          "dimensions": {
+            "type": "array",
+            "items": {}
+          },
+          "filters": {
+            "type": "array",
+            "items": {}
+          },
+          "output": {
+            "type": "string",
+            "enum": [
+              "answer",
+              "table",
+              "chart",
+              "dashboard",
+              "report",
+              "dataset"
+            ]
+          },
+          "domainHints": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "partial",
+              "needs_clarification",
+              "failed",
+              "refused"
+            ]
+          },
+          "issues": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "originalQuery",
+          "objective",
+          "entities",
+          "resolvedEntities",
+          "metrics",
+          "dimensions",
+          "filters",
+          "output",
+          "domainHints",
+          "status",
+          "issues"
+        ],
+        "additionalProperties": {}
+      },
+      "extraValidate": null
+    },
+    {
+      "id": "data_agent_plan_contract",
+      "label": "Data Agent 执行计划契约",
+      "relativePath": ".data-agent/plan.json",
+      "required": true,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "number",
+            "const": 1
+          },
+          "runId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "planned",
+              "needs_clarification",
+              "failed",
+              "refused"
+            ]
+          },
+          "profile": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "domainPacks": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "version": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "version"
+                  ]
+                }
+              },
+              "deliveryPack": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "version": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "id",
+                  "version"
+                ]
+              },
+              "compositionSha256": {
+                "type": "string",
+                "pattern": "^sha256:[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "id",
+              "version",
+              "domainPacks",
+              "deliveryPack",
+              "compositionSha256"
+            ]
+          },
+          "capabilityId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "taskArtifact": {
+            "type": "string",
+            "const": ".data-agent/task.json"
+          },
+          "domainPlanArtifact": {
+            "type": "string",
+            "const": ".data-agent/finance-run-plan.json"
+          },
+          "expectedArtifacts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "validationRuleIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "updatedAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "runId",
+          "status",
+          "profile",
+          "capabilityId",
+          "taskArtifact",
+          "domainPlanArtifact",
+          "expectedArtifacts",
+          "validationRuleIds",
+          "createdAt",
+          "updatedAt"
+        ]
+      },
+      "extraValidate": null
+    },
+    {
+      "id": "finance_query_rewrite_contract",
+      "label": "Finance Query Rewrite 契约",
+      "relativePath": ".data-agent/finance-query-rewrite.json",
+      "required": true,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "anyOf": [
+              {
+                "type": "number",
+                "const": 4
+              },
+              {
+                "type": "number",
+                "const": 5
+              }
+            ]
+          },
+          "timeRange": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "unit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "startDate": {
+                    "type": "string"
+                  },
+                  "endDate": {
+                    "type": "string"
+                  },
+                  "asOf": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "unit"
+                ],
+                "additionalProperties": {}
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "originalQuery": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "normalizedQuery": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "rewrittenQuery": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ready",
+              "partial",
+              "needs_clarification",
+              "failed",
+              "refused"
+            ]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "capabilityHint": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "targetCandidates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "resolvedSymbols": {
+            "type": "array",
+            "items": {}
+          },
+          "unresolvedTargets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ambiguousTargets": {
+            "type": "array",
+            "items": {}
+          },
+          "outputIntent": {
+            "type": "string",
+            "enum": [
+              "dashboard",
+              "answer"
+            ]
+          },
+          "broadUniverse": {
+            "type": "boolean"
+          },
+          "issues": {
+            "type": "array",
+            "items": {}
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "originalQuery",
+          "normalizedQuery",
+          "rewrittenQuery",
+          "status",
+          "confidence",
+          "capabilityHint",
+          "targetCandidates",
+          "resolvedSymbols",
+          "unresolvedTargets",
+          "ambiguousTargets",
+          "outputIntent",
+          "broadUniverse",
+          "issues"
+        ],
+        "additionalProperties": {}
+      },
+      "extraValidate": null
+    },
+    {
+      "id": "run_plan_contract",
+      "label": "运行计划契约",
+      "relativePath": ".data-agent/finance-run-plan.json",
+      "required": true,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "number",
+            "const": 1
+          },
+          "runId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "planned",
+              "needs_clarification",
+              "failed",
+              "refused"
+            ]
+          },
+          "capabilityId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "composition": {
+            "type": "object",
+            "properties": {
+              "schemaVersion": {
+                "type": "number",
+                "const": 1
+              },
+              "profile": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "version": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "id",
+                  "version"
+                ]
+              },
+              "domainPacks": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "version": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "version"
+                  ]
+                }
+              },
+              "deliveryPack": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "version": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "id",
+                  "version"
+                ]
+              },
+              "capability": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "id"
+                ]
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^sha256:[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "schemaVersion",
+              "profile",
+              "domainPacks",
+              "deliveryPack",
+              "capability",
+              "sha256"
+            ]
+          },
+          "question": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "symbols": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "timeRange": {
+            "anyOf": [
+              {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "period": {
+                        "type": "string"
+                      },
+                      "klinePeriod": {
+                        "type": "string"
+                      },
+                      "lookbackDays": {
+                        "type": "integer",
+                        "exclusiveMinimum": 0,
+                        "maximum": 9007199254740991
+                      },
+                      "startDate": {
+                        "type": "string"
+                      },
+                      "endDate": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": {}
+                  }
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "dataRequirements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "analysisSteps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "visualization": {
+            "type": "object",
+            "properties": {
+              "required": {
+                "type": "boolean"
+              },
+              "templateId": {
+                "type": "string"
+              },
+              "panels": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "required",
+              "panels"
+            ],
+            "additionalProperties": {}
+          },
+          "expectedArtifacts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "validationRules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "updatedAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "runId",
+          "status",
+          "capabilityId",
+          "composition",
+          "question",
+          "symbols",
+          "dataRequirements",
+          "analysisSteps",
+          "visualization",
+          "expectedArtifacts",
+          "validationRules",
+          "createdAt",
+          "updatedAt"
+        ],
+        "additionalProperties": {}
+      },
+      "extraValidate": "inspectRunPlan"
+    },
+    {
+      "id": "generation_state_contract",
+      "label": "生成状态契约",
+      "relativePath": ".data-agent/generation-state.json",
+      "required": true,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "number",
+            "const": 1
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "requestId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "running",
+              "needs_clarification",
+              "refused",
+              "repairing",
+              "completed",
+              "failed",
+              "cancelled"
+            ]
+          },
+          "activeStep": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "createdAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "updatedAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "completedAt": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "originalInstruction": {
+            "type": "string"
+          },
+          "cliPreference": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "selectedModel": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "repairAttemptCount": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "maxRepairAttempts": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "pending",
+                    "running",
+                    "success",
+                    "warning",
+                    "failed",
+                    "skipped"
+                  ]
+                },
+                "startedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "completedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "summary": {
+                  "type": "string"
+                },
+                "metadata": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {}
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "status",
+                "summary"
+              ],
+              "additionalProperties": {}
+            }
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "step": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "message": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                },
+                "required": [
+                  "step",
+                  "message"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "projectId",
+          "requestId",
+          "status",
+          "activeStep",
+          "createdAt",
+          "updatedAt",
+          "originalInstruction",
+          "repairAttemptCount",
+          "maxRepairAttempts",
+          "steps",
+          "error"
+        ],
+        "additionalProperties": {}
+      },
+      "extraValidate": "inspectGenerationState"
+    },
+    {
+      "id": "validation_contract",
+      "label": "验证报告契约",
+      "relativePath": ".data-agent/validation.json",
+      "required": false,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "number",
+            "const": 1
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "passed",
+              "failed"
+            ]
+          },
+          "passed": {
+            "type": "boolean"
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "reportPath": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "checks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "passed",
+                    "failed",
+                    "warning"
+                  ]
+                },
+                "summary": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "status",
+                "summary"
+              ],
+              "additionalProperties": {}
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "updatedAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "status",
+          "passed",
+          "projectId",
+          "reportPath",
+          "checks",
+          "createdAt",
+          "updatedAt"
+        ],
+        "additionalProperties": {}
+      },
+      "extraValidate": null
+    },
+    {
+      "id": "generation_queue_contract",
+      "label": "生成队列契约",
+      "relativePath": ".data-agent/generation-queue.json",
+      "required": false,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "number",
+            "const": 1
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "activeRequestId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "updatedAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "projectId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "requestId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "queued",
+                    "running",
+                    "completed",
+                    "failed",
+                    "cancelled"
+                  ]
+                },
+                "cliPreference": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "selectedModel": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "instructionPreview": {
+                  "type": "string"
+                },
+                "queuedAt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "startedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "completedAt": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "errorMessage": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "projectId",
+                "requestId",
+                "status",
+                "instructionPreview",
+                "queuedAt"
+              ],
+              "additionalProperties": {}
+            }
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "projectId",
+          "updatedAt",
+          "items"
+        ],
+        "additionalProperties": {}
+      },
+      "extraValidate": null
+    },
+    {
+      "id": "visual_validation_contract",
+      "label": "视觉验收契约",
+      "relativePath": ".data-agent/visual-validation.json",
+      "required": false,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "schemaVersion": {
+            "type": "number",
+            "const": 1
+          },
+          "projectId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "requestId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "passed",
+              "failed",
+              "warning"
+            ]
+          },
+          "passed": {
+            "type": "boolean"
+          },
+          "previewUrl": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "reportPath": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "screenshotDir": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "viewports": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "enum": [
+                    "desktop",
+                    "mobile"
+                  ]
+                },
+                "width": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "height": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "screenshotPath": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "passed",
+                    "failed",
+                    "warning"
+                  ]
+                },
+                "failures": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "warnings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "metrics": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {}
+                }
+              },
+              "required": [
+                "id",
+                "width",
+                "height",
+                "screenshotPath",
+                "status",
+                "failures",
+                "warnings",
+                "metrics"
+              ],
+              "additionalProperties": {}
+            }
+          },
+          "failures": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "createdAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "updatedAt": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "required": [
+          "schemaVersion",
+          "projectId",
+          "status",
+          "passed",
+          "previewUrl",
+          "reportPath",
+          "screenshotDir",
+          "viewports",
+          "failures",
+          "warnings",
+          "createdAt",
+          "updatedAt"
+        ],
+        "additionalProperties": {}
+      },
+      "extraValidate": null
+    },
+    {
+      "id": "sources_contract",
+      "label": "数据信源契约",
+      "relativePath": "evidence/sources.json",
+      "required": true,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "sources": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "endpoint": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "artifact_path": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "source",
+                "endpoint",
+                "artifact_path"
+              ],
+              "additionalProperties": {}
+            }
+          }
+        },
+        "required": [
+          "sources"
+        ],
+        "additionalProperties": {}
+      },
+      "extraValidate": "inspectSources"
+    },
+    {
+      "id": "data_quality_contract",
+      "label": "数据质量契约",
+      "relativePath": "evidence/data_quality.json",
+      "required": true,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok",
+              "warning",
+              "error"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "additionalProperties": {}
+      },
+      "extraValidate": "inspectDataQuality"
+    },
+    {
+      "id": "dashboard_data_contract",
+      "label": "最终数据契约",
+      "relativePath": "data_file/final/dashboard-data.json",
+      "required": true,
+      "schema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "propertyNames": {
+          "type": "string"
+        },
+        "additionalProperties": {}
+      },
+      "extraValidate": "inspectDashboardData"
+    }
+  ]
+}

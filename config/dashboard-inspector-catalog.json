@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "definition": {
+    "name": "inspect_dashboard_contract",
+    "description": "Inspect the generated dashboard contract before editing. When initial_dashboard_contract is already injected, do not call this tool again. Otherwise call this first instead of reading page.tsx/globals.css sequentially; it returns a bounded component/layout map, CSS selector ranges, card-surface refactor targets, and query_text_file-ready batched literal anchors for one targeted edit. It is diagnostic only and never means validation passed.",
+    "effect": "read",
+    "idempotency": "intrinsic",
+    "inputSchema": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "observationCache": "workspace_generation"
+  },
+  "candidates": {
+    "page": [
+      "src/App.vue",
+      "src/src/App.vue"
+    ],
+    "styles": [
+      "src/style.css",
+      "src/src/style.css",
+      "styles/globals.css"
+    ],
+    "marketProxy": ["vite.config.ts"],
+    "runPlan": [
+      ".data-agent/finance-run-plan.json"
+    ],
+    "finalData": [
+      "data_file/final/dashboard-data.json"
+    ],
+    "sources": [
+      "evidence/sources.json"
+    ],
+    "dataQuality": [
+      "evidence/data_quality.json"
+    ]
+  },
+  "preparedVisualEdit": {
+    "status": "continuous_canvas_ready",
+    "objective": "Use one continuous financial-workbench canvas with hairline section dividers, contiguous metric strips, dominant charts/matrices, and dense tables; remove repeated rounded/shadowed surfaces.",
+    "pageMarker": {
+      "present": false,
+      "targetRange": null,
+      "action": "Add data-visual-language=\"financial-workbench\" to the root <main>."
+    },
+    "cssTargetSelectors": [],
+    "cssRecipe": [
+      "Scope the override to the root financial-workbench marker.",
+      "Set major hero/panel/card surfaces to border-radius:0 and box-shadow:none.",
+      "Replace detached surface gaps with shared border-bottom/border-left dividers.",
+      "Keep pills, badges, tooltips, alerts, chart marks, and controls exempt."
+    ],
+    "minimalReadsBeforeEdit": []
+  },
+  "nextAction": "If this snapshot was injected as initial_dashboard_contract, do not call inspect_dashboard_contract again. Pass each minimalReadsBeforeEdit object directly to query_text_file (one batched call per path), then perform one targeted edit; never scan full TSX/CSS files.",
+  "advisory": "If this report is injected as initial_dashboard_contract, do not call inspect_dashboard_contract again. Pass each uiInspection.preparedVisualEdit.minimalReadsBeforeEdit object directly to query_text_file; every object's anchors are already batched for that path. This diagnostic does not run build/preview/visual validation and does not prove the dashboard is correct.",
+  "nextActions": [
+    "Do not call inspect_dashboard_contract when this report arrived as initial_dashboard_contract.",
+    "Pass each uiInspection.preparedVisualEdit.minimalReadsBeforeEdit object directly to query_text_file: one call per path with all listed literal anchors.",
+    "Make the smallest edit; only re-query exact changed anchors when necessary before submit_result."
+  ]
+}
