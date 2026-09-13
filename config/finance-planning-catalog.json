@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 1,
+  "analysisSteps": {
+    "stock_diagnosis": {
+      "ordinary": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、历史 K 线、财务摘要和公告事件。",
+        "综合分析价格趋势、量价、财务质量和事件风险。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成个股诊断数据文件和可视化页面。",
+        "验证页面、图表和更新时间，并在后台验收信源证据文件。"
+      ],
+      "resolved": [
+        "确认输入标的并标准化证券代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、历史 K 线、财务摘要和公告事件。",
+        "综合分析价格趋势、量价、财务质量和事件风险。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成个股诊断数据文件和可视化页面。",
+        "验证页面、图表和更新时间，并在后台验收信源证据文件。"
+      ],
+      "broad": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、历史 K 线、财务摘要和公告事件。",
+        "综合分析价格趋势、量价、财务质量和事件风险。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成个股诊断数据文件和可视化页面。",
+        "验证页面、图表和更新时间，并在后台验收信源证据文件。"
+      ]
+    },
+    "technical_analysis": {
+      "ordinary": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情和历史 K 线。",
+        "计算区间涨跌、均线、波动率、最大回撤等技术指标。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成技术分析数据文件和可视化页面。",
+        "验证页面、图表和更新时间，并在后台验收信源证据文件。"
+      ],
+      "resolved": [
+        "确认输入标的并标准化证券代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情和历史 K 线。",
+        "计算区间涨跌、均线、波动率、最大回撤等技术指标。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成技术分析数据文件和可视化页面。",
+        "验证页面、图表和更新时间，并在后台验收信源证据文件。"
+      ],
+      "broad": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情和历史 K 线。",
+        "计算区间涨跌、均线、波动率、最大回撤等技术指标。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成技术分析数据文件和可视化页面。",
+        "验证页面、图表和更新时间，并在后台验收信源证据文件。"
+      ]
+    },
+    "fundamental_analysis": {
+      "ordinary": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、财务摘要和公告事件。",
+        "分析营收、利润、ROE、毛利率、现金流质量和增长变化。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成基本面分析数据文件和可视化页面。",
+        "验证页面、报告期、更新时间和缺失字段说明，并在后台验收信源证据文件。"
+      ],
+      "resolved": [
+        "确认输入标的并标准化证券代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、财务摘要和公告事件。",
+        "分析营收、利润、ROE、毛利率、现金流质量和增长变化。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成基本面分析数据文件和可视化页面。",
+        "验证页面、报告期、更新时间和缺失字段说明，并在后台验收信源证据文件。"
+      ],
+      "broad": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、财务摘要和公告事件。",
+        "分析营收、利润、ROE、毛利率、现金流质量和增长变化。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成基本面分析数据文件和可视化页面。",
+        "验证页面、报告期、更新时间和缺失字段说明，并在后台验收信源证据文件。"
+      ]
+    },
+    "asset_comparison": {
+      "ordinary": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "逐只获取实时行情、历史 K 线和可用的财务/指标数据。",
+        "标准化收益、波动、回撤、成交量和相对强弱口径。",
+        "检查每个标的数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成包含 assets[] 和 comparison 的最终数据文件。",
+        "生成多标的对比看板并验证标的覆盖率、图表、数据口径和更新时间。"
+      ],
+      "resolved": [
+        "确认输入标的并标准化证券代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "逐只获取实时行情、历史 K 线和可用的财务/指标数据。",
+        "标准化收益、波动、回撤、成交量和相对强弱口径。",
+        "检查每个标的数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成包含 assets[] 和 comparison 的最终数据文件。",
+        "生成多标的对比看板并验证标的覆盖率、图表、数据口径和更新时间。"
+      ],
+      "broad": [
+        "调用本地 /api/v1/research/screeners/a-share/short-term-candidates 获取全 A 短线候选。",
+        "把候选结果中的前排股票作为本次分析 symbols，并记录候选评分、信号和数据缺口。",
+        "逐只获取实时行情、历史 K 线和可用的财务/指标数据。",
+        "标准化收益、波动、回撤、成交额、换手率和相对强弱口径。",
+        "检查每个标的数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成包含 screener、assets[]、comparison 和 selectionRanking 的最终数据文件。",
+        "生成选股排名看板并验证候选覆盖率、排名依据、图表、数据口径和更新时间。"
+      ]
+    },
+    "sector_rotation": {
+      "ordinary": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、历史 K 线、财务摘要和公告事件。",
+        "综合分析价格趋势、量价、财务质量和事件风险。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成个股诊断数据文件和可视化页面。",
+        "验证页面、图表和更新时间，并在后台验收信源证据文件。"
+      ],
+      "resolved": [
+        "确认输入标的并标准化证券代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、历史 K 线、财务摘要和公告事件。",
+        "综合分析价格趋势、量价、财务质量和事件风险。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成个股诊断数据文件和可视化页面。",
+        "验证页面、图表和更新时间，并在后台验收信源证据文件。"
+      ],
+      "broad": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、历史 K 线、财务摘要和公告事件。",
+        "综合分析价格趋势、量价、财务质量和事件风险。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成个股诊断数据文件和可视化页面。",
+        "验证页面、图表和更新时间，并在后台验收信源证据文件。"
+      ]
+    },
+    "strategy_research": {
+      "ordinary": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、历史 K 线、财务摘要和公告事件。",
+        "综合分析价格趋势、量价、财务质量和事件风险。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成个股诊断数据文件和可视化页面。",
+        "验证页面、图表和更新时间，并在后台验收信源证据文件。"
+      ],
+      "resolved": [
+        "确认输入标的并标准化证券代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、历史 K 线、财务摘要和公告事件。",
+        "综合分析价格趋势、量价、财务质量和事件风险。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成个股诊断数据文件和可视化页面。",
+        "验证页面、图表和更新时间，并在后台验收信源证据文件。"
+      ],
+      "broad": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、历史 K 线、财务摘要和公告事件。",
+        "综合分析价格趋势、量价、财务质量和事件风险。",
+        "检查数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成个股诊断数据文件和可视化页面。",
+        "验证页面、图表和更新时间，并在后台验收信源证据文件。"
+      ]
+    },
+    "backtest_review": {
+      "ordinary": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、历史 K 线和技术指标。",
+        "调用后端均线突破回测，生成净值曲线、回撤和交易明细。",
+        "检查回测样本、参数、费用和限制，并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成回测复盘数据文件和可视化页面。",
+        "验证页面、净值曲线、交易明细和更新时间，并在后台验收信源证据文件。"
+      ],
+      "resolved": [
+        "确认输入标的并标准化证券代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、历史 K 线和技术指标。",
+        "调用后端均线突破回测，生成净值曲线、回撤和交易明细。",
+        "检查回测样本、参数、费用和限制，并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成回测复盘数据文件和可视化页面。",
+        "验证页面、净值曲线、交易明细和更新时间，并在后台验收信源证据文件。"
+      ],
+      "broad": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "获取实时行情、历史 K 线和技术指标。",
+        "调用后端均线突破回测，生成净值曲线、回撤和交易明细。",
+        "检查回测样本、参数、费用和限制，并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成回测复盘数据文件和可视化页面。",
+        "验证页面、净值曲线、交易明细和更新时间，并在后台验收信源证据文件。"
+      ]
+    },
+    "portfolio_risk": {
+      "ordinary": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "把用户持仓、截图或口述信息整理为持仓结构，标注数量、成本、现价、现金和缺失字段。",
+        "逐只获取实时行情和历史 K 线，计算收益、波动、回撤、流动性和相关性。",
+        "检查每个持仓的数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成包含 portfolio、holdings、assets[]、comparison、correlation 和 liquidity 的最终数据文件。",
+        "生成持仓分析看板并验证持仓矩阵、仓位集中度、风险提示和调仓优先级。"
+      ],
+      "resolved": [
+        "确认输入标的并标准化证券代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "把用户持仓、截图或口述信息整理为持仓结构，标注数量、成本、现价、现金和缺失字段。",
+        "逐只获取实时行情和历史 K 线，计算收益、波动、回撤、流动性和相关性。",
+        "检查每个持仓的数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成包含 portfolio、holdings、assets[]、comparison、correlation 和 liquidity 的最终数据文件。",
+        "生成持仓分析看板并验证持仓矩阵、仓位集中度、风险提示和调仓优先级。"
+      ],
+      "broad": [
+        "使用 quant-symbol-resolver 解析用户问题中的证券名称或代码。",
+        "查询 quant-data-registry，确认本地数据能力可用。",
+        "把用户持仓、截图或口述信息整理为持仓结构，标注数量、成本、现价、现金和缺失字段。",
+        "逐只获取实时行情和历史 K 线，计算收益、波动、回撤、流动性和相关性。",
+        "检查每个持仓的数据质量并写入 evidence/sources.json 与 evidence/data_quality.json。",
+        "生成包含 portfolio、holdings、assets[]、comparison、correlation 和 liquidity 的最终数据文件。",
+        "生成持仓分析看板并验证持仓矩阵、仓位集中度、风险提示和调仓优先级。"
+      ]
+    }
+  },
+  "intentPatterns": {
+    "FINANCIAL_KEYWORD_PATTERN": {
+      "source": "股票|个股|A股|港股|美股|证券|标的|行情|走势|K\\s*线|技术指标|财务|基本面|公告|指数|ETF|基金|量化|回测|策略|风控|风险|仓位|涨跌|价格|大盘|板块|行业|买入|卖出|持有|推荐|估值",
+      "flags": "i"
+    },
+    "GOAL_KEYWORD_PATTERN": {
+      "source": "行情|走势|K\\s*线|技术|财务|基本面|公告|回测|策略|风险|估值|对比|比较|诊断|看板|可视化|价格|成交量|指标|收益|回撤|波动|分析|怎么样|如何|怎么",
+      "flags": "i"
+    },
+    "BROAD_MARKET_TARGET_PATTERN": {
+      "source": "大盘|全市场|A股|港股|美股|沪深|创业板|科创|中证|指数|ETF|基金|行业|板块|市场",
+      "flags": "i"
+    },
+    "COMPARISON_PATTERN": {
+      "source": "对比|比较|相比|相对|哪个|哪只|谁更|强弱|VS|vs|versus",
+      "flags": "i"
+    },
+    "RECOMMENDATION_PATTERN": {
+      "source": "推荐|买什么|买入|卖出|持有|能不能买|能买吗|值得买吗|可以买|要不要",
+      "flags": "i"
+    },
+    "INVESTMENT_CONSTRAINT_PATTERN": {
+      "source": "短线|中线|长线|日内|波段|价值|成长|稳健|激进|保守|风险|回撤|仓位|周期|一周|一个月|三个月|半年|一年|预算|资金|偏好|低风险|高风险|A股|港股|美股|ETF|指数",
+      "flags": "i"
+    },
+    "IMAGE_CONTEXT_TARGET_PATTERN": {
+      "source": "图片|截图|持仓|账户|仓位|组合|调仓|证券|交易|盈亏|成本|可用|现金|总资产|市值",
+      "flags": "i"
+    }
+  },
+  "operationalMarkers": [
+    "图片附件处理要求",
+    "可见过程叙述要求",
+    "执行过程要求",
+    "平台执行要求",
+    "生成过程要求",
+    "系统附加要求",
+    "工作区文件要求",
+    "重要执行规则",
+    "重要约束",
+    "Visible process instructions",
+    "Process instructions"
+  ],
+  "aliases": [
+    {
+      "keyword": "贵州茅台",
+      "symbol": "600519",
+      "name": "贵州茅台"
+    },
+    {
+      "keyword": "茅台",
+      "symbol": "600519",
+      "name": "贵州茅台"
+    },
+    {
+      "keyword": "宁德时代",
+      "symbol": "300750",
+      "name": "宁德时代"
+    },
+    {
+      "keyword": "通富微电",
+      "symbol": "002156",
+      "name": "通富微电"
+    },
+    {
+      "keyword": "平安银行",
+      "symbol": "000001",
+      "name": "平安银行"
+    },
+    {
+      "keyword": "招商银行",
+      "symbol": "600036",
+      "name": "招商银行"
+    },
+    {
+      "keyword": "杭钢股份",
+      "symbol": "600126",
+      "name": "杭钢股份"
+    },
+    {
+      "keyword": "京沪高铁",
+      "symbol": "601816",
+      "name": "京沪高铁"
+    },
+    {
+      "keyword": "三七互娱",
+      "symbol": "002555",
+      "name": "三七互娱"
+    },
+    {
+      "keyword": "中国黄金",
+      "symbol": "600916",
+      "name": "中国黄金"
+    },
+    {
+      "keyword": "完美世界",
+      "symbol": "002624",
+      "name": "完美世界"
+    },
+    {
+      "keyword": "沪深300ETF",
+      "symbol": "510300",
+      "name": "沪深300ETF"
+    },
+    {
+      "keyword": "沪深300 ETF",
+      "symbol": "510300",
+      "name": "沪深300ETF"
+    },
+    {
+      "keyword": "300ETF",
+      "symbol": "510300",
+      "name": "沪深300ETF"
+    },
+    {
+      "keyword": "沪深300",
+      "symbol": "000300",
+      "name": "沪深300"
+    },
+    {
+      "keyword": "沪深 300",
+      "symbol": "000300",
+      "name": "沪深300"
+    },
+    {
+      "keyword": "创业板指数",
+      "symbol": "399006",
+      "name": "创业板指"
+    },
+    {
+      "keyword": "创业板指",
+      "symbol": "399006",
+      "name": "创业板指"
+    },
+    {
+      "keyword": "中证500",
+      "symbol": "000905",
+      "name": "中证500"
+    },
+    {
+      "keyword": "中证 500",
+      "symbol": "000905",
+      "name": "中证500"
+    },
+    {
+      "keyword": "科创50",
+      "symbol": "000688",
+      "name": "科创50"
+    },
+    {
+      "keyword": "科创 50",
+      "symbol": "000688",
+      "name": "科创50"
+    }
+  ]
+}

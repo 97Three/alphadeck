@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "definition": {
+    "name": "quant_extract_uploaded_image",
+    "description": "Read AlphaDeck uploaded-image attachments, verify the files inside the PI Agent workspace, and return the portfolio screenshot metadata/extraction contract. This tool performs no OCR and never invents uncertain fields.",
+    "effect": "read",
+    "idempotency": "intrinsic",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "attachmentContextPath": {
+          "type": "string",
+          "description": "Workspace-relative attachment manifest path; defaults to .data-agent/attachments.json."
+        },
+        "imagePath": {
+          "type": "string",
+          "description": "Optional single image path inside the workspace."
+        },
+        "prompt": {
+          "type": "string",
+          "description": "Information the user wants extracted from the image."
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "payload": {
+    "schemaVersion": 1,
+    "runtime": "PI Agent",
+    "tool": "image-extraction",
+    "status": "metadata_ready",
+    "createdAt": "2026-11-03T00:00:00.000Z",
+    "attachmentContextPath": ".data-agent/attachments.json",
+    "prompt": null,
+    "images": [],
+    "visualRecognition": {
+      "status": "manual_confirmation_required",
+      "reason": "PI Agent 已确认图片文件、路径、格式、尺寸和哈希。当前未启用视觉模型或第三方 OCR，无法确认的截图字段必须交由用户确认。",
+      "fallbackRule": "所有无法可靠读取的截图字段必须保留 null，并在 evidence/data_quality.json 中列出需要用户确认的字段。"
+    },
+    "imageExtraction": {
+      "source": "uploaded_image",
+      "extractedFields": {
+        "account_total_asset": null,
+        "cash_available": null,
+        "market_value": null,
+        "daily_pnl": null,
+        "total_pnl": null,
+        "position_ratio": null,
+        "holdings": []
+      },
+      "needs_manual_confirmation": true,
+      "manual_confirmation_fields": [
+        "account_total_asset",
+        "cash_available",
+        "market_value",
+        "daily_pnl",
+        "total_pnl",
+        "position_ratio",
+        "holdings[].name",
+        "holdings[].symbol_if_visible_or_resolved",
+        "holdings[].quantity",
+        "holdings[].cost_price",
+        "holdings[].current_price",
+        "holdings[].market_value",
+        "holdings[].pnl",
+        "holdings[].pnl_percent"
+      ]
+    },
+    "dashboardContract": {
+      "requiredFinalDataFields": [
+        "portfolio",
+        "holdings",
+        "assets",
+        "comparison",
+        "imageExtraction"
+      ],
+      "evidenceFiles": [
+        "evidence/image_extraction.json",
+        "evidence/data_quality.json",
+        "evidence/sources.json"
+      ]
+    }
+  }
+}

@@ -1,0 +1,5183 @@
+{
+  "schemaVersion": 1,
+  "profile": {
+    "id": "alphadeck.finance-research",
+    "version": "1.0.0",
+    "name": "AlphaDeck Finance Research",
+    "domainPackIds": [
+      "finance.quant"
+    ],
+    "defaultCapabilityId": "stock_diagnosis",
+    "deliveryPackId": "workspace.vue-dashboard",
+    "memoryPolicyId": "alphadeck.personalization",
+    "knowledgePolicyId": "alphadeck.governed-knowledge"
+  },
+  "domainPack": {
+    "id": "finance.quant",
+    "version": "1.0.0",
+    "name": "Quant Finance",
+    "description": "证券解析、行情、财务、指标、回测、组合风险和金融可视化能力。",
+    "capabilities": [
+      {
+        "id": "stock_diagnosis",
+        "name": "个股诊断",
+        "description": "围绕单只股票完成行情、K 线、财务和公告的综合诊断。",
+        "status": "ready",
+        "domainPackId": "finance.quant",
+        "requiredSkillIds": [
+          "query-rewrite",
+          "run-planner",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-indicators",
+          "quant-fundamentals",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "requiredConnectorOperationIds": [
+          "finance.market-data.api.v1.symbols.resolve",
+          "finance.market-data.api.v1.analysis.context.entity",
+          "finance.market-data.api.v1.quotes.realtime.entity",
+          "finance.market-data.api.v1.quotes.history.entity",
+          "finance.market-data.api.v1.indicators.technical.entity",
+          "finance.market-data.api.v1.fundamentals.financials.entity",
+          "finance.market-data.api.v1.indicators.fundamental.entity",
+          "finance.market-data.api.v1.events.announcements.entity"
+        ],
+        "supportedOutputs": [
+          "answer",
+          "dashboard",
+          "report"
+        ]
+      },
+      {
+        "id": "technical_analysis",
+        "name": "技术分析",
+        "description": "聚焦价格趋势、成交量、均线、波动和风险指标。",
+        "status": "ready",
+        "domainPackId": "finance.quant",
+        "requiredSkillIds": [
+          "query-rewrite",
+          "run-planner",
+          "image-extraction",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-indicators",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "requiredConnectorOperationIds": [
+          "finance.market-data.api.v1.symbols.resolve",
+          "finance.market-data.api.v1.analysis.context.entity",
+          "finance.market-data.api.v1.quotes.realtime.entity",
+          "finance.market-data.api.v1.quotes.history.entity",
+          "finance.market-data.api.v1.indicators.technical.entity"
+        ],
+        "supportedOutputs": [
+          "answer",
+          "dashboard",
+          "report"
+        ]
+      },
+      {
+        "id": "fundamental_analysis",
+        "name": "基本面分析",
+        "description": "聚焦财务质量、盈利能力、现金流和成长趋势。",
+        "status": "ready",
+        "domainPackId": "finance.quant",
+        "requiredSkillIds": [
+          "query-rewrite",
+          "run-planner",
+          "image-extraction",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-fundamentals",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "requiredConnectorOperationIds": [
+          "finance.market-data.api.v1.symbols.resolve",
+          "finance.market-data.api.v1.analysis.context.entity",
+          "finance.market-data.api.v1.quotes.realtime.entity",
+          "finance.market-data.api.v1.fundamentals.financials.entity",
+          "finance.market-data.api.v1.indicators.fundamental.entity",
+          "finance.market-data.api.v1.events.announcements.entity"
+        ],
+        "supportedOutputs": [
+          "answer",
+          "dashboard",
+          "report"
+        ]
+      },
+      {
+        "id": "asset_comparison",
+        "name": "选股分析",
+        "description": "横向比较多只股票、ETF 或指数的收益、波动、估值和财务质量。",
+        "status": "ready",
+        "domainPackId": "finance.quant",
+        "requiredSkillIds": [
+          "query-rewrite",
+          "run-planner",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-indicators",
+          "quant-fundamentals",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "requiredConnectorOperationIds": [
+          "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+          "finance.market-data.api.v1.symbols.resolve",
+          "finance.market-data.api.v1.analysis.context.entity",
+          "finance.market-data.api.v1.quotes.realtime.entity",
+          "finance.market-data.api.v1.quotes.history.entity",
+          "finance.market-data.api.v1.fundamentals.financials.entity",
+          "finance.market-data.api.v1.indicators.fundamental.entity"
+        ],
+        "supportedOutputs": [
+          "answer",
+          "dashboard",
+          "report"
+        ]
+      },
+      {
+        "id": "sector_rotation",
+        "name": "行业/板块分析",
+        "description": "研究指数、行业、概念、ETF 的趋势、相对强弱和成分贡献。",
+        "status": "planned",
+        "domainPackId": "finance.quant",
+        "requiredSkillIds": [
+          "query-rewrite",
+          "run-planner",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-indicators",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "requiredConnectorOperationIds": [
+          "finance.market-data.api.v1.symbols.resolve",
+          "finance.market-data.api.v1.analysis.context.entity",
+          "finance.market-data.api.v1.quotes.realtime.entity",
+          "finance.market-data.api.v1.quotes.history.entity",
+          "finance.market-data.api.v1.indicators.technical.entity"
+        ],
+        "supportedOutputs": [
+          "answer",
+          "dashboard",
+          "report"
+        ]
+      },
+      {
+        "id": "strategy_research",
+        "name": "策略研究",
+        "description": "把投资想法拆成因子、信号、样本、交易规则和待验证假设。",
+        "status": "planned",
+        "domainPackId": "finance.quant",
+        "requiredSkillIds": [
+          "query-rewrite",
+          "run-planner",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-indicators",
+          "quant-backtest",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "requiredConnectorOperationIds": [
+          "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+          "finance.market-data.api.v1.symbols.resolve",
+          "finance.market-data.api.v1.analysis.context.entity",
+          "finance.market-data.api.v1.quotes.history.entity",
+          "finance.market-data.api.v1.indicators.technical.entity",
+          "finance.market-data.api.v1.backtests.ma.crossover.entity"
+        ],
+        "supportedOutputs": [
+          "answer",
+          "dashboard",
+          "report"
+        ]
+      },
+      {
+        "id": "backtest_review",
+        "name": "策略回测",
+        "description": "复盘策略净值、回撤、胜率、换手、年度收益和交易明细。",
+        "status": "ready",
+        "domainPackId": "finance.quant",
+        "requiredSkillIds": [
+          "query-rewrite",
+          "run-planner",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-indicators",
+          "quant-backtest",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "requiredConnectorOperationIds": [
+          "finance.market-data.api.v1.symbols.resolve",
+          "finance.market-data.api.v1.analysis.context.entity",
+          "finance.market-data.api.v1.quotes.realtime.entity",
+          "finance.market-data.api.v1.quotes.history.entity",
+          "finance.market-data.api.v1.indicators.technical.entity",
+          "finance.market-data.api.v1.backtests.ma.crossover.entity"
+        ],
+        "supportedOutputs": [
+          "answer",
+          "dashboard",
+          "report"
+        ]
+      },
+      {
+        "id": "portfolio_risk",
+        "name": "持仓分析",
+        "description": "分析持仓集中度、波动、回撤、相关性、VaR 和风险暴露。",
+        "status": "ready",
+        "domainPackId": "finance.quant",
+        "requiredSkillIds": [
+          "query-rewrite",
+          "run-planner",
+          "image-extraction",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-indicators",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "requiredConnectorOperationIds": [
+          "finance.market-data.api.v1.symbols.resolve",
+          "finance.market-data.api.v1.analysis.context.entity",
+          "finance.market-data.api.v1.quotes.realtime.entity",
+          "finance.market-data.api.v1.quotes.history.entity",
+          "finance.market-data.api.v1.indicators.technical.entity",
+          "finance.market-data.api.v1.fundamentals.financials.entity",
+          "finance.market-data.api.v1.events.announcements.entity"
+        ],
+        "supportedOutputs": [
+          "answer",
+          "dashboard",
+          "report"
+        ]
+      }
+    ],
+    "resolverIds": [
+      "finance.security-resolver"
+    ],
+    "connectors": [
+      {
+        "id": "finance.market-data",
+        "version": "1.0.0",
+        "domain": "finance.quant",
+        "operations": [
+          {
+            "id": "finance.market-data.api.v1.symbols.resolve",
+            "title": "GET /api/v1/symbols/resolve",
+            "description": "AlphaDeck market-data operation GET /api/v1/symbols/resolve",
+            "effect": "read",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false
+            }
+          },
+          {
+            "id": "finance.market-data.api.v1.analysis.context.entity",
+            "title": "GET /api/v1/analysis/context/{symbol}",
+            "description": "AlphaDeck market-data operation GET /api/v1/analysis/context/{symbol}",
+            "effect": "read",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false
+            }
+          },
+          {
+            "id": "finance.market-data.api.v1.quotes.realtime.entity",
+            "title": "GET /api/v1/quotes/realtime/{symbol}",
+            "description": "AlphaDeck market-data operation GET /api/v1/quotes/realtime/{symbol}",
+            "effect": "read",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false
+            }
+          },
+          {
+            "id": "finance.market-data.api.v1.quotes.history.entity",
+            "title": "GET /api/v1/quotes/history/{symbol}",
+            "description": "AlphaDeck market-data operation GET /api/v1/quotes/history/{symbol}",
+            "effect": "read",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false
+            }
+          },
+          {
+            "id": "finance.market-data.api.v1.indicators.technical.entity",
+            "title": "GET /api/v1/indicators/technical/{symbol}",
+            "description": "AlphaDeck market-data operation GET /api/v1/indicators/technical/{symbol}",
+            "effect": "read",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false
+            }
+          },
+          {
+            "id": "finance.market-data.api.v1.fundamentals.financials.entity",
+            "title": "GET /api/v1/fundamentals/financials/{symbol}",
+            "description": "AlphaDeck market-data operation GET /api/v1/fundamentals/financials/{symbol}",
+            "effect": "read",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false
+            }
+          },
+          {
+            "id": "finance.market-data.api.v1.indicators.fundamental.entity",
+            "title": "GET /api/v1/indicators/fundamental/{symbol}",
+            "description": "AlphaDeck market-data operation GET /api/v1/indicators/fundamental/{symbol}",
+            "effect": "read",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false
+            }
+          },
+          {
+            "id": "finance.market-data.api.v1.events.announcements.entity",
+            "title": "GET /api/v1/events/announcements/{symbol}",
+            "description": "AlphaDeck market-data operation GET /api/v1/events/announcements/{symbol}",
+            "effect": "read",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false
+            }
+          },
+          {
+            "id": "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+            "title": "GET /api/v1/research/screeners/a-share/short-term-candidates",
+            "description": "AlphaDeck market-data operation GET /api/v1/research/screeners/a-share/short-term-candidates",
+            "effect": "read",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false
+            }
+          },
+          {
+            "id": "finance.market-data.api.v1.backtests.ma.crossover.entity",
+            "title": "GET /api/v1/backtests/ma-crossover/{symbol}",
+            "description": "AlphaDeck market-data operation GET /api/v1/backtests/ma-crossover/{symbol}",
+            "effect": "read",
+            "inputSchema": {
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        ]
+      }
+    ],
+    "skillIds": [
+      "query-rewrite",
+      "run-planner",
+      "quant-symbol-resolver",
+      "quant-market-data",
+      "quant-indicators",
+      "quant-fundamentals",
+      "data-quality",
+      "dashboard-visualization",
+      "image-extraction",
+      "quant-backtest"
+    ],
+    "toolNames": [
+      "quant_api_get",
+      "quant_extract_uploaded_image",
+      "inspect_dashboard_contract",
+      "apply_dashboard_spec"
+    ],
+    "validatorIds": [
+      "finance.symbol-consistency",
+      "finance.market-proxy",
+      "finance.reporting-period-consistency",
+      "finance.investment-safety"
+    ],
+    "visualizationProfileIds": [
+      "single-stock-diagnosis",
+      "technical-timing",
+      "fundamental-research",
+      "stock-selection",
+      "sector-rotation",
+      "strategy-research",
+      "backtest-review",
+      "holding-analysis"
+    ]
+  },
+  "deliveryPack": {
+    "id": "workspace.vue-dashboard",
+    "version": "1.0.0",
+    "name": "Vue/Vite Data Workspace",
+    "description": "可验证、可预览的 Vue/Vite 数据应用交付包，不包含任何金融业务语义。",
+    "supportedOutputs": [
+      "answer",
+      "table",
+      "chart",
+      "dashboard",
+      "report",
+      "dataset"
+    ],
+    "workspaceDirectories": [
+      ".data-agent",
+      "data_file/raw",
+      "data_file/intermediate",
+      "data_file/final",
+      "evidence",
+      "scripts",
+      "dashboard"
+    ],
+    "artifactPaths": [
+      ".data-agent/workspace.json",
+      ".data-agent/profile.json",
+      ".data-agent/events.jsonl",
+      "data_file/final/dashboard-data.json",
+      "evidence/sources.json"
+    ],
+    "validatorIds": [
+      "workspace.artifact-policy",
+      "workspace.build",
+      "workspace.preview-readiness"
+    ]
+  },
+  "capabilities": [
+    {
+      "id": "stock_diagnosis",
+      "name": "个股诊断",
+      "shortName": "个股",
+      "description": "围绕单只股票完成行情、K 线、财务和公告的综合诊断。",
+      "inputHint": "例如：贵州茅台最近财务怎么样？生成一个个股诊断看板。",
+      "tags": [
+        "实时行情",
+        "K 线",
+        "财务",
+        "公告"
+      ],
+      "status": "ready",
+      "groupId": "core_analysis",
+      "agentType": "quant_analysis",
+      "subAgentKey": "stock_diagnosis",
+      "executionCapabilityId": "stock_diagnosis",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "quant-fundamentals",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/indicators/technical/{symbol}",
+        "GET /api/v1/fundamentals/financials/{symbol}",
+        "GET /api/v1/indicators/fundamental/{symbol}",
+        "GET /api/v1/events/announcements/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ],
+      "validationRules": [
+        "必须先解析股票标的，再获取真实数据。",
+        "必须生成数据信源渠道和质量证据文件。",
+        "页面必须包含行情、K 线/量价、财务摘要、数据质量和更新时间；技术信源明细只保留在 evidence 文件中。",
+        "可视化必须使用 single-stock-diagnosis 模板，首屏露出行情、K 线、财务/公告和数据质量，不要生成营销式大标题页。",
+        "生成后需要通过 Vue/Vite build 与预览 HTTP 200 检查。"
+      ],
+      "promptGuidance": [
+        "默认先做单只股票综合诊断。",
+        "如果用户只给中文简称，先解析为标准股票代码。",
+        "结论区分事实数据、计算结果和推断。",
+        "页面按个股诊断模板组织：紧凑摘要、行情卡、K 线、量化信号、财务趋势、公告和数据质量。"
+      ]
+    },
+    {
+      "id": "technical_analysis",
+      "name": "技术分析",
+      "shortName": "技术",
+      "description": "聚焦价格趋势、成交量、均线、波动和风险指标。",
+      "inputHint": "例如：宁德时代最近 120 天走势如何？生成技术分析看板。",
+      "tags": [
+        "K 线",
+        "均线",
+        "成交量",
+        "风险"
+      ],
+      "status": "ready",
+      "groupId": "core_analysis",
+      "agentType": "quant_analysis",
+      "subAgentKey": "technical_analysis",
+      "executionCapabilityId": "technical_analysis",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "image-extraction",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/indicators/technical/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ],
+      "validationRules": [
+        "必须获取足够长度的历史 K 线。",
+        "必须生成数据质量证据，样本不足时要明确说明。",
+        "页面必须包含 K 线或明确的 K 线错误面板、成交量、至少两条均线和风险指标。",
+        "可视化必须使用 technical-timing 模板，明确触发条件、失效条件和观察条件。",
+        "不得用静态样例数据替代行情接口结果。"
+      ],
+      "promptGuidance": [
+        "优先围绕趋势、成交量、波动率和最大回撤进行分析。",
+        "A 股图表使用红涨绿跌。",
+        "样本不足时必须明确说明限制。",
+        "不要只输出看多/看空结论；页面必须让用户看见 K 线、均线、量能和风险触发依据。"
+      ]
+    },
+    {
+      "id": "fundamental_analysis",
+      "name": "基本面分析",
+      "shortName": "基本面",
+      "description": "聚焦财务质量、盈利能力、现金流和成长趋势。",
+      "inputHint": "例如：对比贵州茅台最近几个报告期的盈利质量。",
+      "tags": [
+        "财务",
+        "盈利",
+        "现金流",
+        "成长"
+      ],
+      "status": "ready",
+      "groupId": "core_analysis",
+      "agentType": "quant_analysis",
+      "subAgentKey": "fundamental_analysis",
+      "executionCapabilityId": "fundamental_analysis",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "image-extraction",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-fundamentals",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/fundamentals/financials/{symbol}",
+        "GET /api/v1/indicators/fundamental/{symbol}",
+        "GET /api/v1/events/announcements/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ],
+      "validationRules": [
+        "必须获取最近多个报告期财务数据。",
+        "必须生成数据信源渠道和质量证据，说明报告期与缺失字段。",
+        "页面必须展示营收、利润、利润率、ROE 或现金流质量等核心指标。",
+        "可视化必须使用 fundamental-research 模板，展示盈利质量、现金流/缺失说明、报告期和公告事件。",
+        "必须显示报告期和缺失字段说明；技术信源明细只保留在 evidence 文件中。"
+      ],
+      "promptGuidance": [
+        "优先关注增长、盈利质量、现金流和资产负债变化。",
+        "不要把单期数据过度外推成确定性投资结论。",
+        "财务指标缺失时给出可见的数据限制说明。",
+        "页面不要停留在财务表格，要把营收利润趋势、利润率/ROE、公告和估值情景组织成研究看板。"
+      ]
+    },
+    {
+      "id": "asset_comparison",
+      "name": "选股分析",
+      "shortName": "选股",
+      "description": "横向比较多只股票、ETF 或指数的收益、波动、估值和财务质量。",
+      "inputHint": "例如：对比贵州茅台、五粮液和泸州老窖最近的行情与基本面。",
+      "tags": [
+        "横向比较",
+        "标准化评分",
+        "多标的"
+      ],
+      "status": "ready",
+      "groupId": "market_research",
+      "agentType": "quant_analysis",
+      "subAgentKey": "asset_comparison",
+      "executionCapabilityId": "asset_comparison",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "quant-fundamentals",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/research/screeners/a-share/short-term-candidates",
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/fundamentals/financials/{symbol}",
+        "GET /api/v1/indicators/fundamental/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ],
+      "validationRules": [
+        "必须解析全部输入标的，并为每个标的写入真实数据。",
+        "最终数据必须包含 assets[] 与 comparison，且覆盖 run_plan.symbols 中的全部标的。",
+        "比较维度必须包含数据时间、收益、波动、回撤、成交量或成交额口径说明。",
+        "页面必须展示多标的指标矩阵和至少一个对比图表。",
+        "可视化必须使用 stock-selection 模板，展示候选覆盖、排名依据、剔除原因或数据限制。"
+      ],
+      "promptGuidance": [
+        "优先把多标的拆成可比较指标表。",
+        "读取 data_file/final/dashboard-data.json 中的 assets[] 和 comparison，不要只展示主标的。",
+        "如果某个标的数据缺失，必须在数据质量区域说明。",
+        "页面应包含候选矩阵、收益/回撤/波动对比、流动性与相对强弱，不要基于单一指标给推荐。"
+      ]
+    },
+    {
+      "id": "sector_rotation",
+      "name": "行业/板块分析",
+      "shortName": "板块",
+      "description": "研究指数、行业、概念、ETF 的趋势、相对强弱和成分贡献。",
+      "inputHint": "例如：分析沪深300和创业板指最近一年的相对强弱。",
+      "tags": [
+        "指数",
+        "ETF",
+        "行业轮动",
+        "相对强弱"
+      ],
+      "status": "planned",
+      "groupId": "market_research",
+      "agentType": "quant_analysis",
+      "subAgentKey": "sector_rotation",
+      "executionCapabilityId": "technical_analysis",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/indicators/technical/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ],
+      "validationRules": [
+        "指数和 ETF 必须识别 asset_type，并跳过个股财务硬性要求。",
+        "页面必须展示趋势、成交量、波动和回撤。",
+        "行业成分和资金流暂未接入时必须显式说明能力边界。",
+        "可视化必须使用 sector-rotation 模板，强调相对强弱、阶段排名和指数/ETF 代理口径。"
+      ],
+      "promptGuidance": [
+        "优先使用指数或 ETF 作为板块代理。",
+        "把相对强弱、波动和阶段回撤作为核心观察项。",
+        "页面不强制个股财务模块，重点展示轮动、流动性、回撤和能力边界。"
+      ]
+    },
+    {
+      "id": "strategy_research",
+      "name": "策略研究",
+      "shortName": "策略",
+      "description": "把投资想法拆成因子、信号、样本、交易规则和待验证假设。",
+      "inputHint": "例如：研究一个基于均线突破和成交量确认的 A 股趋势策略。",
+      "tags": [
+        "因子",
+        "信号",
+        "交易规则",
+        "假设"
+      ],
+      "status": "planned",
+      "groupId": "strategy_risk",
+      "agentType": "quant_backtest",
+      "subAgentKey": "strategy_research",
+      "executionCapabilityId": "technical_analysis",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "quant-backtest",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/research/screeners/a-share/short-term-candidates",
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/indicators/technical/{symbol}",
+        "GET /api/v1/backtests/ma-crossover/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ],
+      "validationRules": [
+        "必须先定义信号和样本口径，再讨论策略效果。",
+        "未实现正式回测前，页面只能展示研究计划和真实历史数据。",
+        "不得把未经回测的规则描述成已验证收益。",
+        "可视化必须使用 strategy-research 模板，展示信号规则、样本参数、待验证清单和风险假设。"
+      ],
+      "promptGuidance": [
+        "把策略想法拆为入场、出场、过滤、风控和评估指标。",
+        "当前阶段优先使用均线突破回测作为可执行策略研究样例。",
+        "如果回测数据未准备好，页面要明确展示未验证项，不能包装成策略收益。"
+      ]
+    },
+    {
+      "id": "backtest_review",
+      "name": "策略回测",
+      "shortName": "回测",
+      "description": "复盘策略净值、回撤、胜率、换手、年度收益和交易明细。",
+      "inputHint": "例如：用最近两年的 20 日均线突破规则回测 510300。",
+      "tags": [
+        "净值",
+        "回撤",
+        "胜率",
+        "交易明细"
+      ],
+      "status": "ready",
+      "groupId": "strategy_risk",
+      "agentType": "quant_backtest",
+      "subAgentKey": "backtest_review",
+      "executionCapabilityId": "backtest_review",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "quant-backtest",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/indicators/technical/{symbol}",
+        "GET /api/v1/backtests/ma-crossover/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ],
+      "validationRules": [
+        "正式回测结果必须来自本地后端和可复现参数。",
+        "必须展示收益、回撤、交易次数、胜率、样本区间和交易明细。",
+        "必须说明当前回测暂未建模滑点、停牌、分红再投资等限制。",
+        "可视化必须使用 backtest-review 模板，包含策略参数、净值、回撤、交易明细和限制说明。"
+      ],
+      "promptGuidance": [
+        "默认使用 20/60 日均线突破作为最小可执行回测规则。",
+        "区分历史行情事实、策略回测结果和仍需人工判断的风险。",
+        "页面必须让用户能复核参数、样本、费用和交易，不只看最终收益。"
+      ]
+    },
+    {
+      "id": "portfolio_risk",
+      "name": "持仓分析",
+      "shortName": "持仓",
+      "description": "分析持仓集中度、波动、回撤、相关性、VaR 和风险暴露。",
+      "inputHint": "例如：分析一个贵州茅台、招商银行、510300 的组合风险。",
+      "tags": [
+        "组合",
+        "相关性",
+        "VaR",
+        "集中度"
+      ],
+      "status": "ready",
+      "groupId": "strategy_risk",
+      "agentType": "quant_dashboard",
+      "subAgentKey": "portfolio_risk",
+      "executionCapabilityId": "portfolio_risk",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "image-extraction",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/indicators/technical/{symbol}",
+        "GET /api/v1/fundamentals/financials/{symbol}",
+        "GET /api/v1/events/announcements/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ],
+      "validationRules": [
+        "必须说明持仓权重、样本区间和风险计算口径。",
+        "最终数据必须包含 portfolio、holdings[]、assets[] 和 comparison，并覆盖用户截图或输入中的全部可识别持仓。",
+        "不得把单标的波动直接等同于组合风险。",
+        "可视化必须使用 holding-analysis 模板，展示持仓矩阵、仓位/集中度、盈亏/成本、流动性和调仓优先级。"
+      ],
+      "promptGuidance": [
+        "先把用户持仓转成结构化权重表。",
+        "读取 data_file/final/dashboard-data.json 中的 assets[]、holdings[] 和 comparison，覆盖用户输入中的全部可识别持仓，不要只展示主标的。",
+        "如果用户来自截图或口述，页面要区分用户提供字段、行情接口字段和缺失字段；调仓建议必须先给风险约束和不构成交易指令说明。"
+      ]
+    }
+  ],
+  "serializedCapabilities": [
+    {
+      "id": "stock_diagnosis",
+      "name": "个股诊断",
+      "shortName": "个股",
+      "description": "围绕单只股票完成行情、K 线、财务和公告的综合诊断。",
+      "inputHint": "例如：贵州茅台最近财务怎么样？生成一个个股诊断看板。",
+      "tags": [
+        "实时行情",
+        "K 线",
+        "财务",
+        "公告"
+      ],
+      "status": "ready",
+      "groupId": "core_analysis",
+      "agentType": "quant_analysis",
+      "subAgentKey": "stock_diagnosis",
+      "executionCapabilityId": "stock_diagnosis",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "quant-fundamentals",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "validationRules": [
+        "必须先解析股票标的，再获取真实数据。",
+        "必须生成数据信源渠道和质量证据文件。",
+        "页面必须包含行情、K 线/量价、财务摘要、数据质量和更新时间；技术信源明细只保留在 evidence 文件中。",
+        "可视化必须使用 single-stock-diagnosis 模板，首屏露出行情、K 线、财务/公告和数据质量，不要生成营销式大标题页。",
+        "生成后需要通过 Vue/Vite build 与预览 HTTP 200 检查。"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/indicators/technical/{symbol}",
+        "GET /api/v1/fundamentals/financials/{symbol}",
+        "GET /api/v1/indicators/fundamental/{symbol}",
+        "GET /api/v1/events/announcements/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ]
+    },
+    {
+      "id": "technical_analysis",
+      "name": "技术分析",
+      "shortName": "技术",
+      "description": "聚焦价格趋势、成交量、均线、波动和风险指标。",
+      "inputHint": "例如：宁德时代最近 120 天走势如何？生成技术分析看板。",
+      "tags": [
+        "K 线",
+        "均线",
+        "成交量",
+        "风险"
+      ],
+      "status": "ready",
+      "groupId": "core_analysis",
+      "agentType": "quant_analysis",
+      "subAgentKey": "technical_analysis",
+      "executionCapabilityId": "technical_analysis",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "image-extraction",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "validationRules": [
+        "必须获取足够长度的历史 K 线。",
+        "必须生成数据质量证据，样本不足时要明确说明。",
+        "页面必须包含 K 线或明确的 K 线错误面板、成交量、至少两条均线和风险指标。",
+        "可视化必须使用 technical-timing 模板，明确触发条件、失效条件和观察条件。",
+        "不得用静态样例数据替代行情接口结果。"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/indicators/technical/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ]
+    },
+    {
+      "id": "fundamental_analysis",
+      "name": "基本面分析",
+      "shortName": "基本面",
+      "description": "聚焦财务质量、盈利能力、现金流和成长趋势。",
+      "inputHint": "例如：对比贵州茅台最近几个报告期的盈利质量。",
+      "tags": [
+        "财务",
+        "盈利",
+        "现金流",
+        "成长"
+      ],
+      "status": "ready",
+      "groupId": "core_analysis",
+      "agentType": "quant_analysis",
+      "subAgentKey": "fundamental_analysis",
+      "executionCapabilityId": "fundamental_analysis",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "image-extraction",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-fundamentals",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "validationRules": [
+        "必须获取最近多个报告期财务数据。",
+        "必须生成数据信源渠道和质量证据，说明报告期与缺失字段。",
+        "页面必须展示营收、利润、利润率、ROE 或现金流质量等核心指标。",
+        "可视化必须使用 fundamental-research 模板，展示盈利质量、现金流/缺失说明、报告期和公告事件。",
+        "必须显示报告期和缺失字段说明；技术信源明细只保留在 evidence 文件中。"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/fundamentals/financials/{symbol}",
+        "GET /api/v1/indicators/fundamental/{symbol}",
+        "GET /api/v1/events/announcements/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ]
+    },
+    {
+      "id": "asset_comparison",
+      "name": "选股分析",
+      "shortName": "选股",
+      "description": "横向比较多只股票、ETF 或指数的收益、波动、估值和财务质量。",
+      "inputHint": "例如：对比贵州茅台、五粮液和泸州老窖最近的行情与基本面。",
+      "tags": [
+        "横向比较",
+        "标准化评分",
+        "多标的"
+      ],
+      "status": "ready",
+      "groupId": "market_research",
+      "agentType": "quant_analysis",
+      "subAgentKey": "asset_comparison",
+      "executionCapabilityId": "asset_comparison",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "quant-fundamentals",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "validationRules": [
+        "必须解析全部输入标的，并为每个标的写入真实数据。",
+        "最终数据必须包含 assets[] 与 comparison，且覆盖 run_plan.symbols 中的全部标的。",
+        "比较维度必须包含数据时间、收益、波动、回撤、成交量或成交额口径说明。",
+        "页面必须展示多标的指标矩阵和至少一个对比图表。",
+        "可视化必须使用 stock-selection 模板，展示候选覆盖、排名依据、剔除原因或数据限制。"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/research/screeners/a-share/short-term-candidates",
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/fundamentals/financials/{symbol}",
+        "GET /api/v1/indicators/fundamental/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ]
+    },
+    {
+      "id": "sector_rotation",
+      "name": "行业/板块分析",
+      "shortName": "板块",
+      "description": "研究指数、行业、概念、ETF 的趋势、相对强弱和成分贡献。",
+      "inputHint": "例如：分析沪深300和创业板指最近一年的相对强弱。",
+      "tags": [
+        "指数",
+        "ETF",
+        "行业轮动",
+        "相对强弱"
+      ],
+      "status": "planned",
+      "groupId": "market_research",
+      "agentType": "quant_analysis",
+      "subAgentKey": "sector_rotation",
+      "executionCapabilityId": "technical_analysis",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "validationRules": [
+        "指数和 ETF 必须识别 asset_type，并跳过个股财务硬性要求。",
+        "页面必须展示趋势、成交量、波动和回撤。",
+        "行业成分和资金流暂未接入时必须显式说明能力边界。",
+        "可视化必须使用 sector-rotation 模板，强调相对强弱、阶段排名和指数/ETF 代理口径。"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/indicators/technical/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ]
+    },
+    {
+      "id": "strategy_research",
+      "name": "策略研究",
+      "shortName": "策略",
+      "description": "把投资想法拆成因子、信号、样本、交易规则和待验证假设。",
+      "inputHint": "例如：研究一个基于均线突破和成交量确认的 A 股趋势策略。",
+      "tags": [
+        "因子",
+        "信号",
+        "交易规则",
+        "假设"
+      ],
+      "status": "planned",
+      "groupId": "strategy_risk",
+      "agentType": "quant_backtest",
+      "subAgentKey": "strategy_research",
+      "executionCapabilityId": "technical_analysis",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "quant-backtest",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "validationRules": [
+        "必须先定义信号和样本口径，再讨论策略效果。",
+        "未实现正式回测前，页面只能展示研究计划和真实历史数据。",
+        "不得把未经回测的规则描述成已验证收益。",
+        "可视化必须使用 strategy-research 模板，展示信号规则、样本参数、待验证清单和风险假设。"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/indicators/technical/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ]
+    },
+    {
+      "id": "backtest_review",
+      "name": "策略回测",
+      "shortName": "回测",
+      "description": "复盘策略净值、回撤、胜率、换手、年度收益和交易明细。",
+      "inputHint": "例如：用最近两年的 20 日均线突破规则回测 510300。",
+      "tags": [
+        "净值",
+        "回撤",
+        "胜率",
+        "交易明细"
+      ],
+      "status": "ready",
+      "groupId": "strategy_risk",
+      "agentType": "quant_backtest",
+      "subAgentKey": "backtest_review",
+      "executionCapabilityId": "backtest_review",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "quant-backtest",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "validationRules": [
+        "正式回测结果必须来自本地后端和可复现参数。",
+        "必须展示收益、回撤、交易次数、胜率、样本区间和交易明细。",
+        "必须说明当前回测暂未建模滑点、停牌、分红再投资等限制。",
+        "可视化必须使用 backtest-review 模板，包含策略参数、净值、回撤、交易明细和限制说明。"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/indicators/technical/{symbol}",
+        "GET /api/v1/backtests/ma-crossover/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ]
+    },
+    {
+      "id": "portfolio_risk",
+      "name": "持仓分析",
+      "shortName": "持仓",
+      "description": "分析持仓集中度、波动、回撤、相关性、VaR 和风险暴露。",
+      "inputHint": "例如：分析一个贵州茅台、招商银行、510300 的组合风险。",
+      "tags": [
+        "组合",
+        "相关性",
+        "VaR",
+        "集中度"
+      ],
+      "status": "ready",
+      "groupId": "strategy_risk",
+      "agentType": "quant_dashboard",
+      "subAgentKey": "portfolio_risk",
+      "executionCapabilityId": "portfolio_risk",
+      "requiredSkills": [
+        "query-rewrite",
+        "run-planner",
+        "image-extraction",
+        "quant-symbol-resolver",
+        "quant-market-data",
+        "quant-indicators",
+        "data-quality",
+        "dashboard-visualization"
+      ],
+      "validationRules": [
+        "必须说明持仓权重、样本区间和风险计算口径。",
+        "最终数据必须包含 portfolio、holdings[]、assets[] 和 comparison，并覆盖用户截图或输入中的全部可识别持仓。",
+        "不得把单标的波动直接等同于组合风险。",
+        "可视化必须使用 holding-analysis 模板，展示持仓矩阵、仓位/集中度、盈亏/成本、流动性和调仓优先级。"
+      ],
+      "dataEndpoints": [
+        "GET /api/v1/symbols/resolve",
+        "GET /api/v1/analysis/context/{symbol}",
+        "GET /api/v1/quotes/realtime/{symbol}",
+        "GET /api/v1/quotes/history/{symbol}",
+        "GET /api/v1/indicators/technical/{symbol}",
+        "GET /api/v1/fundamentals/financials/{symbol}",
+        "GET /api/v1/events/announcements/{symbol}"
+      ],
+      "expectedArtifacts": [
+        ".data-agent/workspace.json",
+        ".data-agent/profile.json",
+        ".data-agent/task.json",
+        ".data-agent/plan.json",
+        ".data-agent/finance-query-rewrite.json",
+        ".data-agent/finance-run-plan.json",
+        ".data-agent/generation-state.json",
+        ".data-agent/generation-queue.json",
+        ".data-agent/events.jsonl",
+        ".data-agent/artifact-contracts.json",
+        ".data-agent/visual-validation.json",
+        ".data-agent/validation.json",
+        "evidence/sources.json",
+        "evidence/data_quality.json",
+        "data_file/final/dashboard-data.json",
+        "src/App.vue"
+      ]
+    }
+  ],
+  "applications": {
+    "stock_diagnosis": {
+      "resolved": {
+        "profile": {
+          "id": "alphadeck.finance-research",
+          "version": "1.0.0",
+          "name": "AlphaDeck Finance Research",
+          "domainPackIds": [
+            "finance.quant"
+          ],
+          "defaultCapabilityId": "stock_diagnosis",
+          "deliveryPackId": "workspace.vue-dashboard",
+          "memoryPolicyId": "alphadeck.personalization",
+          "knowledgePolicyId": "alphadeck.governed-knowledge"
+        },
+        "deliveryPack": {
+          "id": "workspace.vue-dashboard",
+          "version": "1.0.0",
+          "name": "Vue/Vite Data Workspace",
+          "description": "可验证、可预览的 Vue/Vite 数据应用交付包，不包含任何金融业务语义。",
+          "supportedOutputs": [
+            "answer",
+            "table",
+            "chart",
+            "dashboard",
+            "report",
+            "dataset"
+          ],
+          "workspaceDirectories": [
+            ".data-agent",
+            "data_file/raw",
+            "data_file/intermediate",
+            "data_file/final",
+            "evidence",
+            "scripts",
+            "dashboard"
+          ],
+          "artifactPaths": [
+            ".data-agent/workspace.json",
+            ".data-agent/profile.json",
+            ".data-agent/events.jsonl",
+            "data_file/final/dashboard-data.json",
+            "evidence/sources.json"
+          ],
+          "validatorIds": [
+            "workspace.artifact-policy",
+            "workspace.build",
+            "workspace.preview-readiness"
+          ]
+        },
+        "domainPacks": [
+          {
+            "id": "finance.quant",
+            "version": "1.0.0",
+            "name": "Quant Finance",
+            "description": "证券解析、行情、财务、指标、回测、组合风险和金融可视化能力。",
+            "capabilities": [
+              {
+                "id": "stock_diagnosis",
+                "name": "个股诊断",
+                "description": "围绕单只股票完成行情、K 线、财务和公告的综合诊断。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "technical_analysis",
+                "name": "技术分析",
+                "description": "聚焦价格趋势、成交量、均线、波动和风险指标。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "fundamental_analysis",
+                "name": "基本面分析",
+                "description": "聚焦财务质量、盈利能力、现金流和成长趋势。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "asset_comparison",
+                "name": "选股分析",
+                "description": "横向比较多只股票、ETF 或指数的收益、波动、估值和财务质量。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "sector_rotation",
+                "name": "行业/板块分析",
+                "description": "研究指数、行业、概念、ETF 的趋势、相对强弱和成分贡献。",
+                "status": "planned",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "strategy_research",
+                "name": "策略研究",
+                "description": "把投资想法拆成因子、信号、样本、交易规则和待验证假设。",
+                "status": "planned",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-backtest",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.backtests.ma.crossover.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "backtest_review",
+                "name": "策略回测",
+                "description": "复盘策略净值、回撤、胜率、换手、年度收益和交易明细。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-backtest",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.backtests.ma.crossover.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "portfolio_risk",
+                "name": "持仓分析",
+                "description": "分析持仓集中度、波动、回撤、相关性、VaR 和风险暴露。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              }
+            ],
+            "resolverIds": [
+              "finance.security-resolver"
+            ],
+            "connectors": [
+              {
+                "id": "finance.market-data",
+                "version": "1.0.0",
+                "domain": "finance.quant",
+                "operations": [
+                  {
+                    "id": "finance.market-data.api.v1.symbols.resolve",
+                    "title": "GET /api/v1/symbols/resolve",
+                    "description": "AlphaDeck market-data operation GET /api/v1/symbols/resolve",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.analysis.context.entity",
+                    "title": "GET /api/v1/analysis/context/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/analysis/context/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.quotes.realtime.entity",
+                    "title": "GET /api/v1/quotes/realtime/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/quotes/realtime/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.quotes.history.entity",
+                    "title": "GET /api/v1/quotes/history/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/quotes/history/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.indicators.technical.entity",
+                    "title": "GET /api/v1/indicators/technical/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/indicators/technical/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.fundamentals.financials.entity",
+                    "title": "GET /api/v1/fundamentals/financials/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/fundamentals/financials/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.indicators.fundamental.entity",
+                    "title": "GET /api/v1/indicators/fundamental/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/indicators/fundamental/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.events.announcements.entity",
+                    "title": "GET /api/v1/events/announcements/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/events/announcements/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                    "title": "GET /api/v1/research/screeners/a-share/short-term-candidates",
+                    "description": "AlphaDeck market-data operation GET /api/v1/research/screeners/a-share/short-term-candidates",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.backtests.ma.crossover.entity",
+                    "title": "GET /api/v1/backtests/ma-crossover/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/backtests/ma-crossover/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  }
+                ]
+              }
+            ],
+            "skillIds": [
+              "query-rewrite",
+              "run-planner",
+              "quant-symbol-resolver",
+              "quant-market-data",
+              "quant-indicators",
+              "quant-fundamentals",
+              "data-quality",
+              "dashboard-visualization",
+              "image-extraction",
+              "quant-backtest"
+            ],
+            "toolNames": [
+              "quant_api_get",
+              "quant_extract_uploaded_image",
+              "inspect_dashboard_contract",
+              "apply_dashboard_spec"
+            ],
+            "validatorIds": [
+              "finance.symbol-consistency",
+              "finance.market-proxy",
+              "finance.reporting-period-consistency",
+              "finance.investment-safety"
+            ],
+            "visualizationProfileIds": [
+              "single-stock-diagnosis",
+              "technical-timing",
+              "fundamental-research",
+              "stock-selection",
+              "sector-rotation",
+              "strategy-research",
+              "backtest-review",
+              "holding-analysis"
+            ]
+          }
+        ],
+        "capability": {
+          "id": "stock_diagnosis",
+          "name": "个股诊断",
+          "description": "围绕单只股票完成行情、K 线、财务和公告的综合诊断。",
+          "status": "ready",
+          "domainPackId": "finance.quant",
+          "requiredSkillIds": [
+            "query-rewrite",
+            "run-planner",
+            "quant-symbol-resolver",
+            "quant-market-data",
+            "quant-indicators",
+            "quant-fundamentals",
+            "data-quality",
+            "dashboard-visualization"
+          ],
+          "requiredConnectorOperationIds": [
+            "finance.market-data.api.v1.symbols.resolve",
+            "finance.market-data.api.v1.analysis.context.entity",
+            "finance.market-data.api.v1.quotes.realtime.entity",
+            "finance.market-data.api.v1.quotes.history.entity",
+            "finance.market-data.api.v1.indicators.technical.entity",
+            "finance.market-data.api.v1.fundamentals.financials.entity",
+            "finance.market-data.api.v1.indicators.fundamental.entity",
+            "finance.market-data.api.v1.events.announcements.entity"
+          ],
+          "supportedOutputs": [
+            "answer",
+            "dashboard",
+            "report"
+          ]
+        },
+        "composition": {
+          "schemaVersion": 1,
+          "profile": {
+            "id": "alphadeck.finance-research",
+            "version": "1.0.0"
+          },
+          "domainPacks": [
+            {
+              "id": "finance.quant",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPack": {
+            "id": "workspace.vue-dashboard",
+            "version": "1.0.0"
+          },
+          "capability": {
+            "id": "stock_diagnosis"
+          },
+          "sha256": "sha256:1c7702b9af5e237c45750d4fb17d4314a51f2ffc1c056ce8a864970ed1c904c7"
+        }
+      },
+      "quantSettings": {
+        "capabilityId": "stock_diagnosis",
+        "agentType": "quant_analysis",
+        "subAgentKey": "stock_diagnosis",
+        "executionCapabilityId": "stock_diagnosis",
+        "status": "ready",
+        "requiredSkills": [
+          "query-rewrite",
+          "run-planner",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-indicators",
+          "quant-fundamentals",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "dataEndpoints": [
+          "GET /api/v1/symbols/resolve",
+          "GET /api/v1/analysis/context/{symbol}",
+          "GET /api/v1/quotes/realtime/{symbol}",
+          "GET /api/v1/quotes/history/{symbol}",
+          "GET /api/v1/indicators/technical/{symbol}",
+          "GET /api/v1/fundamentals/financials/{symbol}",
+          "GET /api/v1/indicators/fundamental/{symbol}",
+          "GET /api/v1/events/announcements/{symbol}"
+        ],
+        "expectedArtifacts": [
+          ".data-agent/workspace.json",
+          ".data-agent/profile.json",
+          ".data-agent/task.json",
+          ".data-agent/plan.json",
+          ".data-agent/finance-query-rewrite.json",
+          ".data-agent/finance-run-plan.json",
+          ".data-agent/generation-state.json",
+          ".data-agent/generation-queue.json",
+          ".data-agent/events.jsonl",
+          ".data-agent/artifact-contracts.json",
+          ".data-agent/visual-validation.json",
+          ".data-agent/validation.json",
+          "evidence/sources.json",
+          "evidence/data_quality.json",
+          "data_file/final/dashboard-data.json",
+          "src/App.vue"
+        ],
+        "validationRules": [
+          "必须先解析股票标的，再获取真实数据。",
+          "必须生成数据信源渠道和质量证据文件。",
+          "页面必须包含行情、K 线/量价、财务摘要、数据质量和更新时间；技术信源明细只保留在 evidence 文件中。",
+          "可视化必须使用 single-stock-diagnosis 模板，首屏露出行情、K 线、财务/公告和数据质量，不要生成营销式大标题页。",
+          "生成后需要通过 Vue/Vite build 与预览 HTTP 200 检查。"
+        ]
+      },
+      "visualization": {
+        "templateId": "single-stock-diagnosis",
+        "name": "个股诊断模板",
+        "scenario": "单只股票的行情、K 线、财务和事件综合诊断。",
+        "variantId": "single-stock-command-center",
+        "variantName": "个股综合指挥台",
+        "variantScenario": "单股综合诊断，首屏同时呈现行情、K 线、信号和数据质量。",
+        "layout": "summary-left-kline-main-right-signal",
+        "density": "dense",
+        "matchReasons": [
+          "使用该模板族的默认高质量页面变体"
+        ],
+        "painPoints": [
+          "不能把个股诊断做成大标题说明页，首屏必须露出行情和 K 线。",
+          "不能只给涨跌结论，需要同时展示量价、均线、财务、公告和数据质量。",
+          "投资判断必须区分事实、计算结果和推断，不输出确定性收益承诺。"
+        ],
+        "requiredComponents": [
+          "紧凑行情摘要",
+          "K 线与成交量主图",
+          "趋势/量能/风险信号",
+          "财务与公告摘要",
+          "数据质量"
+        ],
+        "optionalComponents": [
+          "估值情景",
+          "最近 K 线表",
+          "分红/公告事件",
+          "趋势模板",
+          "最近 K 线明细表"
+        ],
+        "firstViewport": [
+          "行情摘要",
+          "K 线主图",
+          "MA/量能信号"
+        ],
+        "variantGuidance": [
+          "首屏不能只有标题和指标带，K 线主图必须可见。"
+        ],
+        "dataSignals": [
+          "quote",
+          "kline.bars",
+          "technicalIndicators",
+          "financials.reports",
+          "announcements"
+        ],
+        "finalDataContract": [
+          "symbol",
+          "name",
+          "quote",
+          "kline",
+          "technicalIndicators",
+          "financials",
+          "announcements"
+        ],
+        "alternatives": [
+          {
+            "variantId": "single-stock-command-center",
+            "name": "个股综合指挥台",
+            "scenario": "单股综合诊断，首屏同时呈现行情、K 线、信号和数据质量。",
+            "layout": "summary-left-kline-main-right-signal"
+          },
+          {
+            "variantId": "single-stock-fundamental-snapshot",
+            "name": "个股基本面快照",
+            "scenario": "用户偏向财务、估值、报告期和公告解释时使用。",
+            "layout": "financial-workbench-with-price-rail"
+          }
+        ]
+      }
+    },
+    "technical_analysis": {
+      "resolved": {
+        "profile": {
+          "id": "alphadeck.finance-research",
+          "version": "1.0.0",
+          "name": "AlphaDeck Finance Research",
+          "domainPackIds": [
+            "finance.quant"
+          ],
+          "defaultCapabilityId": "stock_diagnosis",
+          "deliveryPackId": "workspace.vue-dashboard",
+          "memoryPolicyId": "alphadeck.personalization",
+          "knowledgePolicyId": "alphadeck.governed-knowledge"
+        },
+        "deliveryPack": {
+          "id": "workspace.vue-dashboard",
+          "version": "1.0.0",
+          "name": "Vue/Vite Data Workspace",
+          "description": "可验证、可预览的 Vue/Vite 数据应用交付包，不包含任何金融业务语义。",
+          "supportedOutputs": [
+            "answer",
+            "table",
+            "chart",
+            "dashboard",
+            "report",
+            "dataset"
+          ],
+          "workspaceDirectories": [
+            ".data-agent",
+            "data_file/raw",
+            "data_file/intermediate",
+            "data_file/final",
+            "evidence",
+            "scripts",
+            "dashboard"
+          ],
+          "artifactPaths": [
+            ".data-agent/workspace.json",
+            ".data-agent/profile.json",
+            ".data-agent/events.jsonl",
+            "data_file/final/dashboard-data.json",
+            "evidence/sources.json"
+          ],
+          "validatorIds": [
+            "workspace.artifact-policy",
+            "workspace.build",
+            "workspace.preview-readiness"
+          ]
+        },
+        "domainPacks": [
+          {
+            "id": "finance.quant",
+            "version": "1.0.0",
+            "name": "Quant Finance",
+            "description": "证券解析、行情、财务、指标、回测、组合风险和金融可视化能力。",
+            "capabilities": [
+              {
+                "id": "stock_diagnosis",
+                "name": "个股诊断",
+                "description": "围绕单只股票完成行情、K 线、财务和公告的综合诊断。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "technical_analysis",
+                "name": "技术分析",
+                "description": "聚焦价格趋势、成交量、均线、波动和风险指标。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "fundamental_analysis",
+                "name": "基本面分析",
+                "description": "聚焦财务质量、盈利能力、现金流和成长趋势。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "asset_comparison",
+                "name": "选股分析",
+                "description": "横向比较多只股票、ETF 或指数的收益、波动、估值和财务质量。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "sector_rotation",
+                "name": "行业/板块分析",
+                "description": "研究指数、行业、概念、ETF 的趋势、相对强弱和成分贡献。",
+                "status": "planned",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "strategy_research",
+                "name": "策略研究",
+                "description": "把投资想法拆成因子、信号、样本、交易规则和待验证假设。",
+                "status": "planned",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-backtest",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.backtests.ma.crossover.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "backtest_review",
+                "name": "策略回测",
+                "description": "复盘策略净值、回撤、胜率、换手、年度收益和交易明细。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-backtest",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.backtests.ma.crossover.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "portfolio_risk",
+                "name": "持仓分析",
+                "description": "分析持仓集中度、波动、回撤、相关性、VaR 和风险暴露。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              }
+            ],
+            "resolverIds": [
+              "finance.security-resolver"
+            ],
+            "connectors": [
+              {
+                "id": "finance.market-data",
+                "version": "1.0.0",
+                "domain": "finance.quant",
+                "operations": [
+                  {
+                    "id": "finance.market-data.api.v1.symbols.resolve",
+                    "title": "GET /api/v1/symbols/resolve",
+                    "description": "AlphaDeck market-data operation GET /api/v1/symbols/resolve",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.analysis.context.entity",
+                    "title": "GET /api/v1/analysis/context/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/analysis/context/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.quotes.realtime.entity",
+                    "title": "GET /api/v1/quotes/realtime/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/quotes/realtime/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.quotes.history.entity",
+                    "title": "GET /api/v1/quotes/history/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/quotes/history/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.indicators.technical.entity",
+                    "title": "GET /api/v1/indicators/technical/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/indicators/technical/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.fundamentals.financials.entity",
+                    "title": "GET /api/v1/fundamentals/financials/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/fundamentals/financials/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.indicators.fundamental.entity",
+                    "title": "GET /api/v1/indicators/fundamental/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/indicators/fundamental/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.events.announcements.entity",
+                    "title": "GET /api/v1/events/announcements/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/events/announcements/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                    "title": "GET /api/v1/research/screeners/a-share/short-term-candidates",
+                    "description": "AlphaDeck market-data operation GET /api/v1/research/screeners/a-share/short-term-candidates",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.backtests.ma.crossover.entity",
+                    "title": "GET /api/v1/backtests/ma-crossover/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/backtests/ma-crossover/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  }
+                ]
+              }
+            ],
+            "skillIds": [
+              "query-rewrite",
+              "run-planner",
+              "quant-symbol-resolver",
+              "quant-market-data",
+              "quant-indicators",
+              "quant-fundamentals",
+              "data-quality",
+              "dashboard-visualization",
+              "image-extraction",
+              "quant-backtest"
+            ],
+            "toolNames": [
+              "quant_api_get",
+              "quant_extract_uploaded_image",
+              "inspect_dashboard_contract",
+              "apply_dashboard_spec"
+            ],
+            "validatorIds": [
+              "finance.symbol-consistency",
+              "finance.market-proxy",
+              "finance.reporting-period-consistency",
+              "finance.investment-safety"
+            ],
+            "visualizationProfileIds": [
+              "single-stock-diagnosis",
+              "technical-timing",
+              "fundamental-research",
+              "stock-selection",
+              "sector-rotation",
+              "strategy-research",
+              "backtest-review",
+              "holding-analysis"
+            ]
+          }
+        ],
+        "capability": {
+          "id": "technical_analysis",
+          "name": "技术分析",
+          "description": "聚焦价格趋势、成交量、均线、波动和风险指标。",
+          "status": "ready",
+          "domainPackId": "finance.quant",
+          "requiredSkillIds": [
+            "query-rewrite",
+            "run-planner",
+            "image-extraction",
+            "quant-symbol-resolver",
+            "quant-market-data",
+            "quant-indicators",
+            "data-quality",
+            "dashboard-visualization"
+          ],
+          "requiredConnectorOperationIds": [
+            "finance.market-data.api.v1.symbols.resolve",
+            "finance.market-data.api.v1.analysis.context.entity",
+            "finance.market-data.api.v1.quotes.realtime.entity",
+            "finance.market-data.api.v1.quotes.history.entity",
+            "finance.market-data.api.v1.indicators.technical.entity"
+          ],
+          "supportedOutputs": [
+            "answer",
+            "dashboard",
+            "report"
+          ]
+        },
+        "composition": {
+          "schemaVersion": 1,
+          "profile": {
+            "id": "alphadeck.finance-research",
+            "version": "1.0.0"
+          },
+          "domainPacks": [
+            {
+              "id": "finance.quant",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPack": {
+            "id": "workspace.vue-dashboard",
+            "version": "1.0.0"
+          },
+          "capability": {
+            "id": "technical_analysis"
+          },
+          "sha256": "sha256:b7973dab23dda0494fecd4eec3c46307fc97bc3d79adc6cb6c894bd99c12cfcc"
+        }
+      },
+      "quantSettings": {
+        "capabilityId": "technical_analysis",
+        "agentType": "quant_analysis",
+        "subAgentKey": "technical_analysis",
+        "executionCapabilityId": "technical_analysis",
+        "status": "ready",
+        "requiredSkills": [
+          "query-rewrite",
+          "run-planner",
+          "image-extraction",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-indicators",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "dataEndpoints": [
+          "GET /api/v1/symbols/resolve",
+          "GET /api/v1/analysis/context/{symbol}",
+          "GET /api/v1/quotes/realtime/{symbol}",
+          "GET /api/v1/quotes/history/{symbol}",
+          "GET /api/v1/indicators/technical/{symbol}"
+        ],
+        "expectedArtifacts": [
+          ".data-agent/workspace.json",
+          ".data-agent/profile.json",
+          ".data-agent/task.json",
+          ".data-agent/plan.json",
+          ".data-agent/finance-query-rewrite.json",
+          ".data-agent/finance-run-plan.json",
+          ".data-agent/generation-state.json",
+          ".data-agent/generation-queue.json",
+          ".data-agent/events.jsonl",
+          ".data-agent/artifact-contracts.json",
+          ".data-agent/visual-validation.json",
+          ".data-agent/validation.json",
+          "evidence/sources.json",
+          "evidence/data_quality.json",
+          "data_file/final/dashboard-data.json",
+          "src/App.vue"
+        ],
+        "validationRules": [
+          "必须获取足够长度的历史 K 线。",
+          "必须生成数据质量证据，样本不足时要明确说明。",
+          "页面必须包含 K 线或明确的 K 线错误面板、成交量、至少两条均线和风险指标。",
+          "可视化必须使用 technical-timing 模板，明确触发条件、失效条件和观察条件。",
+          "不得用静态样例数据替代行情接口结果。"
+        ]
+      },
+      "visualization": {
+        "templateId": "technical-timing",
+        "name": "技术择时模板",
+        "scenario": "围绕价格趋势、均线、成交量、波动和交易触发条件的技术分析。",
+        "variantId": "technical-kline-trader",
+        "variantName": "K 线交易观察台",
+        "variantScenario": "以 K 线、均线、成交量和触发条件为核心的技术分析。",
+        "layout": "full-width-kline-with-trigger-rail",
+        "density": "dense",
+        "matchReasons": [
+          "使用该模板族的默认高质量页面变体"
+        ],
+        "painPoints": [
+          "不能只写看多/看空，必须给出触发、失效和观察条件。",
+          "K 线、成交量和均线是主内容，不能被指标带替代。",
+          "样本不足或历史接口失败时，要展示真实错误和降级视图。"
+        ],
+        "requiredComponents": [
+          "K 线主图",
+          "成交量副图",
+          "MA5/MA10/MA20/MA60",
+          "触发条件",
+          "失效条件",
+          "风险指标"
+        ],
+        "optionalComponents": [
+          "支撑压力",
+          "最近 K 线表",
+          "异常波动提示",
+          "趋势模板",
+          "支撑压力区间"
+        ],
+        "firstViewport": [
+          "K 线主图",
+          "成交量副图",
+          "触发/失效条件"
+        ],
+        "variantGuidance": [
+          "技术页主图优先，不要把 K 线挤成缩略图。"
+        ],
+        "dataSignals": [
+          "quote",
+          "kline.bars",
+          "technicalIndicators.summary",
+          "computedMetrics",
+          "trendTemplate"
+        ],
+        "finalDataContract": [
+          "quote",
+          "kline.bars",
+          "technicalIndicators",
+          "computedMetrics",
+          "trendTemplate"
+        ],
+        "alternatives": [
+          {
+            "variantId": "technical-kline-trader",
+            "name": "K 线交易观察台",
+            "scenario": "以 K 线、均线、成交量和触发条件为核心的技术分析。",
+            "layout": "full-width-kline-with-trigger-rail"
+          },
+          {
+            "variantId": "technical-breakout-watch",
+            "name": "突破观察清单",
+            "scenario": "用户询问突破、支撑压力、买点观察和条件触发时使用。",
+            "layout": "trigger-strip-over-kline-detail"
+          }
+        ]
+      }
+    },
+    "fundamental_analysis": {
+      "resolved": {
+        "profile": {
+          "id": "alphadeck.finance-research",
+          "version": "1.0.0",
+          "name": "AlphaDeck Finance Research",
+          "domainPackIds": [
+            "finance.quant"
+          ],
+          "defaultCapabilityId": "stock_diagnosis",
+          "deliveryPackId": "workspace.vue-dashboard",
+          "memoryPolicyId": "alphadeck.personalization",
+          "knowledgePolicyId": "alphadeck.governed-knowledge"
+        },
+        "deliveryPack": {
+          "id": "workspace.vue-dashboard",
+          "version": "1.0.0",
+          "name": "Vue/Vite Data Workspace",
+          "description": "可验证、可预览的 Vue/Vite 数据应用交付包，不包含任何金融业务语义。",
+          "supportedOutputs": [
+            "answer",
+            "table",
+            "chart",
+            "dashboard",
+            "report",
+            "dataset"
+          ],
+          "workspaceDirectories": [
+            ".data-agent",
+            "data_file/raw",
+            "data_file/intermediate",
+            "data_file/final",
+            "evidence",
+            "scripts",
+            "dashboard"
+          ],
+          "artifactPaths": [
+            ".data-agent/workspace.json",
+            ".data-agent/profile.json",
+            ".data-agent/events.jsonl",
+            "data_file/final/dashboard-data.json",
+            "evidence/sources.json"
+          ],
+          "validatorIds": [
+            "workspace.artifact-policy",
+            "workspace.build",
+            "workspace.preview-readiness"
+          ]
+        },
+        "domainPacks": [
+          {
+            "id": "finance.quant",
+            "version": "1.0.0",
+            "name": "Quant Finance",
+            "description": "证券解析、行情、财务、指标、回测、组合风险和金融可视化能力。",
+            "capabilities": [
+              {
+                "id": "stock_diagnosis",
+                "name": "个股诊断",
+                "description": "围绕单只股票完成行情、K 线、财务和公告的综合诊断。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "technical_analysis",
+                "name": "技术分析",
+                "description": "聚焦价格趋势、成交量、均线、波动和风险指标。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "fundamental_analysis",
+                "name": "基本面分析",
+                "description": "聚焦财务质量、盈利能力、现金流和成长趋势。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "asset_comparison",
+                "name": "选股分析",
+                "description": "横向比较多只股票、ETF 或指数的收益、波动、估值和财务质量。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "sector_rotation",
+                "name": "行业/板块分析",
+                "description": "研究指数、行业、概念、ETF 的趋势、相对强弱和成分贡献。",
+                "status": "planned",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "strategy_research",
+                "name": "策略研究",
+                "description": "把投资想法拆成因子、信号、样本、交易规则和待验证假设。",
+                "status": "planned",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-backtest",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.backtests.ma.crossover.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "backtest_review",
+                "name": "策略回测",
+                "description": "复盘策略净值、回撤、胜率、换手、年度收益和交易明细。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-backtest",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.backtests.ma.crossover.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "portfolio_risk",
+                "name": "持仓分析",
+                "description": "分析持仓集中度、波动、回撤、相关性、VaR 和风险暴露。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              }
+            ],
+            "resolverIds": [
+              "finance.security-resolver"
+            ],
+            "connectors": [
+              {
+                "id": "finance.market-data",
+                "version": "1.0.0",
+                "domain": "finance.quant",
+                "operations": [
+                  {
+                    "id": "finance.market-data.api.v1.symbols.resolve",
+                    "title": "GET /api/v1/symbols/resolve",
+                    "description": "AlphaDeck market-data operation GET /api/v1/symbols/resolve",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.analysis.context.entity",
+                    "title": "GET /api/v1/analysis/context/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/analysis/context/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.quotes.realtime.entity",
+                    "title": "GET /api/v1/quotes/realtime/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/quotes/realtime/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.quotes.history.entity",
+                    "title": "GET /api/v1/quotes/history/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/quotes/history/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.indicators.technical.entity",
+                    "title": "GET /api/v1/indicators/technical/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/indicators/technical/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.fundamentals.financials.entity",
+                    "title": "GET /api/v1/fundamentals/financials/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/fundamentals/financials/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.indicators.fundamental.entity",
+                    "title": "GET /api/v1/indicators/fundamental/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/indicators/fundamental/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.events.announcements.entity",
+                    "title": "GET /api/v1/events/announcements/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/events/announcements/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                    "title": "GET /api/v1/research/screeners/a-share/short-term-candidates",
+                    "description": "AlphaDeck market-data operation GET /api/v1/research/screeners/a-share/short-term-candidates",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.backtests.ma.crossover.entity",
+                    "title": "GET /api/v1/backtests/ma-crossover/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/backtests/ma-crossover/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  }
+                ]
+              }
+            ],
+            "skillIds": [
+              "query-rewrite",
+              "run-planner",
+              "quant-symbol-resolver",
+              "quant-market-data",
+              "quant-indicators",
+              "quant-fundamentals",
+              "data-quality",
+              "dashboard-visualization",
+              "image-extraction",
+              "quant-backtest"
+            ],
+            "toolNames": [
+              "quant_api_get",
+              "quant_extract_uploaded_image",
+              "inspect_dashboard_contract",
+              "apply_dashboard_spec"
+            ],
+            "validatorIds": [
+              "finance.symbol-consistency",
+              "finance.market-proxy",
+              "finance.reporting-period-consistency",
+              "finance.investment-safety"
+            ],
+            "visualizationProfileIds": [
+              "single-stock-diagnosis",
+              "technical-timing",
+              "fundamental-research",
+              "stock-selection",
+              "sector-rotation",
+              "strategy-research",
+              "backtest-review",
+              "holding-analysis"
+            ]
+          }
+        ],
+        "capability": {
+          "id": "fundamental_analysis",
+          "name": "基本面分析",
+          "description": "聚焦财务质量、盈利能力、现金流和成长趋势。",
+          "status": "ready",
+          "domainPackId": "finance.quant",
+          "requiredSkillIds": [
+            "query-rewrite",
+            "run-planner",
+            "image-extraction",
+            "quant-symbol-resolver",
+            "quant-market-data",
+            "quant-fundamentals",
+            "data-quality",
+            "dashboard-visualization"
+          ],
+          "requiredConnectorOperationIds": [
+            "finance.market-data.api.v1.symbols.resolve",
+            "finance.market-data.api.v1.analysis.context.entity",
+            "finance.market-data.api.v1.quotes.realtime.entity",
+            "finance.market-data.api.v1.fundamentals.financials.entity",
+            "finance.market-data.api.v1.indicators.fundamental.entity",
+            "finance.market-data.api.v1.events.announcements.entity"
+          ],
+          "supportedOutputs": [
+            "answer",
+            "dashboard",
+            "report"
+          ]
+        },
+        "composition": {
+          "schemaVersion": 1,
+          "profile": {
+            "id": "alphadeck.finance-research",
+            "version": "1.0.0"
+          },
+          "domainPacks": [
+            {
+              "id": "finance.quant",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPack": {
+            "id": "workspace.vue-dashboard",
+            "version": "1.0.0"
+          },
+          "capability": {
+            "id": "fundamental_analysis"
+          },
+          "sha256": "sha256:65e700adc5c80f8b13c24c20ba1e255c5a79e6c639bd5b899a5882b4fc1b61ce"
+        }
+      },
+      "quantSettings": {
+        "capabilityId": "fundamental_analysis",
+        "agentType": "quant_analysis",
+        "subAgentKey": "fundamental_analysis",
+        "executionCapabilityId": "fundamental_analysis",
+        "status": "ready",
+        "requiredSkills": [
+          "query-rewrite",
+          "run-planner",
+          "image-extraction",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-fundamentals",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "dataEndpoints": [
+          "GET /api/v1/symbols/resolve",
+          "GET /api/v1/analysis/context/{symbol}",
+          "GET /api/v1/quotes/realtime/{symbol}",
+          "GET /api/v1/fundamentals/financials/{symbol}",
+          "GET /api/v1/indicators/fundamental/{symbol}",
+          "GET /api/v1/events/announcements/{symbol}"
+        ],
+        "expectedArtifacts": [
+          ".data-agent/workspace.json",
+          ".data-agent/profile.json",
+          ".data-agent/task.json",
+          ".data-agent/plan.json",
+          ".data-agent/finance-query-rewrite.json",
+          ".data-agent/finance-run-plan.json",
+          ".data-agent/generation-state.json",
+          ".data-agent/generation-queue.json",
+          ".data-agent/events.jsonl",
+          ".data-agent/artifact-contracts.json",
+          ".data-agent/visual-validation.json",
+          ".data-agent/validation.json",
+          "evidence/sources.json",
+          "evidence/data_quality.json",
+          "data_file/final/dashboard-data.json",
+          "src/App.vue"
+        ],
+        "validationRules": [
+          "必须获取最近多个报告期财务数据。",
+          "必须生成数据信源渠道和质量证据，说明报告期与缺失字段。",
+          "页面必须展示营收、利润、利润率、ROE 或现金流质量等核心指标。",
+          "可视化必须使用 fundamental-research 模板，展示盈利质量、现金流/缺失说明、报告期和公告事件。",
+          "必须显示报告期和缺失字段说明；技术信源明细只保留在 evidence 文件中。"
+        ]
+      },
+      "visualization": {
+        "templateId": "fundamental-research",
+        "name": "基本面研究模板",
+        "scenario": "围绕财务质量、盈利能力、现金流、成长和公告事件的基本面分析。",
+        "variantId": "fundamental-quality-scorecard",
+        "variantName": "财务质量账簿",
+        "variantScenario": "围绕盈利质量、利润率、现金流和成长质量的基本面分析。",
+        "layout": "quality-ledger-plus-trend-table",
+        "density": "balanced",
+        "matchReasons": [
+          "使用该模板族的默认高质量页面变体"
+        ],
+        "painPoints": [
+          "不能只展示财务表格，需要解释盈利质量、现金流和利润率变化。",
+          "报告期口径必须清楚，缺失字段不能被静默忽略。",
+          "估值只作为情景分析，不包装成目标价承诺。"
+        ],
+        "requiredComponents": [
+          "质量评分",
+          "营收利润趋势",
+          "ROE/利润率",
+          "现金流或缺失说明",
+          "报告期表"
+        ],
+        "optionalComponents": [
+          "估值情景",
+          "公告解释",
+          "盈利质量评分",
+          "同比/环比拆解"
+        ],
+        "firstViewport": [
+          "质量评分",
+          "营收利润趋势",
+          "核心利润率"
+        ],
+        "variantGuidance": [
+          "先讲报告期事实，再讲推断和限制。"
+        ],
+        "dataSignals": [
+          "financials.reports",
+          "fundamentalIndicators.summary",
+          "announcements",
+          "valuation"
+        ],
+        "finalDataContract": [
+          "financials.reports",
+          "fundamentalIndicators",
+          "announcements",
+          "valuation"
+        ],
+        "alternatives": [
+          {
+            "variantId": "fundamental-quality-scorecard",
+            "name": "财务质量账簿",
+            "scenario": "围绕盈利质量、利润率、现金流和成长质量的基本面分析。",
+            "layout": "quality-ledger-plus-trend-table"
+          },
+          {
+            "variantId": "fundamental-report-trend",
+            "name": "报告期趋势看板",
+            "scenario": "用户要求查看最近多个报告期、同比环比和公告事件。",
+            "layout": "period-trend-with-event-timeline"
+          }
+        ]
+      }
+    },
+    "asset_comparison": {
+      "resolved": {
+        "profile": {
+          "id": "alphadeck.finance-research",
+          "version": "1.0.0",
+          "name": "AlphaDeck Finance Research",
+          "domainPackIds": [
+            "finance.quant"
+          ],
+          "defaultCapabilityId": "stock_diagnosis",
+          "deliveryPackId": "workspace.vue-dashboard",
+          "memoryPolicyId": "alphadeck.personalization",
+          "knowledgePolicyId": "alphadeck.governed-knowledge"
+        },
+        "deliveryPack": {
+          "id": "workspace.vue-dashboard",
+          "version": "1.0.0",
+          "name": "Vue/Vite Data Workspace",
+          "description": "可验证、可预览的 Vue/Vite 数据应用交付包，不包含任何金融业务语义。",
+          "supportedOutputs": [
+            "answer",
+            "table",
+            "chart",
+            "dashboard",
+            "report",
+            "dataset"
+          ],
+          "workspaceDirectories": [
+            ".data-agent",
+            "data_file/raw",
+            "data_file/intermediate",
+            "data_file/final",
+            "evidence",
+            "scripts",
+            "dashboard"
+          ],
+          "artifactPaths": [
+            ".data-agent/workspace.json",
+            ".data-agent/profile.json",
+            ".data-agent/events.jsonl",
+            "data_file/final/dashboard-data.json",
+            "evidence/sources.json"
+          ],
+          "validatorIds": [
+            "workspace.artifact-policy",
+            "workspace.build",
+            "workspace.preview-readiness"
+          ]
+        },
+        "domainPacks": [
+          {
+            "id": "finance.quant",
+            "version": "1.0.0",
+            "name": "Quant Finance",
+            "description": "证券解析、行情、财务、指标、回测、组合风险和金融可视化能力。",
+            "capabilities": [
+              {
+                "id": "stock_diagnosis",
+                "name": "个股诊断",
+                "description": "围绕单只股票完成行情、K 线、财务和公告的综合诊断。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "technical_analysis",
+                "name": "技术分析",
+                "description": "聚焦价格趋势、成交量、均线、波动和风险指标。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "fundamental_analysis",
+                "name": "基本面分析",
+                "description": "聚焦财务质量、盈利能力、现金流和成长趋势。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "asset_comparison",
+                "name": "选股分析",
+                "description": "横向比较多只股票、ETF 或指数的收益、波动、估值和财务质量。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "sector_rotation",
+                "name": "行业/板块分析",
+                "description": "研究指数、行业、概念、ETF 的趋势、相对强弱和成分贡献。",
+                "status": "planned",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "strategy_research",
+                "name": "策略研究",
+                "description": "把投资想法拆成因子、信号、样本、交易规则和待验证假设。",
+                "status": "planned",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-backtest",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.backtests.ma.crossover.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "backtest_review",
+                "name": "策略回测",
+                "description": "复盘策略净值、回撤、胜率、换手、年度收益和交易明细。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-backtest",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.backtests.ma.crossover.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "portfolio_risk",
+                "name": "持仓分析",
+                "description": "分析持仓集中度、波动、回撤、相关性、VaR 和风险暴露。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              }
+            ],
+            "resolverIds": [
+              "finance.security-resolver"
+            ],
+            "connectors": [
+              {
+                "id": "finance.market-data",
+                "version": "1.0.0",
+                "domain": "finance.quant",
+                "operations": [
+                  {
+                    "id": "finance.market-data.api.v1.symbols.resolve",
+                    "title": "GET /api/v1/symbols/resolve",
+                    "description": "AlphaDeck market-data operation GET /api/v1/symbols/resolve",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.analysis.context.entity",
+                    "title": "GET /api/v1/analysis/context/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/analysis/context/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.quotes.realtime.entity",
+                    "title": "GET /api/v1/quotes/realtime/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/quotes/realtime/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.quotes.history.entity",
+                    "title": "GET /api/v1/quotes/history/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/quotes/history/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.indicators.technical.entity",
+                    "title": "GET /api/v1/indicators/technical/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/indicators/technical/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.fundamentals.financials.entity",
+                    "title": "GET /api/v1/fundamentals/financials/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/fundamentals/financials/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.indicators.fundamental.entity",
+                    "title": "GET /api/v1/indicators/fundamental/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/indicators/fundamental/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.events.announcements.entity",
+                    "title": "GET /api/v1/events/announcements/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/events/announcements/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                    "title": "GET /api/v1/research/screeners/a-share/short-term-candidates",
+                    "description": "AlphaDeck market-data operation GET /api/v1/research/screeners/a-share/short-term-candidates",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.backtests.ma.crossover.entity",
+                    "title": "GET /api/v1/backtests/ma-crossover/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/backtests/ma-crossover/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  }
+                ]
+              }
+            ],
+            "skillIds": [
+              "query-rewrite",
+              "run-planner",
+              "quant-symbol-resolver",
+              "quant-market-data",
+              "quant-indicators",
+              "quant-fundamentals",
+              "data-quality",
+              "dashboard-visualization",
+              "image-extraction",
+              "quant-backtest"
+            ],
+            "toolNames": [
+              "quant_api_get",
+              "quant_extract_uploaded_image",
+              "inspect_dashboard_contract",
+              "apply_dashboard_spec"
+            ],
+            "validatorIds": [
+              "finance.symbol-consistency",
+              "finance.market-proxy",
+              "finance.reporting-period-consistency",
+              "finance.investment-safety"
+            ],
+            "visualizationProfileIds": [
+              "single-stock-diagnosis",
+              "technical-timing",
+              "fundamental-research",
+              "stock-selection",
+              "sector-rotation",
+              "strategy-research",
+              "backtest-review",
+              "holding-analysis"
+            ]
+          }
+        ],
+        "capability": {
+          "id": "asset_comparison",
+          "name": "选股分析",
+          "description": "横向比较多只股票、ETF 或指数的收益、波动、估值和财务质量。",
+          "status": "ready",
+          "domainPackId": "finance.quant",
+          "requiredSkillIds": [
+            "query-rewrite",
+            "run-planner",
+            "quant-symbol-resolver",
+            "quant-market-data",
+            "quant-indicators",
+            "quant-fundamentals",
+            "data-quality",
+            "dashboard-visualization"
+          ],
+          "requiredConnectorOperationIds": [
+            "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+            "finance.market-data.api.v1.symbols.resolve",
+            "finance.market-data.api.v1.analysis.context.entity",
+            "finance.market-data.api.v1.quotes.realtime.entity",
+            "finance.market-data.api.v1.quotes.history.entity",
+            "finance.market-data.api.v1.fundamentals.financials.entity",
+            "finance.market-data.api.v1.indicators.fundamental.entity"
+          ],
+          "supportedOutputs": [
+            "answer",
+            "dashboard",
+            "report"
+          ]
+        },
+        "composition": {
+          "schemaVersion": 1,
+          "profile": {
+            "id": "alphadeck.finance-research",
+            "version": "1.0.0"
+          },
+          "domainPacks": [
+            {
+              "id": "finance.quant",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPack": {
+            "id": "workspace.vue-dashboard",
+            "version": "1.0.0"
+          },
+          "capability": {
+            "id": "asset_comparison"
+          },
+          "sha256": "sha256:7fc8425b0eca4b0e19cd40edefc57fc3a5da0d578020660eafa7debc3649cb58"
+        }
+      },
+      "quantSettings": {
+        "capabilityId": "asset_comparison",
+        "agentType": "quant_analysis",
+        "subAgentKey": "asset_comparison",
+        "executionCapabilityId": "asset_comparison",
+        "status": "ready",
+        "requiredSkills": [
+          "query-rewrite",
+          "run-planner",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-indicators",
+          "quant-fundamentals",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "dataEndpoints": [
+          "GET /api/v1/research/screeners/a-share/short-term-candidates",
+          "GET /api/v1/symbols/resolve",
+          "GET /api/v1/analysis/context/{symbol}",
+          "GET /api/v1/quotes/realtime/{symbol}",
+          "GET /api/v1/quotes/history/{symbol}",
+          "GET /api/v1/fundamentals/financials/{symbol}",
+          "GET /api/v1/indicators/fundamental/{symbol}"
+        ],
+        "expectedArtifacts": [
+          ".data-agent/workspace.json",
+          ".data-agent/profile.json",
+          ".data-agent/task.json",
+          ".data-agent/plan.json",
+          ".data-agent/finance-query-rewrite.json",
+          ".data-agent/finance-run-plan.json",
+          ".data-agent/generation-state.json",
+          ".data-agent/generation-queue.json",
+          ".data-agent/events.jsonl",
+          ".data-agent/artifact-contracts.json",
+          ".data-agent/visual-validation.json",
+          ".data-agent/validation.json",
+          "evidence/sources.json",
+          "evidence/data_quality.json",
+          "data_file/final/dashboard-data.json",
+          "src/App.vue"
+        ],
+        "validationRules": [
+          "必须解析全部输入标的，并为每个标的写入真实数据。",
+          "最终数据必须包含 assets[] 与 comparison，且覆盖 run_plan.symbols 中的全部标的。",
+          "比较维度必须包含数据时间、收益、波动、回撤、成交量或成交额口径说明。",
+          "页面必须展示多标的指标矩阵和至少一个对比图表。",
+          "可视化必须使用 stock-selection 模板，展示候选覆盖、排名依据、剔除原因或数据限制。"
+        ]
+      },
+      "visualization": {
+        "templateId": "stock-selection",
+        "name": "多标的对比模板",
+        "scenario": "横向比较多只股票、指数或 ETF 的收益、波动、回撤、估值和质量，默认服务投研复盘而非交易执行。",
+        "variantId": "selection-ranking-matrix",
+        "variantName": "多标的对比矩阵",
+        "variantScenario": "横向比较多只股票，输出收益/回撤/波动、估值和质量依据。",
+        "layout": "coverage-summary-matrix-main-comparison-charts",
+        "density": "dense",
+        "matchReasons": [
+          "使用该模板族的默认高质量页面变体"
+        ],
+        "painPoints": [
+          "不能只展示主标的，必须覆盖用户输入的全部对比标的。",
+          "不能基于单一指标给交易建议，需要展示对比口径、排序依据和数据限制。",
+          "不同标的必须使用同一时间窗口和同一指标口径。"
+        ],
+        "requiredComponents": [
+          "标的覆盖摘要",
+          "多标的指标矩阵",
+          "收益对比主图",
+          "回撤/波动主图",
+          "排序依据",
+          "数据口径"
+        ],
+        "optionalComponents": [
+          "财务质量",
+          "趋势模板",
+          "估值情景",
+          "估值情景对比",
+          "趋势模板对比",
+          "相关性结构",
+          "候选清单/观察清单"
+        ],
+        "firstViewport": [
+          "标的覆盖摘要",
+          "多标的指标矩阵",
+          "至少一个对比主图"
+        ],
+        "variantGuidance": [
+          "不要只展示第一只股票，必须覆盖全部对比标的。"
+        ],
+        "dataSignals": [
+          "assets[]",
+          "comparison.rows[]",
+          "correlation",
+          "liquidity",
+          "valuation",
+          "trendTemplate"
+        ],
+        "finalDataContract": [
+          "requestedSymbols",
+          "assets",
+          "comparison",
+          "correlation",
+          "liquidity"
+        ],
+        "alternatives": [
+          {
+            "variantId": "selection-ranking-matrix",
+            "name": "多标的对比矩阵",
+            "scenario": "横向比较多只股票，输出收益/回撤/波动、估值和质量依据。",
+            "layout": "coverage-summary-matrix-main-comparison-charts"
+          },
+          {
+            "variantId": "selection-correlation-risk-map",
+            "name": "相关性与分散风险图谱",
+            "scenario": "多标的用于组合观察、分散度、相关性和风险暴露判断。",
+            "layout": "correlation-heatmap-risk-matrix"
+          },
+          {
+            "variantId": "selection-liquidity-trend-board",
+            "name": "强弱与流动性筛选台",
+            "scenario": "用户关注成交额、换手、趋势强弱和可交易性。",
+            "layout": "liquidity-first-screen-with-strength-bars"
+          }
+        ]
+      }
+    },
+    "backtest_review": {
+      "resolved": {
+        "profile": {
+          "id": "alphadeck.finance-research",
+          "version": "1.0.0",
+          "name": "AlphaDeck Finance Research",
+          "domainPackIds": [
+            "finance.quant"
+          ],
+          "defaultCapabilityId": "stock_diagnosis",
+          "deliveryPackId": "workspace.vue-dashboard",
+          "memoryPolicyId": "alphadeck.personalization",
+          "knowledgePolicyId": "alphadeck.governed-knowledge"
+        },
+        "deliveryPack": {
+          "id": "workspace.vue-dashboard",
+          "version": "1.0.0",
+          "name": "Vue/Vite Data Workspace",
+          "description": "可验证、可预览的 Vue/Vite 数据应用交付包，不包含任何金融业务语义。",
+          "supportedOutputs": [
+            "answer",
+            "table",
+            "chart",
+            "dashboard",
+            "report",
+            "dataset"
+          ],
+          "workspaceDirectories": [
+            ".data-agent",
+            "data_file/raw",
+            "data_file/intermediate",
+            "data_file/final",
+            "evidence",
+            "scripts",
+            "dashboard"
+          ],
+          "artifactPaths": [
+            ".data-agent/workspace.json",
+            ".data-agent/profile.json",
+            ".data-agent/events.jsonl",
+            "data_file/final/dashboard-data.json",
+            "evidence/sources.json"
+          ],
+          "validatorIds": [
+            "workspace.artifact-policy",
+            "workspace.build",
+            "workspace.preview-readiness"
+          ]
+        },
+        "domainPacks": [
+          {
+            "id": "finance.quant",
+            "version": "1.0.0",
+            "name": "Quant Finance",
+            "description": "证券解析、行情、财务、指标、回测、组合风险和金融可视化能力。",
+            "capabilities": [
+              {
+                "id": "stock_diagnosis",
+                "name": "个股诊断",
+                "description": "围绕单只股票完成行情、K 线、财务和公告的综合诊断。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "technical_analysis",
+                "name": "技术分析",
+                "description": "聚焦价格趋势、成交量、均线、波动和风险指标。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "fundamental_analysis",
+                "name": "基本面分析",
+                "description": "聚焦财务质量、盈利能力、现金流和成长趋势。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "asset_comparison",
+                "name": "选股分析",
+                "description": "横向比较多只股票、ETF 或指数的收益、波动、估值和财务质量。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "sector_rotation",
+                "name": "行业/板块分析",
+                "description": "研究指数、行业、概念、ETF 的趋势、相对强弱和成分贡献。",
+                "status": "planned",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "strategy_research",
+                "name": "策略研究",
+                "description": "把投资想法拆成因子、信号、样本、交易规则和待验证假设。",
+                "status": "planned",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-backtest",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.backtests.ma.crossover.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "backtest_review",
+                "name": "策略回测",
+                "description": "复盘策略净值、回撤、胜率、换手、年度收益和交易明细。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-backtest",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.backtests.ma.crossover.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "portfolio_risk",
+                "name": "持仓分析",
+                "description": "分析持仓集中度、波动、回撤、相关性、VaR 和风险暴露。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              }
+            ],
+            "resolverIds": [
+              "finance.security-resolver"
+            ],
+            "connectors": [
+              {
+                "id": "finance.market-data",
+                "version": "1.0.0",
+                "domain": "finance.quant",
+                "operations": [
+                  {
+                    "id": "finance.market-data.api.v1.symbols.resolve",
+                    "title": "GET /api/v1/symbols/resolve",
+                    "description": "AlphaDeck market-data operation GET /api/v1/symbols/resolve",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.analysis.context.entity",
+                    "title": "GET /api/v1/analysis/context/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/analysis/context/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.quotes.realtime.entity",
+                    "title": "GET /api/v1/quotes/realtime/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/quotes/realtime/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.quotes.history.entity",
+                    "title": "GET /api/v1/quotes/history/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/quotes/history/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.indicators.technical.entity",
+                    "title": "GET /api/v1/indicators/technical/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/indicators/technical/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.fundamentals.financials.entity",
+                    "title": "GET /api/v1/fundamentals/financials/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/fundamentals/financials/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.indicators.fundamental.entity",
+                    "title": "GET /api/v1/indicators/fundamental/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/indicators/fundamental/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.events.announcements.entity",
+                    "title": "GET /api/v1/events/announcements/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/events/announcements/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                    "title": "GET /api/v1/research/screeners/a-share/short-term-candidates",
+                    "description": "AlphaDeck market-data operation GET /api/v1/research/screeners/a-share/short-term-candidates",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.backtests.ma.crossover.entity",
+                    "title": "GET /api/v1/backtests/ma-crossover/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/backtests/ma-crossover/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  }
+                ]
+              }
+            ],
+            "skillIds": [
+              "query-rewrite",
+              "run-planner",
+              "quant-symbol-resolver",
+              "quant-market-data",
+              "quant-indicators",
+              "quant-fundamentals",
+              "data-quality",
+              "dashboard-visualization",
+              "image-extraction",
+              "quant-backtest"
+            ],
+            "toolNames": [
+              "quant_api_get",
+              "quant_extract_uploaded_image",
+              "inspect_dashboard_contract",
+              "apply_dashboard_spec"
+            ],
+            "validatorIds": [
+              "finance.symbol-consistency",
+              "finance.market-proxy",
+              "finance.reporting-period-consistency",
+              "finance.investment-safety"
+            ],
+            "visualizationProfileIds": [
+              "single-stock-diagnosis",
+              "technical-timing",
+              "fundamental-research",
+              "stock-selection",
+              "sector-rotation",
+              "strategy-research",
+              "backtest-review",
+              "holding-analysis"
+            ]
+          }
+        ],
+        "capability": {
+          "id": "backtest_review",
+          "name": "策略回测",
+          "description": "复盘策略净值、回撤、胜率、换手、年度收益和交易明细。",
+          "status": "ready",
+          "domainPackId": "finance.quant",
+          "requiredSkillIds": [
+            "query-rewrite",
+            "run-planner",
+            "quant-symbol-resolver",
+            "quant-market-data",
+            "quant-indicators",
+            "quant-backtest",
+            "data-quality",
+            "dashboard-visualization"
+          ],
+          "requiredConnectorOperationIds": [
+            "finance.market-data.api.v1.symbols.resolve",
+            "finance.market-data.api.v1.analysis.context.entity",
+            "finance.market-data.api.v1.quotes.realtime.entity",
+            "finance.market-data.api.v1.quotes.history.entity",
+            "finance.market-data.api.v1.indicators.technical.entity",
+            "finance.market-data.api.v1.backtests.ma.crossover.entity"
+          ],
+          "supportedOutputs": [
+            "answer",
+            "dashboard",
+            "report"
+          ]
+        },
+        "composition": {
+          "schemaVersion": 1,
+          "profile": {
+            "id": "alphadeck.finance-research",
+            "version": "1.0.0"
+          },
+          "domainPacks": [
+            {
+              "id": "finance.quant",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPack": {
+            "id": "workspace.vue-dashboard",
+            "version": "1.0.0"
+          },
+          "capability": {
+            "id": "backtest_review"
+          },
+          "sha256": "sha256:e0bb06ecb17ee62b824a35b352bebc6a6cdb536cd6474d09e08154903b0231b3"
+        }
+      },
+      "quantSettings": {
+        "capabilityId": "backtest_review",
+        "agentType": "quant_backtest",
+        "subAgentKey": "backtest_review",
+        "executionCapabilityId": "backtest_review",
+        "status": "ready",
+        "requiredSkills": [
+          "query-rewrite",
+          "run-planner",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-indicators",
+          "quant-backtest",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "dataEndpoints": [
+          "GET /api/v1/symbols/resolve",
+          "GET /api/v1/analysis/context/{symbol}",
+          "GET /api/v1/quotes/realtime/{symbol}",
+          "GET /api/v1/quotes/history/{symbol}",
+          "GET /api/v1/indicators/technical/{symbol}",
+          "GET /api/v1/backtests/ma-crossover/{symbol}"
+        ],
+        "expectedArtifacts": [
+          ".data-agent/workspace.json",
+          ".data-agent/profile.json",
+          ".data-agent/task.json",
+          ".data-agent/plan.json",
+          ".data-agent/finance-query-rewrite.json",
+          ".data-agent/finance-run-plan.json",
+          ".data-agent/generation-state.json",
+          ".data-agent/generation-queue.json",
+          ".data-agent/events.jsonl",
+          ".data-agent/artifact-contracts.json",
+          ".data-agent/visual-validation.json",
+          ".data-agent/validation.json",
+          "evidence/sources.json",
+          "evidence/data_quality.json",
+          "data_file/final/dashboard-data.json",
+          "src/App.vue"
+        ],
+        "validationRules": [
+          "正式回测结果必须来自本地后端和可复现参数。",
+          "必须展示收益、回撤、交易次数、胜率、样本区间和交易明细。",
+          "必须说明当前回测暂未建模滑点、停牌、分红再投资等限制。",
+          "可视化必须使用 backtest-review 模板，包含策略参数、净值、回撤、交易明细和限制说明。"
+        ]
+      },
+      "visualization": {
+        "templateId": "backtest-review",
+        "name": "策略回测模板",
+        "scenario": "对可复现策略回测结果进行收益、回撤、胜率、交易和限制复盘。",
+        "variantId": "backtest-performance-review",
+        "variantName": "回测绩效复盘",
+        "variantScenario": "围绕收益、净值、回撤、胜率和交易明细复盘策略。",
+        "layout": "equity-curve-with-drawdown-and-trades",
+        "density": "dense",
+        "matchReasons": [
+          "使用该模板族的默认高质量页面变体"
+        ],
+        "painPoints": [
+          "不能只展示最终收益，必须展示回撤、交易次数、胜率和样本限制。",
+          "必须说明费用、滑点、停牌和分红再投资等未建模因素。",
+          "必须展示参数，确保回测可以复现。"
+        ],
+        "requiredComponents": [
+          "策略参数",
+          "净值曲线",
+          "回撤指标",
+          "收益/胜率/交易次数",
+          "交易明细",
+          "限制说明"
+        ],
+        "optionalComponents": [
+          "基准对比",
+          "年度收益",
+          "参数敏感性",
+          "年度收益拆解"
+        ],
+        "firstViewport": [
+          "策略参数",
+          "净值曲线",
+          "核心绩效指标"
+        ],
+        "variantGuidance": [
+          "回测页必须可复现参数和样本，不只展示收益。"
+        ],
+        "dataSignals": [
+          "backtest.summary",
+          "backtest.equity_curve",
+          "backtest.trades",
+          "kline.bars",
+          "backtest"
+        ],
+        "finalDataContract": [
+          "backtest",
+          "trades",
+          "equityCurve",
+          "kline.bars"
+        ],
+        "alternatives": [
+          {
+            "variantId": "backtest-performance-review",
+            "name": "回测绩效复盘",
+            "scenario": "围绕收益、净值、回撤、胜率和交易明细复盘策略。",
+            "layout": "equity-curve-with-drawdown-and-trades"
+          },
+          {
+            "variantId": "backtest-trade-forensics",
+            "name": "交易行为复盘",
+            "scenario": "用户关注每笔交易、持仓天数、亏损来源和执行质量。",
+            "layout": "trade-table-first-with-equity-sidebar"
+          }
+        ]
+      }
+    },
+    "portfolio_risk": {
+      "resolved": {
+        "profile": {
+          "id": "alphadeck.finance-research",
+          "version": "1.0.0",
+          "name": "AlphaDeck Finance Research",
+          "domainPackIds": [
+            "finance.quant"
+          ],
+          "defaultCapabilityId": "stock_diagnosis",
+          "deliveryPackId": "workspace.vue-dashboard",
+          "memoryPolicyId": "alphadeck.personalization",
+          "knowledgePolicyId": "alphadeck.governed-knowledge"
+        },
+        "deliveryPack": {
+          "id": "workspace.vue-dashboard",
+          "version": "1.0.0",
+          "name": "Vue/Vite Data Workspace",
+          "description": "可验证、可预览的 Vue/Vite 数据应用交付包，不包含任何金融业务语义。",
+          "supportedOutputs": [
+            "answer",
+            "table",
+            "chart",
+            "dashboard",
+            "report",
+            "dataset"
+          ],
+          "workspaceDirectories": [
+            ".data-agent",
+            "data_file/raw",
+            "data_file/intermediate",
+            "data_file/final",
+            "evidence",
+            "scripts",
+            "dashboard"
+          ],
+          "artifactPaths": [
+            ".data-agent/workspace.json",
+            ".data-agent/profile.json",
+            ".data-agent/events.jsonl",
+            "data_file/final/dashboard-data.json",
+            "evidence/sources.json"
+          ],
+          "validatorIds": [
+            "workspace.artifact-policy",
+            "workspace.build",
+            "workspace.preview-readiness"
+          ]
+        },
+        "domainPacks": [
+          {
+            "id": "finance.quant",
+            "version": "1.0.0",
+            "name": "Quant Finance",
+            "description": "证券解析、行情、财务、指标、回测、组合风险和金融可视化能力。",
+            "capabilities": [
+              {
+                "id": "stock_diagnosis",
+                "name": "个股诊断",
+                "description": "围绕单只股票完成行情、K 线、财务和公告的综合诊断。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "technical_analysis",
+                "name": "技术分析",
+                "description": "聚焦价格趋势、成交量、均线、波动和风险指标。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "fundamental_analysis",
+                "name": "基本面分析",
+                "description": "聚焦财务质量、盈利能力、现金流和成长趋势。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "asset_comparison",
+                "name": "选股分析",
+                "description": "横向比较多只股票、ETF 或指数的收益、波动、估值和财务质量。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-fundamentals",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.indicators.fundamental.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "sector_rotation",
+                "name": "行业/板块分析",
+                "description": "研究指数、行业、概念、ETF 的趋势、相对强弱和成分贡献。",
+                "status": "planned",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "strategy_research",
+                "name": "策略研究",
+                "description": "把投资想法拆成因子、信号、样本、交易规则和待验证假设。",
+                "status": "planned",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-backtest",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.backtests.ma.crossover.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "backtest_review",
+                "name": "策略回测",
+                "description": "复盘策略净值、回撤、胜率、换手、年度收益和交易明细。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "quant-backtest",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.backtests.ma.crossover.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              },
+              {
+                "id": "portfolio_risk",
+                "name": "持仓分析",
+                "description": "分析持仓集中度、波动、回撤、相关性、VaR 和风险暴露。",
+                "status": "ready",
+                "domainPackId": "finance.quant",
+                "requiredSkillIds": [
+                  "query-rewrite",
+                  "run-planner",
+                  "image-extraction",
+                  "quant-symbol-resolver",
+                  "quant-market-data",
+                  "quant-indicators",
+                  "data-quality",
+                  "dashboard-visualization"
+                ],
+                "requiredConnectorOperationIds": [
+                  "finance.market-data.api.v1.symbols.resolve",
+                  "finance.market-data.api.v1.analysis.context.entity",
+                  "finance.market-data.api.v1.quotes.realtime.entity",
+                  "finance.market-data.api.v1.quotes.history.entity",
+                  "finance.market-data.api.v1.indicators.technical.entity",
+                  "finance.market-data.api.v1.fundamentals.financials.entity",
+                  "finance.market-data.api.v1.events.announcements.entity"
+                ],
+                "supportedOutputs": [
+                  "answer",
+                  "dashboard",
+                  "report"
+                ]
+              }
+            ],
+            "resolverIds": [
+              "finance.security-resolver"
+            ],
+            "connectors": [
+              {
+                "id": "finance.market-data",
+                "version": "1.0.0",
+                "domain": "finance.quant",
+                "operations": [
+                  {
+                    "id": "finance.market-data.api.v1.symbols.resolve",
+                    "title": "GET /api/v1/symbols/resolve",
+                    "description": "AlphaDeck market-data operation GET /api/v1/symbols/resolve",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.analysis.context.entity",
+                    "title": "GET /api/v1/analysis/context/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/analysis/context/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.quotes.realtime.entity",
+                    "title": "GET /api/v1/quotes/realtime/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/quotes/realtime/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.quotes.history.entity",
+                    "title": "GET /api/v1/quotes/history/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/quotes/history/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.indicators.technical.entity",
+                    "title": "GET /api/v1/indicators/technical/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/indicators/technical/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.fundamentals.financials.entity",
+                    "title": "GET /api/v1/fundamentals/financials/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/fundamentals/financials/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.indicators.fundamental.entity",
+                    "title": "GET /api/v1/indicators/fundamental/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/indicators/fundamental/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.events.announcements.entity",
+                    "title": "GET /api/v1/events/announcements/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/events/announcements/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.research.screeners.a.share.short.term.candidates",
+                    "title": "GET /api/v1/research/screeners/a-share/short-term-candidates",
+                    "description": "AlphaDeck market-data operation GET /api/v1/research/screeners/a-share/short-term-candidates",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "id": "finance.market-data.api.v1.backtests.ma.crossover.entity",
+                    "title": "GET /api/v1/backtests/ma-crossover/{symbol}",
+                    "description": "AlphaDeck market-data operation GET /api/v1/backtests/ma-crossover/{symbol}",
+                    "effect": "read",
+                    "inputSchema": {
+                      "type": "object",
+                      "additionalProperties": false
+                    }
+                  }
+                ]
+              }
+            ],
+            "skillIds": [
+              "query-rewrite",
+              "run-planner",
+              "quant-symbol-resolver",
+              "quant-market-data",
+              "quant-indicators",
+              "quant-fundamentals",
+              "data-quality",
+              "dashboard-visualization",
+              "image-extraction",
+              "quant-backtest"
+            ],
+            "toolNames": [
+              "quant_api_get",
+              "quant_extract_uploaded_image",
+              "inspect_dashboard_contract",
+              "apply_dashboard_spec"
+            ],
+            "validatorIds": [
+              "finance.symbol-consistency",
+              "finance.market-proxy",
+              "finance.reporting-period-consistency",
+              "finance.investment-safety"
+            ],
+            "visualizationProfileIds": [
+              "single-stock-diagnosis",
+              "technical-timing",
+              "fundamental-research",
+              "stock-selection",
+              "sector-rotation",
+              "strategy-research",
+              "backtest-review",
+              "holding-analysis"
+            ]
+          }
+        ],
+        "capability": {
+          "id": "portfolio_risk",
+          "name": "持仓分析",
+          "description": "分析持仓集中度、波动、回撤、相关性、VaR 和风险暴露。",
+          "status": "ready",
+          "domainPackId": "finance.quant",
+          "requiredSkillIds": [
+            "query-rewrite",
+            "run-planner",
+            "image-extraction",
+            "quant-symbol-resolver",
+            "quant-market-data",
+            "quant-indicators",
+            "data-quality",
+            "dashboard-visualization"
+          ],
+          "requiredConnectorOperationIds": [
+            "finance.market-data.api.v1.symbols.resolve",
+            "finance.market-data.api.v1.analysis.context.entity",
+            "finance.market-data.api.v1.quotes.realtime.entity",
+            "finance.market-data.api.v1.quotes.history.entity",
+            "finance.market-data.api.v1.indicators.technical.entity",
+            "finance.market-data.api.v1.fundamentals.financials.entity",
+            "finance.market-data.api.v1.events.announcements.entity"
+          ],
+          "supportedOutputs": [
+            "answer",
+            "dashboard",
+            "report"
+          ]
+        },
+        "composition": {
+          "schemaVersion": 1,
+          "profile": {
+            "id": "alphadeck.finance-research",
+            "version": "1.0.0"
+          },
+          "domainPacks": [
+            {
+              "id": "finance.quant",
+              "version": "1.0.0"
+            }
+          ],
+          "deliveryPack": {
+            "id": "workspace.vue-dashboard",
+            "version": "1.0.0"
+          },
+          "capability": {
+            "id": "portfolio_risk"
+          },
+          "sha256": "sha256:23320363af0cae3e8f3703e3bf550b6f8c2d53e1faea6315807ee8eb0b0208a7"
+        }
+      },
+      "quantSettings": {
+        "capabilityId": "portfolio_risk",
+        "agentType": "quant_dashboard",
+        "subAgentKey": "portfolio_risk",
+        "executionCapabilityId": "portfolio_risk",
+        "status": "ready",
+        "requiredSkills": [
+          "query-rewrite",
+          "run-planner",
+          "image-extraction",
+          "quant-symbol-resolver",
+          "quant-market-data",
+          "quant-indicators",
+          "data-quality",
+          "dashboard-visualization"
+        ],
+        "dataEndpoints": [
+          "GET /api/v1/symbols/resolve",
+          "GET /api/v1/analysis/context/{symbol}",
+          "GET /api/v1/quotes/realtime/{symbol}",
+          "GET /api/v1/quotes/history/{symbol}",
+          "GET /api/v1/indicators/technical/{symbol}",
+          "GET /api/v1/fundamentals/financials/{symbol}",
+          "GET /api/v1/events/announcements/{symbol}"
+        ],
+        "expectedArtifacts": [
+          ".data-agent/workspace.json",
+          ".data-agent/profile.json",
+          ".data-agent/task.json",
+          ".data-agent/plan.json",
+          ".data-agent/finance-query-rewrite.json",
+          ".data-agent/finance-run-plan.json",
+          ".data-agent/generation-state.json",
+          ".data-agent/generation-queue.json",
+          ".data-agent/events.jsonl",
+          ".data-agent/artifact-contracts.json",
+          ".data-agent/visual-validation.json",
+          ".data-agent/validation.json",
+          "evidence/sources.json",
+          "evidence/data_quality.json",
+          "data_file/final/dashboard-data.json",
+          "src/App.vue"
+        ],
+        "validationRules": [
+          "必须说明持仓权重、样本区间和风险计算口径。",
+          "最终数据必须包含 portfolio、holdings[]、assets[] 和 comparison，并覆盖用户截图或输入中的全部可识别持仓。",
+          "不得把单标的波动直接等同于组合风险。",
+          "可视化必须使用 holding-analysis 模板，展示持仓矩阵、仓位/集中度、盈亏/成本、流动性和调仓优先级。"
+        ]
+      },
+      "visualization": {
+        "templateId": "holding-analysis",
+        "name": "持仓分析模板",
+        "scenario": "基于用户持仓、成本、可用现金和市场数据，分析仓位、风险和调仓优先级。",
+        "variantId": "portfolio-risk-console",
+        "variantName": "组合风险控制台",
+        "variantScenario": "持仓、仓位、集中度、相关性和流动性风险分析。",
+        "layout": "portfolio-summary-holdings-risk-grid",
+        "density": "dense",
+        "matchReasons": [
+          "使用该模板族的默认高质量页面变体"
+        ],
+        "painPoints": [
+          "不能把持仓当作普通股票列表，必须展示仓位、成本、盈亏、现金和集中度。",
+          "调仓建议必须先处理风险约束和数据缺口，不直接输出交易指令。",
+          "如果用户只上传截图，必须标注哪些字段来自截图识别、哪些字段来自行情接口。"
+        ],
+        "requiredComponents": [
+          "组合摘要",
+          "持仓矩阵",
+          "仓位集中度",
+          "相关性/流动性风险",
+          "数据缺口"
+        ],
+        "optionalComponents": [
+          "调仓优先级",
+          "风险贡献",
+          "现金使用情景",
+          "个股趋势模板",
+          "估值情景",
+          "风险贡献热力图"
+        ],
+        "firstViewport": [
+          "组合摘要",
+          "持仓矩阵",
+          "仓位集中度"
+        ],
+        "variantGuidance": [
+          "持仓页不要做成普通股票列表，必须体现权重和风险。"
+        ],
+        "dataSignals": [
+          "holdings[]",
+          "cash",
+          "assets[]",
+          "comparison",
+          "correlation",
+          "liquidity",
+          "trendTemplate",
+          "valuation",
+          "holdings"
+        ],
+        "finalDataContract": [
+          "portfolio",
+          "holdings",
+          "assets",
+          "comparison",
+          "correlation",
+          "liquidity"
+        ],
+        "alternatives": [
+          {
+            "variantId": "portfolio-risk-console",
+            "name": "组合风险控制台",
+            "scenario": "持仓、仓位、集中度、相关性和流动性风险分析。",
+            "layout": "portfolio-summary-holdings-risk-grid"
+          },
+          {
+            "variantId": "portfolio-rebalance-plan",
+            "name": "调仓计划工作台",
+            "scenario": "用户要求调仓、减仓、补仓或现金使用方案。",
+            "layout": "rebalance-actions-with-risk-constraints"
+          }
+        ]
+      }
+    }
+  }
+}
