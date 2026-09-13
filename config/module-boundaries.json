@@ -1,0 +1,1259 @@
+{
+  "version": 1,
+  "modules": [
+    {
+      "id": "shared-kernel",
+      "name": "共享内核",
+      "summary": "跨模块稳定类型、配置、工具函数和无业务状态的基础能力。",
+      "owner": "platform",
+      "paths": [
+        "src/types/**",
+        "src/lib/config/**",
+        "src/lib/utils.ts",
+        "src/lib/runtime-degradation.ts",
+        "src/lib/contracts/**",
+        "src/lib/constants/**",
+        "src/lib/crypto.ts",
+        "src/lib/serializers/**",
+        "src/lib/server/env-contract.ts",
+        "src/lib/server/image-assets.ts",
+        "src/lib/server/privileged-request.ts",
+        "src/lib/server/websocket-manager.ts",
+        "src/lib/utils/*.ts"
+      ],
+      "dependsOn": [],
+      "publicSurface": [
+        "@/lib/config/auth",
+        "@/lib/config/constants",
+        "@/lib/config/data-agent",
+        "@/lib/config/degradation",
+        "@/lib/config/llm",
+        "@/lib/constants/cli",
+        "@/lib/constants/models",
+        "@/lib/contracts/agent-context-snapshot",
+        "@/lib/contracts/agent-turn-metrics",
+        "@/lib/crypto",
+        "@/lib/serializers/chat",
+        "@/lib/serializers/client/chat",
+        "@/lib/serializers/project",
+        "@/lib/server/env-contract",
+        "@/lib/server/image-assets",
+        "@/lib/server/privileged-request",
+        "@/lib/server/websocket-manager",
+        "@/lib/utils/api-response",
+        "@/lib/utils/cliOptions",
+        "@/lib/utils/index",
+        "@/lib/utils/path",
+        "@/lib/utils/ports",
+        "@/types/backend/index",
+        "@/types/cli",
+        "@/types/index",
+        "@/types/project",
+        "@/types/shared/index"
+      ]
+    },
+    {
+      "id": "ui-kit",
+      "name": "通用 UI 组件",
+      "summary": "按钮、输入、弹窗、选择器等无领域知识的基础 UI。",
+      "owner": "frontend-platform",
+      "paths": [
+        "src/components/ui/**",
+        "src/contexts/ThemeContext.tsx"
+      ],
+      "dependsOn": [
+        "shared-kernel"
+      ],
+      "publicSurface": [
+        "@/components/ui/alert-dialog",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/empty-state",
+        "@/components/ui/input",
+        "@/components/ui/label",
+        "@/components/ui/select",
+        "@/components/ui/sheet",
+        "@/components/ui/skeleton",
+        "@/components/ui/textarea",
+        "@/components/ui/theme-toggle",
+        "@/contexts/ThemeContext",
+        "@/components/ui/console"
+      ]
+    },
+    {
+      "id": "platform-navigation-ui",
+      "name": "平台导航 UI",
+      "summary": "跨业务页面复用的页头、平台切换、子导航与路由加载状态。",
+      "owner": "frontend-platform",
+      "paths": [
+        "src/components/layout/**",
+        "src/components/auth/AuthUserMenu.tsx"
+      ],
+      "dependsOn": [
+        "frontend-shared",
+        "shared-kernel",
+        "ui-kit"
+      ],
+      "publicSurface": [
+        "@/components/auth/AuthUserMenu",
+        "@/components/layout/PageHeader",
+        "@/components/layout/PlatformRouteLoading",
+        "@/components/layout/PlatformSwitcher",
+        "@/components/layout/SubNav"
+      ]
+    },
+    {
+      "id": "product-shell",
+      "name": "产品壳层",
+      "summary": "首页、导航、布局、主题和平台入口编排。",
+      "owner": "frontend-platform",
+      "paths": [
+        "src/app/page.tsx",
+        "src/app/layout.tsx",
+        "src/app/globals.css",
+        "src/app/error.tsx",
+        "src/app/global-error.tsx",
+        "src/app/not-found.tsx",
+        "src/components/theme/**",
+        "src/app/**",
+        "src/pages/**",
+        "src/proxy.ts",
+        "src/components/task/**",
+        "src/components/account/**"
+      ],
+      "dependsOn": [
+        "agent-runtime",
+        "data-agent-core",
+        "finance-domain",
+        "frontend-shared",
+        "identity-core",
+        "ops-core",
+        "persistence-core",
+        "platform-core",
+        "platform-navigation-ui",
+        "quant-core",
+        "shared-kernel",
+        "ui-kit",
+        "skills-management"
+      ],
+      "publicSurface": []
+    },
+    {
+      "id": "platform-core",
+      "name": "平台核心",
+      "summary": "项目、设置、Token、服务目录、GitHub/Vercel 集成和工作空间基础状态。",
+      "owner": "platform",
+      "paths": [
+        "src/lib/platform/**",
+        "src/lib/services/project-services.ts",
+        "src/lib/services/settings.ts",
+        "src/lib/services/tokens.ts",
+        "src/lib/services/git.ts",
+        "src/lib/services/supabase.ts",
+        "src/app/api/settings/**",
+        "src/app/api/tokens/**",
+        "src/app/api/infrastructure/**",
+        "src/lib/integrations/**",
+        "src/lib/server/api-idempotency*.ts"
+      ],
+      "dependsOn": [
+        "identity-core",
+        "persistence-core",
+        "shared-kernel"
+      ],
+      "publicSurface": [
+        "@/lib/integrations/github-repository",
+        "@/lib/platform/context/integration-scope",
+        "@/lib/platform/context/use-manifest",
+        "@/lib/platform/knowledge/index",
+        "@/lib/platform/knowledge/types",
+        "@/lib/platform/memory/candidate",
+        "@/lib/platform/memory/candidate-types",
+        "@/lib/platform/memory/index",
+        "@/lib/platform/service-catalog",
+        "@/lib/server/api-idempotency",
+        "@/lib/services/git",
+        "@/lib/services/project-services",
+        "@/lib/services/supabase",
+        "@/lib/services/tokens"
+      ],
+      "migrationNotes": [
+        "金融项目创建服务已归入 quant-core；后续新增通用 ProjectCatalog，不把默认 Domain Pack 写回平台核心。"
+      ]
+    },
+    {
+      "id": "agent-runtime",
+      "name": "Agent 运行时",
+      "summary": "开源 PI Agent 运行内核、多 Provider 适配、类型化工具、流式消息和技能编译。",
+      "owner": "agent-platform",
+      "paths": [
+        "src/lib/services/agent-runtime.ts",
+        "src/lib/services/message.ts",
+        "src/lib/services/stream.ts",
+        "src/lib/services/user-requests.ts",
+        "src/lib/agent/**",
+        "src/lib/services/pi-agent-candidate.ts",
+        "src/lib/services/pi-agent-checkpoint*.ts",
+        "src/lib/services/pi-agent-execution-error*.ts",
+        "src/lib/services/pi-agent-generation-*.ts",
+        "src/lib/services/pi-agent-worker-*.ts",
+        "src/lib/services/pi-agent-mission-store*.ts",
+        "src/lib/services/pi-agent-mission-verification-session*.ts",
+        "src/lib/services/pi-agent-provenance*.ts",
+        "src/lib/services/pi-agent-recovery*.ts",
+        "src/lib/services/pi-agent-run-store*.ts",
+        "src/lib/services/pi-agent-turn-metrics*.ts",
+        "src/lib/services/pi-agent-tool-approval-store*.ts",
+        "src/lib/services/terminal-callbacks.ts"
+      ],
+      "dependsOn": [
+        "identity-core",
+        "persistence-core",
+        "shared-kernel"
+      ],
+      "publicSurface": [
+        "@/lib/agent/context/index",
+        "@/lib/agent/core/index",
+        "@/lib/agent/core/tool-arguments",
+        "@/lib/agent/framework-identity",
+        "@/lib/agent/input-policy",
+        "@/lib/agent/mission/index",
+        "@/lib/agent/pi/run-engine",
+        "@/lib/agent/providers/deepseek",
+        "@/lib/agent/providers/deterministic-tool-plan",
+        "@/lib/agent/providers/openai-compatible",
+        "@/lib/agent/runtime/workspace-resource-lock",
+        "@/lib/agent/skills/catalog-images",
+        "@/lib/agent/skills/catalog-store",
+        "@/lib/agent/skills/compatibility",
+        "@/lib/agent/skills/index",
+        "@/lib/agent/skills/workspace-install",
+        "@/lib/agent/skills/workspace-integrity",
+        "@/lib/agent/tools/errors",
+        "@/lib/agent/tools/filesystem",
+        "@/lib/agent/tools/index",
+        "@/lib/agent/tools/input",
+        "@/lib/agent/tools/path-policy",
+        "@/lib/agent/tools/runtime",
+        "@/lib/agent/types",
+        "@/lib/services/agent-runtime",
+        "@/lib/services/message",
+        "@/lib/services/pi-agent-candidate",
+        "@/lib/services/pi-agent-execution-error",
+        "@/lib/services/pi-agent-generation-dispatch-session",
+        "@/lib/services/pi-agent-generation-dispatch-store",
+        "@/lib/services/pi-agent-generation-lease-session",
+        "@/lib/services/pi-agent-generation-lease-store",
+        "@/lib/services/pi-agent-mission-store",
+        "@/lib/services/pi-agent-mission-verification-session",
+        "@/lib/services/pi-agent-provenance",
+        "@/lib/services/pi-agent-recovery",
+        "@/lib/services/pi-agent-run-store",
+        "@/lib/services/pi-agent-tool-approval-store",
+        "@/lib/services/pi-agent-turn-metrics",
+        "@/lib/services/stream",
+        "@/lib/services/user-requests"
+      ]
+    },
+    {
+      "id": "data-agent-core",
+      "name": "通用 Data Agent",
+      "summary": "LLM-first 数据任务合同、Agent Profile、Domain Pack、Connector 与数据交付编排边界。",
+      "owner": "data-agent-platform",
+      "paths": [
+        "src/lib/data-agent/**"
+      ],
+      "dependsOn": [
+        "agent-runtime",
+        "shared-kernel"
+      ],
+      "publicSurface": [
+        "@/lib/data-agent/contracts",
+        "@/lib/data-agent/index",
+        "@/lib/data-agent/workspace-files",
+        "@/lib/data-agent/workspace-layout",
+        "@/lib/data-agent/workspace-path",
+        "@/lib/data-agent/workspace-read"
+      ]
+    },
+    {
+      "id": "finance-domain",
+      "name": "金融量化 Domain Pack",
+      "summary": "金融能力目录、证券 Resolver、行情工具、金融 Mission 合同与金融可视化配置。",
+      "owner": "quant-platform",
+      "paths": [
+        "src/lib/domains/finance/**",
+        "src/lib/utils/scaffold-*.ts"
+      ],
+      "dependsOn": [
+        "agent-runtime",
+        "data-agent-core",
+        "platform-core",
+        "shared-kernel"
+      ],
+      "publicSurface": [
+        "@/lib/domains/finance/agent-profile",
+        "@/lib/domains/finance/agent-tools/dashboard-spec",
+        "@/lib/domains/finance/agent-tools/factory",
+        "@/lib/domains/finance/capabilities",
+        "@/lib/domains/finance/data-identity",
+        "@/lib/domains/finance/data-quality",
+        "@/lib/domains/finance/evidence-quality",
+        "@/lib/domains/finance/index",
+        "@/lib/domains/finance/intent",
+        "@/lib/domains/finance/query-rewrite",
+        "@/lib/domains/finance/research-time",
+        "@/lib/domains/finance/visualization-templates",
+        "@/lib/domains/finance/workspace",
+        "@/lib/domains/finance/workspace-artifacts",
+        "@/lib/utils/scaffold-base-templates",
+        "@/lib/utils/scaffold-config",
+        "@/lib/utils/scaffold-dashboard-templates"
+      ]
+    },
+    {
+      "id": "quant-core",
+      "name": "量化核心",
+      "summary": "量化能力、策略、数据预取、工作空间证据、验证和技能治理。",
+      "owner": "quant-platform",
+      "paths": [
+        "src/lib/quant/**",
+        "src/lib/services/project.ts",
+        "src/lib/services/env.ts",
+        "src/lib/services/file-browser.ts",
+        "src/lib/services/github.ts",
+        "src/lib/services/preview.ts",
+        "src/lib/services/service-integration.ts",
+        "src/lib/services/vercel.ts",
+        "src/lib/services/pi-agent-mission-control.ts",
+        "src/lib/services/pi-agent-prompts*.ts",
+        "src/lib/services/cli/**",
+        "src/app/api/quant/**",
+        "src/app/api/chat/**",
+        "src/app/api/projects/**",
+        "src/app/[project_id]/**",
+        "src/app/api/research/**",
+        "src/app/strategy-platform/**",
+        "src/app/research-reports/**",
+        "src/app/business-knowledge/**",
+        "src/components/quant/workspace-*.tsx",
+        "src/components/chat/**",
+        "src/lib/utils/scaffold*.ts",
+        "src/lib/services/preview-stop-intent*.ts"
+      ],
+      "dependsOn": [
+        "agent-runtime",
+        "data-agent-core",
+        "execution-isolation",
+        "finance-domain",
+        "frontend-shared",
+        "identity-core",
+        "persistence-core",
+        "platform-core",
+        "platform-navigation-ui",
+        "shared-kernel",
+        "ui-kit",
+        "skills-management"
+      ],
+      "publicSurface": [
+        "@/app/api/projects/[project_id]/memory/route-error",
+        "@/components/chat/question-composer",
+        "@/components/quant/workspace-console-primitives",
+        "@/lib/quant/capability-center",
+        "@/lib/quant/generation-observability",
+        "@/lib/quant/generation-state",
+        "@/lib/quant/strategies",
+        "@/lib/quant/validation/contracts",
+        "@/lib/quant/validation/recovery",
+        "@/lib/quant/validation/repair",
+        "@/lib/quant/workspace-health",
+        "@/lib/services/env",
+        "@/lib/services/file-browser",
+        "@/lib/services/github",
+        "@/lib/services/project",
+        "@/lib/services/vercel"
+      ],
+      "migrationNotes": [
+        "strategies.ts 已拆出 strategy-types / strategy-catalog / strategy-scan-repository / strategy-readiness / strategy-mappers；StrategyPlatformClient 已拆出 helpers、FinancialKnowledgeView、UniverseView、StockKlineDetail、SectorCapitalFlowView、FactorCatalogView、FoundationView，后续继续拆 dialogs、hooks、market API client 和 dashboard service。"
+      ]
+    },
+    {
+      "id": "eval-core",
+      "name": "评测核心",
+      "summary": "评测集、用例、运行历史、评测器、报告和质量门。",
+      "owner": "eval-platform",
+      "paths": [
+        "src/lib/eval/**",
+        "src/app/eval-platform/**",
+        "src/app/api/evals/**",
+        "src/components/quant/eval-*.tsx",
+        "scripts/evals/**",
+        "scripts/checks/check-eval-*.js",
+        "scripts/checks/check-quant-benchmark-coverage.js",
+        "docs/evals-guide.md"
+      ],
+      "dependsOn": [
+        "agent-runtime",
+        "data-agent-core",
+        "finance-domain",
+        "identity-core",
+        "persistence-core",
+        "platform-navigation-ui",
+        "quant-core",
+        "shared-kernel",
+        "ui-kit"
+      ],
+      "publicSurface": [],
+      "migrationNotes": [
+        "eval-core 已迁出 quant 目录；cases/sets、paths、runtime-utils 和 runtime-mappers 已拆分。runtime.ts 后续继续拆 runs / queue / repairs / scheduling。"
+      ]
+    },
+    {
+      "id": "ops-core",
+      "name": "运维核心",
+      "summary": "Docker、服务健康、基础设施、工作空间健康和可观测性入口。",
+      "owner": "ops-platform",
+      "paths": [
+        "src/lib/ops/**",
+        "src/app/ops-platform/**",
+        "src/app/api/ops/**",
+        "src/app/api/infrastructure/health/**",
+        "src/app/api/observability/**",
+        "src/components/quant/ops-*.tsx",
+        "deploy/observability/**"
+      ],
+      "dependsOn": [
+        "identity-core",
+        "persistence-core",
+        "platform-core",
+        "platform-navigation-ui",
+        "quant-core",
+        "shared-kernel",
+        "ui-kit"
+      ],
+      "publicSurface": [
+        "@/lib/ops/readiness"
+      ]
+    },
+    {
+      "id": "market-data-backend",
+      "name": "Python 市场数据后端",
+      "summary": "FastAPI、行情 provider、TimescaleDB 事实库、Redis 缓存、ClickHouse 分析层和回测。",
+      "owner": "backend-platform",
+      "paths": [
+        "services/market-data/**"
+      ],
+      "dependsOn": [],
+      "publicSurface": [
+        "services/market-data/src/alphadeck_market_data/routers"
+      ],
+      "migrationNotes": [
+        "旧 database.py 兼容门面已删除；连接与转换工具只进入 database_core.py，业务 SQL 只进入对应 repository。"
+      ]
+    },
+    {
+      "id": "persistence-core",
+      "name": "应用持久化",
+      "summary": "Prisma 连接与应用 schema 就绪检查，不编排业务任务。",
+      "owner": "platform",
+      "paths": [
+        "src/lib/db/**"
+      ],
+      "dependsOn": [],
+      "publicSurface": [
+        "@/lib/db/client",
+        "@/lib/db/pi-agent-schema-readiness"
+      ]
+    },
+    {
+      "id": "identity-core",
+      "name": "身份与配额",
+      "summary": "认证、授权、权限和用量配额的服务端合同。",
+      "owner": "platform",
+      "paths": [
+        "src/lib/auth/**",
+        "src/lib/quota/**"
+      ],
+      "dependsOn": [
+        "persistence-core",
+        "shared-kernel"
+      ],
+      "publicSurface": [
+        "@/lib/auth/access",
+        "@/lib/auth/access-management",
+        "@/lib/auth/action",
+        "@/lib/auth/audit",
+        "@/lib/auth/authorization",
+        "@/lib/auth/client",
+        "@/lib/auth/http",
+        "@/lib/auth/login-identity",
+        "@/lib/auth/password",
+        "@/lib/auth/permissions",
+        "@/lib/auth/project-route-action",
+        "@/lib/auth/server",
+        "@/lib/quota/allocation-reconciliation",
+        "@/lib/quota/defaults",
+        "@/lib/quota/index",
+        "@/lib/quota/service"
+      ]
+    },
+    {
+      "id": "execution-isolation",
+      "name": "执行隔离",
+      "summary": "生成代码的运行环境过滤与 Linux namespace 沙箱适配。",
+      "owner": "agent-platform",
+      "paths": [
+        "src/lib/security/**"
+      ],
+      "dependsOn": [],
+      "publicSurface": [
+        "@/lib/security/generated-project-sandbox"
+      ]
+    },
+    {
+      "id": "frontend-shared",
+      "name": "共享前端状态与设置",
+      "summary": "跨页面复用的浏览器状态、账号、设置和交互组件。",
+      "owner": "frontend-platform",
+      "paths": [
+        "src/contexts/**",
+        "src/hooks/**",
+        "src/components/settings/**",
+        "src/components/modals/**",
+        "src/components/auth/**",
+        "src/components/ErrorBoundary.tsx",
+        "src/lib/motion.ts",
+        "src/lib/chat/**"
+      ],
+      "dependsOn": [
+        "identity-core",
+        "platform-core",
+        "shared-kernel"
+      ],
+      "publicSurface": [
+        "@/components/ErrorBoundary",
+        "@/components/settings/GlobalSettings",
+        "@/components/settings/ProjectSettings",
+        "@/contexts/AuthContext",
+        "@/contexts/GlobalSettingsContext",
+        "@/hooks/useCLI",
+        "@/hooks/useUserRequests",
+        "@/hooks/useWebSocket",
+        "@/lib/chat/chat-message-runtime",
+        "@/lib/chat/tool-activity",
+        "@/lib/motion"
+      ]
+    },
+    {
+      "id": "skills-management",
+      "name": "技能管理",
+      "summary": "内置技能市场、源码维护、版本发布及多 Agent 安装的应用服务。",
+      "owner": "agent",
+      "paths": [
+        "src/lib/skills/**"
+      ],
+      "dependsOn": [
+        "agent-runtime",
+        "data-agent-core",
+        "finance-domain",
+        "shared-kernel"
+      ],
+      "publicSurface": [
+        "@/lib/skills/administration",
+        "@/lib/skills/client",
+        "@/lib/skills/contracts",
+        "@/lib/skills/dashboard",
+        "@/lib/skills/deployment",
+        "@/lib/skills/installation-status",
+        "@/lib/skills/market"
+      ]
+    },
+    {
+      "id": "skills-ui",
+      "name": "技能界面",
+      "summary": "技能发现、编辑和安装的页面及交互组件。",
+      "owner": "frontend",
+      "paths": [
+        "src/app/skills/**",
+        "src/components/skills/**"
+      ],
+      "dependsOn": [
+        "agent-runtime",
+        "shared-kernel",
+        "skills-management",
+        "ui-kit",
+        "platform-navigation-ui"
+      ],
+      "publicSurface": [
+        "@/components/skills/market",
+        "@/components/skills/source-tree",
+        "@/components/skills/version-manager-dialog"
+      ]
+    }
+  ],
+  "rules": {
+    "forbiddenImports": [
+      {
+        "from": "src/lib/**",
+        "to": "src/app/**",
+        "reason": "领域和服务层不能反向依赖 Next.js 页面。"
+      },
+      {
+        "from": "src/components/ui/**",
+        "to": "src/app/**",
+        "reason": "通用 UI 不能依赖页面层。"
+      },
+      {
+        "from": "src/components/ui/**",
+        "to": "src/lib/quant/**",
+        "reason": "通用 UI 不能携带量化领域知识。"
+      },
+      {
+        "from": "src/components/ui/**",
+        "to": "src/lib/services/**",
+        "reason": "通用 UI 不能直接依赖运行时服务。"
+      },
+      {
+        "from": "src/components/ui/**",
+        "to": "src/lib/ops/**",
+        "reason": "通用 UI 不能直接依赖运维领域。"
+      },
+      {
+        "from": "src/lib/agent/**",
+        "to": "src/lib/quant/**",
+        "reason": "PI Agent Framework 不能依赖金融应用核心。"
+      },
+      {
+        "from": "src/lib/agent/**",
+        "to": "src/lib/domains/**",
+        "reason": "PI Agent Framework 不能依赖业务 Domain Pack。"
+      },
+      {
+        "from": "src/lib/agent/**",
+        "to": "src/lib/data-agent/**",
+        "reason": "PI Agent Framework 是 Data Agent 的下层运行时，不能反向依赖。"
+      },
+      {
+        "from": "src/lib/data-agent/**",
+        "to": "src/lib/quant/**",
+        "reason": "通用 Data Agent 不能依赖金融应用实现。"
+      },
+      {
+        "from": "src/lib/data-agent/**",
+        "to": "src/lib/domains/**",
+        "reason": "通用 Data Agent 只能消费注册合同，不能反向依赖具体 Domain Pack。"
+      },
+      {
+        "from": "src/lib/domains/finance/**",
+        "to": "src/lib/quant/**",
+        "reason": "Finance Domain Pack 不能反向依赖 AlphaDeck 产品编排层。"
+      },
+      {
+        "from": "services/market-data/**",
+        "to": "src/**",
+        "reason": "Python 后端不能依赖 Next.js 前端源码。"
+      }
+    ],
+    "removedPaths": [
+      {
+        "path": "src/app/api/chat/**/active-session/**",
+        "reason": "运行身份只由 Mission 和 AgentRun 管理，不恢复旧 active-session API。"
+      },
+      {
+        "path": "src/app/api/chat/**/sessions/**/status/**",
+        "reason": "运行状态只从 generation/status 和 Mission 存储读取。"
+      },
+      {
+        "path": "src/lib/services/chat-sessions.*",
+        "reason": "旧聊天 session 服务已经被 durable Mission 生命周期替代。"
+      },
+      {
+        "path": "src/app/api/chat/**/cli-preference/**",
+        "reason": "模型选择只通过项目当前合同持久化，不恢复平行偏好 API。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/database.py",
+        "reason": "数据库连接与业务 SQL 已拆入 database_core 和 repositories。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/models.py",
+        "reason": "数据合同已迁入 contracts/ 各领域，调用方直接导入所属模块，不恢复单文件合同门面。"
+      },
+      {
+        "path": "electron/**",
+        "reason": "产品入口统一为 Web 与本地 Docker 组件，不恢复没有独立业务能力的桌面包装。"
+      },
+      {
+        "path": "scripts/dev/run-desktop.js",
+        "reason": "开发环境只维护 Web 与 market-data 启动器。"
+      },
+      {
+        "path": "src/stubs/react-icons-*.tsx",
+        "reason": "UI 直接使用 Lucide 图标，不恢复重复图标库和兼容包装。"
+      },
+      {
+        "path": "src/lib/agent/index.ts",
+        "reason": "调用方直接导入领域 public surface，不恢复未使用且重复导出的聚合入口。"
+      },
+      {
+        "path": "src/types/fernet.d.ts",
+        "reason": "加密已使用现有服务合同，不恢复没有依赖和调用方的 ambient module。"
+      },
+      {
+        "path": "src/components/quant/console-primitives.tsx",
+        "reason": "Skills 管理与界面已迁到独立模块；通用控制台原语归属 ui-kit，禁止恢复旧转发入口。"
+      },
+      {
+        "path": "src/lib/quant/skills-*",
+        "reason": "Skills 管理与界面已迁到独立模块，不保留旧路径转发。"
+      },
+      {
+        "path": "src/components/quant/skills-*",
+        "reason": "Skills 管理与界面已迁到独立模块，不保留旧路径转发。"
+      }
+    ],
+    "forbiddenContent": [
+      {
+        "path": "prisma/schema.prisma",
+        "pattern": "@default\\(\\\"legacy:unknown\\\"\\)|active_claude_session_id",
+        "reason": "运行记录必须显式携带 canonical workspace SHA-256 身份。"
+      },
+      {
+        "path": "src/app/api/chat/[project_id]/act/route.ts",
+        "pattern": "body\\.(request_id|selected_model|cliPreference|quantCapabilityId|quantCapabilitySource|quant_capability_id|quant_capability_source|is_initial_prompt)|base64_data",
+        "reason": "Act ingress 只接受 chat-act-contract.ts 定义的通用 Data Agent camelCase 当前契约。"
+      },
+      {
+        "path": "src/app/api/projects/route.ts",
+        "pattern": "body\\.(project_id|initial_prompt|selected_model|quantCapabilityId|quantCapabilitySource|quant_capability_id|quant_capability_source|capability_source)",
+        "reason": "项目创建只接受通用 capabilityId/capabilitySelectionSource 当前合同。"
+      },
+      {
+        "path": "src/lib/server/image-assets.ts",
+        "pattern": "temporary compatibility shape|outside this project",
+        "reason": "图片资产只接受严格 assets/<filename> 工作空间相对路径。"
+      },
+      {
+        "path": "src/lib/services/env.ts",
+        "pattern": "value_preview|has_value|var_type|is_secret",
+        "reason": "Secret API 和服务投影只维护单一 camelCase 当前合同。"
+      },
+      {
+        "path": "src/lib/agent/tools/structured-read.ts",
+        "pattern": "finance-query|finance-run|dashboard-data|final_dashboard|requestedSymbol|ARTIFACT_SYMBOL",
+        "reason": "PI Agent 结构化读取内核必须由 Domain Pack 注入业务 artifact、alias 与 identity 规则。"
+      },
+      {
+        "path": "src/lib/agent/skills/compiler.ts",
+        "pattern": "AlphaDeckImage|mcp__MiniMax__understand_image",
+        "reason": "PI Agent Skill 编译器不保留具体产品或 Provider 的旧工具别名兼容。"
+      },
+      {
+        "path": "src/app/[project_id]/chat/page.tsx",
+        "pattern": "false\\s*&&\\s*showPublishPanel",
+        "reason": "发布 UI 只保留独立 PublishPanel，不恢复永久关闭的重复发布浮层。"
+      }
+    ],
+    "largeFileBudgets": [
+      {
+        "path": "src/lib/utils/scaffold.ts",
+        "maxLines": 720,
+        "targetLines": 650,
+        "nextAction": "保持 workspace writer 和模板选择职责；基础/专用模板必须留在独立模板模块，不再回填大段字符串。"
+      },
+      {
+        "path": "src/lib/utils/scaffold-base-templates.ts",
+        "maxLines": 2600,
+        "targetLines": 2300,
+        "nextAction": "继续提取模板内共享数据读取与格式化 helper，所有改动必须通过 check:scaffold-templates。"
+      },
+      {
+        "path": "src/lib/utils/scaffold-dashboard-templates.ts",
+        "maxLines": 2575,
+        "targetLines": 2300,
+        "nextAction": "压缩 comparison/selection/holding 模板重复 helper，同时保持每类模板独立构建。"
+      },
+      {
+        "path": "src/app/[project_id]/chat/page.tsx",
+        "maxLines": 2400,
+        "targetLines": 1800,
+        "nextAction": "预览终态、发布生命周期和分栏已迁出；继续拆消息提交、模型偏好和视图布局，避免恢复异步状态共享。"
+      },
+      {
+        "path": "src/app/api/chat/[project_id]/act/route.ts",
+        "maxLines": 900,
+        "targetLines": 800,
+        "nextAction": "保持 route 只承担 HTTP 接纳和 dispatch；金融规划、取数、Mission 与执行逻辑必须留在应用服务和 Domain handler。"
+      },
+      {
+        "path": "src/components/chat/ChatLog.tsx",
+        "maxLines": 1400,
+        "targetLines": 900,
+        "nextAction": "保持状态控制器、结构化消息协议、工具视图和 Markdown renderer 分离；禁止恢复纯文本工具占位符推断。"
+      },
+      {
+        "path": "src/lib/agent/pi/run-engine.ts",
+        "maxLines": 1850,
+        "targetLines": 1600,
+        "nextAction": "Token 映射与来源汇总已独立；继续拆 provider 消息转换和工具生命周期，保持 PI loop 单一入口。"
+      },
+      {
+        "path": "src/lib/quant/validation.ts",
+        "maxLines": 300,
+        "targetLines": 300,
+        "nextAction": "入口只负责串行编排与事件；检查、报告、准备和修复由 validation/ 各模块负责。"
+      },
+      {
+        "path": "src/lib/quant/data-prefetch.ts",
+        "maxLines": 320,
+        "targetLines": 320,
+        "nextAction": "入口只负责预取流程；规划、端点、指标、图片证据和最终数据投影进入 data-prefetch/ 各模块。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/api.py",
+        "maxLines": 220,
+        "targetLines": 200,
+        "nextAction": "仅保留 app factory、生命周期与依赖注入；所有端点进入 routers，业务进入 services。"
+      },
+      {
+        "path": "src/app/strategy-platform/StrategyPlatformClient.tsx",
+        "maxLines": 1100,
+        "targetLines": 900,
+        "nextAction": "已拆 helpers、Knowledge、Universe、Kline、Sector、Factor、Foundation 视图；继续拆 dialogs、hooks 和 tables。"
+      },
+      {
+        "path": "src/lib/quant/strategies.ts",
+        "maxLines": 400,
+        "targetLines": 400,
+        "nextAction": "只保留策略目录、工作空间关联与扫描编排；市场请求、研究状态、默认数据和类型直接导入所属模块。"
+      },
+      {
+        "path": "src/lib/eval/runtime.ts",
+        "maxLines": 1080,
+        "targetLines": 850,
+        "nextAction": "已拆 cases/sets、paths、runtime-utils 和 report/database mappers；继续拆 runs / queue / repairs / scheduling，保留 src/lib/eval 作为唯一公开入口。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/contracts/analysis.py",
+        "maxLines": 400,
+        "targetLines": 400,
+        "nextAction": "只保留所属领域的请求、响应和校验；业务取数与编排留在 services/。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/contracts/analytics.py",
+        "maxLines": 400,
+        "targetLines": 400,
+        "nextAction": "只保留所属领域的请求、响应和校验；业务取数与编排留在 services/。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/contracts/common.py",
+        "maxLines": 400,
+        "targetLines": 400,
+        "nextAction": "只保留所属领域的请求、响应和校验；业务取数与编排留在 services/。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/contracts/foundation.py",
+        "maxLines": 400,
+        "targetLines": 400,
+        "nextAction": "只保留所属领域的请求、响应和校验；业务取数与编排留在 services/。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/contracts/fundamentals.py",
+        "maxLines": 400,
+        "targetLines": 400,
+        "nextAction": "只保留所属领域的请求、响应和校验；业务取数与编排留在 services/。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/contracts/ingestion.py",
+        "maxLines": 400,
+        "targetLines": 400,
+        "nextAction": "只保留所属领域的请求、响应和校验；业务取数与编排留在 services/。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/contracts/quotes.py",
+        "maxLines": 400,
+        "targetLines": 400,
+        "nextAction": "只保留所属领域的请求、响应和校验；业务取数与编排留在 services/。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/contracts/universes.py",
+        "maxLines": 400,
+        "targetLines": 400,
+        "nextAction": "只保留所属领域的请求、响应和校验；业务取数与编排留在 services/。"
+      },
+      {
+        "path": "src/lib/quant/validation/artifact-policy.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/validation/contracts.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/validation/dashboard-checks.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/validation/data-checks.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/validation/evidence-checks.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/validation/files.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/validation/inputs.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/validation/preparation.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/validation/recovery.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/validation/repair.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/validation/reports.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/validation/runtime-checks.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/data-prefetch/dashboard.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/data-prefetch/fundamentals.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/data-prefetch/image-evidence.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/data-prefetch/market.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/data-prefetch/planning.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/data-prefetch/portfolio.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/data-prefetch/technical.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/data-prefetch/transport.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/lib/quant/data-prefetch/values.ts",
+        "maxLines": 500,
+        "targetLines": 500,
+        "nextAction": "保持单一领域职责和显式依赖，不把流程编排或其他领域重新合入此模块。"
+      },
+      {
+        "path": "src/app/[project_id]/chat/file-tree.tsx",
+        "maxLines": 250,
+        "targetLines": 250,
+        "nextAction": "保持文件树、编辑状态与 React 交互边界；文件读写竞态由独立状态单元回归。"
+      },
+      {
+        "path": "src/app/[project_id]/chat/file-editor-state.ts",
+        "maxLines": 200,
+        "targetLines": 200,
+        "nextAction": "保持文件树、编辑状态与 React 交互边界；文件读写竞态由独立状态单元回归。"
+      },
+      {
+        "path": "src/app/[project_id]/chat/use-file-editor.ts",
+        "maxLines": 150,
+        "targetLines": 150,
+        "nextAction": "保持文件树、编辑状态与 React 交互边界；文件读写竞态由独立状态单元回归。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/repositories/financial_history.py",
+        "maxLines": 300,
+        "targetLines": 300,
+        "nextAction": "仅负责不可变财报版本与历史查询；provider 抓取和 HTTP 错误映射留在 service/router。"
+      },
+      {
+        "path": "src/app/[project_id]/chat/generation-preview-controller.ts",
+        "maxLines": 400,
+        "targetLines": 400,
+        "nextAction": "保持当前单一职责，调用方直接使用所属模块；新增职责必须独立并补对应回归。"
+      },
+      {
+        "path": "src/app/[project_id]/chat/generation-preview-state.ts",
+        "maxLines": 200,
+        "targetLines": 200,
+        "nextAction": "保持当前单一职责，调用方直接使用所属模块；新增职责必须独立并补对应回归。"
+      },
+      {
+        "path": "src/app/[project_id]/chat/preview-validation.ts",
+        "maxLines": 150,
+        "targetLines": 150,
+        "nextAction": "保持当前单一职责，调用方直接使用所属模块；新增职责必须独立并补对应回归。"
+      },
+      {
+        "path": "src/app/[project_id]/chat/use-generation-preview.ts",
+        "maxLines": 100,
+        "targetLines": 100,
+        "nextAction": "保持当前单一职责，调用方直接使用所属模块；新增职责必须独立并补对应回归。"
+      },
+      {
+        "path": "src/app/[project_id]/chat/use-project-deployment.ts",
+        "maxLines": 200,
+        "targetLines": 200,
+        "nextAction": "保持当前单一职责，调用方直接使用所属模块；新增职责必须独立并补对应回归。"
+      },
+      {
+        "path": "src/app/[project_id]/chat/use-chat-pane.ts",
+        "maxLines": 150,
+        "targetLines": 150,
+        "nextAction": "保持当前单一职责，调用方直接使用所属模块；新增职责必须独立并补对应回归。"
+      },
+      {
+        "path": "src/app/[project_id]/chat/publish-panel.tsx",
+        "maxLines": 150,
+        "targetLines": 150,
+        "nextAction": "保持当前单一职责，调用方直接使用所属模块；新增职责必须独立并补对应回归。"
+      },
+      {
+        "path": "src/lib/quant/strategy-market-api.ts",
+        "maxLines": 100,
+        "targetLines": 100,
+        "nextAction": "保持当前单一职责，调用方直接使用所属模块；新增职责必须独立并补对应回归。"
+      },
+      {
+        "path": "src/lib/quant/strategy-market-client.ts",
+        "maxLines": 450,
+        "targetLines": 450,
+        "nextAction": "保持当前单一职责，调用方直接使用所属模块；新增职责必须独立并补对应回归。"
+      },
+      {
+        "path": "src/lib/quant/strategy-research-state.ts",
+        "maxLines": 150,
+        "targetLines": 150,
+        "nextAction": "保持当前单一职责，调用方直接使用所属模块；新增职责必须独立并补对应回归。"
+      },
+      {
+        "path": "src/lib/quant/strategy-research-defaults.ts",
+        "maxLines": 150,
+        "targetLines": 150,
+        "nextAction": "保持当前单一职责，调用方直接使用所属模块；新增职责必须独立并补对应回归。"
+      },
+      {
+        "path": "src/hooks/useUserRequests.ts",
+        "maxLines": 100,
+        "targetLines": 100,
+        "nextAction": "请求状态以成功的服务端查询为准；网络失败、旧响应及组件退出不能误判任务完成。"
+      },
+      {
+        "path": "src/hooks/request-activity-monitor.ts",
+        "maxLines": 150,
+        "targetLines": 150,
+        "nextAction": "请求状态以成功的服务端查询为准；网络失败、旧响应及组件退出不能误判任务完成。"
+      },
+      {
+        "path": "src/lib/agent/pi/token-usage.ts",
+        "maxLines": 250,
+        "targetLines": 250,
+        "nextAction": "保持用量与上下文口径独立、来源显式；缺失信息不能伪装为精确零值。"
+      },
+      {
+        "path": "src/lib/contracts/agent-context-snapshot.ts",
+        "maxLines": 150,
+        "targetLines": 150,
+        "nextAction": "保持用量与上下文口径独立、来源显式；缺失信息不能伪装为精确零值。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/contracts/experiments.py",
+        "maxLines": 150,
+        "targetLines": 150,
+        "nextAction": "保持数值引擎、实验契约与离线复跑分离；实验不得重新取实时数据，新增策略必须通过复跑回归。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/backtest_experiments.py",
+        "maxLines": 250,
+        "targetLines": 250,
+        "nextAction": "保持数值引擎、实验契约与离线复跑分离；实验不得重新取实时数据，新增策略必须通过复跑回归。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/replay_backtest.py",
+        "maxLines": 100,
+        "targetLines": 100,
+        "nextAction": "保持数值引擎、实验契约与离线复跑分离；实验不得重新取实时数据，新增策略必须通过复跑回归。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/backtest.py",
+        "maxLines": 800,
+        "targetLines": 800,
+        "nextAction": "保持数值引擎、实验契约与离线复跑分离；实验不得重新取实时数据，新增策略必须通过复跑回归。"
+      },
+      {
+        "path": "src/lib/data-agent/workspace-read.ts",
+        "maxLines": 150,
+        "targetLines": 150,
+        "nextAction": "保持取数、证据读取、上下文投影和评测验收的独立职责；新增规则需有可拦截的反例。"
+      },
+      {
+        "path": "src/lib/domains/finance/data-quality.ts",
+        "maxLines": 250,
+        "targetLines": 250,
+        "nextAction": "保持取数、证据读取、上下文投影和评测验收的独立职责；新增规则需有可拦截的反例。"
+      },
+      {
+        "path": "src/lib/domains/finance/evidence-quality.ts",
+        "maxLines": 150,
+        "targetLines": 150,
+        "nextAction": "保持取数、证据读取、上下文投影和评测验收的独立职责；新增规则需有可拦截的反例。"
+      },
+      {
+        "path": "src/lib/domains/finance/agent-tools/quant-api.ts",
+        "maxLines": 350,
+        "targetLines": 350,
+        "nextAction": "保持取数、证据读取、上下文投影和评测验收的独立职责；新增规则需有可拦截的反例。"
+      },
+      {
+        "path": "src/lib/domains/finance/agent-tools/quant-api-output.ts",
+        "maxLines": 300,
+        "targetLines": 300,
+        "nextAction": "保持取数、证据读取、上下文投影和评测验收的独立职责；新增规则需有可拦截的反例。"
+      },
+      {
+        "path": "src/lib/eval/deterministic-gate.ts",
+        "maxLines": 150,
+        "targetLines": 150,
+        "nextAction": "保持取数、证据读取、上下文投影和评测验收的独立职责；新增规则需有可拦截的反例。"
+      },
+      {
+        "path": "src/lib/eval/review-evidence.ts",
+        "maxLines": 200,
+        "targetLines": 200,
+        "nextAction": "保持取数、证据读取、上下文投影和评测验收的独立职责；新增规则需有可拦截的反例。"
+      },
+      {
+        "path": "src/lib/eval/agent-reviewer.ts",
+        "maxLines": 300,
+        "targetLines": 300,
+        "nextAction": "保持取数、证据读取、上下文投影和评测验收的独立职责；新增规则需有可拦截的反例。"
+      },
+      {
+        "path": "src/app/skills/SkillsManagementClient.tsx",
+        "maxLines": 1200,
+        "targetLines": 800,
+        "nextAction": "市场已独立；继续拆分 Studio 状态与动作，不恢复重复编辑浮层。"
+      },
+      {
+        "path": "src/components/skills/market.tsx",
+        "maxLines": 500,
+        "targetLines": 350,
+        "nextAction": "仅负责内置发现和只读核验；新增写入或详情复杂度时提取独立组件。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/services/ingestion/history.py",
+        "maxLines": 450,
+        "targetLines": 450,
+        "nextAction": "保持补数用例、状态控制与任务生命周期的独立职责；不能将业务迁回 app factory。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/services/ingestion/batch.py",
+        "maxLines": 250,
+        "targetLines": 250,
+        "nextAction": "保持补数用例、状态控制与任务生命周期的独立职责；不能将业务迁回 app factory。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/services/ingestion/autofill.py",
+        "maxLines": 160,
+        "targetLines": 160,
+        "nextAction": "保持补数用例、状态控制与任务生命周期的独立职责；不能将业务迁回 app factory。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/services/ingestion/autofill_run.py",
+        "maxLines": 625,
+        "targetLines": 625,
+        "nextAction": "保持补数用例、状态控制与任务生命周期的独立职责；不能将业务迁回 app factory。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/services/ingestion/snapshots.py",
+        "maxLines": 240,
+        "targetLines": 240,
+        "nextAction": "保持补数用例、状态控制与任务生命周期的独立职责；不能将业务迁回 app factory。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/services/ingestion/support.py",
+        "maxLines": 400,
+        "targetLines": 400,
+        "nextAction": "保持补数用例、状态控制与任务生命周期的独立职责；不能将业务迁回 app factory。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/services/ingestion/jobs.py",
+        "maxLines": 100,
+        "targetLines": 100,
+        "nextAction": "保持补数用例、状态控制与任务生命周期的独立职责；不能将业务迁回 app factory。"
+      },
+      {
+        "path": "services/market-data/src/alphadeck_market_data/services/ingestion/tasks.py",
+        "maxLines": 100,
+        "targetLines": 100,
+        "nextAction": "保持补数用例、状态控制与任务生命周期的独立职责；不能将业务迁回 app factory。"
+      }
+    ]
+  }
+}

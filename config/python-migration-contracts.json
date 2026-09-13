@@ -1,0 +1,762 @@
+{
+  "schemaVersion": 1,
+  "contracts": [
+    {
+      "source": "src/app/api/account/memory/preferences/[record_id]/corrections/route.ts",
+      "sha256": "1e56ce234c04fcaea0f0e1987aa2329287aa73edcbc29928de763afcf721a7d8",
+      "path": "/api/account/memory/preferences/[record_id]/corrections",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/account/memory/preferences/[record_id]/revisions/route.ts",
+      "sha256": "7aee3e70a8b7df8bcb0373b84725188f3e808d112496e213f760a54fb86ee2bc",
+      "path": "/api/account/memory/preferences/[record_id]/revisions",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/account/memory/route.ts",
+      "sha256": "367a02f77b9ca30466fa8405f7271e3e37c5b3f258134090cbd4795b3b9221f7",
+      "path": "/api/account/memory",
+      "methods": [
+        "GET",
+        "PUT"
+      ]
+    },
+    {
+      "source": "src/app/api/account/password/route.ts",
+      "sha256": "093543b158146d9f732ab719ad2fd5e4aad3e2ad8453046b6107b55c2d23de42",
+      "path": "/api/account/password",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/account/sessions/route.ts",
+      "sha256": "4c7c7ffff86c0307b44ecb991ce9b114b9c5a83b4f98cc7f5dd61fc5587f1e56",
+      "path": "/api/account/sessions",
+      "methods": [
+        "DELETE",
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/account/usage/route.ts",
+      "sha256": "e763800a24969925c348ac5234154fa3dd91b79689b8c342d41f1bb69d1646da",
+      "path": "/api/account/usage",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/admin/access-control/route.ts",
+      "sha256": "a1dbef3bf912e4f4bb54a6908c739d246847d7ee31a694199927aa89b24d9053",
+      "path": "/api/admin/access-control",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/admin/audit/route.ts",
+      "sha256": "8b40a138f54bf44660a8964acf5321e807546265db1c0e50e3c48ec38a103455",
+      "path": "/api/admin/audit",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/admin/users/route.ts",
+      "sha256": "04777b012b099f57d8484dcf4a807385bc9c639764d35819dd696f6a2602aa62",
+      "path": "/api/admin/users",
+      "methods": [
+        "GET",
+        "PATCH",
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/admin/users/[user_id]/access/route.ts",
+      "sha256": "9aeac82857b44f15ff55eecb4c3bb0b5e738f376fa16fe502cc28e9b9f40d417",
+      "path": "/api/admin/users/[user_id]/access",
+      "methods": [
+        "GET",
+        "PATCH"
+      ]
+    },
+    {
+      "source": "src/app/api/assets/[project_id]/logo/route.ts",
+      "sha256": "1e877c5c534eadf124666b71a05ba7b3fb5049cf710125460b6e5355c0868528",
+      "path": "/api/assets/[project_id]/logo",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/assets/[project_id]/upload/route.ts",
+      "sha256": "7dcf41b8031225edbfb489f38d07817d9c6e1c60228981a56dcbc9f65956e82e",
+      "path": "/api/assets/[project_id]/upload",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/assets/[project_id]/[filename]/route.ts",
+      "sha256": "dae1487baf3545b830c48c106d5b996dbaee74ee43bc5b231e83f9a7eccbeab7",
+      "path": "/api/assets/[project_id]/[filename]",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/auth/[...all]/route.ts",
+      "sha256": "babf3cdeb18eb29b1b3db7e4e4c4f51041de2944bfb362ec803a95c912d82648",
+      "path": "/api/auth/[...all]",
+      "methods": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/chat/[project_id]/act/route.ts",
+      "sha256": "e917008b0447d6503dcc1a7a23def3932fbefa132e2f6f6c88a840bf1d7dd1e8",
+      "path": "/api/chat/[project_id]/act",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/chat/[project_id]/messages/route.ts",
+      "sha256": "0a15674a043e86c4ebbfb38552a1e82b9e99ff403e6a7833fc3aa284825b7d38",
+      "path": "/api/chat/[project_id]/messages",
+      "methods": [
+        "DELETE",
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/chat/[project_id]/pause/route.ts",
+      "sha256": "0744b46e09bba92e65498ede8a2ec03ef087e03dd9a38425d3f2cdcc226a61c1",
+      "path": "/api/chat/[project_id]/pause",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/chat/[project_id]/requests/active/route.ts",
+      "sha256": "385ebe44a9820a16e70ada43b289a28f3122bca796edd757a1b07f0e20316ee1",
+      "path": "/api/chat/[project_id]/requests/active",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/chat/[project_id]/stream/route.ts",
+      "sha256": "b1fdabb8cb2a7ac9143551de4d0c1f1887bfd7a8f6d355047109da78f4c0d784",
+      "path": "/api/chat/[project_id]/stream",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/env/[project_id]/conflicts/route.ts",
+      "sha256": "9ae678962b39af4ee7abe801428b2e02dc2b027c932cf518d7aa6f0937e685e0",
+      "path": "/api/env/[project_id]/conflicts",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/env/[project_id]/route.ts",
+      "sha256": "cfba9854b9a7d49363b8c4ce2de43af7df8ee920c1f61c814e20a80426026ece",
+      "path": "/api/env/[project_id]",
+      "methods": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/env/[project_id]/sync/db-to-file/route.ts",
+      "sha256": "bab723a2d9d87455bf515635804d4d1b09a227fec9e7a9de5218ed2305c1ebdf",
+      "path": "/api/env/[project_id]/sync/db-to-file",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/env/[project_id]/sync/file-to-db/route.ts",
+      "sha256": "4840a600e22bd68eca445dcd5f442efbba7690dd41ae72d058df4172ff734144",
+      "path": "/api/env/[project_id]/sync/file-to-db",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/env/[project_id]/upsert/route.ts",
+      "sha256": "8558ccf0c97b5d3a0c1cefd9c6878211f9079a31e00cc5ddbd7ee8ace717b7a9",
+      "path": "/api/env/[project_id]/upsert",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/env/[project_id]/[key]/route.ts",
+      "sha256": "1b1cc2572d4e4e66caa2ad0d62cc0102408b3848aef3e0db1ea60aa0222b48f4",
+      "path": "/api/env/[project_id]/[key]",
+      "methods": [
+        "DELETE",
+        "PUT"
+      ]
+    },
+    {
+      "source": "src/app/api/evals/route.ts",
+      "sha256": "884ea2fe54c400051d4829eb57d1b63d860a4dd9d9114525432f165da4d4d9a4",
+      "path": "/api/evals",
+      "methods": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/evals/runs/[runId]/route.ts",
+      "sha256": "05d2970e1407d3ff8dc73bb0a9bbd755581f0566a90e685a44ea68b693fe06fe",
+      "path": "/api/evals/runs/[runId]",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/github/check-repo/[repo_name]/route.ts",
+      "sha256": "af670669a900519457838a7e535044909b177d00c81dfd585638c8ed78f13cc4",
+      "path": "/api/github/check-repo/[repo_name]",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/github/create-repo/route.ts",
+      "sha256": "1b69fbbf85852261fe8b88a50054f6b36c798c791dc5163480d9c226ab7787cd",
+      "path": "/api/github/create-repo",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/health/route.ts",
+      "sha256": "30e8e31651a6abaed55cbc3b411775bbd87cf3633f47b3082f47e449137f5b41",
+      "path": "/api/health",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/infrastructure/health/route.ts",
+      "sha256": "4d4906aac4e4de3c3e371237556b07fab9afc03f7c1435a637fc5b43949b5349",
+      "path": "/api/infrastructure/health",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/infrastructure/service-catalog/route.ts",
+      "sha256": "667a2eef0fa061eb53ead2df63274cb28c21ff94fbf3695f174bc934f80fcd34",
+      "path": "/api/infrastructure/service-catalog",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/observability/generation/route.ts",
+      "sha256": "caa0b756ebb2fd272ed8529f6df402f9543f33da83900d38cceba0eb37450d71",
+      "path": "/api/observability/generation",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/ops/platform/route.ts",
+      "sha256": "732915ecc10f2c42cc9a64d52d7f3f66491a8fd9d581577792aa37089a2e0765",
+      "path": "/api/ops/platform",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/route.ts",
+      "sha256": "78601912e87efa324ebee92a879eb0f0b4132b876d9b2b4bf9da5b4dccdf7d28",
+      "path": "/api/projects",
+      "methods": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/agent/approvals/route.ts",
+      "sha256": "2b0e98b53f864d60c7453a926b9a57b948e73882d2c2d83d83878d2c9040c5e7",
+      "path": "/api/projects/[project_id]/agent/approvals",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/agent/approvals/[approval_id]/route.ts",
+      "sha256": "3ae1c65f3c9a8d25c9dbaebb1e8834908c8ca8c3654e75b7db85ec64e189d3db",
+      "path": "/api/projects/[project_id]/agent/approvals/[approval_id]",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/agent/runs/[run_id]/route.ts",
+      "sha256": "31c8fe3564a3dcfd9bf2290c08e8e205e3d4df04df207af969fbf1c1bfc4c1d3",
+      "path": "/api/projects/[project_id]/agent/runs/[run_id]",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/artifact/route.ts",
+      "sha256": "7163ad0abeec9cc09493b3c54e64ae7b2774a3d30c60fa55fc764b3a4ace4af1",
+      "path": "/api/projects/[project_id]/artifact",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/files/content/route.ts",
+      "sha256": "fa0d6552622a86f00b44dc36de0b64b7a160d4eaf9813dfd7b0b7dc3560d6f59",
+      "path": "/api/projects/[project_id]/files/content",
+      "methods": [
+        "GET",
+        "PUT"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/files/route.ts",
+      "sha256": "cef57f0a9f92c3616184e0f77cbcd4535667219acd3b7c61a42e19e36675eac4",
+      "path": "/api/projects/[project_id]/files",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/generation/status/route.ts",
+      "sha256": "170b1e1d933129f4dd03081d1faecb8bc21579bd71384e3a1db6e3bd8059c566",
+      "path": "/api/projects/[project_id]/generation/status",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/github/connect/route.ts",
+      "sha256": "265532c678deaea0f4aa7fb2963a1a4b4f8c5ff4e5512ae680211301239eff9e",
+      "path": "/api/projects/[project_id]/github/connect",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/github/push/route.ts",
+      "sha256": "f5351a1442dd7bd6ff8f8e2e516b21e40e501366f5f00984aded7b6df552d889",
+      "path": "/api/projects/[project_id]/github/push",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/install-dependencies/route.ts",
+      "sha256": "f80d3df0cb7930e4cf3694c9e458d0a802c5c150019e134e59bdfc35435ae84d",
+      "path": "/api/projects/[project_id]/install-dependencies",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/knowledge/outcomes/route.ts",
+      "sha256": "419df3a5e26769465dc1b5f343d44f5c64dd05815821f8d310114d75d4743ad1",
+      "path": "/api/projects/[project_id]/knowledge/outcomes",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/knowledge/uses/[request_id]/route.ts",
+      "sha256": "1dd9b1a9894f3202c7af28559ce4bd9b6681b4bcf771345e97da8084ca79ca92",
+      "path": "/api/projects/[project_id]/knowledge/uses/[request_id]",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/members/route.ts",
+      "sha256": "2ed51bd0774921f301f472e97262d3c92157c3742c7a0d86cdcb29f57d1e3034",
+      "path": "/api/projects/[project_id]/members",
+      "methods": [
+        "DELETE",
+        "GET",
+        "PUT"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/memory/outcomes/route.ts",
+      "sha256": "69fad7795cc5d3450f4ace66ab87e86ca4f7d72fecbcc0ccf0a4676fd5289802",
+      "path": "/api/projects/[project_id]/memory/outcomes",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/memory/preferences/route.ts",
+      "sha256": "03388d284713899d7133c0081df894e12c371094971cac0724e30aa91ef72ec9",
+      "path": "/api/projects/[project_id]/memory/preferences",
+      "methods": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/memory/preferences/[record_id]/corrections/route.ts",
+      "sha256": "b6db8a79b7331f86a527c9587cb17e55444dfd4eb0cacc9dc61615130eacb60a",
+      "path": "/api/projects/[project_id]/memory/preferences/[record_id]/corrections",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/memory/preferences/[record_id]/revisions/route.ts",
+      "sha256": "72df81cbe80922b71403912abc16a9960daf73625fcce26a106b31227818a49d",
+      "path": "/api/projects/[project_id]/memory/preferences/[record_id]/revisions",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/memory/uses/[request_id]/route.ts",
+      "sha256": "a717130d2eaa226e29b75c3edef4173d4e56a3e1a99e308eb726060c851c8547",
+      "path": "/api/projects/[project_id]/memory/uses/[request_id]",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/preview/start/route.ts",
+      "sha256": "534ab8a4d3723bfc01ac37cfc59805d9a780ad27344b530fbcfcf14d4b9485a4",
+      "path": "/api/projects/[project_id]/preview/start",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/preview/status/route.ts",
+      "sha256": "03f96769933f6ef12ecd2c0d5dd3783bcc7910a0f4a1bb8d051dab6f8ccffc75",
+      "path": "/api/projects/[project_id]/preview/status",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/preview/stop/route.ts",
+      "sha256": "9da1675795518620c73477e1980e8201497ad3cb0f9e68a97f44048819f6afe9",
+      "path": "/api/projects/[project_id]/preview/stop",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/quant/validation/route.ts",
+      "sha256": "bd3da26275fe185914593b10bb73c190e4cb14aeafdea17dccfb4bb74962914a",
+      "path": "/api/projects/[project_id]/quant/validation",
+      "methods": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/retry-initialization/route.ts",
+      "sha256": "42b8cfe735bd71845ede1ab7d2a706eccace5c02725a72448e08e7c2c70cbed6",
+      "path": "/api/projects/[project_id]/retry-initialization",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/route.ts",
+      "sha256": "e30af556742aedf1779d1de19bbc80eaf86cc59f076b41bf78084a6cf304799d",
+      "path": "/api/projects/[project_id]",
+      "methods": [
+        "DELETE",
+        "GET",
+        "PUT"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/services/route.ts",
+      "sha256": "a9e4708c427adb3b44f178d7bf390cdb871aa8fe33f25d0c03c268ee3e79ec0e",
+      "path": "/api/projects/[project_id]/services",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/services/[service_id]/route.ts",
+      "sha256": "a015ec2fdea3bfdd827028f607f322e4a993d13c8654ec7985134329401fe409",
+      "path": "/api/projects/[project_id]/services/[service_id]",
+      "methods": [
+        "DELETE"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/supabase/connect/route.ts",
+      "sha256": "c4c74ed5ab6b590c14d11a15549b0cdf9e3c1965b7ab0c25d314922e63e371a2",
+      "path": "/api/projects/[project_id]/supabase/connect",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/vercel/connect/route.ts",
+      "sha256": "e6ceff81b5ff7537ff1a2eb137e2e02d078b090c4d17465b5370ed08c14eacb6",
+      "path": "/api/projects/[project_id]/vercel/connect",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/vercel/deploy/route.ts",
+      "sha256": "8f499d382d309ae8314eca24c750f4513a3bf4682bc7546e88a3d6c077bfd2ab",
+      "path": "/api/projects/[project_id]/vercel/deploy",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/projects/[project_id]/vercel/deployment/current/route.ts",
+      "sha256": "ab107c2afdfbdd086fe8cb70b6b7eaad1ff1f5e4c7f7cfdd4240623f3ed0f7e2",
+      "path": "/api/projects/[project_id]/vercel/deployment/current",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/quant/capabilities/route.ts",
+      "sha256": "9d83e372625ee917e3eda325453a97cc80bd3a2b8d694f175ddb11c0e2986b7b",
+      "path": "/api/quant/capabilities",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/quant/capability-center/route.ts",
+      "sha256": "29a5ae737d433b48ab9de5bf4c8bfcbd85616a99362281d16986bcd103fe70ed",
+      "path": "/api/quant/capability-center",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/quant/query/rewrite/route.ts",
+      "sha256": "bffa11f45562f84f9f0ee055be8a2d6586c48adc74ab484285b7a3d69807f1ba",
+      "path": "/api/quant/query/rewrite",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/quant/strategies/route.ts",
+      "sha256": "31eb4ad7f65db5df472e8cf70fb39bef89ce3db63bbe287fe9b7d93af8cc7911",
+      "path": "/api/quant/strategies",
+      "methods": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/quant/symbols/resolve/route.ts",
+      "sha256": "d61c354695aafc45011da4e103320a906865ca38c38be27524f11c5ba8996529",
+      "path": "/api/quant/symbols/resolve",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/ready/route.ts",
+      "sha256": "c79c9ab9596852b88de80a354955f6eddc2cbe1325fa5bb372afb2c9b2fb1f4a",
+      "path": "/api/ready",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/repo/[project_id]/file/route.ts",
+      "sha256": "035a51ceff608fee84297732fb566b4e38648b12dadfa2b0ae33da7706614b05",
+      "path": "/api/repo/[project_id]/file",
+      "methods": [
+        "GET",
+        "PUT"
+      ]
+    },
+    {
+      "source": "src/app/api/repo/[project_id]/tree/route.ts",
+      "sha256": "af67f539fcd569990a56da59aaebd056398893341f7a276d55416570fc4d4971",
+      "path": "/api/repo/[project_id]/tree",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/research/reports/route.ts",
+      "sha256": "fd06495663c73eaa42c962988b356de449743c19e7577e8b5795e32f313b1958",
+      "path": "/api/research/reports",
+      "methods": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/settings/cli-status/route.ts",
+      "sha256": "a2f0ab010b6d8e8849cc6bc85924a756f52e26ba7136ed9b57e3b65f03540b48",
+      "path": "/api/settings/cli-status",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/settings/global/route.ts",
+      "sha256": "d9ce53330e9e237285f758f6b4f69220cd9397a0fb1718dd3126c6d860f5734b",
+      "path": "/api/settings/global",
+      "methods": [
+        "GET",
+        "PUT"
+      ]
+    },
+    {
+      "source": "src/app/api/settings/route.ts",
+      "sha256": "82e4e009b2af947186bd6e0b1202e7666ead1ddf0c318b1e589cb2075ab99f11",
+      "path": "/api/settings",
+      "methods": [
+        "GET",
+        "PUT"
+      ]
+    },
+    {
+      "source": "src/app/api/skills/installations/route.ts",
+      "sha256": "a618f489ffe12ffee699004918d75a28e324dc77d0a0fcc945a2d879eb94dd9a",
+      "path": "/api/skills/installations",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/skills/market/route.ts",
+      "sha256": "263f5eae780178e609834a6f6c259eb025a6cad48b35364aca1a2a48877d195b",
+      "path": "/api/skills/market",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/skills/route.ts",
+      "sha256": "0c1fe30db14a6dd3c61944f6d24624399b89c7390552f6918070a74c3bfdfa37",
+      "path": "/api/skills",
+      "methods": [
+        "GET",
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/skills/[skillId]/package/route.ts",
+      "sha256": "5742b0d7124a697b736ce2840384fef31542625e85d4c807ba2bdae3eb8b54b6",
+      "path": "/api/skills/[skillId]/package",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/supabase/create-project/route.ts",
+      "sha256": "f2e4d573d6bc63101351e00eaad5a44112cd3ca2eaa72eaa98038c0fceded955",
+      "path": "/api/supabase/create-project",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/supabase/organizations/route.ts",
+      "sha256": "21a010bf81b6278d756b0f669a0584318a101896ffd3b73cc1515e0b609f759d",
+      "path": "/api/supabase/organizations",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/supabase/projects/[supabase_project_id]/api-keys/route.ts",
+      "sha256": "09ade976c2d959e88fde8fcf8dd0687e7949ac4a0d70a9314ca3fba0f36b3495",
+      "path": "/api/supabase/projects/[supabase_project_id]/api-keys",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/supabase/projects/[supabase_project_id]/route.ts",
+      "sha256": "54c9f68727edfde0b20ac037e4c16ccc37a6e8fc43ba28140339aebd6f129262",
+      "path": "/api/supabase/projects/[supabase_project_id]",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/tokens/route.ts",
+      "sha256": "7e3f2e1f4d70b71bd5bdb97f6c0cc555f19031f08b391baa667072b638446247",
+      "path": "/api/tokens",
+      "methods": [
+        "POST"
+      ]
+    },
+    {
+      "source": "src/app/api/tokens/[...segments]/route.ts",
+      "sha256": "353db5ae2db7642a4d4d22c99fceeec1766838c05868307b8769ca0fe065b320",
+      "path": "/api/tokens/[...segments]",
+      "methods": [
+        "DELETE",
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/vercel/check-project/[name]/route.ts",
+      "sha256": "06e92f78529d17320a5b5b229c9a09270dcb5e3a3ea1b8682081f3bf8b144714",
+      "path": "/api/vercel/check-project/[name]",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/workspaces/health/route.ts",
+      "sha256": "f2934eb7f9087b251b06d3332e66fb13e65c0dabbcc8dc25b3012b7ab7156f30",
+      "path": "/api/workspaces/health",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/app/api/workspaces/trace/route.ts",
+      "sha256": "9f89abdb29671c612202ae041592a1f648837e53d085fa048847f26618eadf36",
+      "path": "/api/workspaces/trace",
+      "methods": [
+        "GET"
+      ]
+    },
+    {
+      "source": "src/pages/api/ws/[projectId].ts",
+      "sha256": "8dad2e55821d6fab9d58337c95069395336385d3385cce32840a5c3f33a54fb6",
+      "path": "/api/ws/[projectId]",
+      "methods": [
+        "GET"
+      ],
+      "protocols": [
+        "websocket"
+      ]
+    }
+  ]
+}
