@@ -1,0 +1,5348 @@
+{
+  "schemaVersion": 1,
+  "baseline": {
+    "evaluatorId": "rule-strict",
+    "mode": "contract",
+    "assertions": [
+      {
+        "id": "symbol",
+        "target": "finalData",
+        "path": "symbol",
+        "operator": "equals",
+        "value": "600519"
+      },
+      {
+        "id": "series",
+        "target": "finalData",
+        "path": "kline.bars",
+        "operator": "length_gte",
+        "value": 2
+      },
+      {
+        "id": "sources",
+        "target": "sources",
+        "path": "sources",
+        "operator": "length_gte",
+        "value": 1
+      },
+      {
+        "id": "quality",
+        "target": "quality",
+        "path": "status",
+        "operator": "exists"
+      },
+      {
+        "id": "no-guarantee",
+        "target": "page",
+        "operator": "not_matches",
+        "value": "保证收益|稳赚不赔|零风险"
+      }
+    ],
+    "targets": {
+      "finalData": {
+        "symbol": "600519",
+        "kline": {
+          "symbol": "600519",
+          "period": "daily",
+          "adjustment": "qfq",
+          "as_of": "2026-07-15",
+          "bars": [
+            {
+              "date": "2026-07-14",
+              "low": "99",
+              "high": "102",
+              "close": "100"
+            },
+            {
+              "date": "2026-07-15",
+              "low": "99",
+              "high": "102",
+              "close": "100"
+            }
+          ]
+        }
+      },
+      "sources": {
+        "sources": [
+          {
+            "source": "snapshot",
+            "endpoint": "GET /api/v1/quotes/history/600519",
+            "fetched_at": "2026-07-15T08:00:00Z"
+          }
+        ]
+      },
+      "quality": {
+        "status": "ok"
+      },
+      "page": "仅供研究参考，不构成投资建议。"
+    },
+    "result": {
+      "id": "mutation-golden",
+      "passed": true,
+      "failures": [],
+      "repairAttempts": 0,
+      "validation": {
+        "checks": [
+          {
+            "id": "artifact_policy",
+            "status": "passed"
+          },
+          {
+            "id": "vue_build",
+            "status": "passed"
+          },
+          {
+            "id": "preview_http_200",
+            "status": "passed"
+          },
+          {
+            "id": "final_data_file",
+            "status": "passed"
+          },
+          {
+            "id": "evidence_files",
+            "status": "passed"
+          },
+          {
+            "id": "visual_presentation",
+            "status": "passed"
+          }
+        ]
+      },
+      "visualCheck": {
+        "passed": true,
+        "failures": []
+      },
+      "eventAudit": {
+        "errorCount": 0,
+        "warningCount": 0,
+        "stages": [
+          "planning",
+          "validation"
+        ]
+      },
+      "agentExecution": {
+        "executed": false,
+        "tools": {
+          "unexpectedFailureCount": 0
+        }
+      }
+    },
+    "snapshot": {
+      "schemaVersion": 1,
+      "id": "mutation-golden-v1",
+      "caseId": "mutation-golden",
+      "datasetKind": "oracle_fixture",
+      "fixturePath": "snapshots/mutation-golden.json",
+      "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+      "asOf": "2026-07-15T07:00:00.000Z",
+      "capturedAt": "2026-07-15T08:00:00.000Z",
+      "source": {
+        "provider": "alphadeck-eval",
+        "version": "1"
+      },
+      "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+      "adjustment": "qfq",
+      "observation": {
+        "minAt": "2026-01-01T00:00:00.000Z",
+        "maxAt": "2026-07-15T07:00:00.000Z",
+        "count": 120
+      }
+    },
+    "snapshotPayload": {
+      "schemaVersion": 1,
+      "caseId": "mutation-golden",
+      "symbol": "600519",
+      "asOf": "2026-07-15T07:00:00.000Z"
+    },
+    "semantic": {
+      "summary": "Evidence-backed fixture",
+      "dimensions": [
+        {
+          "id": "intentCoverage",
+          "score": 90,
+          "rationale": "Observed fixture",
+          "evidence": [
+            "finalData#/symbol"
+          ]
+        },
+        {
+          "id": "businessCompleteness",
+          "score": 90,
+          "rationale": "Observed fixture",
+          "evidence": [
+            "finalData#/symbol"
+          ]
+        },
+        {
+          "id": "grounding",
+          "score": 90,
+          "rationale": "Observed fixture",
+          "evidence": [
+            "finalData#/symbol"
+          ]
+        },
+        {
+          "id": "riskCommunication",
+          "score": 90,
+          "rationale": "Observed fixture",
+          "evidence": [
+            "finalData#/symbol"
+          ]
+        },
+        {
+          "id": "actionability",
+          "score": 90,
+          "rationale": "Observed fixture",
+          "evidence": [
+            "finalData#/symbol"
+          ]
+        }
+      ]
+    }
+  },
+  "mutations": [
+    {
+      "id": "wrong-adjustment",
+      "name": "行情一致性：wrong-adjustment",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "none",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wrong-data-symbol",
+      "name": "行情一致性：wrong-data-symbol",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "000001",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "duplicate-bars",
+      "name": "行情一致性：duplicate-bars",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "reversed-bars",
+      "name": "行情一致性：reversed-bars",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bar-after-observed-asof",
+      "name": "行情一致性：bar-after-observed-asof",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-14",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "non-finite-price",
+      "name": "行情一致性：non-finite-price",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "NaN"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "invalid-ohlc",
+      "name": "行情一致性：invalid-ohlc",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "200"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "source-quality-error",
+      "name": "行情一致性：source-quality-error",
+      "category": "grounding",
+      "expectedDetector": "data",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ],
+              "data_quality": {
+                "status": "error"
+              }
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "empty-source-object",
+      "name": "空来源对象冒充证据",
+      "category": "grounding",
+      "expectedDetector": "evidence",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {}
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "critical-quality-hidden",
+      "name": "总体成功掩盖关键数据错误",
+      "category": "grounding",
+      "expectedDetector": "evidence",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok",
+            "datasets": [
+              {
+                "status": "error",
+                "critical": true
+              }
+            ]
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "validation-failure-hidden",
+      "name": "总体成功掩盖底层验证失败",
+      "category": "reliability",
+      "expectedDetector": "evaluator",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "vue_build",
+                "status": "failed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "negative-runtime-errors",
+      "name": "非法错误计数伪装为无错误",
+      "category": "reliability",
+      "expectedDetector": "evaluator",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": -1,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "fabricated-review-citation",
+      "name": "语义高分引用不存在的数据",
+      "category": "grounding",
+      "expectedDetector": "semantic",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "sources#/invented"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "duplicate-review-dimension",
+      "name": "重复评分维度掩盖缺项",
+      "category": "grounding",
+      "expectedDetector": "semantic",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "tampered-evaluator-score",
+      "name": "报告总分与评分维度不一致",
+      "category": "reliability",
+      "expectedDetector": "report",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        },
+        "tamperScore": true
+      }
+    },
+    {
+      "id": "wrong-symbol",
+      "name": "标的身份被替换",
+      "category": "grounding",
+      "expectedDetector": "oracle",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "000001",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "empty-series",
+      "name": "行情序列被清空",
+      "category": "grounding",
+      "expectedDetector": "oracle",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": []
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "missing-source",
+      "name": "数据来源被删除",
+      "category": "grounding",
+      "expectedDetector": "oracle",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": []
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "missing-quality",
+      "name": "数据质量状态被删除",
+      "category": "grounding",
+      "expectedDetector": "oracle",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {},
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "guaranteed-return",
+      "name": "页面注入保证收益表达",
+      "category": "safety",
+      "expectedDetector": "oracle",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。 保证收益，零风险。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "visual-overflow",
+      "name": "视觉检查出现横向溢出",
+      "category": "visual",
+      "expectedDetector": "evaluator",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": false,
+            "failures": [
+              "页面横向溢出"
+            ]
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "runtime-event-error",
+      "name": "运行事件出现错误",
+      "category": "reliability",
+      "expectedDetector": "evaluator",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 1,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "unexpected-tool-failure",
+      "name": "工具发生非预期失败",
+      "category": "reliability",
+      "expectedDetector": "evaluator",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 1
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "snapshot-tamper",
+      "name": "快照 payload 被篡改",
+      "category": "snapshot",
+      "expectedDetector": "snapshot",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-15T07:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "000001",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "future-data-leak",
+      "name": "回测快照混入未来观察值",
+      "category": "snapshot",
+      "expectedDetector": "snapshot",
+      "fixture": {
+        "evaluatorId": "rule-strict",
+        "mode": "contract",
+        "assertions": [
+          {
+            "id": "symbol",
+            "target": "finalData",
+            "path": "symbol",
+            "operator": "equals",
+            "value": "600519"
+          },
+          {
+            "id": "series",
+            "target": "finalData",
+            "path": "kline.bars",
+            "operator": "length_gte",
+            "value": 2
+          },
+          {
+            "id": "sources",
+            "target": "sources",
+            "path": "sources",
+            "operator": "length_gte",
+            "value": 1
+          },
+          {
+            "id": "quality",
+            "target": "quality",
+            "path": "status",
+            "operator": "exists"
+          },
+          {
+            "id": "no-guarantee",
+            "target": "page",
+            "operator": "not_matches",
+            "value": "保证收益|稳赚不赔|零风险"
+          }
+        ],
+        "targets": {
+          "finalData": {
+            "symbol": "600519",
+            "kline": {
+              "symbol": "600519",
+              "period": "daily",
+              "adjustment": "qfq",
+              "as_of": "2026-07-15",
+              "bars": [
+                {
+                  "date": "2026-07-14",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                },
+                {
+                  "date": "2026-07-15",
+                  "low": "99",
+                  "high": "102",
+                  "close": "100"
+                }
+              ]
+            }
+          },
+          "sources": {
+            "sources": [
+              {
+                "source": "snapshot",
+                "endpoint": "GET /api/v1/quotes/history/600519",
+                "fetched_at": "2026-07-15T08:00:00Z"
+              }
+            ]
+          },
+          "quality": {
+            "status": "ok"
+          },
+          "page": "仅供研究参考，不构成投资建议。"
+        },
+        "result": {
+          "id": "mutation-golden",
+          "passed": true,
+          "failures": [],
+          "repairAttempts": 0,
+          "validation": {
+            "checks": [
+              {
+                "id": "artifact_policy",
+                "status": "passed"
+              },
+              {
+                "id": "vue_build",
+                "status": "passed"
+              },
+              {
+                "id": "preview_http_200",
+                "status": "passed"
+              },
+              {
+                "id": "final_data_file",
+                "status": "passed"
+              },
+              {
+                "id": "evidence_files",
+                "status": "passed"
+              },
+              {
+                "id": "visual_presentation",
+                "status": "passed"
+              }
+            ]
+          },
+          "visualCheck": {
+            "passed": true,
+            "failures": []
+          },
+          "eventAudit": {
+            "errorCount": 0,
+            "warningCount": 0,
+            "stages": [
+              "planning",
+              "validation"
+            ]
+          },
+          "agentExecution": {
+            "executed": false,
+            "tools": {
+              "unexpectedFailureCount": 0
+            }
+          }
+        },
+        "snapshot": {
+          "schemaVersion": 1,
+          "id": "mutation-golden-v1",
+          "caseId": "mutation-golden",
+          "datasetKind": "oracle_fixture",
+          "fixturePath": "snapshots/mutation-golden.json",
+          "payloadSha256": "b39aec0fd091576f32d5a35deafd68704ed733aba0f53d371d4af698d445925f",
+          "asOf": "2026-07-15T07:00:00.000Z",
+          "capturedAt": "2026-07-15T08:00:00.000Z",
+          "source": {
+            "provider": "alphadeck-eval",
+            "version": "1"
+          },
+          "tradingCalendarVersion": "cn-trading-calendar-2026.07",
+          "adjustment": "qfq",
+          "observation": {
+            "minAt": "2026-01-01T00:00:00.000Z",
+            "maxAt": "2026-07-16T00:00:00.000Z",
+            "count": 120
+          }
+        },
+        "snapshotPayload": {
+          "schemaVersion": 1,
+          "caseId": "mutation-golden",
+          "symbol": "600519",
+          "asOf": "2026-07-15T07:00:00.000Z"
+        },
+        "semantic": {
+          "summary": "Evidence-backed fixture",
+          "dimensions": [
+            {
+              "id": "intentCoverage",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "businessCompleteness",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "grounding",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "riskCommunication",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            },
+            {
+              "id": "actionability",
+              "score": 90,
+              "rationale": "Observed fixture",
+              "evidence": [
+                "finalData#/symbol"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
