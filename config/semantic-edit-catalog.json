@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "definition": {
+    "name": "semantic_edit",
+    "description": "Versioned edit for one TypeScript declaration (including Vue script setup), one unique CSS selector, an exact line range, or a bounded CSS override append. Obtain beforeSha256 from query_text_file. For broad stylesheet-only restyling use css_append, never a whole-file line_range or invented combined selector.",
+    "effect": "workspace_write",
+    "idempotency": "reconcile_required",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Workspace-relative source or stylesheet path."
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "typescript_symbol",
+            "css_rule",
+            "css_append",
+            "line_range"
+          ]
+        },
+        "beforeSha256": {
+          "type": "string",
+          "description": "SHA-256 returned by the preceding targeted read."
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Required only for typescript_symbol."
+        },
+        "selector": {
+          "type": "string",
+          "description": "Required only for css_rule."
+        },
+        "startLine": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Required only for line_range."
+        },
+        "endLine": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Required only for line_range."
+        },
+        "replacement": {
+          "type": "string",
+          "description": "Complete replacement declaration/rule/range, or bounded CSS override rules for css_append."
+        }
+      },
+      "required": [
+        "path",
+        "kind",
+        "beforeSha256",
+        "replacement"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "modifiers": {
+    "abstract": 128,
+    "accessor": 129,
+    "async": 134,
+    "const": 87,
+    "declare": 138,
+    "default": 90,
+    "export": 95,
+    "in": 103,
+    "out": 147,
+    "override": 164,
+    "private": 123,
+    "protected": 124,
+    "public": 125,
+    "readonly": 148,
+    "static": 126
+  }
+}

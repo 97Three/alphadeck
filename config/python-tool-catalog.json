@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "tools": [
+    {
+      "name": "list_files",
+      "description": "List files in the managed project workspace. Paths must be relative; host filesystem access is unavailable.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Workspace-relative directory. Defaults to ."
+          },
+          "recursive": {
+            "type": "boolean",
+            "default": true
+          },
+          "maxDepth": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 12,
+            "default": 4
+          },
+          "maxEntries": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 300
+          }
+        },
+        "additionalProperties": false
+      },
+      "effect": "read",
+      "idempotency": "intrinsic",
+      "observationCache": "workspace_generation"
+    },
+    {
+      "name": "read_file",
+      "description": "Read a UTF-8 text file inside the managed project workspace. Use one batched query_json call for final/evidence JSON; raw reads of structured or large valid JSON are rejected.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Workspace-relative file path."
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "effect": "read",
+      "idempotency": "intrinsic",
+      "observationCache": "workspace_generation"
+    },
+    {
+      "name": "read_file_range",
+      "description": "Read an inclusive, one-based line range from a UTF-8 workspace file (maximum 500 lines). Use query_json for JSON and query_text_file with an anchors array for batched source inspection.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "startLine": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 1
+          },
+          "endLine": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Inclusive; defaults to startLine + 199."
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "additionalProperties": false
+      },
+      "effect": "read",
+      "idempotency": "intrinsic",
+      "observationCache": "workspace_generation"
+    },
+    {
+      "name": "search_files",
+      "description": "Search workspace text files for a literal string. This is a typed, bounded replacement for shell grep/rg.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Literal text to find."
+          },
+          "path": {
+            "type": "string",
+            "default": "."
+          },
+          "fileGlob": {
+            "type": "string",
+            "description": "Optional workspace glob such as **/*.tsx."
+          },
+          "caseSensitive": {
+            "type": "boolean",
+            "default": false
+          },
+          "maxResults": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 500,
+            "default": 100
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "effect": "read",
+      "idempotency": "intrinsic",
+      "observationCache": "workspace_generation"
+    },
+    {
+      "name": "write_file",
+      "description": "Atomically create or replace an allowed workspace file. Package files, scripts, env files, and platform-owned control directories are always denied.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Workspace-relative destination."
+          },
+          "content": {
+            "type": "string"
+          },
+          "encoding": {
+            "type": "string",
+            "enum": [
+              "utf8",
+              "base64"
+            ],
+            "default": "utf8"
+          }
+        },
+        "required": [
+          "path",
+          "content"
+        ],
+        "additionalProperties": false
+      },
+      "effect": "workspace_write",
+      "idempotency": "reconcile_required"
+    },
+    {
+      "name": "edit_file",
+      "description": "Safely replace one unique text occurrence in an allowed UTF-8 workspace file.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "oldText": {
+            "type": "string"
+          },
+          "newText": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "oldText",
+          "newText"
+        ],
+        "additionalProperties": false
+      },
+      "effect": "workspace_write",
+      "idempotency": "reconcile_required"
+    },
+    {
+      "name": "apply_patch",
+      "description": "Atomically apply an ordered set of unique exact-text replacements to one allowed workspace file.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "edits": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 50,
+            "items": {
+              "type": "object",
+              "properties": {
+                "oldText": {
+                  "type": "string"
+                },
+                "newText": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "oldText",
+                "newText"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "path",
+          "edits"
+        ],
+        "additionalProperties": false
+      },
+      "effect": "workspace_write",
+      "idempotency": "reconcile_required"
+    },
+    {
+      "name": "submit_result",
+      "description": "Submit a candidate result for independent platform verification. Every declared artifact is verified inside the workspace. A successful call ends only this physical Agent run; it does not complete the product Mission.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string",
+            "description": "Concise description of completed work."
+          },
+          "artifacts": {
+            "type": "array",
+            "maxItems": 50,
+            "items": {
+              "type": "string"
+            },
+            "description": "Workspace-relative output files."
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "summary"
+        ],
+        "additionalProperties": false
+      },
+      "effect": "pure",
+      "idempotency": "intrinsic",
+      "terminal": true
+    }
+  ],
+  "structuredTools": [
+    {
+      "name": "query_json",
+      "description": "Batch-query all required RFC 6901 JSON Pointers from one authoritative workspace JSON artifact in a single call (maximum 16). Output is automatically bounded.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "artifact": {
+            "type": "string",
+            "enum": [
+              "final_result",
+              "sources_evidence",
+              "data_quality_evidence",
+              "task",
+              "plan",
+              "validation_report"
+            ],
+            "description": "Authoritative artifact handle. Prefer a registered handle instead of guessing a path."
+          },
+          "path": {
+            "type": "string",
+            "description": "Workspace-relative JSON file. Omit when artifact is supplied."
+          },
+          "pointers": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 16,
+            "items": {
+              "type": "string"
+            },
+            "description": "All required RFC 6901 paths in one array. Use an empty string only to discover root keys."
+          }
+        },
+        "required": [
+          "pointers"
+        ],
+        "additionalProperties": false
+      },
+      "effect": "read",
+      "idempotency": "intrinsic",
+      "observationCache": "workspace_generation"
+    },
+    {
+      "name": "query_text_file",
+      "description": "Batch-read bounded source windows around all needed literal anchors in one call. Put short single-line component, function, selector, or exact-code anchors in the anchors array; do not call once per anchor. Context is automatically reduced fairly so every matched anchor remains represented within the output budget.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Workspace-relative non-JSON text/source file."
+          },
+          "anchors": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 16,
+            "items": {
+              "type": "string"
+            },
+            "description": "All short literal anchors for this file in one array, for example [\"function TrendChart\", \"function FinancialPanel\", \"export default async function Home\"]."
+          }
+        },
+        "required": [
+          "path",
+          "anchors"
+        ],
+        "additionalProperties": false
+      },
+      "effect": "read",
+      "idempotency": "intrinsic",
+      "observationCache": "workspace_generation"
+    }
+  ],
+  "financeJson": {
+    "configuration": {
+      "paths": {
+        "final_dashboard": "data_file/final/dashboard-data.json",
+        "sources_evidence": "evidence/sources.json",
+        "data_quality_evidence": "evidence/data_quality.json",
+        "query_rewrite": ".data-agent/finance-query-rewrite.json",
+        "run_plan": ".data-agent/finance-run-plan.json",
+        "task": ".data-agent/task.json",
+        "plan": ".data-agent/plan.json",
+        "validation_report": ".data-agent/validation.json"
+      },
+      "preferredObjectKeys": [
+        "symbol",
+        "name",
+        "price",
+        "close",
+        "latest_close",
+        "change_percent",
+        "periodReturn",
+        "return20d",
+        "maxDrawdown",
+        "volatility20d",
+        "date",
+        "report_date",
+        "latest_report_date",
+        "title",
+        "summary",
+        "primary_view",
+        "risk_disclaimer",
+        "status",
+        "method",
+        "rows",
+        "data_quality"
+      ],
+      "toolDescription": "Batch-query all required RFC 6901 JSON Pointers from one Finance workspace JSON artifact in a single call (maximum 16). Prefer artifact=\"final_dashboard\" and request quote, K-line/technical summaries, financials, events, metrics, and conclusion together.",
+      "artifactDescription": "Authoritative Finance artifact handle. Prefer final_dashboard instead of guessing a public/data path.",
+      "pathDescription": "Workspace-relative JSON file. Omit when artifact is supplied. Finance dashboard data is data_file/final/dashboard-data.json.",
+      "pointersDescription": "All needed Finance paths in one array, for example [\"/quote\",\"/kline/bars\",\"/technicalIndicators/summary\",\"/financials/reports\",\"/announcements/announcements\",\"/computedMetrics\",\"/conclusion\"]."
+    },
+    "definition": {
+      "name": "query_json",
+      "description": "Batch-query all required RFC 6901 JSON Pointers from one Finance workspace JSON artifact in a single call (maximum 16). Prefer artifact=\"final_dashboard\" and request quote, K-line/technical summaries, financials, events, metrics, and conclusion together.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "artifact": {
+            "type": "string",
+            "enum": [
+              "final_dashboard",
+              "sources_evidence",
+              "data_quality_evidence",
+              "query_rewrite",
+              "run_plan",
+              "task",
+              "plan",
+              "validation_report"
+            ],
+            "description": "Authoritative Finance artifact handle. Prefer final_dashboard instead of guessing a public/data path."
+          },
+          "path": {
+            "type": "string",
+            "description": "Workspace-relative JSON file. Omit when artifact is supplied. Finance dashboard data is data_file/final/dashboard-data.json."
+          },
+          "pointers": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 16,
+            "items": {
+              "type": "string"
+            },
+            "description": "All needed Finance paths in one array, for example [\"/quote\",\"/kline/bars\",\"/technicalIndicators/summary\",\"/financials/reports\",\"/announcements/announcements\",\"/computedMetrics\",\"/conclusion\"]."
+          }
+        },
+        "required": [
+          "pointers"
+        ],
+        "additionalProperties": false
+      },
+      "effect": "read",
+      "idempotency": "intrinsic",
+      "observationCache": "workspace_generation"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "definition": {
+    "name": "quant_api_get",
+    "description": "GET market and quant data from the fixed local http://127.0.0.1:8000/api/v1/ service. Inconsistent or incomplete responses fail; narrow the query when requested. Quality warnings and display-window omissions must be preserved in analysis. Historical runs enforce the saved cutoff and unadjusted daily bars; unsupported endpoints or conflicting parameters fail.",
+    "effect": "read",
+    "idempotency": "intrinsic",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/api/v1/",
+          "description": "Local API path without query text."
+        },
+        "query": {
+          "type": "object",
+          "description": "Query parameters. Values are encoded with URLSearchParams.",
+          "additionalProperties": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "array",
+                "maxItems": 100,
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "boolean"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "path"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "allowedPaths": [
+    "^\\/api\\/v1\\/registry$",
+    "^\\/api\\/v1\\/symbols\\/resolve$",
+    "^\\/api\\/v1\\/quotes\\/(?:realtime(?:\\/[^/]+)?|history\\/[^/]+)$",
+    "^\\/api\\/v1\\/research\\/(?:universes\\/summary|universes\\/[^/]+\\/members|data-coverage|bars\\/[^/]+|screeners\\/a-share\\/short-term-candidates|sector-capital-flow)$",
+    "^\\/api\\/v1\\/fundamentals\\/financials\\/[^/]+$",
+    "^\\/api\\/v1\\/indicators\\/(?:technical|fundamental)\\/[^/]+$",
+    "^\\/api\\/v1\\/events\\/(?:announcements|dividends)\\/[^/]+$",
+    "^\\/api\\/v1\\/backtests\\/(?:ma-crossover\\/[^/]+|strategies\\/[^/]+\\/[^/]+)$",
+    "^\\/api\\/v1\\/foundation\\/(?:status|factors|trading-calendar)$",
+    "^\\/api\\/v1\\/analytics\\/clickhouse\\/health$"
+  ]
+}
