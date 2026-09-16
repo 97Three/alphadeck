@@ -1,0 +1,14 @@
+{
+  "watchlistId": "daily-alphadeck-core",
+  "channelId": "dry-run-wxwork-research",
+  "universeId": "a-share-sample-research-pool",
+  "symbols": [
+    "600519.SH",
+    "000001.SZ",
+    "510300.SH"
+  ],
+  "markets": [
+    "A股",
+    "ETF"
+  ]
+}

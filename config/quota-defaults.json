@@ -1,0 +1,81 @@
+{
+  "profile": {
+    "key": "member-default",
+    "name": "普通成员",
+    "description": "请求前可判断的有限配额执行硬限制，结果型用量提醒；管理员保持无限。"
+  },
+  "rules": [
+    {
+      "metric": "projects.owned",
+      "limit": "10",
+      "enforcement": "hard",
+      "windowType": "lifetime",
+      "windowSeconds": null,
+      "reservationTtlSeconds": 3600
+    },
+    {
+      "metric": "agent.pending",
+      "limit": "4",
+      "enforcement": "hard",
+      "windowType": "lifetime",
+      "windowSeconds": null,
+      "reservationTtlSeconds": 3600
+    },
+    {
+      "metric": "agent.concurrent",
+      "limit": "2",
+      "enforcement": "hard",
+      "windowType": "lifetime",
+      "windowSeconds": null,
+      "reservationTtlSeconds": 3600
+    },
+    {
+      "metric": "agent.requests.daily",
+      "limit": "100",
+      "enforcement": "hard",
+      "windowType": "day",
+      "windowSeconds": null,
+      "reservationTtlSeconds": 900
+    },
+    {
+      "metric": "llm.total_tokens.monthly",
+      "limit": "2000000",
+      "enforcement": "warn",
+      "windowType": "month",
+      "windowSeconds": null,
+      "reservationTtlSeconds": 3600
+    },
+    {
+      "metric": "query_rewrite.llm.daily",
+      "limit": "200",
+      "enforcement": "hard",
+      "windowType": "day",
+      "windowSeconds": null,
+      "reservationTtlSeconds": 900
+    },
+    {
+      "metric": "quant.data_units.daily",
+      "limit": "2000",
+      "enforcement": "warn",
+      "windowType": "day",
+      "windowSeconds": null,
+      "reservationTtlSeconds": 900
+    },
+    {
+      "metric": "research.report_runs.daily",
+      "limit": "20",
+      "enforcement": "hard",
+      "windowType": "day",
+      "windowSeconds": null,
+      "reservationTtlSeconds": 3600
+    },
+    {
+      "metric": "research.report_sends.daily",
+      "limit": "10",
+      "enforcement": "hard",
+      "windowType": "day",
+      "windowSeconds": null,
+      "reservationTtlSeconds": 3600
+    }
+  ]
+}
