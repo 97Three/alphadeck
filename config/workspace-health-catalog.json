@@ -1,0 +1,84 @@
+{
+  "artifacts": [
+    {
+      "id": "workspace",
+      "label": "Data Agent Workspace",
+      "path": ".data-agent/workspace.json"
+    },
+    {
+      "id": "profile",
+      "label": "Agent Profile",
+      "path": ".data-agent/profile.json"
+    },
+    {
+      "id": "task",
+      "label": "Data Agent Task",
+      "path": ".data-agent/task.json"
+    },
+    {
+      "id": "plan",
+      "label": "Data Agent Plan",
+      "path": ".data-agent/plan.json"
+    },
+    {
+      "id": "query_rewrite",
+      "label": "Finance Query Rewrite",
+      "path": ".data-agent/finance-query-rewrite.json"
+    },
+    {
+      "id": "run_plan",
+      "label": "Run Plan",
+      "path": ".data-agent/finance-run-plan.json"
+    },
+    {
+      "id": "generation_state",
+      "label": "生成状态",
+      "path": ".data-agent/generation-state.json"
+    },
+    {
+      "id": "generation_queue",
+      "label": "生成队列",
+      "path": ".data-agent/generation-queue.json"
+    },
+    {
+      "id": "events",
+      "label": "事件日志",
+      "path": ".data-agent/events.jsonl"
+    },
+    {
+      "id": "final_data",
+      "label": "最终数据",
+      "path": "data_file/final/dashboard-data.json"
+    },
+    {
+      "id": "sources",
+      "label": "数据来源",
+      "path": "evidence/sources.json"
+    },
+    {
+      "id": "data_quality",
+      "label": "数据质量",
+      "path": "evidence/data_quality.json"
+    },
+    {
+      "id": "artifact_contracts",
+      "label": "产物契约",
+      "path": ".data-agent/artifact-contracts.json"
+    },
+    {
+      "id": "visual_validation",
+      "label": "视觉验收",
+      "path": ".data-agent/visual-validation.json"
+    },
+    {
+      "id": "validation",
+      "label": "验证报告",
+      "path": ".data-agent/validation.json"
+    },
+    {
+      "id": "page",
+      "label": "页面入口",
+      "path": "src/App.vue"
+    }
+  ]
+}
