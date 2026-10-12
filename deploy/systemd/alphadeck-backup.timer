@@ -1,0 +1,11 @@
+[Unit]
+Description=Create a AlphaDeck backup every six hours
+
+[Timer]
+OnCalendar=*-*-* 00/6:10:00 Asia/Shanghai
+Persistent=true
+RandomizedDelaySec=10m
+Unit=alphadeck-backup.service
+
+[Install]
+WantedBy=timers.target
