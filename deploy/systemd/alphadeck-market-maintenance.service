@@ -1,0 +1,20 @@
+[Unit]
+Description=Refresh AlphaDeck trading calendar and daily market data
+After=network-online.target alphadeck-market-data.service
+Wants=network-online.target
+Requires=alphadeck-market-data.service
+
+[Service]
+Type=oneshot
+User=alphadeck
+Group=alphadeck
+WorkingDirectory=/opt/alphadeck/current
+EnvironmentFile=/etc/alphadeck/alphadeck.env
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+ExecStart=/usr/bin/env npm run market:maintain
+TimeoutStartSec=2h
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/alphadeck /opt/alphadeck/current/tmp
