@@ -1,0 +1,16 @@
+[Unit]
+Description=AlphaDeck expired auth data and audit retention cleanup
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=alphadeck
+Group=alphadeck
+WorkingDirectory=/opt/alphadeck/current
+EnvironmentFile=/etc/alphadeck/alphadeck.env
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+ExecStart=/usr/bin/env npm run auth:cleanup
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/alphadeck /opt/alphadeck/current/tmp
