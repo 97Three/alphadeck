@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 2,
+  "id": "pi-agent-release-evidence-v2",
+  "description": "PiAgent release evidence suite: DeepSeek live Mission cases plus deterministic product and runtime recovery controls",
+  "caseIds": [
+    "stock-diagnosis-citic-custom-no-cards",
+    "index-technical-hs300",
+    "stock-fundamental-maotai",
+    "portfolio-risk-adjustment"
+  ],
+  "productControlCaseIds": [
+    "stock-diagnosis-citic-no-false-clarification"
+  ],
+  "scenarios": {
+    "standard": {
+      "evidenceClass": "product_control",
+      "caseIds": [
+        "stock-diagnosis-citic-no-false-clarification"
+      ],
+      "runtimeTests": []
+    },
+    "custom-no-card": {
+      "evidenceClass": "live_model",
+      "caseIds": [
+        "stock-diagnosis-citic-custom-no-cards"
+      ],
+      "runtimeTests": []
+    },
+    "repair": {
+      "evidenceClass": "contract_and_runtime_test",
+      "caseIds": [
+        "validation-repair-contract"
+      ],
+      "runtimeTests": [
+        "services/platform-api/tests/test_generation_validation.py",
+        "services/platform-api/tests/test_validation_repair.py"
+      ]
+    },
+    "technical": {
+      "evidenceClass": "live_model",
+      "caseIds": [
+        "index-technical-hs300"
+      ],
+      "runtimeTests": []
+    },
+    "fundamental": {
+      "evidenceClass": "live_model",
+      "caseIds": [
+        "stock-fundamental-maotai"
+      ],
+      "runtimeTests": []
+    },
+    "portfolio": {
+      "evidenceClass": "live_model",
+      "caseIds": [
+        "portfolio-risk-adjustment"
+      ],
+      "runtimeTests": []
+    },
+    "cancellation-or-crash": {
+      "evidenceClass": "runtime_test",
+      "caseIds": [],
+      "runtimeTests": [
+        "services/platform-api/tests/test_recovery.py",
+        "services/platform-api/tests/test_runtime_store.py"
+      ]
+    },
+    "security-boundary": {
+      "evidenceClass": "runtime_test",
+      "caseIds": [],
+      "runtimeTests": [
+        "services/platform-api/tests/test_context_services.py",
+        "services/platform-api/tests/test_file_tools.py",
+        "services/platform-api/tests/test_structured_tools.py",
+        "services/platform-api/tests/test_generation_trace.py"
+      ]
+    }
+  }
+}
