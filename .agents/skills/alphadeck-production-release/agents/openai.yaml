@@ -1,0 +1,4 @@
+interface:
+  display_name: "AlphaDeck Production Release"
+  short_description: "Safely release AlphaDeck without routine full data sync"
+  default_prompt: "Use $alphadeck-production-release to plan and execute a safe feature-focused production release."
