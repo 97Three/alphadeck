@@ -1,0 +1,79 @@
+name: Release Evidence Gate
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+  workflow_call:
+    secrets:
+      DEEPSEEK_API_KEY:
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-evidence-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  evidence:
+    # Generated pages run inside Linux namespaces unavailable on hosted runners.
+    runs-on: [self-hosted, linux, alphadeck-sandbox]
+    timeout-minutes: 240
+    env:
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      DATABASE_URL: postgresql://alphadeck:alphadeck_dev_password@127.0.0.1:35437/alphadeck?schema=public
+      REDIS_URL: redis://127.0.0.1:36384/0
+      ALPHADECK_MARKET_API_URL: http://127.0.0.1:8103
+      PROJECTS_DIR: ./tmp/release-evidence-projects
+      ALPHADECK_EVAL_TRIGGER: release
+      ALPHADECK_EVAL_MODEL: deepseek-v4-flash
+      PI_AGENT_BUILD_REVISION: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: astral-sh/setup-uv@v8.3.2
+        with:
+          enable-cache: true
+      - name: Require model credential
+        run: test -n "$DEEPSEEK_API_KEY"
+      - run: npm ci
+      - run: npm --prefix web ci
+      - run: uv sync --directory services/platform-api --locked --group dev
+      - run: uv sync --project services/market-data --locked --all-groups --extra baostock --extra akshare
+      - run: npm run build:vue
+      - run: npm run check:skills
+      - run: npm run check:standalone-runtime
+      - run: uv run --directory services/platform-api --locked python -m playwright install --with-deps chromium
+      - name: Start isolated infrastructure and market API
+        run: |
+          docker compose up -d --wait timescaledb redis
+          npm run db:init
+          mkdir -p tmp
+          ALPHADECK_MARKET_PORT=8103 npm run dev:market > tmp/release-market.log 2>&1 &
+          for attempt in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:8103/health >/dev/null; then exit 0; fi
+            sleep 2
+          done
+          tail -100 tmp/release-market.log
+          exit 1
+      - run: npm run benchmark:quant:contract
+      - run: npm run eval:ci -- --min-pass-rate 100 --min-average-score 90 --min-first-pass-rate 100 --max-repair-rate 0
+      - run: npm run benchmark:quant:e2e -- --model deepseek-v4-flash --concurrency 1 --repeat 2
+      - run: npm run eval:ci:e2e -- --model deepseek-v4-flash --min-pass-rate 100 --min-average-score 90 --min-first-pass-rate 75 --max-repair-rate 25 --min-stability-rate 100 --min-stability-confidence-lower 60 --max-score-standard-deviation 10
+      - if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: release-evidence-${{ github.run_id }}-${{ github.sha }}
+          if-no-files-found: warn
+          retention-days: 90
+          path: |
+            tmp/alphadeck-benchmark-reports/
+            tmp/alphadeck-benchmark-screenshots/
+            tmp/release-market.log
+      - if: always()
+        run: docker compose stop

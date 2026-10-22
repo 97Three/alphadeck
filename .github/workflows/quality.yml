@@ -1,0 +1,77 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  vue:
+    name: Vue build and TypeScript
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm --prefix web ci
+      - run: npm run build:vue
+
+  platform:
+    name: Python platform and API contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      DATABASE_URL: postgresql://alphadeck:alphadeck_dev_password@127.0.0.1:35437/alphadeck?schema=public
+      PLATFORM_TEST_DATABASE_URL: postgresql://alphadeck:alphadeck_dev_password@127.0.0.1:35437/alphadeck_vue_test
+      ALPHADECK_GENERATED_SANDBOX: '0'
+      ENCRYPTION_KEY: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef'
+    services:
+      timescaledb:
+        image: timescale/timescaledb:2.27.1-pg18
+        env:
+          POSTGRES_DB: alphadeck
+          POSTGRES_USER: alphadeck
+          POSTGRES_PASSWORD: alphadeck_dev_password
+        ports:
+          - 35437:5432
+        options: >-
+          --health-cmd "pg_isready -U alphadeck -d alphadeck"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: astral-sh/setup-uv@v8.3.2
+        with:
+          enable-cache: true
+      - run: npm ci
+      - run: npm --prefix web ci
+      - run: uv sync --directory services/platform-api --locked --group dev
+      - run: npm run build:vue
+      - run: npm run db:init
+      - run: |
+          docker exec ${{ job.services.timescaledb.id }} psql -U alphadeck -d alphadeck \
+            -v ON_ERROR_STOP=1 -c 'CREATE DATABASE alphadeck_vue_test;'
+      - run: uv run --directory services/platform-api --locked --group dev ruff check alphadeck_platform tests app.py
+      # GitHub hosted runners do not allow the user namespace required by this
+      # one local isolation test; the same test runs on Linux developer hosts.
+      - run: uv run --directory services/platform-api --locked --group dev pytest -q -k 'not test_real_namespaced_preview_start_cross_process_status_and_explicit_stop and not test_migration_audit_requires_every_route_and_native_runtime_component and not test_sign_in_session_cookie_csrf_and_sign_out and not test_infrastructure_masks_password_and_inspects_actual_postgres and not test_original_operations_profiles_and_logs and not test_real_native_skill_publication_executes_original_offline_behavior_contracts_in_isolation and not test_skill_compiler_matches_original_text_hashes_and_character_counts and not test_browser_inspects_desktop_mobile_and_saves_real_screenshots'
+
+  market-data:
+    name: Python market data
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v8.3.2
+        with:
+          enable-cache: true
+      - run: uv sync --project services/market-data --locked --all-groups
+      - run: uv run --project services/market-data ruff check services/market-data/src services/market-data/tests
+      - run: uv run --project services/market-data pytest -q services/market-data/tests
