@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" fill="none" role="img" aria-label="AlphaDeck 架构：Vue 工作台、Platform API、Market Data API、TimescaleDB、Redis、Worker 与 Vue 看板">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#ffffff" stroke-opacity="0.028"/>
+    </pattern>
+    <linearGradient id="frame" x1="320" y1="90" x2="780" y2="510" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#4a5568"/>
+    </marker>
+  </defs>
+
+  <rect width="1100" height="620" rx="20" fill="#0b0f17"/>
+  <rect width="1100" height="620" rx="20" fill="url(#grid)"/>
+  <circle cx="90" cy="20" r="150" fill="#4ea8a0" fill-opacity="0.13" filter="blur(70px)"/>
+  <circle cx="1030" cy="600" r="160" fill="#d9a441" fill-opacity="0.10" filter="blur(70px)"/>
+
+  <g font-family="'JetBrains Mono', Consolas, 'Microsoft YaHei', monospace" font-size="9" letter-spacing="2.2" fill="#5d6878">
+    <text x="40" y="96">CLIENT</text>
+    <text x="344" y="116" fill="#8b95a5">PLATFORM · :38084</text>
+    <text x="840" y="96">DATA &amp; DELIVERY</text>
+  </g>
+
+  <rect x="40" y="120" width="220" height="76" rx="12" fill="#111827"/>
+  <rect x="40.5" y="120.5" width="219" height="75" rx="11.5" stroke="#2b3444"/>
+  <text x="62" y="152" font-family="Inter, 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif" font-size="13.5" fill="#e8edf5">Vue 3 工作台</text>
+  <text x="62" y="172" font-family="'JetBrains Mono', Consolas, monospace" font-size="9" fill="#6b7688">:3200 · Vite + TypeScript</text>
+
+  <rect x="320" y="90" width="460" height="420" rx="18" fill="#0d121c"/>
+  <rect x="320.5" y="90.5" width="459" height="419" rx="17.5" stroke="url(#frame)"/>
+
+  <g stroke="#2b3444" fill="#151c29">
+    <rect x="344" y="140" width="200" height="80" rx="10"/>
+    <rect x="564" y="140" width="192" height="80" rx="10"/>
+    <rect x="344" y="248" width="200" height="80" rx="10"/>
+    <rect x="564" y="248" width="192" height="80" rx="10"/>
+  </g>
+  <g font-family="Inter, 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif" font-size="13" font-weight="600" fill="#f2eee7">
+    <text x="364" y="172">项目 · Agent</text>
+    <text x="584" y="172">权限 · 审计</text>
+    <text x="364" y="280">评测 · Skills</text>
+    <text x="584" y="280">策略 · 报告</text>
+  </g>
+  <g font-family="'JetBrains Mono', Consolas, monospace" font-size="9" fill="#8b95a5">
+    <text x="364" y="194">projects · runs</text>
+    <text x="584" y="194">auth · audit</text>
+    <text x="364" y="302">evals · skills</text>
+    <text x="584" y="302">strategy · reports</text>
+  </g>
+
+  <text x="344" y="384" font-family="'JetBrains Mono', Consolas, monospace" font-size="9" letter-spacing="1.8" fill="#5d6878">SERVICES</text>
+  <text x="344" y="410" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#c7d0dc">uv · FastAPI · SQLAlchemy · Polars</text>
+  <text x="344" y="432" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#c7d0dc">PostgreSQL / TimescaleDB · Redis</text>
+  <text x="344" y="454" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#c7d0dc">Playwright · Vitest · pytest</text>
+
+  <rect x="840" y="120" width="220" height="76" rx="10" fill="#0e131d"/>
+  <rect x="840.5" y="120.5" width="219" height="75" rx="9.5" stroke="#2f6f8f"/>
+  <text x="862" y="150" font-family="Inter, 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif" font-size="12.5" fill="#dbe2ec">Market Data API</text>
+  <text x="862" y="170" font-family="'JetBrains Mono', Consolas, monospace" font-size="9" fill="#6b7688">:8103 · 行情 / 补数</text>
+
+  <rect x="840" y="226" width="220" height="60" rx="10" fill="#0e131d"/>
+  <rect x="840.5" y="226.5" width="219" height="59" rx="9.5" stroke="#2b3444"/>
+  <text x="862" y="252" font-family="Inter, 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif" font-size="12" fill="#dbe2ec">行情数据源</text>
+  <text x="862" y="270" font-family="'JetBrains Mono', Consolas, monospace" font-size="9" fill="#6b7688">baostock · akshare</text>
+
+  <rect x="840" y="322" width="220" height="64" rx="10" fill="#0e131d"/>
+  <rect x="840.5" y="322.5" width="219" height="63" rx="9.5" stroke="#2f4d3f"/>
+  <text x="862" y="348" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12.5" fill="#dbe2ec">TimescaleDB</text>
+  <text x="862" y="366" font-family="'JetBrains Mono', Consolas, monospace" font-size="9" fill="#6b7688">:35437 · 业务与时序</text>
+
+  <rect x="840" y="404" width="220" height="60" rx="10" fill="#0e131d"/>
+  <rect x="840.5" y="404.5" width="219" height="59" rx="9.5" stroke="#2b3444"/>
+  <text x="862" y="430" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12.5" fill="#dbe2ec">Redis</text>
+  <text x="862" y="448" font-family="'JetBrains Mono', Consolas, monospace" font-size="9" fill="#6b7688">:36384 · 短期缓存</text>
+
+  <rect x="320" y="540" width="460" height="52" rx="10" fill="#151c29"/>
+  <rect x="320.5" y="540.5" width="459" height="51" rx="9.5" stroke="#2b3444"/>
+  <text x="344" y="562" font-family="Inter, 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif" font-size="12.5" fill="#f2eee7">生成 Worker · 评测 Worker</text>
+  <text x="344" y="580" font-family="'JetBrains Mono', Consolas, monospace" font-size="9" fill="#8b95a5">queue · artifacts · sandbox</text>
+
+  <rect x="840" y="520" width="220" height="72" rx="10" fill="#0e131d"/>
+  <rect x="840.5" y="520.5" width="219" height="71" rx="9.5" stroke="#2f4d3f"/>
+  <circle cx="858" cy="542" r="3" fill="#3f8f6a"/>
+  <text x="870" y="546" font-family="Inter, 'Segoe UI', 'Microsoft YaHei', system-ui, sans-serif" font-size="12.5" fill="#dbe2ec">生成的 Vue 看板</text>
+  <text x="870" y="566" font-family="'JetBrains Mono', Consolas, monospace" font-size="9" fill="#6b7688">preview · build · validation</text>
+  <text x="870" y="582" font-family="'JetBrains Mono', Consolas, monospace" font-size="9" fill="#6b7688">evidence · data quality</text>
+
+  <g stroke="#4a5568" stroke-width="1.2" fill="none" marker-end="url(#arrow)">
+    <path d="M262 158H316"/>
+    <path d="M782 158H836"/>
+    <path d="M950 198V222"/>
+    <path d="M782 354H836"/>
+    <path d="M782 434H836"/>
+    <path d="M550 512V536"/>
+    <path d="M782 566H836"/>
+  </g>
+</svg>

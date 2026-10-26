@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" fill="none" role="img" aria-label="AlphaDeck — agentic quant research workbench">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0b0f17"/>
+      <stop offset="0.55" stop-color="#0d121c"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="80" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ea8a0"/>
+      <stop offset="1" stop-color="#4ea8a0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="card" x1="780" y1="88" x2="1120" y2="268" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#ffffff" stroke-opacity="0.030"/>
+    </pattern>
+    <filter id="blur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="64"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="320" fill="url(#bg)"/>
+  <rect width="1200" height="320" fill="url(#grid)"/>
+  <circle cx="80" cy="0" r="170" fill="#4ea8a0" fill-opacity="0.16" filter="url(#blur)"/>
+  <circle cx="1140" cy="330" r="180" fill="#d9a441" fill-opacity="0.14" filter="url(#blur)"/>
+
+  <g font-family="'JetBrains Mono', Consolas, monospace" font-size="10" letter-spacing="3" fill="#4ea8a0">
+    <text x="80" y="62">ALPHADECK</text>
+    <text x="1120" y="62" text-anchor="end" letter-spacing="2.4" fill="#5d6878">SELF-HOSTED</text>
+  </g>
+
+  <text x="80" y="138" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="56" font-weight="700" letter-spacing="-1.8" fill="#f6f1e8">AlphaDeck</text>
+  <rect x="80" y="164" width="92" height="2" fill="url(#rule)"/>
+  <text x="80" y="196" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="18" fill="#a8b2c1">Agentic quant research workbench.</text>
+
+  <g font-family="'JetBrains Mono', Consolas, monospace" font-size="10" letter-spacing="1.2">
+    <rect x="80" y="216" width="78" height="28" rx="14" stroke="#2b3444"/>
+    <text x="119" y="234" fill="#c7d0dc" text-anchor="middle">VUE 3</text>
+    <rect x="166" y="216" width="90" height="28" rx="14" stroke="#2b3444"/>
+    <text x="211" y="234" fill="#c7d0dc" text-anchor="middle">FASTAPI</text>
+    <rect x="264" y="216" width="122" height="28" rx="14" stroke="#2b3444"/>
+    <text x="325" y="234" fill="#c7d0dc" text-anchor="middle">TIMESCALEDB</text>
+    <rect x="394" y="216" width="78" height="28" rx="14" stroke="#2b3444"/>
+    <text x="433" y="234" fill="#c7d0dc" text-anchor="middle">REDIS</text>
+  </g>
+
+  <text x="80" y="286" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" letter-spacing="0.8" fill="#5d6878">github.com/97Three/alphadeck</text>
+
+  <rect x="780" y="88" width="340" height="184" rx="16" fill="#0e131d" fill-opacity="0.94"/>
+  <rect x="780.5" y="88.5" width="339" height="183" rx="15.5" stroke="url(#card)"/>
+  <g font-family="'JetBrains Mono', Consolas, monospace">
+    <text x="804" y="116" font-size="9" letter-spacing="2.2" fill="#5d6878">PIPELINE</text>
+    <circle cx="1096" cy="112" r="3" fill="#3f8f6a"/>
+    <text x="804" y="154" font-size="9" letter-spacing="1.8" fill="#6b7688">RESEARCH</text>
+    <text x="1096" y="154" font-size="10.5" fill="#dbe2ec" text-anchor="end">agent + evidence</text>
+    <path d="M804 168H1096" stroke="#1b2230"/>
+    <text x="804" y="196" font-size="9" letter-spacing="1.8" fill="#6b7688">STRATEGY</text>
+    <text x="1096" y="196" font-size="10.5" fill="#dbe2ec" text-anchor="end">factors + backtests</text>
+    <path d="M804 210H1096" stroke="#1b2230"/>
+    <text x="804" y="238" font-size="9" letter-spacing="1.8" fill="#6b7688">DELIVERY</text>
+    <text x="1096" y="238" font-size="10.5" fill="#dbe2ec" text-anchor="end">Vue dashboards</text>
+  </g>
+
+  <path d="M0 0H1200" stroke="#ffffff" stroke-opacity="0.06"/>
+  <path d="M0 319H1200" stroke="#ffffff" stroke-opacity="0.06"/>
+</svg>
