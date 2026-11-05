@@ -36,7 +36,7 @@ jobs:
         with:
           node-version: '24'
           cache: npm
-      - uses: astral-sh/setup-uv@v8.3.2
+      - uses: astral-sh/setup-uv@v10.3.3
         with:
           enable-cache: true
       - name: Require model credential
